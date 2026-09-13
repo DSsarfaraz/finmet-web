@@ -59,10 +59,10 @@
         <a href="overlap.html" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 transition">
           <i data-lucide="layers" class="w-3.5 h-3.5 inline mr-1"></i> Overlap Calculator
         </a>
-        <a href="#" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-slate-300 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 transition">
-          <i data-lucide="file-text" class="w-3.5 h-3.5 inline mr-1"></i> Latest Sector Report
+        <a href="sector_q2.html" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-slate-300 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 transition">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 inline mr-1"></i> Sector Analysis
         </a>
-        <a href="#" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-slate-300 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 transition">
+        <a href="india_growth_story.html" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-slate-300 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 transition">
           <i data-lucide="bar-chart-3" class="w-3.5 h-3.5 inline mr-1"></i> India's Growth Story
         </a>
       </nav>
@@ -128,10 +128,10 @@
             <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-dashed border-slate-800 hover:border-emerald-500/50 rounded-xl cursor-pointer bg-slate-950/50 transition">
               <div class="flex flex-col items-center justify-center pt-3 pb-3">
                 <i data-lucide="file-up" class="w-6 h-6 text-emerald-400 mb-1"></i>
-                <p id="upload-file-name" class="text-xs text-slate-300 font-medium">Click to upload CSV / Excel file</p>
+                <p id="upload-file-name" class="text-xs text-slate-300 font-medium">Click to upload CSV file</p>
                 <p class="text-[10px] text-slate-500">Supports Groww, Zerodha, Angel One, ICICI, CAMS</p>
               </div>
-              <input id="file-input-a" type="file" accept=".csv, .xlsx, .json" class="hidden" onchange="handleFileUpload(event)" />
+              <input id="file-input-a" type="file" accept=".csv" class="hidden" onchange="handleFileUpload(event)" />
             </label>
           </div>
         </div>
@@ -223,7 +223,7 @@
 
       <div class="p-6 max-h-[70vh] overflow-y-auto custom-scrollbar space-y-4">
         <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
-          <span class="font-bold text-emerald-400">Groww:</span> Profile → Reports → Stock / MF Holdings → Download CSV/Excel.
+          <span class="font-bold text-emerald-400">Groww:</span> Profile → Reports → Stock / MF Holdings → Download CSV.
         </div>
         <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
           <span class="font-bold text-emerald-400">Zerodha:</span> Console → Portfolio → Holdings → Export CSV.
@@ -370,8 +370,11 @@
       calculateOverlap();
     }
 
-    // MULTI-WORD TOKENIZED LIVE SEARCH ENGINE (Supports 3+ keywords)
+    // MULTI-WORD TOKENIZED LIVE SEARCH ENGINE
     function onSearchInput(target, query) {
+      if (target === 'a') clearTimeout(debounceTimerA);
+      else clearTimeout(debounceTimerB);
+
       const resultsDiv = document.getElementById(`results-fund-${target}`);
       const trimmed = query.trim();
 
@@ -384,32 +387,29 @@
       resultsDiv.classList.remove('hidden');
 
       const timer = setTimeout(async () => {
-        // Parse words: e.g. "hsbc midcap direct" -> ["hsbc", "midcap", "direct"]
         const tokens = trimmed.toLowerCase().split(/\s+/).filter(t => t.length > 0);
-        
         let rawResults = [];
 
         try {
-          // Attempt 1: Fetch using the 1st keyword (e.g. "hsbc")
+          // 1st Keyword Search
           let res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(tokens[0])}`);
           if (res.ok) rawResults = await res.json();
 
-          // Attempt 2: If 1st word yielded nothing, try 2nd keyword (e.g. "midcap")
+          // Fallback to 2nd Keyword if available
           if ((!rawResults || rawResults.length === 0) && tokens.length > 1) {
             res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(tokens[1])}`);
             if (res.ok) rawResults = await res.json();
           }
 
-          // Attempt 3: Fetch with full query string if individual tokens yielded nothing
+          // Fallback to full string
           if (!rawResults || rawResults.length === 0) {
             res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(trimmed)}`);
             if (res.ok) rawResults = await res.json();
           }
         } catch (err) {
-          console.warn("API search error, falling back to local AMC database", err);
+          console.warn("API search offline, using local AMC database", err);
         }
 
-        // Combine live API results with local fallback DB
         const combinedPool = [...rawResults, ...OFFLINE_AMC_DB];
         const uniquePool = [];
         const seenCodes = new Set();
@@ -421,7 +421,7 @@
           }
         }
 
-        // Client-side multi-token filter: ALL user tokens MUST exist in scheme name
+        // Multi-token filter: ALL keywords typed by user must exist in scheme name
         const matches = uniquePool.filter(item => {
           const schemeName = item.schemeName.toLowerCase();
           return tokens.every(token => schemeName.includes(token));
@@ -434,8 +434,8 @@
         }
       }, 300);
 
-      if (target === 'a') { clearTimeout(debounceTimerA); debounceTimerA = timer; }
-      else { clearTimeout(debounceTimerB); debounceTimerB = timer; }
+      if (target === 'a') debounceTimerA = timer;
+      else debounceTimerB = timer;
     }
 
     function renderSearchResults(target, funds) {
