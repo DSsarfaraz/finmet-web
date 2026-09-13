@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sector Analysis: IT, Auto &amp; Banking Spotlight — Beast Edition</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.65;
+    color: #e0e0e0;
+    background-color: #121212;
+    padding: 20px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #aab7b8;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    font-size: 0.98em;
+  }
+  .meta-bar {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 0.82em;
+    color: #8a97a0;
+    margin-bottom: 30px;
+  }
+  .disclaimer {
+    background: #252525;
+    border-left: 4px solid #9b59b6;
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-size: 0.88em;
+    color: #c7c7c7;
+    margin-bottom: 45px;
+  }
+  h2 {
+    color: #5dade2;
+    margin-top: 50px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+  }
+  h2 .kicker {
+    display: block;
+    font-size: 0.5em;
+    color: #aab7b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    margin-bottom: 6px;
+  }
+  h3 {
+    color: #d4e6f1;
+    margin-bottom: 15px;
+    font-size: 1.25em;
+  }
+  p.lede {
+    color: #bcc6cc;
+    max-width: 800px;
+    font-size: 1em;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+  }
+  .metric-card {
+    background: #252525;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border-left: 5px solid #3498db;
+    position: relative;
+  }
+  .metric-card.risk { border-left-color: #9b59b6; }
+  .metric-card h4 {
+    margin: 0 0 10px 0;
+    color: #aab7b8;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .metric-value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  .metric-note {
+    font-size: 0.8em;
+    color: #8a97a0;
+    margin-top: 8px;
+  }
+
+  /* simple hover tooltip for "what is this" */
+  .info-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 1px solid #aab7b8; color: #aab7b8;
+    font-size: 0.65em; display: inline-flex; align-items: center; justify-content: center;
+    cursor: help; position: relative; font-weight: bold;
+  }
+  .info-dot .tip {
+    visibility: hidden; opacity: 0;
+    position: absolute; bottom: 135%; left: 50%; transform: translateX(-50%);
+    width: 270px; text-align: left; background: #0e0e0e; border: 1px solid #3a3a3a;
+    color: #cfcfcf; font-size: 0.85em; line-height: 1.5; font-weight: normal;
+    text-transform: none; letter-spacing: normal; padding: 12px 14px; border-radius: 8px;
+    z-index: 30; transition: opacity 0.15s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+  .info-dot:hover .tip { visibility: visible; opacity: 1; }
+  .info-dot .tip b { color: #fff; }
+
+  .takeaway {
+    background: #1b2a1f;
+    border: 1px solid #2ecc71;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 20px 0 35px;
+  }
+  .takeaway .label {
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 0.82em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .takeaway p { margin: 0; color: #dcefe1; font-size: 0.96em; }
+
+  .analysis-block {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .card {
+    padding: 25px;
+    border-radius: 8px;
+    background: #252525;
+  }
+  .value-chain { border-left: 5px solid #f1c40f; }
+  .institutional { border-left: 5px solid #2ecc71; }
+
+  ul { padding-left: 20px; margin: 0; }
+  li { margin-bottom: 12px; }
+  strong { color: #ffffff; }
+
+  .chain-flow {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    margin: 25px 0 35px;
+    padding-bottom: 8px;
+  }
+  .chain-box {
+    flex: 1;
+    min-width: 170px;
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+  }
+  .chain-box.glow { border-color: #f1c40f; background: #2a271a; }
+  .chain-box .step-label {
+    font-size: 0.7em;
+    color: #8a97a0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .chain-box .step-name { font-weight: bold; color: #fff; margin-bottom: 6px; font-size: 0.95em; }
+  .chain-box .step-desc { font-size: 0.85em; color: #b8c1c8; }
+  .chain-arrow {
+    display: flex; align-items: center; color: #555; font-size: 1.3em; padding: 0 2px;
+  }
+
+  .glossary-note {
+    font-size: 0.82em; color: #8a97a0; margin-top: 6px; font-style: italic;
+  }
+
+  .concall-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0 35px;
+  }
+  .concall-card {
+    background: #252525;
+    border-radius: 8px;
+    padding: 20px 22px;
+    border-left: 5px solid #5dade2;
+  }
+  .concall-card .co-name { font-weight: bold; color: #fff; font-size: 1.05em; }
+  .concall-card .co-date { color: #8a97a0; font-size: 0.78em; float: right; }
+  .concall-card ul { margin-top: 12px; }
+  .concall-card li { font-size: 0.92em; color: #c7c7c7; }
+
+  .inst-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .inst-card {
+    background: #1e2a20;
+    border: 1px solid #2ecc71;
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .inst-card .label { font-size: 0.75em; text-transform: uppercase; color: #8ed6a5; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .inst-card .num { font-size: 1.3em; font-weight: bold; color: #fff; margin-bottom: 6px; }
+  .inst-card p { margin: 0; font-size: 0.85em; color: #b8c1c8; }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  .data-table th, .data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+  }
+  .data-table th {
+    background-color: #2c2c2c;
+    color: #ffffff;
+  }
+
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .swot-card { border-radius: 8px; padding: 20px; border: 1px solid #333; }
+  .swot-card h4 { margin: 0 0 12px; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; }
+  .swot-card li { font-size: 0.9em; }
+  .swot-s { background: #16241a; border-color: #2ecc71; } .swot-s h4 { color: #2ecc71; }
+  .swot-w { background: #2a1a1e; border-color: #e74c3c; } .swot-w h4 { color: #e74c3c; }
+  .swot-o { background: #16232c; border-color: #3498db; } .swot-o h4 { color: #5dade2; }
+  .swot-t { background: #221a2c; border-color: #9b59b6; } .swot-t h4 { color: #c39bd3; }
+
+  .bottom-line {
+    background: #252525;
+    border: 1px solid #3498db;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+  .bottom-line .label { color: #5dade2; font-weight: bold; text-transform: uppercase; font-size: 0.8em; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .bottom-line p { margin: 0; color: #e0e0e0; }
+
+  footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8em;
+    color: #8a97a0;
+  }
+  footer b { color: #aab7b8; }
+  footer ul { padding-left: 18px; }
+  footer li { margin-bottom: 4px; }
+
+  @media (max-width: 900px) {
+    .analysis-block { grid-template-columns: 1fr; }
+    .inst-grid { grid-template-columns: 1fr; }
+    .swot-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Text-to-Speech ---------- */
+  .tts-bar {
+    position: sticky;
+    top: 12px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 8px 10px 8px 18px;
+    margin: 0 auto 30px;
+    max-width: 640px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  }
+  .tts-bar .tts-label { font-size: 0.82em; color: #aab7b8; white-space: nowrap; }
+  .tts-btn {
+    background: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-size: 0.82em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .tts-btn:hover { background: #383838; }
+  .tts-btn.primary { background: #3498db; border-color: #3498db; color: #fff; font-weight: 600; }
+  .tts-btn.primary:hover { background: #2f89c4; }
+  .tts-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .tts-speed {
+    display: flex; align-items: center; gap: 6px; font-size: 0.78em; color: #8a97a0;
+  }
+  .tts-speed input[type=range] { width: 70px; accent-color: #3498db; }
+  .tts-status { font-size: 0.78em; color: #6fbf73; min-width: 90px; }
+
+  .section-listen {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid #444;
+    color: #aab7b8;
+    border-radius: 16px;
+    padding: 5px 12px;
+    font-size: 0.75em;
+    cursor: pointer;
+    margin-left: 12px;
+    vertical-align: middle;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .section-listen:hover { border-color: #5dade2; color: #5dade2; }
+  .section-listen.speaking { border-color: #2ecc71; color: #2ecc71; }
+  h2 .kicker + .section-listen { margin-left: 0; }
+
+  /* ---------- Icons & visual accents (hand-drawn SVG, no external images) ---------- */
+  .icon { display: inline-block; vertical-align: middle; fill: none; stroke: currentColor; }
+  h2 .h2-icon { width: 30px; height: 30px; margin-right: 10px; stroke-width: 1.4; vertical-align: -7px; }
+  #sector-it h2 .h2-icon { color: #5dade2; }
+  #sector-auto h2 .h2-icon { color: #f1c40f; }
+
+  .metric-card h4 .icon { width: 15px; height: 15px; stroke-width: 1.8; color: #5dade2; }
+  .metric-card.risk h4 .icon { color: #9b59b6; }
+
+  .hero-strip {
+    display: flex; justify-content: center; gap: 40px; margin: 0 0 28px;
+    color: #3f4b56; flex-wrap: wrap;
+  }
+  .hero-strip .hero-icon { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .hero-strip .hero-icon .icon { width: 38px; height: 38px; stroke-width: 1.2; }
+  .hero-strip .hero-icon span { font-size: 0.68em; color: #6b7680; text-transform: uppercase; letter-spacing: 0.5px; }
+  .hero-strip .hero-icon.it-c .icon { color: #5dade2; }
+  .hero-strip .hero-icon.auto-c .icon { color: #f1c40f; }
+
+  .chain-box { display: flex; gap: 12px; align-items: flex-start; }
+  .chain-box .icon-wrap {
+    flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.04);
+  }
+  .chain-box .icon-wrap .icon { width: 19px; height: 19px; stroke-width: 1.6; color: #8a97a0; }
+  .chain-box.glow .icon-wrap { background: rgba(241,196,15,0.12); }
+  .chain-box.glow .icon-wrap .icon { color: #f1c40f; }
+  .chain-box .step-text { flex: 1; }
+
+  .concall-card .co-head { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+  .avatar {
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72em; font-weight: bold; color: #fff; letter-spacing: 0.2px;
+  }
+  .avatar.a-tcs { background: linear-gradient(135deg, #3498db, #21618c); }
+  .avatar.a-ps { background: linear-gradient(135deg, #5dade2, #2874a6); }
+  .avatar.a-mm { background: linear-gradient(135deg, #f1c40f, #b7950b); color: #1e1e1e; }
+  .avatar.a-sm { background: linear-gradient(135deg, #e67e22, #a04000); }
+  .concall-card .co-namewrap { display: flex; flex-direction: column; }
+
+  .swot-card h4 { display: flex; align-items: center; gap: 8px; }
+  .swot-card h4 .icon { width: 18px; height: 18px; stroke-width: 1.7; }
+
+  .inst-mini {
+    display: flex; align-items: center; gap: 10px; background: #252525;
+    border-radius: 8px; padding: 12px 16px; margin-top: 14px;
+  }
+  .inst-mini .icon-wrap {
+    width: 30px; height: 30px; border-radius: 50%; background: rgba(46,204,113,0.15);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .inst-mini .icon-wrap .icon { width: 16px; height: 16px; color: #2ecc71; stroke-width: 1.8; }
+  .inst-mini span { font-size: 0.85em; color: #c7c7c7; }
+
+  /* ---------- Headline hook ---------- */
+  .hook-box {
+    background: linear-gradient(135deg, #1c2530, #23272f);
+    border: 1px solid #3498db;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 0 0 30px;
+    text-align: center;
+  }
+  .hook-box .hook-label { color: #5dade2; font-size: 0.72em; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; margin-bottom: 8px; }
+  .hook-box p { margin: 0; font-size: 1.15em; color: #fff; max-width: 780px; margin: 0 auto; }
+  .hook-box p b { color: #f1c40f; }
+
+  /* ---------- Scorecard comparison ---------- */
+  .scorecard {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 30px;
+  }
+  .scorecard-title { font-size: 0.78em; text-transform: uppercase; letter-spacing: 0.8px; color: #8a97a0; margin-bottom: 16px; }
+  .score-row { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .score-row:last-child { margin-bottom: 0; }
+  .score-row .score-name { width: 190px; flex-shrink: 0; font-size: 0.9em; color: #e0e0e0; display: flex; align-items: center; gap: 8px; }
+  .score-row .score-name .icon { width: 16px; height: 16px; stroke-width: 1.8; }
+  .score-track { flex: 1; height: 10px; background: #2a2a2a; border-radius: 6px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 6px; }
+  .score-row .score-num { width: 46px; text-align: right; font-weight: bold; color: #fff; font-size: 0.92em; }
+
+  /* ---------- Accountability / "did the street get it right" ---------- */
+  .accountability {
+    background: #1a1f16;
+    border: 1px solid #f1c40f;
+    border-radius: 10px;
+    padding: 24px 26px;
+    margin-bottom: 40px;
+  }
+  .accountability .acc-title { color: #f1c40f; font-weight: bold; font-size: 0.98em; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+  .accountability .acc-title .icon { width: 20px; height: 20px; stroke-width: 1.6; }
+  .accountability .acc-sub { color: #b8c1c8; font-size: 0.86em; margin-bottom: 16px; }
+  .verdict-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.72em;
+    font-weight: bold; text-transform: uppercase; letter-spacing: 0.4px;
+  }
+  .verdict-beat { background: rgba(46,204,113,0.18); color: #2ecc71; }
+  .verdict-inline { background: rgba(93,173,226,0.18); color: #5dade2; }
+  .verdict-miss { background: rgba(231,76,60,0.18); color: #e74c3c; }
+
+  /* ---------- Spotlight (rotating third sector) ---------- */
+  .spotlight-badge {
+    display: inline-flex; align-items: center; gap: 6px; background: rgba(230,126,34,0.15);
+    color: #e67e22; border: 1px solid #e67e22; border-radius: 14px; padding: 4px 12px;
+    font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.5px; font-weight: bold; margin-bottom: 8px;
+  }
+  .spotlight-badge .icon { width: 12px; height: 12px; stroke-width: 2; }
+  #sector-banking h2 { color: #e67e22; }
+  #sector-banking h2 .h2-icon { color: #e67e22; }
+  #sector-banking .metric-card { border-left-color: #e67e22; }
+  #sector-banking .metric-card.risk { border-left-color: #9b59b6; }
+  #sector-banking .chain-box.glow { border-color: #e67e22; background: #2a2116; }
+  #sector-banking .chain-box.glow .icon-wrap { background: rgba(230,126,34,0.15); }
+  #sector-banking .chain-box.glow .icon-wrap .icon { color: #e67e22; }
+  #sector-banking .concall-card { border-left-color: #e67e22; }
+  #sector-banking .bottom-line { border-color: #e67e22; }
+  #sector-banking .bottom-line .label { color: #e67e22; }
+  .avatar.a-hdfc { background: linear-gradient(135deg, #e67e22, #a04000); }
+  .avatar.a-icici { background: linear-gradient(135deg, #f39c12, #b9770e); color: #1e1e1e; }
+
+  .rotation-note {
+    background: #1e1e1e; border: 1px dashed #444; border-radius: 8px;
+    padding: 16px 20px; font-size: 0.85em; color: #aab7b8; margin: 40px 0 10px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .rotation-note .icon { width: 20px; height: 20px; color: #8a97a0; flex-shrink: 0; margin-top: 2px; }
+</style>
+</head>
+<body>
+<!-- Hand-drawn SVG icon set — no external images, loads instantly, matches theme colors -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><line x1="9" y1="2" x2="9" y2="6"/><line x1="15" y1="2" x2="15" y2="6"/><line x1="9" y1="18" x2="9" y2="22"/><line x1="15" y1="18" x2="15" y2="22"/><line x1="2" y1="9" x2="6" y2="9"/><line x1="2" y1="15" x2="6" y2="15"/><line x1="18" y1="9" x2="22" y2="9"/><line x1="18" y1="15" x2="22" y2="15"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="5" rx="1.5"/><circle cx="7" cy="18.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="17" cy="18.5" r="1.5" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-7.97A5.5 5.5 0 0 0 7.1 9.02 4 4 0 0 0 7 18z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/><polyline points="9 12 11 14 15 10"/></symbol>
+  <symbol id="i-chart-up" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 14 21 5"/><polyline points="15 5 21 5 21 11"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 7V3M15 7V3M7 7h10v3a5 5 0 0 1-10 0V7z"/><line x1="12" y1="15" x2="12" y2="21"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="9" y1="8" x2="9" y2="16"/><line x1="8" y1="9" x2="14" y2="9"/><line x1="8" y1="12" x2="13" y2="12"/><line x1="9" y1="16" x2="14" y2="16"/></symbol>
+  <symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 3l10 18H2L12 3z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 2a6 6 0 0 0-3.5 10.9c.7.5 1 1.3 1 2.1h5c0-.8.3-1.6 1-2.1A6 6 0 0 0 12 2z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="13"/><circle cx="12" cy="16.5" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><polygon points="12 2 22 8 2 8"/><line x1="4" y1="8" x2="4" y2="19"/><line x1="9" y1="8" x2="9" y2="19"/><line x1="15" y1="8" x2="15" y2="19"/><line x1="20" y1="8" x2="20" y2="19"/><line x1="2" y1="19" x2="22" y2="19"/><line x1="2" y1="22" x2="22" y2="22"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15.5-6.4M21 12a9 9 0 0 1-15.5 6.4"/><polyline points="18 2 18.5 6.4 14 6"/><polyline points="6 22 5.5 17.6 10 18"/></symbol>
+</svg>
+
+<div class="container">
+
+  <h1>Q2 Sector Investment Analysis</h1>
+  <div class="hero-strip">
+    <div class="hero-icon it-c"><svg class="icon"><use href="#i-chip"/></svg><span>IT Services</span></div>
+    <div class="hero-icon it-c"><svg class="icon"><use href="#i-cloud"/></svg><span>Cloud &amp; AI</span></div>
+    <div class="hero-icon auto-c"><svg class="icon"><use href="#i-car"/></svg><span>Automobiles</span></div>
+    <div class="hero-icon auto-c"><svg class="icon"><use href="#i-plug"/></svg><span>EV Components</span></div>
+    <div class="hero-icon" style="color:#e67e22"><svg class="icon"><use href="#i-bank"/></svg><span>Banking (Spotlight)</span></div>
+  </div>
+  <p class="subtitle">A plain-English look at two of India's most-watched sectors — IT Services and Automobiles — using each company's latest quarterly results and where big investors are putting their money.</p>
+  <div class="meta-bar">
+    <span>📅 Covers results for Apr–Jun 2026 (reported Jul–Aug 2026)</span>
+    <span>📊 Money-flow data as of 27 Aug 2026</span>
+  </div>
+  <div class="disclaimer">
+    <strong>Please read:</strong> This is a simplified explainer, not investment advice. "Scores" and "risk-reward" ratios below are just one way of summarising public information — they are not a promise of returns. Prices and news move fast, so please check the latest numbers and talk to a licensed financial adviser before you invest.
+  </div>
+
+  <div class="hook-box">
+    <div class="hook-label">This quarter's real story</div>
+    <p>An <b>auto-parts maker's profit grew 77%</b> while <b>IT's biggest company's real growth slowed to 0.4%</b> — this quarter, hardware quietly out-ran software. Here's the full picture across three sectors.</p>
+  </div>
+
+  <div class="scorecard">
+    <div class="scorecard-title">Sector Scorecard — At a Glance</div>
+    <div class="score-row">
+      <div class="score-name"><svg class="icon" style="color:#5dade2"><use href="#i-chip"/></svg>IT Services</div>
+      <div class="score-track"><div class="score-fill" style="width:72%; background:#5dade2;"></div></div>
+      <div class="score-num">7.2/10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-name"><svg class="icon" style="color:#f1c40f"><use href="#i-car"/></svg>Automobile</div>
+      <div class="score-track"><div class="score-fill" style="width:81%; background:#f1c40f;"></div></div>
+      <div class="score-num">8.1/10</div>
+    </div>
+    <div class="score-row">
+      <div class="score-name"><svg class="icon" style="color:#e67e22"><use href="#i-bank"/></svg>Banking (Spotlight)</div>
+      <div class="score-track"><div class="score-fill" style="width:76%; background:#e67e22;"></div></div>
+      <div class="score-num">7.6/10</div>
+    </div>
+  </div>
+
+  <div class="accountability">
+    <div class="acc-title"><svg class="icon"><use href="#i-target"/></svg>Did the Street Get It Right? (Estimates vs Actuals)</div>
+    <div class="acc-sub">Before every company reports, brokerages publish their guesses. Here's how those guesses stacked up against what actually got reported this quarter — the closest thing to an honest scoreboard for how predictable this earnings season really was.</div>
+    <table class="data-table">
+      <tr><th>Company</th><th>What Analysts Expected</th><th>What Actually Happened</th><th>Verdict</th></tr>
+      <tr>
+        <td><strong>Mahindra &amp; Mahindra</strong></td>
+        <td>Standalone profit near ₹3,600 crore</td>
+        <td>Standalone profit came in at ₹3,685 crore (+7% YoY); group-wide profit was far higher at ₹5,455 crore (+33.6%)</td>
+        <td><span class="verdict-badge verdict-beat">Beat</span></td>
+      </tr>
+      <tr>
+        <td><strong>Samvardhana Motherson</strong></td>
+        <td>Revenue ₹34,415 crore (+13.9% YoY); margin ~8.7%</td>
+        <td>Revenue came in higher at ₹35,244 crore (+16.65% YoY), with margins improving further</td>
+        <td><span class="verdict-badge verdict-beat">Beat</span></td>
+      </tr>
+      <tr>
+        <td><strong>ICICI Bank</strong></td>
+        <td>Continued steady profit growth, in line with recent quarters</td>
+        <td>Profit jumped 16% YoY to ₹14,804 crore — one of its best quarters in years</td>
+        <td><span class="verdict-badge verdict-beat">Beat</span></td>
+      </tr>
+      <tr>
+        <td><strong>HDFC Bank</strong></td>
+        <td>Modest, single-digit profit growth given a tough comparison last year</td>
+        <td>Profit grew 5% to ₹19,060 crore as expected, but the profit margin (NIM) slipped to its lowest-ever level</td>
+        <td><span class="verdict-badge verdict-inline">In Line</span></td>
+      </tr>
+    </table>
+    <p style="font-size:0.8em; color:#8a97a0; margin-top:10px;">Note: some figures compare standalone vs consolidated numbers and pre-results brokerage estimates that varied by source — treat this as a directional "beat vs miss" read, not a precise scorecard.</p>
+  </div>
+
+  <div class="tts-bar" id="ttsBar">
+    <span class="tts-label">🔊 Listen:</span>
+    <button class="tts-btn primary" id="ttsPlayBtn" onclick="ttsPlayWhole()">Read whole report</button>
+    <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPauseResume()" disabled>Pause</button>
+    <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" disabled>Stop</button>
+    <div class="tts-speed">
+      Speed
+      <input type="range" id="ttsSpeed" min="0.75" max="1.5" step="0.25" value="1">
+      <span id="ttsSpeedLabel">1x</span>
+    </div>
+    <select id="ttsVoice" class="tts-btn" style="max-width:220px;"></select>
+    <span class="tts-status" id="ttsStatus"></span>
+  </div>
+
+  <!-- ==============================================
+       SECTOR 1: IT SERVICES
+  ================================================ -->
+  <section class="sector-section" id="sector-it">
+    <h2><svg class="icon h2-icon"><use href="#i-chip"/></svg><span class="kicker">Sector 1</span>Information Technology (IT Services)
+      <button class="section-listen" onclick="ttsPlaySection('sector-it', this)">🔊 Listen</button>
+    </h2>
+    <p class="lede">In simple terms: Indian IT companies write software and run computer systems for big global businesses. In early 2026, investors got scared that AI would do this work instead of humans — IT stocks crashed hard. Then, in the last two months, that fear cooled off and money started flowing back in.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <h4><svg class="icon"><use href="#i-chart-up"/></svg>Investment Score</h4>
+        <div class="metric-value">7.2 <span style="font-size: 0.5em; color: #aab7b8;">/ 10</span></div>
+        <div class="metric-note">Better than a few months ago, but not back to its best</div>
+      </div>
+      <div class="metric-card risk">
+        <h4><svg class="icon"><use href="#i-shield"/></svg>Risk-Reward Ratio
+          <span class="info-dot">?<span class="tip"><b>In plain words:</b> this compares "how much you could lose" against "how much you could gain" if things go well. A ratio of 1 : 2.1 means analysts think you could potentially gain about ₹2.10 for every ₹1 you risk — based on their guesses about best- and worst-case scenarios. It's an educated estimate, not a guarantee.</span></span>
+        </h4>
+        <div class="metric-value">1 : 2.1</div>
+        <div class="metric-note">The potential upside looks bigger than the potential downside right now</div>
+      </div>
+      <div class="metric-card">
+        <h4><svg class="icon"><use href="#i-cloud"/></svg>How the sector moved in 2026</h4>
+        <div class="metric-value" style="font-size:1.4em;">Fell 25% <span style="color:#8a97a0;">then</span> Rose 17%</div>
+        <div class="metric-note">Crashed on AI fears (Feb–Jun), then bounced back (July)</div>
+      </div>
+    </div>
+
+    <div class="takeaway">
+      <div class="label">Quick takeaway</div>
+      <p>IT stocks got very cheap because everyone worried AI would replace human coders. That fear hasn't disappeared, but it's cooled down — big foreign investors who were selling all year started buying again in July and August. The safer, well-known companies (like TCS) are growing slowly but steadily. The smaller, more specialised companies (like Persistent Systems) are growing much faster, but are riskier.</p>
+    </div>
+
+    <div class="analysis-block">
+      <div class="card value-chain">
+        <h3>Who Makes Money, and Why (Value Chain)</h3>
+        <ul>
+          <li><strong>What's driving demand:</strong> Big global companies are paying to move their systems to the cloud, clean up old outdated software, and — increasingly — safely add AI tools into their business. That last part is new money that didn't exist a few years ago.</li>
+          <li><strong>Who benefits:</strong> Companies that used to just "keep the lights on" for old software are shifting toward higher-value work — building new products and cybersecurity — which pays better.</li>
+        </ul>
+      </div>
+      <div class="card institutional">
+        <h3>Where the Big Money Is Going</h3>
+        <ul>
+          <li><strong>Foreign investors (FIIs):</strong> Were selling Indian IT stocks for most of 2026 on AI-fear, but recently reversed and started buying again, betting the sell-off had gone too far.</li>
+          <li><strong>Company management:</strong> Wipro is spending ₹15,000 crore of its own cash to buy back its own shares — a strong signal that the people running the company think the stock is undervalued.</li>
+          <li><strong>A real risk to watch:</strong> The US government has proposed a steep $100,000 fee on H-1B work visas, making it costlier for Indian firms to send staff onsite to the US.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>How the Money Actually Flows (Step by Step)</h3>
+    <div class="chain-flow">
+      <div class="chain-box"><div class="icon-wrap"><svg class="icon"><use href="#i-globe"/></svg></div><div class="step-text"><div class="step-label">Step 1</div><div class="step-name">Global companies need help</div><div class="step-desc">They want cheaper IT, cloud systems, and safe ways to use AI</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box glow"><div class="icon-wrap"><svg class="icon"><use href="#i-chip"/></svg></div><div class="step-text"><div class="step-label">Step 2</div><div class="step-name">Big Indian IT firms (TCS, Infosys)</div><div class="step-desc">Win large, steady contracts. Slower growth, but very reliable profit</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box glow"><div class="icon-wrap"><svg class="icon"><use href="#i-code"/></svg></div><div class="step-text"><div class="step-label">Step 3</div><div class="step-name">Specialist firms (Persistent)</div><div class="step-desc">Focus on newer, faster-growing work like product engineering</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box"><div class="icon-wrap"><svg class="icon"><use href="#i-chart-up"/></svg></div><div class="step-text"><div class="step-label">Step 4</div><div class="step-name">Profit &amp; Stock Price</div><div class="step-desc">More deals signed today usually means better results 1-2 years later</div></div></div>
+    </div>
+
+    <h3>Which Part of the Sector Looks Strongest Right Now?</h3>
+    <p class="lede">The specialist, faster-growing companies — the ones doing modern "digital engineering" work rather than just maintaining old software — are currently in the best spot. Persistent Systems has grown every single quarter for over six years straight, and just signed its biggest-ever deal book. Meanwhile, giants like TCS are still profitable and stable, but their growth is clearly slowing down.</p>
+
+    <h3>What Company Bosses Actually Said (In Plain Words)</h3>
+    <div class="concall-grid">
+      <div class="concall-card">
+        <div class="co-head">
+          <div class="avatar a-tcs">TCS</div>
+          <div class="co-namewrap"><span class="co-name">TCS</span><span class="co-date">Results out 9 Jul 2026</span></div>
+        </div>
+        <ul>
+          <li>Sales in rupees grew a small 2.2% compared to the previous quarter — but once you remove the effect of currency swings, real underlying growth was almost flat (just 0.4%), and even slower than the quarter before.</li>
+          <li>The company still kept a healthy 24% profit margin (meaning it keeps 24 paise as profit for every ₹1 of sales) — but total profit actually dipped slightly as it started hiring more people again.</li>
+          <li>Management said they're winning new deals in AI, cybersecurity, and cloud computing, and feel good about turning that pipeline into future growth.</li>
+        </ul>
+      </div>
+      <div class="concall-card">
+        <div class="co-head">
+          <div class="avatar a-ps">PS</div>
+          <div class="co-namewrap"><span class="co-name">Persistent Systems</span><span class="co-date">Results out 3 Aug 2026</span></div>
+        </div>
+        <ul>
+          <li>Sales grew a strong 16% compared to a year ago, marking its 25th straight quarter of growth — an unusually consistent streak.</li>
+          <li>Signed its biggest-ever pile of new deals in a single quarter, worth about $1.15 billion, including one huge 6.5-year contract.</li>
+          <li>Announced plans to buy a European company (Nagarro) to grow bigger, faster — an ambitious but not risk-free move.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Top Stock Picks &amp; Why</h3>
+    <table class="data-table">
+      <tr><th>Stock</th><th>Type of Company</th><th>Why It's on the List</th></tr>
+      <tr>
+        <td><strong>TCS</strong></td>
+        <td>Large, stable IT giant</td>
+        <td>The safest, most profitable name in the sector. Growth is slow right now, but it's the most reliable business here — good for someone who prefers steady over exciting.</td>
+      </tr>
+      <tr>
+        <td><strong>Persistent Systems</strong></td>
+        <td>Fast-growing specialist</td>
+        <td>The clear growth leader, with the best momentum and biggest deal wins. Comes with more ups and downs, and some risk from its recent acquisition plan.</td>
+      </tr>
+      <tr>
+        <td><strong>Wipro</strong></td>
+        <td>Large IT company, turning around</td>
+        <td>Growth has lagged its peers, and the stock has fallen sharply. But the company is buying back a large chunk of its own shares — a sign insiders think it's undervalued.</td>
+      </tr>
+    </table>
+
+    <h3>Top Mutual Fund Exposure</h3>
+    <table class="data-table">
+      <tr><th>Fund Name</th><th>Sector Allocation</th><th>What It's Good For</th></tr>
+      <tr>
+        <td>ICICI Prudential Technology Fund</td>
+        <td>~80–85% IT</td>
+        <td>Leans on the big, safer names — a gentler way to get IT sector exposure.</td>
+      </tr>
+      <tr>
+        <td>Tata Digital India Fund</td>
+        <td>~80% IT &amp; Tech</td>
+        <td>Has more money in the smaller, faster-growing specialist companies — higher potential reward, higher ups and downs.</td>
+      </tr>
+    </table>
+
+    <h3>Strengths, Weaknesses, Opportunities, Threats</h3>
+    <div class="swot-grid">
+      <div class="swot-card swot-s"><h4><svg class="icon"><use href="#i-shield"/></svg>Strengths</h4><ul>
+        <li>TCS still keeps a solid 24% profit margin despite slower growth</li>
+        <li>Persistent has grown for 25 quarters in a row without a single dip</li>
+        <li>Wipro's huge ₹15,000 crore buyback shows management confidence</li>
+      </ul></div>
+      <div class="swot-card swot-w"><h4><svg class="icon"><use href="#i-alert"/></svg>Weaknesses</h4><ul>
+        <li>TCS's real (currency-adjusted) growth has slowed to almost zero</li>
+        <li>Big companies' profit dipped slightly even as sales rose</li>
+        <li>Wipro's stock is still down roughly a quarter over the year</li>
+      </ul></div>
+      <div class="swot-card swot-o"><h4><svg class="icon"><use href="#i-bulb"/></svg>Opportunities</h4><ul>
+        <li>Foreign investors are buying again after months of selling</li>
+        <li>New kinds of AI-related work (cybersecurity, cloud) are a fresh source of income</li>
+        <li>Fast-growing companies like Persistent are gaining ground on the giants</li>
+      </ul></div>
+      <div class="swot-card swot-t"><h4><svg class="icon"><use href="#i-warning"/></svg>Threats</h4><ul>
+        <li>Experts think AI could still eat into 9–12% of IT revenue over the next few years</li>
+        <li>The costly US work-visa fee is still legally in effect and adds uncertainty</li>
+        <li>If AI fears come back, the recent rebound in stock prices could reverse quickly</li>
+      </ul></div>
+    </div>
+
+    <div class="bottom-line">
+      <div class="label">Bottom Line</div>
+      <p>The AI scare that crushed IT stocks earlier in 2026 hasn't fully gone away, but it has eased — and money is flowing back into the sector. If you want steady and safe, the big names like TCS make sense. If you're comfortable with more risk for potentially faster growth, specialist firms like Persistent look more exciting right now. Either way, keep an eye on the US visa-fee situation — it's still unresolved.</p>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SECTOR 2: AUTOMOBILE & AUTO ANCILLARIES
+  ================================================ -->
+  <section class="sector-section" id="sector-auto">
+    <h2><svg class="icon h2-icon"><use href="#i-car"/></svg><span class="kicker">Sector 2</span>Automobile &amp; Auto Ancillaries
+      <button class="section-listen" onclick="ttsPlaySection('sector-auto', this)">🔊 Listen</button>
+    </h2>
+    <p class="lede">In simple terms: this sector makes and sells cars, SUVs, tractors, and the parts that go inside them. Late last year, the government cut taxes on vehicles, which made them cheaper to buy — and people responded by buying a lot more, especially SUVs. That buying spree is now clearly showing up in company profits.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <h4><svg class="icon"><use href="#i-chart-up"/></svg>Investment Score</h4>
+        <div class="metric-value">8.1 <span style="font-size: 0.5em; color: #aab7b8;">/ 10</span></div>
+        <div class="metric-note">Strong, backed by real sales growth and real profit growth</div>
+      </div>
+      <div class="metric-card risk">
+        <h4><svg class="icon"><use href="#i-shield"/></svg>Risk-Reward Ratio
+          <span class="info-dot">?<span class="tip"><b>In plain words:</b> the same idea as before — how much upside is on offer versus how much you could lose. A 1 : 2.8 ratio suggests analysts see meaningfully more upside than downside right now, largely because company earnings are actually growing, not just recovering on hope.</span></span>
+        </h4>
+        <div class="metric-value">1 : 2.8</div>
+        <div class="metric-note">One of the stronger ratios right now, thanks to real earnings growth</div>
+      </div>
+      <div class="metric-card">
+        <h4><svg class="icon"><use href="#i-car"/></svg>Small SUV sales growth</h4>
+        <div class="metric-value" style="font-size:1.4em;">+24% <span style="color:#8a97a0; font-size:0.7em;">year-on-year</span></div>
+        <div class="metric-note">After the government's tax cut made these SUVs cheaper</div>
+      </div>
+    </div>
+
+    <div class="takeaway">
+      <div class="label">Quick takeaway</div>
+      <p>The government slashed the tax rate on smaller SUVs from around 29–31% to just 18%, which is a huge, immediate price cut for buyers. People responded fast — SUV sales jumped, and it's already showing up as strong profit growth for car makers and their parts suppliers. Unlike IT, this isn't a "hope" story — the sales and profit numbers are already real.</p>
+    </div>
+
+    <div class="analysis-block">
+      <div class="card value-chain">
+        <h3>Who Makes Money, and Why (Value Chain)</h3>
+        <ul>
+          <li><strong>What's driving demand:</strong> Indians are increasingly choosing bigger, more feature-rich SUVs over basic small cars — and now those SUVs cost noticeably less thanks to the tax cut. Electric vehicles (EVs) are also slowly gaining ground.</li>
+          <li><strong>Who benefits:</strong> Not just the car makers — every EV sold needs far more wiring, sensors, and electronics than a petrol car, so parts suppliers benefit even more from the shift to EVs.</li>
+        </ul>
+      </div>
+      <div class="card institutional">
+        <h3>Where the Big Money Is Going</h3>
+        <ul>
+          <li><strong>Foreign investors (FIIs):</strong> Poured about ₹4,400 crore into auto stocks in just the first two weeks of August — one of the largest sector inflows in the market.</li>
+          <li><strong>Company management:</strong> Auto parts giant Motherson has cut its debt to its lowest-ever level, even while spending heavily on growth and buying other companies — a sign of financial confidence.</li>
+          <li><strong>What could slow things down:</strong> Raw material costs (steel, copper, rubber) are rising, which squeezes profit margins even when sales are growing well.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>How the Money Actually Flows (Step by Step)</h3>
+    <div class="chain-flow">
+      <div class="chain-box"><div class="icon-wrap"><svg class="icon"><use href="#i-coin"/></svg></div><div class="step-text"><div class="step-label">Step 1</div><div class="step-name">Government cuts vehicle tax</div><div class="step-desc">SUVs and small cars become meaningfully cheaper overnight</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box glow"><div class="icon-wrap"><svg class="icon"><use href="#i-car"/></svg></div><div class="step-text"><div class="step-label">Step 2</div><div class="step-name">Car makers (Mahindra, Maruti)</div><div class="step-desc">Sell more SUVs and tractors; market share and profits rise</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box glow"><div class="icon-wrap"><svg class="icon"><use href="#i-plug"/></svg></div><div class="step-text"><div class="step-label">Step 3</div><div class="step-name">Parts makers (Motherson)</div><div class="step-desc">Supply wiring, sensors and parts — EVs need much more of these per vehicle</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box"><div class="icon-wrap"><svg class="icon"><use href="#i-chart-up"/></svg></div><div class="step-text"><div class="step-label">Step 4</div><div class="step-name">Profit &amp; Stock Price</div><div class="step-desc">Rising costs of steel/copper are the main thing to watch going forward</div></div></div>
+    </div>
+
+    <h3>Which Part of the Sector Looks Strongest Right Now?</h3>
+    <p class="lede">SUVs, and the parts that go into them, are clearly the strongest spot. Mahindra now sells more SUVs, as a share of the market, than almost anyone else, and is racing to build more factories to keep up with demand. On the parts side, the wiring business at Motherson (used more heavily in EVs) is growing roughly twice as fast as the rest of the company. Tractors are doing fine too, but that business depends heavily on how good the monsoon rains are each year.</p>
+
+    <h3>What Company Bosses Actually Said (In Plain Words)</h3>
+    <div class="concall-grid">
+      <div class="concall-card">
+        <div class="co-head">
+          <div class="avatar a-mm">M&amp;M</div>
+          <div class="co-namewrap"><span class="co-name">Mahindra &amp; Mahindra</span><span class="co-date">Results out 30 Jul 2026</span></div>
+        </div>
+        <ul>
+          <li>Profit jumped nearly 34% compared to a year ago, and sales grew almost 27% — a very strong quarter, even though profit margins came down slightly because raw materials got more expensive.</li>
+          <li>The company now holds a record 25% share of the SUV market, and its tractor business hit an all-time-high market share too.</li>
+          <li>Management plans to keep building new factories to make even more SUVs, but warned that rising steel and rubber costs could pressure profits later this year.</li>
+        </ul>
+      </div>
+      <div class="concall-card">
+        <div class="co-head">
+          <div class="avatar a-sm">SM</div>
+          <div class="co-namewrap"><span class="co-name">Samvardhana Motherson</span><span class="co-date">Results out 6 Aug 2026</span></div>
+        </div>
+        <ul>
+          <li>This parts-maker posted its highest-ever quarterly sales, up nearly 17%, and profit shot up an impressive 77% compared to last year.</li>
+          <li>Its wiring business — which benefits the most as more EVs are sold — grew 31%, almost double the company's overall growth rate.</li>
+          <li>Despite spending heavily and buying two other companies, its debt levels are now at an all-time low — a sign of a very healthy balance sheet.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Top Stock Picks &amp; Why</h3>
+    <table class="data-table">
+      <tr><th>Stock</th><th>Type of Company</th><th>Why It's on the List</th></tr>
+      <tr>
+        <td><strong>Mahindra &amp; Mahindra (M&amp;M)</strong></td>
+        <td>Car &amp; tractor maker</td>
+        <td>Market leader in SUVs and tractors, with strong sales momentum and factories being built to meet demand. Watch for rising raw-material costs squeezing profit.</td>
+      </tr>
+      <tr>
+        <td><strong>Samvardhana Motherson</strong></td>
+        <td>Auto parts supplier</td>
+        <td>Best positioned to benefit as more EVs hit Indian and global roads, thanks to its wiring and electronics business. Also has a very healthy, low-debt balance sheet.</td>
+      </tr>
+    </table>
+
+    <h3>Top Mutual Fund Exposure</h3>
+    <table class="data-table">
+      <tr><th>Fund Name</th><th>Sector Allocation</th><th>What It's Good For</th></tr>
+      <tr>
+        <td>UTI Transportation &amp; Logistics Fund</td>
+        <td>~90% Auto/Logistics</td>
+        <td>The most direct, focused way to bet on the entire auto boom — car makers, parts suppliers and logistics companies together.</td>
+      </tr>
+      <tr>
+        <td>Nippon India Consumption Fund</td>
+        <td>~25% Auto &amp; Discretionary</td>
+        <td>A gentler option — mixes auto exposure with other consumer spending sectors, so it's less of a pure bet on cars alone.</td>
+      </tr>
+    </table>
+
+    <h3>Strengths, Weaknesses, Opportunities, Threats</h3>
+    <div class="swot-grid">
+      <div class="swot-card swot-s"><h4><svg class="icon"><use href="#i-shield"/></svg>Strengths</h4><ul>
+        <li>Real profit growth already happening: +34% at M&amp;M, +77% at Motherson</li>
+        <li>M&amp;M holds record market share in both SUVs and tractors</li>
+        <li>Motherson's debt is at an all-time low despite heavy spending</li>
+      </ul></div>
+      <div class="swot-card swot-w"><h4><svg class="icon"><use href="#i-alert"/></svg>Weaknesses</h4><ul>
+        <li>M&amp;M's profit margins slipped slightly due to costlier raw materials</li>
+        <li>Rising steel, copper and rubber prices are a real, ongoing cost pressure</li>
+        <li>This year's sales will be compared against last year's unusually strong numbers, making growth look smaller</li>
+      </ul></div>
+      <div class="swot-card swot-o"><h4><svg class="icon"><use href="#i-bulb"/></svg>Opportunities</h4><ul>
+        <li>Analysts think the tax cut could still lift industry sales by 10–15% overall</li>
+        <li>More EVs on the road means more wiring and parts business for suppliers</li>
+        <li>Motherson's strong balance sheet gives it room to grow further through acquisitions</li>
+      </ul></div>
+      <div class="swot-card swot-t"><h4><svg class="icon"><use href="#i-warning"/></svg>Threats</h4><ul>
+        <li>Tractor sales depend heavily on how good the monsoon rains are each year</li>
+        <li>Rising material costs can eat into profit even when sales are strong</li>
+        <li>Sales growth is expected to slow down from last year's unusually high pace</li>
+      </ul></div>
+    </div>
+
+    <div class="bottom-line">
+      <div class="label">Bottom Line</div>
+      <p>This is the more straightforward, "show me the money" story of the two sectors — a tax cut made vehicles cheaper, people bought more of them, and profits have already grown to prove it. The main thing to watch isn't whether people will keep buying — it's whether rising raw material costs eat into how much profit companies actually keep.</p>
+    </div>
+  </section>
+
+  <div class="rotation-note">
+    <svg class="icon"><use href="#i-refresh"/></svg>
+    <div><strong style="color:#c7c7c7;">Why Banking, and why now:</strong> IT and Auto are the two fixed "anchor" sectors in this report. The third slot rotates every quarter to whichever sector has the freshest, most relevant story — this quarter, that's Banking, since India's private banks just reported one of their steadiest quarters in a while, and foreign investors piled into financial stocks harder than almost anywhere else. Next quarter this slot might shift to Pharma, Energy, or FMCG depending on what's actually happening.</div>
+  </div>
+
+  <!-- ==============================================
+       SECTOR 3 (ROTATING SPOTLIGHT): BANKING & FINANCIAL SERVICES
+  ================================================ -->
+  <section class="sector-section" id="sector-banking">
+    <span class="spotlight-badge"><svg class="icon"><use href="#i-refresh"/></svg>Rotating Spotlight</span>
+    <h2><svg class="icon h2-icon"><use href="#i-bank"/></svg><span class="kicker">Sector 3 · Spotlight</span>Banking &amp; Financial Services
+      <button class="section-listen" onclick="ttsPlaySection('sector-banking', this)">🔊 Listen</button>
+    </h2>
+    <p class="lede">In simple terms: banks make money mainly by lending at a higher rate than they borrow at. This quarter, India's biggest private banks posted steady profit growth and cleaner loan books — but the profit margin on lending is quietly getting thinner, especially at the largest bank.</p>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <h4><svg class="icon"><use href="#i-chart-up"/></svg>Investment Score</h4>
+        <div class="metric-value">7.6 <span style="font-size: 0.5em; color: #aab7b8;">/ 10</span></div>
+        <div class="metric-note">Steady and dependable, though not the most exciting growth story</div>
+      </div>
+      <div class="metric-card risk">
+        <h4><svg class="icon"><use href="#i-shield"/></svg>Risk-Reward Ratio
+          <span class="info-dot">?<span class="tip"><b>In plain words:</b> banking usually has a gentler risk-reward ratio than IT or Auto — less dramatic upside, but also less chance of a nasty surprise, because lending is a slower-moving, heavily regulated business. A 1 : 1.8 ratio reflects that "steady, not spectacular" character.</span></span>
+        </h4>
+        <div class="metric-value">1 : 1.8</div>
+        <div class="metric-note">Lower swings than IT or Auto — the trade-off for steadier profits</div>
+      </div>
+      <div class="metric-card">
+        <h4><svg class="icon"><use href="#i-coin"/></svg>Bad loans (Gross NPA)</h4>
+        <div class="metric-value" style="font-size:1.4em;">1.17%–1.38%</div>
+        <div class="metric-note">Near record-low levels at India's top two private banks</div>
+      </div>
+    </div>
+
+    <div class="takeaway">
+      <div class="label">Quick takeaway</div>
+      <p>India's top private banks are lending more and having fewer loans go bad — both good signs. But the "spread" between what banks earn on loans and what they pay on deposits (called the net interest margin, or NIM) is getting squeezed, especially at HDFC Bank, where it just hit its lowest level ever recorded. ICICI Bank is having the better quarter of the two, growing faster with an improving loan book.</p>
+    </div>
+
+    <div class="analysis-block">
+      <div class="card value-chain">
+        <h3>Who Makes Money, and Why (Value Chain)</h3>
+        <ul>
+          <li><strong>What's driving demand:</strong> Businesses and individuals keep borrowing — for homes, vehicles, small businesses, and working capital — and banks earn the gap between the interest they charge and the interest they pay on deposits.</li>
+          <li><strong>Who benefits:</strong> Banks with a larger share of "cheap" deposits (savings and current accounts, not expensive fixed deposits) protect their margins better when funding costs are high — a real edge for the biggest, most trusted banks.</li>
+        </ul>
+      </div>
+      <div class="card institutional">
+        <h3>Where the Big Money Is Going</h3>
+        <ul>
+          <li><strong>Foreign investors (FIIs):</strong> Financial services was the single biggest sector foreign investors bought into in early August — about ₹6,535 crore in just two weeks, more than IT or Auto received in the same window.</li>
+          <li><strong>What's improving:</strong> Provisions (money banks set aside for loans that might go bad) fell sharply at both HDFC Bank and ICICI Bank — a sign of a genuinely healthy lending environment right now.</li>
+          <li><strong>What to watch:</strong> Margins are the real swing factor. If interest rates keep falling, banks' lending margins usually get squeezed further before they stabilise.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>How the Money Actually Flows (Step by Step)</h3>
+    <div class="chain-flow">
+      <div class="chain-box"><div class="icon-wrap"><svg class="icon"><use href="#i-coin"/></svg></div><div class="step-text"><div class="step-label">Step 1</div><div class="step-name">People &amp; businesses deposit money</div><div class="step-desc">Banks pay depositors a modest interest rate for parking their money</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box glow"><div class="icon-wrap"><svg class="icon"><use href="#i-bank"/></svg></div><div class="step-text"><div class="step-label">Step 2</div><div class="step-name">Banks lend it out</div><div class="step-desc">Home loans, business loans, credit cards — all at a higher rate than they pay depositors</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box glow"><div class="icon-wrap"><svg class="icon"><use href="#i-shield"/></svg></div><div class="step-text"><div class="step-label">Step 3</div><div class="step-name">Loan quality matters most</div><div class="step-desc">Fewer bad loans (write-offs) means more of that interest gap turns into real profit</div></div></div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box"><div class="icon-wrap"><svg class="icon"><use href="#i-chart-up"/></svg></div><div class="step-text"><div class="step-label">Step 4</div><div class="step-name">Profit &amp; Stock Price</div><div class="step-desc">The "spread" (NIM) and loan growth together decide how fast profit actually grows</div></div></div>
+    </div>
+
+    <h3>Which Part of the Sector Looks Strongest Right Now?</h3>
+    <p class="lede">ICICI Bank currently looks like the stronger of the two giants — its profit grew more than three times faster than HDFC Bank's this quarter, and its bad-loan ratio kept improving. HDFC Bank is still enormous and reliable, but it's still digesting its huge 2023 merger with its parent company, and that's visibly weighing on its lending margins — its NIM just hit the lowest level it has ever recorded.</p>
+
+    <h3>What Bank Bosses' Numbers Actually Showed (In Plain Words)</h3>
+    <div class="concall-grid">
+      <div class="concall-card">
+        <div class="co-head">
+          <div class="avatar a-hdfc">HDFC</div>
+          <div class="co-namewrap"><span class="co-name">HDFC Bank</span><span class="co-date">Results out 18 Jul 2026</span></div>
+        </div>
+        <ul>
+          <li>Profit grew a modest 5% to ₹19,060 crore, helped by setting aside less money for potential bad loans than the previous quarter.</li>
+          <li>Its lending margin (NIM) narrowed to 3.26% — the lowest it's ever been for this bank — even though its cost of funds didn't rise.</li>
+          <li>Loan growth stayed healthy at over 15%, but a slightly higher share of loans turned bad compared to the previous quarter.</li>
+        </ul>
+      </div>
+      <div class="concall-card">
+        <div class="co-head">
+          <div class="avatar a-icici">ICICI</div>
+          <div class="co-namewrap"><span class="co-name">ICICI Bank</span><span class="co-date">Results out 17 Jul 2026</span></div>
+        </div>
+        <ul>
+          <li>Profit jumped a strong 16% to ₹14,804 crore, with its lending margin holding steady at a healthy 4.4%.</li>
+          <li>Bad loans kept shrinking — its gross bad-loan ratio improved to 1.38% from 1.67% a year ago — while loan growth ran at a fast 19–20%.</li>
+          <li>The amount set aside for bad loans fell by nearly a third compared to a year ago, boosting the bottom line.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Top Stock Picks &amp; Why</h3>
+    <table class="data-table">
+      <tr><th>Stock</th><th>Type of Company</th><th>Why It's on the List</th></tr>
+      <tr>
+        <td><strong>ICICI Bank</strong></td>
+        <td>Large private bank</td>
+        <td>The faster-growing, cleaner-loan-book option of the two giants right now — strong profit growth with margins holding up better than its biggest rival.</td>
+      </tr>
+      <tr>
+        <td><strong>HDFC Bank</strong></td>
+        <td>India's largest private bank</td>
+        <td>Still the biggest and most trusted name in Indian banking, but currently the "steady, not exciting" pick while it works through margin pressure from its 2023 merger.</td>
+      </tr>
+    </table>
+
+    <h3>Top Mutual Fund Exposure</h3>
+    <table class="data-table">
+      <tr><th>Fund Name</th><th>Sector Allocation</th><th>What It's Good For</th></tr>
+      <tr>
+        <td>ICICI Prudential Banking &amp; Financial Services Fund</td>
+        <td>~90%+ Banking &amp; Financials</td>
+        <td>A focused, pure-play way to own India's biggest banks and lenders in one fund.</td>
+      </tr>
+      <tr>
+        <td>SBI Banking &amp; Financial Services Fund</td>
+        <td>~90%+ Banking &amp; Financials</td>
+        <td>Similar pure-play exposure with a slightly different mix across large and mid-sized lenders.</td>
+      </tr>
+    </table>
+
+    <h3>Strengths, Weaknesses, Opportunities, Threats</h3>
+    <div class="swot-grid">
+      <div class="swot-card swot-s"><h4><svg class="icon"><use href="#i-shield"/></svg>Strengths</h4><ul>
+        <li>Bad-loan ratios near record lows at both HDFC Bank (1.17%) and ICICI Bank (1.38%)</li>
+        <li>ICICI Bank profit grew a strong 16% YoY with margins holding steady</li>
+        <li>Money set aside for bad loans fell sharply at both banks, a sign of a healthy credit cycle</li>
+      </ul></div>
+      <div class="swot-card swot-w"><h4><svg class="icon"><use href="#i-alert"/></svg>Weaknesses</h4><ul>
+        <li>HDFC Bank's lending margin (NIM) fell to its lowest-ever level at 3.26%</li>
+        <li>HDFC Bank's profit growth (5%) is far behind ICICI Bank's (16%) this quarter</li>
+        <li>Banking offers less dramatic upside than faster-growing sectors like Auto right now</li>
+      </ul></div>
+      <div class="swot-card swot-o"><h4><svg class="icon"><use href="#i-bulb"/></svg>Opportunities</h4><ul>
+        <li>Foreign investors made Banking their top sector buy in early August, ahead of IT and Auto</li>
+        <li>Falling provisions suggest more profit could flow straight to the bottom line if the trend holds</li>
+        <li>Strong loan growth (15–20%) shows credit demand across the economy remains healthy</li>
+      </ul></div>
+      <div class="swot-card swot-t"><h4><svg class="icon"><use href="#i-warning"/></svg>Threats</h4><ul>
+        <li>If interest rates keep falling, lending margins across the sector could shrink further</li>
+        <li>HDFC Bank still faces lingering effects from digesting its 2023 merger</li>
+        <li>Asset quality, while good now, tends to be the first thing that worsens if the economy slows</li>
+      </ul></div>
+    </div>
+
+    <div class="bottom-line">
+      <div class="label">Bottom Line</div>
+      <p>Banking is this quarter's "quietly excellent" sector — bad loans are near record lows, foreign money is flowing in fastest here, and ICICI Bank in particular is compounding profit at a healthy clip. It won't give you the drama of an SUV sales boom or an AI comeback story, but the numbers behind it are arguably the cleanest of all three sectors this quarter.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>Where this information came from:</b></p>
+    <ul>
+      <li>TCS and Persistent Systems' official quarterly results and earnings calls, Jul–Aug 2026</li>
+      <li>Mahindra &amp; Mahindra and Samvardhana Motherson's official quarterly results and earnings calls, Jul–Aug 2026</li>
+      <li>HDFC Bank and ICICI Bank's official quarterly results, Jul 2026</li>
+      <li>Business news coverage of foreign investor buying/selling activity by sector, Aug 2026</li>
+      <li>Independent research on the government's vehicle tax cut and its impact on car sales</li>
+      <li>News coverage of Wipro's share buyback and the US work-visa fee situation, 2026</li>
+      <li>Pre-results analyst estimate previews used in the "Did the Street Get It Right" section, Jul 2026</li>
+    </ul>
+    <p style="margin-top:16px;">This page summarises publicly available information as of 29 Aug 2026 and may become outdated. It is not investment, legal, or tax advice — please do your own research or speak with a licensed financial adviser before making any investment decisions.</p>
+  </footer>
+
+</div>
+
+<script>
+  // ---------- Text-to-Speech (uses the browser's built-in voice, no external service) ----------
+  const synth = window.speechSynthesis;
+  let currentUtterance = null;
+  let activeSectionBtn = null;
+  let voices = [];
+  let selectedVoice = null;
+  const ttsPlayBtn = document.getElementById('ttsPlayBtn');
+  const ttsPauseBtn = document.getElementById('ttsPauseBtn');
+  const ttsStopBtn = document.getElementById('ttsStopBtn');
+  const ttsStatus = document.getElementById('ttsStatus');
+  const ttsSpeed = document.getElementById('ttsSpeed');
+  const ttsSpeedLabel = document.getElementById('ttsSpeedLabel');
+  const ttsVoiceSelect = document.getElementById('ttsVoice');
+
+  if (!('speechSynthesis' in window)) {
+    document.getElementById('ttsBar').innerHTML =
+      '<span class="tts-label">🔊 Text-to-speech isn\'t supported in this browser.</span>';
+  }
+
+  function looksFemale(name) {
+    const n = name.toLowerCase();
+    return ['heera','neerja','raveena','priya','veena','female','samantha','zira','aria','ravi'].some(k => n.includes(k) && k !== 'ravi')
+      || n.includes('female');
+  }
+
+  function loadVoices() {
+    voices = synth.getVoices();
+    if (!voices.length) return;
+
+    // Rank voices: Indian-English first, then female-sounding names, then everything else
+    const indianEnglish = voices.filter(v => v.lang.toLowerCase() === 'en-in');
+    const otherIndianish = voices.filter(v => v.lang.toLowerCase().startsWith('en') && looksFemale(v.name) && v.lang.toLowerCase() !== 'en-in');
+    const restEnglish = voices.filter(v => v.lang.toLowerCase().startsWith('en') && !indianEnglish.includes(v) && !otherIndianish.includes(v));
+    const others = voices.filter(v => !v.lang.toLowerCase().startsWith('en'));
+    const ordered = [...indianEnglish, ...otherIndianish, ...restEnglish, ...others];
+
+    ttsVoiceSelect.innerHTML = '';
+    ordered.forEach(v => {
+      const opt = document.createElement('option');
+      opt.value = v.name;
+      opt.textContent = `${v.name} (${v.lang})`;
+      ttsVoiceSelect.appendChild(opt);
+    });
+
+    // Auto-pick: prefer an Indian-English voice, ideally one that sounds female
+    const bestIndian = indianEnglish.find(v => looksFemale(v.name)) || indianEnglish[0];
+    selectedVoice = bestIndian || ordered[0] || null;
+    if (selectedVoice) ttsVoiceSelect.value = selectedVoice.name;
+
+    if (bestIndian) {
+      ttsStatus.textContent = `Voice: ${bestIndian.name}`;
+    } else if (indianEnglish.length === 0) {
+      ttsStatus.textContent = 'No Indian English voice found on this device';
+    }
+    setTimeout(() => { if (!synth.speaking) ttsStatus.textContent = ''; }, 3500);
+  }
+
+  synth.onvoiceschanged = loadVoices;
+  loadVoices();
+
+  ttsVoiceSelect.addEventListener('change', () => {
+    selectedVoice = voices.find(v => v.name === ttsVoiceSelect.value) || null;
+  });
+
+  ttsSpeed.addEventListener('input', () => { ttsSpeedLabel.textContent = ttsSpeed.value + 'x'; });
+
+  function cleanText(el) {
+    const clone = el.cloneNode(true);
+    clone.querySelectorAll('button, .tts-bar, script').forEach(n => n.remove());
+    return clone.innerText.replace(/\s+/g, ' ').trim();
+  }
+
+  function setButtonsSpeaking(isSpeaking) {
+    ttsPlayBtn.disabled = isSpeaking;
+    ttsPauseBtn.disabled = !isSpeaking;
+    ttsStopBtn.disabled = !isSpeaking;
+    ttsPauseBtn.textContent = 'Pause';
+  }
+
+  function clearActiveSectionBtn() {
+    if (activeSectionBtn) { activeSectionBtn.classList.remove('speaking'); activeSectionBtn.textContent = '🔊 Listen'; }
+    activeSectionBtn = null;
+  }
+
+  function speak(text, statusText, onEnd) {
+    synth.cancel();
+    currentUtterance = new SpeechSynthesisUtterance(text);
+    currentUtterance.rate = parseFloat(ttsSpeed.value);
+    currentUtterance.pitch = 1.05;
+    if (selectedVoice) {
+      currentUtterance.voice = selectedVoice;
+      currentUtterance.lang = selectedVoice.lang;
+    }
+    currentUtterance.onstart = () => { ttsStatus.textContent = statusText || 'Playing…'; setButtonsSpeaking(true); };
+    currentUtterance.onend = () => { ttsStatus.textContent = ''; setButtonsSpeaking(false); clearActiveSectionBtn(); if (onEnd) onEnd(); };
+    currentUtterance.onerror = () => { ttsStatus.textContent = ''; setButtonsSpeaking(false); clearActiveSectionBtn(); };
+    synth.speak(currentUtterance);
+  }
+
+  function ttsPlayWhole() {
+    clearActiveSectionBtn();
+    const text = cleanText(document.querySelector('.container'));
+    speak(text, 'Playing full report…');
+  }
+
+  function ttsPlaySection(sectionId, btn) {
+    const wasThisSection = activeSectionBtn === btn;
+    synth.cancel();
+    clearActiveSectionBtn();
+    if (wasThisSection) { setButtonsSpeaking(false); ttsStatus.textContent = ''; return; }
+    const el = document.getElementById(sectionId);
+    const text = cleanText(el);
+    activeSectionBtn = btn;
+    btn.classList.add('speaking');
+    btn.textContent = '⏹ Stop';
+    speak(text, 'Playing section…');
+  }
+
+  function ttsPauseResume() {
+    if (synth.speaking && !synth.paused) {
+      synth.pause();
+      ttsPauseBtn.textContent = 'Resume';
+      ttsStatus.textContent = 'Paused';
+    } else if (synth.paused) {
+      synth.resume();
+      ttsPauseBtn.textContent = 'Pause';
+      ttsStatus.textContent = 'Playing…';
+    }
+  }
+
+  function ttsStop() {
+    synth.cancel();
+    setButtonsSpeaking(false);
+    ttsStatus.textContent = '';
+    clearActiveSectionBtn();
+  }
+</script>
+</body>
+</html>

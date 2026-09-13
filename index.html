@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finmet | Simplifying Finance</title>
+    <link rel="icon" type="image/png" href="finmet_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050705;
+            --card: #0c110d;
+            --card-hi: #101710;
+            --border: #16301f;
+            --border-hi: #1f4a2c;
+            --accent: #25D366;
+            --accent-2: #128C7E;
+            --accent-light: #7CF0A6;
+            --text-white: #F8FAFC;
+            --text-muted: #94A3B8;
+            --glow: rgba(37, 211, 102, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body { overflow-x: hidden; max-width: 100%; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 15% -10%, rgba(37,211,102,0.10), transparent 45%),
+                radial-gradient(circle at 90% 10%, rgba(18,140,126,0.08), transparent 40%);
+            color: var(--text-white);
+            line-height: 1.65;
+        }
+
+        h1, h2, h3, .calc-toggle-btn, .tab-btn {
+            font-family: 'Sora', sans-serif;
+        }
+
+        a { color: inherit; }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+
+        /* ================= TOP NAV ================= */
+        .top-nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(5, 7, 5, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.1rem 0;
+        }
+        .top-nav-inner {
+            max-width: 1080px; margin: 0 auto; padding: 0 1.25rem;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
+        }
+        @media (min-width: 900px) {
+            .top-nav-inner { flex-wrap: nowrap; }
+            .nav-actions { align-content: center; justify-content: flex-end; }
+        }
+        .brand-box { display: flex; align-items: center; }
+        .brand-box img { height: 171px; width: auto; display: block; }
+
+        .nav-actions { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+
+        .nav-btn {
+            background: rgba(37, 211, 102, 0.08);
+            color: var(--accent);
+            border: 1px solid rgba(37, 211, 102, 0.28);
+            padding: 0.55rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            position: relative;
+        }
+        .nav-btn .ic { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; flex-shrink: 0; }
+        .nav-btn:hover { background: rgba(37, 211, 102, 0.16); border-color: var(--accent); transform: translateY(-1px); }
+
+        .nav-btn.whatsapp { background: rgba(37, 211, 102, 0.14); border-color: rgba(37, 211, 102, 0.45); }
+        .nav-btn.sector { background: linear-gradient(135deg, rgba(37,211,102,0.22), rgba(18,140,126,0.22)); border-color: rgba(37,211,102,0.5); }
+
+        /* Tap + hover friendly tooltip */
+        .tip {
+            visibility: hidden; opacity: 0; pointer-events: none;
+            position: absolute; top: 120%; right: 0;
+            background: #060a06; color: var(--text-white);
+            padding: 0.7rem 0.9rem; font-size: 0.8rem; font-weight: 400;
+            border-radius: 8px; border: 1px solid var(--accent);
+            width: 230px; text-align: left; z-index: 30;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            transition: opacity 0.15s ease;
+        }
+        .nav-btn:hover .tip, .nav-btn.tip-open .tip { visibility: visible; opacity: 1; pointer-events: auto; }
+
+        .tab-btn { position: relative; }
+        .tab-btn .tab-tip {
+            visibility: hidden; opacity: 0; pointer-events: none;
+            position: absolute; top: 115%; left: 50%; transform: translateX(-50%);
+            background: #060a06; color: var(--text-white);
+            padding: 0.7rem 0.9rem; font-size: 0.8rem; font-weight: 400;
+            border-radius: 8px; border: 1px solid var(--accent);
+            width: 210px; text-align: left; z-index: 30;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            transition: opacity 0.15s ease; white-space: normal;
+        }
+        .tab-btn:hover .tab-tip, .tab-btn.tip-open .tab-tip { visibility: visible; opacity: 1; pointer-events: auto; }
+
+        /* ================= HERO ================= */
+        .hero {
+            padding: 0.2rem 0 0.2rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 2rem;
+            align-items: stretch;
+            max-width: 1080px;
+            margin: 0 auto;
+            min-width: 0;
+        }
+        .hero-text { text-align: left; display: flex; flex-direction: column; justify-content: space-evenly; min-width: 0; }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.3);
+            color: var(--accent); font-size: 0.78rem; font-weight: 600;
+            padding: 0.4rem 0.9rem; border-radius: 20px; margin-bottom: 1.1rem;
+            max-width: 100%; white-space: normal;
+        }
+        .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse-dot 1.6s infinite; }
+        @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+        .hero h1 {
+            font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.14;
+            margin-bottom: 0.9rem;
+        }
+        .hero h1 .grad {
+            background: linear-gradient(120deg, var(--accent-light), var(--accent) 60%, var(--accent-2));
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+        .hero p.sub { color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1.4rem; }
+
+        .hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-2), var(--accent));
+            color: #04140b; font-weight: 700; font-size: 0.9rem;
+            padding: 0.75rem 1.4rem; border-radius: 30px; border: none; cursor: pointer;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: 0 6px 22px rgba(37,211,102,0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,0.5); }
+        .btn-secondary {
+            background: transparent; color: var(--text-white); font-weight: 600; font-size: 0.9rem;
+            padding: 0.75rem 1.3rem; border-radius: 30px; border: 1px solid var(--border-hi); cursor: pointer;
+            display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;
+        }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Compact "money graph" panel — actual growth lines over time, not just end bars */
+        .money-panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem 1.3rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 60px rgba(37,211,102,0.03);
+            min-width: 0;
+        }
+        .money-panel .g-label { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-muted); margin-bottom: 0.6rem; line-height: 1.45; }
+        .mp-legend { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.6rem; }
+        .mp-legend-row {
+            display: flex; align-items: center; justify-content: space-between; gap: 10px;
+            background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+            border-radius: 9px; padding: 0.4rem 0.8rem; transition: border-color 0.2s ease;
+        }
+        .mp-legend-row:hover { border-color: var(--border-hi); }
+        .mp-legend-name { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; color: var(--text-white); white-space: nowrap; }
+        .mp-legend-item .dotline, .mp-legend-name .dotline { width: 16px; height: 4px; border-radius: 2px; flex-shrink: 0; }
+        .mp-legend-roi { font-size: 0.78rem; color: var(--text-muted); text-align: center; flex: 1; }
+        .mp-legend-val { font-size: 1rem; font-weight: 800; font-family: 'Sora', sans-serif; text-align: right; }
+        .money-panel .info-btn { width: 19px; height: 19px; font-size: 11px; margin-left: 2px; flex-shrink: 0; }
+        .money-panel .tooltip-box { width: 220px; font-size: 0.85rem; }
+        .tooltip-box.align-left { left: 0; transform: none; }
+        .tooltip-box.align-right { left: auto; right: 0; transform: none; }
+
+        .money-panel svg.growth-chart { width: 100%; max-width: 100%; height: auto; aspect-ratio: 390 / 165; display: block; overflow: visible; }
+        .gc-line {
+            fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
+            stroke-dasharray: 620; stroke-dashoffset: 620;
+            animation: drawLine 1.8s ease forwards;
+        }
+        .gc-line.fd { stroke: #ff6b6b; animation-delay: 0.1s; }
+        .gc-line.hybrid { stroke: #e8ecef; animation-delay: 0.35s; }
+        .gc-line.equity { stroke: #25D366; animation-delay: 0.6s; }
+        @keyframes drawLine { to { stroke-dashoffset: 0; } }
+
+        .gc-dot { opacity: 0; animation: dotIn 0.4s ease forwards; }
+        .gc-dot.fd { fill: #ff6b6b; animation-delay: 1.6s; }
+        .gc-dot.hybrid { fill: #e8ecef; animation-delay: 1.85s; }
+        .gc-dot.equity { fill: #25D366; filter: drop-shadow(0 0 5px #25D366); animation-delay: 2.1s; }
+        @keyframes dotIn { to { opacity: 1; } }
+
+        .gc-label { font-size: 15px; font-family: 'Sora', sans-serif; font-weight: 700; opacity: 0; animation: dotIn 0.4s ease forwards; }
+        .gc-label.fd { fill: #ff6b6b; animation-delay: 1.7s; }
+        .gc-label.hybrid { fill: #e8ecef; animation-delay: 1.95s; }
+        .gc-label.equity { fill: #25D366; animation-delay: 2.2s; }
+        .gc-grid { stroke: var(--border); stroke-width: 1; }
+        .gc-axis-label { font-size: 11px; fill: var(--text-muted); font-family: 'Inter', sans-serif; }
+
+        @media (max-width: 860px) {
+            .hero { grid-template-columns: 1fr; padding-top: 1.5rem; }
+            .hero-text { text-align: center; }
+            .hero-ctas { justify-content: center; }
+        }
+
+
+        /* ================= MODALS (Investment Options / Knowledge Hub) ================= */
+        .options-modal, .knowledge-modal {
+            display: none;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2.2rem;
+            margin: 0 0 2.2rem;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.55);
+            animation: fadeIn 0.35s ease-in-out;
+        }
+        .options-modal.visible, .knowledge-modal.visible { display: block; }
+
+        .options-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;
+        }
+        .options-header h2 { font-size: 1.3rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+        .options-header h2 .ic { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.6; }
+        .close-modal-btn { background: transparent; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; line-height: 1; }
+        .close-modal-btn:hover { color: var(--text-white); }
+
+        .risk-category-card, .knowledge-card {
+            background: var(--card-hi);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1.2rem;
+            transition: border-color 0.2s ease;
+        }
+        .risk-category-card:hover, .knowledge-card:hover { border-color: var(--border-hi); }
+        .risk-category-card h3, .knowledge-card h3 { font-size: 1.05rem; color: var(--accent); margin-bottom: 0.6rem; }
+        .risk-category-card p, .knowledge-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.9rem; }
+
+        .history-returns-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem;
+            background: var(--bg); padding: 0.9rem; border-radius: 8px;
+            border: 1px solid var(--border); text-align: center;
+        }
+        .history-returns-grid div span { display: block; font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
+        .history-returns-grid div strong { font-size: 0.98rem; color: var(--accent-light); }
+
+        .knowledge-card a {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(37, 211, 102, 0.08); color: var(--accent);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            padding: 0.5rem 1rem; font-size: 0.83rem; font-weight: 600;
+            border-radius: 6px; text-decoration: none; transition: background 0.2s;
+        }
+        .knowledge-card a:hover { background: rgba(37, 211, 102, 0.2); }
+
+        .knowledge-card.featured {
+            border-color: var(--accent); background: linear-gradient(160deg, rgba(37,211,102,0.06), var(--card-hi));
+            box-shadow: 0 0 0 1px rgba(37,211,102,0.15), 0 8px 24px rgba(37,211,102,0.08);
+            position: relative;
+        }
+        .knowledge-card.featured:hover { border-color: var(--accent-light); }
+        .featured-badge {
+            display: inline-flex; align-items: center; gap: 5px; background: rgba(37,211,102,0.15);
+            color: var(--accent-light); border: 1px solid rgba(37,211,102,0.4); border-radius: 12px;
+            padding: 3px 10px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 0.7rem;
+        }
+        .knowledge-card.featured a {
+            background: linear-gradient(135deg, var(--accent-2), var(--accent)); color: #04140b;
+            border: none; font-weight: 700;
+        }
+        .knowledge-card.featured a:hover { background: linear-gradient(135deg, var(--accent), var(--accent-light)); }
+
+        /* ================= SLIDER ================= */
+        .slider-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 0.9rem;
+            margin: 0 0 1.5rem;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+            overflow: hidden;
+        }
+        .slide { display: none; animation: fadeIn 0.6s ease-in-out; text-align: center; }
+        .slide.active { display: block; }
+        .slide img { max-width: 100%; height: auto; max-height: 280px; border-radius: 10px; display: inline-block; object-fit: contain; }
+
+        /* ================= Quote slides (live text, not images) ================= */
+        :root { --quote-cream: #F5EAD3; }
+        .quote-slide {
+            position: relative; padding: 1.6rem 2.2rem 1.2rem 3.2rem; text-align: center;
+        }
+        .quote-mark {
+            position: absolute; top: -0.4rem; left: 0.6rem; font-family: 'Sora', sans-serif;
+            font-size: 5.5rem; font-weight: 800; color: #2a2f28; line-height: 1; user-select: none;
+        }
+        .quote-text {
+            font-family: 'Sora', sans-serif; font-weight: 700;
+            font-size: clamp(1.5rem, 3.4vw, 2.3rem); line-height: 1.35;
+            color: var(--quote-cream); margin: 0 0 1.2rem;
+        }
+        .quote-divider { width: 70px; height: 3px; background: var(--accent); border-radius: 2px; margin: 0 auto 1.1rem; }
+        .quote-name {
+            font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.25rem;
+            letter-spacing: 0.5px; text-transform: uppercase; color: var(--quote-cream); margin-bottom: 0.35rem;
+        }
+        .quote-title { font-size: 0.95rem; color: var(--accent-light); }
+        .quote-title .sep { color: var(--border-hi); margin: 0 8px; }
+
+        @media (max-width: 600px) {
+            .quote-slide { padding: 1.2rem 1rem 0.8rem; }
+            .quote-mark { font-size: 3.8rem; left: 0.2rem; }
+        }
+        .slide-dots { display: flex; justify-content: center; gap: 8px; margin-top: 1.1rem; }
+        .dot { width: 9px; height: 9px; background-color: var(--border-hi); border-radius: 50%; cursor: pointer; transition: all 0.3s; }
+        .dot.active { background-color: var(--accent); width: 22px; border-radius: 6px; box-shadow: 0 0 8px rgba(37,211,102,0.6); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ================= CTA / CALCULATORS ================= */
+        .cta-action-wrap { text-align: center; margin-bottom: 2.2rem; }
+        .calc-toggle-btn {
+            background: linear-gradient(135deg, var(--accent-2), var(--accent));
+            color: #04140b; border: none; padding: 1rem 2.4rem; font-size: 1.05rem; font-weight: 700;
+            border-radius: 30px; cursor: pointer; box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .calc-toggle-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(37,211,102,0.55); }
+
+        .calculators-wrapper {
+            display: none; background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+            padding: 2.2rem; box-shadow: 0 20px 45px rgba(0,0,0,0.5); animation: fadeIn 0.4s ease-in-out;
+        }
+        .calculators-wrapper.visible { display: block; }
+
+        .calc-tabs {
+            display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 1rem; margin-bottom: 1.8rem;
+            border-bottom: 1px solid var(--border);
+            scrollbar-width: thin; scrollbar-color: var(--border-hi) var(--card);
+        }
+        .tab-btn {
+            background: transparent; color: var(--text-muted); border: none;
+            padding: 0.7rem 1.15rem; font-size: 0.92rem; font-weight: 600; border-radius: 8px;
+            cursor: pointer; white-space: nowrap; transition: all 0.2s;
+        }
+        .tab-btn:hover { color: var(--text-white); background: rgba(255,255,255,0.04); }
+        .tab-btn.active { color: var(--accent); background: rgba(37, 211, 102, 0.12); }
+
+        .calc-panel { display: none; }
+        .calc-panel.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+
+        .input-group { margin-bottom: 1.6rem; position: relative; }
+        .input-group label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.7rem; font-size: 0.95rem; font-weight: 500; }
+        .value-display { color: var(--accent-light); font-weight: 700; font-size: 1.05rem; }
+
+        input[type="range"] { width: 100%; accent-color: var(--accent); cursor: pointer; background: var(--bg); height: 6px; border-radius: 3px; outline: none; }
+        input[type="range"]::-webkit-slider-thumb { height: 17px; width: 17px; border-radius: 50%; background: var(--accent); cursor: pointer; box-shadow: 0 0 6px rgba(37,211,102,0.6); }
+
+        .info-btn {
+            background: var(--border); color: var(--accent); border: none; width: 19px; height: 19px;
+            border-radius: 50%; font-size: 11px; font-weight: bold; cursor: pointer;
+            display: inline-flex; align-items: center; justify-content: center; margin-left: 8px; position: relative;
+        }
+        .tooltip-box {
+            visibility: hidden; opacity: 0; pointer-events: none;
+            position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%);
+            background: #060a06; color: var(--text-white); padding: 0.7rem 0.9rem; font-size: 0.82rem;
+            border-radius: 8px; border: 1px solid var(--accent); width: 250px; text-align: left; z-index: 20;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6); transition: opacity 0.15s ease;
+        }
+        .info-btn:hover .tooltip-box, .info-btn.tip-open .tooltip-box { visibility: visible; opacity: 1; pointer-events: auto; }
+
+        .toggle-group { display: flex; gap: 0.9rem; margin-bottom: 1.6rem; background: var(--bg); padding: 0.4rem; border-radius: 8px; border: 1px solid var(--border); }
+        .toggle-btn { flex: 1; padding: 0.7rem; background: transparent; border: none; color: var(--text-muted); border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.92rem; transition: all 0.3s ease; }
+        .toggle-btn.active { background-color: var(--border); color: var(--accent-light); }
+
+        select {
+            width: 100%; padding: 0.7rem; background: var(--bg); color: var(--text-white);
+            border: 1px solid var(--border); border-radius: 6px;
+        }
+
+        .results-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin-top: 2.2rem;
+            border-top: 2px solid var(--border); background: rgba(37, 211, 102, 0.04);
+            padding: 1.4rem; border-radius: 10px;
+        }
+        .result-box h4 { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 0.5rem; }
+        .result-box .big-num { font-size: 1.9rem; font-weight: 800; color: var(--accent-light); font-family: 'Sora', sans-serif; word-break: break-word; }
+
+        /* ================= FOOTER ================= */
+        footer.site-footer {
+            border-top: 1px solid var(--border);
+            margin-top: 3rem; padding: 2.8rem 0 1.6rem;
+        }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent); margin-bottom: 0.9rem; }
+        .footer-col p, .footer-col a { font-size: 0.86rem; color: var(--text-muted); line-height: 1.7; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.55rem; }
+        .footer-col a { text-decoration: none; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-disclaimer {
+            border-top: 1px solid var(--border); padding-top: 1.4rem;
+            font-size: 0.76rem; color: #5f6b63; line-height: 1.7;
+        }
+        .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; font-size: 0.78rem; color: #5f6b63; }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ================= FLOATING WHATSAPP ================= */
+        .float-whatsapp {
+            position: fixed; bottom: 22px; right: 22px; z-index: 200;
+            width: 87px; height: 87px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-2), var(--accent));
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 24px rgba(37,211,102,0.5);
+            text-decoration: none; color: #04140b;
+            animation: floatPulse 2.4s infinite;
+        }
+        .float-whatsapp svg { width: 42px; height: 42px; fill: #04140b; }
+        @keyframes floatPulse {
+            0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
+            50% { box-shadow: 0 8px 32px rgba(37,211,102,0.75); }
+        }
+
+        @media (max-width: 768px) {
+            .brand-box img { height: 90px; }
+            .nav-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; }
+            .nav-btn { justify-content: center; text-align: center; font-size: 0.78rem; padding: 0.6rem 0.5rem; white-space: normal; line-height: 1.25; }
+            .nav-btn .tip { left: 0; right: 0; width: auto; }
+            .calculators-wrapper { padding: 1.5rem; }
+            .options-modal, .knowledge-modal { padding: 1.5rem; }
+            .history-returns-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+            .results-row { grid-template-columns: 1fr; gap: 1rem; }
+            .result-box .big-num { font-size: 1.5rem; }
+            .slider-container { min-height: 220px; }
+            .slide img { max-height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hidden icon sprite -->
+    <svg style="display:none" aria-hidden="true">
+        <symbol id="ic-chart" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 14 21 5"/><polyline points="15 5 21 5 21 11"/></symbol>
+        <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/><polyline points="9 12 11 14 15 10"/></symbol>
+        <symbol id="ic-book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></symbol>
+        <symbol id="ic-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="9" y1="8" x2="9" y2="16"/><line x1="8" y1="9" x2="14" y2="9"/><line x1="8" y1="12" x2="13" y2="12"/><line x1="9" y1="16" x2="14" y2="16"/></symbol>
+        <symbol id="ic-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/><line x1="8" y1="19" x2="16" y2="19"/></symbol>
+        <symbol id="ic-bars" viewBox="0 0 24 24"><line x1="4" y1="20" x2="4" y2="12"/><line x1="10" y1="20" x2="10" y2="7"/><line x1="16" y1="20" x2="16" y2="3"/><line x1="4" y1="20" x2="20" y2="20"/></symbol>
+    </svg>
+
+    <header class="top-nav">
+        <div class="top-nav-inner">
+            <div class="brand-box">
+                <img src="finmet_logo.png" alt="Finmet Logo">
+            </div>
+            <div class="nav-actions">
+                <a href="sector_q2.html" class="nav-btn sector">
+                    <svg class="ic"><use href="#ic-chart"/></svg>
+                    Latest Sector Report
+                    <span class="tip">Our latest sector research, explained simply — for learning, not a buy/sell signal.</span>
+                </a>
+
+                <a href="india_growth_story.html" class="nav-btn sector">
+                    <svg class="ic"><use href="#ic-bars"/></svg>
+                    India's Growth Story
+                    <span class="tip">Which sectors are set to boom over the next 5–10 years, and why — with real numbers.</span>
+                </a>
+                <button class="nav-btn" onclick="toggleInvestmentOptions()">
+                    <svg class="ic"><use href="#ic-coin"/></svg>
+                    Investment Options
+                    <span class="tip">Compare risk levels — FD/RD, hybrid funds, and equities — with historical return ranges for each.</span>
+                </button>
+                <button class="nav-btn" onclick="toggleKnowledgeHub()">
+                    <svg class="ic"><use href="#ic-book"/></svg>
+                    Learning Hub
+                    <span class="tip">Beginner guides on mutual funds, index funds, SIPs, and our own Mutual Fund History deep-dive.</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section class="hero">
+            <div class="hero-text">
+                <div class="eyebrow"><span class="dot"></span>Free community · Simple, jargon-free finance</div>
+                <h1>Understand your money <span class="grad">before you invest it.</span></h1>
+                <p class="sub">Finmet breaks down mutual funds, SIPs, sector trends and risk in plain language — with real calculators and a free community to learn alongside, not confusing jargon or hype.</p>
+                <div class="hero-ctas">
+                    <a href="https://wa.me/917893918311?text=Hi,%20I%20want%20to%20join%20the%20Finmet%20community%20and%20learn%20more!" target="_blank" class="btn-primary">Join Free Community →</a>
+                    <button class="btn-secondary" onclick="revealCalculators()">Try the Calculators ↓</button>
+                </div>
+            </div>
+
+            <div class="money-panel">
+                <div class="g-label">₹10,000/month for 15 years — how the same SIP grows differently:</div>
+
+                <div class="mp-legend">
+                    <div class="mp-legend-row">
+                        <span class="mp-legend-name"><span class="dotline" style="background:#ff6b6b"></span>FD/RD
+                            <button class="info-btn" type="button">?
+                                <span class="tooltip-box align-left"><strong>Fixed / Recurring Deposit</strong><br>Money kept with a bank at a fixed, guaranteed interest rate. Very low risk, lowest growth of the three.</span>
+                            </button>
+                        </span>
+                        <span class="mp-legend-roi">6.0–7.5% p.a.</span>
+                        <span class="mp-legend-val" style="color:#ff6b6b">₹31.2L</span>
+                    </div>
+                    <div class="mp-legend-row">
+                        <span class="mp-legend-name"><span class="dotline" style="background:#e8ecef"></span>Hybrid Fund
+                            <button class="info-btn" type="button">?
+                                <span class="tooltip-box align-left"><strong>What is a Hybrid Fund?</strong><br>Mixes safer debt with equities — a middle ground between an FD and the stock market.</span>
+                            </button>
+                        </span>
+                        <span class="mp-legend-roi">10.0–11.5% p.a.</span>
+                        <span class="mp-legend-val" style="color:#e8ecef">₹44.8L</span>
+                    </div>
+                    <div class="mp-legend-row">
+                        <span class="mp-legend-name"><span class="dotline" style="background:#25D366"></span>Diversified Equity MF
+                            <button class="info-btn" type="button">?
+                                <span class="tooltip-box align-right"><strong>What is a Diversified Equity Fund?</strong><br>Spreads your money across many companies' stocks. Higher long-term growth, more short-term ups and downs.</span>
+                            </button>
+                        </span>
+                        <span class="mp-legend-roi">13.0–15.5% p.a.</span>
+                        <span class="mp-legend-val" style="color:#25D366">₹62.8L</span>
+                    </div>
+                </div>
+
+                <svg class="growth-chart" viewBox="0 0 390 165" preserveAspectRatio="xMidYMid meet">
+                    <line class="gc-grid" x1="10" y1="145" x2="380" y2="145"/>
+                    <line class="gc-grid" x1="10" y1="10" x2="10" y2="145"/>
+                    <text class="gc-axis-label" x="10" y="9">₹65L</text>
+                    <text class="gc-axis-label" x="7" y="149">0</text>
+                    <text class="gc-axis-label" x="355" y="157">Yr 15</text>
+
+                    <polyline class="gc-line fd" points="10,145 84,136.7 158,126.5 232,114.1 306,98.9 380,80.2"/>
+                    <polyline class="gc-line hybrid" points="10,145 84,136.1 158,124.0 232,107.2 306,83.9 380,52.0"/>
+                    <polyline class="gc-line equity" points="10,145 84,135.7 158,121.3 232,99.3 306,65.9 380,14.6"/>
+
+                    <circle class="gc-dot fd" cx="380" cy="80.2" r="4.5"/>
+                    <circle class="gc-dot hybrid" cx="380" cy="52.0" r="4.5"/>
+                    <circle class="gc-dot equity" cx="380" cy="14.6" r="5"/>
+
+                    <text class="gc-label fd" x="315" y="76">₹31.2L</text>
+                    <text class="gc-label hybrid" x="315" y="48">₹44.8L</text>
+                    <text class="gc-label equity" x="315" y="12">₹62.8L</text>
+                </svg>
+            </div>
+        </section>
+
+        <div class="slider-container">
+            <div class="slide active" data-duration="6000">
+                <div class="quote-slide">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p class="quote-text">Price is what you pay.<br>Value is what you get.</p>
+                    <div class="quote-divider"></div>
+                    <div class="quote-name">Warren Buffett</div>
+                    <div class="quote-title">Chairman, Berkshire Hathaway<span class="sep">&bull;</span>USA</div>
+                </div>
+            </div>
+            <div class="slide" data-duration="6000">
+                <div class="quote-slide">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p class="quote-text">The intelligent investor is a realist who sells to optimists and buys from pessimists.</p>
+                    <div class="quote-divider"></div>
+                    <div class="quote-name">Benjamin Graham</div>
+                    <div class="quote-title">Author, The Intelligent Investor<span class="sep">&bull;</span>USA</div>
+                </div>
+            </div>
+            <div class="slide" data-duration="6000">
+                <div class="quote-slide">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p class="quote-text">Know what you own,<br>and know why you own it.</p>
+                    <div class="quote-divider"></div>
+                    <div class="quote-name">Peter Lynch</div>
+                    <div class="quote-title">Former Manager, Fidelity Magellan Fund<span class="sep">&bull;</span>USA</div>
+                </div>
+            </div>
+            <div class="slide" data-duration="6000">
+                <div class="quote-slide">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p class="quote-text">You cannot make profits in the stock market unless you have the ability to bear losses.</p>
+                    <div class="quote-divider"></div>
+                    <div class="quote-name">Rakesh Jhunjhunwala</div>
+                    <div class="quote-title">&lsquo;Big Bull of Dalal Street&rsquo;<span class="sep">&bull;</span>India</div>
+                </div>
+            </div>
+            <div class="slide" data-duration="6000">
+                <div class="quote-slide">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p class="quote-text">Buy right, sit tight.</p>
+                    <div class="quote-divider"></div>
+                    <div class="quote-name">Raamdeo Agrawal</div>
+                    <div class="quote-title">Chairman, Motilal Oswal Financial Services<span class="sep">&bull;</span>India</div>
+                </div>
+            </div>
+
+            <div class="slide-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+        <div id="investmentOptionsModal" class="options-modal">
+            <div class="options-header">
+                <h2><svg class="ic"><use href="#ic-coin"/></svg>Asset Class Risk &amp; History Breakdown</h2>
+                <button class="close-modal-btn" onclick="toggleInvestmentOptions()">&times;</button>
+            </div>
+
+            <div class="risk-category-card">
+                <h3>1. No to Low Risk (FD, RD, Debt Funds, Gold, etc.)</h3>
+                <p>Designed for capital preservation and emergency reserves. These instruments provide guaranteed safety or low volatility, backed by secure banking structures or stable sovereign assets. They are built to safeguard principal against market downturns, though they typically offer modest real returns after inflation adjustments over extended cycles.</p>
+                <div class="history-returns-grid">
+                    <div><span>10-Yr Historic Avg</span><strong>6.0% - 7.5%</strong></div>
+                    <div><span>15-Yr Historic Avg</span><strong>6.5% - 7.2%</strong></div>
+                    <div><span>20-Yr Historic Avg</span><strong>7.0% - 7.5%</strong></div>
+                </div>
+            </div>
+
+            <div class="risk-category-card">
+                <h3>2. Low to Moderate Risk (Hybrid Funds, Multi-Asset Allocation)</h3>
+                <p>Engineered for balanced growth by dynamically merging stable debt instruments with equities or commodities. They automatically rebalance asset weights depending on market conditions, cushioning sharp corrections while allowing capital to capture upside movements. Ideal for investors seeking intermediate risk exposure without direct equity shocks.</p>
+                <div class="history-returns-grid">
+                    <div><span>10-Yr Historic Avg</span><strong>10.0% - 11.5%</strong></div>
+                    <div><span>15-Yr Historic Avg</span><strong>10.5% - 12.0%</strong></div>
+                    <div><span>20-Yr Historic Avg</span><strong>11.0% - 12.5%</strong></div>
+                </div>
+            </div>
+
+            <div class="risk-category-card">
+                <h3>3. Moderate to High Risk (Flexi Cap, ETFs, Direct Equities, etc.)</h3>
+                <p>Optimized for aggressive wealth creation over long-term compounding horizons. These allocations dive directly into corporate growth, market indexes, or multi-market cap equities. They experience substantial short-term volatility and swings, but historically outperform inflation and fixed options significantly when given 10+ years of uninterrupted tenure.</p>
+                <div class="history-returns-grid">
+                    <div><span>10-Yr Historic Avg</span><strong>13.0% - 15.5%</strong></div>
+                    <div><span>15-Yr Historic Avg</span><strong>13.5% - 16.0%</strong></div>
+                    <div><span>20-Yr Historic Avg</span><strong>14.0% - 16.5%</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="knowledgeHubModal" class="knowledge-modal">
+            <div class="options-header">
+                <h2><svg class="ic"><use href="#ic-book"/></svg>Finmet Quick Learning Hub</h2>
+                <button class="close-modal-btn" onclick="toggleKnowledgeHub()">&times;</button>
+            </div>
+
+            <div class="knowledge-card featured">
+                <span class="featured-badge">⭐ Finmet Original</span>
+                <h3>Mutual Fund History (20+ Years)</h3>
+                <p>Which Indian mutual funds have actually survived and compounded across every major crash since the 1990s, and which fund houses manage the most money today — in plain language.</p>
+                <a href="mutual_Fund.html">Explore Mutual Fund History &rarr;</a>
+            </div>
+
+            <div class="knowledge-card">
+                <h3>1. What are Mutual Funds? (Beginner Guide)</h3>
+                <p>A simple breakdown of how pooling money works, professional fund management, and why it beats keeping cash idle in a regular savings account.</p>
+                <a href="https://www.investopedia.com/terms/m/mutualfund.asp" target="_blank">Read Guide on Investopedia &rarr;</a>
+            </div>
+
+            <div class="knowledge-card">
+                <h3>2. What are Index Funds?</h3>
+                <p>Learn how passive investing tracks market benchmarks like the Nifty 50 or Sensex with minimal expense ratios and solid long-term returns.</p>
+                <a href="https://www.investopedia.com/terms/i/indexfund.asp" target="_blank">Read Guide on Investopedia &rarr;</a>
+            </div>
+
+            <div class="knowledge-card">
+                <h3>3. Understanding Historical Returns</h3>
+                <p>Why past performance isn't a guarantee of future outcomes, but acts as a critical compass for mapping 10-to-20-year wealth horizons.</p>
+                <a href="https://www.investopedia.com/terms/h/historical-returns.asp" target="_blank">Read Guide on Investopedia &rarr;</a>
+            </div>
+
+            <div class="knowledge-card">
+                <h3>4. SIP vs. Lumpsum: Which is Better?</h3>
+                <p>Understand Rupee Cost Averaging, how systematic investing protects you from market timing, and when to deploy a lumpsum amount.</p>
+                <a href="https://economictimes.indiatimes.com/wealth/invest/sip-vs-lumpsum-which-is-better-investment-strategy-explained/articleshow/98123456.cms" target="_blank">Read Guide on Economic Times &rarr;</a>
+            </div>
+        </div>
+
+        <div class="cta-action-wrap">
+            <button class="calc-toggle-btn" onclick="revealCalculators()">Want to know how? Let's calculate ↓</button>
+        </div>
+
+        <div id="calculatorsWrapper" class="calculators-wrapper">
+            <div class="calc-tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'sipCalc')">SIP</button>
+                <button class="tab-btn" onclick="switchTab(event, 'lumpsumCalc')">Lumpsum</button>
+                <button class="tab-btn" onclick="switchTab(event, 'fdRdCalc')">FD / RD</button>
+                <button class="tab-btn" onclick="switchTab(event, 'mfTypesCalc')">MF Matrix
+                    <span class="tab-tip">Type of mutual funds with their historical returns</span>
+                </button>
+                <button class="tab-btn" onclick="switchTab(event, 'indexCalc')">Index Funds</button>
+            </div>
+
+            <div id="sipCalc" class="calc-panel active">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">Systematic Investment Plan (SIP)</h3>
+
+                <div class="input-group">
+                    <label for="sipMonthly">Monthly Investment: <span id="sipMonthlyVal" class="value-display">₹10,000</span></label>
+                    <input type="range" id="sipMonthly" min="1000" max="100000" step="1000" value="10000" oninput="calcSIP()">
+                </div>
+
+                <div class="input-group">
+                    <label for="sipYears">Investment Horizon: <span id="sipYearsVal" class="value-display">15 Years</span></label>
+                    <input type="range" id="sipYears" min="1" max="30" step="1" value="15" oninput="calcSIP()">
+                </div>
+
+                <div class="input-group">
+                    <label for="sipRate">Expected Return Rate (%): <span id="sipRateVal" class="value-display">12%</span></label>
+                    <input type="range" id="sipRate" min="5" max="25" step="0.5" value="12" oninput="calcSIP()">
+                </div>
+
+                <div class="input-group">
+                    <label>
+                        Annual Step-Up (%):
+                        <button class="info-btn" type="button">?
+                            <span class="tooltip-box"><strong>What is Step-Up?</strong><br>An automatic annual percentage increase in your monthly SIP amount. This matches your career salary hikes, massively accelerating long-term compounding.</span>
+                        </button>
+                        <span id="sipStepVal" class="value-display">10%</span>
+                    </label>
+                    <input type="range" id="sipStep" min="0" max="25" step="5" value="10" oninput="calcSIP()">
+                </div>
+
+                <div class="results-row">
+                    <div class="result-box">
+                        <h4>Total Invested</h4>
+                        <div id="sipInvested" class="big-num">₹0</div>
+                    </div>
+                    <div class="result-box">
+                        <h4>Expected Value</h4>
+                        <div id="sipCorpus" class="big-num">₹0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lumpsumCalc" class="calc-panel">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">One-Shot Lumpsum Investment</h3>
+
+                <div class="input-group">
+                    <label for="lumPrincipal">Total Principal Amount: <span id="lumPrincipalVal" class="value-display">₹1,00,000</span></label>
+                    <input type="range" id="lumPrincipal" min="10000" max="2000000" step="10000" value="100000" oninput="calcLumpsum()">
+                </div>
+
+                <div class="input-group">
+                    <label for="lumYears">Time Period: <span id="lumYearsVal" class="value-display">10 Years</span></label>
+                    <input type="range" id="lumYears" min="1" max="30" step="1" value="10" oninput="calcLumpsum()">
+                </div>
+
+                <div class="input-group">
+                    <label for="lumRate">Expected Annual Return (%): <span id="lumRateVal" class="value-display">12%</span></label>
+                    <input type="range" id="lumRate" min="5" max="25" step="0.5" value="12" oninput="calcLumpsum()">
+                </div>
+
+                <div class="results-row">
+                    <div class="result-box">
+                        <h4>Initial Capital</h4>
+                        <div id="lumInvested" class="big-num">₹0</div>
+                    </div>
+                    <div class="result-box">
+                        <h4>Future Value</h4>
+                        <div id="lumCorpus" class="big-num">₹0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fdRdCalc" class="calc-panel">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">Fixed / Recurring Deposit Guardrail</h3>
+
+                <div class="toggle-group">
+                    <button id="modeFD" class="toggle-btn active" onclick="setFDRDMode('FD')">Fixed Deposit (FD)</button>
+                    <button id="modeRD" class="toggle-btn" onclick="setFDRDMode('RD')">Recurring Deposit (RD)</button>
+                </div>
+
+                <div class="input-group">
+                    <label for="fdAmount"><span id="amountLabel">Total Deposit Amount</span>: <span id="fdAmountVal" class="value-display">₹2,00,000</span></label>
+                    <input type="range" id="fdAmount" min="10000" max="2000000" step="10000" value="200000" oninput="calcFDRD()">
+                </div>
+
+                <div class="input-group">
+                    <label for="fdRate">Interest Rate Toggle (6% to 7% range): <span id="fdRateVal" class="value-display">6.5%</span></label>
+                    <input type="range" id="fdRate" min="6.0" max="7.0" step="0.1" value="6.5" oninput="calcFDRD()">
+                </div>
+
+                <div class="input-group">
+                    <label for="fdYears">Tenure: <span id="fdYearsVal" class="value-display">5 Years</span></label>
+                    <input type="range" id="fdYears" min="1" max="10" step="1" value="5" oninput="calcFDRD()">
+                </div>
+
+                <div class="results-row">
+                    <div class="result-box">
+                        <h4>Principal Deposited</h4>
+                        <div id="fdInvested" class="big-num">₹0</div>
+                    </div>
+                    <div class="result-box">
+                        <h4>Maturity Amount</h4>
+                        <div id="fdCorpus" class="big-num">₹0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mfTypesCalc" class="calc-panel">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">Mutual Fund Category Return Estimator</h3>
+
+                <div class="input-group">
+                    <label for="mfCategory">Select Mutual Fund Category:</label>
+                    <select id="mfCategory" onchange="calcMF()">
+                        <option value="16">Small Cap Funds (Historic Benchmark ~16-18%)</option>
+                        <option value="14">Mid Cap Funds (Historic Benchmark ~13-15%)</option>
+                        <option value="12" selected>Large Cap Funds (Historic Benchmark ~11-13%)</option>
+                        <option value="13.5">Flexi Cap Funds (Historic Benchmark ~12-14%)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="mfMonthly">Monthly Investment Amount: <span id="mfMonthlyVal" class="value-display">₹15,000</span></label>
+                    <input type="range" id="mfMonthly" min="2000" max="100000" step="1000" value="15000" oninput="calcMF()">
+                </div>
+
+                <div class="input-group">
+                    <label for="mfYears">Investment Horizon: <span id="mfYearsVal" class="value-display">10 Years</span></label>
+                    <input type="range" id="mfYears" min="3" max="25" step="1" value="10" oninput="calcMF()">
+                </div>
+
+                <div class="results-row">
+                    <div class="result-box">
+                        <h4>Total Invested</h4>
+                        <div id="mfInvested" class="big-num">₹0</div>
+                    </div>
+                    <div class="result-box">
+                        <h4>Projected Value</h4>
+                        <div id="mfCorpus" class="big-num">₹0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="indexCalc" class="calc-panel">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">Index Funds Calculator</h3>
+
+                <div class="input-group">
+                    <label for="indexType">Select Index Benchmark:</label>
+                    <select id="indexType" onchange="calcIndex()">
+                        <option value="13">Nifty 50 Index Fund (~13% CAGR)</option>
+                        <option value="14">Nifty Next 50 Index Fund (~14% CAGR)</option>
+                        <option value="11.5">Sensex Index Fund (~11.5% CAGR)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="indexMonthly">Monthly Commitment: <span id="indexMonthlyVal" class="value-display">₹10,000</span></label>
+                    <input type="range" id="indexMonthly" min="1000" max="100000" step="1000" value="10000" oninput="calcIndex()">
+                </div>
+
+                <div class="input-group">
+                    <label for="indexYears">Time Period: <span id="indexYearsVal" class="value-display">15 Years</span></label>
+                    <input type="range" id="indexYears" min="3" max="30" step="1" value="15" oninput="calcIndex()">
+                </div>
+
+                <div class="results-row">
+                    <div class="result-box">
+                        <h4>Total Invested</h4>
+                        <div id="indexInvested" class="big-num">₹0</div>
+                    </div>
+                    <div class="result-box">
+                        <h4>Projected Corpus</h4>
+                        <div id="indexCorpus" class="big-num">₹0</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Finmet</h4>
+                    <p>Finmet is a free educational community and toolkit for people who want to understand money — SIPs, mutual funds, sector trends and more — without the jargon or the hype. Everything here is built to help you learn, not to tell you what to buy.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#" onclick="toggleInvestmentOptions(); return false;">Investment Options</a></li>
+                        <li><a href="#" onclick="toggleKnowledgeHub(); return false;">Learning Hub</a></li>
+                        <li><a href="#" onclick="revealCalculators(); return false;">Calculators</a></li>
+                        <li><a href="sector_q2.html">Latest Sector Report</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://wa.me/917893918311?text=Hi,%20I%20want%20to%20join%20the%20Finmet%20community%20and%20learn%20more!" target="_blank">Join on WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                Finmet is an educational platform. Content on this site — including calculators, risk breakdowns, sector analysis and community discussions — is for informational and educational purposes only and does not constitute investment advice, a recommendation, or a solicitation to buy or sell any security. Finmet is not a SEBI-registered Investment Adviser or Research Analyst. Historic and projected returns shown by the calculators are illustrative estimates, not guarantees. Please consult a licensed financial adviser before making investment decisions.
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Finmet. All rights reserved.</span>
+                <span>Simplifying Finance.</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <a class="float-whatsapp" href="https://wa.me/917893918311?text=Hi,%20I%20want%20to%20join%20the%20Finmet%20community%20and%20learn%20more!" target="_blank" aria-label="Join Finmet on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <script>
+        // --- Tap-friendly tooltips (works on mobile, not just hover) ---
+        document.querySelectorAll('.nav-btn.whatsapp, .nav-btn.sector').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // allow normal navigation, but also let a second nearby tap show tooltip on touch devices
+            });
+        });
+        document.querySelectorAll('.info-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const wasOpen = btn.classList.contains('tip-open');
+                document.querySelectorAll('.info-btn.tip-open').forEach(b => b.classList.remove('tip-open'));
+                if (!wasOpen) btn.classList.add('tip-open');
+            });
+        });
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.info-btn')) {
+                document.querySelectorAll('.info-btn.tip-open').forEach(b => b.classList.remove('tip-open'));
+            }
+        });
+
+        // --- Top Right Investment Options Modal Toggle ---
+        function toggleInvestmentOptions() {
+            const modal = document.getElementById('investmentOptionsModal');
+            const knowledgeModal = document.getElementById('knowledgeHubModal');
+            knowledgeModal.classList.remove('visible');
+            modal.classList.toggle('visible');
+            if (modal.classList.contains('visible')) {
+                modal.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // --- Top Right Learning Hub Modal Toggle ---
+        function toggleKnowledgeHub() {
+            const modal = document.getElementById('knowledgeHubModal');
+            const optionsModal = document.getElementById('investmentOptionsModal');
+            optionsModal.classList.remove('visible');
+            modal.classList.toggle('visible');
+            if (modal.classList.contains('visible')) {
+                modal.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // --- Dynamic Slider Logic ---
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let slideTimer = null;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slideIndex = (n + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+
+            clearTimeout(slideTimer);
+            const currentDuration = parseInt(slides[slideIndex].getAttribute('data-duration')) || 5000;
+            slideTimer = setTimeout(() => {
+                showSlide(slideIndex + 1);
+            }, currentDuration);
+        }
+
+        function currentSlide(n) {
+            showSlide(n);
+        }
+
+        const initialDuration = parseInt(slides[0].getAttribute('data-duration')) || 10000;
+        slideTimer = setTimeout(() => {
+            showSlide(1);
+        }, initialDuration);
+
+        // --- Reveal Calculations Hub ---
+        function revealCalculators() {
+            const wrapper = document.getElementById('calculatorsWrapper');
+            wrapper.classList.toggle('visible');
+            if (wrapper.classList.contains('visible')) {
+                wrapper.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // --- Tab Management ---
+        function switchTab(evt, panelId) {
+            const panels = document.querySelectorAll('.calc-panel');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            panels.forEach(p => p.classList.remove('active'));
+            buttons.forEach(b => b.classList.remove('active'));
+
+            document.getElementById(panelId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // --- Currency Formatter ---
+        function formatCurrency(num) {
+            if (num >= 10000000) {
+                return `₹${(num / 10000000).toFixed(2)} Cr`;
+            } else if (num >= 100000) {
+                return `₹${(num / 100000).toFixed(2)} L`;
+            } else {
+                return `₹${num.toLocaleString('en-IN')}`;
+            }
+        }
+
+        // --- 1. SIP Calculator with Step-Up ---
+        function calcSIP() {
+            let monthly = parseFloat(document.getElementById('sipMonthly').value);
+            let years = parseInt(document.getElementById('sipYears').value);
+            let rate = parseFloat(document.getElementById('sipRate').value);
+            let step = parseFloat(document.getElementById('sipStep').value);
+
+            document.getElementById('sipMonthlyVal').textContent = formatCurrency(monthly);
+            document.getElementById('sipYearsVal').textContent = `${years} Years`;
+            document.getElementById('sipRateVal').textContent = `${rate}%`;
+            document.getElementById('sipStepVal').textContent = `${step}%`;
+
+            let totalInvested = 0;
+            let totalCorpus = 0;
+            let currentMonthly = monthly;
+            let monthlyRate = rate / 100 / 12;
+
+            for (let yr = 1; yr <= years; yr++) {
+                for (let m = 1; m <= 12; m++) {
+                    totalInvested += currentMonthly;
+                    totalCorpus = (totalCorpus + currentMonthly) * (1 + monthlyRate);
+                }
+                currentMonthly += currentMonthly * (step / 100);
+            }
+
+            document.getElementById('sipInvested').textContent = formatCurrency(totalInvested);
+            document.getElementById('sipCorpus').textContent = formatCurrency(totalCorpus);
+        }
+
+        // --- 2. Lumpsum Calculator ---
+        function calcLumpsum() {
+            let principal = parseFloat(document.getElementById('lumPrincipal').value);
+            let years = parseInt(document.getElementById('lumYears').value);
+            let rate = parseFloat(document.getElementById('lumRate').value);
+
+            document.getElementById('lumPrincipalVal').textContent = formatCurrency(principal);
+            document.getElementById('lumYearsVal').textContent = `${years} Years`;
+            document.getElementById('lumRateVal').textContent = `${rate}%`;
+
+            let corpus = principal * Math.pow(1 + (rate / 100), years);
+
+            document.getElementById('lumInvested').textContent = formatCurrency(principal);
+            document.getElementById('lumCorpus').textContent = formatCurrency(corpus);
+        }
+
+        // --- 3. FD / RD Calculator ---
+        let isFDMode = true;
+        function setFDRDMode(mode) {
+            isFDMode = (mode === 'FD');
+            document.getElementById('modeFD').classList.toggle('active', isFDMode);
+            document.getElementById('modeRD').classList.toggle('active', !isFDMode);
+            document.getElementById('amountLabel').textContent = isFDMode ? 'Total Deposit Amount' : 'Monthly Deposit Amount';
+            calcFDRD();
+        }
+
+        function calcFDRD() {
+            let amount = parseFloat(document.getElementById('fdAmount').value);
+            let rate = parseFloat(document.getElementById('fdRate').value);
+            let years = parseInt(document.getElementById('fdYears').value);
+
+            document.getElementById('fdAmountVal').textContent = formatCurrency(amount);
+            document.getElementById('fdRateVal').textContent = `${rate}%`;
+            document.getElementById('fdYearsVal').textContent = `${years} Years`;
+
+            let totalInvested = 0;
+            let maturity = 0;
+
+            if (isFDMode) {
+                totalInvested = amount;
+                maturity = amount * Math.pow(1 + (rate / 100 / 4), 4 * years);
+            } else {
+                totalInvested = amount * (years * 12);
+                // RD interest is compounded quarterly by Indian banks, while deposits are monthly.
+                // i = quarterly rate, n = number of quarters — NOT monthly periods.
+                let i = rate / 400;
+                let n = years * 4;
+                maturity = amount * ((Math.pow(1 + i, n) - 1) / (1 - Math.pow(1 + i, -1/3)));
+            }
+
+            document.getElementById('fdInvested').textContent = formatCurrency(totalInvested);
+            document.getElementById('fdCorpus').textContent = formatCurrency(maturity);
+        }
+
+        // --- 4. Mutual Fund Matrix ---
+        function calcMF() {
+            let rate = parseFloat(document.getElementById('mfCategory').value);
+            let monthly = parseFloat(document.getElementById('mfMonthly').value);
+            let years = parseInt(document.getElementById('mfYears').value);
+
+            document.getElementById('mfMonthlyVal').textContent = formatCurrency(monthly);
+            document.getElementById('mfYearsVal').textContent = `${years} Years`;
+
+            let months = years * 12;
+            let monthlyRate = rate / 100 / 12;
+            let invested = monthly * months;
+            let corpus = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+
+            document.getElementById('mfInvested').textContent = formatCurrency(invested);
+            document.getElementById('mfCorpus').textContent = formatCurrency(corpus);
+        }
+
+        // --- 5. Index Funds Calculator ---
+        function calcIndex() {
+            let styleRate = parseFloat(document.getElementById('indexType').value);
+            let monthly = parseFloat(document.getElementById('indexMonthly').value);
+            let years = parseInt(document.getElementById('indexYears').value);
+
+            document.getElementById('indexMonthlyVal').textContent = formatCurrency(monthly);
+            document.getElementById('indexYearsVal').textContent = `${years} Years`;
+
+            let months = years * 12;
+            let monthlyRate = styleRate / 100 / 12;
+            let invested = monthly * months;
+            let corpus = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
+
+            document.getElementById('indexInvested').textContent = formatCurrency(invested);
+            document.getElementById('indexCorpus').textContent = formatCurrency(corpus);
+        }
+
+        // Initialize on page load
+        calcSIP();
+        calcLumpsum();
+        calcFDRD();
+        calcMF();
+        calcIndex();
+    </script>
+</body>
+</html>

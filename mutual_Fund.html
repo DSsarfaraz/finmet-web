@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutual Fund History | Finmet</title>
+<link rel="icon" type="image/png" href="finmet_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #050705; --card: #0c110d; --card-hi: #101710;
+    --border: #16301f; --border-hi: #1f4a2c;
+    --accent: #25D366; --accent-2: #128C7E; --accent-light: #7CF0A6;
+    --text-white: #F8FAFC; --text-muted: #94A3B8;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0; font-family:'Inter',sans-serif; background: var(--bg);
+    background-image: radial-gradient(circle at 15% -10%, rgba(37,211,102,0.10), transparent 45%),
+                       radial-gradient(circle at 90% 15%, rgba(18,140,126,0.08), transparent 40%);
+    color: var(--text-white); line-height: 1.65;
+  }
+  a { color: inherit; }
+  h1,h2,h3 { font-family:'Sora',sans-serif; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem 60px; }
+
+  .top-nav {
+    position: sticky; top:0; z-index:100; background: rgba(5,7,5,0.9);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0.5rem 0;
+  }
+  .top-nav-inner { max-width:1080px; margin:0 auto; padding:0 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; }
+  .brand-box img { height: 78px; width:auto; display:block; }
+  .back-link {
+    display:inline-flex; align-items:center; gap:6px; font-size:0.85rem; font-weight:600;
+    color: var(--accent); text-decoration:none; border:1px solid rgba(37,211,102,0.3);
+    background: rgba(37,211,102,0.08); padding:0.55rem 1rem; border-radius:8px;
+  }
+  .back-link:hover { background: rgba(37,211,102,0.16); border-color: var(--accent); }
+
+  header.page-hero { padding: 2rem 0 1.5rem; }
+  .eyebrow {
+    display:inline-flex; align-items:center; gap:8px; background: rgba(37,211,102,0.1);
+    border:1px solid rgba(37,211,102,0.3); color: var(--accent); font-size:0.78rem; font-weight:600;
+    padding:0.4rem 0.9rem; border-radius:20px; margin-bottom:1rem;
+  }
+  .eyebrow .dot { width:7px; height:7px; border-radius:50%; background: var(--accent); box-shadow:0 0 8px var(--accent); }
+  h1.page-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight:800; margin:0 0 0.8rem; }
+  h1.page-title .grad {
+    background: linear-gradient(120deg, var(--accent-light), var(--accent) 60%, var(--accent-2));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  p.lede { color: var(--text-muted); max-width: 720px; font-size:1rem; margin: 0 0 1.5rem; }
+
+  .disclaimer {
+    background: var(--card); border-left:4px solid var(--accent-2); border:1px solid var(--border);
+    border-left-width:4px; border-radius:8px; padding:1rem 1.3rem; font-size:0.85rem; color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+  .disclaimer strong { color: var(--text-white); }
+
+  section.block { padding: 2rem 0; border-top: 1px solid var(--border); }
+  section.block:first-of-type { border-top: none; }
+  h2.section-title { font-size:1.4rem; font-weight:700; margin:0 0 0.5rem; display:flex; align-items:center; gap:10px; }
+  h2.section-title .ic { width:24px; height:24px; stroke: var(--accent); fill:none; stroke-width:1.6; }
+  p.section-sub { color: var(--text-muted); font-size:0.92rem; margin: 0 0 1.5rem; max-width: 760px; }
+
+  .stat-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:16px; margin-bottom: 2rem; }
+  .stat-card { background: var(--card); border:1px solid var(--border); border-radius:10px; padding:1.2rem 1.4rem; }
+  .stat-card .stat-label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.5px; color: var(--text-muted); margin-bottom:0.5rem; }
+  .stat-card .stat-value { font-size:1.5rem; font-weight:800; color: var(--accent-light); font-family:'Sora',sans-serif; }
+  .stat-card .stat-note { font-size:0.78rem; color: var(--text-muted); margin-top:0.4rem; }
+
+  table.data-table { width:100%; border-collapse:collapse; margin: 0 0 1rem; font-size:0.9rem; }
+  .data-table th, .data-table td { padding: 0.85rem 0.9rem; text-align:left; border-bottom:1px solid var(--border); vertical-align: top; }
+  .data-table th { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.5px; color: var(--text-muted); font-weight:600; }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .data-table td strong { color: var(--text-white); }
+  .rank-badge {
+    display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px;
+    border-radius:50%; background: rgba(37,211,102,0.15); color: var(--accent-light);
+    font-size:0.75rem; font-weight:700; font-family:'Sora',sans-serif;
+  }
+  .cagr-pill {
+    display:inline-block; padding:2px 10px; border-radius:12px; font-size:0.82rem; font-weight:700;
+    color: var(--accent-light); background: rgba(37,211,102,0.12); font-family:'Sora',sans-serif;
+  }
+
+  .amc-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:18px; }
+  .amc-card { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:1.4rem 1.5rem; }
+  .amc-card .amc-rank { font-size:0.72rem; color: var(--accent); text-transform:uppercase; letter-spacing:0.5px; font-weight:700; margin-bottom:0.4rem; }
+  .amc-card h3 { font-size:1.1rem; margin:0 0 0.5rem; }
+  .amc-card .amc-aum { font-size:1.3rem; font-weight:800; color: var(--accent-light); font-family:'Sora',sans-serif; margin-bottom:0.6rem; }
+  .amc-card p { font-size:0.85rem; color: var(--text-muted); margin:0; }
+
+  .table-note { font-size:0.78rem; color: #5f6b63; margin-top: -0.5rem; margin-bottom: 1.5rem; }
+
+  footer.site-footer { border-top:1px solid var(--border); margin-top:2rem; padding: 2rem 0 1.5rem; font-size:0.8rem; color: var(--text-muted); }
+  footer.site-footer b { color: var(--text-white); display:block; margin-bottom:0.5rem; font-family:'Sora',sans-serif; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.5px; }
+  footer.site-footer ul { padding-left:18px; margin: 0 0 1rem; }
+  footer.site-footer li { margin-bottom:0.3rem; }
+  .final-disclaimer { border-top:1px solid var(--border); padding-top:1rem; font-size:0.76rem; color:#5f6b63; }
+
+  @media (max-width: 768px) {
+    .brand-box img { height: 60px; }
+    .data-table { font-size: 0.82rem; }
+    .data-table th, .data-table td { padding: 0.6rem 0.5rem; }
+  }
+
+  /* ================= Text-to-Speech ================= */
+  .tts-bar {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    background: var(--card); border: 1px solid var(--border); border-radius: 30px;
+    padding: 8px 10px 8px 18px; margin: 1.2rem 0; max-width: 700px;
+  }
+  .tts-bar .tts-label { font-size: 0.82em; color: var(--text-muted); white-space: nowrap; }
+  .tts-btn {
+    background: var(--card-hi); color: var(--text-white); border: 1px solid var(--border-hi);
+    border-radius: 20px; padding: 7px 14px; font-size: 0.82em; cursor: pointer; white-space: nowrap;
+    transition: background 0.15s ease;
+  }
+  .tts-btn:hover { background: #16261a; }
+  .tts-btn.primary { background: var(--accent); border-color: var(--accent); color: #04140b; font-weight: 700; }
+  .tts-btn.primary:hover { background: var(--accent-light); }
+  .tts-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .tts-speed { display: flex; align-items: center; gap: 6px; font-size: 0.78em; color: var(--text-muted); }
+  .tts-speed input[type=range] { width: 70px; accent-color: var(--accent); }
+  .tts-status { font-size: 0.78em; color: var(--accent-light); min-width: 90px; }
+
+  .section-listen {
+    display: inline-flex; align-items: center; gap: 6px; background: none;
+    border: 1px solid var(--border-hi); color: var(--text-muted); border-radius: 16px;
+    padding: 5px 12px; font-size: 0.72em; cursor: pointer; margin-left: 10px;
+    vertical-align: middle; transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .section-listen:hover { border-color: var(--accent); color: var(--accent); }
+  .section-listen.speaking { border-color: var(--accent); color: var(--accent-light); }
+</style>
+</head>
+<body>
+
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="ic-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 9 8 9"/><polyline points="12 7 12 12 16 14"/></symbol>
+    <symbol id="ic-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4"/></symbol>
+    <symbol id="ic-bank2" viewBox="0 0 24 24"><polygon points="12 2 22 8 2 8"/><line x1="4" y1="8" x2="4" y2="19"/><line x1="9" y1="8" x2="9" y2="19"/><line x1="15" y1="8" x2="15" y2="19"/><line x1="20" y1="8" x2="20" y2="19"/><line x1="2" y1="19" x2="22" y2="19"/><line x1="2" y1="22" x2="22" y2="22"/></symbol>
+  </svg>
+
+  <div class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand-box"><img src="finmet_logo.png" alt="Finmet Logo"></div>
+      <a href="/" class="back-link">← Back to Finmet</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <header class="page-hero">
+      <div class="eyebrow"><span class="dot"></span>Learning Hub · Mutual Fund History</div>
+      <h1 class="page-title">India's mutual funds, <span class="grad">the last 20+ years.</span></h1>
+      <p class="lede">Which funds have actually survived and compounded across multiple market crashes — the 2000 dot-com bust, 2008 crisis, 2020 COVID crash — and who's currently managing the most money in India. All in plain language.</p>
+    </header>
+
+    <div class="disclaimer">
+      <strong>Please read before you scroll:</strong> Everything below is historical, backward-looking data — it is not a recommendation to buy any fund, and past performance never guarantees future returns. Older funds have often changed their investment mandate, category, or manager over the decades (noted where relevant), which affects how comparable their long-term numbers really are. Figures are approximate, compiled from public fund-tracking sources, and change over time — verify current numbers on a fund's official factsheet or AMFI before deciding anything. Finmet is not a SEBI-registered Investment Adviser or Research Analyst.
+    </div>
+
+    <div class="tts-bar" id="ttsBar">
+      <span class="tts-label">🔊 Listen:</span>
+      <button class="tts-btn primary" id="ttsPlayBtn" onclick="ttsPlayWhole()">Read whole page</button>
+      <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPauseResume()" disabled>Pause</button>
+      <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" disabled>Stop</button>
+      <div class="tts-speed">
+        Speed
+        <input type="range" id="ttsSpeed" min="0.75" max="1.5" step="0.25" value="1">
+        <span id="ttsSpeedLabel">1x</span>
+      </div>
+      <select id="ttsVoice" class="tts-btn" style="max-width:220px;"></select>
+      <span class="tts-status" id="ttsStatus"></span>
+    </div>
+
+    <section class="block" id="sec-picture">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-history"/></svg>The 20-Year Picture
+        <button class="section-listen" onclick="ttsPlaySection('sec-picture', this)">🔊 Listen</button>
+      </h2>
+      <p class="section-sub">India's mutual fund industry is barely a generation old in its modern private-sector form — most of today's "veteran" funds were launched in the early-to-mid 1990s. A small number have survived every major crash since and are still running today.</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Industry AUM (2026)</div>
+          <div class="stat-value">₹65+ Lakh Cr</div>
+          <div class="stat-note">Total assets managed across all Indian mutual funds</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Funds with 20+ year track record</div>
+          <div class="stat-value">~22</div>
+          <div class="stat-note">Equity funds still running after two decades, per industry tracking</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Of those, beat 12% CAGR</div>
+          <div class="stat-value">14</div>
+          <div class="stat-note">Roughly two-thirds of the 20-year survivors cleared long-term inflation comfortably</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">India's first mutual fund</div>
+          <div class="stat-value">1963</div>
+          <div class="stat-note">Unit Trust of India (UTI) — the original, before private AMCs existed</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-compounders">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-trophy"/></svg>Top 10 Long-Term Consistent Compounders
+        <button class="section-listen" onclick="ttsPlaySection('sec-compounders', this)">🔊 Listen</button>
+      </h2>
+      <p class="section-sub">Funds that have run for 20+ years without being shut down or merged away — the simplest test of long-term survival. Ranked here by tenure and long-term track record, not by recent short-term performance.</p>
+      <table class="data-table">
+        <tr><th>#</th><th>Fund</th><th>AMC</th><th>Since</th><th>Long-Term CAGR*</th></tr>
+        <tr><td><span class="rank-badge">1</span></td><td><strong>Franklin India Bluechip Fund</strong></td><td>Franklin Templeton</td><td>1993</td><td><span class="cagr-pill">~20.3%</span> since inception</td></tr>
+        <tr><td><span class="rank-badge">2</span></td><td><strong>Franklin India Prima Fund</strong></td><td>Franklin Templeton</td><td>1993</td><td><span class="cagr-pill">~19.6%</span> since inception</td></tr>
+        <tr><td><span class="rank-badge">3</span></td><td><strong>HDFC Flexi Cap Fund</strong> <span style="color:var(--text-muted); font-size:0.8em;">(formerly HDFC Equity Fund)</span></td><td>HDFC AMC</td><td>1995</td><td><span class="cagr-pill">~22.9%</span> (5-yr, large AUM base)</td></tr>
+        <tr><td><span class="rank-badge">4</span></td><td><strong>Tata Large &amp; Mid Cap Fund</strong></td><td>Tata AMC</td><td>1993</td><td><span class="cagr-pill">~16.6%</span> (20-yr)</td></tr>
+        <tr><td><span class="rank-badge">5</span></td><td><strong>SBI Magnum Equity ESG Fund</strong> <span style="color:var(--text-muted); font-size:0.8em;">(formerly Magnum Multiplier)</span></td><td>SBI Mutual Fund</td><td>1991</td><td><span class="cagr-pill">~15.4%</span> since inception</td></tr>
+        <tr><td><span class="rank-badge">6</span></td><td><strong>UTI Flexi Cap Fund</strong> <span style="color:var(--text-muted); font-size:0.8em;">(formerly UTI Equity Fund)</span></td><td>UTI AMC</td><td>1992</td><td><span class="cagr-pill">~14%</span> (10-yr)</td></tr>
+        <tr><td><span class="rank-badge">7</span></td><td><strong>UTI Mastershare Fund</strong></td><td>UTI AMC</td><td>1986</td><td><span class="cagr-pill">~12–13%</span> since inception</td></tr>
+        <tr><td><span class="rank-badge">8</span></td><td><strong>Canara Robeco Equity Hybrid Fund</strong> <span style="color:var(--text-muted); font-size:0.8em;">(formerly GIC Balanced)</span></td><td>Canara Robeco</td><td>1993</td><td>Long-term outperformer vs. category</td></tr>
+        <tr><td><span class="rank-badge">9</span></td><td><strong>LIC MF Aggressive Hybrid Fund</strong> <span style="color:var(--text-muted); font-size:0.8em;">(formerly LIC Balanced)</span></td><td>LIC Mutual Fund</td><td>1991</td><td>Steady multi-decade hybrid track record</td></tr>
+        <tr><td><span class="rank-badge">10</span></td><td><strong>SBI Contra Fund</strong></td><td>SBI Mutual Fund</td><td>1999</td><td>One of India's oldest contrarian-style funds</td></tr>
+      </table>
+      <p class="table-note">*Long-term CAGR figures are approximate, measured at different points in time by different sources (some "since inception," some trailing 5/10/20-year), and several of these funds changed category or mandate along the way (noted above) — treat these as a starting point for your own research, not a like-for-like comparison table.</p>
+    </section>
+
+    <section class="block" id="sec-amcs">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-bank2"/></svg>Top 5 Investment Houses (by Assets Managed)
+        <button class="section-listen" onclick="ttsPlaySection('sec-amcs', this)">🔊 Listen</button>
+      </h2>
+      <p class="section-sub">India has 40+ SEBI-registered fund houses (AMCs), but the top 5 alone manage more than half the industry's total money. Bigger doesn't automatically mean better performance — but it does mean scale, distribution reach, and (usually) longer survival.</p>
+      <div class="amc-grid">
+        <div class="amc-card">
+          <div class="amc-rank">#1 · Largest AMC</div>
+          <h3>SBI Mutual Fund</h3>
+          <div class="amc-aum">~₹12.8 Lakh Cr AUM</div>
+          <p>A joint venture between State Bank of India and Amundi (France). Largest AMC in India, leaning on SBI's 22,000+ branch network for distribution.</p>
+        </div>
+        <div class="amc-card">
+          <div class="amc-rank">#2</div>
+          <h3>ICICI Prudential AMC</h3>
+          <div class="amc-aum">~₹9–11.8 Lakh Cr AUM</div>
+          <p>Joint venture between ICICI Bank and Prudential plc (UK). Known for disciplined risk management across hybrid and debt portfolios.</p>
+        </div>
+        <div class="amc-card">
+          <div class="amc-rank">#3</div>
+          <h3>HDFC Mutual Fund</h3>
+          <div class="amc-aum">~₹6.5–7.5 Lakh Cr AUM</div>
+          <p>Backed by HDFC Bank following the 2023 HDFC–HDFC Bank merger. Long track record in equity and balanced categories.</p>
+        </div>
+        <div class="amc-card">
+          <div class="amc-rank">#4</div>
+          <h3>Nippon India Mutual Fund</h3>
+          <div class="amc-aum">Consistently top-5 by AUM</div>
+          <p>Formerly Reliance Mutual Fund. Broad scheme lineup across equity, debt, and passive/index funds.</p>
+        </div>
+        <div class="amc-card">
+          <div class="amc-rank">#5</div>
+          <h3>Kotak Mahindra AMC</h3>
+          <div class="amc-aum">Consistently top-5/6 by AUM</div>
+          <p>Part of Kotak Mahindra Bank group; steady asset growth across equity and debt scheme categories.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <b>Where this information came from</b>
+      <ul>
+        <li>Public mutual fund tracking and comparison sites (5paisa, Bajaj Finserv, Sharekhan, Pocketful, HDFC Sky), 2025–2026</li>
+        <li>AMFI-sourced AUM rankings via industry trackers (rightadvise.com, Motilal Oswal Learning Centre, Jumpp Finance), April–July 2026</li>
+        <li>Business Standard reporting on 20+ year vintage equity fund track records</li>
+      </ul>
+      <div class="final-disclaimer">This page summarises publicly available information as of the compile date and will become outdated as AUM and returns shift every quarter. It is not investment, legal, or tax advice. Please verify current numbers directly with a fund's factsheet or AMFI, and consult a licensed financial adviser before making investment decisions.</div>
+    </footer>
+  </div>
+
+  <script>
+    // ---------- Text-to-Speech (browser's built-in voice, no external service) ----------
+    const synth = window.speechSynthesis;
+    let currentUtterance = null;
+    let activeSectionBtn = null;
+    let voices = [];
+    let selectedVoice = null;
+    const ttsPlayBtn = document.getElementById('ttsPlayBtn');
+    const ttsPauseBtn = document.getElementById('ttsPauseBtn');
+    const ttsStopBtn = document.getElementById('ttsStopBtn');
+    const ttsStatus = document.getElementById('ttsStatus');
+    const ttsSpeed = document.getElementById('ttsSpeed');
+    const ttsSpeedLabel = document.getElementById('ttsSpeedLabel');
+    const ttsVoiceSelect = document.getElementById('ttsVoice');
+
+    if (!('speechSynthesis' in window)) {
+      document.getElementById('ttsBar').innerHTML =
+        '<span class="tts-label">🔊 Text-to-speech isn\'t supported in this browser.</span>';
+    }
+
+    function looksFemale(name) {
+      const n = name.toLowerCase();
+      return ['heera','neerja','raveena','priya','veena','female','samantha','zira','aria'].some(k => n.includes(k))
+        || n.includes('female');
+    }
+
+    function loadVoices() {
+      voices = synth.getVoices();
+      if (!voices.length) return;
+
+      const indianEnglish = voices.filter(v => v.lang.toLowerCase() === 'en-in');
+      const otherIndianish = voices.filter(v => v.lang.toLowerCase().startsWith('en') && looksFemale(v.name) && v.lang.toLowerCase() !== 'en-in');
+      const restEnglish = voices.filter(v => v.lang.toLowerCase().startsWith('en') && !indianEnglish.includes(v) && !otherIndianish.includes(v));
+      const others = voices.filter(v => !v.lang.toLowerCase().startsWith('en'));
+      const ordered = [...indianEnglish, ...otherIndianish, ...restEnglish, ...others];
+
+      ttsVoiceSelect.innerHTML = '';
+      ordered.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.name;
+        opt.textContent = `${v.name} (${v.lang})`;
+        ttsVoiceSelect.appendChild(opt);
+      });
+
+      const bestIndian = indianEnglish.find(v => looksFemale(v.name)) || indianEnglish[0];
+      selectedVoice = bestIndian || ordered[0] || null;
+      if (selectedVoice) ttsVoiceSelect.value = selectedVoice.name;
+
+      if (bestIndian) {
+        ttsStatus.textContent = `Voice: ${bestIndian.name}`;
+      } else if (indianEnglish.length === 0) {
+        ttsStatus.textContent = 'No Indian English voice found on this device';
+      }
+      setTimeout(() => { if (!synth.speaking) ttsStatus.textContent = ''; }, 3500);
+    }
+
+    synth.onvoiceschanged = loadVoices;
+    loadVoices();
+
+    ttsVoiceSelect.addEventListener('change', () => {
+      selectedVoice = voices.find(v => v.name === ttsVoiceSelect.value) || null;
+    });
+
+    ttsSpeed.addEventListener('input', () => { ttsSpeedLabel.textContent = ttsSpeed.value + 'x'; });
+
+    function cleanText(el) {
+      const clone = el.cloneNode(true);
+      clone.querySelectorAll('button, .tts-bar, script').forEach(n => n.remove());
+      return clone.innerText.replace(/\s+/g, ' ').trim();
+    }
+
+    function setButtonsSpeaking(isSpeaking) {
+      ttsPlayBtn.disabled = isSpeaking;
+      ttsPauseBtn.disabled = !isSpeaking;
+      ttsStopBtn.disabled = !isSpeaking;
+      ttsPauseBtn.textContent = 'Pause';
+    }
+
+    function clearActiveSectionBtn() {
+      if (activeSectionBtn) { activeSectionBtn.classList.remove('speaking'); activeSectionBtn.textContent = '🔊 Listen'; }
+      activeSectionBtn = null;
+    }
+
+    function speak(text, statusText, onEnd) {
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.rate = parseFloat(ttsSpeed.value);
+      currentUtterance.pitch = 1.05;
+      if (selectedVoice) {
+        currentUtterance.voice = selectedVoice;
+        currentUtterance.lang = selectedVoice.lang;
+      }
+      currentUtterance.onstart = () => { ttsStatus.textContent = statusText || 'Playing…'; setButtonsSpeaking(true); };
+      currentUtterance.onend = () => { ttsStatus.textContent = ''; setButtonsSpeaking(false); clearActiveSectionBtn(); if (onEnd) onEnd(); };
+      currentUtterance.onerror = () => { ttsStatus.textContent = ''; setButtonsSpeaking(false); clearActiveSectionBtn(); };
+      synth.speak(currentUtterance);
+    }
+
+    function ttsPlayWhole() {
+      clearActiveSectionBtn();
+      const text = cleanText(document.querySelector('.container'));
+      speak(text, 'Playing full page…');
+    }
+
+    function ttsPlaySection(sectionId, btn) {
+      const wasThisSection = activeSectionBtn === btn;
+      synth.cancel();
+      clearActiveSectionBtn();
+      if (wasThisSection) { setButtonsSpeaking(false); ttsStatus.textContent = ''; return; }
+      const el = document.getElementById(sectionId);
+      const text = cleanText(el);
+      activeSectionBtn = btn;
+      btn.classList.add('speaking');
+      btn.textContent = '⏹ Stop';
+      speak(text, 'Playing section…');
+    }
+
+    function ttsPauseResume() {
+      if (synth.speaking && !synth.paused) {
+        synth.pause();
+        ttsPauseBtn.textContent = 'Resume';
+        ttsStatus.textContent = 'Paused';
+      } else if (synth.paused) {
+        synth.resume();
+        ttsPauseBtn.textContent = 'Pause';
+        ttsStatus.textContent = 'Playing…';
+      }
+    }
+
+    function ttsStop() {
+      synth.cancel();
+      setButtonsSpeaking(false);
+      ttsStatus.textContent = '';
+      clearActiveSectionBtn();
+    }
+  </script>
+</body>
+</html>

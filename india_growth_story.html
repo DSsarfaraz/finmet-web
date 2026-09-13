@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India's Growth Story | Finmet</title>
+<link rel="icon" type="image/png" href="finmet_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #050705; --card: #0c110d; --card-hi: #101710;
+    --border: #16301f; --border-hi: #1f4a2c;
+    --accent: #25D366; --accent-2: #128C7E; --accent-light: #7CF0A6;
+    --text-white: #F8FAFC; --text-muted: #94A3B8;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0; font-family:'Inter',sans-serif; background: var(--bg);
+    background-image: radial-gradient(circle at 15% -10%, rgba(37,211,102,0.10), transparent 45%),
+                       radial-gradient(circle at 90% 15%, rgba(18,140,126,0.08), transparent 40%);
+    color: var(--text-white); line-height: 1.65;
+  }
+  a { color: inherit; }
+  h1,h2,h3 { font-family:'Sora',sans-serif; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem 60px; }
+
+  .top-nav {
+    position: sticky; top:0; z-index:100; background: rgba(5,7,5,0.9);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0.5rem 0;
+  }
+  .top-nav-inner { max-width:1080px; margin:0 auto; padding:0 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; }
+  .brand-box img { height: 78px; width:auto; display:block; }
+  .back-link {
+    display:inline-flex; align-items:center; gap:6px; font-size:0.85rem; font-weight:600;
+    color: var(--accent); text-decoration:none; border:1px solid rgba(37,211,102,0.3);
+    background: rgba(37,211,102,0.08); padding:0.55rem 1rem; border-radius:8px;
+  }
+  .back-link:hover { background: rgba(37,211,102,0.16); border-color: var(--accent); }
+
+  header.page-hero { padding: 2rem 0 1.5rem; }
+  .eyebrow {
+    display:inline-flex; align-items:center; gap:8px; background: rgba(37,211,102,0.1);
+    border:1px solid rgba(37,211,102,0.3); color: var(--accent); font-size:0.78rem; font-weight:600;
+    padding:0.4rem 0.9rem; border-radius:20px; margin-bottom:1rem;
+  }
+  .eyebrow .dot { width:7px; height:7px; border-radius:50%; background: var(--accent); box-shadow:0 0 8px var(--accent); }
+  h1.page-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight:800; margin:0 0 0.8rem; }
+  h1.page-title .grad {
+    background: linear-gradient(120deg, var(--accent-light), var(--accent) 60%, var(--accent-2));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  p.lede { color: var(--text-muted); max-width: 760px; font-size:1rem; margin: 0 0 1.5rem; }
+
+  .disclaimer {
+    background: var(--card); border:1px solid var(--border); border-left:4px solid var(--accent-2);
+    border-radius:8px; padding:1rem 1.3rem; font-size:0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;
+  }
+  .disclaimer strong { color: var(--text-white); }
+
+  /* Text-to-Speech */
+  .tts-bar {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    background: var(--card); border: 1px solid var(--border); border-radius: 30px;
+    padding: 8px 10px 8px 18px; margin: 0 0 1.8rem; max-width: 700px;
+  }
+  .tts-bar .tts-label { font-size: 0.82em; color: var(--text-muted); white-space: nowrap; }
+  .tts-btn {
+    background: var(--card-hi); color: var(--text-white); border: 1px solid var(--border-hi);
+    border-radius: 20px; padding: 7px 14px; font-size: 0.82em; cursor: pointer; white-space: nowrap;
+  }
+  .tts-btn:hover { background: #16261a; }
+  .tts-btn.primary { background: var(--accent); border-color: var(--accent); color: #04140b; font-weight: 700; }
+  .tts-btn.primary:hover { background: var(--accent-light); }
+  .tts-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .tts-speed { display: flex; align-items: center; gap: 6px; font-size: 0.78em; color: var(--text-muted); }
+  .tts-speed input[type=range] { width: 70px; accent-color: var(--accent); }
+  .tts-status { font-size: 0.78em; color: var(--accent-light); min-width: 90px; }
+  .section-listen {
+    display: inline-flex; align-items: center; gap: 6px; background: none;
+    border: 1px solid var(--border-hi); color: var(--text-muted); border-radius: 16px;
+    padding: 5px 12px; font-size: 0.72em; cursor: pointer; margin-left: 10px; vertical-align: middle;
+  }
+  .section-listen:hover, .section-listen.speaking { border-color: var(--accent); color: var(--accent-light); }
+
+  section.block { padding: 2rem 0; border-top: 1px solid var(--border); }
+  section.block:first-of-type { border-top: none; }
+  h2.section-title { font-size:1.4rem; font-weight:700; margin:0 0 0.5rem; display:flex; align-items:center; gap:10px; }
+  h2.section-title .ic { width:24px; height:24px; stroke: var(--accent); fill:none; stroke-width:1.6; }
+  p.section-sub { color: var(--text-muted); font-size:0.92rem; margin: 0 0 1.5rem; max-width: 760px; }
+
+  .stat-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:16px; margin-bottom: 2rem; }
+  .stat-card { background: var(--card); border:1px solid var(--border); border-radius:10px; padding:1.2rem 1.4rem; }
+  .stat-card .stat-label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.5px; color: var(--text-muted); margin-bottom:0.5rem; }
+  .stat-card .stat-value { font-size:1.5rem; font-weight:800; color: var(--accent-light); font-family:'Sora',sans-serif; }
+  .stat-card .stat-note { font-size:0.78rem; color: var(--text-muted); margin-top:0.4rem; }
+
+  .sector-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:18px; }
+  .sector-card { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:1.4rem 1.5rem; transition: border-color .2s; }
+  .sector-card:hover { border-color: var(--border-hi); }
+  .sector-card .sc-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.6rem; gap:10px; }
+  .sector-card h3 { font-size:1.08rem; margin:0; }
+  .cagr-pill {
+    display:inline-block; padding:3px 11px; border-radius:12px; font-size:0.8rem; font-weight:700;
+    color: var(--accent-light); background: rgba(37,211,102,0.14); font-family:'Sora',sans-serif; white-space:nowrap;
+  }
+  .sector-card p { font-size:0.87rem; color: var(--text-muted); margin:0 0 0.7rem; }
+  .sector-card .sc-target { font-size:0.8rem; color: var(--accent-light); font-weight:600; }
+
+  .driver-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap:16px; }
+  .driver-card { background: var(--card-hi); border:1px solid var(--border); border-radius:10px; padding:1.1rem 1.3rem; }
+  .driver-card h4 { font-size:0.95rem; margin:0 0 0.4rem; color: var(--accent-light); }
+  .driver-card p { font-size:0.83rem; color: var(--text-muted); margin:0; }
+
+  footer.site-footer { border-top:1px solid var(--border); margin-top:2rem; padding: 2rem 0 1.5rem; font-size:0.8rem; color: var(--text-muted); }
+  footer.site-footer b { color: var(--text-white); display:block; margin-bottom:0.5rem; font-family:'Sora',sans-serif; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.5px; }
+  footer.site-footer ul { padding-left:18px; margin: 0 0 1rem; }
+  footer.site-footer li { margin-bottom:0.3rem; }
+  .final-disclaimer { border-top:1px solid var(--border); padding-top:1rem; font-size:0.76rem; color:#5f6b63; }
+
+  @media (max-width: 768px) {
+    .brand-box img { height: 60px; }
+  }
+</style>
+</head>
+<body>
+
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="ic-trend" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 14 21 5"/><polyline points="15 5 21 5 21 11"/></symbol>
+    <symbol id="ic-flag" viewBox="0 0 24 24"><path d="M4 22V4"/><path d="M4 4h14l-3 4 3 4H4"/></symbol>
+    <symbol id="ic-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+  </svg>
+
+  <div class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand-box"><img src="finmet_logo.png" alt="Finmet Logo"></div>
+      <a href="/" class="back-link">← Back to Finmet</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <header class="page-hero">
+      <div class="eyebrow"><span class="dot"></span>India's Growth Story</div>
+      <h1 class="page-title">Where India is <span class="grad">actually growing</span>, next 5–10 years.</h1>
+      <p class="lede">Not hype, not stock tips — just which parts of the Indian economy have real policy backing, real capital flowing in, and real growth numbers behind them right now.</p>
+    </header>
+
+    <div class="disclaimer">
+      <strong>Please read:</strong> This page is about sectors and the broader economy, not individual stocks or funds — it's not a recommendation to buy anything specific. Growth projections are estimates from public industry reports and government targets, not guarantees; sectors that look promising today can slow down, and today's numbers will age as policy and markets shift. Finmet is not a SEBI-registered Investment Adviser or Research Analyst.
+    </div>
+
+    <div class="tts-bar" id="ttsBar">
+      <span class="tts-label">🔊 Listen:</span>
+      <button class="tts-btn primary" id="ttsPlayBtn" onclick="ttsPlayWhole()">Read whole page</button>
+      <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPauseResume()" disabled>Pause</button>
+      <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" disabled>Stop</button>
+      <div class="tts-speed">
+        Speed
+        <input type="range" id="ttsSpeed" min="0.75" max="1.5" step="0.25" value="1">
+        <span id="ttsSpeedLabel">1x</span>
+      </div>
+      <select id="ttsVoice" class="tts-btn" style="max-width:220px;"></select>
+      <span class="tts-status" id="ttsStatus"></span>
+    </div>
+
+    <section class="block" id="sec-macro">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-trend"/></svg>The Big Picture
+        <button class="section-listen" onclick="ttsPlaySection('sec-macro', this)">🔊 Listen</button>
+      </h2>
+      <p class="section-sub">India's overall economy is growing at a healthy clip, but growth isn't evenly spread — a handful of sectors are growing 2–4x faster than the economy as a whole.</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">India's real GDP growth (FY26)</div>
+          <div class="stat-value">6.3–6.8%</div>
+          <div class="stat-note">Per the Economic Survey — among the fastest of any major economy</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">GDP target</div>
+          <div class="stat-value">$5 Trillion</div>
+          <div class="stat-note">India's economic size goal by 2026–27</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Fastest sectors are growing at</div>
+          <div class="stat-value">15–30%</div>
+          <div class="stat-note">CAGR — 2 to 4x the pace of overall GDP growth</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Stock market size (2024)</div>
+          <div class="stat-value">$5 Trillion+</div>
+          <div class="stat-note">Crossed this mark for the first time, pulling in more capital for growth sectors</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-sectors">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-flag"/></svg>Sectors Booming Over the Next 5–10 Years
+        <button class="section-listen" onclick="ttsPlaySection('sec-sectors', this)">🔊 Listen</button>
+      </h2>
+      <p class="section-sub">Ranked here by growth rate and policy backing, not by hype. Each one has a specific government push or structural demand shift behind it — not just a good story.</p>
+      <div class="sector-grid">
+        <div class="sector-card">
+          <div class="sc-top"><h3>Renewable Energy &amp; Green Hydrogen</h3><span class="cagr-pill">18–25% CAGR</span></div>
+          <p>Solar and wind capacity already at 227 GW, racing toward a 500 GW target by 2030. The National Green Hydrogen Mission is positioning India as a future exporter, not just a consumer.</p>
+          <div class="sc-target">Target: 500 GW renewable capacity by 2030</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Electric Vehicles</h3><span class="cagr-pill">20–28% CAGR</span></div>
+          <p>Over 5.3 lakh EVs registered in a single quarter (Apr–Jun 2026), up 34% YoY. The government's PM E-DRIVE scheme (₹10,900 Cr) is fueling the charging and manufacturing ecosystem.</p>
+          <div class="sc-target">Target: 30% EV share of vehicle sales by FY30</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Defence &amp; Aerospace</h3><span class="cagr-pill">15–22% CAGR</span></div>
+          <p>India's Atmanirbhar Bharat (self-reliance) push is redirecting defence procurement toward domestic manufacturers, creating an industry that barely existed at this scale a decade ago.</p>
+          <div class="sc-target">Driven by: Defence indigenisation policy</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Semiconductors</h3><span class="cagr-pill">High growth</span></div>
+          <p>India's domestic semiconductor market is projected to cross $80 billion by 2026, backed by "Make in India" incentives and new fabrication plant announcements — starting from a near-zero base.</p>
+          <div class="sc-target">Target: Global semiconductor manufacturing hub</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Artificial Intelligence</h3><span class="cagr-pill">~20%+ CAGR</span></div>
+          <p>India's AI market is projected to grow at one of the fastest rates among large economies. Indian AI startups raised $10.1 billion in FY26 alone, with the AI economy estimated to be worth $1 trillion by 2035.</p>
+          <div class="sc-target">Estimated: $1 trillion contribution to economy by 2035</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Healthcare &amp; Pharma</h3><span class="cagr-pill">Steady, large-scale</span></div>
+          <p>India's healthcare market is on track to cross $600+ billion. Pharma exports hit $30.5 billion in FY25 and aim to double to $65 billion by 2030; biotech has grown from a $10B to a $165.7B industry since 2014.</p>
+          <div class="sc-target">Target: $65B pharma exports by 2030</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Financial Services &amp; Fintech</h3><span class="cagr-pill">Strong, policy-led</span></div>
+          <p>UPI alone processed over ₹260 trillion in transactions. Insurance liberalisation and FDI reforms are opening the sector further, while rising credit demand drives banks, NBFCs and neo-banks alike.</p>
+          <div class="sc-target">Driven by: Digital payments &amp; insurance FDI reforms</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Data Centres</h3><span class="cagr-pill">~25% CAGR</span></div>
+          <p>Capacity is projected to nearly triple to around 3 GW by 2030, driven by AI workloads, cloud adoption, and data-localisation rules requiring Indian companies to store data domestically.</p>
+          <div class="sc-target">Target: ~3 GW capacity by 2030</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>E-commerce</h3><span class="cagr-pill">~21% CAGR</span></div>
+          <p>Projected to reach $325 billion by 2030, increasingly powered by growth in Tier 2 and Tier 3 cities rather than the metros that drove the first wave of online shopping.</p>
+          <div class="sc-target">Target: $325B market size by 2030</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="sec-drivers">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-gear"/></svg>What's Actually Powering This
+        <button class="section-listen" onclick="ttsPlaySection('sec-drivers', this)">🔊 Listen</button>
+      </h2>
+      <p class="section-sub">These aren't isolated trends — the same handful of government policies are behind almost every sector above.</p>
+      <div class="driver-grid">
+        <div class="driver-card">
+          <h4>PLI Scheme (Production-Linked Incentives)</h4>
+          <p>Cash incentives across 14 sectors — including electronics, solar, and semiconductors — to make manufacturing in India more competitive than importing.</p>
+        </div>
+        <div class="driver-card">
+          <h4>Atmanirbhar Bharat (Self-Reliant India)</h4>
+          <p>A push to manufacture domestically rather than import, most visible in defence procurement and electronics.</p>
+        </div>
+        <div class="driver-card">
+          <h4>Infrastructure Capex</h4>
+          <p>Over ₹10 lakh crore in planned infrastructure spending, indirectly boosting construction, cement, logistics, and EV charging rollout.</p>
+        </div>
+        <div class="driver-card">
+          <h4>Digital India &amp; Data Localisation</h4>
+          <p>Rules requiring companies to store Indian user data within India are a direct driver of the data-centre buildout.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <b>Where this information came from</b>
+      <ul>
+        <li>Industry sector reports and CAGR estimates (Bajaj Finserv, Rupeezy, Motilal Oswal, Pocketful, Shoonya, AppreciateWealth), 2026</li>
+        <li>Government targets referenced from public policy announcements (PLI scheme, National Green Hydrogen Mission, PM E-DRIVE, Atmanirbhar Bharat)</li>
+        <li>Economic Survey GDP growth projections, FY26</li>
+      </ul>
+      <div class="final-disclaimer">This page summarises publicly available sector and policy information as of the compile date. Growth estimates are projections, not guarantees, and will change as new data is published. This is not investment, legal, or tax advice — please do your own research and consult a licensed financial adviser before making investment decisions.</div>
+    </footer>
+  </div>
+
+  <script>
+    const synth = window.speechSynthesis;
+    let currentUtterance = null;
+    let activeSectionBtn = null;
+    let voices = [];
+    let selectedVoice = null;
+    const ttsPlayBtn = document.getElementById('ttsPlayBtn');
+    const ttsPauseBtn = document.getElementById('ttsPauseBtn');
+    const ttsStopBtn = document.getElementById('ttsStopBtn');
+    const ttsStatus = document.getElementById('ttsStatus');
+    const ttsSpeed = document.getElementById('ttsSpeed');
+    const ttsSpeedLabel = document.getElementById('ttsSpeedLabel');
+    const ttsVoiceSelect = document.getElementById('ttsVoice');
+
+    if (!('speechSynthesis' in window)) {
+      document.getElementById('ttsBar').innerHTML = '<span class="tts-label">🔊 Text-to-speech isn\'t supported in this browser.</span>';
+    }
+
+    function looksFemale(name) {
+      const n = name.toLowerCase();
+      return ['heera','neerja','raveena','priya','veena','female','samantha','zira','aria'].some(k => n.includes(k)) || n.includes('female');
+    }
+
+    function loadVoices() {
+      voices = synth.getVoices();
+      if (!voices.length) return;
+      const indianEnglish = voices.filter(v => v.lang.toLowerCase() === 'en-in');
+      const otherIndianish = voices.filter(v => v.lang.toLowerCase().startsWith('en') && looksFemale(v.name) && v.lang.toLowerCase() !== 'en-in');
+      const restEnglish = voices.filter(v => v.lang.toLowerCase().startsWith('en') && !indianEnglish.includes(v) && !otherIndianish.includes(v));
+      const others = voices.filter(v => !v.lang.toLowerCase().startsWith('en'));
+      const ordered = [...indianEnglish, ...otherIndianish, ...restEnglish, ...others];
+      ttsVoiceSelect.innerHTML = '';
+      ordered.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.name;
+        opt.textContent = `${v.name} (${v.lang})`;
+        ttsVoiceSelect.appendChild(opt);
+      });
+      const bestIndian = indianEnglish.find(v => looksFemale(v.name)) || indianEnglish[0];
+      selectedVoice = bestIndian || ordered[0] || null;
+      if (selectedVoice) ttsVoiceSelect.value = selectedVoice.name;
+      if (bestIndian) { ttsStatus.textContent = `Voice: ${bestIndian.name}`; }
+      else if (indianEnglish.length === 0) { ttsStatus.textContent = 'No Indian English voice found on this device'; }
+      setTimeout(() => { if (!synth.speaking) ttsStatus.textContent = ''; }, 3500);
+    }
+    synth.onvoiceschanged = loadVoices;
+    loadVoices();
+    ttsVoiceSelect.addEventListener('change', () => { selectedVoice = voices.find(v => v.name === ttsVoiceSelect.value) || null; });
+    ttsSpeed.addEventListener('input', () => { ttsSpeedLabel.textContent = ttsSpeed.value + 'x'; });
+
+    function cleanText(el) {
+      const clone = el.cloneNode(true);
+      clone.querySelectorAll('button, .tts-bar, script').forEach(n => n.remove());
+      return clone.innerText.replace(/\s+/g, ' ').trim();
+    }
+    function setButtonsSpeaking(isSpeaking) {
+      ttsPlayBtn.disabled = isSpeaking; ttsPauseBtn.disabled = !isSpeaking; ttsStopBtn.disabled = !isSpeaking;
+      ttsPauseBtn.textContent = 'Pause';
+    }
+    function clearActiveSectionBtn() {
+      if (activeSectionBtn) { activeSectionBtn.classList.remove('speaking'); activeSectionBtn.textContent = '🔊 Listen'; }
+      activeSectionBtn = null;
+    }
+    function speak(text, statusText, onEnd) {
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.rate = parseFloat(ttsSpeed.value);
+      currentUtterance.pitch = 1.05;
+      if (selectedVoice) { currentUtterance.voice = selectedVoice; currentUtterance.lang = selectedVoice.lang; }
+      currentUtterance.onstart = () => { ttsStatus.textContent = statusText || 'Playing…'; setButtonsSpeaking(true); };
+      currentUtterance.onend = () => { ttsStatus.textContent = ''; setButtonsSpeaking(false); clearActiveSectionBtn(); if (onEnd) onEnd(); };
+      currentUtterance.onerror = () => { ttsStatus.textContent = ''; setButtonsSpeaking(false); clearActiveSectionBtn(); };
+      synth.speak(currentUtterance);
+    }
+    function ttsPlayWhole() {
+      clearActiveSectionBtn();
+      speak(cleanText(document.querySelector('.container')), 'Playing full page…');
+    }
+    function ttsPlaySection(sectionId, btn) {
+      const wasThisSection = activeSectionBtn === btn;
+      synth.cancel();
+      clearActiveSectionBtn();
+      if (wasThisSection) { setButtonsSpeaking(false); ttsStatus.textContent = ''; return; }
+      const el = document.getElementById(sectionId);
+      activeSectionBtn = btn;
+      btn.classList.add('speaking');
+      btn.textContent = '⏹ Stop';
+      speak(cleanText(el), 'Playing section…');
+    }
+    function ttsPauseResume() {
+      if (synth.speaking && !synth.paused) { synth.pause(); ttsPauseBtn.textContent = 'Resume'; ttsStatus.textContent = 'Paused'; }
+      else if (synth.paused) { synth.resume(); ttsPauseBtn.textContent = 'Pause'; ttsStatus.textContent = 'Playing…'; }
+    }
+    function ttsStop() {
+      synth.cancel(); setButtonsSpeaking(false); ttsStatus.textContent = ''; clearActiveSectionBtn();
+    }
+  </script>
+</body>
+</html>
