@@ -81,7 +81,7 @@
         Mutual Fund Overlap Calculator
       </h1>
       <p class="text-slate-400 text-sm max-w-2xl mx-auto">
-        Search live mutual funds across all Indian AMCs (HSBC, HDFC, ICICI, SBI, Quant, Parag Parikh) or upload your broker portfolio statement.
+        Search live mutual funds across Indian AMCs using any multi-word query (e.g., <code class="text-emerald-400 font-mono">hsbc midcap direct</code>) or upload your broker statement.
       </p>
     </div>
 
@@ -115,7 +115,7 @@
 
           <div id="container-fund-a" class="relative">
             <div class="relative">
-              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Search live funds (e.g. hsbc midcap, parag parikh)..." 
+              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Search live funds (e.g. hsbc midcap direct, parag parikh)..." 
                 class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
                 oninput="onSearchInput('a', this.value)">
               <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
@@ -141,7 +141,7 @@
           <label class="text-xs font-bold tracking-wider text-emerald-400 uppercase">Select Fund B</label>
           <div id="container-fund-b" class="relative">
             <div class="relative">
-              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Search live funds (e.g. hdfc top 100, quant small cap)..." 
+              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Search live funds (e.g. hdfc top 100 growth, quant small cap)..." 
                 class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
                 oninput="onSearchInput('b', this.value)">
               <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
@@ -246,7 +246,7 @@
   <script>
     lucide.createIcons();
 
-    // Comprehensive Portfolio Holdings Engine mapped by category
+    // Portfolio Holdings Engine mapped by category
     const HOLDINGS_ENGINE = {
       midcap: [
         { stock: "Indian Hotels Co. Ltd.", weight: 5.8, sector: "Services" },
@@ -370,7 +370,7 @@
       calculateOverlap();
     }
 
-    // MULTI-WORD TOKENIZED SEARCH ENGINE
+    // MULTI-WORD TOKENIZED LIVE SEARCH ENGINE (Supports 3+ keywords)
     function onSearchInput(target, query) {
       const resultsDiv = document.getElementById(`results-fund-${target}`);
       const trimmed = query.trim();
@@ -384,33 +384,48 @@
       resultsDiv.classList.remove('hidden');
 
       const timer = setTimeout(async () => {
-        const tokens = trimmed.toLowerCase().split(/\s+/);
-        const primaryToken = tokens[0]; // e.g. "hsbc"
+        // Parse words: e.g. "hsbc midcap direct" -> ["hsbc", "midcap", "direct"]
+        const tokens = trimmed.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+        
+        let rawResults = [];
 
-        let fetchedList = [];
         try {
-          // Fetch schemes matching primary token to handle space-separated terms properly
-          const res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(primaryToken)}`);
-          if (res.ok) {
-            fetchedList = await res.json();
+          // Attempt 1: Fetch using the 1st keyword (e.g. "hsbc")
+          let res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(tokens[0])}`);
+          if (res.ok) rawResults = await res.json();
+
+          // Attempt 2: If 1st word yielded nothing, try 2nd keyword (e.g. "midcap")
+          if ((!rawResults || rawResults.length === 0) && tokens.length > 1) {
+            res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(tokens[1])}`);
+            if (res.ok) rawResults = await res.json();
+          }
+
+          // Attempt 3: Fetch with full query string if individual tokens yielded nothing
+          if (!rawResults || rawResults.length === 0) {
+            res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(trimmed)}`);
+            if (res.ok) rawResults = await res.json();
           }
         } catch (err) {
-          console.warn("API request failed, using local AMC fallback database", err);
+          console.warn("API search error, falling back to local AMC database", err);
         }
 
-        // Filter client side so all query tokens match (e.g. "hsbc" AND "midca")
-        let matches = fetchedList.filter(item => {
-          const name = item.schemeName.toLowerCase();
-          return tokens.every(token => name.includes(token));
+        // Combine live API results with local fallback DB
+        const combinedPool = [...rawResults, ...OFFLINE_AMC_DB];
+        const uniquePool = [];
+        const seenCodes = new Set();
+
+        for (const item of combinedPool) {
+          if (item && item.schemeCode && !seenCodes.has(item.schemeCode)) {
+            seenCodes.add(item.schemeCode);
+            uniquePool.push(item);
+          }
+        }
+
+        // Client-side multi-token filter: ALL user tokens MUST exist in scheme name
+        const matches = uniquePool.filter(item => {
+          const schemeName = item.schemeName.toLowerCase();
+          return tokens.every(token => schemeName.includes(token));
         });
-
-        // Fallback to local AMC database if API returned empty
-        if (matches.length === 0) {
-          matches = OFFLINE_AMC_DB.filter(item => {
-            const name = item.schemeName.toLowerCase();
-            return tokens.every(token => name.includes(token));
-          });
-        }
 
         if (matches.length > 0) {
           renderSearchResults(target, matches.slice(0, 10));

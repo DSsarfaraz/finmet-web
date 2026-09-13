@@ -66,14 +66,14 @@
         .brand-box { display: flex; align-items: center; }
         .brand-box img { height: 171px; width: auto; display: block; }
 
-        .nav-actions { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+        .nav-actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
 
         .nav-btn {
             background: rgba(37, 211, 102, 0.08);
             color: var(--accent);
             border: 1px solid rgba(37, 211, 102, 0.28);
-            padding: 0.55rem 1rem;
-            font-size: 0.85rem;
+            padding: 0.6rem 1.1rem;
+            font-size: 0.88rem;
             font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
@@ -81,16 +81,35 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
             position: relative;
         }
-        .nav-btn .ic { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; flex-shrink: 0; }
+        .nav-btn .ic { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; flex-shrink: 0; }
         .nav-btn:hover { background: rgba(37, 211, 102, 0.16); border-color: var(--accent); transform: translateY(-1px); }
 
-        .nav-btn.whatsapp { background: rgba(37, 211, 102, 0.14); border-color: rgba(37, 211, 102, 0.45); }
-        .nav-btn.sector { background: linear-gradient(135deg, rgba(37,211,102,0.22), rgba(18,140,126,0.22)); border-color: rgba(37,211,102,0.5); }
+        .nav-btn.sector { background: linear-gradient(135deg, rgba(37,211,102,0.18), rgba(18,140,126,0.18)); border-color: rgba(37,211,102,0.45); }
+        .nav-btn.hub-btn { background: rgba(37, 211, 102, 0.14); border-color: var(--accent); font-weight: 700; }
 
-        /* Tap + hover friendly tooltip */
+        /* NEW Badge Highlight */
+        .badge-new {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: #ffffff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 4px;
+            box-shadow: 0 0 10px rgba(255, 75, 43, 0.5);
+            animation: pulse-badge 2s infinite;
+        }
+        @keyframes pulse-badge {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.05); }
+        }
+
+        /* Tooltips */
         .tip {
             visibility: hidden; opacity: 0; pointer-events: none;
             position: absolute; top: 120%; right: 0;
@@ -101,20 +120,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
             transition: opacity 0.15s ease;
         }
-        .nav-btn:hover .tip, .nav-btn.tip-open .tip { visibility: visible; opacity: 1; pointer-events: auto; }
-
-        .tab-btn { position: relative; }
-        .tab-btn .tab-tip {
-            visibility: hidden; opacity: 0; pointer-events: none;
-            position: absolute; top: 115%; left: 50%; transform: translateX(-50%);
-            background: #060a06; color: var(--text-white);
-            padding: 0.7rem 0.9rem; font-size: 0.8rem; font-weight: 400;
-            border-radius: 8px; border: 1px solid var(--accent);
-            width: 210px; text-align: left; z-index: 30;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            transition: opacity 0.15s ease; white-space: normal;
-        }
-        .tab-btn:hover .tab-tip, .tab-btn.tip-open .tab-tip { visibility: visible; opacity: 1; pointer-events: auto; }
+        .nav-btn:hover .tip { visibility: visible; opacity: 1; pointer-events: auto; }
 
         /* ================= HERO ================= */
         .hero {
@@ -223,29 +229,77 @@
             .hero-ctas { justify-content: center; }
         }
 
-        /* ================= MODALS ================= */
+        /* ================= MODALS & LEARNING HUB ================= */
         .options-modal, .knowledge-modal {
             display: none;
             background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 2.2rem;
             margin: 0 0 2.2rem;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.55);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             animation: fadeIn 0.35s ease-in-out;
         }
         .options-modal.visible, .knowledge-modal.visible { display: block; }
 
         .options-header {
             display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;
+            margin-bottom: 1.6rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;
         }
-        .options-header h2 { font-size: 1.3rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
-        .options-header h2 .ic { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.6; }
-        .close-modal-btn { background: transparent; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; line-height: 1; }
+        .options-header h2 { font-size: 1.4rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
+        .options-header h2 .ic { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+        .close-modal-btn { background: transparent; border: none; color: var(--text-muted); font-size: 1.6rem; cursor: pointer; line-height: 1; }
         .close-modal-btn:hover { color: var(--text-white); }
 
-        .risk-category-card, .knowledge-card {
+        /* Multi-column Grid for Learning Hub */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .knowledge-card {
+            background: var(--card-hi);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.4rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+        .knowledge-card:hover { border-color: var(--border-hi); transform: translateY(-2px); }
+        .knowledge-card h3 { font-size: 1.1rem; color: var(--text-white); margin-bottom: 0.6rem; }
+        .knowledge-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.2rem; flex-grow: 1; }
+
+        .knowledge-card a, .knowledge-card button.card-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+            background: rgba(37, 211, 102, 0.08); color: var(--accent);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            padding: 0.6rem 1.1rem; font-size: 0.85rem; font-weight: 600;
+            border-radius: 8px; text-decoration: none; cursor: pointer; transition: all 0.2s;
+            width: 100%; text-align: center;
+        }
+        .knowledge-card a:hover, .knowledge-card button.card-btn:hover { background: rgba(37, 211, 102, 0.2); border-color: var(--accent); }
+
+        .knowledge-card.featured {
+            border-color: rgba(37,211,102,0.4); background: linear-gradient(160deg, rgba(37,211,102,0.06), var(--card-hi));
+            box-shadow: 0 0 0 1px rgba(37,211,102,0.15), 0 8px 24px rgba(37,211,102,0.08);
+        }
+        .knowledge-card.featured:hover { border-color: var(--accent); }
+        .featured-badge {
+            display: inline-flex; align-items: center; gap: 5px; background: rgba(37,211,102,0.15);
+            color: var(--accent-light); border: 1px solid rgba(37,211,102,0.4); border-radius: 12px;
+            padding: 3px 10px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 0.75rem; width: fit-content;
+        }
+        .knowledge-card.featured a, .knowledge-card.featured button.card-btn {
+            background: linear-gradient(135deg, var(--accent-2), var(--accent)); color: #04140b;
+            border: none; font-weight: 700;
+        }
+        .knowledge-card.featured a:hover, .knowledge-card.featured button.card-btn:hover { background: linear-gradient(135deg, var(--accent), var(--accent-light)); }
+
+        .risk-category-card {
             background: var(--card-hi);
             border: 1px solid var(--border);
             border-radius: 10px;
@@ -253,9 +307,9 @@
             margin-bottom: 1.2rem;
             transition: border-color 0.2s ease;
         }
-        .risk-category-card:hover, .knowledge-card:hover { border-color: var(--border-hi); }
-        .risk-category-card h3, .knowledge-card h3 { font-size: 1.05rem; color: var(--accent); margin-bottom: 0.6rem; }
-        .risk-category-card p, .knowledge-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.9rem; }
+        .risk-category-card:hover { border-color: var(--border-hi); }
+        .risk-category-card h3 { font-size: 1.05rem; color: var(--accent); margin-bottom: 0.6rem; }
+        .risk-category-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.9rem; }
 
         .history-returns-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem;
@@ -264,33 +318,6 @@
         }
         .history-returns-grid div span { display: block; font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
         .history-returns-grid div strong { font-size: 0.98rem; color: var(--accent-light); }
-
-        .knowledge-card a {
-            display: inline-flex; align-items: center; gap: 6px;
-            background: rgba(37, 211, 102, 0.08); color: var(--accent);
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            padding: 0.5rem 1rem; font-size: 0.83rem; font-weight: 600;
-            border-radius: 6px; text-decoration: none; transition: background 0.2s;
-        }
-        .knowledge-card a:hover { background: rgba(37, 211, 102, 0.2); }
-
-        .knowledge-card.featured {
-            border-color: var(--accent); background: linear-gradient(160deg, rgba(37,211,102,0.06), var(--card-hi));
-            box-shadow: 0 0 0 1px rgba(37,211,102,0.15), 0 8px 24px rgba(37,211,102,0.08);
-            position: relative;
-        }
-        .knowledge-card.featured:hover { border-color: var(--accent-light); }
-        .featured-badge {
-            display: inline-flex; align-items: center; gap: 5px; background: rgba(37,211,102,0.15);
-            color: var(--accent-light); border: 1px solid rgba(37,211,102,0.4); border-radius: 12px;
-            padding: 3px 10px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.5px; margin-bottom: 0.7rem;
-        }
-        .knowledge-card.featured a {
-            background: linear-gradient(135deg, var(--accent-2), var(--accent)); color: #04140b;
-            border: none; font-weight: 700;
-        }
-        .knowledge-card.featured a:hover { background: linear-gradient(135deg, var(--accent), var(--accent-light)); }
 
         /* ================= SLIDER ================= */
         .slider-container {
@@ -457,6 +484,7 @@
             .nav-btn .tip { left: 0; right: 0; width: auto; }
             .calculators-wrapper { padding: 1.5rem; }
             .options-modal, .knowledge-modal { padding: 1.5rem; }
+            .hub-grid { grid-template-columns: 1fr; }
             .history-returns-grid { grid-template-columns: 1fr; gap: 0.5rem; }
             .results-row { grid-template-columns: 1fr; gap: 1rem; }
             .result-box .big-num { font-size: 1.5rem; }
@@ -491,24 +519,14 @@
 
                 <a href="sector_q2.html" class="nav-btn sector">
                     <svg class="ic"><use href="#ic-chart"/></svg>
-                    Latest Sector Report
+                    Latest Sector Report <span class="badge-new">NEW</span>
                     <span class="tip">Our latest sector research, explained simply — for learning, not a buy/sell signal.</span>
                 </a>
 
-                <a href="india_growth_story.html" class="nav-btn sector">
-                    <svg class="ic"><use href="#ic-bars"/></svg>
-                    India's Growth Story
-                    <span class="tip">Which sectors are set to boom over the next 5–10 years, and why — with real numbers.</span>
-                </a>
-                <button class="nav-btn" onclick="toggleInvestmentOptions()">
-                    <svg class="ic"><use href="#ic-coin"/></svg>
-                    Investment Options
-                    <span class="tip">Compare risk levels — FD/RD, hybrid funds, and equities — with historical return ranges.</span>
-                </button>
-                <button class="nav-btn" onclick="toggleKnowledgeHub()">
+                <button class="nav-btn hub-btn" onclick="toggleKnowledgeHub()">
                     <svg class="ic"><use href="#ic-book"/></svg>
                     Learning Hub
-                    <span class="tip">Beginner guides on mutual funds, index funds, SIPs, and our Mutual Fund History deep-dive.</span>
+                    <span class="tip">Explore India's growth story, asset class risk levels, MF history, and beginner guides.</span>
                 </button>
             </div>
         </div>
@@ -639,6 +657,67 @@
             </div>
         </div>
 
+        <!-- LEARNING HUB MODAL (EXPANDED & CLEAN) -->
+        <div id="knowledgeHubModal" class="knowledge-modal">
+            <div class="options-header">
+                <h2><svg class="ic"><use href="#ic-book"/></svg>Finmet Learning Hub</h2>
+                <button class="close-modal-btn" onclick="toggleKnowledgeHub()">&times;</button>
+            </div>
+
+            <div class="hub-grid">
+                <!-- Card 1: India's Growth Story -->
+                <div class="knowledge-card featured">
+                    <div>
+                        <span class="featured-badge">🚀 High Impact Macro</span>
+                        <h3>India's Growth Story</h3>
+                        <p>Which sectors are set to boom over the next 5–10 years, and why — backed by real numbers, infrastructure spending, and demographics.</p>
+                    </div>
+                    <a href="india_growth_story.html">Explore Growth Story &rarr;</a>
+                </div>
+
+                <!-- Card 2: Investment Options & Risk Breakdown -->
+                <div class="knowledge-card featured">
+                    <div>
+                        <span class="featured-badge">📊 Asset Class Guide</span>
+                        <h3>Investment Options &amp; Risk Levels</h3>
+                        <p>Compare risk profiles — FD/RD, hybrid funds, and equities — with historical 10, 15, and 20-year return benchmark ranges.</p>
+                    </div>
+                    <button class="card-btn" onclick="toggleInvestmentOptions()">View Risk Breakdown &rarr;</button>
+                </div>
+
+                <!-- Card 3: Overlap Calculator -->
+                <div class="knowledge-card">
+                    <div>
+                        <span class="featured-badge">⚡ Portfolio Tool</span>
+                        <h3>Mutual Fund Overlap Calculator</h3>
+                        <p>Compare any two mutual funds to check portfolio duplication and stock overlap before adding a new fund to your SIP portfolio.</p>
+                    </div>
+                    <a href="overlap.html">Launch Overlap Calculator &rarr;</a>
+                </div>
+
+                <!-- Card 4: Mutual Fund History -->
+                <div class="knowledge-card">
+                    <div>
+                        <span class="featured-badge">📜 20+ Year Deep-Dive</span>
+                        <h3>Mutual Fund History</h3>
+                        <p>Which Indian mutual funds have actually survived and compounded across every major crash since the 1990s in plain language.</p>
+                    </div>
+                    <a href="mutual_Fund.html">Explore Mutual Fund History &rarr;</a>
+                </div>
+
+                <!-- Card 5: Beginner Guide -->
+                <div class="knowledge-card">
+                    <div>
+                        <span class="featured-badge">📚 Basics 101</span>
+                        <h3>What are Mutual Funds?</h3>
+                        <p>A simple breakdown of how pooling money works, professional fund management, and why it beats keeping cash idle in savings.</p>
+                    </div>
+                    <a href="https://www.investopedia.com/terms/m/mutualfund.asp" target="_blank">Read Guide on Investopedia &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- INVESTMENT OPTIONS MODAL -->
         <div id="investmentOptionsModal" class="options-modal">
             <div class="options-header">
                 <h2><svg class="ic"><use href="#ic-coin"/></svg>Asset Class Risk &amp; History Breakdown</h2>
@@ -673,33 +752,6 @@
                     <div><span>15-Yr Historic Avg</span><strong>13.5% - 16.0%</strong></div>
                     <div><span>20-Yr Historic Avg</span><strong>14.0% - 16.5%</strong></div>
                 </div>
-            </div>
-        </div>
-
-        <div id="knowledgeHubModal" class="knowledge-modal">
-            <div class="options-header">
-                <h2><svg class="ic"><use href="#ic-book"/></svg>Finmet Quick Learning Hub</h2>
-                <button class="close-modal-btn" onclick="toggleKnowledgeHub()">&times;</button>
-            </div>
-
-            <div class="knowledge-card featured">
-                <span class="featured-badge">⭐ Finmet Original Tool</span>
-                <h3>Mutual Fund Overlap Calculator</h3>
-                <p>Compare any two mutual funds to check portfolio duplication and stock overlap before adding a new fund to your SIP portfolio.</p>
-                <a href="overlap.html">Launch Overlap Calculator &rarr;</a>
-            </div>
-
-            <div class="knowledge-card featured">
-                <span class="featured-badge">⭐ Finmet Original</span>
-                <h3>Mutual Fund History (20+ Years)</h3>
-                <p>Which Indian mutual funds have actually survived and compounded across every major crash since the 1990s in plain language.</p>
-                <a href="mutual_Fund.html">Explore Mutual Fund History &rarr;</a>
-            </div>
-
-            <div class="knowledge-card">
-                <h3>1. What are Mutual Funds?</h3>
-                <p>A simple breakdown of how pooling money works, professional fund management, and why it beats keeping cash idle in a regular savings account.</p>
-                <a href="https://www.investopedia.com/terms/m/mutualfund.asp" target="_blank">Read Guide on Investopedia &rarr;</a>
             </div>
         </div>
 
@@ -906,7 +958,7 @@
                     <h4>Explore</h4>
                     <ul>
                         <li><a href="overlap.html">MF Overlap Calculator</a></li>
-                        <li><a href="#" onclick="toggleInvestmentOptions(); return false;">Investment Options</a></li>
+                        <li><a href="india_growth_story.html">India's Growth Story</a></li>
                         <li><a href="#" onclick="toggleKnowledgeHub(); return false;">Learning Hub</a></li>
                         <li><a href="#" onclick="revealCalculators(); return false;">Calculators</a></li>
                         <li><a href="sector_q2.html">Latest Sector Report</a></li>
