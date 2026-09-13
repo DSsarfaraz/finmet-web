@@ -117,9 +117,10 @@
 
           <div id="container-fund-a" class="relative">
             <div class="relative">
-              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Type at least 2 letters (e.g. sbi, ax, uti, hdfc)..." 
+              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Search any fund (e.g. ax, sbi, uti, hdfc, quant)..." 
                 class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
-                oninput="onSearchInput('a', this.value)">
+                oninput="onSearchInput('a', this.value)"
+                onfocus="onSearchInput('a', this.value)">
               <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
             </div>
             <div id="results-fund-a" class="hidden absolute left-0 right-0 top-full mt-2 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 max-h-64 overflow-y-auto custom-scrollbar"></div>
@@ -144,9 +145,10 @@
           <label class="text-xs font-bold tracking-wider text-emerald-400 uppercase">Select Fund B</label>
           <div id="container-fund-b" class="relative">
             <div class="relative">
-              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Type at least 2 letters (e.g. hdfc, quant, nippon)..." 
+              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Search any fund (e.g. hdfc, quant, nippon, dsp)..." 
                 class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
-                oninput="onSearchInput('b', this.value)">
+                oninput="onSearchInput('b', this.value)"
+                onfocus="onSearchInput('b', this.value)">
               <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
             </div>
             <div id="results-fund-b" class="hidden absolute left-0 right-0 top-full mt-2 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 max-h-64 overflow-y-auto custom-scrollbar"></div>
@@ -398,55 +400,98 @@
       { name: "Automobile", reason: "EV transition, premium passenger vehicles & auto-components expansion." }
     ];
 
-    // Comprehensive Offline AMC Database Fallback (Covers short queries like AX, SBI, UTI, ICICI, DSP, etc.)
-    const OFFLINE_AMC_DB = [
+    // Extended AMC Fallback Registry
+    const EXTENDED_AMC_DB = [
       { schemeName: "Axis Small Cap Fund - Direct Plan - Growth", schemeCode: 125354 },
       { schemeName: "Axis Bluechip Fund - Direct Plan - Growth", schemeCode: 120503 },
       { schemeName: "Axis Midcap Fund - Direct Plan - Growth", schemeCode: 120505 },
+      { schemeName: "Axis Flexi Cap Fund - Direct Plan - Growth", schemeCode: 142145 },
       { schemeName: "SBI Midcap Fund - Direct Plan - Growth", schemeCode: 119598 },
       { schemeName: "SBI Small Cap Fund - Direct Plan - Growth", schemeCode: 125497 },
       { schemeName: "SBI Bluechip Fund - Direct Plan - Growth", schemeCode: 119842 },
       { schemeName: "SBI Contra Fund - Direct Plan - Growth", schemeCode: 119721 },
+      { schemeName: "SBI Large & Midcap Fund - Direct Plan - Growth", schemeCode: 119708 },
       { schemeName: "ICICI Prudential Infrastructure Fund - Direct Growth", schemeCode: 120594 },
       { schemeName: "ICICI Prudential Bluechip Fund - Direct Growth", schemeCode: 120586 },
       { schemeName: "ICICI Prudential Smallcap Fund - Direct Growth", schemeCode: 120612 },
+      { schemeName: "ICICI Prudential Value Discovery Fund - Direct Growth", schemeCode: 120595 },
       { schemeName: "HDFC Top 100 Fund - Direct Plan - Growth", schemeCode: 119060 },
       { schemeName: "HDFC Mid-Cap Opportunities Fund - Direct Growth", schemeCode: 118989 },
       { schemeName: "HDFC Small Cap Fund - Direct Plan - Growth", schemeCode: 119064 },
+      { schemeName: "HDFC Flexi Cap Fund - Direct Plan - Growth", schemeCode: 119063 },
       { schemeName: "Nippon India Small Cap Fund - Direct Growth", schemeCode: 118778 },
       { schemeName: "Nippon India Growth Fund - Direct Growth", schemeCode: 118749 },
+      { schemeName: "Nippon India Multi Cap Fund - Direct Growth", schemeCode: 118774 },
       { schemeName: "Quant Small Cap Fund - Direct Plan - Growth", schemeCode: 120828 },
       { schemeName: "Quant Mid Cap Fund - Direct Plan - Growth", schemeCode: 120831 },
+      { schemeName: "Quant Active Fund - Direct Plan - Growth", schemeCode: 120823 },
+      { schemeName: "Quant Infrastructure Fund - Direct Plan - Growth", schemeCode: 120827 },
       { schemeName: "Parag Parikh Flexi Cap Fund - Direct Growth", schemeCode: 122639 },
+      { schemeName: "Parag Parikh Tax Saver Fund - Direct Growth", schemeCode: 147285 },
       { schemeName: "UTI Flexi Cap Fund - Direct Plan - Growth", schemeCode: 120716 },
       { schemeName: "UTI Nifty 50 Index Fund - Direct Plan - Growth", schemeCode: 120718 },
+      { schemeName: "UTI Mid Cap Fund - Direct Plan - Growth", schemeCode: 120720 },
       { schemeName: "DSP Small Cap Fund - Direct Plan - Growth", schemeCode: 119364 },
+      { schemeName: "DSP Midcap Fund - Direct Plan - Growth", schemeCode: 119363 },
       { schemeName: "Mirae Asset Large Cap Fund - Direct Plan - Growth", schemeCode: 118834 },
+      { schemeName: "Mirae Asset Midcap Fund - Direct Plan - Growth", schemeCode: 146864 },
       { schemeName: "Tata Digital India Fund - Direct Plan - Growth", schemeCode: 135782 },
-      { schemeName: "HSBC Midcap Fund - Direct Plan - Growth", schemeCode: 120150 },
-      { schemeName: "HSBC Large Cap Fund - Direct Plan - Growth", schemeCode: 120151 },
-      { schemeName: "HSBC Small Cap Fund - Direct Plan - Growth", schemeCode: 120152 },
-      { schemeName: "HSBC Infrastructure Fund - Direct Plan - Growth", schemeCode: 120153 },
-      { schemeName: "HSBC Flexi Cap Fund - Direct Plan - Growth", schemeCode: 120154 }
+      { schemeName: "Tata Small Cap Fund - Direct Plan - Growth", schemeCode: 145028 },
+      { schemeName: "Kotak Emerging Equity Fund - Direct Plan - Growth", schemeCode: 120166 },
+      { schemeName: "Kotak Small Cap Fund - Direct Plan - Growth", schemeCode: 120188 },
+      { schemeName: "Canara Robeco Emerging Equities - Direct Growth", schemeCode: 120383 },
+      { schemeName: "Canara Robeco Small Cap Fund - Direct Growth", schemeCode: 145652 },
+      { schemeName: "Motilal Oswal Midcap Fund - Direct Plan - Growth", schemeCode: 127042 },
+      { schemeName: "LIC MF Small Cap Fund - Direct Plan - Growth", schemeCode: 141381 },
+      { schemeName: "Edelweiss Small Cap Fund - Direct Plan - Growth", schemeCode: 146030 }
     ];
 
-    let selectedFundA = { name: "HSBC Midcap Fund", holdings: HOLDINGS_ENGINE.midcap };
-    let selectedFundB = { name: "HDFC Top 100 Fund", holdings: HOLDINGS_ENGINE.largecap };
+    // AMC Ticker / Short Code Alias Map
+    const AMC_ALIASES = {
+      'ax': 'axis',
+      'sb': 'sbi',
+      'ic': 'icici',
+      'ut': 'uti',
+      'hdf': 'hdfc',
+      'nip': 'nippon',
+      'ppfas': 'parag parikh',
+      'mirae': 'mirae asset',
+      'can': 'canara'
+    };
+
+    let masterSchemeList = [...EXTENDED_AMC_DB];
+    let selectedFundA = { name: "Axis Midcap Fund - Direct Plan - Growth", holdings: HOLDINGS_ENGINE.midcap };
+    let selectedFundB = { name: "HDFC Top 100 Fund - Direct Plan - Growth", holdings: HOLDINGS_ENGINE.largecap };
     let uploadedPortfolio = null;
     let uploadedFileName = "Uploaded Broker Portfolio";
     let currentMode = 'fund-vs-fund';
-    let debounceTimerA = null;
-    let debounceTimerB = null;
     let sectorChartInstance = null;
     let currentSearchResults = { a: [], b: [] };
 
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('search-fund-a').value = selectedFundA.name;
       document.getElementById('search-fund-b').value = selectedFundB.name;
+      initMasterDatabase();
       calculateOverlap();
     });
 
-    document.addEventListener('click', (e) => {
+    // Background pre-fetch of the complete 40,000+ Indian schemes registry
+    async function initMasterDatabase() {
+      try {
+        const res = await fetch('https://api.mfapi.in/mf');
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            masterSchemeList = data;
+          }
+        }
+      } catch (err) {
+        console.warn("Using offline master AMC database registry", err);
+      }
+    }
+
+    // Dropdown auto-dismissal safety logic
+    document.addEventListener('mousedown', (e) => {
       if (!e.target.closest('#container-fund-a')) document.getElementById('results-fund-a').classList.add('hidden');
       if (!e.target.closest('#container-fund-b')) document.getElementById('results-fund-b').classList.add('hidden');
     });
@@ -485,74 +530,52 @@
       calculateOverlap();
     }
 
-    // MULTI-WORD TOKENIZED LIVE SEARCH ENGINE (2-CHARACTER MINIMUM FOR TICKERS LIKE AX, IC, SB, UT)
+    // INSTANT CLIENT-SIDE FULL-TEXT SEARCH WITH ALIAS MAPPING & RELEVANCE RANKING
     function onSearchInput(target, query) {
-      if (target === 'a') clearTimeout(debounceTimerA);
-      else clearTimeout(debounceTimerB);
-
       const resultsDiv = document.getElementById(`results-fund-${target}`);
-      const trimmed = query.trim();
+      const rawTrimmed = query.trim().toLowerCase();
 
-      if (!trimmed || trimmed.length < 2) {
+      if (!rawTrimmed) {
         resultsDiv.classList.add('hidden');
         return;
       }
 
-      resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-400 animate-pulse text-center">Searching live Indian mutual funds...</div>`;
-      resultsDiv.classList.remove('hidden');
+      // 1. Expand aliases (e.g. "ax" -> "axis", "sb" -> "sbi")
+      const tokens = rawTrimmed.split(/\s+/).filter(t => t.length > 0).map(t => AMC_ALIASES[t] || t);
 
-      const timer = setTimeout(async () => {
-        const tokens = trimmed.toLowerCase().split(/\s+/).filter(t => t.length > 0);
-        let rawResults = [];
+      // 2. Filter master list
+      let matches = masterSchemeList.filter(item => {
+        if (!item || !item.schemeName) return false;
+        const nameLower = item.schemeName.toLowerCase();
+        return tokens.every(token => nameLower.includes(token));
+      });
 
-        try {
-          // 1. Primary query using complete user input string
-          let res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(trimmed)}`);
-          if (res.ok) rawResults = await res.json();
+      // 3. Prioritize matches starting with the query string (e.g. Axis when user types 'ax')
+      matches.sort((a, b) => {
+        const nameA = a.schemeName.toLowerCase();
+        const nameB = b.schemeName.toLowerCase();
+        const startsA = tokens.some(t => nameA.startsWith(t));
+        const startsB = tokens.some(t => nameB.startsWith(t));
+        if (startsA && !startsB) return -1;
+        if (!startsA && startsB) return 1;
+        return 0;
+      });
 
-          // 2. Fallback to first token query if multi-word input yields empty response
-          if ((!rawResults || rawResults.length === 0) && tokens.length > 1) {
-            res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(tokens[0])}`);
-            if (res.ok) rawResults = await res.json();
-          }
-        } catch (err) {
-          console.warn("API search offline, using local AMC database", err);
-        }
-
-        const combinedPool = [...(Array.isArray(rawResults) ? rawResults : []), ...OFFLINE_AMC_DB];
-        const uniquePool = [];
-        const seenCodes = new Set();
-
-        for (const item of combinedPool) {
-          if (item && item.schemeCode && !seenCodes.has(item.schemeCode)) {
-            seenCodes.add(item.schemeCode);
-            uniquePool.push(item);
-          }
-        }
-
-        const matches = uniquePool.filter(item => {
-          if (!item || !item.schemeName) return false;
-          const schemeName = item.schemeName.toLowerCase();
-          return tokens.every(token => schemeName.includes(token));
-        });
-
-        if (matches.length > 0) {
-          currentSearchResults[target] = matches.slice(0, 15);
-          renderSearchResults(target);
-        } else {
-          resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-500 text-center">No funds found matching "${query}"</div>`;
-        }
-      }, 250);
-
-      if (target === 'a') debounceTimerA = timer;
-      else debounceTimerB = timer;
+      if (matches.length > 0) {
+        currentSearchResults[target] = matches.slice(0, 20);
+        renderSearchResults(target);
+        resultsDiv.classList.remove('hidden');
+      } else {
+        resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-500 text-center">No funds found matching "${query}"</div>`;
+        resultsDiv.classList.remove('hidden');
+      }
     }
 
     function renderSearchResults(target) {
       const resultsDiv = document.getElementById(`results-fund-${target}`);
       const funds = currentSearchResults[target] || [];
       resultsDiv.innerHTML = funds.map((f, idx) => `
-        <div onclick="selectFundByIndex('${target}', ${idx})" 
+        <div onmousedown="selectFundByIndex('${target}', ${idx})" 
           class="p-3 text-xs hover:bg-slate-800 cursor-pointer border-b border-slate-800/50 flex justify-between items-center transition">
           <span class="text-slate-200 font-medium pr-2">${f.schemeName}</span>
           <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20 whitespace-nowrap">Scheme</span>
