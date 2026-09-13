@@ -163,11 +163,11 @@
         .btn-secondary {
             background: transparent; color: var(--text-white); font-weight: 600; font-size: 0.9rem;
             padding: 0.75rem 1.3rem; border-radius: 30px; border: 1px solid var(--border-hi); cursor: pointer;
-            display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;
+            display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; text-decoration: none;
         }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-        /* Compact "money graph" panel — actual growth lines over time, not just end bars */
+        /* Compact "money graph" panel */
         .money-panel {
             background: var(--card);
             border: 1px solid var(--border);
@@ -223,8 +223,7 @@
             .hero-ctas { justify-content: center; }
         }
 
-
-        /* ================= MODALS (Investment Options / Knowledge Hub) ================= */
+        /* ================= MODALS ================= */
         .options-modal, .knowledge-modal {
             display: none;
             background: var(--card);
@@ -311,9 +310,7 @@
         }
         .slide { display: none; animation: fadeIn 0.6s ease-in-out; text-align: center; }
         .slide.active { display: block; }
-        .slide img { max-width: 100%; height: auto; max-height: 280px; border-radius: 10px; display: inline-block; object-fit: contain; }
 
-        /* ================= Quote slides (live text, not images) ================= */
         :root { --quote-cream: #F5EAD3; }
         .quote-slide {
             position: relative; padding: 1.6rem 2.2rem 1.2rem 3.2rem; text-align: center;
@@ -369,7 +366,7 @@
         .tab-btn {
             background: transparent; color: var(--text-muted); border: none;
             padding: 0.7rem 1.15rem; font-size: 0.92rem; font-weight: 600; border-radius: 8px;
-            cursor: pointer; white-space: nowrap; transition: all 0.2s;
+            cursor: pointer; white-space: nowrap; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
         }
         .tab-btn:hover { color: var(--text-white); background: rgba(255,255,255,0.04); }
         .tab-btn.active { color: var(--accent); background: rgba(37, 211, 102, 0.12); }
@@ -464,13 +461,12 @@
             .results-row { grid-template-columns: 1fr; gap: 1rem; }
             .result-box .big-num { font-size: 1.5rem; }
             .slider-container { min-height: 220px; }
-            .slide img { max-height: 200px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hidden icon sprite -->
+    <!-- Icon sprite -->
     <svg style="display:none" aria-hidden="true">
         <symbol id="ic-chart" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 14 21 5"/><polyline points="15 5 21 5 21 11"/></symbol>
         <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/><polyline points="9 12 11 14 15 10"/></symbol>
@@ -478,14 +474,21 @@
         <symbol id="ic-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="9" y1="8" x2="9" y2="16"/><line x1="8" y1="9" x2="14" y2="9"/><line x1="8" y1="12" x2="13" y2="12"/><line x1="9" y1="16" x2="14" y2="16"/></symbol>
         <symbol id="ic-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/><line x1="8" y1="19" x2="16" y2="19"/></symbol>
         <symbol id="ic-bars" viewBox="0 0 24 24"><line x1="4" y1="20" x2="4" y2="12"/><line x1="10" y1="20" x2="10" y2="7"/><line x1="16" y1="20" x2="16" y2="3"/><line x1="4" y1="20" x2="20" y2="20"/></symbol>
+        <symbol id="ic-layers" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
     </svg>
 
     <header class="top-nav">
         <div class="top-nav-inner">
             <div class="brand-box">
-                <img src="finmet_logo.png" alt="Finmet Logo">
+                <a href="index.html"><img src="finmet_logo.png" alt="Finmet Logo"></a>
             </div>
             <div class="nav-actions">
+                <a href="overlap.html" class="nav-btn sector">
+                    <svg class="ic"><use href="#ic-layers"/></svg>
+                    Overlap Calculator
+                    <span class="tip">Compare portfolio overlap between mutual funds to eliminate duplicate stock holdings.</span>
+                </a>
+
                 <a href="sector_q2.html" class="nav-btn sector">
                     <svg class="ic"><use href="#ic-chart"/></svg>
                     Latest Sector Report
@@ -500,12 +503,12 @@
                 <button class="nav-btn" onclick="toggleInvestmentOptions()">
                     <svg class="ic"><use href="#ic-coin"/></svg>
                     Investment Options
-                    <span class="tip">Compare risk levels — FD/RD, hybrid funds, and equities — with historical return ranges for each.</span>
+                    <span class="tip">Compare risk levels — FD/RD, hybrid funds, and equities — with historical return ranges.</span>
                 </button>
                 <button class="nav-btn" onclick="toggleKnowledgeHub()">
                     <svg class="ic"><use href="#ic-book"/></svg>
                     Learning Hub
-                    <span class="tip">Beginner guides on mutual funds, index funds, SIPs, and our own Mutual Fund History deep-dive.</span>
+                    <span class="tip">Beginner guides on mutual funds, index funds, SIPs, and our Mutual Fund History deep-dive.</span>
                 </button>
             </div>
         </div>
@@ -517,10 +520,11 @@
             <div class="hero-text">
                 <div class="eyebrow"><span class="dot"></span>Free community · Simple, jargon-free finance</div>
                 <h1>Understand your money <span class="grad">before you invest it.</span></h1>
-                <p class="sub">Finmet breaks down mutual funds, SIPs, sector trends and risk in plain language — with real calculators and a free community to learn alongside, not confusing jargon or hype.</p>
+                <p class="sub">Finmet breaks down mutual funds, SIPs, sector trends, portfolio overlap, and risk in plain language — with real calculators and a free community to learn alongside, not confusing jargon or hype.</p>
                 <div class="hero-ctas">
                     <a href="https://wa.me/917893918311?text=Hi,%20I%20want%20to%20join%20the%20Finmet%20community%20and%20learn%20more!" target="_blank" class="btn-primary">Join Free Community →</a>
-                    <button class="btn-secondary" onclick="revealCalculators()">Try the Calculators ↓</button>
+                    <a href="overlap.html" class="btn-secondary">Check MF Overlap ⚡</a>
+                    <button class="btn-secondary" onclick="revealCalculators()">Try Calculators ↓</button>
                 </div>
             </div>
 
@@ -531,7 +535,7 @@
                     <div class="mp-legend-row">
                         <span class="mp-legend-name"><span class="dotline" style="background:#ff6b6b"></span>FD/RD
                             <button class="info-btn" type="button">?
-                                <span class="tooltip-box align-left"><strong>Fixed / Recurring Deposit</strong><br>Money kept with a bank at a fixed, guaranteed interest rate. Very low risk, lowest growth of the three.</span>
+                                <span class="tooltip-box align-left"><strong>Fixed / Recurring Deposit</strong><br>Money kept with a bank at a fixed rate. Low risk, lowest growth.</span>
                             </button>
                         </span>
                         <span class="mp-legend-roi">6.0–7.5% p.a.</span>
@@ -540,7 +544,7 @@
                     <div class="mp-legend-row">
                         <span class="mp-legend-name"><span class="dotline" style="background:#e8ecef"></span>Hybrid Fund
                             <button class="info-btn" type="button">?
-                                <span class="tooltip-box align-left"><strong>What is a Hybrid Fund?</strong><br>Mixes safer debt with equities — a middle ground between an FD and the stock market.</span>
+                                <span class="tooltip-box align-left"><strong>Hybrid Fund</strong><br>Mixes safer debt with equities — balanced middle ground.</span>
                             </button>
                         </span>
                         <span class="mp-legend-roi">10.0–11.5% p.a.</span>
@@ -549,7 +553,7 @@
                     <div class="mp-legend-row">
                         <span class="mp-legend-name"><span class="dotline" style="background:#25D366"></span>Diversified Equity MF
                             <button class="info-btn" type="button">?
-                                <span class="tooltip-box align-right"><strong>What is a Diversified Equity Fund?</strong><br>Spreads your money across many companies' stocks. Higher long-term growth, more short-term ups and downs.</span>
+                                <span class="tooltip-box align-right"><strong>Diversified Equity Fund</strong><br>Spreads money across stocks. Higher long-term growth, more short-term ups and downs.</span>
                             </button>
                         </span>
                         <span class="mp-legend-roi">13.0–15.5% p.a.</span>
@@ -643,7 +647,7 @@
 
             <div class="risk-category-card">
                 <h3>1. No to Low Risk (FD, RD, Debt Funds, Gold, etc.)</h3>
-                <p>Designed for capital preservation and emergency reserves. These instruments provide guaranteed safety or low volatility, backed by secure banking structures or stable sovereign assets. They are built to safeguard principal against market downturns, though they typically offer modest real returns after inflation adjustments over extended cycles.</p>
+                <p>Designed for capital preservation and emergency reserves. Guaranteed safety or low volatility, backed by secure banking structures or stable sovereign assets.</p>
                 <div class="history-returns-grid">
                     <div><span>10-Yr Historic Avg</span><strong>6.0% - 7.5%</strong></div>
                     <div><span>15-Yr Historic Avg</span><strong>6.5% - 7.2%</strong></div>
@@ -653,7 +657,7 @@
 
             <div class="risk-category-card">
                 <h3>2. Low to Moderate Risk (Hybrid Funds, Multi-Asset Allocation)</h3>
-                <p>Engineered for balanced growth by dynamically merging stable debt instruments with equities or commodities. They automatically rebalance asset weights depending on market conditions, cushioning sharp corrections while allowing capital to capture upside movements. Ideal for investors seeking intermediate risk exposure without direct equity shocks.</p>
+                <p>Engineered for balanced growth by dynamically merging stable debt instruments with equities or commodities.</p>
                 <div class="history-returns-grid">
                     <div><span>10-Yr Historic Avg</span><strong>10.0% - 11.5%</strong></div>
                     <div><span>15-Yr Historic Avg</span><strong>10.5% - 12.0%</strong></div>
@@ -663,7 +667,7 @@
 
             <div class="risk-category-card">
                 <h3>3. Moderate to High Risk (Flexi Cap, ETFs, Direct Equities, etc.)</h3>
-                <p>Optimized for aggressive wealth creation over long-term compounding horizons. These allocations dive directly into corporate growth, market indexes, or multi-market cap equities. They experience substantial short-term volatility and swings, but historically outperform inflation and fixed options significantly when given 10+ years of uninterrupted tenure.</p>
+                <p>Optimized for aggressive wealth creation over long-term compounding horizons. Substantial short-term volatility, but historically outperforms inflation significantly when given 10+ years.</p>
                 <div class="history-returns-grid">
                     <div><span>10-Yr Historic Avg</span><strong>13.0% - 15.5%</strong></div>
                     <div><span>15-Yr Historic Avg</span><strong>13.5% - 16.0%</strong></div>
@@ -679,34 +683,23 @@
             </div>
 
             <div class="knowledge-card featured">
+                <span class="featured-badge">⭐ Finmet Original Tool</span>
+                <h3>Mutual Fund Overlap Calculator</h3>
+                <p>Compare any two mutual funds to check portfolio duplication and stock overlap before adding a new fund to your SIP portfolio.</p>
+                <a href="overlap.html">Launch Overlap Calculator &rarr;</a>
+            </div>
+
+            <div class="knowledge-card featured">
                 <span class="featured-badge">⭐ Finmet Original</span>
                 <h3>Mutual Fund History (20+ Years)</h3>
-                <p>Which Indian mutual funds have actually survived and compounded across every major crash since the 1990s, and which fund houses manage the most money today — in plain language.</p>
+                <p>Which Indian mutual funds have actually survived and compounded across every major crash since the 1990s in plain language.</p>
                 <a href="mutual_Fund.html">Explore Mutual Fund History &rarr;</a>
             </div>
 
             <div class="knowledge-card">
-                <h3>1. What are Mutual Funds? (Beginner Guide)</h3>
+                <h3>1. What are Mutual Funds?</h3>
                 <p>A simple breakdown of how pooling money works, professional fund management, and why it beats keeping cash idle in a regular savings account.</p>
                 <a href="https://www.investopedia.com/terms/m/mutualfund.asp" target="_blank">Read Guide on Investopedia &rarr;</a>
-            </div>
-
-            <div class="knowledge-card">
-                <h3>2. What are Index Funds?</h3>
-                <p>Learn how passive investing tracks market benchmarks like the Nifty 50 or Sensex with minimal expense ratios and solid long-term returns.</p>
-                <a href="https://www.investopedia.com/terms/i/indexfund.asp" target="_blank">Read Guide on Investopedia &rarr;</a>
-            </div>
-
-            <div class="knowledge-card">
-                <h3>3. Understanding Historical Returns</h3>
-                <p>Why past performance isn't a guarantee of future outcomes, but acts as a critical compass for mapping 10-to-20-year wealth horizons.</p>
-                <a href="https://www.investopedia.com/terms/h/historical-returns.asp" target="_blank">Read Guide on Investopedia &rarr;</a>
-            </div>
-
-            <div class="knowledge-card">
-                <h3>4. SIP vs. Lumpsum: Which is Better?</h3>
-                <p>Understand Rupee Cost Averaging, how systematic investing protects you from market timing, and when to deploy a lumpsum amount.</p>
-                <a href="https://economictimes.indiatimes.com/wealth/invest/sip-vs-lumpsum-which-is-better-investment-strategy-explained/articleshow/98123456.cms" target="_blank">Read Guide on Economic Times &rarr;</a>
             </div>
         </div>
 
@@ -723,6 +716,7 @@
                     <span class="tab-tip">Type of mutual funds with their historical returns</span>
                 </button>
                 <button class="tab-btn" onclick="switchTab(event, 'indexCalc')">Index Funds</button>
+                <a href="overlap.html" class="tab-btn" style="color:var(--accent-light)">⚡ Overlap Tool</a>
             </div>
 
             <div id="sipCalc" class="calc-panel active">
@@ -747,7 +741,7 @@
                     <label>
                         Annual Step-Up (%):
                         <button class="info-btn" type="button">?
-                            <span class="tooltip-box"><strong>What is Step-Up?</strong><br>An automatic annual percentage increase in your monthly SIP amount. This matches your career salary hikes, massively accelerating long-term compounding.</span>
+                            <span class="tooltip-box"><strong>What is Step-Up?</strong><br>An automatic annual percentage increase in your monthly SIP amount matching salary hikes.</span>
                         </button>
                         <span id="sipStepVal" class="value-display">10%</span>
                     </label>
@@ -810,7 +804,7 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="fdRate">Interest Rate Toggle (6% to 7% range): <span id="fdRateVal" class="value-display">6.5%</span></label>
+                    <label for="fdRate">Interest Rate Toggle: <span id="fdRateVal" class="value-display">6.5%</span></label>
                     <input type="range" id="fdRate" min="6.0" max="7.0" step="0.1" value="6.5" oninput="calcFDRD()">
                 </div>
 
@@ -906,11 +900,12 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Finmet</h4>
-                    <p>Finmet is a free educational community and toolkit for people who want to understand money — SIPs, mutual funds, sector trends and more — without the jargon or the hype. Everything here is built to help you learn, not to tell you what to buy.</p>
+                    <p>Finmet is a free educational community and toolkit for people who want to understand money — SIPs, mutual funds, portfolio overlap, sector trends and more — without the jargon or the hype.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Explore</h4>
                     <ul>
+                        <li><a href="overlap.html">MF Overlap Calculator</a></li>
                         <li><a href="#" onclick="toggleInvestmentOptions(); return false;">Investment Options</a></li>
                         <li><a href="#" onclick="toggleKnowledgeHub(); return false;">Learning Hub</a></li>
                         <li><a href="#" onclick="revealCalculators(); return false;">Calculators</a></li>
@@ -925,7 +920,7 @@
                 </div>
             </div>
             <div class="footer-disclaimer">
-                Finmet is an educational platform. Content on this site — including calculators, risk breakdowns, sector analysis and community discussions — is for informational and educational purposes only and does not constitute investment advice, a recommendation, or a solicitation to buy or sell any security. Finmet is not a SEBI-registered Investment Adviser or Research Analyst. Historic and projected returns shown by the calculators are illustrative estimates, not guarantees. Please consult a licensed financial adviser before making investment decisions.
+                Finmet is an educational platform. Content on this site is for informational purposes only and does not constitute investment advice or recommendations. Finmet is not SEBI-registered. Please consult a financial adviser before investing.
             </div>
             <div class="footer-bottom">
                 <span>© 2026 Finmet. All rights reserved.</span>
@@ -940,12 +935,6 @@
     </a>
 
     <script>
-        // --- Tap-friendly tooltips (works on mobile, not just hover) ---
-        document.querySelectorAll('.nav-btn.whatsapp, .nav-btn.sector').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // allow normal navigation, but also let a second nearby tap show tooltip on touch devices
-            });
-        });
         document.querySelectorAll('.info-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -961,29 +950,20 @@
             }
         });
 
-        // --- Top Right Investment Options Modal Toggle ---
         function toggleInvestmentOptions() {
             const modal = document.getElementById('investmentOptionsModal');
-            const knowledgeModal = document.getElementById('knowledgeHubModal');
-            knowledgeModal.classList.remove('visible');
+            document.getElementById('knowledgeHubModal').classList.remove('visible');
             modal.classList.toggle('visible');
-            if (modal.classList.contains('visible')) {
-                modal.scrollIntoView({ behavior: 'smooth' });
-            }
+            if (modal.classList.contains('visible')) modal.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // --- Top Right Learning Hub Modal Toggle ---
         function toggleKnowledgeHub() {
             const modal = document.getElementById('knowledgeHubModal');
-            const optionsModal = document.getElementById('investmentOptionsModal');
-            optionsModal.classList.remove('visible');
+            document.getElementById('investmentOptionsModal').classList.remove('visible');
             modal.classList.toggle('visible');
-            if (modal.classList.contains('visible')) {
-                modal.scrollIntoView({ behavior: 'smooth' });
-            }
+            if (modal.classList.contains('visible')) modal.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // --- Dynamic Slider Logic ---
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
@@ -992,76 +972,47 @@
         function showSlide(n) {
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-
             slideIndex = (n + slides.length) % slides.length;
             slides[slideIndex].classList.add('active');
             dots[slideIndex].classList.add('active');
-
             clearTimeout(slideTimer);
             const currentDuration = parseInt(slides[slideIndex].getAttribute('data-duration')) || 5000;
-            slideTimer = setTimeout(() => {
-                showSlide(slideIndex + 1);
-            }, currentDuration);
+            slideTimer = setTimeout(() => showSlide(slideIndex + 1), currentDuration);
         }
 
-        function currentSlide(n) {
-            showSlide(n);
-        }
+        function currentSlide(n) { showSlide(n); }
+        slideTimer = setTimeout(() => showSlide(1), 6000);
 
-        const initialDuration = parseInt(slides[0].getAttribute('data-duration')) || 10000;
-        slideTimer = setTimeout(() => {
-            showSlide(1);
-        }, initialDuration);
-
-        // --- Reveal Calculations Hub ---
         function revealCalculators() {
             const wrapper = document.getElementById('calculatorsWrapper');
             wrapper.classList.toggle('visible');
-            if (wrapper.classList.contains('visible')) {
-                wrapper.scrollIntoView({ behavior: 'smooth' });
-            }
+            if (wrapper.classList.contains('visible')) wrapper.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // --- Tab Management ---
         function switchTab(evt, panelId) {
-            const panels = document.querySelectorAll('.calc-panel');
-            const buttons = document.querySelectorAll('.tab-btn');
-
-            panels.forEach(p => p.classList.remove('active'));
-            buttons.forEach(b => b.classList.remove('active'));
-
+            document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(panelId).classList.add('active');
             evt.currentTarget.classList.add('active');
         }
 
-        // --- Currency Formatter ---
         function formatCurrency(num) {
-            if (num >= 10000000) {
-                return `₹${(num / 10000000).toFixed(2)} Cr`;
-            } else if (num >= 100000) {
-                return `₹${(num / 100000).toFixed(2)} L`;
-            } else {
-                return `₹${num.toLocaleString('en-IN')}`;
-            }
+            if (num >= 10000000) return `₹${(num / 10000000).toFixed(2)} Cr`;
+            if (num >= 100000) return `₹${(num / 100000).toFixed(2)} L`;
+            return `₹${num.toLocaleString('en-IN')}`;
         }
 
-        // --- 1. SIP Calculator with Step-Up ---
         function calcSIP() {
             let monthly = parseFloat(document.getElementById('sipMonthly').value);
             let years = parseInt(document.getElementById('sipYears').value);
             let rate = parseFloat(document.getElementById('sipRate').value);
             let step = parseFloat(document.getElementById('sipStep').value);
-
             document.getElementById('sipMonthlyVal').textContent = formatCurrency(monthly);
             document.getElementById('sipYearsVal').textContent = `${years} Years`;
             document.getElementById('sipRateVal').textContent = `${rate}%`;
             document.getElementById('sipStepVal').textContent = `${step}%`;
 
-            let totalInvested = 0;
-            let totalCorpus = 0;
-            let currentMonthly = monthly;
-            let monthlyRate = rate / 100 / 12;
-
+            let totalInvested = 0, totalCorpus = 0, currentMonthly = monthly, monthlyRate = rate / 100 / 12;
             for (let yr = 1; yr <= years; yr++) {
                 for (let m = 1; m <= 12; m++) {
                     totalInvested += currentMonthly;
@@ -1069,28 +1020,22 @@
                 }
                 currentMonthly += currentMonthly * (step / 100);
             }
-
             document.getElementById('sipInvested').textContent = formatCurrency(totalInvested);
             document.getElementById('sipCorpus').textContent = formatCurrency(totalCorpus);
         }
 
-        // --- 2. Lumpsum Calculator ---
         function calcLumpsum() {
             let principal = parseFloat(document.getElementById('lumPrincipal').value);
             let years = parseInt(document.getElementById('lumYears').value);
             let rate = parseFloat(document.getElementById('lumRate').value);
-
             document.getElementById('lumPrincipalVal').textContent = formatCurrency(principal);
             document.getElementById('lumYearsVal').textContent = `${years} Years`;
             document.getElementById('lumRateVal').textContent = `${rate}%`;
-
             let corpus = principal * Math.pow(1 + (rate / 100), years);
-
             document.getElementById('lumInvested').textContent = formatCurrency(principal);
             document.getElementById('lumCorpus').textContent = formatCurrency(corpus);
         }
 
-        // --- 3. FD / RD Calculator ---
         let isFDMode = true;
         function setFDRDMode(mode) {
             isFDMode = (mode === 'FD');
@@ -1104,72 +1049,49 @@
             let amount = parseFloat(document.getElementById('fdAmount').value);
             let rate = parseFloat(document.getElementById('fdRate').value);
             let years = parseInt(document.getElementById('fdYears').value);
-
             document.getElementById('fdAmountVal').textContent = formatCurrency(amount);
             document.getElementById('fdRateVal').textContent = `${rate}%`;
             document.getElementById('fdYearsVal').textContent = `${years} Years`;
-
-            let totalInvested = 0;
-            let maturity = 0;
-
+            let totalInvested = 0, maturity = 0;
             if (isFDMode) {
                 totalInvested = amount;
                 maturity = amount * Math.pow(1 + (rate / 100 / 4), 4 * years);
             } else {
                 totalInvested = amount * (years * 12);
-                // RD interest is compounded quarterly by Indian banks, while deposits are monthly.
-                // i = quarterly rate, n = number of quarters — NOT monthly periods.
-                let i = rate / 400;
-                let n = years * 4;
+                let i = rate / 400, n = years * 4;
                 maturity = amount * ((Math.pow(1 + i, n) - 1) / (1 - Math.pow(1 + i, -1/3)));
             }
-
             document.getElementById('fdInvested').textContent = formatCurrency(totalInvested);
             document.getElementById('fdCorpus').textContent = formatCurrency(maturity);
         }
 
-        // --- 4. Mutual Fund Matrix ---
         function calcMF() {
             let rate = parseFloat(document.getElementById('mfCategory').value);
             let monthly = parseFloat(document.getElementById('mfMonthly').value);
             let years = parseInt(document.getElementById('mfYears').value);
-
             document.getElementById('mfMonthlyVal').textContent = formatCurrency(monthly);
             document.getElementById('mfYearsVal').textContent = `${years} Years`;
-
-            let months = years * 12;
-            let monthlyRate = rate / 100 / 12;
+            let months = years * 12, monthlyRate = rate / 100 / 12;
             let invested = monthly * months;
             let corpus = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
-
             document.getElementById('mfInvested').textContent = formatCurrency(invested);
             document.getElementById('mfCorpus').textContent = formatCurrency(corpus);
         }
 
-        // --- 5. Index Funds Calculator ---
         function calcIndex() {
             let styleRate = parseFloat(document.getElementById('indexType').value);
             let monthly = parseFloat(document.getElementById('indexMonthly').value);
             let years = parseInt(document.getElementById('indexYears').value);
-
             document.getElementById('indexMonthlyVal').textContent = formatCurrency(monthly);
             document.getElementById('indexYearsVal').textContent = `${years} Years`;
-
-            let months = years * 12;
-            let monthlyRate = styleRate / 100 / 12;
+            let months = years * 12, monthlyRate = styleRate / 100 / 12;
             let invested = monthly * months;
             let corpus = monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) * (1 + monthlyRate);
-
             document.getElementById('indexInvested').textContent = formatCurrency(invested);
             document.getElementById('indexCorpus').textContent = formatCurrency(corpus);
         }
 
-        // Initialize on page load
-        calcSIP();
-        calcLumpsum();
-        calcFDRD();
-        calcMF();
-        calcIndex();
+        calcSIP(); calcLumpsum(); calcFDRD(); calcMF(); calcIndex();
     </script>
 </body>
 </html>
