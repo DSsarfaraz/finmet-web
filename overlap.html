@@ -8,8 +8,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- PapaParse for CSV Uploads -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!-- SheetJS for CSV, XLSX, and XLS Processing in Browser -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
     
@@ -81,7 +81,7 @@
         Mutual Fund Overlap Calculator
       </h1>
       <p class="text-slate-400 text-sm max-w-2xl mx-auto">
-        Search live mutual funds across Indian AMCs using any multi-word query (e.g., <code class="text-emerald-400 font-mono">hsbc midcap direct</code>) or upload your broker statement.
+        Search live mutual funds across Indian AMCs using queries (min. 3 letters, e.g., <code class="text-emerald-400 font-mono">hsb</code>, <code class="text-emerald-400 font-mono">parag</code>) or upload your broker statement (.csv, .xlsx, .xls).
       </p>
     </div>
 
@@ -102,7 +102,7 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         
-        <!-- SELECT FUND A -->
+        <!-- SELECT FUND A / FILE UPLOAD -->
         <div class="space-y-2">
           <div class="flex items-center justify-between">
             <label id="label-fund-a" class="text-xs font-bold tracking-wider text-emerald-400 uppercase">Select Fund A</label>
@@ -115,7 +115,7 @@
 
           <div id="container-fund-a" class="relative">
             <div class="relative">
-              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Search live funds (e.g. hsbc midcap direct, parag parikh)..." 
+              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Type at least 3 letters (e.g. hsbc, parag, quant)..." 
                 class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
                 oninput="onSearchInput('a', this.value)">
               <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
@@ -123,15 +123,16 @@
             <div id="results-fund-a" class="hidden absolute left-0 right-0 top-full mt-2 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 max-h-64 overflow-y-auto custom-scrollbar"></div>
           </div>
 
-          <!-- Upload Container -->
+          <!-- Upload Container (CSV, XLSX, XLS) -->
           <div id="container-upload-a" class="hidden">
-            <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-dashed border-slate-800 hover:border-emerald-500/50 rounded-xl cursor-pointer bg-slate-950/50 transition">
+            <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-slate-800 hover:border-emerald-500/50 rounded-xl cursor-pointer bg-slate-950/50 transition group">
               <div class="flex flex-col items-center justify-center pt-3 pb-3">
-                <i data-lucide="file-up" class="w-6 h-6 text-emerald-400 mb-1"></i>
-                <p id="upload-file-name" class="text-xs text-slate-300 font-medium">Click to upload CSV file</p>
-                <p class="text-[10px] text-slate-500">Supports Groww, Zerodha, Angel One, ICICI, CAMS</p>
+                <i data-lucide="file-up" class="w-7 h-7 text-emerald-400 mb-1.5 group-hover:scale-110 transition-transform"></i>
+                <p id="upload-file-name" class="text-xs text-slate-300 font-medium text-center px-2">Click to upload Excel or CSV file</p>
+                <p class="text-[10px] text-slate-500 mt-1">Supports Zerodha, Groww, Angel One, Upstox, CAMS (.csv, .xlsx, .xls)</p>
+                <p class="text-[9px] text-emerald-400/80 mt-1">🔒 Processed 100% locally in browser</p>
               </div>
-              <input id="file-input-a" type="file" accept=".csv" class="hidden" onchange="handleFileUpload(event)" />
+              <input id="file-input-a" type="file" accept=".csv, .xlsx, .xls, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="hidden" onchange="handleFileUpload(event)" />
             </label>
           </div>
         </div>
@@ -141,7 +142,7 @@
           <label class="text-xs font-bold tracking-wider text-emerald-400 uppercase">Select Fund B</label>
           <div id="container-fund-b" class="relative">
             <div class="relative">
-              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Search live funds (e.g. hdfc top 100 growth, quant small cap)..." 
+              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Type at least 3 letters (e.g. hdfc, quant, nippon)..." 
                 class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
                 oninput="onSearchInput('b', this.value)">
               <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
@@ -223,13 +224,16 @@
 
       <div class="p-6 max-h-[70vh] overflow-y-auto custom-scrollbar space-y-4">
         <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
-          <span class="font-bold text-emerald-400">Groww:</span> Profile → Reports → Stock / MF Holdings → Download CSV.
+          <span class="font-bold text-emerald-400">Groww:</span> Profile → Reports → Stock / MF Holdings → Download Excel/CSV.
         </div>
         <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
-          <span class="font-bold text-emerald-400">Zerodha:</span> Console → Portfolio → Holdings → Export CSV.
+          <span class="font-bold text-emerald-400">Zerodha:</span> Console → Portfolio → Holdings → Export XLSX/CSV.
         </div>
         <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
           <span class="font-bold text-emerald-400">Angel One:</span> Portfolio → Download Icon → Holdings Summary.
+        </div>
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
+          <span class="font-bold text-emerald-400">Upstox:</span> Reports & Ledger → Holdings → Export to Excel.
         </div>
       </div>
 
@@ -370,7 +374,7 @@
       calculateOverlap();
     }
 
-    // MULTI-WORD TOKENIZED LIVE SEARCH ENGINE
+    // MULTI-WORD TOKENIZED LIVE SEARCH ENGINE (3-CHARACTER MINIMUM)
     function onSearchInput(target, query) {
       if (target === 'a') clearTimeout(debounceTimerA);
       else clearTimeout(debounceTimerB);
@@ -378,7 +382,8 @@
       const resultsDiv = document.getElementById(`results-fund-${target}`);
       const trimmed = query.trim();
 
-      if (!trimmed || trimmed.length < 2) {
+      // Requires at least 3 characters before initiating live search
+      if (!trimmed || trimmed.length < 3) {
         resultsDiv.classList.add('hidden');
         return;
       }
@@ -474,27 +479,32 @@
       return HOLDINGS_ENGINE.flexicap;
     }
 
+    // MULTI-FORMAT FILE UPLOAD HANDLER (.CSV, .XLSX, .XLS)
     function handleFileUpload(event) {
       const file = event.target.files[0];
       if (!file) return;
 
       document.getElementById('upload-file-name').innerText = file.name;
 
-      Papa.parse(file, {
-        header: true,
-        dynamicTyping: true,
-        skipEmptyLines: true,
-        complete: function(results) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, { type: 'array' });
+          const firstSheetName = workbook.SheetNames[0];
+          const rawRows = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
+
           uploadedPortfolio = [];
-          results.data.forEach(row => {
-            const stockName = row['Stock Name'] || row['Instrument'] || row['Company'] || row['Symbol'] || row['Scheme Name'];
-            const weightVal = parseFloat(row['Weight'] || row['% of Total'] || row['Allocation'] || 5.0);
-            const sectorVal = row['Sector'] || 'Equity';
+          rawRows.forEach(row => {
+            const stockName = row['Stock Name'] || row['Instrument'] || row['Company'] || row['Symbol'] || row['Scheme Name'] || row['Holding Name'] || row['Stock'];
+            const weightVal = parseFloat(row['Weight'] || row['% of Total'] || row['Allocation'] || row['Weightage'] || 5.0);
+            const sectorVal = row['Sector'] || row['Industry'] || 'Equity';
+            
             if (stockName) {
               uploadedPortfolio.push({
                 stock: String(stockName).trim(),
                 weight: isNaN(weightVal) ? 5.0 : weightVal,
-                sector: sectorVal
+                sector: String(sectorVal).trim()
               });
             }
           });
@@ -504,8 +514,12 @@
           }
 
           calculateOverlap();
+        } catch (err) {
+          console.error("Spreadsheet Parsing Error:", err);
+          alert("Error parsing file format. Please ensure it is a valid .csv, .xlsx, or .xls file.");
         }
-      });
+      };
+      reader.readAsArrayBuffer(file);
     }
 
     function calculateOverlap() {
