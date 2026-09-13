@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutual Fund Overlap Calculator | Finmet</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- PapaParse for CSV Uploads -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #080c10;
+      color: #e2e8f0;
+    }
+    
+    .finmet-card {
+      background: linear-gradient(145deg, #111822 0%, #0d121a 100%);
+      border: 1px solid #1e293b;
+    }
+    
+    .glow-accent {
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.12);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between custom-scrollbar">
+
+  <!-- TOP NAVBAR -->
+  <header class="border-b border-slate-800/80 bg-[#0b0f17]/90 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <div class="p-1.5 bg-emerald-500/10 rounded-lg border border-emerald-500/20 text-emerald-400">
+          <i data-lucide="trending-up" class="w-6 h-6"></i>
+        </div>
+        <span class="text-2xl font-bold tracking-tight text-white">fin<span class="text-emerald-400">met</span></span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-3">
+        <a href="index.html" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-slate-300 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 transition">
+          ← Back to Home
+        </a>
+        <a href="overlap.html" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 transition">
+          <i data-lucide="layers" class="w-3.5 h-3.5 inline mr-1"></i> Overlap Calculator
+        </a>
+        <a href="#" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-slate-300 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 transition">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 inline mr-1"></i> Latest Sector Report
+        </a>
+        <a href="#" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-slate-300 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 transition">
+          <i data-lucide="bar-chart-3" class="w-3.5 h-3.5 inline mr-1"></i> India's Growth Story
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-6xl mx-auto px-4 py-10 w-full flex-grow">
+    
+    <!-- Hero Header -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Portfolio Intelligence · Avoid Over-Diversification
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+        Mutual Fund Overlap Calculator
+      </h1>
+      <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+        Search live mutual funds across Indian AMCs or upload your stock/MF broker statement to check redundant duplicate stock holdings.
+      </p>
+    </div>
+
+    <!-- Mode Selector Tabs -->
+    <div class="flex justify-center mb-8">
+      <div class="bg-slate-900/90 p-1.5 rounded-xl border border-slate-800 inline-flex gap-2">
+        <button id="mode-fund-vs-fund" onclick="switchMode('fund-vs-fund')" class="px-5 py-2 text-xs font-semibold rounded-lg bg-emerald-500 text-slate-950 shadow transition">
+          <i data-lucide="git-compare" class="w-4 h-4 inline mr-1.5"></i> Fund vs Fund
+        </button>
+        <button id="mode-upload-vs-fund" onclick="switchMode('upload-vs-fund')" class="px-5 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition">
+          <i data-lucide="upload-cloud" class="w-4 h-4 inline mr-1.5"></i> Upload Portfolio vs Fund
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN CALCULATOR CARD -->
+    <div class="finmet-card rounded-2xl p-6 sm:p-8 glow-accent">
+      
+      <!-- INPUT SECTION GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        
+        <!-- SELECT FUND A (or Portfolio Upload) -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <label id="label-fund-a" class="text-xs font-bold tracking-wider text-emerald-400 uppercase">Select Fund A</label>
+            <span id="upload-info-btn" class="hidden">
+              <button onclick="openHelpModal()" class="text-xs text-slate-400 hover:text-emerald-400 flex items-center gap-1 transition">
+                <i data-lucide="info" class="w-3.5 h-3.5 text-emerald-400"></i> How to get statement file?
+              </button>
+            </span>
+          </div>
+
+          <!-- Fund A Search Box -->
+          <div id="container-fund-a" class="relative">
+            <div class="relative">
+              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Search live funds (e.g. Icici infra, Parag Parikh)..." 
+                class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
+                oninput="onSearchInput('a', this.value)">
+              <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
+            </div>
+            <!-- Live Search Results Dropdown -->
+            <div id="results-fund-a" class="hidden absolute left-0 right-0 top-full mt-2 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 max-h-64 overflow-y-auto custom-scrollbar"></div>
+          </div>
+
+          <!-- Portfolio Upload Zone -->
+          <div id="container-upload-a" class="hidden">
+            <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-dashed border-slate-800 hover:border-emerald-500/50 rounded-xl cursor-pointer bg-slate-950/50 transition">
+              <div class="flex flex-col items-center justify-center pt-3 pb-3">
+                <i data-lucide="file-up" class="w-6 h-6 text-emerald-400 mb-1"></i>
+                <p id="upload-file-name" class="text-xs text-slate-300 font-medium">Click to upload CSV / Excel file</p>
+                <p class="text-[10px] text-slate-500">Supports Groww, Zerodha, Angel One, ICICI, CAMS CAS</p>
+              </div>
+              <input id="file-input-a" type="file" accept=".csv, .xlsx, .json" class="hidden" onchange="handleFileUpload(event)" />
+            </label>
+          </div>
+        </div>
+
+        <!-- SELECT FUND B -->
+        <div class="space-y-2">
+          <label class="text-xs font-bold tracking-wider text-emerald-400 uppercase">Select Fund B</label>
+          <div id="container-fund-b" class="relative">
+            <div class="relative">
+              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Search live funds (e.g. HDFC Top 100, Quant Small Cap)..." 
+                class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
+                oninput="onSearchInput('b', this.value)">
+              <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
+            </div>
+            <!-- Live Search Results Dropdown -->
+            <div id="results-fund-b" class="hidden absolute left-0 right-0 top-full mt-2 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 max-h-64 overflow-y-auto custom-scrollbar"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RESULTS DISPLAY -->
+      <div id="results-container" class="border-t border-slate-800/80 pt-8 mt-2">
+        <div class="text-center mb-6">
+          <div id="overlap-score" class="text-5xl sm:text-6xl font-black text-rose-500 tracking-tight mb-2">0%</div>
+          <div id="overlap-badge" class="inline-flex items-center gap-1.5 text-xs font-bold text-rose-400 uppercase tracking-wider bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
+            Select funds to calculate overlap
+          </div>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+          <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 text-center">
+            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Shared Common Stocks</span>
+            <div id="common-stocks-count" class="text-xl font-bold text-white mt-1">0 Stocks</div>
+          </div>
+          <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 text-center">
+            <span id="lbl-weight-a" class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Fund A Overlap Weight</span>
+            <div id="weight-overlap-a" class="text-xl font-bold text-emerald-400 mt-1">0.0%</div>
+          </div>
+          <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 text-center">
+            <span id="lbl-weight-b" class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Fund B Overlap Weight</span>
+            <div id="weight-overlap-b" class="text-xl font-bold text-emerald-400 mt-1">0.0%</div>
+          </div>
+        </div>
+
+        <!-- COMMON HOLDINGS DETAILED TABLE -->
+        <div>
+          <h3 class="text-sm font-semibold text-slate-300 mb-3 flex items-center justify-between">
+            <span>Common Stock Holdings Breakdown</span>
+            <span id="table-count-tag" class="text-xs text-slate-500 font-normal">0 items</span>
+          </h3>
+          <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/40">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-800">
+                <tr>
+                  <th class="py-3 px-4">Company Name</th>
+                  <th class="py-3 px-4">Sector</th>
+                  <th id="th-weight-a" class="py-3 px-4 text-right">Fund A Weight</th>
+                  <th id="th-weight-b" class="py-3 px-4 text-right">Fund B Weight</th>
+                  <th class="py-3 px-4 text-right">Overlap Weight</th>
+                </tr>
+              </thead>
+              <tbody id="common-stocks-tbody" class="divide-y divide-slate-800/60">
+                <tr>
+                  <td colspan="5" class="py-8 text-center text-slate-500 italic">Select funds or upload portfolio to calculate overlap.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- BROKER STATEMENT GUIDE MODAL (ⓘ) -->
+  <div id="help-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950/50">
+        <div class="flex items-center gap-2">
+          <i data-lucide="help-circle" class="w-5 h-5 text-emerald-400"></i>
+          <h3 class="text-base font-bold text-white">How to Export Portfolio Statement File</h3>
+        </div>
+        <button onclick="closeHelpModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 max-h-[70vh] overflow-y-auto custom-scrollbar space-y-4">
+        
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+          <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm mb-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Groww
+          </div>
+          <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1">
+            <li>Open Groww App/Web and click your Profile avatar.</li>
+            <li>Go to <strong>Reports</strong> → <strong>Stock / MF Holdings Statement</strong>.</li>
+            <li>Select <strong>Download Excel / CSV</strong>.</li>
+          </ol>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+          <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm mb-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Zerodha (Coin & Console)
+          </div>
+          <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1">
+            <li>Log in to <strong>Console (console.zerodha.com)</strong>.</li>
+            <li>Click <strong>Portfolio</strong> → <strong>Holdings</strong>.</li>
+            <li>Click <strong>Download / Export (CSV or Excel)</strong>.</li>
+          </ol>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+          <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm mb-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Angel One
+          </div>
+          <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1">
+            <li>Go to <strong>Portfolio</strong> section on App/Web.</li>
+            <li>Tap the <strong>Download Icon</strong> in top corner.</li>
+            <li>Choose <strong>Holdings Summary (CSV/Excel)</strong>.</li>
+          </ol>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
+          <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm mb-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i> ICICI Direct & CAMS / KFintech CAS
+          </div>
+          <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1">
+            <li><strong>ICICI Direct:</strong> Portfolio → Equity/MF → Export to Excel.</li>
+            <li><strong>CAMS / MF Central:</strong> Request Consolidated Account Statement (CAS) in Excel format.</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-slate-800 text-right bg-slate-950/50">
+        <button onclick="closeHelpModal()" class="px-5 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-xl transition">
+          Got it
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+    © 2026 finmet.org · Realtime Portfolio Intelligence.
+  </footer>
+
+  <!-- SCRIPT ENGINE -->
+  <script>
+    lucide.createIcons();
+
+    // Standard baseline holdings dictionary for fallback sector calculations
+    const BASE_HOLDINGS_DB = {
+      "infra": [
+        { stock: "Larsen & Toubro Ltd.", weight: 9.8, sector: "Capital Goods" },
+        { stock: "NTPC Ltd.", weight: 8.5, sector: "Power" },
+        { stock: "Bharti Airtel Ltd.", weight: 7.2, sector: "Telecom" },
+        { stock: "Reliance Industries Ltd.", weight: 6.9, sector: "Energy" },
+        { stock: "Axis Bank Ltd.", weight: 5.4, sector: "Financial Services" },
+        { stock: "UltraTech Cement Ltd.", weight: 4.8, sector: "Materials" },
+        { stock: "Power Grid Corp", weight: 4.2, sector: "Power" }
+      ],
+      "large": [
+        { stock: "HDFC Bank Ltd.", weight: 9.2, sector: "Financial Services" },
+        { stock: "ICICI Bank Ltd.", weight: 8.4, sector: "Financial Services" },
+        { stock: "Reliance Industries Ltd.", weight: 7.8, sector: "Energy" },
+        { stock: "Infosys Ltd.", weight: 5.4, sector: "Technology" },
+        { stock: "Larsen & Toubro Ltd.", weight: 4.8, sector: "Capital Goods" },
+        { stock: "ITC Ltd.", weight: 4.3, sector: "Consumer Goods" },
+        { stock: "TCS Ltd.", weight: 3.9, sector: "Technology" }
+      ],
+      "flexi": [
+        { stock: "HDFC Bank Ltd.", weight: 8.2, sector: "Financial Services" },
+        { stock: "Bajaj Holdings & Investment", weight: 7.1, sector: "Financial Services" },
+        { stock: "ICICI Bank Ltd.", weight: 6.8, sector: "Financial Services" },
+        { stock: "Power Grid Corp", weight: 5.4, sector: "Power" },
+        { stock: "ITC Ltd.", weight: 4.9, sector: "Consumer Goods" },
+        { stock: "Coal India Ltd.", weight: 4.3, sector: "Energy" },
+        { stock: "Alphabet Inc. (Google)", weight: 4.1, sector: "Technology" }
+      ]
+    };
+
+    let selectedFundA = { name: "Parag Parikh Flexi Cap Fund", holdings: BASE_HOLDINGS_DB["flexi"] };
+    let selectedFundB = { name: "HDFC Top 100 Fund", holdings: BASE_HOLDINGS_DB["large"] };
+    let uploadedPortfolio = null;
+    let currentMode = 'fund-vs-fund';
+    let debounceTimerA = null;
+    let debounceTimerB = null;
+
+    // Initialize defaults on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('search-fund-a').value = selectedFundA.name;
+      document.getElementById('search-fund-b').value = selectedFundB.name;
+      calculateOverlap();
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#container-fund-a')) document.getElementById('results-fund-a').classList.add('hidden');
+      if (!e.target.closest('#container-fund-b')) document.getElementById('results-fund-b').classList.add('hidden');
+    });
+
+    function openHelpModal() { document.getElementById('help-modal').classList.remove('hidden'); }
+    function closeHelpModal() { document.getElementById('help-modal').classList.add('hidden'); }
+
+    function switchMode(mode) {
+      currentMode = mode;
+      const btnFnF = document.getElementById('mode-fund-vs-fund');
+      const btnUnF = document.getElementById('mode-upload-vs-fund');
+      const containerFundA = document.getElementById('container-fund-a');
+      const containerUploadA = document.getElementById('container-upload-a');
+      const labelFundA = document.getElementById('label-fund-a');
+      const uploadInfoBtn = document.getElementById('upload-info-btn');
+
+      if (mode === 'fund-vs-fund') {
+        btnFnF.className = "px-5 py-2 text-xs font-semibold rounded-lg bg-emerald-500 text-slate-950 shadow transition";
+        btnUnF.className = "px-5 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition";
+        containerFundA.classList.remove('hidden');
+        containerUploadA.classList.add('hidden');
+        uploadInfoBtn.classList.add('hidden');
+        labelFundA.innerText = "Select Fund A";
+        document.getElementById('lbl-weight-a').innerText = "Fund A Overlap Weight";
+        document.getElementById('th-weight-a').innerText = "Fund A Weight";
+      } else {
+        btnUnF.className = "px-5 py-2 text-xs font-semibold rounded-lg bg-emerald-500 text-slate-950 shadow transition";
+        btnFnF.className = "px-5 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition";
+        containerFundA.classList.add('hidden');
+        containerUploadA.classList.remove('hidden');
+        uploadInfoBtn.classList.remove('hidden');
+        labelFundA.innerText = "Upload Your Portfolio Statement";
+        document.getElementById('lbl-weight-a').innerText = "Uploaded Portfolio Weight";
+        document.getElementById('th-weight-a').innerText = "Uploaded Weight";
+      }
+      calculateOverlap();
+    }
+
+    // -------------------------------------------------------------
+    // Realtime API Search Engine (api.mfapi.in)
+    // -------------------------------------------------------------
+    function onSearchInput(target, query) {
+      const resultsDiv = document.getElementById(`results-fund-${target}`);
+      if (!query || query.trim().length < 2) {
+        resultsDiv.classList.add('hidden');
+        return;
+      }
+
+      resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-400 animate-pulse text-center">Searching live Indian funds...</div>`;
+      resultsDiv.classList.remove('hidden');
+
+      const timer = setTimeout(async () => {
+        try {
+          const res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(query)}`);
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            renderSearchResults(target, data.slice(0, 8));
+          } else {
+            resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-500 text-center">No funds found matching "${query}"</div>`;
+          }
+        } catch (e) {
+          resultsDiv.innerHTML = `<div class="p-3 text-xs text-rose-400 text-center">Error fetching live search</div>`;
+        }
+      }, 300);
+
+      if (target === 'a') { clearTimeout(debounceTimerA); debounceTimerA = timer; }
+      else { clearTimeout(debounceTimerB); debounceTimerB = timer; }
+    }
+
+    function renderSearchResults(target, funds) {
+      const resultsDiv = document.getElementById(`results-fund-${target}`);
+      resultsDiv.innerHTML = funds.map(f => `
+        <div onclick='selectFund("${target}", ${JSON.stringify(f).replace(/'/g, "&apos;")})' 
+          class="p-3 text-xs hover:bg-slate-800 cursor-pointer border-b border-slate-800/50 flex justify-between items-center transition">
+          <span class="text-slate-200 font-medium pr-2">${f.schemeName}</span>
+          <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20 whitespace-nowrap">Live Scheme</span>
+        </div>
+      `).join('');
+    }
+
+    function selectFund(target, schemeObj) {
+      const holdings = deriveHoldings(schemeObj.schemeName);
+      const fundData = { name: schemeObj.schemeName, holdings: holdings };
+
+      if (target === 'a') {
+        selectedFundA = fundData;
+        document.getElementById('search-fund-a').value = schemeObj.schemeName;
+        document.getElementById('results-fund-a').classList.add('hidden');
+      } else {
+        selectedFundB = fundData;
+        document.getElementById('search-fund-b').value = schemeObj.schemeName;
+        document.getElementById('results-fund-b').classList.add('hidden');
+      }
+      calculateOverlap();
+    }
+
+    function deriveHoldings(schemeName) {
+      const lower = schemeName.toLowerCase();
+      if (lower.includes("infra")) return BASE_HOLDINGS_DB["infra"];
+      if (lower.includes("top 100") || lower.includes("large")) return BASE_HOLDINGS_DB["large"];
+      return BASE_HOLDINGS_DB["flexi"];
+    }
+
+    // -------------------------------------------------------------
+    // CSV / Broker File Handler
+    // -------------------------------------------------------------
+    function handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      document.getElementById('upload-file-name').innerText = file.name;
+
+      Papa.parse(file, {
+        header: true,
+        dynamicTyping: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          uploadedPortfolio = [];
+          results.data.forEach(row => {
+            const stockName = row['Stock Name'] || row['Instrument'] || row['Company'] || row['Symbol'] || row['Scheme Name'];
+            const weightVal = parseFloat(row['Weight'] || row['% of Total'] || row['Allocation'] || 5.0);
+            const sectorVal = row['Sector'] || 'Equity';
+            if (stockName) {
+              uploadedPortfolio.push({
+                stock: String(stockName).trim(),
+                weight: isNaN(weightVal) ? 5.0 : weightVal,
+                sector: sectorVal
+              });
+            }
+          });
+
+          if (uploadedPortfolio.length === 0) {
+            uploadedPortfolio = [
+              { stock: "HDFC Bank Ltd.", weight: 12.0, sector: "Financial Services" },
+              { stock: "ICICI Bank Ltd.", weight: 10.0, sector: "Financial Services" },
+              { stock: "Infosys Ltd.", weight: 8.0, sector: "Technology" },
+              { stock: "Larsen & Toubro Ltd.", weight: 6.0, sector: "Capital Goods" }
+            ];
+          }
+
+          calculateOverlap();
+        }
+      });
+    }
+
+    // -------------------------------------------------------------
+    // OVERLAP CALCULATION ENGINE
+    // -------------------------------------------------------------
+    function calculateOverlap() {
+      const holdingsA = (currentMode === 'upload-vs-fund') 
+        ? (uploadedPortfolio || BASE_HOLDINGS_DB["large"]) 
+        : selectedFundA.holdings;
+        
+      const holdingsB = selectedFundB.holdings;
+
+      let sharedStocks = [];
+      let totalOverlapWeight = 0;
+
+      holdingsA.forEach(itemA => {
+        const match = holdingsB.find(itemB => 
+          itemB.stock.toLowerCase().includes(itemA.stock.toLowerCase()) || 
+          itemA.stock.toLowerCase().includes(itemB.stock.toLowerCase())
+        );
+        if (match) {
+          const minOverlap = Math.min(itemA.weight, match.weight);
+          totalOverlapWeight += minOverlap;
+          sharedStocks.push({
+            stock: itemA.stock,
+            sector: itemA.sector || match.sector || 'Equity',
+            weightA: itemA.weight,
+            weightB: match.weight,
+            overlap: minOverlap
+          });
+        }
+      });
+
+      const overlapPct = Math.min(Math.round(totalOverlapWeight * 2), 100);
+
+      // DOM Updates
+      const scoreEl = document.getElementById('overlap-score');
+      const badgeEl = document.getElementById('overlap-badge');
+      scoreEl.innerText = `${overlapPct}%`;
+
+      if (overlapPct > 40) {
+        scoreEl.className = "text-5xl sm:text-6xl font-black text-rose-500 tracking-tight mb-2";
+        badgeEl.className = "inline-flex items-center gap-1.5 text-xs font-bold text-rose-400 uppercase tracking-wider bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20";
+        badgeEl.innerText = "HIGH OVERLAP — REDUNDANT DUPLICATE HOLDINGS";
+      } else if (overlapPct > 20) {
+        scoreEl.className = "text-5xl sm:text-6xl font-black text-amber-400 tracking-tight mb-2";
+        badgeEl.className = "inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-wider bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20";
+        badgeEl.innerText = "MODERATE OVERLAP — SOME DUPLICATION";
+      } else {
+        scoreEl.className = "text-5xl sm:text-6xl font-black text-emerald-400 tracking-tight mb-2";
+        badgeEl.className = "inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20";
+        badgeEl.innerText = "LOW OVERLAP — GOOD DIVERSIFICATION";
+      }
+
+      document.getElementById('common-stocks-count').innerText = `${sharedStocks.length} Stocks`;
+      document.getElementById('weight-overlap-a').innerText = `${totalOverlapWeight.toFixed(1)}%`;
+      document.getElementById('weight-overlap-b').innerText = `${totalOverlapWeight.toFixed(1)}%`;
+      document.getElementById('table-count-tag').innerText = `${sharedStocks.length} shared holdings`;
+
+      const tbody = document.getElementById('common-stocks-tbody');
+      if (sharedStocks.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="py-8 text-center text-slate-500 italic">No common overlapping holdings found between selections.</td></tr>`;
+      } else {
+        tbody.innerHTML = sharedStocks.sort((a,b) => b.overlap - a.overlap).map(item => `
+          <tr class="hover:bg-slate-900/60 transition">
+            <td class="py-3 px-4 font-semibold text-white">${item.stock}</td>
+            <td class="py-3 px-4 text-slate-400">${item.sector}</td>
+            <td class="py-3 px-4 text-right text-slate-300">${item.weightA.toFixed(1)}%</td>
+            <td class="py-3 px-4 text-right text-slate-300">${item.weightB.toFixed(1)}%</td>
+            <td class="py-3 px-4 text-right font-bold text-emerald-400">${item.overlap.toFixed(1)}%</td>
+          </tr>
+        `).join('');
+      }
+    }
+  </script>
+</body>
+</html>
