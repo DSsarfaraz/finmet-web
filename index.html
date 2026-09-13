@@ -6,20 +6,25 @@
     <title>Finmet | Simplifying Finance</title>
     <link rel="icon" type="image/png" href="finmet_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #050705;
-            --card: #0c110d;
-            --card-hi: #101710;
-            --border: #16301f;
-            --border-hi: #1f4a2c;
+            --bg: #040604;
+            --surface: #0a0f0b;
+            --surface-card: #0f1711;
+            --surface-hover: #152219;
+            --border: rgba(37, 211, 102, 0.14);
+            --border-strong: rgba(37, 211, 102, 0.28);
             --accent: #25D366;
-            --accent-2: #128C7E;
-            --accent-light: #7CF0A6;
-            --text-white: #F8FAFC;
+            --accent-hover: #1fbe5a;
+            --accent-teal: #128C7E;
+            --accent-mint: #6EE7B7;
+            --text-main: #F8FAFC;
             --text-muted: #94A3B8;
-            --glow: rgba(37, 211, 102, 0.18);
+            --text-dim: #64748B;
+            --quote-cream: #F5EAD3;
+            --glow: rgba(37, 211, 102, 0.15);
         }
 
         * {
@@ -28,80 +33,120 @@
             box-sizing: border-box;
         }
 
-        html, body { overflow-x: hidden; max-width: 100%; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            background-image:
-                radial-gradient(circle at 15% -10%, rgba(37,211,102,0.10), transparent 45%),
-                radial-gradient(circle at 90% 10%, rgba(18,140,126,0.08), transparent 40%);
-            color: var(--text-white);
-            line-height: 1.65;
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, .calc-toggle-btn, .tab-btn {
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 10% -10%, rgba(37, 211, 102, 0.12), transparent 40%),
+                radial-gradient(circle at 90% 20%, rgba(18, 140, 126, 0.08), transparent 45%),
+                radial-gradient(circle at 50% 80%, rgba(37, 211, 102, 0.05), transparent 50%);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .font-heading {
             font-family: 'Sora', sans-serif;
         }
 
-        a { color: inherit; }
+        a { color: inherit; text-decoration: none; }
 
-        .container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
-        /* ================= TOP NAV ================= */
+        /* ================= NAVIGATION ================= */
         .top-nav {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(5, 7, 5, 0.9);
-            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(4, 6, 4, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 0.1rem 0;
+            padding: 0.75rem 0;
         }
-        .top-nav-inner {
-            max-width: 1080px; margin: 0 auto; padding: 0 1.25rem;
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
-        }
-        @media (min-width: 900px) {
-            .top-nav-inner { flex-wrap: nowrap; }
-            .nav-actions { align-content: center; justify-content: flex-end; }
-        }
-        .brand-box { display: flex; align-items: center; }
-        .brand-box img { height: 171px; width: auto; display: block; }
 
-        .nav-actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+        .top-nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-box img {
+            height: 38px;
+            width: auto;
+            display: block;
+            transition: opacity 0.2s;
+        }
+        .brand-box img:hover { opacity: 0.9; }
+
+        .nav-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
 
         .nav-btn {
-            background: rgba(37, 211, 102, 0.08);
+            background: rgba(37, 211, 102, 0.06);
             color: var(--accent);
-            border: 1px solid rgba(37, 211, 102, 0.28);
-            padding: 0.6rem 1.1rem;
-            font-size: 0.88rem;
+            border: 1px solid var(--border);
+            padding: 0.55rem 1rem;
+            font-size: 0.84rem;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 99px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             display: inline-flex;
             align-items: center;
             gap: 8px;
             position: relative;
         }
-        .nav-btn .ic { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.8; flex-shrink: 0; }
-        .nav-btn:hover { background: rgba(37, 211, 102, 0.16); border-color: var(--accent); transform: translateY(-1px); }
+        .nav-btn .ic {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+        .nav-btn:hover {
+            background: rgba(37, 211, 102, 0.14);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15);
+        }
 
-        .nav-btn.sector { background: linear-gradient(135deg, rgba(37,211,102,0.18), rgba(18,140,126,0.18)); border-color: rgba(37,211,102,0.45); }
-        .nav-btn.hub-btn { background: rgba(37, 211, 102, 0.14); border-color: var(--accent); font-weight: 700; }
+        .nav-btn.sector {
+            background: linear-gradient(135deg, rgba(37,211,102,0.12), rgba(18,140,126,0.12));
+            border-color: var(--border-strong);
+        }
+        .nav-btn.hub-btn {
+            background: rgba(37, 211, 102, 0.12);
+            border-color: var(--accent);
+            color: #fff;
+        }
 
-        /* NEW Badge Highlight */
         .badge-new {
             background: linear-gradient(135deg, #ff416c, #ff4b2b);
             color: #ffffff;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 800;
             padding: 2px 6px;
-            border-radius: 4px;
-            text-transform: uppercase;
+            border-radius: 6px;
             letter-spacing: 0.5px;
-            margin-left: 4px;
-            box-shadow: 0 0 10px rgba(255, 75, 43, 0.5);
+            margin-left: 2px;
+            box-shadow: 0 0 10px rgba(255, 75, 43, 0.4);
             animation: pulse-badge 2s infinite;
         }
         @keyframes pulse-badge {
@@ -111,384 +156,733 @@
 
         /* Tooltips */
         .tip {
-            visibility: hidden; opacity: 0; pointer-events: none;
-            position: absolute; top: 120%; right: 0;
-            background: #060a06; color: var(--text-white);
-            padding: 0.7rem 0.9rem; font-size: 0.8rem; font-weight: 400;
-            border-radius: 8px; border: 1px solid var(--accent);
-            width: 230px; text-align: left; z-index: 30;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            transition: opacity 0.15s ease;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 130%;
+            right: 0;
+            background: #090e0a;
+            color: var(--text-main);
+            padding: 0.75rem 0.95rem;
+            font-size: 0.78rem;
+            font-weight: 400;
+            border-radius: 10px;
+            border: 1px solid var(--border-strong);
+            width: 240px;
+            text-align: left;
+            z-index: 40;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+            transition: all 0.2s ease;
         }
         .nav-btn:hover .tip { visibility: visible; opacity: 1; pointer-events: auto; }
 
-        /* ================= HERO ================= */
+        /* ================= HERO SECTION ================= */
+        .hero-wrap {
+            padding: 3.5rem 0 2.5rem;
+        }
         .hero {
-            padding: 0.2rem 0 0.2rem;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 2rem;
-            align-items: stretch;
-            max-width: 1080px;
-            margin: 0 auto;
-            min-width: 0;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2.5rem;
+            align-items: center;
         }
-        .hero-text { text-align: left; display: flex; flex-direction: column; justify-content: space-evenly; min-width: 0; }
+
         .eyebrow {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.3);
-            color: var(--accent); font-size: 0.78rem; font-weight: 600;
-            padding: 0.4rem 0.9rem; border-radius: 20px; margin-bottom: 1.1rem;
-            max-width: 100%; white-space: normal;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 211, 102, 0.08);
+            border: 1px solid var(--border-strong);
+            color: var(--accent-mint);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 99px;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.2px;
         }
-        .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse-dot 1.6s infinite; }
+        .eyebrow .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse-dot 1.6s infinite;
+        }
         @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
 
         .hero h1 {
-            font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
             font-weight: 800;
-            line-height: 1.14;
-            margin-bottom: 0.9rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.1rem;
         }
         .hero h1 .grad {
-            background: linear-gradient(120deg, var(--accent-light), var(--accent) 60%, var(--accent-2));
-            -webkit-background-clip: text; background-clip: text; color: transparent;
+            background: linear-gradient(135deg, var(--accent-mint) 0%, var(--accent) 50%, var(--accent-teal) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        .hero p.sub { color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1.4rem; }
+        .hero p.sub {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.65;
+            margin-bottom: 1.8rem;
+            max-width: 580px;
+        }
 
-        .hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        .hero-ctas {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+        }
+
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-2), var(--accent));
-            color: #04140b; font-weight: 700; font-size: 0.9rem;
-            padding: 0.75rem 1.4rem; border-radius: 30px; border: none; cursor: pointer;
-            text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-            box-shadow: 0 6px 22px rgba(37,211,102,0.35);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: linear-gradient(135deg, var(--accent), var(--accent-teal));
+            color: #031107;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 99px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.25s ease;
         }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,0.5); }
-        .btn-secondary {
-            background: transparent; color: var(--text-white); font-weight: 600; font-size: 0.9rem;
-            padding: 0.75rem 1.3rem; border-radius: 30px; border: 1px solid var(--border-hi); cursor: pointer;
-            display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; text-decoration: none;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
         }
-        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-        /* Compact "money graph" panel */
-        .money-panel {
-            background: var(--card);
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 0.8rem 1.4rem;
+            border-radius: 99px;
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1rem 1.3rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 60px rgba(37,211,102,0.03);
-            min-width: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            text-decoration: none;
         }
-        .money-panel .g-label { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-muted); margin-bottom: 0.6rem; line-height: 1.45; }
-        .mp-legend { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.6rem; }
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent-mint);
+            background: rgba(37, 211, 102, 0.06);
+        }
+
+        /* Money Panel Card */
+        .money-panel {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.4rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 0 40px rgba(37,211,102,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+        .money-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.4;
+        }
+        .money-panel .g-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+        .mp-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 1rem;
+        }
         .mp-legend-row {
-            display: flex; align-items: center; justify-content: space-between; gap: 10px;
-            background: rgba(255,255,255,0.025); border: 1px solid var(--border);
-            border-radius: 9px; padding: 0.4rem 0.8rem; transition: border-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 0.5rem 0.85rem;
+            transition: all 0.2s ease;
         }
-        .mp-legend-row:hover { border-color: var(--border-hi); }
-        .mp-legend-name { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; color: var(--text-white); white-space: nowrap; }
-        .mp-legend-item .dotline, .mp-legend-name .dotline { width: 16px; height: 4px; border-radius: 2px; flex-shrink: 0; }
-        .mp-legend-roi { font-size: 0.78rem; color: var(--text-muted); text-align: center; flex: 1; }
-        .mp-legend-val { font-size: 1rem; font-weight: 800; font-family: 'Sora', sans-serif; text-align: right; }
-        .money-panel .info-btn { width: 19px; height: 19px; font-size: 11px; margin-left: 2px; flex-shrink: 0; }
-        .money-panel .tooltip-box { width: 220px; font-size: 0.85rem; }
+        .mp-legend-row:hover {
+            border-color: var(--border-strong);
+            background: rgba(37, 211, 102, 0.04);
+        }
+        .mp-legend-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .mp-legend-name .dotline {
+            width: 14px;
+            height: 4px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .mp-legend-roi {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .mp-legend-val {
+            font-size: 0.98rem;
+            font-weight: 800;
+            font-family: 'Sora', sans-serif;
+        }
+        .info-btn {
+            background: rgba(255,255,255,0.08);
+            color: var(--accent);
+            border: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 4px;
+            position: relative;
+        }
+        .tooltip-box {
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            bottom: 135%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #090e0a;
+            color: var(--text-main);
+            padding: 0.75rem 0.95rem;
+            font-size: 0.8rem;
+            border-radius: 10px;
+            border: 1px solid var(--accent);
+            width: 230px;
+            text-align: left;
+            z-index: 50;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+            transition: opacity 0.2s ease;
+        }
         .tooltip-box.align-left { left: 0; transform: none; }
         .tooltip-box.align-right { left: auto; right: 0; transform: none; }
+        .info-btn:hover .tooltip-box, .info-btn.tip-open .tooltip-box { visibility: visible; opacity: 1; pointer-events: auto; }
 
-        .money-panel svg.growth-chart { width: 100%; max-width: 100%; height: auto; aspect-ratio: 390 / 165; display: block; overflow: visible; }
+        .money-panel svg.growth-chart {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 390 / 165;
+            display: block;
+            overflow: visible;
+        }
         .gc-line {
-            fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;
-            stroke-dasharray: 620; stroke-dashoffset: 620;
+            fill: none;
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 620;
+            stroke-dashoffset: 620;
             animation: drawLine 1.8s ease forwards;
         }
-        .gc-line.fd { stroke: #ff6b6b; animation-delay: 0.1s; }
-        .gc-line.hybrid { stroke: #e8ecef; animation-delay: 0.35s; }
+        .gc-line.fd { stroke: #ef4444; animation-delay: 0.1s; }
+        .gc-line.hybrid { stroke: #cbd5e1; animation-delay: 0.35s; }
         .gc-line.equity { stroke: #25D366; animation-delay: 0.6s; }
         @keyframes drawLine { to { stroke-dashoffset: 0; } }
 
         .gc-dot { opacity: 0; animation: dotIn 0.4s ease forwards; }
-        .gc-dot.fd { fill: #ff6b6b; animation-delay: 1.6s; }
-        .gc-dot.hybrid { fill: #e8ecef; animation-delay: 1.85s; }
-        .gc-dot.equity { fill: #25D366; filter: drop-shadow(0 0 5px #25D366); animation-delay: 2.1s; }
+        .gc-dot.fd { fill: #ef4444; animation-delay: 1.6s; }
+        .gc-dot.hybrid { fill: #cbd5e1; animation-delay: 1.85s; }
+        .gc-dot.equity { fill: #25D366; filter: drop-shadow(0 0 6px #25D366); animation-delay: 2.1s; }
         @keyframes dotIn { to { opacity: 1; } }
 
-        .gc-label { font-size: 15px; font-family: 'Sora', sans-serif; font-weight: 700; opacity: 0; animation: dotIn 0.4s ease forwards; }
-        .gc-label.fd { fill: #ff6b6b; animation-delay: 1.7s; }
-        .gc-label.hybrid { fill: #e8ecef; animation-delay: 1.95s; }
+        .gc-label { font-size: 14px; font-family: 'Sora', sans-serif; font-weight: 700; opacity: 0; animation: dotIn 0.4s ease forwards; }
+        .gc-label.fd { fill: #ef4444; animation-delay: 1.7s; }
+        .gc-label.hybrid { fill: #cbd5e1; animation-delay: 1.95s; }
         .gc-label.equity { fill: #25D366; animation-delay: 2.2s; }
-        .gc-grid { stroke: var(--border); stroke-width: 1; }
-        .gc-axis-label { font-size: 11px; fill: var(--text-muted); font-family: 'Inter', sans-serif; }
+        .gc-grid { stroke: rgba(255,255,255,0.06); stroke-width: 1; }
+        .gc-axis-label { font-size: 11px; fill: var(--text-dim); font-family: 'Plus Jakarta Sans', sans-serif; }
 
-        @media (max-width: 860px) {
-            .hero { grid-template-columns: 1fr; padding-top: 1.5rem; }
-            .hero-text { text-align: center; }
-            .hero-ctas { justify-content: center; }
+        /* ================= BENTO TOOL HUB (NEW MODERN SECTION) ================= */
+        .tools-bento {
+            padding: 2.5rem 0;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .section-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        /* ================= MODALS & LEARNING HUB ================= */
-        .options-modal, .knowledge-modal {
-            display: none;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.2rem;
-            margin: 0 0 2.2rem;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-            animation: fadeIn 0.35s ease-in-out;
-        }
-        .options-modal.visible, .knowledge-modal.visible { display: block; }
-
-        .options-header {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 1.6rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;
-        }
-        .options-header h2 { font-size: 1.4rem; color: var(--accent); display: flex; align-items: center; gap: 10px; }
-        .options-header h2 .ic { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
-        .close-modal-btn { background: transparent; border: none; color: var(--text-muted); font-size: 1.6rem; cursor: pointer; line-height: 1; }
-        .close-modal-btn:hover { color: var(--text-white); }
-
-        /* Multi-column Grid for Learning Hub */
-        .hub-grid {
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.25rem;
         }
-
-        .knowledge-card {
-            background: var(--card-hi);
+        .bento-card {
+            background: var(--surface-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.4rem 1.5rem;
+            border-radius: 16px;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
         }
-        .knowledge-card:hover { border-color: var(--border-hi); transform: translateY(-2px); }
-        .knowledge-card h3 { font-size: 1.1rem; color: var(--text-white); margin-bottom: 0.6rem; }
-        .knowledge-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.2rem; flex-grow: 1; }
-
-        .knowledge-card a, .knowledge-card button.card-btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-            background: rgba(37, 211, 102, 0.08); color: var(--accent);
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            padding: 0.6rem 1.1rem; font-size: 0.85rem; font-weight: 600;
-            border-radius: 8px; text-decoration: none; cursor: pointer; transition: all 0.2s;
-            width: 100%; text-align: center;
+        .bento-card:hover {
+            border-color: var(--border-strong);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 20px var(--glow);
         }
-        .knowledge-card a:hover, .knowledge-card button.card-btn:hover { background: rgba(37, 211, 102, 0.2); border-color: var(--accent); }
-
-        .knowledge-card.featured {
-            border-color: rgba(37,211,102,0.4); background: linear-gradient(160deg, rgba(37,211,102,0.06), var(--card-hi));
-            box-shadow: 0 0 0 1px rgba(37,211,102,0.15), 0 8px 24px rgba(37,211,102,0.08);
+        .bento-card.featured-card {
+            grid-column: span 2;
+            background: linear-gradient(145deg, rgba(37,211,102,0.08) 0%, var(--surface-card) 100%);
+            border-color: var(--border-strong);
         }
-        .knowledge-card.featured:hover { border-color: var(--accent); }
-        .featured-badge {
-            display: inline-flex; align-items: center; gap: 5px; background: rgba(37,211,102,0.15);
-            color: var(--accent-light); border: 1px solid rgba(37,211,102,0.4); border-radius: 12px;
-            padding: 3px 10px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.5px; margin-bottom: 0.75rem; width: fit-content;
-        }
-        .knowledge-card.featured a, .knowledge-card.featured button.card-btn {
-            background: linear-gradient(135deg, var(--accent-2), var(--accent)); color: #04140b;
-            border: none; font-weight: 700;
-        }
-        .knowledge-card.featured a:hover, .knowledge-card.featured button.card-btn:hover { background: linear-gradient(135deg, var(--accent), var(--accent-light)); }
-
-        .risk-category-card {
-            background: var(--card-hi);
+        .bento-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent-mint);
+            background: rgba(37, 211, 102, 0.1);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.4rem 1.5rem;
-            margin-bottom: 1.2rem;
-            transition: border-color 0.2s ease;
+            padding: 3px 10px;
+            border-radius: 99px;
+            width: fit-content;
+            margin-bottom: 1rem;
         }
-        .risk-category-card:hover { border-color: var(--border-hi); }
-        .risk-category-card h3 { font-size: 1.05rem; color: var(--accent); margin-bottom: 0.6rem; }
-        .risk-category-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.9rem; }
-
-        .history-returns-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem;
-            background: var(--bg); padding: 0.9rem; border-radius: 8px;
-            border: 1px solid var(--border); text-align: center;
+        .bento-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: var(--text-main);
         }
-        .history-returns-grid div span { display: block; font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
-        .history-returns-grid div strong { font-size: 0.98rem; color: var(--accent-light); }
+        .bento-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 1.4rem;
+            line-height: 1.6;
+        }
+        .bento-link {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+        .bento-card:hover .bento-link { gap: 10px; color: var(--accent-mint); }
 
-        /* ================= SLIDER ================= */
+        /* ================= QUOTE CAROUSEL ================= */
         .slider-container {
-            background: var(--card);
+            background: var(--surface-card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 0.9rem;
-            margin: 0 0 1.5rem;
-            min-height: 300px;
+            border-radius: 20px;
+            padding: 2.2rem;
+            margin: 1.5rem 0 3rem;
+            min-height: 240px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
             position: relative;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.4);
             overflow: hidden;
         }
-        .slide { display: none; animation: fadeIn 0.6s ease-in-out; text-align: center; }
+        .slide { display: none; animation: fadeIn 0.6s ease-in-out; }
         .slide.active { display: block; }
 
-        :root { --quote-cream: #F5EAD3; }
         .quote-slide {
-            position: relative; padding: 1.6rem 2.2rem 1.2rem 3.2rem; text-align: center;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .quote-mark {
-            position: absolute; top: -0.4rem; left: 0.6rem; font-family: 'Sora', sans-serif;
-            font-size: 5.5rem; font-weight: 800; color: #2a2f28; line-height: 1; user-select: none;
+            font-family: 'Sora', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(37, 211, 102, 0.2);
+            line-height: 0.8;
+            margin-bottom: 0.5rem;
         }
         .quote-text {
-            font-family: 'Sora', sans-serif; font-weight: 700;
-            font-size: clamp(1.5rem, 3.4vw, 2.3rem); line-height: 1.35;
-            color: var(--quote-cream); margin: 0 0 1.2rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+            line-height: 1.35;
+            color: var(--quote-cream);
+            margin: 0 0 1rem;
         }
-        .quote-divider { width: 70px; height: 3px; background: var(--accent); border-radius: 2px; margin: 0 auto 1.1rem; }
+        .quote-divider {
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            margin: 0 auto 0.9rem;
+        }
         .quote-name {
-            font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.25rem;
-            letter-spacing: 0.5px; text-transform: uppercase; color: var(--quote-cream); margin-bottom: 0.35rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-main);
+            margin-bottom: 0.2rem;
         }
-        .quote-title { font-size: 0.95rem; color: var(--accent-light); }
-        .quote-title .sep { color: var(--border-hi); margin: 0 8px; }
+        .quote-title { font-size: 0.85rem; color: var(--accent-mint); }
+        .quote-title .sep { color: var(--border-strong); margin: 0 8px; }
 
-        @media (max-width: 600px) {
-            .quote-slide { padding: 1.2rem 1rem 0.8rem; }
-            .quote-mark { font-size: 3.8rem; left: 0.2rem; }
-        }
-        .slide-dots { display: flex; justify-content: center; gap: 8px; margin-top: 1.1rem; }
-        .dot { width: 9px; height: 9px; background-color: var(--border-hi); border-radius: 50%; cursor: pointer; transition: all 0.3s; }
+        .slide-dots { display: flex; justify-content: center; gap: 8px; margin-top: 1.2rem; }
+        .dot { width: 8px; height: 8px; background-color: rgba(255,255,255,0.15); border-radius: 50%; cursor: pointer; transition: all 0.3s; }
         .dot.active { background-color: var(--accent); width: 22px; border-radius: 6px; box-shadow: 0 0 8px rgba(37,211,102,0.6); }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* ================= CTA / CALCULATORS ================= */
-        .cta-action-wrap { text-align: center; margin-bottom: 2.2rem; }
-        .calc-toggle-btn {
-            background: linear-gradient(135deg, var(--accent-2), var(--accent));
-            color: #04140b; border: none; padding: 1rem 2.4rem; font-size: 1.05rem; font-weight: 700;
-            border-radius: 30px; cursor: pointer; box-shadow: 0 6px 20px rgba(37,211,102,0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
+        /* ================= MODALS & LEARNING HUB ================= */
+        .options-modal, .knowledge-modal {
+            display: none;
+            background: var(--surface-card);
+            border: 1px solid var(--border-strong);
+            border-radius: 20px;
+            padding: 2.2rem;
+            margin: 0 0 2.5rem;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+            animation: fadeIn 0.35s ease-in-out;
         }
-        .calc-toggle-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(37,211,102,0.55); }
+        .options-modal.visible, .knowledge-modal.visible { display: block; }
+
+        .options-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.6rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+        .options-header h2 { font-size: 1.4rem; color: var(--accent-mint); display: flex; align-items: center; gap: 10px; }
+        .options-header h2 .ic { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 2; }
+        .close-modal-btn { background: transparent; border: none; color: var(--text-muted); font-size: 1.8rem; cursor: pointer; line-height: 1; }
+        .close-modal-btn:hover { color: var(--text-main); }
+
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+        .knowledge-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+        .knowledge-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+        .knowledge-card h3 { font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.6rem; }
+        .knowledge-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.2rem; flex-grow: 1; }
+
+        .knowledge-card a, .knowledge-card button.card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: rgba(37, 211, 102, 0.08);
+            color: var(--accent);
+            border: 1px solid var(--border);
+            padding: 0.65rem 1.1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+        }
+        .knowledge-card a:hover, .knowledge-card button.card-btn:hover { background: rgba(37, 211, 102, 0.2); border-color: var(--accent); }
+
+        .knowledge-card.featured {
+            border-color: var(--border-strong);
+            background: linear-gradient(160deg, rgba(37,211,102,0.06), var(--surface-card));
+        }
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(37,211,102,0.15);
+            color: var(--accent-mint);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3px 10px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            width: fit-content;
+        }
+        .knowledge-card.featured a, .knowledge-card.featured button.card-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-teal));
+            color: #031107;
+            border: none;
+            font-weight: 700;
+        }
+
+        .risk-category-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.4rem;
+            margin-bottom: 1.2rem;
+        }
+        .risk-category-card h3 { font-size: 1.05rem; color: var(--accent-mint); margin-bottom: 0.6rem; }
+        .risk-category-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.9rem; }
+
+        .history-returns-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.9rem;
+            background: rgba(0,0,0,0.3);
+            padding: 0.9rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+        .history-returns-grid div span { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
+        .history-returns-grid div strong { font-size: 0.95rem; color: var(--accent-mint); }
+
+        /* ================= CALCULATORS ENGINE ================= */
+        .cta-action-wrap { text-align: center; margin-bottom: 2.5rem; }
+        .calc-toggle-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-teal));
+            color: #031107;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 99px;
+            cursor: pointer;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+            transition: all 0.25s ease;
+        }
+        .calc-toggle-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37,211,102,0.5); }
 
         .calculators-wrapper {
-            display: none; background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-            padding: 2.2rem; box-shadow: 0 20px 45px rgba(0,0,0,0.5); animation: fadeIn 0.4s ease-in-out;
+            display: none;
+            background: var(--surface-card);
+            border: 1px solid var(--border-strong);
+            border-radius: 20px;
+            padding: 2.2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            animation: fadeIn 0.4s ease-in-out;
+            margin-bottom: 3rem;
         }
         .calculators-wrapper.visible { display: block; }
 
         .calc-tabs {
-            display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 1rem; margin-bottom: 1.8rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.8rem;
             border-bottom: 1px solid var(--border);
-            scrollbar-width: thin; scrollbar-color: var(--border-hi) var(--card);
         }
         .tab-btn {
-            background: transparent; color: var(--text-muted); border: none;
-            padding: 0.7rem 1.15rem; font-size: 0.92rem; font-weight: 600; border-radius: 8px;
-            cursor: pointer; white-space: nowrap; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            padding: 0.65rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
-        .tab-btn:hover { color: var(--text-white); background: rgba(255,255,255,0.04); }
-        .tab-btn.active { color: var(--accent); background: rgba(37, 211, 102, 0.12); }
+        .tab-btn:hover { color: var(--text-main); background: rgba(255,255,255,0.04); }
+        .tab-btn.active { color: #fff; background: var(--accent-teal); }
 
         .calc-panel { display: none; }
         .calc-panel.active { display: block; animation: fadeIn 0.4s ease-in-out; }
 
-        .input-group { margin-bottom: 1.6rem; position: relative; }
-        .input-group label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.7rem; font-size: 0.95rem; font-weight: 500; }
-        .value-display { color: var(--accent-light); font-weight: 700; font-size: 1.05rem; }
-
-        input[type="range"] { width: 100%; accent-color: var(--accent); cursor: pointer; background: var(--bg); height: 6px; border-radius: 3px; outline: none; }
-        input[type="range"]::-webkit-slider-thumb { height: 17px; width: 17px; border-radius: 50%; background: var(--accent); cursor: pointer; box-shadow: 0 0 6px rgba(37,211,102,0.6); }
-
-        .info-btn {
-            background: var(--border); color: var(--accent); border: none; width: 19px; height: 19px;
-            border-radius: 50%; font-size: 11px; font-weight: bold; cursor: pointer;
-            display: inline-flex; align-items: center; justify-content: center; margin-left: 8px; position: relative;
+        .input-group { margin-bottom: 1.6rem; }
+        .input-group label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.92rem;
+            font-weight: 500;
         }
-        .tooltip-box {
-            visibility: hidden; opacity: 0; pointer-events: none;
-            position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%);
-            background: #060a06; color: var(--text-white); padding: 0.7rem 0.9rem; font-size: 0.82rem;
-            border-radius: 8px; border: 1px solid var(--accent); width: 250px; text-align: left; z-index: 20;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6); transition: opacity 0.15s ease;
-        }
-        .info-btn:hover .tooltip-box, .info-btn.tip-open .tooltip-box { visibility: visible; opacity: 1; pointer-events: auto; }
+        .value-display { color: var(--accent-mint); font-weight: 700; font-size: 1.05rem; font-family: 'Sora', sans-serif; }
 
-        .toggle-group { display: flex; gap: 0.9rem; margin-bottom: 1.6rem; background: var(--bg); padding: 0.4rem; border-radius: 8px; border: 1px solid var(--border); }
-        .toggle-btn { flex: 1; padding: 0.7rem; background: transparent; border: none; color: var(--text-muted); border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.92rem; transition: all 0.3s ease; }
-        .toggle-btn.active { background-color: var(--border); color: var(--accent-light); }
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent);
+            cursor: pointer;
+            background: rgba(255,255,255,0.08);
+            height: 6px;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .toggle-group {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1.6rem;
+            background: rgba(0,0,0,0.4);
+            padding: 0.35rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .toggle-btn {
+            flex: 1;
+            padding: 0.65rem;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+        }
+        .toggle-btn.active { background-color: rgba(37, 211, 102, 0.15); color: var(--accent-mint); }
 
         select {
-            width: 100%; padding: 0.7rem; background: var(--bg); color: var(--text-white);
-            border: 1px solid var(--border); border-radius: 6px;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(0,0,0,0.4);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            font-size: 0.92rem;
         }
 
         .results-row {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin-top: 2.2rem;
-            border-top: 2px solid var(--border); background: rgba(37, 211, 102, 0.04);
-            padding: 1.4rem; border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+            background: rgba(37, 211, 102, 0.03);
+            padding: 1.4rem;
+            border-radius: 14px;
         }
-        .result-box h4 { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 0.5rem; }
-        .result-box .big-num { font-size: 1.9rem; font-weight: 800; color: var(--accent-light); font-family: 'Sora', sans-serif; word-break: break-word; }
+        .result-box h4 { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 0.4rem; }
+        .result-box .big-num { font-size: 1.8rem; font-weight: 800; color: var(--accent-mint); font-family: 'Sora', sans-serif; word-break: break-word; }
 
         /* ================= FOOTER ================= */
         footer.site-footer {
             border-top: 1px solid var(--border);
-            margin-top: 3rem; padding: 2.8rem 0 1.6rem;
+            margin-top: 4rem;
+            padding: 3.5rem 0 2rem;
+            background: rgba(0,0,0,0.3);
         }
-        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
-        .footer-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent); margin-bottom: 0.9rem; }
-        .footer-col p, .footer-col a { font-size: 0.86rem; color: var(--text-muted); line-height: 1.7; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .footer-col h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 1rem; }
+        .footer-col p, .footer-col a { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; }
         .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 0.55rem; }
-        .footer-col a { text-decoration: none; }
-        .footer-col a:hover { color: var(--accent); }
+        .footer-col li { margin-bottom: 0.6rem; }
+        .footer-col a:hover { color: var(--accent-mint); }
         .footer-disclaimer {
-            border-top: 1px solid var(--border); padding-top: 1.4rem;
-            font-size: 0.76rem; color: #5f6b63; line-height: 1.7;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 1.5rem;
+            font-size: 0.76rem;
+            color: var(--text-dim);
+            line-height: 1.7;
         }
-        .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; font-size: 0.78rem; color: #5f6b63; }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+            font-size: 0.78rem;
+            color: var(--text-dim);
+        }
 
-        @media (max-width: 768px) {
+        /* Floating WhatsApp Action */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 200;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .float-whatsapp:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 30px rgba(37,211,102,0.6);
+        }
+        .float-whatsapp svg { width: 32px; height: 32px; fill: #031107; }
+
+        /* Mobile Optimization */
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-text { text-align: center; }
+            .hero p.sub { margin-left: auto; margin-right: auto; }
+            .hero-ctas { justify-content: center; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .bento-card.featured-card { grid-column: span 1; }
             .footer-grid { grid-template-columns: 1fr; }
         }
 
-        /* ================= FLOATING WHATSAPP ================= */
-        .float-whatsapp {
-            position: fixed; bottom: 22px; right: 22px; z-index: 200;
-            width: 87px; height: 87px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-2), var(--accent));
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 8px 24px rgba(37,211,102,0.5);
-            text-decoration: none; color: #04140b;
-            animation: floatPulse 2.4s infinite;
-        }
-        .float-whatsapp svg { width: 42px; height: 42px; fill: #04140b; }
-        @keyframes floatPulse {
-            0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
-            50% { box-shadow: 0 8px 32px rgba(37,211,102,0.75); }
-        }
-
-        @media (max-width: 768px) {
-            .brand-box img { height: 90px; }
-            .nav-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; }
-            .nav-btn { justify-content: center; text-align: center; font-size: 0.78rem; padding: 0.6rem 0.5rem; white-space: normal; line-height: 1.25; }
-            .nav-btn .tip { left: 0; right: 0; width: auto; }
-            .calculators-wrapper { padding: 1.5rem; }
-            .options-modal, .knowledge-modal { padding: 1.5rem; }
-            .hub-grid { grid-template-columns: 1fr; }
-            .history-returns-grid { grid-template-columns: 1fr; gap: 0.5rem; }
-            .results-row { grid-template-columns: 1fr; gap: 1rem; }
-            .result-box .big-num { font-size: 1.5rem; }
-            .slider-container { min-height: 220px; }
+        @media (max-width: 600px) {
+            .nav-actions { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 0.4rem; margin-top: 0.5rem; }
+            .top-nav-inner { flex-direction: column; align-items: flex-start; }
+            .nav-btn { justify-content: center; font-size: 0.75rem; padding: 0.5rem; }
+            .results-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -500,11 +894,10 @@
         <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z"/><polyline points="9 12 11 14 15 10"/></symbol>
         <symbol id="ic-book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></symbol>
         <symbol id="ic-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="9" y1="8" x2="9" y2="16"/><line x1="8" y1="9" x2="14" y2="9"/><line x1="8" y1="12" x2="13" y2="12"/><line x1="9" y1="16" x2="14" y2="16"/></symbol>
-        <symbol id="ic-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/><line x1="8" y1="19" x2="16" y2="19"/></symbol>
-        <symbol id="ic-bars" viewBox="0 0 24 24"><line x1="4" y1="20" x2="4" y2="12"/><line x1="10" y1="20" x2="10" y2="7"/><line x1="16" y1="20" x2="16" y2="3"/><line x1="4" y1="20" x2="20" y2="20"/></symbol>
         <symbol id="ic-layers" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
     </svg>
 
+    <!-- Top Navigation -->
     <header class="top-nav">
         <div class="top-nav-inner">
             <div class="brand-box">
@@ -513,20 +906,20 @@
             <div class="nav-actions">
                 <a href="overlap.html" class="nav-btn sector">
                     <svg class="ic"><use href="#ic-layers"/></svg>
-                    Overlap Calculator
-                    <span class="tip">Compare portfolio overlap between mutual funds to eliminate duplicate stock holdings.</span>
+                    Overlap Tool
+                    <span class="tip">Compare mutual funds to eliminate duplicate stock holdings.</span>
                 </a>
 
                 <a href="sector_q2.html" class="nav-btn sector">
                     <svg class="ic"><use href="#ic-chart"/></svg>
-                    Latest Sector Report <span class="badge-new">NEW</span>
-                    <span class="tip">Our latest sector research, explained simply — for learning, not a buy/sell signal.</span>
+                    Sector Report <span class="badge-new">NEW</span>
+                    <span class="tip">Latest sector research simplified for everyday investors.</span>
                 </a>
 
                 <button class="nav-btn hub-btn" onclick="toggleKnowledgeHub()">
                     <svg class="ic"><use href="#ic-book"/></svg>
                     Learning Hub
-                    <span class="tip">Explore India's growth story, asset class risk levels, MF history, and beginner guides.</span>
+                    <span class="tip">Explore macro trends, risk tiers, and fund history.</span>
                 </button>
             </div>
         </div>
@@ -534,77 +927,137 @@
 
     <div class="container">
 
-        <section class="hero">
-            <div class="hero-text">
-                <div class="eyebrow"><span class="dot"></span>Free community · Simple, jargon-free finance</div>
-                <h1>Understand your money <span class="grad">before you invest it.</span></h1>
-                <p class="sub">Finmet breaks down mutual funds, SIPs, sector trends, portfolio overlap, and risk in plain language — with real calculators and a free community to learn alongside, not confusing jargon or hype.</p>
-                <div class="hero-ctas">
-                    <a href="https://wa.me/917893918311?text=Hi,%20I%20want%20to%20join%20the%20Finmet%20community%20and%20learn%20more!" target="_blank" class="btn-primary">Join Free Community →</a>
-                    <a href="overlap.html" class="btn-secondary">Check MF Overlap ⚡</a>
-                    <button class="btn-secondary" onclick="revealCalculators()">Try Calculators ↓</button>
+        <!-- Hero Section -->
+        <div class="hero-wrap">
+            <section class="hero">
+                <div class="hero-text">
+                    <div class="eyebrow"><span class="dot"></span>Free Community · Jargon-Free Wealth Learning</div>
+                    <h1>Understand your money <span class="grad">before you invest it.</span></h1>
+                    <p class="sub">Finmet breaks down mutual funds, SIPs, sector trends, portfolio overlap, and risk profiles in plain language — equipped with real calculators and an open community.</p>
+                    <div class="hero-ctas">
+                        <a href="https://wa.me/917893918311?text=Hi,%20I%20want%20to%20join%20the%20Finmet%20community%20and%20learn%20more!" target="_blank" class="btn-primary">Join Community →</a>
+                        <a href="overlap.html" class="btn-secondary">Check MF Overlap ⚡</a>
+                        <button class="btn-secondary" onclick="revealCalculators()">Calculators ↓</button>
+                    </div>
                 </div>
+
+                <!-- Visual Chart Panel -->
+                <div class="money-panel">
+                    <div class="g-label">₹10,000/mo for 15 years — Comparative SIP Growth:</div>
+
+                    <div class="mp-legend">
+                        <div class="mp-legend-row">
+                            <span class="mp-legend-name"><span class="dotline" style="background:#ef4444"></span>FD/RD
+                                <button class="info-btn" type="button">?
+                                    <span class="tooltip-box align-left"><strong>Fixed / Recurring Deposit</strong><br>Capital preservation with fixed rate. Lowest long-term growth.</span>
+                                </button>
+                            </span>
+                            <span class="mp-legend-roi">6.0–7.5% p.a.</span>
+                            <span class="mp-legend-val" style="color:#ef4444">₹31.2L</span>
+                        </div>
+                        <div class="mp-legend-row">
+                            <span class="mp-legend-name"><span class="dotline" style="background:#cbd5e1"></span>Hybrid Fund
+                                <button class="info-btn" type="button">?
+                                    <span class="tooltip-box align-left"><strong>Hybrid Fund</strong><br>Combines debt safety with equity growth for balanced risk.</span>
+                                </button>
+                            </span>
+                            <span class="mp-legend-roi">10.0–11.5% p.a.</span>
+                            <span class="mp-legend-val" style="color:#cbd5e1">₹44.8L</span>
+                        </div>
+                        <div class="mp-legend-row">
+                            <span class="mp-legend-name"><span class="dotline" style="background:#25D366"></span>Diversified Equity MF
+                                <button class="info-btn" type="button">?
+                                    <span class="tooltip-box align-right"><strong>Diversified Equity Fund</strong><br>Higher long-term compounding across equity markets.</span>
+                                </button>
+                            </span>
+                            <span class="mp-legend-roi">13.0–15.5% p.a.</span>
+                            <span class="mp-legend-val" style="color:#25D366">₹62.8L</span>
+                        </div>
+                    </div>
+
+                    <svg class="growth-chart" viewBox="0 0 390 165" preserveAspectRatio="xMidYMid meet">
+                        <line class="gc-grid" x1="10" y1="145" x2="380" y2="145"/>
+                        <line class="gc-grid" x1="10" y1="10" x2="10" y2="145"/>
+                        <text class="gc-axis-label" x="10" y="9">₹65L</text>
+                        <text class="gc-axis-label" x="7" y="149">0</text>
+                        <text class="gc-axis-label" x="355" y="157">Yr 15</text>
+
+                        <polyline class="gc-line fd" points="10,145 84,136.7 158,126.5 232,114.1 306,98.9 380,80.2"/>
+                        <polyline class="gc-line hybrid" points="10,145 84,136.1 158,124.0 232,107.2 306,83.9 380,52.0"/>
+                        <polyline class="gc-line equity" points="10,145 84,135.7 158,121.3 232,99.3 306,65.9 380,14.6"/>
+
+                        <circle class="gc-dot fd" cx="380" cy="80.2" r="4.5"/>
+                        <circle class="gc-dot hybrid" cx="380" cy="52.0" r="4.5"/>
+                        <circle class="gc-dot equity" cx="380" cy="14.6" r="5"/>
+
+                        <text class="gc-label fd" x="315" y="76">₹31.2L</text>
+                        <text class="gc-label hybrid" x="315" y="48">₹44.8L</text>
+                        <text class="gc-label equity" x="315" y="12">₹62.8L</text>
+                    </svg>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bento Tools Section -->
+        <section class="tools-bento">
+            <div class="section-header">
+                <h2>Built to replace jargon with clarity</h2>
+                <p>Explore tools and structured guides engineered for clarity and portfolio decision-making.</p>
             </div>
 
-            <div class="money-panel">
-                <div class="g-label">₹10,000/month for 15 years — how the same SIP grows differently:</div>
-
-                <div class="mp-legend">
-                    <div class="mp-legend-row">
-                        <span class="mp-legend-name"><span class="dotline" style="background:#ff6b6b"></span>FD/RD
-                            <button class="info-btn" type="button">?
-                                <span class="tooltip-box align-left"><strong>Fixed / Recurring Deposit</strong><br>Money kept with a bank at a fixed rate. Low risk, lowest growth.</span>
-                            </button>
-                        </span>
-                        <span class="mp-legend-roi">6.0–7.5% p.a.</span>
-                        <span class="mp-legend-val" style="color:#ff6b6b">₹31.2L</span>
+            <div class="bento-grid">
+                <div class="bento-card featured-card">
+                    <div>
+                        <div class="bento-tag">⚡ Flagship Tool</div>
+                        <h3>Mutual Fund Overlap Calculator</h3>
+                        <p>Are you buying the exact same stocks across 3 different mutual funds? Input any two Indian funds to calculate real percentage duplication instantly.</p>
                     </div>
-                    <div class="mp-legend-row">
-                        <span class="mp-legend-name"><span class="dotline" style="background:#e8ecef"></span>Hybrid Fund
-                            <button class="info-btn" type="button">?
-                                <span class="tooltip-box align-left"><strong>Hybrid Fund</strong><br>Mixes safer debt with equities — balanced middle ground.</span>
-                            </button>
-                        </span>
-                        <span class="mp-legend-roi">10.0–11.5% p.a.</span>
-                        <span class="mp-legend-val" style="color:#e8ecef">₹44.8L</span>
-                    </div>
-                    <div class="mp-legend-row">
-                        <span class="mp-legend-name"><span class="dotline" style="background:#25D366"></span>Diversified Equity MF
-                            <button class="info-btn" type="button">?
-                                <span class="tooltip-box align-right"><strong>Diversified Equity Fund</strong><br>Spreads money across stocks. Higher long-term growth, more short-term ups and downs.</span>
-                            </button>
-                        </span>
-                        <span class="mp-legend-roi">13.0–15.5% p.a.</span>
-                        <span class="mp-legend-val" style="color:#25D366">₹62.8L</span>
-                    </div>
+                    <a href="overlap.html" class="bento-link">Launch Overlap Calculator →</a>
                 </div>
 
-                <svg class="growth-chart" viewBox="0 0 390 165" preserveAspectRatio="xMidYMid meet">
-                    <line class="gc-grid" x1="10" y1="145" x2="380" y2="145"/>
-                    <line class="gc-grid" x1="10" y1="10" x2="10" y2="145"/>
-                    <text class="gc-axis-label" x="10" y="9">₹65L</text>
-                    <text class="gc-axis-label" x="7" y="149">0</text>
-                    <text class="gc-axis-label" x="355" y="157">Yr 15</text>
+                <div class="bento-card">
+                    <div>
+                        <div class="bento-tag">🚀 Macro Insights</div>
+                        <h3>India's Growth Story</h3>
+                        <p>Which sectors are set to boom over the next 5–10 years backed by capex, infrastructure spending, and demographics.</p>
+                    </div>
+                    <a href="india_growth_story.html" class="bento-link">Read Growth Story →</a>
+                </div>
 
-                    <polyline class="gc-line fd" points="10,145 84,136.7 158,126.5 232,114.1 306,98.9 380,80.2"/>
-                    <polyline class="gc-line hybrid" points="10,145 84,136.1 158,124.0 232,107.2 306,83.9 380,52.0"/>
-                    <polyline class="gc-line equity" points="10,145 84,135.7 158,121.3 232,99.3 306,65.9 380,14.6"/>
+                <div class="bento-card">
+                    <div>
+                        <div class="bento-tag">📊 Quarterly Breakdown</div>
+                        <h3>Latest Sector Report</h3>
+                        <p>Our simplified quarter-by-quarter breakdown of major market sectors, cash flows, and industrial trends.</p>
+                    </div>
+                    <a href="sector_q2.html" class="bento-link">View Sector Report →</a>
+                </div>
 
-                    <circle class="gc-dot fd" cx="380" cy="80.2" r="4.5"/>
-                    <circle class="gc-dot hybrid" cx="380" cy="52.0" r="4.5"/>
-                    <circle class="gc-dot equity" cx="380" cy="14.6" r="5"/>
+                <div class="bento-card">
+                    <div>
+                        <div class="bento-tag">📜 Historic Context</div>
+                        <h3>Mutual Fund History</h3>
+                        <p>How top Indian mutual funds performed through major market crashes since the 1990s in plain language.</p>
+                    </div>
+                    <a href="mutual_Fund.html" class="bento-link">Explore Fund History →</a>
+                </div>
 
-                    <text class="gc-label fd" x="315" y="76">₹31.2L</text>
-                    <text class="gc-label hybrid" x="315" y="48">₹44.8L</text>
-                    <text class="gc-label equity" x="315" y="12">₹62.8L</text>
-                </svg>
+                <div class="bento-card">
+                    <div>
+                        <div class="bento-tag">📚 Knowledge Hub</div>
+                        <h3>Risk &amp; Asset Classes</h3>
+                        <p>Compare risk profiles — Fixed Deposits, Hybrid Funds, and Equities — with 10, 15, and 20-year return benchmarks.</p>
+                    </div>
+                    <a href="#" onclick="toggleInvestmentOptions(); return false;" class="bento-link">View Risk Breakdown →</a>
+                </div>
             </div>
         </section>
 
+        <!-- Dynamic Quotes Carousel -->
         <div class="slider-container">
             <div class="slide active" data-duration="6000">
                 <div class="quote-slide">
-                    <div class="quote-mark">&ldquo;</div>
+                    <div class="quote-mark">“</div>
                     <p class="quote-text">Price is what you pay.<br>Value is what you get.</p>
                     <div class="quote-divider"></div>
                     <div class="quote-name">Warren Buffett</div>
@@ -613,7 +1066,7 @@
             </div>
             <div class="slide" data-duration="6000">
                 <div class="quote-slide">
-                    <div class="quote-mark">&ldquo;</div>
+                    <div class="quote-mark">“</div>
                     <p class="quote-text">The intelligent investor is a realist who sells to optimists and buys from pessimists.</p>
                     <div class="quote-divider"></div>
                     <div class="quote-name">Benjamin Graham</div>
@@ -622,7 +1075,7 @@
             </div>
             <div class="slide" data-duration="6000">
                 <div class="quote-slide">
-                    <div class="quote-mark">&ldquo;</div>
+                    <div class="quote-mark">“</div>
                     <p class="quote-text">Know what you own,<br>and know why you own it.</p>
                     <div class="quote-divider"></div>
                     <div class="quote-name">Peter Lynch</div>
@@ -631,16 +1084,16 @@
             </div>
             <div class="slide" data-duration="6000">
                 <div class="quote-slide">
-                    <div class="quote-mark">&ldquo;</div>
+                    <div class="quote-mark">“</div>
                     <p class="quote-text">You cannot make profits in the stock market unless you have the ability to bear losses.</p>
                     <div class="quote-divider"></div>
                     <div class="quote-name">Rakesh Jhunjhunwala</div>
-                    <div class="quote-title">&lsquo;Big Bull of Dalal Street&rsquo;<span class="sep">&bull;</span>India</div>
+                    <div class="quote-title">‘Big Bull of Dalal Street’<span class="sep">&bull;</span>India</div>
                 </div>
             </div>
             <div class="slide" data-duration="6000">
                 <div class="quote-slide">
-                    <div class="quote-mark">&ldquo;</div>
+                    <div class="quote-mark">“</div>
                     <p class="quote-text">Buy right, sit tight.</p>
                     <div class="quote-divider"></div>
                     <div class="quote-name">Raamdeo Agrawal</div>
@@ -657,7 +1110,7 @@
             </div>
         </div>
 
-        <!-- LEARNING HUB MODAL (EXPANDED & CLEAN) -->
+        <!-- LEARNING HUB MODAL -->
         <div id="knowledgeHubModal" class="knowledge-modal">
             <div class="options-header">
                 <h2><svg class="ic"><use href="#ic-book"/></svg>Finmet Learning Hub</h2>
@@ -665,17 +1118,15 @@
             </div>
 
             <div class="hub-grid">
-                <!-- Card 1: India's Growth Story -->
                 <div class="knowledge-card featured">
                     <div>
                         <span class="featured-badge">🚀 High Impact Macro</span>
                         <h3>India's Growth Story</h3>
-                        <p>Which sectors are set to boom over the next 5–10 years, and why — backed by real numbers, infrastructure spending, and demographics.</p>
+                        <p>Which sectors are set to boom over the next 5–10 years, and why — backed by numbers, infrastructure spending, and demographics.</p>
                     </div>
                     <a href="india_growth_story.html">Explore Growth Story &rarr;</a>
                 </div>
 
-                <!-- Card 2: Investment Options & Risk Breakdown -->
                 <div class="knowledge-card featured">
                     <div>
                         <span class="featured-badge">📊 Asset Class Guide</span>
@@ -685,7 +1136,6 @@
                     <button class="card-btn" onclick="toggleInvestmentOptions()">View Risk Breakdown &rarr;</button>
                 </div>
 
-                <!-- Card 3: Overlap Calculator -->
                 <div class="knowledge-card">
                     <div>
                         <span class="featured-badge">⚡ Portfolio Tool</span>
@@ -695,7 +1145,6 @@
                     <a href="overlap.html">Launch Overlap Calculator &rarr;</a>
                 </div>
 
-                <!-- Card 4: Mutual Fund History -->
                 <div class="knowledge-card">
                     <div>
                         <span class="featured-badge">📜 20+ Year Deep-Dive</span>
@@ -705,7 +1154,6 @@
                     <a href="mutual_Fund.html">Explore Mutual Fund History &rarr;</a>
                 </div>
 
-                <!-- Card 5: Beginner Guide -->
                 <div class="knowledge-card">
                     <div>
                         <span class="featured-badge">📚 Basics 101</span>
@@ -725,7 +1173,7 @@
             </div>
 
             <div class="risk-category-card">
-                <h3>1. No to Low Risk (FD, RD, Debt Funds, Gold, etc.)</h3>
+                <h3>1. No to Low Risk (FD, RD, Debt Funds, Gold)</h3>
                 <p>Designed for capital preservation and emergency reserves. Guaranteed safety or low volatility, backed by secure banking structures or stable sovereign assets.</p>
                 <div class="history-returns-grid">
                     <div><span>10-Yr Historic Avg</span><strong>6.0% - 7.5%</strong></div>
@@ -745,8 +1193,8 @@
             </div>
 
             <div class="risk-category-card">
-                <h3>3. Moderate to High Risk (Flexi Cap, ETFs, Direct Equities, etc.)</h3>
-                <p>Optimized for aggressive wealth creation over long-term compounding horizons. Substantial short-term volatility, but historically outperforms inflation significantly when given 10+ years.</p>
+                <h3>3. Moderate to High Risk (Flexi Cap, ETFs, Direct Equities)</h3>
+                <p>Optimized for aggressive wealth creation over long-term compounding horizons. Substantial short-term volatility, but historically outperforms inflation significantly over 10+ years.</p>
                 <div class="history-returns-grid">
                     <div><span>10-Yr Historic Avg</span><strong>13.0% - 15.5%</strong></div>
                     <div><span>15-Yr Historic Avg</span><strong>13.5% - 16.0%</strong></div>
@@ -755,24 +1203,24 @@
             </div>
         </div>
 
+        <!-- CALCULATORS CTA & WRAPPER -->
         <div class="cta-action-wrap">
-            <button class="calc-toggle-btn" onclick="revealCalculators()">Want to know how? Let's calculate ↓</button>
+            <button class="calc-toggle-btn" onclick="revealCalculators()">Launch Financial Calculators ↓</button>
         </div>
 
         <div id="calculatorsWrapper" class="calculators-wrapper">
             <div class="calc-tabs">
-                <button class="tab-btn active" onclick="switchTab(event, 'sipCalc')">SIP</button>
+                <button class="tab-btn active" onclick="switchTab(event, 'sipCalc')">SIP Calculator</button>
                 <button class="tab-btn" onclick="switchTab(event, 'lumpsumCalc')">Lumpsum</button>
                 <button class="tab-btn" onclick="switchTab(event, 'fdRdCalc')">FD / RD</button>
-                <button class="tab-btn" onclick="switchTab(event, 'mfTypesCalc')">MF Matrix
-                    <span class="tab-tip">Type of mutual funds with their historical returns</span>
-                </button>
+                <button class="tab-btn" onclick="switchTab(event, 'mfTypesCalc')">MF Matrix</button>
                 <button class="tab-btn" onclick="switchTab(event, 'indexCalc')">Index Funds</button>
-                <a href="overlap.html" class="tab-btn" style="color:var(--accent-light)">⚡ Overlap Tool</a>
+                <a href="overlap.html" class="tab-btn" style="color:var(--accent-mint)">⚡ Overlap Tool</a>
             </div>
 
+            <!-- SIP CALCULATOR -->
             <div id="sipCalc" class="calc-panel active">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">Systematic Investment Plan (SIP)</h3>
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent-mint);">Systematic Investment Plan (SIP)</h3>
 
                 <div class="input-group">
                     <label for="sipMonthly">Monthly Investment: <span id="sipMonthlyVal" class="value-display">₹10,000</span></label>
@@ -793,7 +1241,7 @@
                     <label>
                         Annual Step-Up (%):
                         <button class="info-btn" type="button">?
-                            <span class="tooltip-box"><strong>What is Step-Up?</strong><br>An automatic annual percentage increase in your monthly SIP amount matching salary hikes.</span>
+                            <span class="tooltip-box"><strong>Annual Step-Up</strong><br>An automatic annual percentage increase in your monthly SIP matching salary increases.</span>
                         </button>
                         <span id="sipStepVal" class="value-display">10%</span>
                     </label>
@@ -812,8 +1260,9 @@
                 </div>
             </div>
 
+            <!-- LUMPSUM CALCULATOR -->
             <div id="lumpsumCalc" class="calc-panel">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">One-Shot Lumpsum Investment</h3>
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent-mint);">One-Shot Lumpsum Investment</h3>
 
                 <div class="input-group">
                     <label for="lumPrincipal">Total Principal Amount: <span id="lumPrincipalVal" class="value-display">₹1,00,000</span></label>
@@ -842,8 +1291,9 @@
                 </div>
             </div>
 
+            <!-- FD/RD CALCULATOR -->
             <div id="fdRdCalc" class="calc-panel">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">Fixed / Recurring Deposit Guardrail</h3>
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent-mint);">Fixed / Recurring Deposit Guardrail</h3>
 
                 <div class="toggle-group">
                     <button id="modeFD" class="toggle-btn active" onclick="setFDRDMode('FD')">Fixed Deposit (FD)</button>
@@ -877,8 +1327,9 @@
                 </div>
             </div>
 
+            <!-- MF TYPES CALCULATOR -->
             <div id="mfTypesCalc" class="calc-panel">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">Mutual Fund Category Return Estimator</h3>
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent-mint);">Mutual Fund Category Return Estimator</h3>
 
                 <div class="input-group">
                     <label for="mfCategory">Select Mutual Fund Category:</label>
@@ -912,8 +1363,9 @@
                 </div>
             </div>
 
+            <!-- INDEX FUNDS CALCULATOR -->
             <div id="indexCalc" class="calc-panel">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent);">Index Funds Calculator</h3>
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem; color: var(--accent-mint);">Index Funds Calculator</h3>
 
                 <div class="input-group">
                     <label for="indexType">Select Index Benchmark:</label>
@@ -948,11 +1400,12 @@
 
         </div>
 
+        <!-- FOOTER -->
         <footer class="site-footer">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Finmet</h4>
-                    <p>Finmet is a free educational community and toolkit for people who want to understand money — SIPs, mutual funds, portfolio overlap, sector trends and more — without the jargon or the hype.</p>
+                    <p>Finmet is a free educational community and toolkit designed for retail investors who want to understand SIPs, mutual funds, portfolio overlap, and sector trends without confusion or hype.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Explore</h4>
@@ -982,11 +1435,13 @@
 
     </div>
 
+    <!-- Floating WhatsApp Action -->
     <a class="float-whatsapp" href="https://wa.me/917893918311?text=Hi,%20I%20want%20to%20join%20the%20Finmet%20community%20and%20learn%20more!" target="_blank" aria-label="Join Finmet on WhatsApp">
         <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     </a>
 
     <script>
+        // Tooltip toggles
         document.querySelectorAll('.info-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
