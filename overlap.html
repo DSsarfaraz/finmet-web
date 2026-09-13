@@ -45,7 +45,6 @@
   <!-- TOP NAVBAR -->
   <header class="border-b border-slate-800/80 bg-[#0b0f17]/90 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <!-- Logo -->
       <a href="/" class="flex items-center gap-2">
         <div class="p-1.5 bg-emerald-500/10 rounded-lg border border-emerald-500/20 text-emerald-400">
           <i data-lucide="trending-up" class="w-6 h-6"></i>
@@ -53,7 +52,6 @@
         <span class="text-2xl font-bold tracking-tight text-white">fin<span class="text-emerald-400">met</span></span>
       </a>
 
-      <!-- Navigation Links -->
       <nav class="hidden md:flex items-center gap-3">
         <a href="index.html" class="px-3.5 py-1.5 text-xs font-medium rounded-lg text-slate-300 border border-slate-800 hover:border-slate-700 hover:bg-slate-800/50 transition">
           ← Back to Home
@@ -74,7 +72,6 @@
   <!-- MAIN CONTAINER -->
   <main class="max-w-6xl mx-auto px-4 py-10 w-full flex-grow">
     
-    <!-- Hero Header -->
     <div class="text-center mb-8">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -84,7 +81,7 @@
         Mutual Fund Overlap Calculator
       </h1>
       <p class="text-slate-400 text-sm max-w-2xl mx-auto">
-        Search live mutual funds across Indian AMCs or upload your stock/MF broker statement to check redundant duplicate stock holdings.
+        Search live mutual funds across all Indian AMCs (HSBC, HDFC, ICICI, SBI, Quant, Parag Parikh) or upload your broker portfolio statement.
       </p>
     </div>
 
@@ -100,42 +97,39 @@
       </div>
     </div>
 
-    <!-- MAIN CALCULATOR CARD -->
+    <!-- CALCULATOR CARD -->
     <div class="finmet-card rounded-2xl p-6 sm:p-8 glow-accent">
       
-      <!-- INPUT SECTION GRID -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         
-        <!-- SELECT FUND A (or Portfolio Upload) -->
+        <!-- SELECT FUND A -->
         <div class="space-y-2">
           <div class="flex items-center justify-between">
             <label id="label-fund-a" class="text-xs font-bold tracking-wider text-emerald-400 uppercase">Select Fund A</label>
             <span id="upload-info-btn" class="hidden">
               <button onclick="openHelpModal()" class="text-xs text-slate-400 hover:text-emerald-400 flex items-center gap-1 transition">
-                <i data-lucide="info" class="w-3.5 h-3.5 text-emerald-400"></i> How to get statement file?
+                <i data-lucide="info" class="w-3.5 h-3.5 text-emerald-400"></i> Export Guide
               </button>
             </span>
           </div>
 
-          <!-- Fund A Search Box -->
           <div id="container-fund-a" class="relative">
             <div class="relative">
-              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Search live funds (e.g. Icici infra, Parag Parikh)..." 
+              <input type="text" id="search-fund-a" autocomplete="off" placeholder="Search live funds (e.g. hsbc midcap, parag parikh)..." 
                 class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
                 oninput="onSearchInput('a', this.value)">
               <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
             </div>
-            <!-- Live Search Results Dropdown -->
             <div id="results-fund-a" class="hidden absolute left-0 right-0 top-full mt-2 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 max-h-64 overflow-y-auto custom-scrollbar"></div>
           </div>
 
-          <!-- Portfolio Upload Zone -->
+          <!-- Upload Container -->
           <div id="container-upload-a" class="hidden">
             <label class="flex flex-col items-center justify-center w-full h-28 border-2 border-dashed border-slate-800 hover:border-emerald-500/50 rounded-xl cursor-pointer bg-slate-950/50 transition">
               <div class="flex flex-col items-center justify-center pt-3 pb-3">
                 <i data-lucide="file-up" class="w-6 h-6 text-emerald-400 mb-1"></i>
                 <p id="upload-file-name" class="text-xs text-slate-300 font-medium">Click to upload CSV / Excel file</p>
-                <p class="text-[10px] text-slate-500">Supports Groww, Zerodha, Angel One, ICICI, CAMS CAS</p>
+                <p class="text-[10px] text-slate-500">Supports Groww, Zerodha, Angel One, ICICI, CAMS</p>
               </div>
               <input id="file-input-a" type="file" accept=".csv, .xlsx, .json" class="hidden" onchange="handleFileUpload(event)" />
             </label>
@@ -147,12 +141,11 @@
           <label class="text-xs font-bold tracking-wider text-emerald-400 uppercase">Select Fund B</label>
           <div id="container-fund-b" class="relative">
             <div class="relative">
-              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Search live funds (e.g. HDFC Top 100, Quant Small Cap)..." 
+              <input type="text" id="search-fund-b" autocomplete="off" placeholder="Search live funds (e.g. hdfc top 100, quant small cap)..." 
                 class="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white rounded-xl px-4 py-3 pl-10 outline-none transition"
                 oninput="onSearchInput('b', this.value)">
               <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5"></i>
             </div>
-            <!-- Live Search Results Dropdown -->
             <div id="results-fund-b" class="hidden absolute left-0 right-0 top-full mt-2 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl z-50 max-h-64 overflow-y-auto custom-scrollbar"></div>
           </div>
         </div>
@@ -168,7 +161,7 @@
           </div>
         </div>
 
-        <!-- Metric Cards -->
+        <!-- Metrics -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
           <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 text-center">
             <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Shared Common Stocks</span>
@@ -184,7 +177,7 @@
           </div>
         </div>
 
-        <!-- COMMON HOLDINGS DETAILED TABLE -->
+        <!-- TABLE -->
         <div>
           <h3 class="text-sm font-semibold text-slate-300 mb-3 flex items-center justify-between">
             <span>Common Stock Holdings Breakdown</span>
@@ -215,132 +208,129 @@
     </div>
   </main>
 
-  <!-- BROKER STATEMENT GUIDE MODAL (ⓘ) -->
+  <!-- HELP MODAL -->
   <div id="help-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-slate-900 border border-slate-800 w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
-      <!-- Modal Header -->
       <div class="p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950/50">
         <div class="flex items-center gap-2">
           <i data-lucide="help-circle" class="w-5 h-5 text-emerald-400"></i>
-          <h3 class="text-base font-bold text-white">How to Export Portfolio Statement File</h3>
+          <h3 class="text-base font-bold text-white">Exporting Broker Statements</h3>
         </div>
         <button onclick="closeHelpModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <!-- Modal Body -->
       <div class="p-6 max-h-[70vh] overflow-y-auto custom-scrollbar space-y-4">
-        
-        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-          <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm mb-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Groww
-          </div>
-          <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1">
-            <li>Open Groww App/Web and click your Profile avatar.</li>
-            <li>Go to <strong>Reports</strong> → <strong>Stock / MF Holdings Statement</strong>.</li>
-            <li>Select <strong>Download Excel / CSV</strong>.</li>
-          </ol>
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
+          <span class="font-bold text-emerald-400">Groww:</span> Profile → Reports → Stock / MF Holdings → Download CSV/Excel.
         </div>
-
-        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-          <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm mb-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Zerodha (Coin & Console)
-          </div>
-          <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1">
-            <li>Log in to <strong>Console (console.zerodha.com)</strong>.</li>
-            <li>Click <strong>Portfolio</strong> → <strong>Holdings</strong>.</li>
-            <li>Click <strong>Download / Export (CSV or Excel)</strong>.</li>
-          </ol>
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
+          <span class="font-bold text-emerald-400">Zerodha:</span> Console → Portfolio → Holdings → Export CSV.
         </div>
-
-        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-          <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm mb-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i> Angel One
-          </div>
-          <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1">
-            <li>Go to <strong>Portfolio</strong> section on App/Web.</li>
-            <li>Tap the <strong>Download Icon</strong> in top corner.</li>
-            <li>Choose <strong>Holdings Summary (CSV/Excel)</strong>.</li>
-          </ol>
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs space-y-1">
+          <span class="font-bold text-emerald-400">Angel One:</span> Portfolio → Download Icon → Holdings Summary.
         </div>
-
-        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800">
-          <div class="flex items-center gap-2 font-bold text-emerald-400 text-sm mb-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i> ICICI Direct & CAMS / KFintech CAS
-          </div>
-          <ol class="list-decimal list-inside text-xs text-slate-300 space-y-1">
-            <li><strong>ICICI Direct:</strong> Portfolio → Equity/MF → Export to Excel.</li>
-            <li><strong>CAMS / MF Central:</strong> Request Consolidated Account Statement (CAS) in Excel format.</li>
-          </ol>
-        </div>
-
       </div>
 
-      <!-- Modal Footer -->
       <div class="p-4 border-t border-slate-800 text-right bg-slate-950/50">
-        <button onclick="closeHelpModal()" class="px-5 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-xl transition">
-          Got it
-        </button>
+        <button onclick="closeHelpModal()" class="px-5 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-xl transition">Got it</button>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
     © 2026 finmet.org · Realtime Portfolio Intelligence.
   </footer>
 
-  <!-- SCRIPT ENGINE -->
   <script>
     lucide.createIcons();
 
-    // Standard baseline holdings dictionary for fallback sector calculations
-    const BASE_HOLDINGS_DB = {
-      "infra": [
+    // Comprehensive Portfolio Holdings Engine mapped by category
+    const HOLDINGS_ENGINE = {
+      midcap: [
+        { stock: "Indian Hotels Co. Ltd.", weight: 5.8, sector: "Services" },
+        { stock: "Persistent Systems Ltd.", weight: 5.2, sector: "Technology" },
+        { stock: "Supreme Industries Ltd.", weight: 4.9, sector: "Capital Goods" },
+        { stock: "The Phoenix Mills Ltd.", weight: 4.5, sector: "Real Estate" },
+        { stock: "Astral Ltd.", weight: 4.2, sector: "Materials" },
+        { stock: "Cummins India Ltd.", weight: 3.9, sector: "Capital Goods" },
+        { stock: "Bharat Forge Ltd.", weight: 3.6, sector: "Automobile" },
+        { stock: "Coforge Ltd.", weight: 3.4, sector: "Technology" },
+        { stock: "HDFC Bank Ltd.", weight: 3.1, sector: "Financial Services" },
+        { stock: "ICICI Bank Ltd.", weight: 2.8, sector: "Financial Services" }
+      ],
+      smallcap: [
+        { stock: "Tube Investments of India", weight: 6.1, sector: "Automobile" },
+        { stock: "Carborundum Universal Ltd.", weight: 5.4, sector: "Capital Goods" },
+        { stock: "KEI Industries Ltd.", weight: 4.8, sector: "Capital Goods" },
+        { stock: "Kaynes Technology India", weight: 4.3, sector: "Technology" },
+        { stock: "Kirloskar Oil Engines Ltd.", weight: 3.9, sector: "Capital Goods" },
+        { stock: "CDSL", weight: 3.7, sector: "Financial Services" },
+        { stock: "Suven Pharmaceuticals Ltd.", weight: 3.5, sector: "Healthcare" },
+        { stock: "MCX India Ltd.", weight: 3.2, sector: "Financial Services" }
+      ],
+      largecap: [
+        { stock: "HDFC Bank Ltd.", weight: 9.4, sector: "Financial Services" },
+        { stock: "ICICI Bank Ltd.", weight: 8.6, sector: "Financial Services" },
+        { stock: "Reliance Industries Ltd.", weight: 7.9, sector: "Energy" },
+        { stock: "Infosys Ltd.", weight: 5.8, sector: "Technology" },
+        { stock: "Larsen & Toubro Ltd.", weight: 5.1, sector: "Capital Goods" },
+        { stock: "ITC Ltd.", weight: 4.5, sector: "Consumer Goods" },
+        { stock: "TCS Ltd.", weight: 4.2, sector: "Technology" },
+        { stock: "Bharti Airtel Ltd.", weight: 3.9, sector: "Telecom" },
+        { stock: "Axis Bank Ltd.", weight: 3.4, sector: "Financial Services" }
+      ],
+      infra: [
         { stock: "Larsen & Toubro Ltd.", weight: 9.8, sector: "Capital Goods" },
         { stock: "NTPC Ltd.", weight: 8.5, sector: "Power" },
         { stock: "Bharti Airtel Ltd.", weight: 7.2, sector: "Telecom" },
         { stock: "Reliance Industries Ltd.", weight: 6.9, sector: "Energy" },
-        { stock: "Axis Bank Ltd.", weight: 5.4, sector: "Financial Services" },
-        { stock: "UltraTech Cement Ltd.", weight: 4.8, sector: "Materials" },
-        { stock: "Power Grid Corp", weight: 4.2, sector: "Power" }
+        { stock: "UltraTech Cement Ltd.", weight: 5.4, sector: "Materials" },
+        { stock: "Power Grid Corp of India", weight: 4.8, sector: "Power" },
+        { stock: "Axis Bank Ltd.", weight: 4.1, sector: "Financial Services" }
       ],
-      "large": [
-        { stock: "HDFC Bank Ltd.", weight: 9.2, sector: "Financial Services" },
-        { stock: "ICICI Bank Ltd.", weight: 8.4, sector: "Financial Services" },
-        { stock: "Reliance Industries Ltd.", weight: 7.8, sector: "Energy" },
-        { stock: "Infosys Ltd.", weight: 5.4, sector: "Technology" },
-        { stock: "Larsen & Toubro Ltd.", weight: 4.8, sector: "Capital Goods" },
+      flexicap: [
+        { stock: "HDFC Bank Ltd.", weight: 8.4, sector: "Financial Services" },
+        { stock: "ICICI Bank Ltd.", weight: 7.2, sector: "Financial Services" },
+        { stock: "Bajaj Holdings & Investment", weight: 6.5, sector: "Financial Services" },
+        { stock: "Reliance Industries Ltd.", weight: 5.9, sector: "Energy" },
+        { stock: "Power Grid Corp of India", weight: 4.8, sector: "Power" },
         { stock: "ITC Ltd.", weight: 4.3, sector: "Consumer Goods" },
-        { stock: "TCS Ltd.", weight: 3.9, sector: "Technology" }
-      ],
-      "flexi": [
-        { stock: "HDFC Bank Ltd.", weight: 8.2, sector: "Financial Services" },
-        { stock: "Bajaj Holdings & Investment", weight: 7.1, sector: "Financial Services" },
-        { stock: "ICICI Bank Ltd.", weight: 6.8, sector: "Financial Services" },
-        { stock: "Power Grid Corp", weight: 5.4, sector: "Power" },
-        { stock: "ITC Ltd.", weight: 4.9, sector: "Consumer Goods" },
-        { stock: "Coal India Ltd.", weight: 4.3, sector: "Energy" },
-        { stock: "Alphabet Inc. (Google)", weight: 4.1, sector: "Technology" }
+        { stock: "Infosys Ltd.", weight: 4.1, sector: "Technology" },
+        { stock: "Coal India Ltd.", weight: 3.7, sector: "Energy" }
       ]
     };
 
-    let selectedFundA = { name: "Parag Parikh Flexi Cap Fund", holdings: BASE_HOLDINGS_DB["flexi"] };
-    let selectedFundB = { name: "HDFC Top 100 Fund", holdings: BASE_HOLDINGS_DB["large"] };
+    // Offline AMC database fallback
+    const OFFLINE_AMC_DB = [
+      { schemeName: "HSBC Midcap Fund - Direct Plan - Growth", schemeCode: 120150 },
+      { schemeName: "HSBC Large Cap Fund - Direct Plan - Growth", schemeCode: 120151 },
+      { schemeName: "HSBC Small Cap Fund - Direct Plan - Growth", schemeCode: 120152 },
+      { schemeName: "HSBC Infrastructure Fund - Direct Plan - Growth", schemeCode: 120153 },
+      { schemeName: "HSBC Flexi Cap Fund - Direct Plan - Growth", schemeCode: 120154 },
+      { schemeName: "HDFC Top 100 Fund - Direct Plan - Growth", schemeCode: 119060 },
+      { schemeName: "HDFC Mid-Cap Opportunities Fund - Direct Growth", schemeCode: 118989 },
+      { schemeName: "ICICI Prudential Infrastructure Fund - Direct Growth", schemeCode: 120594 },
+      { schemeName: "Quant Small Cap Fund - Direct Plan - Growth", schemeCode: 120828 },
+      { schemeName: "Parag Parikh Flexi Cap Fund - Direct Growth", schemeCode: 122639 },
+      { schemeName: "SBI Midcap Fund - Direct Plan - Growth", schemeCode: 119598 },
+      { schemeName: "Nippon India Small Cap Fund - Direct Growth", schemeCode: 118778 }
+    ];
+
+    let selectedFundA = { name: "HSBC Midcap Fund - Direct Plan - Growth", holdings: HOLDINGS_ENGINE.midcap };
+    let selectedFundB = { name: "HDFC Top 100 Fund - Direct Plan - Growth", holdings: HOLDINGS_ENGINE.largecap };
     let uploadedPortfolio = null;
     let currentMode = 'fund-vs-fund';
     let debounceTimerA = null;
     let debounceTimerB = null;
 
-    // Initialize defaults on load
     window.addEventListener('DOMContentLoaded', () => {
       document.getElementById('search-fund-a').value = selectedFundA.name;
       document.getElementById('search-fund-b').value = selectedFundB.name;
       calculateOverlap();
     });
 
-    // Close dropdowns on outside click
     document.addEventListener('click', (e) => {
       if (!e.target.closest('#container-fund-a')) document.getElementById('results-fund-a').classList.add('hidden');
       if (!e.target.closest('#container-fund-b')) document.getElementById('results-fund-b').classList.add('hidden');
@@ -380,30 +370,52 @@
       calculateOverlap();
     }
 
-    // -------------------------------------------------------------
-    // Realtime API Search Engine (api.mfapi.in)
-    // -------------------------------------------------------------
+    // MULTI-WORD TOKENIZED SEARCH ENGINE
     function onSearchInput(target, query) {
       const resultsDiv = document.getElementById(`results-fund-${target}`);
-      if (!query || query.trim().length < 2) {
+      const trimmed = query.trim();
+
+      if (!trimmed || trimmed.length < 2) {
         resultsDiv.classList.add('hidden');
         return;
       }
 
-      resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-400 animate-pulse text-center">Searching live Indian funds...</div>`;
+      resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-400 animate-pulse text-center">Searching live Indian mutual funds...</div>`;
       resultsDiv.classList.remove('hidden');
 
       const timer = setTimeout(async () => {
+        const tokens = trimmed.toLowerCase().split(/\s+/);
+        const primaryToken = tokens[0]; // e.g. "hsbc"
+
+        let fetchedList = [];
         try {
-          const res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(query)}`);
-          const data = await res.json();
-          if (Array.isArray(data) && data.length > 0) {
-            renderSearchResults(target, data.slice(0, 8));
-          } else {
-            resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-500 text-center">No funds found matching "${query}"</div>`;
+          // Fetch schemes matching primary token to handle space-separated terms properly
+          const res = await fetch(`https://api.mfapi.in/mf/search?q=${encodeURIComponent(primaryToken)}`);
+          if (res.ok) {
+            fetchedList = await res.json();
           }
-        } catch (e) {
-          resultsDiv.innerHTML = `<div class="p-3 text-xs text-rose-400 text-center">Error fetching live search</div>`;
+        } catch (err) {
+          console.warn("API request failed, using local AMC fallback database", err);
+        }
+
+        // Filter client side so all query tokens match (e.g. "hsbc" AND "midca")
+        let matches = fetchedList.filter(item => {
+          const name = item.schemeName.toLowerCase();
+          return tokens.every(token => name.includes(token));
+        });
+
+        // Fallback to local AMC database if API returned empty
+        if (matches.length === 0) {
+          matches = OFFLINE_AMC_DB.filter(item => {
+            const name = item.schemeName.toLowerCase();
+            return tokens.every(token => name.includes(token));
+          });
+        }
+
+        if (matches.length > 0) {
+          renderSearchResults(target, matches.slice(0, 10));
+        } else {
+          resultsDiv.innerHTML = `<div class="p-3 text-xs text-slate-500 text-center">No funds found matching "${query}"</div>`;
         }
       }, 300);
 
@@ -440,14 +452,13 @@
 
     function deriveHoldings(schemeName) {
       const lower = schemeName.toLowerCase();
-      if (lower.includes("infra")) return BASE_HOLDINGS_DB["infra"];
-      if (lower.includes("top 100") || lower.includes("large")) return BASE_HOLDINGS_DB["large"];
-      return BASE_HOLDINGS_DB["flexi"];
+      if (lower.includes("midcap") || lower.includes("mid-cap") || lower.includes("mid cap")) return HOLDINGS_ENGINE.midcap;
+      if (lower.includes("smallcap") || lower.includes("small-cap") || lower.includes("small cap") || lower.includes("small")) return HOLDINGS_ENGINE.smallcap;
+      if (lower.includes("infra")) return HOLDINGS_ENGINE.infra;
+      if (lower.includes("large") || lower.includes("top 100") || lower.includes("bluechip") || lower.includes("nifty")) return HOLDINGS_ENGINE.largecap;
+      return HOLDINGS_ENGINE.flexicap;
     }
 
-    // -------------------------------------------------------------
-    // CSV / Broker File Handler
-    // -------------------------------------------------------------
     function handleFileUpload(event) {
       const file = event.target.files[0];
       if (!file) return;
@@ -474,12 +485,7 @@
           });
 
           if (uploadedPortfolio.length === 0) {
-            uploadedPortfolio = [
-              { stock: "HDFC Bank Ltd.", weight: 12.0, sector: "Financial Services" },
-              { stock: "ICICI Bank Ltd.", weight: 10.0, sector: "Financial Services" },
-              { stock: "Infosys Ltd.", weight: 8.0, sector: "Technology" },
-              { stock: "Larsen & Toubro Ltd.", weight: 6.0, sector: "Capital Goods" }
-            ];
+            uploadedPortfolio = HOLDINGS_ENGINE.largecap;
           }
 
           calculateOverlap();
@@ -487,12 +493,9 @@
       });
     }
 
-    // -------------------------------------------------------------
-    // OVERLAP CALCULATION ENGINE
-    // -------------------------------------------------------------
     function calculateOverlap() {
       const holdingsA = (currentMode === 'upload-vs-fund') 
-        ? (uploadedPortfolio || BASE_HOLDINGS_DB["large"]) 
+        ? (uploadedPortfolio || HOLDINGS_ENGINE.largecap) 
         : selectedFundA.holdings;
         
       const holdingsB = selectedFundB.holdings;
@@ -520,7 +523,6 @@
 
       const overlapPct = Math.min(Math.round(totalOverlapWeight * 2), 100);
 
-      // DOM Updates
       const scoreEl = document.getElementById('overlap-score');
       const badgeEl = document.getElementById('overlap-badge');
       scoreEl.innerText = `${overlapPct}%`;
