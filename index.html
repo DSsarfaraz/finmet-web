@@ -1,858 +1,383 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Finmet - Simplifying Finance</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              400: '#34d399',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              900: '#022c22',
-              950: '#011711'
-            }
-          }
-        }
-      }
-    }
-  </script>
-  
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-    body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-    
-    .glass-nav {
-      background: rgba(5, 5, 5, 0.94);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-    .glass-card {
-      background: rgba(16, 16, 18, 0.9);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-    }
-    .glow-effect {
-      box-shadow: 0 0 40px -5px rgba(16, 185, 129, 0.45);
-    }
-    .glow-effect-strong {
-      box-shadow: 0 0 45px 3px rgba(52, 211, 153, 0.6);
-    }
-    .glow-text {
-      text-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
-    }
-    
-    /* Custom tooltip arrow */
-    .tooltip-arrow::after {
-      content: '';
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 7px;
-      border-style: solid;
-      border-color: transparent transparent rgba(9, 9, 11, 1) transparent;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India's Growth Story | Finmet</title>
+<link rel="icon" type="image/png" href="finmet_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #050705; --card: #0c110d; --card-hi: #101710;
+    --border: #16301f; --border-hi: #1f4a2c;
+    --accent: #25D366; --accent-2: #128C7E; --accent-light: #7CF0A6;
+    --text-white: #F8FAFC; --text-muted: #94A3B8;
+  }
+  * { box-sizing: border-box; }
+  body{
+    margin:0; font-family:'Inter',sans-serif; background: var(--bg);
+    background-image: radial-gradient(circle at 15% -10%, rgba(37,211,102,0.10), transparent 45%),
+                       radial-gradient(circle at 90% 15%, rgba(18,140,126,0.08), transparent 40%);
+    color: var(--text-white); line-height: 1.65;
+  }
+  a { color: inherit; }
+  h1,h2,h3 { font-family:'Sora',sans-serif; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem 60px; }
+
+  .top-nav {
+    position: sticky; top:0; z-index:100; background: rgba(5,7,5,0.9);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0.5rem 0;
+  }
+  .top-nav-inner { max-width:1080px; margin:0 auto; padding:0 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; }
+  .brand-box img { height: 78px; width:auto; display:block; }
+  .back-link {
+    display:inline-flex; align-items:center; gap:6px; font-size:0.85rem; font-weight:600;
+    color: var(--accent); text-decoration:none; border:1px solid rgba(37,211,102,0.3);
+    background: rgba(37,211,102,0.08); padding:0.55rem 1rem; border-radius:8px;
+  }
+  .back-link:hover { background: rgba(37,211,102,0.16); border-color: var(--accent); }
+
+  header.page-hero { padding: 2rem 0 1.5rem; }
+  .eyebrow {
+    display:inline-flex; align-items:center; gap:8px; background: rgba(37,211,102,0.1);
+    border:1px solid rgba(37,211,102,0.3); color: var(--accent); font-size:0.78rem; font-weight:600;
+    padding:0.4rem 0.9rem; border-radius:20px; margin-bottom:1rem;
+  }
+  .eyebrow .dot { width:7px; height:7px; border-radius:50%; background: var(--accent); box-shadow:0 0 8px var(--accent); }
+  h1.page-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight:800; margin:0 0 0.8rem; }
+  h1.page-title .grad {
+    background: linear-gradient(120deg, var(--accent-light), var(--accent) 60%, var(--accent-2));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  p.lede { color: var(--text-muted); max-width: 760px; font-size:1rem; margin: 0 0 1.5rem; }
+
+  .disclaimer {
+    background: var(--card); border:1px solid var(--border); border-left:4px solid var(--accent-2);
+    border-radius:8px; padding:1rem 1.3rem; font-size:0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;
+  }
+  .disclaimer strong { color: var(--text-white); }
+
+  /* Text-to-Speech */
+  .tts-bar {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    background: var(--card); border: 1px solid var(--border); border-radius: 30px;
+    padding: 8px 10px 8px 18px; margin: 0 0 1.8rem; max-width: 700px;
+  }
+  .tts-bar .tts-label { font-size: 0.82em; color: var(--text-muted); white-space: nowrap; }
+  .tts-btn {
+    background: var(--card-hi); color: var(--text-white); border: 1px solid var(--border-hi);
+    border-radius: 20px; padding: 7px 14px; font-size: 0.82em; cursor: pointer; white-space: nowrap;
+  }
+  .tts-btn:hover { background: #16261a; }
+  .tts-btn.primary { background: var(--accent); border-color: var(--accent); color: #04140b; font-weight: 700; }
+  .tts-btn.primary:hover { background: var(--accent-light); }
+  .tts-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .tts-speed { display: flex; align-items: center; gap: 6px; font-size: 0.78em; color: var(--text-muted); }
+  .tts-speed input[type=range] { width: 70px; accent-color: var(--accent); }
+  .tts-status { font-size: 0.78em; color: var(--accent-light); min-width: 90px; }
+  .section-listen {
+    display: inline-flex; align-items: center; gap: 6px; background: none;
+    border: 1px solid var(--border-hi); color: var(--text-muted); border-radius: 16px;
+    padding: 5px 12px; font-size: 0.72em; cursor: pointer; margin-left: 10px; vertical-align: middle;
+  }
+  .section-listen:hover, .section-listen.speaking { border-color: var(--accent); color: var(--accent-light); }
+
+  section.block { padding: 2rem 0; border-top: 1px solid var(--border); }
+  section.block:first-of-type { border-top: none; }
+  h2.section-title { font-size:1.4rem; font-weight:700; margin:0 0 0.5rem; display:flex; align-items:center; gap:10px; }
+  h2.section-title .ic { width:24px; height:24px; stroke: var(--accent); fill:none; stroke-width:1.6; }
+  p.section-sub { color: var(--text-muted); font-size:0.92rem; margin: 0 0 1.5rem; max-width: 760px; }
+
+  .stat-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:16px; margin-bottom: 2rem; }
+  .stat-card { background: var(--card); border:1px solid var(--border); border-radius:10px; padding:1.2rem 1.4rem; }
+  .stat-card .stat-label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.5px; color: var(--text-muted); margin-bottom:0.5rem; }
+  .stat-card .stat-value { font-size:1.5rem; font-weight:800; color: var(--accent-light); font-family:'Sora',sans-serif; }
+  .stat-card .stat-note { font-size:0.78rem; color: var(--text-muted); margin-top:0.4rem; }
+
+  .sector-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:18px; }
+  .sector-card { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:1.4rem 1.5rem; transition: border-color .2s; }
+  .sector-card:hover { border-color: var(--border-hi); }
+  .sector-card .sc-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.6rem; gap:10px; }
+  .sector-card h3 { font-size:1.08rem; margin:0; }
+  .cagr-pill {
+    display:inline-block; padding:3px 11px; border-radius:12px; font-size:0.8rem; font-weight:700;
+    color: var(--accent-light); background: rgba(37,211,102,0.14); font-family:'Sora',sans-serif; white-space:nowrap;
+  }
+  .sector-card p { font-size:0.87rem; color: var(--text-muted); margin:0 0 0.7rem; }
+  .sector-card .sc-target { font-size:0.8rem; color: var(--accent-light); font-weight:600; }
+
+  .driver-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap:16px; }
+  .driver-card { background: var(--card-hi); border:1px solid var(--border); border-radius:10px; padding:1.1rem 1.3rem; }
+  .driver-card h4 { font-size:0.95rem; margin:0 0 0.4rem; color: var(--accent-light); }
+  .driver-card p { font-size:0.83rem; color: var(--text-muted); margin:0; }
+
+  footer.site-footer { border-top:1px solid var(--border); margin-top:2rem; padding: 2rem 0 1.5rem; font-size:0.8rem; color: var(--text-muted); }
+  footer.site-footer b { color: var(--text-white); display:block; margin-bottom:0.5rem; font-family:'Sora',sans-serif; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.5px; }
+  footer.site-footer ul { padding-left:18px; margin: 0 0 1rem; }
+  footer.site-footer li { margin-bottom:0.3rem; }
+  .final-disclaimer { border-top:1px solid var(--border); padding-top:1rem; font-size:0.76rem; color:#5f6b63; }
+
+  @media (max-width: 768px) {
+    .brand-box img { height: 60px; }
+  }
+</style>
 </head>
-<body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
+<body>
 
-  <!-- Floating WhatsApp CTA -->
-  <a href="https://wa.me/917893918311" target="_blank" rel="noopener noreferrer" 
-     class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-400 text-black font-bold p-3.5 sm:p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center glow-effect-strong"
-     aria-label="Join WhatsApp Community">
-    <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
-  </a>
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="ic-trend" viewBox="0 0 24 24"><polyline points="3 17 9 11 13 14 21 5"/><polyline points="15 5 21 5 21 11"/></symbol>
+    <symbol id="ic-flag" viewBox="0 0 24 24"><path d="M4 22V4"/><path d="M4 4h14l-3 4 3 4H4"/></symbol>
+    <symbol id="ic-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+  </svg>
 
-  <!-- Header / Navigation -->
-  <header class="sticky top-0 z-40 glass-nav border-b border-emerald-900/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
-      
-      <!-- Industry-Standard Clean, 2x Larger Logo -->
-      <a href="https://finmet.org" class="flex items-center gap-3 group shrink-0 py-1 focus:outline-none">
-        <img src="finmet_logo.png" alt="Finmet Logo - www.finmet.org" class="h-24 sm:h-28 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null; this.src='https://via.placeholder.com/360x360/10b981/000000?text=Finmet';" />
-      </a>
+  <div class="top-nav">
+    <div class="top-nav-inner">
+      <div class="brand-box"><img src="finmet_logo.png" alt="Finmet Logo"></div>
+      <a href="/" class="back-link">← Back to Finmet</a>
+    </div>
+  </div>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-6 font-bold text-sm text-zinc-200">
-        
-        <!-- MF Overlap: Highlighted as Signature Tool with Highly Visible Popup Tooltip -->
-        <div class="relative group py-2">
-          <a href="overlap.html" class="px-3.5 py-2 rounded-xl bg-emerald-500/15 border border-emerald-500/50 hover:bg-emerald-500/25 text-emerald-400 transition-all flex items-center gap-2 text-sm font-black shadow-lg shadow-emerald-500/10">
-            <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i>
-            <span>MF Overlap</span>
-            <span class="px-1.5 py-0.5 text-[9px] uppercase tracking-wider bg-emerald-400 text-black rounded font-black animate-pulse">Signature</span>
-          </a>
-          
-          <!-- Crystal Clear High-Contrast Visibility Tooltip -->
-          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 sm:w-96 p-5 bg-zinc-950 border-2 border-emerald-400 rounded-2xl shadow-[0_0_50px_rgba(16,185,129,0.45)] opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 text-xs text-zinc-200 tooltip-arrow">
-            <div class="flex items-center gap-2 font-black text-emerald-300 text-sm mb-2">
-              <i class="fa-solid fa-star text-amber-400 text-base"></i> Our Signature Core Tool
-            </div>
-            <p class="leading-relaxed text-white text-xs sm:text-sm font-semibold">
-              <strong class="text-emerald-400">Why thousands visit Finmet:</strong> Instantly detect hidden portfolio duplication and multi-fund drag before locking in your investments.
-            </p>
-            <div class="mt-3.5 pt-3 border-t border-emerald-500/30 text-xs text-emerald-300 font-black flex items-center justify-between">
-              <span>Run Instant Overlap Check</span>
-              <i class="fa-solid fa-arrow-right text-emerald-400 animate-pulse"></i>
-            </div>
-          </div>
-        </div>
+  <div class="container">
+    <header class="page-hero">
+      <div class="eyebrow"><span class="dot"></span>India's Growth Story</div>
+      <h1 class="page-title">Where India is <span class="grad">actually growing</span>, next 5–10 years.</h1>
+      <p class="lede">Not hype, not stock tips — just which parts of the Indian economy have real policy backing, real capital flowing in, and real growth numbers behind them right now.</p>
+    </header>
 
-        <!-- Q2 Sector Report with "NEW" Tag -->
-        <a href="sector_q2.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2 group text-sm px-2 py-1">
-          <span>Q2 Sector Report</span>
-          <span class="px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-400 to-lime-400 text-black rounded-full shadow-md shadow-emerald-500/50 animate-pulse group-hover:scale-110 transition-transform">NEW</span>
-        </a>
-
-        <!-- Calculators Tab with Smart Hover Hook for What, Where & How -->
-        <div class="relative group py-2">
-          <a href="#calculators" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 focus:outline-none text-sm font-bold px-2 py-1">
-            Calculators
-            <i class="fa-solid fa-chevron-down text-[10px] text-emerald-400 group-hover:rotate-180 transition-transform"></i>
-          </a>
-          
-          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 p-4 bg-zinc-950 border border-emerald-500/40 rounded-2xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 backdrop-blur-md tooltip-arrow space-y-2">
-            <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
-              <span>Wealth Engine Preview</span>
-              <i class="fa-solid fa-calculator text-xs"></i>
-            </div>
-            <p class="text-xs text-zinc-300 leading-relaxed font-medium">
-              Discover <strong class="text-white">what</strong> assets drive growth, <strong class="text-white">where</strong> capital compounds best, and <strong class="text-white">how</strong> sustainable returns are engineered.
-            </p>
-          </div>
-        </div>
-
-        <!-- Learning Hub Dropdown -->
-        <div class="relative group py-2">
-          <button class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 focus:outline-none text-sm font-bold px-2 py-1">
-            Learning Hub
-            <i class="fa-solid fa-chevron-down text-[10px] text-emerald-400 group-hover:rotate-180 transition-transform"></i>
-          </button>
-          
-          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 p-3 bg-zinc-950 border border-emerald-500/40 rounded-2xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 backdrop-blur-md tooltip-arrow space-y-2">
-            <a href="india_growth_story.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
-              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
-                <span>Growth Story</span>
-                <i class="fa-solid fa-arrow-trend-up text-xs"></i>
-              </div>
-              <p class="text-xs text-zinc-300 mt-0.5">Macro Capex, manufacturing shifts & demographic catalysts.</p>
-            </a>
-
-            <a href="mutual_Fund.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
-              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
-                <span>MF Cycles</span>
-                <i class="fa-solid fa-clock-rotate-left text-xs"></i>
-              </div>
-              <p class="text-xs text-zinc-300 mt-0.5">Multi-decade rolling return analysis across bull & bear cycles.</p>
-            </a>
-
-            <button onclick="openModal('learningModal')" class="w-full text-left p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
-              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
-                <span>Masterclasses & Guides</span>
-                <i class="fa-solid fa-book-open text-xs"></i>
-              </div>
-              <p class="text-xs text-zinc-300 mt-0.5">Core principles of jargon-free wealth accumulation.</p>
-            </button>
-          </div>
-        </div>
-
-      </nav>
-
-      <!-- Desktop CTA & Mobile Menu Toggle -->
-      <div class="flex items-center gap-3">
-        <button onclick="openModal('riskModal')" class="hidden sm:flex px-4 py-2.5 text-xs font-extrabold rounded-xl bg-zinc-900 hover:bg-zinc-800 text-emerald-400 border border-emerald-500/50 transition shadow-md hover:border-emerald-400 items-center">
-          <i class="fa-solid fa-shield-halved text-emerald-400 mr-2 text-sm"></i>Risk Matrix
-        </button>
-
-        <!-- Mobile Hamburger Button -->
-        <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-zinc-900 text-emerald-400 border border-emerald-500/40 hover:bg-zinc-800 focus:outline-none" aria-label="Toggle Menu">
-          <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
-        </button>
-      </div>
-
+    <div class="disclaimer">
+      <strong>Please read:</strong> This page is about sectors and the broader economy, not individual stocks or funds — it's not a recommendation to buy anything specific. Growth projections are estimates from public industry reports and government targets, not guarantees; sectors that look promising today can slow down, and today's numbers will age as policy and markets shift. Finmet is not a SEBI-registered Investment Adviser or Research Analyst.
     </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden lg:hidden border-b border-emerald-950/80 bg-zinc-950/95 px-4 pt-4 pb-6 space-y-4">
-      <a href="overlap.html" class="flex items-center justify-between p-3.5 rounded-xl bg-emerald-500/20 border border-emerald-500/60 font-black text-emerald-400 text-sm">
-        <span class="flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles"></i> MF Overlap (Signature Tool)</span>
-        <span class="px-2 py-0.5 text-[9px] uppercase bg-emerald-400 text-black rounded font-black">Core</span>
-      </a>
-      <a href="sector_q2.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-bold text-sm text-zinc-200">
-        <span>Q2 Sector Report</span>
-        <span class="px-2.5 py-0.5 text-[10px] font-black uppercase bg-emerald-400 text-black rounded-full animate-pulse">NEW</span>
-      </a>
-      <a href="#calculators" onclick="toggleMobileMenu()" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-emerald-400">
-        Calculators (What, Where & How)
-      </a>
-      <a href="india_growth_story.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
-        India Growth Story
-      </a>
-      <a href="mutual_Fund.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
-        Historical MF Cycles
-      </a>
-      <div class="flex items-center gap-2 pt-2">
-        <button onclick="openModal('learningModal'); toggleMobileMenu();" class="w-1/2 py-3 text-xs font-bold rounded-xl bg-zinc-900 text-zinc-200 border border-zinc-800">
-          Learning Hub
-        </button>
-        <button onclick="openModal('riskModal'); toggleMobileMenu();" class="w-1/2 py-3 text-xs font-bold rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/40">
-          Risk Matrix
-        </button>
+    <div class="tts-bar" id="ttsBar">
+      <span class="tts-label">🔊 Listen:</span>
+      <button class="tts-btn primary" id="ttsPlayBtn" onclick="ttsPlayWhole()">Read whole page</button>
+      <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPauseResume()" disabled>Pause</button>
+      <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" disabled>Stop</button>
+      <div class="tts-speed">
+        Speed
+        <input type="range" id="ttsSpeed" min="0.75" max="1.5" step="0.25" value="1">
+        <span id="ttsSpeedLabel">1x</span>
       </div>
+      <select id="ttsVoice" class="tts-btn" style="max-width:220px;"></select>
+      <span class="tts-status" id="ttsStatus"></span>
     </div>
-  </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 space-y-5 sm:space-y-6 w-full">
-
-    <!-- Hero Section with Typing Problem Statement and Finmet Answer -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-      <div class="lg:col-span-7 space-y-3.5 sm:space-y-4.5 text-left">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
-          <i class="fa-solid fa-chart-line text-sm"></i> Finmet - Simplifying Finance
-        </div>
-        
-        <!-- Problem Statement with Typing Effect -->
-        <div class="space-y-3">
-          <div class="min-h-[75px] sm:min-h-[90px] flex items-center">
-            <h1 class="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
-              <span id="typing-problem" class="text-rose-400"></span><span class="animate-pulse text-emerald-400 font-black ml-1">|</span>
-            </h1>
-          </div>
-          
-          <!-- Answer Next To / Below It -->
-          <div class="p-4 rounded-2xl bg-emerald-950/50 border border-emerald-500/50 text-xs sm:text-sm text-zinc-100 font-semibold flex items-start gap-3 shadow-xl">
-            <i class="fa-solid fa-circle-check text-emerald-400 text-lg mt-0.5 shrink-0"></i>
-            <div>
-              <strong class="text-emerald-400 block mb-1 text-sm">The Finmet Solution & Answer:</strong> 
-              <span>Finmet instantly unmasks portfolio duplication, exposes hidden mutual fund drag, and calculates institutional step-up SIP compounding with precision.</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Check & Tick Options Vertical in 2 lines with better hook content -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-zinc-200 font-semibold">
-          <div class="flex items-center gap-2.5 bg-zinc-900/80 p-3 rounded-xl border border-zinc-800">
-            <i class="fa-solid fa-circle-check text-emerald-400 shrink-0 text-base"></i>
-            <span><strong>Unmask portfolio drag:</strong> Expose duplicate stock holdings.</span>
-          </div>
-          <div class="flex items-center gap-2.5 bg-zinc-900/80 p-3 rounded-xl border border-zinc-800">
-            <i class="fa-solid fa-circle-check text-emerald-400 shrink-0 text-base"></i>
-            <span><strong>Future-proof retirement:</strong> Step-up SIP compounding.</span>
-          </div>
-          <div class="sm:col-span-2 flex items-center gap-2.5 bg-zinc-900/80 p-3 rounded-xl border border-zinc-800">
-            <i class="fa-solid fa-circle-check text-emerald-400 shrink-0 text-base"></i>
-            <span><strong>Ride sector momentum:</strong> Track live Indian equity earnings rotation & trends.</span>
-          </div>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-3 pt-1">
-          <a href="overlap.html" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-black shadow-xl shadow-emerald-500/30 transition-all hover:scale-105 text-sm sm:text-base flex items-center justify-center gap-2">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> Try Signature MF Overlap
-          </a>
-          <a href="https://wa.me/917893918311" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-emerald-400 font-bold border border-emerald-500/40 transition-all flex items-center justify-center gap-2 text-sm sm:text-base shadow-md">
-            <i class="fa-brands fa-whatsapp text-lg"></i> Join 500+ Members Community
-          </a>
-        </div>
-      </div>
-
-      <!-- Eye-Catching Graph Card with Interrogative Hook -->
-      <div class="lg:col-span-5 glass-card rounded-2xl p-4 sm:p-6 relative overflow-hidden glow-effect space-y-3.5 border border-emerald-500/50 bg-gradient-to-b from-emerald-950/40 via-zinc-950 to-zinc-950">
-        <div class="flex justify-between items-center">
-          <span class="text-xs sm:text-sm font-extrabold text-emerald-400 flex items-center gap-2">
-            <i class="fa-solid fa-chart-line text-emerald-400 text-base"></i> 15-Year Wealth Trajectory
-          </span>
-          <span class="text-[11px] bg-emerald-500/25 text-emerald-300 font-black px-2.5 py-1 rounded-full border border-emerald-500/40">Base: ₹10k/Mo</span>
-        </div>
-
-        <!-- 1 Line Interrogative Hook -->
-        <p class="text-xs sm:text-sm font-bold italic text-emerald-200 bg-emerald-950/70 p-3 rounded-xl border border-emerald-500/40 flex items-center gap-2.5">
-          <i class="fa-solid fa-circle-question text-emerald-400 text-base shrink-0"></i>
-          <span>Are you settling for 6% FD returns when elite equities compound at 14%?</span>
-        </p>
-        
-        <svg viewBox="0 0 400 150" class="w-full h-auto stroke-current overflow-visible">
-          <defs>
-            <linearGradient id="equityGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#10b981" stop-opacity="0.45"/>
-              <stop offset="100%" stop-color="#10b981" stop-opacity="0.0"/>
-            </linearGradient>
-          </defs>
-          <line x1="0" y1="130" x2="400" y2="130" stroke="#27272a" stroke-dasharray="4" />
-          <line x1="0" y1="80" x2="400" y2="80" stroke="#27272a" stroke-dasharray="4" />
-          <line x1="0" y1="30" x2="400" y2="30" stroke="#27272a" stroke-dasharray="4" />
-          
-          <path d="M 0 120 Q 200 110 400 100 L 400 130 L 0 130 Z" fill="#27272a" opacity="0.25"/>
-          <path d="M 0 120 Q 200 90 400 55 L 400 130 L 0 130 Z" fill="url(#equityGrad)" opacity="0.35"/>
-          
-          <path d="M 0 120 Q 200 110 400 100" fill="none" stroke="#71717a" stroke-width="2.5" />
-          <path d="M 0 120 Q 200 90 400 55" fill="none" stroke="#a3e635" stroke-width="3" />
-          <path d="M 0 120 Q 200 80 400 15" fill="none" stroke="#10b981" stroke-width="4.5" />
-
-          <circle cx="400" cy="15" r="6.5" fill="#34d399" class="animate-ping" />
-          <circle cx="400" cy="15" r="4.5" fill="#10b981" />
-        </svg>
-        
-        <!-- Investment Options with Amounts Inside Graph Card -->
-        <div class="space-y-2 pt-1 border-t border-zinc-800 text-xs sm:text-sm">
-          <div class="flex items-center justify-between bg-zinc-900/90 p-2.5 rounded-xl border border-zinc-800">
-            <span class="flex items-center gap-2 text-zinc-300 font-medium"><span class="w-2.5 h-2.5 rounded-full bg-zinc-500"></span> FD (₹10k/mo @ 6.5%)</span>
-            <span class="font-extrabold text-zinc-100">₹31.2 Lakhs</span>
-          </div>
-          <div class="flex items-center justify-between bg-zinc-900/90 p-2.5 rounded-xl border border-zinc-800">
-            <span class="flex items-center gap-2 text-zinc-300 font-medium"><span class="w-2.5 h-2.5 rounded-full bg-lime-400"></span> Hybrid (₹10k/mo @ 11%)</span>
-            <span class="font-extrabold text-lime-400">₹44.8 Lakhs</span>
-          </div>
-          <div class="flex items-center justify-between bg-emerald-950/60 p-2.5 rounded-xl border border-emerald-500/40">
-            <span class="flex items-center gap-2 text-zinc-200 font-semibold"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Equity SIP (₹10k/mo @ 14%)</span>
-            <span class="font-black text-emerald-400 text-sm">₹62.8 Lakhs</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quotes Carousel -->
-    <section id="quote-card-container" class="glass-card rounded-2xl p-5 sm:p-7 relative overflow-hidden border border-emerald-500/40 transition-all duration-700 bg-gradient-to-br from-emerald-950/50 via-zinc-950 to-zinc-950 glow-effect">
-      <div class="flex items-center justify-between mb-2">
-        <span id="quote-category" class="text-xs sm:text-sm font-black uppercase tracking-widest text-emerald-400">Wisdom From The Masters</span>
-        <i class="fa-solid fa-quote-right text-2xl sm:text-4xl text-emerald-500/25"></i>
-      </div>
-      
-      <div id="quote-carousel" class="min-h-[90px] sm:min-h-[80px] flex items-center">
-        <div id="quote-content" class="transition-all duration-500 space-y-3 w-full">
-          <p id="quote-text" class="text-lg sm:text-2xl font-black italic text-white leading-snug">"The stock market is a device for transferring money from the impatient to the patient."</p>
-          <div class="flex items-center justify-between pt-1">
-            <div class="flex items-center gap-3">
-              <img id="quote-img" src="quote_1_buffett.png" alt="Investor" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-emerald-500 object-cover shadow-xl" onerror="this.src='https://via.placeholder.com/48/10b981/000000?text=M';" />
-              <div>
-                <span id="quote-author" class="text-sm sm:text-base font-extrabold text-emerald-400 block">Warren Buffett</span>
-                <span class="text-xs text-zinc-300 font-medium">Legendary Value Investor</span>
-              </div>
-            </div>
-            <div class="flex gap-2" id="carousel-dots"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bento Grid Navigation -->
-    <section class="space-y-4">
-      <h2 class="text-lg sm:text-xl font-extrabold text-white flex items-center gap-2.5">
-        <span class="w-2.5 h-6 bg-emerald-500 rounded-full inline-block"></span> Analytics Modules
+    <section class="block" id="sec-macro">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-trend"/></svg>The Big Picture
+        <button class="section-listen" onclick="ttsPlaySection('sec-macro', this)">🔊 Listen</button>
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <!-- Overlap highlighted as Signature in Bento -->
-        <a href="overlap.html" class="glass-card p-4 sm:p-6 rounded-2xl hover:border-emerald-500/80 transition-all group hover:-translate-y-1 relative border-2 border-emerald-500/50 bg-gradient-to-br from-emerald-950/40 to-zinc-950 glow-effect">
-          <div class="absolute top-4 right-4 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider bg-emerald-400 text-black rounded shadow">SIGNATURE</div>
-          <div class="w-11 h-11 rounded-xl bg-emerald-500 text-black flex items-center justify-center text-lg mb-3.5 font-bold transition-all shadow-md">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-          </div>
-          <h3 class="text-base sm:text-lg font-black text-white mb-1.5 group-hover:text-emerald-400 transition-colors">Mutual Fund Overlap</h3>
-          <p class="text-xs sm:text-sm text-zinc-300 font-medium">Identify portfolio duplication across equity funds before investing.</p>
-        </a>
-
-        <a href="sector_q2.html" class="glass-card p-4 sm:p-6 rounded-2xl hover:border-emerald-500/60 transition-all group hover:-translate-y-1 relative">
-          <div class="absolute top-4 right-4 px-2.5 py-1 text-[10px] font-black uppercase tracking-wider bg-emerald-400 text-black rounded-full shadow-md">NEW</div>
-          <div class="w-11 h-11 rounded-xl bg-lime-500/15 border border-lime-500/30 text-lime-400 flex items-center justify-center text-lg mb-3.5 group-hover:bg-lime-400 group-hover:text-black font-bold transition-all shadow-md">
-            <i class="fa-solid fa-industry"></i>
-          </div>
-          <h3 class="text-base sm:text-lg font-black text-white mb-1.5 group-hover:text-lime-400 transition-colors">Q2 Sector Analysis</h3>
-          <p class="text-xs sm:text-sm text-zinc-300 font-medium">Deep dive into corporate earnings, revenue growth, and margin trends.</p>
-        </a>
-
-        <a href="#calculators" class="glass-card p-4 sm:p-6 rounded-2xl hover:border-emerald-500/80 transition-all group hover:-translate-y-1 relative border border-emerald-500/40 bg-gradient-to-br from-emerald-950/30 to-zinc-950">
-          <div class="absolute top-4 right-4 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider bg-emerald-500 text-black rounded shadow">ENGINE</div>
-          <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-lg mb-3.5 group-hover:bg-emerald-500 group-hover:text-black font-bold transition-all shadow-md">
-            <i class="fa-solid fa-calculator"></i>
-          </div>
-          <h3 class="text-base sm:text-lg font-black text-white mb-1.5 group-hover:text-emerald-400 transition-colors">Wealth Engine</h3>
-          <p class="text-xs sm:text-sm text-zinc-300 font-medium">Simulate SIP step-up compounding with 30-year historical return benchmarks.</p>
-        </a>
-
-        <a href="india_growth_story.html" class="glass-card p-4 sm:p-6 rounded-2xl hover:border-emerald-500/60 transition-all group hover:-translate-y-1">
-          <div class="w-11 h-11 rounded-xl bg-green-500/15 border border-green-500/30 text-green-400 flex items-center justify-center text-lg mb-3.5 group-hover:bg-green-500 group-hover:text-black font-bold transition-all shadow-md">
-            <i class="fa-solid fa-arrow-trend-up"></i>
-          </div>
-          <h3 class="text-base sm:text-lg font-black text-white mb-1.5 group-hover:text-green-400 transition-colors">India Growth Story</h3>
-          <p class="text-xs sm:text-sm text-zinc-300 font-medium">Macro view on capex, demographic dividends, and manufacturing trends.</p>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- Calculators Engine Section -->
-    <section id="calculators" class="glass-card rounded-2xl p-5 sm:p-7 space-y-5 border border-emerald-500/40 glow-effect">
-      
-      <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3.5 border-b border-zinc-800 pb-4">
-        <div>
-          <h2 class="text-lg sm:text-2xl font-black text-white">Interactive Financial Engine</h2>
-          <p class="text-zinc-300 text-xs sm:text-sm font-medium mt-0.5">Simulate long-term wealth compounding with 30-year historical return benchmarks.</p>
+      <p class="section-sub">India's overall economy is growing at a healthy clip, but growth isn't evenly spread — a handful of sectors are growing 2–4x faster than the economy as a whole.</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">India's real GDP growth (FY26)</div>
+          <div class="stat-value">6.3–6.8%</div>
+          <div class="stat-note">Per the Economic Survey — among the fastest of any major economy</div>
         </div>
-        
-        <div class="flex p-1.5 bg-zinc-950 rounded-xl border border-zinc-800 self-start sm:self-auto w-full sm:w-auto justify-between gap-1">
-          <button onclick="switchCalc('sip')" id="tab-sip" class="flex-1 sm:flex-none px-4 py-2 text-xs font-black rounded-lg bg-emerald-500 text-black transition shadow-md">SIP (Step-Up)</button>
-          <button onclick="switchCalc('lumpsum')" id="tab-lumpsum" class="flex-1 sm:flex-none px-4 py-2 text-xs font-bold rounded-lg text-zinc-300 hover:text-white transition">Lumpsum</button>
-          <button onclick="switchCalc('fdrd')" id="tab-fdrd" class="flex-1 sm:flex-none px-4 py-2 text-xs font-bold rounded-lg text-zinc-300 hover:text-white transition">FD / RD</button>
+        <div class="stat-card">
+          <div class="stat-label">GDP target</div>
+          <div class="stat-value">$5 Trillion</div>
+          <div class="stat-note">India's economic size goal by 2026–27</div>
         </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        
-        <div class="lg:col-span-6 space-y-4">
-          
-          <!-- SIP Form -->
-          <div id="calc-sip-inputs" class="space-y-4">
-            <div>
-              <label class="block text-xs sm:text-sm font-bold text-emerald-400 mb-1.5 flex items-center justify-between">
-                <span>Select Fund Type (30-Yr Historical Returns)</span>
-                <span class="text-[11px] text-zinc-300 font-medium">Auto-sets expected CAGR</span>
-              </label>
-              <select id="fund-category-select" onchange="applyFundCategory(this.value)" class="w-full bg-zinc-900 border border-emerald-500/50 rounded-xl px-3.5 py-3 text-xs sm:text-sm text-white font-bold focus:outline-none focus:border-emerald-400">
-                <option value="custom">Custom / Manual Return Rate</option>
-                <option value="large">Large Cap Fund (~12.5% CAGR)</option>
-                <option value="mid">Mid Cap Fund (~15.5% CAGR)</option>
-                <option value="flexi">Flexi Cap Fund (~14.0% CAGR)</option>
-                <option value="hybrid">Hybrid / Balanced Fund (~11.0% CAGR)</option>
-                <option value="index">Index Fund (Nifty 50) (~13.0% CAGR)</option>
-              </select>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Monthly Investment (₹)</label>
-                <span id="val-sip-amount" class="font-black text-emerald-400 text-sm sm:text-base">₹25,000</span>
-              </div>
-              <input type="range" id="input-sip-amount" min="1000" max="250000" step="1000" value="25000" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Expected Annual Return Rate (%)</label>
-                <span id="val-sip-rate" class="font-black text-emerald-400 text-sm sm:text-base">13.5%</span>
-              </div>
-              <input type="range" id="input-sip-rate" min="5" max="30" step="0.5" value="13.5" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Time Horizon (Years)</label>
-                <span id="val-sip-years" class="font-black text-emerald-400 text-sm sm:text-base">15 Years</span>
-              </div>
-              <input type="range" id="input-sip-years" min="1" max="35" step="1" value="15" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Annual Step-Up Increment (%)</label>
-                <span id="val-sip-stepup" class="font-black text-lime-400 text-sm sm:text-base">10%</span>
-              </div>
-              <input type="range" id="input-sip-stepup" min="0" max="25" step="1" value="10" class="w-full accent-lime-400 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-          </div>
-
-          <!-- Lumpsum Form -->
-          <div id="calc-lumpsum-inputs" class="space-y-4 hidden">
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Total Investment Amount (₹)</label>
-                <span id="val-lump-amount" class="font-black text-emerald-400 text-sm sm:text-base">₹5,00,000</span>
-              </div>
-              <input type="range" id="input-lump-amount" min="10000" max="5000000" step="10000" value="500000" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Expected CAGR (%)</label>
-                <span id="val-lump-rate" class="font-black text-emerald-400 text-sm sm:text-base">12.0%</span>
-              </div>
-              <input type="range" id="input-lump-rate" min="4" max="25" step="0.5" value="12" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Tenure (Years)</label>
-                <span id="val-lump-years" class="font-black text-emerald-400 text-sm sm:text-base">10 Years</span>
-              </div>
-              <input type="range" id="input-lump-years" min="1" max="30" step="1" value="10" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-          </div>
-
-          <!-- FD / RD Form -->
-          <div id="calc-fdrd-inputs" class="space-y-4 hidden">
-            <div class="flex items-center gap-3 bg-zinc-950 p-2.5 rounded-xl border border-zinc-800">
-              <label class="text-xs font-bold text-zinc-300">Mode:</label>
-              <button onclick="setFDRDMode('fd')" id="mode-fd" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-emerald-500 text-black">Fixed Deposit (FD)</button>
-              <button onclick="setFDRDMode('rd')" id="mode-rd" class="px-3 py-1.5 text-xs font-bold rounded-lg text-zinc-300 hover:text-white">Recurring Deposit (RD)</button>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label id="label-fdrd-amount" class="text-zinc-200">Deposit Amount (₹)</label>
-                <span id="val-fdrd-amount" class="font-black text-emerald-400 text-sm sm:text-base">₹1,00,000</span>
-              </div>
-              <input type="range" id="input-fdrd-amount" min="5000" max="2000000" step="5000" value="100000" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Bank Interest Rate (% p.a.)</label>
-                <span id="val-fdrd-rate" class="font-black text-emerald-400 text-sm sm:text-base">7.1%</span>
-              </div>
-              <input type="range" id="input-fdrd-rate" min="3" max="10" step="0.1" value="7.1" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs sm:text-sm mb-1.5 font-semibold">
-                <label class="text-zinc-200">Tenure (Years)</label>
-                <span id="val-fdrd-years" class="font-black text-emerald-400 text-sm sm:text-base">5 Years</span>
-              </div>
-              <input type="range" id="input-fdrd-years" min="1" max="10" step="1" value="5" class="w-full accent-emerald-500 bg-zinc-800 rounded-lg cursor-pointer h-2.5">
-            </div>
-          </div>
-
+        <div class="stat-card">
+          <div class="stat-label">Fastest sectors are growing at</div>
+          <div class="stat-value">15–30%</div>
+          <div class="stat-note">CAGR — 2 to 4x the pace of overall GDP growth</div>
         </div>
-
-        <!-- Output Cards Column -->
-        <div class="lg:col-span-6 flex flex-col justify-between bg-zinc-950 p-5 sm:p-6 rounded-2xl border border-emerald-500/30 shadow-xl">
-          <div class="space-y-4">
-            <div class="border-b border-zinc-800 pb-3.5">
-              <span class="text-xs font-bold text-zinc-300 uppercase tracking-wider">Estimated Total Value</span>
-              <div id="res-total-value" class="text-3xl sm:text-4xl font-black text-emerald-400 glow-text mt-1">₹0</div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-3.5">
-              <div class="bg-black p-3.5 rounded-xl border border-zinc-800">
-                <span class="text-xs text-zinc-300 font-semibold block">Total Invested</span>
-                <div id="res-invested" class="text-base sm:text-xl font-black text-white mt-1">₹0</div>
-              </div>
-
-              <div class="bg-black p-3.5 rounded-xl border border-zinc-800">
-                <span class="text-xs text-zinc-300 font-semibold block">Est. Wealth Gain</span>
-                <div id="res-returns" class="text-base sm:text-xl font-black text-emerald-400 mt-1">₹0</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-5 pt-3 border-t border-zinc-800 flex justify-between items-center text-xs text-zinc-300 font-medium">
-            <span>Historical benchmarks based on 30-year Indian equity indices.</span>
-            <i class="fa-solid fa-circle-info text-emerald-400 text-sm"></i>
-          </div>
+        <div class="stat-card">
+          <div class="stat-label">Stock market size (2024)</div>
+          <div class="stat-value">$5 Trillion+</div>
+          <div class="stat-note">Crossed this mark for the first time, pulling in more capital for growth sectors</div>
         </div>
       </div>
     </section>
 
-  </main>
-
-  <!-- Modals -->
-  <div id="learningModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-zinc-950 border border-emerald-500/40 rounded-2xl max-w-2xl w-full p-6 sm:p-8 space-y-5 relative shadow-2xl">
-      <button onclick="closeModal('learningModal')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <h3 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2.5">
-        <i class="fa-solid fa-book-open text-emerald-400"></i> Finmet Learning Hub
-      </h3>
-      <div class="space-y-4 text-sm sm:text-base text-zinc-200">
-        <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-          <h4 class="font-extrabold text-emerald-400 mb-1 text-base">Mutual Fund Overlap Optimization</h4>
-          <p class="text-zinc-300 text-xs sm:text-sm">Holding multiple funds in the same category often leads to portfolio duplication. Aim for less than 20% overlap across equity schemes.</p>
+    <section class="block" id="sec-sectors">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-flag"/></svg>Sectors Booming Over the Next 5–10 Years
+        <button class="section-listen" onclick="ttsPlaySection('sec-sectors', this)">🔊 Listen</button>
+      </h2>
+      <p class="section-sub">Ranked here by growth rate and policy backing, not by hype. Each one has a specific government push or structural demand shift behind it — not just a good story.</p>
+      <div class="sector-grid">
+        <div class="sector-card">
+          <div class="sc-top"><h3>Renewable Energy &amp; Green Hydrogen</h3><span class="cagr-pill">18–25% CAGR</span></div>
+          <p>Solar and wind capacity already at 227 GW, racing toward a 500 GW target by 2030. The National Green Hydrogen Mission is positioning India as a future exporter, not just a consumer.</p>
+          <div class="sc-target">Target: 500 GW renewable capacity by 2030</div>
         </div>
-        <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
-          <h4 class="font-extrabold text-emerald-400 mb-1 text-base">Step-Up SIP Power</h4>
-          <p class="text-zinc-300 text-xs sm:text-sm">Increasing your SIP contribution by 10% annually aligns with career salary growth and can double long-term corpus creation vs fixed SIPs.</p>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Electric Vehicles</h3><span class="cagr-pill">20–28% CAGR</span></div>
+          <p>Over 5.3 lakh EVs registered in a single quarter (Apr–Jun 2026), up 34% YoY. The government's PM E-DRIVE scheme (₹10,900 Cr) is fueling the charging and manufacturing ecosystem.</p>
+          <div class="sc-target">Target: 30% EV share of vehicle sales by FY30</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Defence &amp; Aerospace</h3><span class="cagr-pill">15–22% CAGR</span></div>
+          <p>India's Atmanirbhar Bharat (self-reliance) push is redirecting defence procurement toward domestic manufacturers, creating an industry that barely existed at this scale a decade ago.</p>
+          <div class="sc-target">Driven by: Defence indigenisation policy</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Semiconductors</h3><span class="cagr-pill">High growth</span></div>
+          <p>India's domestic semiconductor market is projected to cross $80 billion by 2026, backed by "Make in India" incentives and new fabrication plant announcements — starting from a near-zero base.</p>
+          <div class="sc-target">Target: Global semiconductor manufacturing hub</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Artificial Intelligence</h3><span class="cagr-pill">~20%+ CAGR</span></div>
+          <p>India's AI market is projected to grow at one of the fastest rates among large economies. Indian AI startups raised $10.1 billion in FY26 alone, with the AI economy estimated to be worth $1 trillion by 2035.</p>
+          <div class="sc-target">Estimated: $1 trillion contribution to economy by 2035</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Healthcare &amp; Pharma</h3><span class="cagr-pill">Steady, large-scale</span></div>
+          <p>India's healthcare market is on track to cross $600+ billion. Pharma exports hit $30.5 billion in FY25 and aim to double to $65 billion by 2030; biotech has grown from a $10B to a $165.7B industry since 2014.</p>
+          <div class="sc-target">Target: $65B pharma exports by 2030</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Financial Services &amp; Fintech</h3><span class="cagr-pill">Strong, policy-led</span></div>
+          <p>UPI alone processed over ₹260 trillion in transactions. Insurance liberalisation and FDI reforms are opening the sector further, while rising credit demand drives banks, NBFCs and neo-banks alike.</p>
+          <div class="sc-target">Driven by: Digital payments &amp; insurance FDI reforms</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>Data Centres</h3><span class="cagr-pill">~25% CAGR</span></div>
+          <p>Capacity is projected to nearly triple to around 3 GW by 2030, driven by AI workloads, cloud adoption, and data-localisation rules requiring Indian companies to store data domestically.</p>
+          <div class="sc-target">Target: ~3 GW capacity by 2030</div>
+        </div>
+        <div class="sector-card">
+          <div class="sc-top"><h3>E-commerce</h3><span class="cagr-pill">~21% CAGR</span></div>
+          <p>Projected to reach $325 billion by 2030, increasingly powered by growth in Tier 2 and Tier 3 cities rather than the metros that drove the first wave of online shopping.</p>
+          <div class="sc-target">Target: $325B market size by 2030</div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="block" id="sec-drivers">
+      <h2 class="section-title"><svg class="ic"><use href="#ic-gear"/></svg>What's Actually Powering This
+        <button class="section-listen" onclick="ttsPlaySection('sec-drivers', this)">🔊 Listen</button>
+      </h2>
+      <p class="section-sub">These aren't isolated trends — the same handful of government policies are behind almost every sector above.</p>
+      <div class="driver-grid">
+        <div class="driver-card">
+          <h4>PLI Scheme (Production-Linked Incentives)</h4>
+          <p>Cash incentives across 14 sectors — including electronics, solar, and semiconductors — to make manufacturing in India more competitive than importing.</p>
+        </div>
+        <div class="driver-card">
+          <h4>Atmanirbhar Bharat (Self-Reliant India)</h4>
+          <p>A push to manufacture domestically rather than import, most visible in defence procurement and electronics.</p>
+        </div>
+        <div class="driver-card">
+          <h4>Infrastructure Capex</h4>
+          <p>Over ₹10 lakh crore in planned infrastructure spending, indirectly boosting construction, cement, logistics, and EV charging rollout.</p>
+        </div>
+        <div class="driver-card">
+          <h4>Digital India &amp; Data Localisation</h4>
+          <p>Rules requiring companies to store Indian user data within India are a direct driver of the data-centre buildout.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <b>Where this information came from</b>
+      <ul>
+        <li>Industry sector reports and CAGR estimates (Bajaj Finserv, Rupeezy, Motilal Oswal, Pocketful, Shoonya, AppreciateWealth), 2026</li>
+        <li>Government targets referenced from public policy announcements (PLI scheme, National Green Hydrogen Mission, PM E-DRIVE, Atmanirbhar Bharat)</li>
+        <li>Economic Survey GDP growth projections, FY26</li>
+      </ul>
+      <div class="final-disclaimer">This page summarises publicly available sector and policy information as of the compile date. Growth estimates are projections, not guarantees, and will change as new data is published. This is not investment, legal, or tax advice — please do your own research and consult a licensed financial adviser before making investment decisions.</div>
+    </footer>
   </div>
 
-  <div id="riskModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-zinc-950 border border-emerald-500/40 rounded-2xl max-w-3xl w-full p-6 sm:p-8 space-y-5 relative overflow-y-auto max-h-[90vh] shadow-2xl">
-      <button onclick="closeModal('riskModal')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <h3 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2.5">
-        <i class="fa-solid fa-shield-halved text-emerald-400"></i> Risk & Return Benchmark Matrix
-      </h3>
-      <div class="overflow-x-auto">
-        <table class="w-full text-left text-sm text-zinc-200">
-          <thead class="bg-zinc-900 text-emerald-400 text-xs sm:text-sm uppercase font-black">
-            <tr>
-              <th class="p-3.5">Asset Risk Profile</th>
-              <th class="p-3.5">10-Year CAGR</th>
-              <th class="p-3.5">15-Year CAGR</th>
-              <th class="p-3.5">Max Drawdown</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-zinc-800 text-xs sm:text-sm font-medium">
-            <tr>
-              <td class="p-3.5 font-bold text-zinc-100">No / Low Risk (FD/Debt)</td>
-              <td class="p-3.5">6.5% - 7.2%</td>
-              <td class="p-3.5">6.0% - 7.0%</td>
-              <td class="p-3.5 text-emerald-400 font-extrabold">0%</td>
-            </tr>
-            <tr>
-              <td class="p-3.5 font-bold text-lime-400">Moderate Risk (Hybrid/Large Cap)</td>
-              <td class="p-3.5">10.5% - 12.0%</td>
-              <td class="p-3.5">11.0% - 13.0%</td>
-              <td class="p-3.5 text-amber-400 font-extrabold">-15% to -25%</td>
-            </tr>
-            <tr>
-              <td class="p-3.5 font-bold text-emerald-400">High Risk (Mid & Small Cap)</td>
-              <td class="p-3.5">14.0% - 17.0%</td>
-              <td class="p-3.5">15.0% - 18.5%</td>
-              <td class="p-3.5 text-rose-400 font-extrabold">-35% to -50%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="border-t border-zinc-900 bg-black py-6 mt-8 sm:mt-10 text-zinc-400 text-xs sm:text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left">
-      <div>
-        © 2026 Finmet (<a href="https://finmet.org" class="text-emerald-400 hover:underline font-bold">www.finmet.org</a>). Built for retail market research & analytics.
-      </div>
-      <div class="flex flex-wrap justify-center gap-5 font-bold">
-        <a href="overlap.html" class="text-emerald-400 hover:underline">MF Overlap (Signature)</a>
-        <a href="sector_q2.html" class="hover:text-emerald-400 transition-colors">Sector Q2</a>
-        <a href="#calculators" class="hover:text-emerald-400 transition-colors">Calculators</a>
-        <a href="india_growth_story.html" class="hover:text-emerald-400 transition-colors">Growth Story</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
   <script>
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const icon = document.getElementById('menu-icon');
-      menu.classList.toggle('hidden');
-      icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-xl' : 'fa-solid fa-xmark text-xl';
+    const synth = window.speechSynthesis;
+    let currentUtterance = null;
+    let activeSectionBtn = null;
+    let voices = [];
+    let selectedVoice = null;
+    const ttsPlayBtn = document.getElementById('ttsPlayBtn');
+    const ttsPauseBtn = document.getElementById('ttsPauseBtn');
+    const ttsStopBtn = document.getElementById('ttsStopBtn');
+    const ttsStatus = document.getElementById('ttsStatus');
+    const ttsSpeed = document.getElementById('ttsSpeed');
+    const ttsSpeedLabel = document.getElementById('ttsSpeedLabel');
+    const ttsVoiceSelect = document.getElementById('ttsVoice');
+
+    if (!('speechSynthesis' in window)) {
+      document.getElementById('ttsBar').innerHTML = '<span class="tts-label">🔊 Text-to-speech isn\'t supported in this browser.</span>';
     }
 
-    // Typing Effect for Problem Statement
-    const problems = [
-      "Are hidden mutual fund overlaps quietly dragging down your portfolio returns?",
-      "Why do standard fixed deposits fail to beat inflation over a 15-year horizon?",
-      "Are you exposing your hard-earned capital to unnecessary market duplication?"
-    ];
-    let pIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typingElement = document.getElementById('typing-problem');
-
-    function typeWriter() {
-      const currentText = problems[pIndex];
-      if (isDeleting) {
-        typingElement.innerText = currentText.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        typingElement.innerText = currentText.substring(0, charIndex + 1);
-        charIndex++;
-      }
-
-      let typeSpeed = isDeleting ? 30 : 55;
-
-      if (!isDeleting && charIndex === currentText.length) {
-        typeSpeed = 2800;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        pIndex = (pIndex + 1) % problems.length;
-        typeSpeed = 500;
-      }
-      setTimeout(typeWriter, typeSpeed);
-    }
-    document.addEventListener('DOMContentLoaded', typeWriter);
-
-    const quotes = [
-      { text: "The stock market is a device for transferring money from the impatient to the patient.", author: "Warren Buffett", title: "Legendary Value Investor", img: "quote_1_buffett.png", color: "text-emerald-400", border: "border-emerald-500/40", bg: "from-emerald-950/50 via-zinc-950 to-zinc-950" },
-      { text: "In the short run, the market is a voting machine but in the long run, it is a weighing machine.", author: "Benjamin Graham", title: "Father of Value Investing", img: "quote_2_graham.png", color: "text-cyan-400", border: "border-cyan-500/40", bg: "from-cyan-950/50 via-zinc-950 to-zinc-950" },
-      { text: "Know what you own, and know why you own it.", author: "Peter Lynch", title: "Magellan Fund Manager", img: "quote_3_lynch.png", color: "text-amber-400", border: "border-amber-500/40", bg: "from-amber-950/50 via-zinc-950 to-zinc-950" },
-      { text: "Respect the market. Have no opinions. May the trend be your friend.", author: "Rakesh Jhunjhunwala", title: "Big Bull of Dalal Street", img: "quote_4_jhunjhunwala.png", color: "text-violet-400", border: "border-violet-500/40", bg: "from-violet-950/50 via-zinc-950 to-zinc-950" },
-      { text: "Profit is made by buying and holding, not by frequent trading.", author: "Raamdeo Agrawal", title: "Motilal Oswal Co-Founder", img: "quote_5_agrawal.png", color: "text-rose-400", border: "border-rose-500/40", bg: "from-rose-950/50 via-zinc-950 to-zinc-950" }
-    ];
-    let quoteIdx = 0;
-    const quoteText = document.getElementById('quote-text');
-    const quoteAuthor = document.getElementById('quote-author');
-    const quoteImg = document.getElementById('quote-img');
-    const dotsContainer = document.getElementById('carousel-dots');
-    const quoteCardContainer = document.getElementById('quote-card-container');
-
-    function renderDots() {
-      dotsContainer.innerHTML = quotes.map((q, i) => 
-        `<button onclick="setQuote(${i})" class="w-3 h-3 rounded-full transition-all ${i === quoteIdx ? 'bg-white w-7' : 'bg-zinc-700'}"></button>`
-      ).join('');
+    function looksFemale(name) {
+      const n = name.toLowerCase();
+      return ['heera','neerja','raveena','priya','veena','female','samantha','zira','aria'].some(k => n.includes(k)) || n.includes('female');
     }
 
-    function setQuote(idx) {
-      quoteIdx = idx;
-      const q = quotes[quoteIdx];
-      quoteText.innerText = `"${q.text}"`;
-      quoteAuthor.innerText = q.author;
-      quoteAuthor.className = `text-sm sm:text-base font-extrabold block ${q.color}`;
-      quoteImg.src = q.img;
-      quoteImg.className = `w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 object-cover shadow-xl ${q.border}`;
-      quoteCardContainer.className = `glass-card rounded-2xl p-5 sm:p-7 relative overflow-hidden border transition-all duration-700 bg-gradient-to-br ${q.bg} ${q.border} glow-effect`;
-      renderDots();
-    }
-
-    setInterval(() => {
-      quoteIdx = (quoteIdx + 1) % quotes.length;
-      setQuote(quoteIdx);
-    }, 6000);
-    renderDots();
-
-    function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
-    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-
-    function applyFundCategory(category) {
-      const rateInput = document.getElementById('input-sip-rate');
-      let targetRate = 13.5;
-      if (category === 'large') targetRate = 12.5;
-      else if (category === 'mid') targetRate = 15.5;
-      else if (category === 'flexi') targetRate = 14.0;
-      else if (category === 'hybrid') targetRate = 11.0;
-      else if (category === 'index') targetRate = 13.0;
-
-      if (category !== 'custom') {
-        rateInput.value = targetRate;
-        calculate();
-      }
-    }
-
-    let currentCalc = 'sip';
-    let fdrdMode = 'fd';
-
-    function formatINR(val) {
-      return '₹' + Math.round(val).toLocaleString('en-IN');
-    }
-
-    function switchCalc(type) {
-      currentCalc = type;
-      ['sip', 'lumpsum', 'fdrd'].forEach(t => {
-        document.getElementById(`calc-${t}-inputs`).classList.add('hidden');
-        const btn = document.getElementById(`tab-${t}`);
-        btn.classList.remove('bg-emerald-500', 'text-black', 'font-black', 'shadow-md');
-        btn.classList.add('text-zinc-300', 'font-bold');
+    function loadVoices() {
+      voices = synth.getVoices();
+      if (!voices.length) return;
+      const indianEnglish = voices.filter(v => v.lang.toLowerCase() === 'en-in');
+      const otherIndianish = voices.filter(v => v.lang.toLowerCase().startsWith('en') && looksFemale(v.name) && v.lang.toLowerCase() !== 'en-in');
+      const restEnglish = voices.filter(v => v.lang.toLowerCase().startsWith('en') && !indianEnglish.includes(v) && !otherIndianish.includes(v));
+      const others = voices.filter(v => !v.lang.toLowerCase().startsWith('en'));
+      const ordered = [...indianEnglish, ...otherIndianish, ...restEnglish, ...others];
+      ttsVoiceSelect.innerHTML = '';
+      ordered.forEach(v => {
+        const opt = document.createElement('option');
+        opt.value = v.name;
+        opt.textContent = `${v.name} (${v.lang})`;
+        ttsVoiceSelect.appendChild(opt);
       });
-
-      document.getElementById(`calc-${type}-inputs`).classList.remove('hidden');
-      const activeBtn = document.getElementById(`tab-${type}`);
-      activeBtn.classList.add('bg-emerald-500', 'text-black', 'font-black', 'shadow-md');
-      activeBtn.classList.remove('text-zinc-300', 'font-bold');
-      calculate();
+      const bestIndian = indianEnglish.find(v => looksFemale(v.name)) || indianEnglish[0];
+      selectedVoice = bestIndian || ordered[0] || null;
+      if (selectedVoice) ttsVoiceSelect.value = selectedVoice.name;
+      if (bestIndian) { ttsStatus.textContent = `Voice: ${bestIndian.name}`; }
+      else if (indianEnglish.length === 0) { ttsStatus.textContent = 'No Indian English voice found on this device'; }
+      setTimeout(() => { if (!synth.speaking) ttsStatus.textContent = ''; }, 3500);
     }
+    synth.onvoiceschanged = loadVoices;
+    loadVoices();
+    ttsVoiceSelect.addEventListener('change', () => { selectedVoice = voices.find(v => v.name === ttsVoiceSelect.value) || null; });
+    ttsSpeed.addEventListener('input', () => { ttsSpeedLabel.textContent = ttsSpeed.value + 'x'; });
 
-    function setFDRDMode(mode) {
-      fdrdMode = mode;
-      const fdBtn = document.getElementById('mode-fd');
-      const rdBtn = document.getElementById('mode-rd');
-      const label = document.getElementById('label-fdrd-amount');
-
-      if (mode === 'fd') {
-        fdBtn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-lg bg-emerald-500 text-black shadow-md';
-        rdBtn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-lg text-zinc-300 hover:text-white';
-        label.innerText = 'Deposit Amount (₹)';
-      } else {
-        rdBtn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-lg bg-emerald-500 text-black shadow-md';
-        fdBtn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-lg text-zinc-300 hover:text-white';
-        label.innerText = 'Monthly Contribution (₹)';
-      }
-      calculate();
+    function cleanText(el) {
+      const clone = el.cloneNode(true);
+      clone.querySelectorAll('button, .tts-bar, script').forEach(n => n.remove());
+      return clone.innerText.replace(/\s+/g, ' ').trim();
     }
-
-    const inputs = ['input-sip-amount', 'input-sip-rate', 'input-sip-years', 'input-sip-stepup',
-                    'input-lump-amount', 'input-lump-rate', 'input-lump-years',
-                    'input-fdrd-amount', 'input-fdrd-rate', 'input-fdrd-years'];
-
-    inputs.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.addEventListener('input', calculate);
-    });
-
-    function calculate() {
-      let totalInvested = 0;
-      let totalValue = 0;
-
-      if (currentCalc === 'sip') {
-        const P = parseFloat(document.getElementById('input-sip-amount').value);
-        const rate = parseFloat(document.getElementById('input-sip-rate').value);
-        const years = parseInt(document.getElementById('input-sip-years').value);
-        const stepUp = parseFloat(document.getElementById('input-sip-stepup').value);
-
-        document.getElementById('val-sip-amount').innerText = formatINR(P);
-        document.getElementById('val-sip-rate').innerText = rate + '%';
-        document.getElementById('val-sip-years').innerText = years + ' Years';
-        document.getElementById('val-sip-stepup').innerText = stepUp + '%';
-
-        const i = rate / 12 / 100;
-        let monthlyContribution = P;
-
-        for (let y = 0; y < years; y++) {
-          for (let m = 0; m < 12; m++) {
-            totalInvested += monthlyContribution;
-            totalValue = (totalValue + monthlyContribution) * (1 + i);
-          }
-          monthlyContribution += monthlyContribution * (stepUp / 100);
-        }
-
-      } else if (currentCalc === 'lumpsum') {
-        const P = parseFloat(document.getElementById('input-lump-amount').value);
-        const rate = parseFloat(document.getElementById('input-lump-rate').value);
-        const years = parseInt(document.getElementById('input-lump-years').value);
-
-        document.getElementById('val-lump-amount').innerText = formatINR(P);
-        document.getElementById('val-lump-rate').innerText = rate + '%';
-        document.getElementById('val-lump-years').innerText = years + ' Years';
-
-        totalInvested = P;
-        totalValue = P * Math.pow((1 + rate / 100), years);
-
-      } else if (currentCalc === 'fdrd') {
-        const P = parseFloat(document.getElementById('input-fdrd-amount').value);
-        const rate = parseFloat(document.getElementById('input-fdrd-rate').value);
-        const years = parseInt(document.getElementById('input-fdrd-years').value);
-
-        document.getElementById('val-fdrd-amount').innerText = formatINR(P);
-        document.getElementById('val-fdrd-rate').innerText = rate + '%';
-        document.getElementById('val-fdrd-years').innerText = years + ' Years';
-
-        if (fdrdMode === 'fd') {
-          totalInvested = P;
-          totalValue = P * Math.pow((1 + (rate / 400)), (4 * years));
-        } else {
-          const months = years * 12;
-          const i = rate / 12 / 100;
-          totalInvested = P * months;
-          totalValue = P * ((Math.pow(1 + i, months) - 1) / i) * (1 + i);
-        }
-      }
-
-      const returns = totalValue - totalInvested;
-      document.getElementById('res-total-value').innerText = formatINR(totalValue);
-      document.getElementById('res-invested').innerText = formatINR(totalInvested);
-      document.getElementById('res-returns').innerText = formatINR(returns);
+    function setButtonsSpeaking(isSpeaking) {
+      ttsPlayBtn.disabled = isSpeaking; ttsPauseBtn.disabled = !isSpeaking; ttsStopBtn.disabled = !isSpeaking;
+      ttsPauseBtn.textContent = 'Pause';
     }
-
-    calculate();
+    function clearActiveSectionBtn() {
+      if (activeSectionBtn) { activeSectionBtn.classList.remove('speaking'); activeSectionBtn.textContent = '🔊 Listen'; }
+      activeSectionBtn = null;
+    }
+    function speak(text, statusText, onEnd) {
+      synth.cancel();
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      currentUtterance.rate = parseFloat(ttsSpeed.value);
+      currentUtterance.pitch = 1.05;
+      if (selectedVoice) { currentUtterance.voice = selectedVoice; currentUtterance.lang = selectedVoice.lang; }
+      currentUtterance.onstart = () => { ttsStatus.textContent = statusText || 'Playing…'; setButtonsSpeaking(true); };
+      currentUtterance.onend = () => { ttsStatus.textContent = ''; setButtonsSpeaking(false); clearActiveSectionBtn(); if (onEnd) onEnd(); };
+      currentUtterance.onerror = () => { ttsStatus.textContent = ''; setButtonsSpeaking(false); clearActiveSectionBtn(); };
+      synth.speak(currentUtterance);
+    }
+    function ttsPlayWhole() {
+      clearActiveSectionBtn();
+      speak(cleanText(document.querySelector('.container')), 'Playing full page…');
+    }
+    function ttsPlaySection(sectionId, btn) {
+      const wasThisSection = activeSectionBtn === btn;
+      synth.cancel();
+      clearActiveSectionBtn();
+      if (wasThisSection) { setButtonsSpeaking(false); ttsStatus.textContent = ''; return; }
+      const el = document.getElementById(sectionId);
+      activeSectionBtn = btn;
+      btn.classList.add('speaking');
+      btn.textContent = '⏹ Stop';
+      speak(cleanText(el), 'Playing section…');
+    }
+    function ttsPauseResume() {
+      if (synth.speaking && !synth.paused) { synth.pause(); ttsPauseBtn.textContent = 'Resume'; ttsStatus.textContent = 'Paused'; }
+      else if (synth.paused) { synth.resume(); ttsPauseBtn.textContent = 'Pause'; ttsStatus.textContent = 'Playing…'; }
+    }
+    function ttsStop() {
+      synth.cancel(); setButtonsSpeaking(false); ttsStatus.textContent = ''; clearActiveSectionBtn();
+    }
   </script>
 </body>
 </html>
