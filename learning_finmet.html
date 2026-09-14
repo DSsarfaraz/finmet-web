@@ -104,42 +104,42 @@
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10 w-full">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 w-full">
 
     <!-- Hero Section -->
-    <section class="text-center space-y-4 max-w-3xl mx-auto">
+    <section class="text-center space-y-4 max-w-4xl mx-auto">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
         <i class="fa-solid fa-graduation-cap"></i> Finmet Masterclass & Guides
       </div>
       <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
         Mutual Funds Decoded: <span class="text-emerald-400">What, How & Metrics</span>
       </h1>
-      <p class="text-zinc-300 text-sm sm:text-base font-medium leading-relaxed">
-        Master the mechanics of wealth creation. Understand fund structures, eliminate hidden cost drags, and decode professional investment jargon in plain English or Hindi.
+      <p class="text-zinc-300 text-sm sm:text-base font-medium leading-relaxed pt-2">
+        Master the mechanics of wealth creation. Understand fund structures, eliminate hidden cost drags, and decode professional investment jargon clearly.
       </p>
     </section>
 
-    <!-- Audio Narrator Widget -->
+    <!-- Comprehensive Audio Narrator Widget -->
     <section class="max-w-3xl mx-auto w-full">
-      <div class="glass-card p-4 sm:p-5 rounded-2xl border border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-4 bg-zinc-950/80">
-        <div class="flex items-center gap-3 text-center sm:text-left">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/40 shrink-0 mx-auto sm:mx-0">
+      <div class="glass-card p-5 sm:p-6 rounded-2xl border border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-4 bg-zinc-950/90">
+        <div class="flex items-center gap-4 text-center sm:text-left">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl border border-emerald-500/40 shrink-0 mx-auto sm:mx-0">
             <i class="fa-solid fa-headphones-simple animate-pulse"></i>
           </div>
           <div>
-            <h4 class="text-sm font-extrabold text-white">Listen to Masterclass Summary</h4>
-            <p class="text-[11px] text-zinc-400">Audio narration powered by browser speech synthesis</p>
+            <h4 class="text-sm font-extrabold text-white">Full Masterclass Audio Narration</h4>
+            <p class="text-[11px] text-zinc-400">Comprehensive explanation covering all fundamentals in English or Hindi audio</p>
           </div>
         </div>
         
-        <div class="flex items-center gap-2 w-full sm:w-auto">
-          <button onclick="playAudio('en')" id="btn-en" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-emerald-500 text-black font-extrabold text-xs hover:bg-emerald-400 transition flex items-center justify-center gap-1.5">
-            <i class="fa-solid fa-volume-high"></i> English
+        <div class="flex items-center gap-2.5 w-full sm:w-auto">
+          <button onclick="playAudio('en')" id="btn-en" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-emerald-500 text-black font-extrabold text-xs hover:bg-emerald-400 transition flex items-center justify-center gap-1.5 shadow-md">
+            <i class="fa-solid fa-volume-high"></i> English Audio
           </button>
-          <button onclick="playAudio('hi')" id="btn-hi" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-zinc-900 border border-emerald-500/40 text-emerald-400 font-extrabold text-xs hover:bg-zinc-800 transition flex items-center justify-center gap-1.5">
-            <i class="fa-solid fa-volume-high"></i> हिंदी
+          <button onclick="playAudio('hi')" id="btn-hi" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-zinc-900 border border-emerald-500/40 text-emerald-400 font-extrabold text-xs hover:bg-zinc-800 transition flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-volume-high"></i> हिंदी ऑडियो
           </button>
-          <button onclick="stopAudio()" class="px-3 py-2 rounded-xl bg-zinc-900 border border-rose-500/40 text-rose-400 hover:bg-rose-500/20 transition text-xs" title="Stop Audio">
+          <button onclick="stopAudio()" class="px-3 py-2.5 rounded-xl bg-zinc-900 border border-rose-500/40 text-rose-400 hover:bg-rose-500/25 transition text-xs" title="Stop Audio">
             <i class="fa-solid fa-stop"></i>
           </button>
         </div>
@@ -159,13 +159,15 @@
           <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold border border-emerald-500/40">
             <span class="font-black">₹</span>
           </div>
-          <h3 class="text-lg font-extrabold text-white">What is a Mutual Fund?</h3>
+          <div>
+            <h3 class="text-lg font-extrabold text-white">What is a Mutual Fund?</h3>
+          </div>
           <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
             Think of a mutual fund as a large financial bus. Instead of riding solo in the stock market (which requires immense research and capital), thousands of retail investors pool their money together. A professional Fund Manager drives this bus, buying a diversified basket of 50 to 100+ stocks across various sectors.
           </p>
           <div class="bg-zinc-950 p-3 rounded-xl border border-zinc-800 text-xs text-emerald-300 font-semibold flex items-center gap-2">
             <i class="fa-solid fa-lightbulb text-amber-400"></i>
-            <span>Key Takeaway: Instant diversification prevents single-stock wipeouts.</span>
+            <span>Instant diversification prevents single-stock wipeouts.</span>
           </div>
         </div>
 
@@ -174,27 +176,29 @@
           <div class="w-12 h-12 rounded-xl bg-lime-500/20 text-lime-400 flex items-center justify-center text-xl font-bold border border-lime-500/40">
             <i class="fa-solid fa-gear"></i>
           </div>
-          <h3 class="text-lg font-extrabold text-white">How Do You Invest & Earn?</h3>
+          <div>
+            <h3 class="text-lg font-extrabold text-white">How Do You Invest & Earn?</h3>
+          </div>
           <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-medium">
             When you invest money, you receive <strong class="text-white">Units</strong> based on the current <strong class="text-white">NAV (Net Asset Value)</strong>. As underlying companies grow, earn profits, and increase in market value, your NAV increases. You can invest via <strong class="text-emerald-400">SIP (Systematic Investment Plan)</strong> monthly or <strong class="text-emerald-400">Lumpsum</strong>.
           </p>
           <div class="bg-zinc-950 p-3 rounded-xl border border-zinc-800 text-xs text-lime-300 font-semibold flex items-center gap-2">
             <i class="fa-solid fa-chart-line text-lime-400"></i>
-            <span>Key Takeaway: SIP utilizes Rupee Cost Averaging during market dips.</span>
+            <span>SIP utilizes Rupee Cost Averaging during market dips.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Part 2: Visual Expense Ratio Drag Graph -->
+    <!-- Part 2: Visual Expense Ratio Drag Graph & Comparison -->
     <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-6 border border-emerald-500/40 glow-effect">
       <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3">
         <div>
           <span class="text-xs font-black uppercase tracking-wider text-emerald-400">Cost Impact Analysis</span>
-          <h3 class="text-lg sm:text-2xl font-black text-white mt-1">Direct Plan vs. Regular Plan (15-Year Drag)</h3>
+          <h3 class="text-lg sm:text-2xl font-black text-white mt-1">Direct Plan vs. Regular Plan (15-Year Wealth Drag)</h3>
         </div>
-        <div class="bg-zinc-950 px-3 py-1.5 rounded-xl border border-zinc-800 text-xs text-zinc-300 font-bold self-start">
-          Assumes ₹25,000/mo SIP @ 14% nominal return
+        <div class="bg-zinc-950 px-3.5 py-2 rounded-xl border border-zinc-800 text-xs text-zinc-300 font-bold self-start">
+          Assumes ₹25,000/mo SIP @ 14% return
         </div>
       </div>
 
@@ -205,8 +209,8 @@
       <!-- SVG Visual Comparison Chart -->
       <div class="bg-zinc-950 p-4 sm:p-6 rounded-2xl border border-zinc-800 space-y-4">
         <div class="flex justify-between text-xs font-extrabold flex-wrap gap-2">
-          <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500"></span> Direct Plan (0.5% Expense): ₹65.2 Lakhs</span>
-          <span class="text-rose-400 flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-rose-500"></span> Regular Plan (1.5% Expense): ₹56.8 Lakhs</span>
+          <span class="text-emerald-400 flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500"></span> Direct Plan (0.5% Cost): ₹65.2 Lakhs</span>
+          <span class="text-rose-400 flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-rose-500"></span> Regular Plan (1.5% Cost): ₹56.8 Lakhs</span>
         </div>
 
         <svg viewBox="0 0 500 160" class="w-full h-auto stroke-current overflow-visible">
@@ -248,7 +252,9 @@
             <span class="text-xs font-black uppercase px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">Cost Metric</span>
             <i class="fa-solid fa-percent text-emerald-400"></i>
           </div>
-          <h3 class="text-base font-extrabold text-white">Expense Ratio</h3>
+          <div>
+            <h3 class="text-base font-extrabold text-white">Expense Ratio</h3>
+          </div>
           <p class="text-xs text-zinc-300 leading-relaxed font-medium">
             The annual fee charged by the mutual fund house to manage your money (fund manager salary, research, marketing). Lower is better.
           </p>
@@ -260,7 +266,9 @@
             <span class="text-xs font-black uppercase px-2.5 py-1 rounded-full bg-lime-500/20 text-lime-400 border border-lime-500/40">Performance</span>
             <i class="fa-solid fa-chart-line text-lime-400"></i>
           </div>
-          <h3 class="text-base font-extrabold text-white">Alpha (α)</h3>
+          <div>
+            <h3 class="text-base font-extrabold text-white">Alpha (α)</h3>
+          </div>
           <p class="text-xs text-zinc-300 leading-relaxed font-medium">
             The extra return a fund delivers <strong class="text-white">above</strong> its benchmark index. Positive alpha proves the fund manager's stock-picking skill.
           </p>
@@ -272,7 +280,9 @@
             <span class="text-xs font-black uppercase px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40">Risk Metric</span>
             <i class="fa-solid fa-wave-square text-amber-400"></i>
           </div>
-          <h3 class="text-base font-extrabold text-white">Beta (β)</h3>
+          <div>
+            <h3 class="text-base font-extrabold text-white">Beta (β)</h3>
+          </div>
           <p class="text-xs text-zinc-300 leading-relaxed font-medium">
             Measures volatility compared to the market. Beta of 1.0 moves with the market. Beta &gt; 1 is more volatile; Beta &lt; 1 is defensive.
           </p>
@@ -284,7 +294,9 @@
             <span class="text-xs font-black uppercase px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/40">Efficiency</span>
             <i class="fa-solid fa-shield-halved text-cyan-400"></i>
           </div>
-          <h3 class="text-base font-extrabold text-white">Sharpe Ratio</h3>
+          <div>
+            <h3 class="text-base font-extrabold text-white">Sharpe Ratio</h3>
+          </div>
           <p class="text-xs text-zinc-300 leading-relaxed font-medium">
             Measures risk-adjusted return. It tells you how much excess return you received for the extra volatility endured. Higher is better.
           </p>
@@ -296,7 +308,9 @@
             <span class="text-xs font-black uppercase px-2.5 py-1 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/40">Scale</span>
             <i class="fa-solid fa-vault text-violet-400"></i>
           </div>
-          <h3 class="text-base font-extrabold text-white">AUM (Assets Under Management)</h3>
+          <div>
+            <h3 class="text-base font-extrabold text-white">AUM (Assets Under Management)</h3>
+          </div>
           <p class="text-xs text-zinc-300 leading-relaxed font-medium">
             The total capital pooled by all investors in that specific fund. Extremely large AUM in small-cap funds can make agile stock trading difficult.
           </p>
@@ -308,7 +322,9 @@
             <span class="text-xs font-black uppercase px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/40">Valuation</span>
             <i class="fa-solid fa-tag text-rose-400"></i>
           </div>
-          <h3 class="text-base font-extrabold text-white">NAV (Net Asset Value)</h3>
+          <div>
+            <h3 class="text-base font-extrabold text-white">NAV (Net Asset Value)</h3>
+          </div>
           <p class="text-xs text-zinc-300 leading-relaxed font-medium">
             The per-unit price of the mutual fund. Note: A lower NAV does not mean a fund is 'cheap'; returns depend entirely on percentage growth.
           </p>
@@ -358,9 +374,10 @@
       icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-xl' : 'fa-solid fa-xmark text-xl';
     }
 
+    // Comprehensive professional audio summaries covering all masterclass points in detail (English & Hindi audio options)
     const summaries = {
-      en: "Welcome to Finmet Mutual Funds Masterclass. Mutual funds pool retail money together under professional fund managers to buy diversified stocks. Always choose Direct plans over Regular plans to save up to 1 percent annual expense drag, which compounds massively over 15 years. Key metrics like Alpha measure excess returns, Beta tracks volatility, and the Sharpe ratio evaluates risk-adjusted efficiency.",
-      hi: "फिनमेट म्यूचुअल फंड मास्टरक्लास में आपका स्वागत है। म्यूचुअल फंड में हजारों निवेशक मिलकर पैसा जमा करते हैं, जिसे एक प्रोफेशनल फंड मैनेजर मैनेज करता है। हमेशा रेगुलर प्लान की जगह डायरेक्ट प्लान चुनें ताकि एक प्रतिशत का खर्चा बच सके, जो 15 साल में बहुत बड़ा अंतर पैदा करता है। अल्फा से एक्स्ट्रा रिटर्न और बीटा से वोलैटिलिटी मापी जाती है।"
+      en: "Welcome to the Finmet Mutual Funds Masterclass. Mutual funds pool money from numerous retail investors to purchase a diversified portfolio of professional stocks managed by expert fund managers, eliminating single-stock wipeout risks. Always choose Direct plans over Regular plans to avoid hidden 1 percent annual agent commission drags, which compound into massive wealth gaps over fifteen years. Key financial metrics include Alpha, which measures excess returns over your benchmark, Beta, which gauges market volatility and risk, Sharpe ratio, which evaluates risk-adjusted return efficiency, Assets Under Management or AUM representing total pooled capital, and Net Asset Value or NAV representing per-unit pricing.",
+      hi: "फिनमेट म्यूचुअल फंड मास्टरक्लास में आपका स्वागत है। म्यूचुअल फंड में अनगिनत निवेशक मिलकर अपना पैसा जमा करते हैं, जिसे विशेषज्ञ फंड मैनेजर द्वारा विभिन्न शेयरों के विविध पोर्टफोलियो में निवेश किया जाता है, जिससे सिंगल-स्टॉक जोखिम समाप्त हो जाता है। हमेशा रेगुलर प्लान के मुकाबले डायरेक्ट प्लान चुनें ताकि हर साल लगने वाले 1 प्रतिशत एजेंट कमीशन के खर्च से बचा जा सके, जो 15 वर्षों में कंपाउंडिंग के जरिए एक बहुत बड़ा संपत्ति अंतराल पैदा करता है। मुख्य वित्तीय मेट्रिक्स में अल्फा शामिल है जो बेंचमार्क से ऊपर के अतिरिक्त रिटर्न को मापता है, बीटा जो बाजार की अस्थिरता और जोखिम को परखता है, शार्प रेश्यो जो जोखिम-समायोजित रिटर्न दक्षता का मूल्यांकन करता है, एयूएम जो कुल प्रबंधित पूंजी को दर्शाता है, और एनएवी जो प्रति यूनिट मूल्य का प्रतिनिधित्व करता है।"
     };
 
     function playAudio(lang) {
@@ -373,9 +390,18 @@
       
       const text = summaries[lang];
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = lang === 'hi' ? 'hi-IN' : 'en-US';
-      utterance.rate = 0.95;
+      utterance.lang = lang === 'hi' ? 'hi-IN' : 'en-IN';
+      utterance.rate = 0.90; // Natural, calm conversational pace
+      utterance.pitch = 1.0;
       
+      const voices = window.speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        const preferredVoice = voices.find(v => v.lang === utterance.lang && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft'))) || voices.find(v => v.lang.startsWith(lang === 'hi' ? 'hi' : 'en'));
+        if (preferredVoice) {
+          utterance.voice = preferredVoice;
+        }
+      }
+
       window.speechSynthesis.speak(utterance);
     }
 
@@ -383,6 +409,12 @@
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
       }
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
     }
   </script>
 </body>
