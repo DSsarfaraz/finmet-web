@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily News - Finmet Market Pulse</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="finmet_logo.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              900: '#022c22',
+              950: '#011711'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+    
+    .glass-nav {
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .glass-card {
+      background: rgba(16, 16, 18, 0.9);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+    .glow-effect {
+      box-shadow: 0 0 40px -5px rgba(16, 185, 129, 0.45);
+    }
+    .glow-effect-strong {
+      box-shadow: 0 0 45px 3px rgba(52, 211, 153, 0.6);
+    }
+    .glow-text {
+      text-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+    }
+    
+    /* Custom tooltip arrow */
+    .tooltip-arrow::after {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 7px;
+      border-style: solid;
+      border-color: transparent transparent rgba(9, 9, 11, 1) transparent;
+    }
+  </style>
+</head>
+<body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/917893918311" target="_blank" rel="noopener noreferrer" 
+     class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-400 text-black font-bold p-3.5 sm:p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center glow-effect-strong"
+     aria-label="Join WhatsApp Community">
+    <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+  </a>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-emerald-900/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+      
+      <!-- Industry-Standard Clean, 2x Larger Logo -->
+      <a href="https://finmet.org" class="flex items-center gap-3 group shrink-0 py-1 focus:outline-none">
+        <img src="finmet_logo.png" alt="Finmet Logo - www.finmet.org" class="h-24 sm:h-28 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null; this.src='https://via.placeholder.com/360x360/10b981/000000?text=Finmet';" />
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-6 font-bold text-sm text-zinc-200">
+        
+        <!-- MF Overlap: Highlighted as Signature Tool with Highly Visible Popup Tooltip -->
+        <div class="relative group py-2">
+          <a href="overlap.html" class="px-3.5 py-2 rounded-xl bg-emerald-500/15 border border-emerald-500/50 hover:bg-emerald-500/25 text-emerald-400 transition-all flex items-center gap-2 text-sm font-black shadow-lg shadow-emerald-500/10">
+            <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i>
+            <span>MF Overlap</span>
+            <span class="px-1.5 py-0.5 text-[9px] uppercase tracking-wider bg-emerald-400 text-black rounded font-black animate-pulse">Signature</span>
+          </a>
+          
+          <!-- Crystal Clear High-Contrast Visibility Tooltip -->
+          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 sm:w-96 p-5 bg-zinc-950 border-2 border-emerald-400 rounded-2xl shadow-[0_0_50px_rgba(16,185,129,0.45)] opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 text-xs text-zinc-200 tooltip-arrow">
+            <div class="flex items-center gap-2 font-black text-emerald-300 text-sm mb-2">
+              <i class="fa-solid fa-star text-amber-400 text-base"></i> Our Signature Core Tool
+            </div>
+            <p class="leading-relaxed text-white text-xs sm:text-sm font-semibold">
+              <strong class="text-emerald-400">Why thousands visit Finmet:</strong> Instantly detect hidden portfolio duplication and multi-fund drag before locking in your investments.
+            </p>
+            <div class="mt-3.5 pt-3 border-t border-emerald-500/30 text-xs text-emerald-300 font-black flex items-center justify-between">
+              <span>Run Instant Overlap Check</span>
+              <i class="fa-solid fa-arrow-right text-emerald-400 animate-pulse"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily News with "LIVE" Tag -->
+        <a href="Daily_News.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2 group text-sm px-2 py-1">
+          <span>Daily News</span>
+          <span class="flex items-center gap-1 px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider bg-rose-500/20 border border-rose-500/50 text-rose-400 rounded-full group-hover:scale-110 transition-transform">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>LIVE
+          </span>
+        </a>
+
+        <!-- Q2 Sector Report with "NEW" Tag -->
+        <a href="sector_q2.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2 group text-sm px-2 py-1">
+          <span>Q2 Sector Report</span>
+          <span class="px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-400 to-lime-400 text-black rounded-full shadow-md shadow-emerald-500/50 animate-pulse group-hover:scale-110 transition-transform">NEW</span>
+        </a>
+
+        <!-- Calculators Tab with Smart Hover Hook for What, Where & How -->
+        <div class="relative group py-2">
+          <a href="#calculators" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 focus:outline-none text-sm font-bold px-2 py-1">
+            Calculators
+            <i class="fa-solid fa-chevron-down text-[10px] text-emerald-400 group-hover:rotate-180 transition-transform"></i>
+          </a>
+          
+          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 p-4 bg-zinc-950 border border-emerald-500/40 rounded-2xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 backdrop-blur-md tooltip-arrow space-y-2">
+            <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
+              <span>Wealth Engine Preview</span>
+              <i class="fa-solid fa-calculator text-xs"></i>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed font-medium">
+              Discover <strong class="text-white">what</strong> assets drive growth, <strong class="text-white">where</strong> capital compounds best, and <strong class="text-white">how</strong> sustainable returns are engineered.
+            </p>
+          </div>
+        </div>
+
+        <!-- Learning Hub Dropdown (Updated with learning_finmet.html) -->
+        <div class="relative group py-2">
+          <button class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 focus:outline-none text-sm font-bold px-2 py-1">
+            Learning Hub
+            <i class="fa-solid fa-chevron-down text-[10px] text-emerald-400 group-hover:rotate-180 transition-transform"></i>
+          </button>
+          
+          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 p-3 bg-zinc-950 border border-emerald-500/40 rounded-2xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 backdrop-blur-md tooltip-arrow space-y-2">
+            
+            <a href="learning_finmet.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
+              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
+                <span>Finmet Learning Hub</span>
+                <i class="fa-solid fa-book-open text-xs"></i>
+              </div>
+              <p class="text-xs text-zinc-300 mt-0.5">Masterclasses, core principles & comprehensive wealth guides.</p>
+            </a>
+
+            <a href="india_growth_story.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
+              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
+                <span>Growth Story</span>
+                <i class="fa-solid fa-arrow-trend-up text-xs"></i>
+              </div>
+              <p class="text-xs text-zinc-300 mt-0.5">Macro Capex, manufacturing shifts & demographic catalysts.</p>
+            </a>
+
+            <a href="mutual_Fund.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
+              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
+                <span>MF Cycles</span>
+                <i class="fa-solid fa-clock-rotate-left text-xs"></i>
+              </div>
+              <p class="text-xs text-zinc-300 mt-0.5">Multi-decade rolling return analysis across bull & bear cycles.</p>
+            </a>
+
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Desktop CTA & Mobile Menu Toggle -->
+      <div class="flex items-center gap-3">
+        <button onclick="openModal('riskModal')" class="hidden sm:flex px-4 py-2.5 text-xs font-extrabold rounded-xl bg-zinc-900 hover:bg-zinc-800 text-emerald-400 border border-emerald-500/50 transition shadow-md hover:border-emerald-400 items-center">
+          <i class="fa-solid fa-shield-halved text-emerald-400 mr-2 text-sm"></i>Risk Matrix
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-zinc-900 text-emerald-400 border border-emerald-500/40 hover:bg-zinc-800 focus:outline-none" aria-label="Toggle Menu">
+          <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-emerald-950/80 bg-zinc-950/95 px-4 pt-4 pb-6 space-y-4">
+      <a href="overlap.html" class="flex items-center justify-between p-3.5 rounded-xl bg-emerald-500/20 border border-emerald-500/60 font-black text-emerald-400 text-sm">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles"></i> MF Overlap (Signature Tool)</span>
+        <span class="px-2 py-0.5 text-[9px] uppercase bg-emerald-400 text-black rounded font-black">Core</span>
+      </a>
+      <a href="Daily_News.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-bold text-sm text-zinc-200">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-newspaper text-rose-400"></i> Daily News</span>
+        <span class="flex items-center gap-1 px-2 py-0.5 text-[9px] font-black uppercase bg-rose-500/20 border border-rose-500/50 text-rose-400 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>LIVE
+        </span>
+      </a>
+      <a href="sector_q2.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-bold text-sm text-zinc-200">
+        <span>Q2 Sector Report</span>
+        <span class="px-2.5 py-0.5 text-[10px] font-black uppercase bg-emerald-400 text-black rounded-full animate-pulse">NEW</span>
+      </a>
+      <a href="learning_finmet.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-emerald-400">
+        Finmet Learning Hub
+      </a>
+      <a href="#calculators" onclick="toggleMobileMenu()" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
+        Calculators (What, Where & How)
+      </a>
+      <a href="india_growth_story.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
+        India Growth Story
+      </a>
+      <a href="mutual_Fund.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
+        Historical MF Cycles
+      </a>
+      <div class="flex items-center gap-2 pt-2">
+        <button onclick="openModal('riskModal'); toggleMobileMenu();" class="w-full py-3 text-xs font-bold rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/40">
+          Risk Matrix Benchmark
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 space-y-5 sm:space-y-6 w-full">
+
+    <!-- Page Header -->
+    <section class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="space-y-1.5">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/15 border border-rose-500/40 text-rose-400 text-xs sm:text-sm font-extrabold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span> Live Market Pulse
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-black text-white">Daily News</h1>
+      </div>
+      <div id="updated-meta" class="text-xs sm:text-sm text-zinc-400 font-medium flex items-center gap-2">
+        <i class="fa-solid fa-arrows-rotate text-emerald-400"></i> Loading latest data&hellip;
+      </div>
+    </section>
+
+    <!-- Index Ticker -->
+    <section class="glass-card rounded-2xl border border-emerald-500/40 overflow-hidden glow-effect">
+      <div class="overflow-hidden whitespace-nowrap">
+        <div id="index-strip" class="inline-flex py-3.5" style="animation: ticker-scroll 32s linear infinite;"></div>
+      </div>
+    </section>
+
+    <!-- Gainers / Losers Sliding Strips -->
+    <section class="grid grid-cols-1 gap-3">
+      <div class="glass-card rounded-2xl border border-emerald-500/30 overflow-hidden bg-gradient-to-r from-emerald-950/40 to-zinc-950">
+        <div class="flex items-center">
+          <span class="shrink-0 px-4 py-3 text-[11px] font-black uppercase tracking-wider text-emerald-400 border-r border-emerald-500/20 flex items-center gap-2">
+            <i class="fa-solid fa-arrow-trend-up"></i> Top Gainers <span class="hidden sm:inline text-zinc-400 font-medium normal-case">&middot; Nifty 200</span>
+          </span>
+          <div class="overflow-hidden whitespace-nowrap flex-1">
+            <div id="gainers-strip" class="inline-flex py-3" style="animation: ticker-scroll 26s linear infinite;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card rounded-2xl border border-rose-500/30 overflow-hidden bg-gradient-to-r from-rose-950/30 to-zinc-950">
+        <div class="flex items-center">
+          <span class="shrink-0 px-4 py-3 text-[11px] font-black uppercase tracking-wider text-rose-400 border-r border-rose-500/20 flex items-center gap-2">
+            <i class="fa-solid fa-arrow-trend-down"></i> Top Losers <span class="hidden sm:inline text-zinc-400 font-medium normal-case">&middot; Nifty 200</span>
+          </span>
+          <div class="overflow-hidden whitespace-nowrap flex-1">
+            <div id="losers-strip" class="inline-flex py-3" style="animation: ticker-scroll 26s linear infinite;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Bento Grid -->
+    <section class="space-y-4">
+      <h2 class="text-lg sm:text-xl font-extrabold text-white flex items-center gap-2.5">
+        <span class="w-2.5 h-6 bg-emerald-500 rounded-full inline-block"></span> Today's Briefing
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+        <!-- International -->
+        <div class="glass-card rounded-2xl p-5 sm:p-6 border border-emerald-500/40 space-y-4">
+          <div class="flex items-center gap-2.5 pb-3 border-b border-zinc-800">
+            <div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
+              <i class="fa-solid fa-earth-americas text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-black text-white">International</h3>
+              <p class="text-sm text-zinc-400 font-medium">Dow Jones &middot; Fed &middot; Trade &middot; Global Funds</p>
+            </div>
+          </div>
+          <ul id="intl-news" class="space-y-5"></ul>
+        </div>
+
+        <!-- Indian -->
+        <div class="glass-card rounded-2xl p-5 sm:p-6 border border-emerald-500/40 space-y-4">
+          <div class="flex items-center gap-2.5 pb-3 border-b border-zinc-800">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
+              <i class="fa-solid fa-landmark text-sm"></i>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-black text-white">India</h3>
+              <p class="text-sm text-zinc-400 font-medium">Nifty &middot; RBI &middot; Finance Ministry</p>
+            </div>
+          </div>
+          <ul id="india-news" class="space-y-5"></ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Stocks in the News -->
+    <section class="space-y-4">
+      <h2 class="text-lg sm:text-xl font-extrabold text-white flex items-center gap-2.5">
+        <span class="w-2.5 h-6 bg-emerald-500 rounded-full inline-block"></span> Stocks in the News
+        <span class="text-[11px] font-bold uppercase tracking-wider text-zinc-400 bg-zinc-900 border border-zinc-800 rounded-full px-2.5 py-1">Mid &amp; Large Cap Only</span>
+      </h2>
+      <div id="stocks-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"></div>
+    </section>
+
+  </main>
+  <!-- Footer -->
+  <footer class="border-t border-zinc-900 bg-black py-6 mt-8 sm:mt-10 text-zinc-400 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left">
+      <div>
+        © 2026 Finmet (<a href="https://finmet.org" class="text-emerald-400 hover:underline font-bold">www.finmet.org</a>). Built for retail market research & analytics.
+      </div>
+      <div class="flex flex-wrap justify-center gap-5 font-bold">
+        <a href="overlap.html" class="text-emerald-400 hover:underline">MF Overlap (Signature)</a>
+        <a href="Daily_News.html" class="hover:text-emerald-400 transition-colors">Daily News</a>
+        <a href="sector_q2.html" class="hover:text-emerald-400 transition-colors">Sector Q2</a>
+        <a href="learning_finmet.html" class="hover:text-emerald-400 transition-colors">Learning Hub</a>
+        <a href="index.html#calculators" class="hover:text-emerald-400 transition-colors">Calculators</a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    #index-strip:hover, #gainers-strip:hover, #losers-strip:hover { animation-play-state: paused; }
+  </style>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      menu.classList.toggle('hidden');
+      icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-xl' : 'fa-solid fa-xmark text-xl';
+    }
+    function openModal(id) { document.getElementById(id)?.classList.remove('hidden'); }
+    function closeModal(id) { document.getElementById(id)?.classList.add('hidden'); }
+
+    /* ---------- fallback demo data (used only if data.json can't be reached) ---------- */
+    const FALLBACK_DATA = {
+  "updated_at": "2026-09-15T10:00:00Z",
+  "_note": "Last verified close (Tue 15 Sep 2026, IST session). This file is overwritten automatically once the GitHub Action runs with live keys — see SETUP_GUIDE.md.",
+  "indices": {
+    "nifty":      { "label": "NIFTY 50",     "value": 23118.60, "change_pct": -1.19 },
+    "sensex":     { "label": "SENSEX",       "value": 74003.82, "change_pct": -1.04 },
+    "crude":      { "label": "CRUDE (WTI)",  "value": 103.50,   "change_pct": 1.30,  "unit": "USD/bbl" },
+    "gold_inr":   { "label": "GOLD (India, 24K/10g, Delhi)", "value": 154240, "change_pct": -0.32, "unit": "INR/10g" },
+    "gold_usd":   { "label": "GOLD (USD)",   "value": 4284.48,  "change_pct": -1.25, "unit": "USD/oz" }
+  },
+  "movers": {
+    "gainers": [
+      { "symbol": "HCLTECH", "name": "HCL Technologies", "change_pct": 3.95, "price": 1253.70 },
+      { "symbol": "INFY",    "name": "Infosys",          "change_pct": 3.79, "price": 1077.00 },
+      { "symbol": "TCS",     "name": "Tata Consultancy Services", "change_pct": 2.28, "price": 4150.00 },
+      { "symbol": "TECHM",   "name": "Tech Mahindra",    "change_pct": 2.26, "price": 1680.00 },
+      { "symbol": "WIPRO",   "name": "Wipro",            "change_pct": 1.55, "price": 265.00 }
+    ],
+    "losers": [
+      { "symbol": "BEL",         "name": "Bharat Electronics",  "change_pct": -5.30, "price": 382.90 },
+      { "symbol": "SHRIRAMFIN",  "name": "Shriram Finance",     "change_pct": -4.74, "price": 625.00 },
+      { "symbol": "ADANIENT",    "name": "Adani Enterprises",   "change_pct": -2.10, "price": 2450.00 },
+      { "symbol": "INDIGO",      "name": "InterGlobe Aviation", "change_pct": -1.90, "price": 4300.00 },
+      { "symbol": "GRASIM",      "name": "Grasim Industries",   "change_pct": -1.62, "price": 3228.80 }
+    ]
+  },
+  "news": {
+    "international": [
+      { "title": "Oil surges toward four-month high after Saudi pipeline shutdown", "source": "Trading Economics", "url": "https://tradingeconomics.com/commodity/crude-oil", "published_at": "2026-09-15T06:00:00Z" },
+      { "title": "Fed rate-hike bets firm up as oil-driven inflation scare grips markets", "source": "Reuters", "url": "https://www.reuters.com", "published_at": "2026-09-15T04:00:00Z" }
+    ],
+    "indian": [
+      { "title": "Sensex, Nifty fall over 1% as oil surge and Fed bets weigh on sentiment", "source": "Business Standard", "url": "https://www.business-standard.com", "published_at": "2026-09-15T10:00:00Z" },
+      { "title": "IT stocks rally even as broader market succumbs to oil-driven selloff", "source": "Economic Times", "url": "https://economictimes.indiatimes.com", "published_at": "2026-09-15T09:30:00Z" },
+      { "title": "RBI watches rupee closely as crude prices climb past $103", "source": "Mint", "url": "https://www.livemint.com", "published_at": "2026-09-15T08:00:00Z" }
+    ],
+    "stocks_in_news": [
+      { "symbol": "HCLTECH", "cap": "Large Cap", "title": "HCL Technologies leads IT rally, up nearly 4% on strong volumes", "url": "https://www.moneycontrol.com" },
+      { "symbol": "BEL", "cap": "Mid Cap", "title": "Bharat Electronics falls over 5% on profit booking after recent rally", "url": "https://www.moneycontrol.com" },
+      { "symbol": "SHRIRAMFIN", "cap": "Large Cap", "title": "Shriram Finance under pressure amid broader financials selloff", "url": "https://www.moneycontrol.com" },
+      { "symbol": "GRASIM", "cap": "Large Cap", "title": "Grasim Industries slips as cement and chemicals demand outlook softens", "url": "https://www.moneycontrol.com" },
+      { "symbol": "INFY", "cap": "Large Cap", "title": "Infosys gains nearly 4% tracking sector-wide IT strength", "url": "https://www.moneycontrol.com" }
+    ]
+  }
+};
+
+    function fmtPct(p){ return (p > 0 ? '+' : '') + p.toFixed(2) + '%'; }
+    function upDownClass(p){ return p >= 0 ? 'text-emerald-400' : 'text-rose-400'; }
+    function arrow(p){ return p >= 0 ? '▲' : '▼'; }
+
+    function renderIndices(indices){
+      const el = document.getElementById('index-strip');
+      const items = Object.values(indices);
+      const chip = (i) => `
+        <div class="flex items-center gap-3 px-7 py-1.5 border-r border-zinc-800/80 last:border-r-0">
+          <span class="text-sm font-bold text-zinc-400 uppercase tracking-wide">${i.label}</span>
+          <span class="text-lg font-black text-white">${i.value.toLocaleString('en-IN', {maximumFractionDigits:2})}</span>
+          ${i.unit ? `<span class="text-xs text-zinc-500">${i.unit}</span>` : ''}
+          <span class="text-base font-black ${upDownClass(i.change_pct)}">${arrow(i.change_pct)} ${fmtPct(i.change_pct)}</span>
+        </div>`;
+      const html = items.map(chip).join('');
+      el.innerHTML = html + html;
+    }
+
+    function renderMovers(list, elId){
+      const el = document.getElementById(elId);
+      const chip = (s) => `
+        <div class="flex items-center gap-3 px-7 py-1.5 border-r border-zinc-800/60 last:border-r-0">
+          <span class="text-base font-black text-white">${s.symbol}</span>
+          <span class="text-sm font-bold text-zinc-300">₹${s.price.toLocaleString('en-IN', {maximumFractionDigits:2})}</span>
+          <span class="text-sm font-black ${upDownClass(s.change_pct)}">${arrow(s.change_pct)} ${fmtPct(s.change_pct)}</span>
+        </div>`;
+      const html = list.map(chip).join('');
+      el.innerHTML = html + html;
+    }
+
+    function renderNewsList(items, elId){
+      const el = document.getElementById(elId);
+      el.innerHTML = items.map(n => `
+        <li class="group">
+          <a href="${n.url}" target="_blank" rel="noopener" class="block">
+            <p class="text-lg sm:text-xl font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors leading-snug">${n.title}</p>
+            <div class="flex items-center gap-2 mt-1.5 text-sm text-zinc-500 font-medium">
+              <span>${n.source || ''}</span>
+              ${n.published_at ? `<span>&middot; ${new Date(n.published_at).toLocaleString('en-IN', {day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit'})}</span>` : ''}
+            </div>
+          </a>
+        </li>`).join('');
+    }
+
+    function renderStocks(items){
+      const el = document.getElementById('stocks-grid');
+      el.innerHTML = items.map(s => `
+        <div class="glass-card p-4 rounded-2xl border border-zinc-800 hover:border-emerald-500/50 transition-all hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-2.5">
+            <span class="text-sm font-black text-white">${s.symbol}</span>
+            <span class="text-[11px] font-bold uppercase tracking-wide text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-2 py-0.5">${s.cap}</span>
+          </div>
+          <a href="${s.url}" target="_blank" rel="noopener" class="text-sm font-semibold text-zinc-300 hover:text-emerald-400 transition-colors leading-snug block">${s.title}</a>
+        </div>`).join('');
+    }
+
+    function renderAll(data){
+      renderIndices(data.indices);
+      renderMovers(data.movers.gainers, 'gainers-strip');
+      renderMovers(data.movers.losers, 'losers-strip');
+      renderNewsList(data.news.international, 'intl-news');
+      renderNewsList(data.news.indian, 'india-news');
+      renderStocks(data.news.stocks_in_news);
+
+      const updated = new Date(data.updated_at);
+      document.getElementById('updated-meta').innerHTML =
+        `<i class="fa-solid fa-arrows-rotate text-emerald-400"></i> Updated ${updated.toLocaleString('en-IN', {dateStyle:'medium', timeStyle:'short'})}`;
+    }
+
+    async function loadData(){
+      try{
+        const res = await fetch('data.json', {cache:'no-store'});
+        if(!res.ok) throw new Error('data.json not reachable');
+        renderAll(await res.json());
+      }catch(err){
+        console.warn('Falling back to sample data:', err.message);
+        renderAll(FALLBACK_DATA);
+      }
+    }
+
+    loadData();
+    setInterval(loadData, 30 * 60 * 1000); // re-check every 30 min in case tab is left open
+  </script>
+</body>
+</html>
