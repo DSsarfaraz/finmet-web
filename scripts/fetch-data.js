@@ -123,11 +123,11 @@ async function getUsdInrRate() {
 async function getIndices(previous) {
   const indices = { ...previous };
 
-  const nifty = await getYahooQuote('%5ENSEI');
+  const nifty = await getYahooQuote('^NSEI');
   if (nifty) indices.nifty = { label: 'NIFTY 50', value: nifty.price, change_pct: Number(nifty.changePct.toFixed(2)) };
   else log('Nifty: Yahoo lookup failed, keeping previous value.');
 
-  const sensex = await getYahooQuote('%5EBSESN');
+  const sensex = await getYahooQuote('^BSESN');
   if (sensex) indices.sensex = { label: 'SENSEX', value: sensex.price, change_pct: Number(sensex.changePct.toFixed(2)) };
   else log('Sensex: Yahoo lookup failed, keeping previous value.');
 
