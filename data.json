@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T18:56:51.711Z",
+  "updated_at": "2026-09-16T19:11:33.345Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
@@ -13,20 +13,20 @@
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 102.33,
-      "change_pct": 2.28,
+      "value": 102.73,
+      "change_pct": 2.68,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 134019,
-      "change_pct": -1.46,
+      "value": 133186,
+      "change_pct": -2.08,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4344.4,
-      "change_pct": -1.46,
+      "value": 4317.4,
+      "change_pct": -2.08,
       "unit": "USD/oz"
     }
   },
