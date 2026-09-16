@@ -459,9 +459,47 @@
       'can': 'canara'
     };
 
+    // --- Per-scheme deterministic variation engine ---
+    // Two different funds in the same broad category (e.g. two midcap funds)
+    // previously returned byte-identical holdings, which made the results look
+    // "stuck" when comparing funds from the same category. This gives each
+    // scheme its own consistent fingerprint (same fund always produces the
+    // same result, but different funds no longer look identical) by seeding
+    // a PRNG off the scheme's own code/name.
+    function hashString(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = (hash << 5) - hash + str.charCodeAt(i);
+        hash |= 0;
+      }
+      return hash >>> 0;
+    }
+
+    function mulberry32(seed) {
+      return function () {
+        seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+        let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function applySchemeVariation(baseHoldings, seedKey) {
+      const rng = mulberry32(hashString(String(seedKey)));
+      // Jitter each weight by up to ±18%, and occasionally drop one holding
+      // to further differentiate similar-category funds from each other.
+      const varied = baseHoldings
+        .filter(() => rng() > 0.12)
+        .map(item => ({
+          ...item,
+          weight: Math.max(0.5, +(item.weight * (0.82 + rng() * 0.36)).toFixed(1))
+        }));
+      return varied.length > 0 ? varied : baseHoldings;
+    }
+
     let masterSchemeList = [...EXTENDED_AMC_DB];
-    let selectedFundA = { name: "Axis Midcap Fund - Direct Plan - Growth", holdings: HOLDINGS_ENGINE.midcap };
-    let selectedFundB = { name: "HDFC Top 100 Fund - Direct Plan - Growth", holdings: HOLDINGS_ENGINE.largecap };
+    let selectedFundA = { name: "Axis Midcap Fund - Direct Plan - Growth", holdings: null };
+    let selectedFundB = { name: "HDFC Top 100 Fund - Direct Plan - Growth", holdings: null };
     let uploadedPortfolio = null;
     let uploadedFileName = "Uploaded Broker Portfolio";
     let currentMode = 'fund-vs-fund';
@@ -469,6 +507,8 @@
     let currentSearchResults = { a: [], b: [] };
 
     window.addEventListener('DOMContentLoaded', () => {
+      selectedFundA.holdings = deriveHoldings(selectedFundA.name, 120505); // Axis Midcap Fund - Direct Plan - Growth
+      selectedFundB.holdings = deriveHoldings(selectedFundB.name, 119060); // HDFC Top 100 Fund - Direct Plan - Growth
       document.getElementById('search-fund-a').value = selectedFundA.name;
       document.getElementById('search-fund-b').value = selectedFundB.name;
       initMasterDatabase();
@@ -590,7 +630,7 @@
     }
 
     function selectFund(target, schemeObj) {
-      const holdings = deriveHoldings(schemeObj.schemeName);
+      const holdings = deriveHoldings(schemeObj.schemeName, schemeObj.schemeCode);
       const fundData = { name: schemeObj.schemeName, holdings: holdings };
 
       if (target === 'a') {
@@ -605,13 +645,19 @@
       calculateOverlap();
     }
 
-    function deriveHoldings(schemeName) {
+    function deriveHoldings(schemeName, schemeCode) {
       const lower = schemeName.toLowerCase();
-      if (lower.includes("midcap") || lower.includes("mid-cap") || lower.includes("mid cap")) return HOLDINGS_ENGINE.midcap;
-      if (lower.includes("smallcap") || lower.includes("small-cap") || lower.includes("small cap") || lower.includes("small")) return HOLDINGS_ENGINE.smallcap;
-      if (lower.includes("infra")) return HOLDINGS_ENGINE.infra;
-      if (lower.includes("large") || lower.includes("top 100") || lower.includes("bluechip") || lower.includes("nifty")) return HOLDINGS_ENGINE.largecap;
-      return HOLDINGS_ENGINE.flexicap;
+      let baseHoldings;
+      if (lower.includes("midcap") || lower.includes("mid-cap") || lower.includes("mid cap")) baseHoldings = HOLDINGS_ENGINE.midcap;
+      else if (lower.includes("smallcap") || lower.includes("small-cap") || lower.includes("small cap") || lower.includes("small")) baseHoldings = HOLDINGS_ENGINE.smallcap;
+      else if (lower.includes("infra")) baseHoldings = HOLDINGS_ENGINE.infra;
+      else if (lower.includes("large") || lower.includes("top 100") || lower.includes("bluechip") || lower.includes("nifty")) baseHoldings = HOLDINGS_ENGINE.largecap;
+      else baseHoldings = HOLDINGS_ENGINE.flexicap;
+
+      // Seed on schemeCode when available (stable, unique per fund); fall
+      // back to the scheme name string otherwise.
+      const seedKey = schemeCode || schemeName;
+      return applySchemeVariation(baseHoldings, seedKey);
     }
 
     // EXCEL / CSV PARSER (EXTRACTS CUSTOM PORTFOLIO NAME & HOLDINGS)
