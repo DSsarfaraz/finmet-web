@@ -208,7 +208,7 @@ async function newsQuery(q, pageSize = 6, sortBy = 'publishedAt') {
 // importance for a query) and keep only the top N actually shown on the page.
 async function getInternationalNews() {
   const pool = await newsQuery('"Dow Jones" OR "Federal Reserve" OR "US President" OR tariff OR "import export" OR "global fund"', 8, 'relevancy');
-  return pool ? pool.slice(0, 2) : null;
+  return pool ? pool.slice(0, 3) : null;
 }
 async function getIndianNews() {
   const pool = await newsQuery('Nifty OR RBI OR "Reserve Bank of India" OR "Finance Ministry" India', 8, 'relevancy');

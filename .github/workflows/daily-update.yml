@@ -1,0 +1,43 @@
+name: Daily Finmet News Update (9:00 AM IST, Daily)
+
+on:
+  schedule:
+    # 03:30 UTC = 09:00 AM IST, every day
+    - cron: '30 3 * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab too
+
+permissions:
+  contents: write
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest market data & news
+        env:
+          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+        run: node scripts/fetch-data.js
+
+      - name: Commit updated data.json back to repo
+        # Adjust the path below (e.g. "public/data.json") if your site's
+        # pages don't live at the repo root.
+        run: |
+          git config user.name "finmet-bot"
+          git config user.email "actions@github.com"
+          git add data.json
+          git diff --quiet --cached || git commit -m "Daily data update $(date -u +'%Y-%m-%d')"
+          git push
+
+      - name: Deploy to Firebase Hosting
+        run: |
+          npm install -g firebase-tools
+          firebase deploy --only hosting --project "${{ secrets.FIREBASE_PROJECT_ID }}" --token "${{ secrets.FIREBASE_TOKEN }}"
