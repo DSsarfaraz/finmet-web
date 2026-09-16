@@ -157,62 +157,72 @@ async function getIndices(previous) {
 }
 
 // ------------------------------------------------------------------
-// 2. Nifty 200 top gainers / losers (NSE India public endpoints, no key)
+// 2. Broad indices (Nifty Midcap 150, Nifty Smallcap 100) and top 5
+//    sector indices by weightage (Bank, IT, Auto, FMCG, Metal) — all
+//    via the same free Yahoo endpoint used for the main indices above.
 // ------------------------------------------------------------------
-async function getNifty200Movers() {
-  try {
-    const homeRes = await fetch('https://www.nseindia.com/', {
-      headers: { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'en-US,en;q=0.9' },
-    });
-    const cookie = homeRes.headers.get('set-cookie') || '';
+const BROAD_INDEX_SYMBOLS = [
+  { symbol: 'NIFTYMIDCAP150.NS', label: 'NIFTY MIDCAP 150' },
+  { symbol: '^CNXSC',            label: 'NIFTY SMALLCAP 100' },
+];
+const SECTOR_INDEX_SYMBOLS = [
+  { symbol: '^NSEBANK',  label: 'NIFTY BANK' },
+  { symbol: '^CNXIT',    label: 'NIFTY IT' },
+  { symbol: '^CNXAUTO',  label: 'NIFTY AUTO' },
+  { symbol: '^CNXFMCG',  label: 'NIFTY FMCG' },
+  { symbol: '^CNXMETAL', label: 'NIFTY METAL' },
+];
 
-    const url = 'https://www.nseindia.com/api/equity-stockIndices?index=NIFTY%20200';
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0',
-        'Accept': 'application/json',
-        'Referer': 'https://www.nseindia.com/',
-        Cookie: cookie,
-      },
-    });
-    if (!res.ok) { log(`✗ NSE Nifty200 movers: HTTP ${res.status}`); return null; }
-    const json = await res.json();
-    const rows = (json.data || []).filter(r => r.symbol && r.symbol !== 'NIFTY 200');
-    const sorted = [...rows].sort((a, b) => b.pChange - a.pChange);
-    const toEntry = (r) => ({
-      symbol: r.symbol,
-      name: r.meta?.companyName || r.symbol,
-      change_pct: Number(r.pChange.toFixed(2)),
-      price: Number(r.lastPrice),
-    });
-    return { gainers: sorted.slice(0, 5).map(toEntry), losers: sorted.slice(-5).reverse().map(toEntry) };
-  } catch (err) {
-    log('✗ NSE Nifty200 movers:', err.message);
-    return null;
+async function getIndexGroup(symbolList, previous) {
+  const results = [];
+  for (const { symbol, label } of symbolList) {
+    const q = await getYahooQuote(symbol);
+    if (q) {
+      results.push({ symbol: label, price: q.price, change_pct: Number(q.changePct.toFixed(2)) });
+    } else {
+      log(`${label}: Yahoo lookup failed, keeping previous value.`);
+      const prev = (previous || []).find(p => p.symbol === label);
+      if (prev) results.push(prev);
+    }
   }
+  return results.length > 0 ? results : (previous || []);
 }
 
 // ------------------------------------------------------------------
 // 3. News (NewsAPI.org)
 // ------------------------------------------------------------------
-async function newsQuery(q, pageSize = 6, sortBy = 'publishedAt') {
+async function newsQuery(q, pageSize = 6, sortBy = 'publishedAt', domain = null) {
   if (!NEWSAPI_KEY) { log('NEWSAPI_KEY not set — skipping news query:', q); return null; }
-  const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(q)}&language=en&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${NEWSAPI_KEY}`;
-  const data = await safeJsonFetch(url, {}, `NewsAPI: ${q}`);
+  const domainParam = domain ? `&domains=${encodeURIComponent(domain)}` : '';
+  const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(q)}${domainParam}&language=en&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${NEWSAPI_KEY}`;
+  const data = await safeJsonFetch(url, {}, `NewsAPI: ${q} (${domain || 'any'})`);
   if (!data || data.status !== 'ok') return null;
   return data.articles.map(a => ({ title: a.title, source: a.source?.name, url: a.url, published_at: a.publishedAt }));
 }
 
-// "Most impactful" isn't something NewsAPI can rank directly — as a proxy, we
-// pull a wider pool sorted by relevancy (NewsAPI's closest signal to
-// importance for a query) and keep only the top N actually shown on the page.
+// Pull exactly one article from each of 3 named top business/economic outlets,
+// so every day's briefing has one unique perspective per source rather than
+// several headlines that might all come from the same outlet.
+async function getOneFromEachOutlet(query, domains) {
+  const picks = [];
+  for (const domain of domains) {
+    const results = await newsQuery(query, 3, 'relevancy', domain);
+    if (results && results.length > 0) picks.push(results[0]);
+  }
+  return picks.length > 0 ? picks : null;
+}
+
+const INTERNATIONAL_QUERY = '"Fed" OR "Federal Reserve" OR "Dow Jones" OR "bond yield" OR import OR export OR "US President"';
+const INTERNATIONAL_OUTLETS = ['bloomberg.com', 'reuters.com', 'wsj.com'];
+
+const INDIA_QUERY = 'Nifty OR Sensex OR "Finance Ministry" OR RBI OR export OR import OR economy';
+const INDIA_OUTLETS = ['economictimes.indiatimes.com', 'business-standard.com', 'livemint.com'];
+
 async function getInternationalNews() {
-  const pool = await newsQuery('"Dow Jones" OR "Federal Reserve" OR "US President" OR tariff OR "import export" OR "global fund"', 8, 'relevancy');
-  return pool ? pool.slice(0, 3) : null;
+  return getOneFromEachOutlet(INTERNATIONAL_QUERY, INTERNATIONAL_OUTLETS);
 }
 async function getIndianNews() {
-  const pool = await newsQuery('Nifty OR RBI OR "Reserve Bank of India" OR "Finance Ministry" India', 8, 'relevancy');
-  return pool ? pool.slice(0, 3) : null;
+  return getOneFromEachOutlet(INDIA_QUERY, INDIA_OUTLETS);
 }
 async function getStocksInNews() {
   const raw = await newsQuery('(NSE OR BSE) (stock OR shares) -"small cap"', 10);
@@ -230,13 +240,16 @@ function guessSymbolFromTitle(title) {
 async function main() {
   const previous = fs.existsSync(OUT_FILE)
     ? JSON.parse(fs.readFileSync(OUT_FILE, 'utf8'))
-    : { indices: {}, movers: { gainers: [], losers: [] }, news: {} };
+    : { indices: {}, broad_indices: [], sector_indices: [], news: {} };
 
   log('Fetching indices (Nifty, Sensex, Crude, Gold)...');
   const indices = await getIndices(previous.indices);
 
-  log('Fetching Nifty 200 movers...');
-  const movers = (await getNifty200Movers()) || previous.movers;
+  log('Fetching broad indices (Midcap 150, Smallcap 100)...');
+  const broadIndices = await getIndexGroup(BROAD_INDEX_SYMBOLS, previous.broad_indices);
+
+  log('Fetching top sector indices (Bank, IT, Auto, FMCG, Metal)...');
+  const sectorIndices = await getIndexGroup(SECTOR_INDEX_SYMBOLS, previous.sector_indices);
 
   log('Fetching international news...');
   const international = (await getInternationalNews()) || previous.news.international || [];
@@ -250,7 +263,8 @@ async function main() {
   const output = {
     updated_at: new Date().toISOString(),
     indices,
-    movers,
+    broad_indices: broadIndices,
+    sector_indices: sectorIndices,
     news: { international, indian, stocks_in_news: stocksInNews },
   };
 

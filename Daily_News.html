@@ -257,25 +257,25 @@
       </div>
     </section>
 
-    <!-- Gainers / Losers Sliding Strips -->
+    <!-- Broad & Sector Indices Sliding Strips -->
     <section class="grid grid-cols-1 gap-3">
       <div class="glass-card rounded-2xl border border-emerald-500/30 overflow-hidden bg-gradient-to-r from-emerald-950/40 to-zinc-950">
         <div class="flex items-center">
           <span class="shrink-0 px-4 py-3 text-[11px] font-black uppercase tracking-wider text-emerald-400 border-r border-emerald-500/20 flex items-center gap-2">
-            <i class="fa-solid fa-arrow-trend-up"></i> Top Gainers <span class="hidden sm:inline text-zinc-400 font-medium normal-case">&middot; Nifty 200</span>
+            <i class="fa-solid fa-layer-group"></i> Broad Indices
           </span>
           <div class="overflow-hidden whitespace-nowrap flex-1">
-            <div id="gainers-strip" class="inline-flex py-3" style="animation: ticker-scroll 26s linear infinite;"></div>
+            <div id="broad-strip" class="inline-flex py-3" style="animation: ticker-scroll 22s linear infinite;"></div>
           </div>
         </div>
       </div>
-      <div class="glass-card rounded-2xl border border-rose-500/30 overflow-hidden bg-gradient-to-r from-rose-950/30 to-zinc-950">
+      <div class="glass-card rounded-2xl border border-zinc-700/50 overflow-hidden bg-gradient-to-r from-zinc-900/60 to-zinc-950">
         <div class="flex items-center">
-          <span class="shrink-0 px-4 py-3 text-[11px] font-black uppercase tracking-wider text-rose-400 border-r border-rose-500/20 flex items-center gap-2">
-            <i class="fa-solid fa-arrow-trend-down"></i> Top Losers <span class="hidden sm:inline text-zinc-400 font-medium normal-case">&middot; Nifty 200</span>
+          <span class="shrink-0 px-4 py-3 text-[11px] font-black uppercase tracking-wider text-zinc-300 border-r border-zinc-700/50 flex items-center gap-2">
+            <i class="fa-solid fa-industry"></i> Top Sector Indices
           </span>
           <div class="overflow-hidden whitespace-nowrap flex-1">
-            <div id="losers-strip" class="inline-flex py-3" style="animation: ticker-scroll 26s linear infinite;"></div>
+            <div id="sector-strip" class="inline-flex py-3" style="animation: ticker-scroll 26s linear infinite;"></div>
           </div>
         </div>
       </div>
@@ -351,7 +351,7 @@
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-    #index-strip:hover, #gainers-strip:hover, #losers-strip:hover { animation-play-state: paused; }
+    #index-strip:hover, #broad-strip:hover, #sector-strip:hover { animation-play-state: paused; }
   </style>
 
   <!-- Scripts -->
@@ -376,31 +376,26 @@
     "gold_inr":   { "label": "GOLD (India, 24K/10g, Delhi)", "value": 154240, "change_pct": -0.32, "unit": "INR/10g" },
     "gold_usd":   { "label": "GOLD (USD)",   "value": 4284.48,  "change_pct": -1.25, "unit": "USD/oz" }
   },
-  "movers": {
-    "gainers": [
-      { "symbol": "HCLTECH", "name": "HCL Technologies", "change_pct": 3.95, "price": 1253.70 },
-      { "symbol": "INFY",    "name": "Infosys",          "change_pct": 3.79, "price": 1077.00 },
-      { "symbol": "TCS",     "name": "Tata Consultancy Services", "change_pct": 2.28, "price": 4150.00 },
-      { "symbol": "TECHM",   "name": "Tech Mahindra",    "change_pct": 2.26, "price": 1680.00 },
-      { "symbol": "WIPRO",   "name": "Wipro",            "change_pct": 1.55, "price": 265.00 }
-    ],
-    "losers": [
-      { "symbol": "BEL",         "name": "Bharat Electronics",  "change_pct": -5.30, "price": 382.90 },
-      { "symbol": "SHRIRAMFIN",  "name": "Shriram Finance",     "change_pct": -4.74, "price": 625.00 },
-      { "symbol": "ADANIENT",    "name": "Adani Enterprises",   "change_pct": -2.10, "price": 2450.00 },
-      { "symbol": "INDIGO",      "name": "InterGlobe Aviation", "change_pct": -1.90, "price": 4300.00 },
-      { "symbol": "GRASIM",      "name": "Grasim Industries",   "change_pct": -1.62, "price": 3228.80 }
-    ]
-  },
+  "broad_indices": [
+    { "symbol": "NIFTY MIDCAP 150", "price": 21845.30, "change_pct": -0.85 },
+    { "symbol": "NIFTY SMALLCAP 100", "price": 19906.30, "change_pct": -1.10 }
+  ],
+  "sector_indices": [
+    { "symbol": "NIFTY BANK", "price": 55794.75, "change_pct": -1.43 },
+    { "symbol": "NIFTY IT", "price": 28921.50, "change_pct": 0.11 },
+    { "symbol": "NIFTY AUTO", "price": 27304.50, "change_pct": -0.86 },
+    { "symbol": "NIFTY FMCG", "price": 45053.75, "change_pct": -0.29 },
+    { "symbol": "NIFTY METAL", "price": 12999.05, "change_pct": -2.30 }
+  ],
   "news": {
     "international": [
-      { "title": "Oil surges toward four-month high after Saudi pipeline shutdown", "source": "Trading Economics", "url": "https://tradingeconomics.com/commodity/crude-oil", "published_at": "2026-09-15T06:00:00Z" },
       { "title": "Fed rate-hike bets firm up as oil-driven inflation scare grips markets", "source": "Reuters", "url": "https://www.reuters.com", "published_at": "2026-09-15T04:00:00Z" },
-      { "title": "US 10-year Treasury yield tops 5% as investors weigh Fed outlook", "source": "Bloomberg", "url": "https://www.bloomberg.com", "published_at": "2026-09-15T02:00:00Z" }
+      { "title": "US 10-year Treasury yield tops 5% as investors weigh Fed outlook", "source": "Bloomberg", "url": "https://www.bloomberg.com", "published_at": "2026-09-15T02:00:00Z" },
+      { "title": "Dow Jones swings as White House weighs response to oil price spike", "source": "The Wall Street Journal", "url": "https://www.wsj.com", "published_at": "2026-09-15T07:00:00Z" }
     ],
     "indian": [
       { "title": "Sensex, Nifty fall over 1% as oil surge and Fed bets weigh on sentiment", "source": "Business Standard", "url": "https://www.business-standard.com", "published_at": "2026-09-15T10:00:00Z" },
-      { "title": "IT stocks rally even as broader market succumbs to oil-driven selloff", "source": "Economic Times", "url": "https://economictimes.indiatimes.com", "published_at": "2026-09-15T09:30:00Z" },
+      { "title": "IT stocks rally even as broader market succumbs to oil-driven selloff", "source": "The Economic Times", "url": "https://economictimes.indiatimes.com", "published_at": "2026-09-15T09:30:00Z" },
       { "title": "RBI watches rupee closely as crude prices climb past $103", "source": "Mint", "url": "https://www.livemint.com", "published_at": "2026-09-15T08:00:00Z" }
     ],
     "stocks_in_news": [
@@ -436,7 +431,7 @@
       const chip = (s) => `
         <div class="flex items-center gap-3 px-7 py-1.5 border-r border-zinc-800/60 last:border-r-0">
           <span class="text-base font-black text-white">${s.symbol}</span>
-          <span class="text-sm font-bold text-zinc-300">₹${s.price.toLocaleString('en-IN', {maximumFractionDigits:2})}</span>
+          <span class="text-sm font-bold text-zinc-300">${s.price.toLocaleString('en-IN', {maximumFractionDigits:2})}</span>
           <span class="text-sm font-black ${upDownClass(s.change_pct)}">${arrow(s.change_pct)} ${fmtPct(s.change_pct)}</span>
         </div>`;
       const html = list.map(chip).join('');
@@ -471,8 +466,8 @@
 
     function renderAll(data){
       renderIndices(data.indices);
-      renderMovers(data.movers.gainers, 'gainers-strip');
-      renderMovers(data.movers.losers, 'losers-strip');
+      renderMovers(data.broad_indices, 'broad-strip');
+      renderMovers(data.sector_indices, 'sector-strip');
       renderNewsList(data.news.international, 'intl-news');
       renderNewsList(data.news.indian, 'india-news');
       renderStocks(data.news.stocks_in_news);
