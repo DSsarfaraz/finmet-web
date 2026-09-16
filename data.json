@@ -1,41 +1,173 @@
 {
-  "updated_at": "2026-09-15T10:00:00Z",
-  "_note": "Last verified close (Tue 15 Sep 2026, IST session). This file is overwritten automatically once the GitHub Action runs with live keys — see SETUP_GUIDE.md.",
+  "updated_at": "2026-09-16T19:40:24.140Z",
   "indices": {
-    "nifty":      { "label": "NIFTY 50",     "value": 23118.60, "change_pct": -1.19 },
-    "sensex":     { "label": "SENSEX",       "value": 74003.82, "change_pct": -1.04 },
-    "crude":      { "label": "CRUDE (WTI)",  "value": 103.50,   "change_pct": 1.30,  "unit": "USD/bbl" },
-    "gold_inr":   { "label": "GOLD (India, 24K/10g, Delhi)", "value": 154240, "change_pct": -0.32, "unit": "INR/10g" },
-    "gold_usd":   { "label": "GOLD (USD)",   "value": 4284.48,  "change_pct": -1.25, "unit": "USD/oz" }
+    "nifty": {
+      "label": "NIFTY 50",
+      "value": 23217.6,
+      "change_pct": -1.11
+    },
+    "sensex": {
+      "label": "SENSEX",
+      "value": 74336.45,
+      "change_pct": -0.76
+    },
+    "crude": {
+      "label": "CRUDE (WTI)",
+      "value": 102.2,
+      "change_pct": 2.15,
+      "unit": "USD/bbl"
+    },
+    "gold_inr": {
+      "label": "GOLD (India, spot equiv.)",
+      "value": 132486,
+      "change_pct": -2.59,
+      "unit": "INR/10g*"
+    },
+    "gold_usd": {
+      "label": "GOLD (USD)",
+      "value": 4294.7,
+      "change_pct": -2.59,
+      "unit": "USD/oz"
+    }
   },
-  "broad_indices": [
-    { "symbol": "NIFTY MIDCAP 150", "price": 21845.30, "change_pct": -0.85 },
-    { "symbol": "NIFTY SMALLCAP 100", "price": 19906.30, "change_pct": -1.10 }
-  ],
-  "sector_indices": [
-    { "symbol": "NIFTY BANK", "price": 55794.75, "change_pct": -1.43 },
-    { "symbol": "NIFTY IT", "price": 28921.50, "change_pct": 0.11 },
-    { "symbol": "NIFTY AUTO", "price": 27304.50, "change_pct": -0.86 },
-    { "symbol": "NIFTY FMCG", "price": 45053.75, "change_pct": -0.29 },
-    { "symbol": "NIFTY METAL", "price": 12999.05, "change_pct": -2.30 }
-  ],
+  "movers": {
+    "gainers": [
+      {
+        "symbol": "HCLTECH",
+        "name": "HCL Technologies",
+        "change_pct": 3.95,
+        "price": 1253.7
+      },
+      {
+        "symbol": "INFY",
+        "name": "Infosys",
+        "change_pct": 3.79,
+        "price": 1077
+      },
+      {
+        "symbol": "TCS",
+        "name": "Tata Consultancy Services",
+        "change_pct": 2.28,
+        "price": 4150
+      },
+      {
+        "symbol": "TECHM",
+        "name": "Tech Mahindra",
+        "change_pct": 2.26,
+        "price": 1680
+      },
+      {
+        "symbol": "WIPRO",
+        "name": "Wipro",
+        "change_pct": 1.55,
+        "price": 265
+      }
+    ],
+    "losers": [
+      {
+        "symbol": "BEL",
+        "name": "Bharat Electronics",
+        "change_pct": -5.3,
+        "price": 382.9
+      },
+      {
+        "symbol": "SHRIRAMFIN",
+        "name": "Shriram Finance",
+        "change_pct": -4.74,
+        "price": 625
+      },
+      {
+        "symbol": "ADANIENT",
+        "name": "Adani Enterprises",
+        "change_pct": -2.1,
+        "price": 2450
+      },
+      {
+        "symbol": "INDIGO",
+        "name": "InterGlobe Aviation",
+        "change_pct": -1.9,
+        "price": 4300
+      },
+      {
+        "symbol": "GRASIM",
+        "name": "Grasim Industries",
+        "change_pct": -1.62,
+        "price": 3228.8
+      }
+    ]
+  },
   "news": {
     "international": [
-      { "title": "Fed rate-hike bets firm up as oil-driven inflation scare grips markets", "source": "Reuters", "url": "https://www.reuters.com", "published_at": "2026-09-15T04:00:00Z" },
-      { "title": "US 10-year Treasury yield tops 5% as investors weigh Fed outlook", "source": "Bloomberg", "url": "https://www.bloomberg.com", "published_at": "2026-09-15T02:00:00Z" },
-      { "title": "Dow Jones swings as White House weighs response to oil price spike", "source": "The Wall Street Journal", "url": "https://www.wsj.com", "published_at": "2026-09-15T07:00:00Z" }
+      {
+        "title": "I was obsessed with looking rich and overspent in my 20s. Then one HR meeting exposed how little I knew about money.",
+        "source": "Business Insider",
+        "url": "https://www.businessinsider.com/haley-sacks-mrs-dow-jones-future-rich-person-excerpt-2026-8#article",
+        "published_at": "2026-08-18T09:08:01Z"
+      },
+      {
+        "title": "The best deals from Nintendo’s ‘customer appreciation’ sale",
+        "source": "The Verge",
+        "url": "https://www.theverge.com/gadgets/994892/nintendo-customer-appreciation-tariff-refund-deal-sale",
+        "published_at": "2026-09-14T19:30:58Z"
+      },
+      {
+        "title": "Sony Refuses to Share $500m Tariff Refund With PlayStation Customers Despite Price Increases",
+        "source": "Gizmodo.com",
+        "url": "https://gizmodo.com/sony-refuses-to-share-500m-tariff-refund-with-playstation-customers-despite-price-increases-2000806844",
+        "published_at": "2026-09-03T18:40:16Z"
+      }
     ],
     "indian": [
-      { "title": "Sensex, Nifty fall over 1% as oil surge and Fed bets weigh on sentiment", "source": "Business Standard", "url": "https://www.business-standard.com", "published_at": "2026-09-15T10:00:00Z" },
-      { "title": "IT stocks rally even as broader market succumbs to oil-driven selloff", "source": "The Economic Times", "url": "https://economictimes.indiatimes.com", "published_at": "2026-09-15T09:30:00Z" },
-      { "title": "RBI watches rupee closely as crude prices climb past $103", "source": "Mint", "url": "https://www.livemint.com", "published_at": "2026-09-15T08:00:00Z" }
+      {
+        "title": "India to push BRICS digital currency link despite hurdles, sources say",
+        "source": "Yahoo Entertainment",
+        "url": "https://uk.news.yahoo.com/india-push-brics-digital-currency-090543775.html",
+        "published_at": "2026-09-10T09:16:39Z"
+      },
+      {
+        "title": "India Paves the Way For Charging Merchants a Fee On UPI Transactions",
+        "source": "Slashdot.org",
+        "url": "https://news.slashdot.org/story/26/08/18/0812245/india-paves-the-way-for-charging-merchants-a-fee-on-upi-transactions",
+        "published_at": "2026-08-18T15:00:00Z"
+      },
+      {
+        "title": "RBI explores tokenising gold amid push to expand Unified Markets Interface",
+        "source": "The Times of India",
+        "url": "https://economictimes.indiatimes.com/news/economy/finance/rbi-explores-tokenising-gold-amid-push-to-expand-unified-markets-interface/articleshow/133988688.cms",
+        "published_at": "2026-09-09T11:51:48Z"
+      }
     ],
     "stocks_in_news": [
-      { "symbol": "HCLTECH", "cap": "Large Cap", "title": "HCL Technologies leads IT rally, up nearly 4% on strong volumes", "url": "https://www.moneycontrol.com" },
-      { "symbol": "BEL", "cap": "Mid Cap", "title": "Bharat Electronics falls over 5% on profit booking after recent rally", "url": "https://www.moneycontrol.com" },
-      { "symbol": "SHRIRAMFIN", "cap": "Large Cap", "title": "Shriram Finance under pressure amid broader financials selloff", "url": "https://www.moneycontrol.com" },
-      { "symbol": "GRASIM", "cap": "Large Cap", "title": "Grasim Industries slips as cement and chemicals demand outlook softens", "url": "https://www.moneycontrol.com" },
-      { "symbol": "INFY", "cap": "Large Cap", "title": "Infosys gains nearly 4% tracking sector-wide IT strength", "url": "https://www.moneycontrol.com" }
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "Supreme Court rejects ex-NSE chief Chitra Ramkrishna's 'public duty' plea in co-location case",
+        "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/supreme-court-rejects-ex-nse-chief-chitra-ramkrishnas-public-duty-plea-in-co-location-case/articleshow/134272025.cms"
+      },
+      {
+        "symbol": "UPI",
+        "cap": "Large/Mid Cap",
+        "title": "Businesses divided on UPI MDR; retailers wary, quick commerce unfazed",
+        "url": "https://www.business-standard.com/industry/news/businesses-divided-on-upi-mdr-retailers-wary-quick-commerce-unfazed-126091501322_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Omnia buy adds to Solar Industries' explosive growth, valuations stay high",
+        "url": "https://www.business-standard.com/markets/stock-market-news/omnia-buy-adds-to-solar-industries-explosive-growth-valuations-stay-high-126091501239_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Top Business & Market Headlines Today — BL Morning Report, September 16, 2026",
+        "url": "https://www.thehindubusinessline.com/multimedia/audio/top-business-market-headlines-today-bl-morning-report-september-16-2026/article71468876.ece"
+      },
+      {
+        "symbol": "UPI",
+        "cap": "Large/Mid Cap",
+        "title": "New charges on UPI payments: Here's what you will be charged for stock market investments",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/new-charges-on-upi-payments-heres-what-you-will-be-charged-for-stock-market-investments/articleshow/134266721.cms"
+      }
     ]
   }
 }
