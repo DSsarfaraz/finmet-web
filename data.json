@@ -1,172 +1,133 @@
 {
-  "updated_at": "2026-09-16T19:40:24.140Z",
+  "updated_at": "2026-09-17T06:19:26.240Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23217.6,
-      "change_pct": -1.11
+      "value": 23272.75,
+      "change_pct": -0.54
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74336.45,
-      "change_pct": -0.76
+      "value": 74337.13,
+      "change_pct": -0.59
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 102.2,
-      "change_pct": 2.15,
+      "value": 101.31,
+      "change_pct": -0.08,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 132486,
-      "change_pct": -2.59,
+      "value": 134040,
+      "change_pct": -0.09,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4294.7,
-      "change_pct": -2.59,
+      "value": 4347.8,
+      "change_pct": -0.09,
       "unit": "USD/oz"
     }
   },
-  "movers": {
-    "gainers": [
-      {
-        "symbol": "HCLTECH",
-        "name": "HCL Technologies",
-        "change_pct": 3.95,
-        "price": 1253.7
-      },
-      {
-        "symbol": "INFY",
-        "name": "Infosys",
-        "change_pct": 3.79,
-        "price": 1077
-      },
-      {
-        "symbol": "TCS",
-        "name": "Tata Consultancy Services",
-        "change_pct": 2.28,
-        "price": 4150
-      },
-      {
-        "symbol": "TECHM",
-        "name": "Tech Mahindra",
-        "change_pct": 2.26,
-        "price": 1680
-      },
-      {
-        "symbol": "WIPRO",
-        "name": "Wipro",
-        "change_pct": 1.55,
-        "price": 265
-      }
-    ],
-    "losers": [
-      {
-        "symbol": "BEL",
-        "name": "Bharat Electronics",
-        "change_pct": -5.3,
-        "price": 382.9
-      },
-      {
-        "symbol": "SHRIRAMFIN",
-        "name": "Shriram Finance",
-        "change_pct": -4.74,
-        "price": 625
-      },
-      {
-        "symbol": "ADANIENT",
-        "name": "Adani Enterprises",
-        "change_pct": -2.1,
-        "price": 2450
-      },
-      {
-        "symbol": "INDIGO",
-        "name": "InterGlobe Aviation",
-        "change_pct": -1.9,
-        "price": 4300
-      },
-      {
-        "symbol": "GRASIM",
-        "name": "Grasim Industries",
-        "change_pct": -1.62,
-        "price": 3228.8
-      }
-    ]
-  },
+  "broad_indices": [
+    {
+      "symbol": "NIFTY MIDCAP 150",
+      "price": 22527.7,
+      "change_pct": -1.4
+    },
+    {
+      "symbol": "NIFTY SMALLCAP 100",
+      "price": 19521.2,
+      "change_pct": 0.69
+    }
+  ],
+  "sector_indices": [
+    {
+      "symbol": "NIFTY BANK",
+      "price": 56164.05,
+      "change_pct": -0.78
+    },
+    {
+      "symbol": "NIFTY IT",
+      "price": 29010.3,
+      "change_pct": 0.31
+    },
+    {
+      "symbol": "NIFTY AUTO",
+      "price": 27173.7,
+      "change_pct": 1.04
+    },
+    {
+      "symbol": "NIFTY FMCG",
+      "price": 45628.95,
+      "change_pct": 0.15
+    },
+    {
+      "symbol": "NIFTY METAL",
+      "price": 12833.9,
+      "change_pct": 0.74
+    }
+  ],
   "news": {
     "international": [
       {
-        "title": "I was obsessed with looking rich and overspent in my 20s. Then one HR meeting exposed how little I knew about money.",
-        "source": "Business Insider",
-        "url": "https://www.businessinsider.com/haley-sacks-mrs-dow-jones-future-rich-person-excerpt-2026-8#article",
-        "published_at": "2026-08-18T09:08:01Z"
+        "title": "Bitcoin drops below $80,000 as US jobs data spurs Fed-hike bets",
+        "source": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-04/bitcoin-drops-below-80-000-as-hot-jobs-data-spurs-fed-hike-bets",
+        "published_at": "2026-09-07T03:29:51Z"
       },
       {
-        "title": "The best deals from Nintendo’s ‘customer appreciation’ sale",
-        "source": "The Verge",
-        "url": "https://www.theverge.com/gadgets/994892/nintendo-customer-appreciation-tariff-refund-deal-sale",
-        "published_at": "2026-09-14T19:30:58Z"
-      },
-      {
-        "title": "Sony Refuses to Share $500m Tariff Refund With PlayStation Customers Despite Price Increases",
-        "source": "Gizmodo.com",
-        "url": "https://gizmodo.com/sony-refuses-to-share-500m-tariff-refund-with-playstation-customers-despite-price-increases-2000806844",
-        "published_at": "2026-09-03T18:40:16Z"
+        "title": "U.S. Stock Futures Little Changed as Markets Weigh Warsh’s Hawkish Remarks",
+        "source": "The Wall Street Journal",
+        "url": "https://www.wsj.com/finance/investing/u-s-stock-futures-little-changed-as-markets-weigh-warshs-hawkish-remarks-5a036994",
+        "published_at": "2026-08-31T11:42:00Z"
       }
     ],
     "indian": [
       {
-        "title": "India to push BRICS digital currency link despite hurdles, sources say",
-        "source": "Yahoo Entertainment",
-        "url": "https://uk.news.yahoo.com/india-push-brics-digital-currency-090543775.html",
-        "published_at": "2026-09-10T09:16:39Z"
+        "title": "Economy stable, El Nino clouds food inflation, farm output outlook: FinMin",
+        "source": "Business Standard",
+        "url": "https://www.business-standard.com/economy/news/economy-stable-el-nino-clouds-food-inflation-farm-output-outlook-finmin-126083101427_1.html",
+        "published_at": "2026-08-31T16:06:46Z"
       },
       {
-        "title": "India Paves the Way For Charging Merchants a Fee On UPI Transactions",
-        "source": "Slashdot.org",
-        "url": "https://news.slashdot.org/story/26/08/18/0812245/india-paves-the-way-for-charging-merchants-a-fee-on-upi-transactions",
-        "published_at": "2026-08-18T15:00:00Z"
-      },
-      {
-        "title": "RBI explores tokenising gold amid push to expand Unified Markets Interface",
-        "source": "The Times of India",
-        "url": "https://economictimes.indiatimes.com/news/economy/finance/rbi-explores-tokenising-gold-amid-push-to-expand-unified-markets-interface/articleshow/133988688.cms",
-        "published_at": "2026-09-09T11:51:48Z"
+        "title": "Sugar spike: this isn't the first time weak data and ad hoc policies are showing up in food prices",
+        "source": "Livemint",
+        "url": "https://www.livemint.com/opinion/online-views/sugar-spike-not-the-first-time-weak-data-and-ad-hoc-policies-in-food-prices-el-nino-11788344598352.html",
+        "published_at": "2026-09-03T07:18:16Z"
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "NSE",
-        "cap": "Large/Mid Cap",
-        "title": "Supreme Court rejects ex-NSE chief Chitra Ramkrishna's 'public duty' plea in co-location case",
-        "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/supreme-court-rejects-ex-nse-chief-chitra-ramkrishnas-public-duty-plea-in-co-location-case/articleshow/134272025.cms"
-      },
-      {
-        "symbol": "UPI",
-        "cap": "Large/Mid Cap",
-        "title": "Businesses divided on UPI MDR; retailers wary, quick commerce unfazed",
-        "url": "https://www.business-standard.com/industry/news/businesses-divided-on-upi-mdr-retailers-wary-quick-commerce-unfazed-126091501322_1.html"
-      },
-      {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Omnia buy adds to Solar Industries' explosive growth, valuations stay high",
-        "url": "https://www.business-standard.com/markets/stock-market-news/omnia-buy-adds-to-solar-industries-explosive-growth-valuations-stay-high-126091501239_1.html"
+        "title": "Sensex rises 400 points, Nifty nears 23,250 as investors await Fed meeting outcome. What to expect?",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/sensex-rises-400-points-nifty-nears-23250-as-investors-await-fed-meeting-outcome-what-to-expect/articleshow/134279785.cms"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "HFCL",
         "cap": "Large/Mid Cap",
-        "title": "Top Business & Market Headlines Today — BL Morning Report, September 16, 2026",
-        "url": "https://www.thehindubusinessline.com/multimedia/audio/top-business-market-headlines-today-bl-morning-report-september-16-2026/article71468876.ece"
+        "title": "HFCL, Sterlite Tech, HEG, MTAR Technologies locked in 5% lower circuits",
+        "url": "https://www.business-standard.com/markets/news/hfcl-sterlite-tech-heg-mtar-technologies-locked-in-5-lower-circuits-126091600287_1.html"
       },
       {
-        "symbol": "UPI",
+        "symbol": "IPO",
         "cap": "Large/Mid Cap",
-        "title": "New charges on UPI payments: Here's what you will be charged for stock market investments",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/new-charges-on-upi-payments-heres-what-you-will-be-charged-for-stock-market-investments/articleshow/134266721.cms"
+        "title": "Hero Motors IPO Day 1: Check subscription status, GMP at 23%. Should you subscribe?",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/hero-motors-ipo-day-1-check-subscription-status-gmp-at-23-should-you-subscribe/articleshow/134279544.cms"
+      },
+      {
+        "symbol": "CEO",
+        "cap": "Large/Mid Cap",
+        "title": "What will happen to investors on digital broking platform? INDmoney CEO responds to UPI MDR charges",
+        "url": "https://www.livemint.com/money/personal-finance/what-will-happen-to-investors-on-digital-broking-platform-indmoney-ceo-responds-to-upi-mdr-charges-11789533762186.html"
+      },
+      {
+        "symbol": "NPCI",
+        "cap": "Large/Mid Cap",
+        "title": "Paytm stock hits 52-week high after NPCI introduces UPI MDR",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/paytm-stock-hits-52-week-high-after-npci-introduces-upi-mdr/article71471258.ece"
       }
     ]
   }
