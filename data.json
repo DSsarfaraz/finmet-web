@@ -1,72 +1,72 @@
 {
-  "updated_at": "2026-09-17T07:01:51.400Z",
+  "updated_at": "2026-09-17T08:51:53.493Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23338.85,
-      "change_pct": -0.25
+      "value": 23284.85,
+      "change_pct": -0.48
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74597.13,
-      "change_pct": -0.25
+      "value": 74369.09,
+      "change_pct": -0.55
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 100.86,
-      "change_pct": -0.52,
+      "value": 101.45,
+      "change_pct": 0.06,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 133967,
-      "change_pct": -0.14,
+      "value": 134305,
+      "change_pct": 0.08,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4345.9,
-      "change_pct": -0.14,
+      "value": 4355.5,
+      "change_pct": 0.08,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22595.85,
-      "change_pct": -1.1
+      "price": 22575.55,
+      "change_pct": -1.19
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19547.35,
-      "change_pct": 0.82
+      "price": 19510.7,
+      "change_pct": 0.63
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 56304.8,
-      "change_pct": -0.53
+      "price": 56136.35,
+      "change_pct": -0.83
     },
     {
       "symbol": "NIFTY IT",
-      "price": 29115.15,
-      "change_pct": 0.67
+      "price": 29070.8,
+      "change_pct": 0.52
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27295.05,
-      "change_pct": 1.49
+      "price": 27194.05,
+      "change_pct": 1.12
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45779.65,
-      "change_pct": 0.48
+      "price": 45670.3,
+      "change_pct": 0.24
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12842.6,
-      "change_pct": 0.81
+      "price": 12827.45,
+      "change_pct": 0.69
     }
   ],
   "news": {
@@ -100,34 +100,34 @@
     ],
     "stocks_in_news": [
       {
-        "symbol": "HDFC",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "HDFC Bank shares trade flat after rising in previous session",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/hdfc-bank-shares-trade-flat-after-rising-in-previous-session/article71471325.ece"
+        "title": "Nifty holds above 23,250 level; European shares trade mostly in green",
+        "url": "https://www.business-standard.com/markets/capital-market-news/nifty-holds-above-23-250-level-european-shares-trade-mostly-in-green-126091600540_1.html"
       },
       {
         "symbol": "IPO",
         "cap": "Large/Mid Cap",
-        "title": "A-One Steels India to launch ₹405 crore IPO on Sep 24",
-        "url": "https://www.thehindubusinessline.com/markets/ipo-dashboard/a-one-steels-india-to-launch-405-crore-ipo-on-sep-24/article71471377.ece"
+        "title": "Jindal Supreme IPO Day 1: Issue subscribed over 200% in early bids, GMP at 29%. Should you subscribe?",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/jindal-supreme-ipo-day-1-issue-subscribed-over-200-in-early-bids-gmp-at-29-should-you-subscribe/articleshow/134281844.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Tata Chem rebounds 14% from intra-day low on huge volume; up 29% in 2 days",
-        "url": "https://www.business-standard.com/markets/news/tata-chem-rebounds-14-from-intra-day-low-on-huge-volume-up-29-in-2-days-126091600372_1.html"
+        "title": "Pranav Constructions stock tanks 37% in 2 days, slips below issue price",
+        "url": "https://www.business-standard.com/markets/news/pranav-constructions-stock-tanks-37-in-2-days-slips-below-issue-price-126091600461_1.html"
+      },
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "NSE to launch IPO amid investor caution over derivatives-fuelled growth",
+        "url": "https://www.thehindubusinessline.com/markets/nse-to-launch-ipo-amid-investor-caution-over-derivatives-fuelled-growth/article71471383.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Volumes soar at Tata Chemicals Ltd counter",
-        "url": "https://www.business-standard.com/markets/capital-market-news/volumes-soar-at-tata-chemicals-ltd-counter-126091600370_1.html"
-      },
-      {
-        "symbol": "FMCG",
-        "cap": "Large/Mid Cap",
-        "title": "Sensex, Nifty trade in positive terrain; FMCG shares climb",
-        "url": "https://www.business-standard.com/markets/capital-market-news/sensex-nifty-trade-in-positive-terrain-fmcg-shares-climb-126091600369_1.html"
+        "title": "Pondy Oxides & Chemicals Ltd leads gainers in 'A' group",
+        "url": "https://www.business-standard.com/markets/capital-market-news/pondy-oxides-chemicals-ltd-leads-gainers-in-a-group-126091600456_1.html"
       }
     ]
   }
