@@ -70,8 +70,27 @@ async function getYahooQuote(symbol) {
   if (!result) return null;
   const meta = result.meta;
   const price = meta.regularMarketPrice;
-  const prevClose = meta.chartPreviousClose ?? meta.previousClose;
-  if (price == null || prevClose == null) return null;
+  if (price == null) return null;
+
+  // Prefer computing the previous close from the raw daily closes array
+  // (today's close vs the trading day right before it) rather than trusting
+  // meta.chartPreviousClose, which can reflect a stale reference point
+  // depending on the requested range and cause incorrect % changes.
+  const closes = result.indicators?.quote?.[0]?.close;
+  let prevClose = null;
+  if (Array.isArray(closes)) {
+    const validCloses = closes.filter(c => c != null);
+    if (validCloses.length >= 2) {
+      // If the most recent close is essentially today's live price, use the
+      // one before it as "previous close"; otherwise fall back sensibly.
+      prevClose = validCloses[validCloses.length - 2];
+    }
+  }
+  if (prevClose == null) {
+    prevClose = meta.chartPreviousClose ?? meta.previousClose;
+  }
+  if (prevClose == null) return null;
+
   const changePct = ((price - prevClose) / prevClose) * 100;
   return { price: Number(price), changePct: Number(changePct) };
 }
