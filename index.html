@@ -74,6 +74,74 @@
 </head>
 <body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
 
+  <!-- Live Market Ticker -->
+  <div class="bg-zinc-950 border-b border-emerald-900/60 overflow-hidden whitespace-nowrap">
+    <div id="home-ticker" class="inline-flex py-2" style="animation: home-ticker-scroll 45s linear infinite;"></div>
+  </div>
+  <style>
+    @keyframes home-ticker-scroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+    #home-ticker:hover { animation-play-state: paused; }
+
+    /* ================= LIGHT THEME OVERRIDE ================= */
+    /* Dark (emerald/black) is the default design; toggling adds
+       html.light-theme, which remaps the same structure to a
+       white-background / navy-blue "classic finance" palette via
+       attribute selectors on Tailwind's utility classes, rather than
+       duplicating every element in a second file. */
+    html.light-theme{ color-scheme: light; }
+    html.light-theme body{ background:#FFFFFF !important; color:#0B1D3A !important; }
+
+    html.light-theme .glass-nav{ background:rgba(255,255,255,0.92) !important; }
+    html.light-theme header.glass-nav,
+    html.light-theme [class*="border-emerald-900"],
+    html.light-theme [class*="border-emerald-950"]{ border-color:#E2E8F0 !important; }
+
+    /* backgrounds: near-black / zinc panels -> white or soft navy tint */
+    html.light-theme [class*="bg-black"],
+    html.light-theme [class*="bg-zinc-950"],
+    html.light-theme [class*="bg-zinc-900"]{ background-color:#FFFFFF !important; }
+    html.light-theme [class*="bg-gradient-to-b"],
+    html.light-theme [class*="bg-gradient-to-br"],
+    html.light-theme [class*="bg-gradient-to-r"]{ background-image:none !important; background-color:#F5F8FC !important; }
+
+    /* borders: zinc/emerald -> light navy-tinted border */
+    html.light-theme [class*="border-zinc"],
+    html.light-theme [class*="border-emerald-500"],
+    html.light-theme [class*="border-emerald-400"]{ border-color:#DCE4F0 !important; }
+
+    /* body/paragraph text: zinc/slate light greys -> navy or muted navy */
+    html.light-theme [class*="text-slate-100"],
+    html.light-theme [class*="text-zinc-100"],
+    html.light-theme [class*="text-zinc-200"],
+    html.light-theme [class*="text-white"]{ color:#0B1D3A !important; }
+    html.light-theme [class*="text-zinc-300"],
+    html.light-theme [class*="text-zinc-400"],
+    html.light-theme [class*="text-zinc-500"]{ color:#5B6B82 !important; }
+
+    /* emerald accents used decoratively -> navy; emerald used functionally
+       (ticker gains, badges) is re-asserted afterwards so meaning stays clear */
+    html.light-theme [class*="text-emerald-400"],
+    html.light-theme [class*="text-emerald-300"]{ color:#14315C !important; }
+    html.light-theme [class*="bg-emerald-500"],
+    html.light-theme [class*="bg-emerald-400"]{ background-color:#0B1D3A !important; color:#FFFFFF !important; }
+    html.light-theme [class*="bg-emerald-950"]{ background-color:#EDF1F7 !important; }
+
+    /* keep functional colour meaning: ticker up/down, LIVE/NEW badges */
+    html.light-theme #home-ticker .text-emerald-400{ color:#0F9D58 !important; }
+    html.light-theme #home-ticker .text-rose-400{ color:#D93025 !important; }
+    html.light-theme [class*="bg-rose-500"]{ background-color:#FDE8E6 !important; }
+    html.light-theme [class*="text-rose-400"]{ color:#D93025 !important; }
+
+    /* buttons that should stay high-contrast dark (primary CTA) */
+    html.light-theme a[href="overlap.html"].bg-emerald-500,
+    html.light-theme button.calc-toggle-btn{ background-color:#0B1D3A !important; color:#FFFFFF !important; }
+
+    html.light-theme .glow-effect,
+    html.light-theme .glow-effect-strong{ box-shadow:none !important; }
+
+    html.light-theme ::selection{ background:#0B1D3A; color:#fff; }
+  </style>
+
   <!-- Floating WhatsApp CTA -->
   <a href="https://wa.me/917893918311" target="_blank" rel="noopener noreferrer" 
      class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-400 text-black font-bold p-3.5 sm:p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center glow-effect-strong"
@@ -86,7 +154,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
       
       <!-- Industry-Standard Clean, 2x Larger Logo -->
-      <a href="https://finmet.org" class="flex items-center gap-3 group shrink-0 py-1 focus:outline-none">
+      <a href="https://www.finmet.org" class="flex items-center gap-3 group shrink-0 py-1 focus:outline-none">
         <img src="finmet_logo.png" alt="Finmet Logo - www.finmet.org" class="h-24 sm:h-28 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null; this.src='https://via.placeholder.com/360x360/10b981/000000?text=Finmet';" />
       </a>
 
@@ -188,6 +256,9 @@
 
       <!-- Desktop CTA & Mobile Menu Toggle -->
       <div class="flex items-center gap-3">
+        <button onclick="toggleTheme()" id="theme-toggle-btn" class="p-2.5 rounded-xl bg-zinc-900 text-emerald-400 border border-emerald-500/40 hover:bg-zinc-800 transition" aria-label="Toggle light/dark theme">
+          <i id="theme-icon" class="fa-solid fa-sun text-base"></i>
+        </button>
         <button onclick="openModal('riskModal')" class="hidden sm:flex px-4 py-2.5 text-xs font-extrabold rounded-xl bg-zinc-900 hover:bg-zinc-800 text-emerald-400 border border-emerald-500/50 transition shadow-md hover:border-emerald-400 items-center">
           <i class="fa-solid fa-shield-halved text-emerald-400 mr-2 text-sm"></i>Risk Matrix
         </button>
@@ -229,7 +300,10 @@
         Historical MF Cycles
       </a>
       <div class="flex items-center gap-2 pt-2">
-        <button onclick="openModal('riskModal'); toggleMobileMenu();" class="w-full py-3 text-xs font-bold rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/40">
+        <button onclick="toggleTheme()" class="w-14 py-3 text-lg rounded-xl bg-zinc-900 text-emerald-400 border border-emerald-500/40" aria-label="Toggle light/dark theme">
+          <i id="theme-icon-mobile" class="fa-solid fa-sun"></i>
+        </button>
+        <button onclick="openModal('riskModal'); toggleMobileMenu();" class="flex-1 py-3 text-xs font-bold rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/40">
           Risk Matrix Benchmark
         </button>
       </div>
@@ -620,6 +694,59 @@
       menu.classList.toggle('hidden');
       icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-xl' : 'fa-solid fa-xmark text-xl';
     }
+
+    // --- Dark / Light Theme Toggle ---
+    function applyTheme(isLight){
+      document.documentElement.classList.toggle('light-theme', isLight);
+      const iconClass = isLight ? 'fa-solid fa-moon text-base' : 'fa-solid fa-sun text-base';
+      const iconClassMobile = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+      const themeIcon = document.getElementById('theme-icon');
+      const themeIconMobile = document.getElementById('theme-icon-mobile');
+      if (themeIcon) themeIcon.className = iconClass;
+      if (themeIconMobile) themeIconMobile.className = iconClassMobile;
+    }
+    function toggleTheme(){
+      const isLight = !document.documentElement.classList.contains('light-theme');
+      applyTheme(isLight);
+      localStorage.setItem('finmet-theme', isLight ? 'light' : 'dark');
+    }
+    // Restore saved preference on load (defaults to dark, the original design)
+    applyTheme(localStorage.getItem('finmet-theme') === 'light');
+
+    // --- Live Market Ticker (Nifty, Sensex, Crude, Gold, Broad/Sector Indices, BTC, ETH) ---
+    const HOME_TICKER_FALLBACK = {"updated_at":"2026-09-15T10:00:00Z","_note":"Last verified close (Tue 15 Sep 2026, IST session). This file is overwritten automatically once the GitHub Action runs with live keys \u2014 see SETUP_GUIDE.md.","indices":{"nifty":{"label":"NIFTY 50","value":23118.6,"change_pct":-1.19},"sensex":{"label":"SENSEX","value":74003.82,"change_pct":-1.04},"crude":{"label":"CRUDE (WTI)","value":103.5,"change_pct":1.3,"unit":"USD/bbl"},"gold_inr":{"label":"GOLD (India, 24K/10g, Delhi)","value":154240,"change_pct":-0.32,"unit":"INR/10g"},"gold_usd":{"label":"GOLD (USD)","value":4284.48,"change_pct":-1.25,"unit":"USD/oz"}},"broad_indices":[{"symbol":"NIFTY MIDCAP 150","price":21845.3,"change_pct":-0.85},{"symbol":"NIFTY SMALLCAP 100","price":19906.3,"change_pct":-1.1}],"sector_indices":[{"symbol":"NIFTY BANK","price":55794.75,"change_pct":-1.43},{"symbol":"NIFTY IT","price":28921.5,"change_pct":0.11},{"symbol":"NIFTY AUTO","price":27304.5,"change_pct":-0.86},{"symbol":"NIFTY FMCG","price":45053.75,"change_pct":-0.29},{"symbol":"NIFTY METAL","price":12999.05,"change_pct":-2.3}],"crypto":[{"symbol":"BITCOIN","price":62150.3,"change_pct":1.25},{"symbol":"ETHEREUM","price":2410.8,"change_pct":0.95}],"news":{"international":[{"title":"Fed rate-hike bets firm up as oil-driven inflation scare grips markets","source":"Reuters","url":"https://www.reuters.com","published_at":"2026-09-15T04:00:00Z"},{"title":"US 10-year Treasury yield tops 5% as investors weigh Fed outlook","source":"Bloomberg","url":"https://www.bloomberg.com","published_at":"2026-09-15T02:00:00Z"},{"title":"Dow Jones swings as White House weighs response to oil price spike","source":"The Wall Street Journal","url":"https://www.wsj.com","published_at":"2026-09-15T07:00:00Z"}],"indian":[{"title":"Sensex, Nifty fall over 1% as oil surge and Fed bets weigh on sentiment","source":"Business Standard","url":"https://www.business-standard.com","published_at":"2026-09-15T10:00:00Z"},{"title":"IT stocks rally even as broader market succumbs to oil-driven selloff","source":"The Economic Times","url":"https://economictimes.indiatimes.com","published_at":"2026-09-15T09:30:00Z"},{"title":"RBI watches rupee closely as crude prices climb past $103","source":"Mint","url":"https://www.livemint.com","published_at":"2026-09-15T08:00:00Z"}],"stocks_in_news":[{"symbol":"HCLTECH","cap":"Large Cap","title":"HCL Technologies leads IT rally, up nearly 4% on strong volumes","url":"https://www.moneycontrol.com"},{"symbol":"BEL","cap":"Mid Cap","title":"Bharat Electronics falls over 5% on profit booking after recent rally","url":"https://www.moneycontrol.com"},{"symbol":"SHRIRAMFIN","cap":"Large Cap","title":"Shriram Finance under pressure amid broader financials selloff","url":"https://www.moneycontrol.com"},{"symbol":"GRASIM","cap":"Large Cap","title":"Grasim Industries slips as cement and chemicals demand outlook softens","url":"https://www.moneycontrol.com"},{"symbol":"INFY","cap":"Large Cap","title":"Infosys gains nearly 4% tracking sector-wide IT strength","url":"https://www.moneycontrol.com"}]}};;
+
+    function tFmtPct(p){ return (p>0?'+':'') + p.toFixed(2) + '%'; }
+    function tChip(label, value, pct, unit){
+      const cls = pct>=0 ? 'text-emerald-400' : 'text-rose-400';
+      const arrow = pct>=0 ? '▲' : '▼';
+      return `<span class="inline-flex items-center gap-2 px-5 border-r border-zinc-800 last:border-r-0 text-xs">
+        <span class="text-zinc-500 font-bold uppercase">${label}</span>
+        <span class="text-white font-black">${Number(value).toLocaleString('en-IN',{maximumFractionDigits:2})}</span>
+        ${unit ? `<span class="text-zinc-600">${unit}</span>` : ''}
+        <span class="${cls} font-black">${arrow} ${tFmtPct(pct)}</span>
+      </span>`;
+    }
+    function renderHomeTicker(data){
+      const items = [];
+      if (data.indices) Object.values(data.indices).forEach(i => items.push(tChip(i.label, i.value, i.change_pct, i.unit)));
+      (data.broad_indices||[]).forEach(i => items.push(tChip(i.symbol, i.price, i.change_pct)));
+      (data.sector_indices||[]).forEach(i => items.push(tChip(i.symbol, i.price, i.change_pct)));
+      (data.crypto||[]).forEach(i => items.push(tChip(i.symbol, i.price, i.change_pct, 'USD')));
+      const html = items.join('');
+      document.getElementById('home-ticker').innerHTML = html + html;
+    }
+    async function loadHomeTicker(){
+      try{
+        const res = await fetch('data.json', {cache:'no-store'});
+        if(!res.ok) throw new Error('no data.json');
+        renderHomeTicker(await res.json());
+      }catch(e){
+        renderHomeTicker(HOME_TICKER_FALLBACK);
+      }
+    }
+    loadHomeTicker();
+    setInterval(loadHomeTicker, 30*60*1000);
 
     // Typing Effect for Problem Statement
     const problems = [
