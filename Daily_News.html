@@ -257,29 +257,20 @@
       </div>
     </section>
 
-    <!-- Broad & Sector Indices Sliding Strips -->
+    <!-- Market Broad Sliding Strip (combined broad + sector indices) -->
     <section class="grid grid-cols-1 gap-3">
       <div class="glass-card rounded-2xl border border-emerald-500/30 overflow-hidden bg-gradient-to-r from-emerald-950/40 to-zinc-950">
         <div class="flex items-center">
           <span class="shrink-0 px-4 py-3 text-[11px] font-black uppercase tracking-wider text-emerald-400 border-r border-emerald-500/20 flex items-center gap-2">
-            <i class="fa-solid fa-layer-group"></i> Broad Indices
+            <i class="fa-solid fa-layer-group"></i> Market Broad
           </span>
           <div class="overflow-hidden whitespace-nowrap flex-1">
-            <div id="broad-strip" class="inline-flex py-3" style="animation: ticker-scroll 22s linear infinite;"></div>
-          </div>
-        </div>
-      </div>
-      <div class="glass-card rounded-2xl border border-zinc-700/50 overflow-hidden bg-gradient-to-r from-zinc-900/60 to-zinc-950">
-        <div class="flex items-center">
-          <span class="shrink-0 px-4 py-3 text-[11px] font-black uppercase tracking-wider text-zinc-300 border-r border-zinc-700/50 flex items-center gap-2">
-            <i class="fa-solid fa-industry"></i> Top Sector Indices
-          </span>
-          <div class="overflow-hidden whitespace-nowrap flex-1">
-            <div id="sector-strip" class="inline-flex py-3" style="animation: ticker-scroll 26s linear infinite;"></div>
+            <div id="market-broad-strip" class="inline-flex py-3" style="animation: ticker-scroll 30s linear infinite;"></div>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- News Bento Grid -->
     <section class="space-y-4">
@@ -351,7 +342,7 @@
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-    #index-strip:hover, #broad-strip:hover, #sector-strip:hover { animation-play-state: paused; }
+    #index-strip:hover, #market-broad-strip:hover { animation-play-state: paused; }
   </style>
 
   <!-- Scripts -->
@@ -466,8 +457,7 @@
 
     function renderAll(data){
       renderIndices(data.indices);
-      renderMovers(data.broad_indices, 'broad-strip');
-      renderMovers(data.sector_indices, 'sector-strip');
+      renderMovers([...data.broad_indices, ...data.sector_indices], 'market-broad-strip');
       renderNewsList(data.news.international, 'intl-news');
       renderNewsList(data.news.indian, 'india-news');
       renderStocks(data.news.stocks_in_news);
