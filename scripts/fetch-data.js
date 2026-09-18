@@ -221,20 +221,38 @@ async function newsQuery(q, pageSize = 6, sortBy = 'publishedAt', domain = null)
 
 // Pull exactly one article from each of 3 named top business/economic outlets,
 // so every day's briefing has one unique perspective per source rather than
-// several headlines that might all come from the same outlet.
+// several headlines that might all come from the same outlet. Falls back to
+// a general (non-domain-restricted) query for any outlet that returns
+// nothing — some premium outlets (Bloomberg, WSJ) have sparse coverage on
+// NewsAPI's free tier, and we'd rather show 3 relevant finance headlines
+// than leave a slot empty.
 async function getOneFromEachOutlet(query, domains) {
   const picks = [];
+  const usedUrls = new Set();
+
   for (const domain of domains) {
     const results = await newsQuery(query, 3, 'relevancy', domain);
-    if (results && results.length > 0) picks.push(results[0]);
+    const hit = (results || []).find(a => !usedUrls.has(a.url));
+    if (hit) { picks.push(hit); usedUrls.add(hit.url); }
   }
+
+  if (picks.length < domains.length) {
+    log(`Only found ${picks.length}/${domains.length} outlet-specific results for "${query}" — topping up with a general query.`);
+    const needed = domains.length - picks.length;
+    const pool = await newsQuery(query, 10, 'relevancy');
+    for (const a of (pool || [])) {
+      if (picks.length >= domains.length) break;
+      if (!usedUrls.has(a.url)) { picks.push(a); usedUrls.add(a.url); }
+    }
+  }
+
   return picks.length > 0 ? picks : null;
 }
 
-const INTERNATIONAL_QUERY = '"Fed" OR "Federal Reserve" OR "Dow Jones" OR "bond yield" OR import OR export OR "US President"';
+const INTERNATIONAL_QUERY = '("Federal Reserve" OR "Dow Jones" OR "bond yield" OR "trade tariff" OR "US President") AND (market OR economy OR stocks OR finance)';
 const INTERNATIONAL_OUTLETS = ['bloomberg.com', 'reuters.com', 'wsj.com'];
 
-const INDIA_QUERY = 'Nifty OR Sensex OR "Finance Ministry" OR RBI OR export OR import OR economy';
+const INDIA_QUERY = '(Nifty OR Sensex OR "Finance Ministry" OR RBI OR "import export") AND (market OR economy OR stocks OR India)';
 const INDIA_OUTLETS = ['economictimes.indiatimes.com', 'business-standard.com', 'livemint.com'];
 
 async function getInternationalNews() {
