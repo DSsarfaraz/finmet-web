@@ -1,72 +1,72 @@
 {
-  "updated_at": "2026-09-17T08:51:53.493Z",
+  "updated_at": "2026-09-18T08:27:16.483Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23284.85,
-      "change_pct": -0.48
+      "value": 23334,
+      "change_pct": 0.27
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74369.09,
-      "change_pct": -0.55
+      "value": 74502.85,
+      "change_pct": 0.25
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 101.45,
-      "change_pct": 0.06,
+      "value": 95.47,
+      "change_pct": -6.32,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 134305,
-      "change_pct": 0.08,
+      "value": 136588,
+      "change_pct": 0.73,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4355.5,
-      "change_pct": 0.08,
+      "value": 4431.6,
+      "change_pct": 0.73,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22575.55,
-      "change_pct": -1.19
+      "price": 22782.2,
+      "change_pct": 0.95
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19510.7,
-      "change_pct": 0.63
+      "price": 19782.05,
+      "change_pct": 1.26
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 56136.35,
-      "change_pct": -0.83
+      "price": 56331.4,
+      "change_pct": 0.49
     },
     {
       "symbol": "NIFTY IT",
-      "price": 29070.8,
-      "change_pct": 0.52
+      "price": 28702.1,
+      "change_pct": -1.56
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27194.05,
-      "change_pct": 1.12
+      "price": 27247.3,
+      "change_pct": 0.32
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45670.3,
-      "change_pct": 0.24
+      "price": 45574.95,
+      "change_pct": 0
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12827.45,
-      "change_pct": 0.69
+      "price": 13005.65,
+      "change_pct": 1.14
     }
   ],
   "news": {
@@ -102,32 +102,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Nifty holds above 23,250 level; European shares trade mostly in green",
-        "url": "https://www.business-standard.com/markets/capital-market-news/nifty-holds-above-23-250-level-european-shares-trade-mostly-in-green-126091600540_1.html"
-      },
-      {
-        "symbol": "IPO",
-        "cap": "Large/Mid Cap",
-        "title": "Jindal Supreme IPO Day 1: Issue subscribed over 200% in early bids, GMP at 29%. Should you subscribe?",
-        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/jindal-supreme-ipo-day-1-issue-subscribed-over-200-in-early-bids-gmp-at-29-should-you-subscribe/articleshow/134281844.cms"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Pranav Constructions stock tanks 37% in 2 days, slips below issue price",
-        "url": "https://www.business-standard.com/markets/news/pranav-constructions-stock-tanks-37-in-2-days-slips-below-issue-price-126091600461_1.html"
+        "title": "Sensex, Nifty come off the day's high; European shares tread cautiously",
+        "url": "https://www.business-standard.com/markets/capital-market-news/sensex-nifty-come-off-the-day-s-high-european-shares-tread-cautiously-126091700548_1.html"
       },
       {
         "symbol": "NSE",
         "cap": "Large/Mid Cap",
-        "title": "NSE to launch IPO amid investor caution over derivatives-fuelled growth",
-        "url": "https://www.thehindubusinessline.com/markets/nse-to-launch-ipo-amid-investor-caution-over-derivatives-fuelled-growth/article71471383.ece"
+        "title": "The NSE IPO investor playbook: Should you subscribe to the mega issue or pick rival BSE instead?",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/the-nse-ipo-investor-playbook-buy-at-ipo-wait-for-a-correction-or-go-for-bse-instead/articleshow/134305915.cms"
+      },
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "No proposal from NSE seeking approval for trading on its own platform: SEBI chief",
+        "url": "https://www.thehindubusinessline.com/markets/no-proposal-from-nse-seeking-approval-for-trading-on-its-own-platform-sebi-chief/article71475790.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Pondy Oxides & Chemicals Ltd leads gainers in 'A' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/pondy-oxides-chemicals-ltd-leads-gainers-in-a-group-126091600456_1.html"
+        "title": "Emami jumps 7% as board approves share buyback worth ₹282 cr",
+        "url": "https://www.business-standard.com/markets/news/emami-jumps-7-as-board-approves-share-buyback-worth-282-cr-126091700492_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Alkem Laboratories Ltd spurts 2.36%",
+        "url": "https://www.business-standard.com/markets/capital-market-news/alkem-laboratories-ltd-spurts-2-36-126091700511_1.html"
       }
     ]
   }
