@@ -249,10 +249,10 @@ async function getOneFromEachOutlet(query, domains) {
   return picks.length > 0 ? picks : null;
 }
 
-const INTERNATIONAL_QUERY = '("Federal Reserve" OR "Dow Jones" OR "bond yield" OR "trade tariff" OR "US President") AND (market OR economy OR stocks OR finance)';
+const INTERNATIONAL_QUERY = '(crypto OR bitcoin OR "Federal Reserve" OR "Dow Jones" OR "US President" OR "crude oil" OR gold) AND (market OR economy OR finance OR price OR Fed)';
 const INTERNATIONAL_OUTLETS = ['bloomberg.com', 'reuters.com', 'wsj.com'];
 
-const INDIA_QUERY = '(Nifty OR Sensex OR "Finance Ministry" OR RBI OR "import export") AND (market OR economy OR stocks OR India)';
+const INDIA_QUERY = '(Sensex OR Nifty OR "Finance Ministry" OR economy OR economic OR RBI) AND (India OR market OR finance OR rupee)';
 const INDIA_OUTLETS = ['economictimes.indiatimes.com', 'business-standard.com', 'livemint.com'];
 
 async function getInternationalNews() {
