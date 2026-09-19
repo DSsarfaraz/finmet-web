@@ -164,16 +164,15 @@
 
       <!-- Desktop Navigation Menu -->
       <nav class="hidden lg:flex items-center gap-6 font-bold text-sm text-zinc-200">
-        
-        <!-- MF Overlap: Highlighted as Signature Tool with Highly Visible Popup Tooltip -->
+
+        <!-- 1. Portfolio X-Ray: Signature Tool with Tooltip -->
         <div class="relative group py-2">
           <a href="overlap.html" class="px-3.5 py-2 rounded-xl bg-emerald-500/15 border border-emerald-500/50 hover:bg-emerald-500/25 text-emerald-400 transition-all flex items-center gap-2 text-sm font-black shadow-lg shadow-emerald-500/10">
             <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i>
             <span>Portfolio X-Ray</span>
             <span class="px-1.5 py-0.5 text-[9px] uppercase tracking-wider bg-emerald-400 text-black rounded font-black animate-pulse">Signature</span>
           </a>
-          
-          <!-- Crystal Clear High-Contrast Visibility Tooltip -->
+
           <div class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 sm:w-96 p-5 bg-zinc-950 border-2 border-emerald-400 rounded-2xl shadow-[0_0_50px_rgba(16,185,129,0.45)] opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 text-xs text-zinc-200 tooltip-arrow">
             <div class="flex items-center gap-2 font-black text-emerald-300 text-sm mb-2">
               <i class="fa-solid fa-star text-amber-400 text-base"></i> Our Signature Core Tool
@@ -188,53 +187,37 @@
           </div>
         </div>
 
-        <!-- Daily News with "LIVE" Tag -->
-        <a href="Daily_News.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2 group text-sm px-2 py-1">
-          <span>Daily News</span>
-          <span class="flex items-center gap-1 px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider bg-rose-500/20 border border-rose-500/50 text-rose-400 rounded-full group-hover:scale-110 transition-transform">
-            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>LIVE
-          </span>
-        </a>
-
-        <!-- Q2 Sector Report with "NEW" Tag -->
-        <a href="sector_q2.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2 group text-sm px-2 py-1">
-          <span>Q2 Sector Report</span>
-          <span class="px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-400 to-lime-400 text-black rounded-full shadow-md shadow-emerald-500/50 animate-pulse group-hover:scale-110 transition-transform">NEW</span>
-        </a>
-
-        <!-- Calculators Tab with Smart Hover Hook for What, Where & How -->
-        <div class="relative group py-2">
-          <a href="#calculators" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 focus:outline-none text-sm font-bold px-2 py-1">
-            Calculators
-            <i class="fa-solid fa-chevron-down text-[10px] text-emerald-400 group-hover:rotate-180 transition-transform"></i>
-          </a>
-          
-          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 p-4 bg-zinc-950 border border-emerald-500/40 rounded-2xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 backdrop-blur-md tooltip-arrow space-y-2">
-            <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
-              <span>Wealth Engine Preview</span>
-              <i class="fa-solid fa-calculator text-xs"></i>
-            </div>
-            <p class="text-xs text-zinc-300 leading-relaxed font-medium">
-              Discover <strong class="text-white">what</strong> assets drive growth, <strong class="text-white">where</strong> capital compounds best, and <strong class="text-white">how</strong> sustainable returns are engineered.
-            </p>
-          </div>
-        </div>
-
-        <!-- Learning Hub Dropdown (Updated with learning_finmet.html) -->
+        <!-- 2. Learning Hub Dropdown: now also holds Q2 Report, Calculators, Growth Story, MF Cycles -->
         <div class="relative group py-2">
           <button class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 focus:outline-none text-sm font-bold px-2 py-1">
             Learning Hub
             <i class="fa-solid fa-chevron-down text-[10px] text-emerald-400 group-hover:rotate-180 transition-transform"></i>
           </button>
-          
-          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 p-3 bg-zinc-950 border border-emerald-500/40 rounded-2xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 backdrop-blur-md tooltip-arrow space-y-2">
-            
+
+          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 p-3 bg-zinc-950 border border-emerald-500/40 rounded-2xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50 backdrop-blur-md tooltip-arrow space-y-2 max-h-[80vh] overflow-y-auto">
+
             <a href="learning_finmet.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
               <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
                 <span>Finmet Learning Hub</span>
                 <i class="fa-solid fa-book-open text-xs"></i>
               </div>
               <p class="text-xs text-zinc-300 mt-0.5">Masterclasses, core principles & comprehensive wealth guides.</p>
+            </a>
+
+            <a href="sector_q2.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
+              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
+                <span>Q2 Sector Report <span class="ml-1 px-1.5 py-0.5 text-[8px] uppercase bg-gradient-to-r from-emerald-400 to-lime-400 text-black rounded font-black">New</span></span>
+                <i class="fa-solid fa-chart-pie text-xs"></i>
+              </div>
+              <p class="text-xs text-zinc-300 mt-0.5">Deep dive on IT, Auto & Banking earnings this quarter.</p>
+            </a>
+
+            <a href="index.html#calculators" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
+              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
+                <span>Calculators</span>
+                <i class="fa-solid fa-calculator text-xs"></i>
+              </div>
+              <p class="text-xs text-zinc-300 mt-0.5">SIP, Lumpsum, FD/RD & Index Fund wealth engine.</p>
             </a>
 
             <a href="india_growth_story.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
@@ -253,13 +236,30 @@
               <p class="text-xs text-zinc-300 mt-0.5">Multi-decade rolling return analysis across bull & bear cycles.</p>
             </a>
 
+            <button onclick="openModal('riskModal')" class="block w-full text-left p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
+              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
+                <span>Risk Matrix</span>
+                <i class="fa-solid fa-shield-halved text-xs"></i>
+              </div>
+              <p class="text-xs text-zinc-300 mt-0.5">Benchmark your risk appetite before you invest.</p>
+            </button>
+
           </div>
         </div>
+
+        <!-- 3. Daily News with "LIVE" Tag -->
+        <a href="Daily_News.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2 group text-sm px-2 py-1">
+          <span>Daily News</span>
+          <span class="flex items-center gap-1 px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider bg-rose-500/20 border border-rose-500/50 text-rose-400 rounded-full group-hover:scale-110 transition-transform">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>LIVE
+          </span>
+        </a>
 
       </nav>
 
       <!-- Desktop CTA & Mobile Menu Toggle -->
       <div class="flex items-center gap-3">
+        <!-- 4. Sign In → Profile once logged in -->
         <a href="login.html" id="auth-nav-signed-out" class="px-4 py-2.5 text-xs font-extrabold rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black transition flex items-center gap-2">
           <i class="fa-solid fa-user"></i> Sign In
         </a>
@@ -269,9 +269,6 @@
         </a>
         <button onclick="toggleTheme()" id="theme-toggle-btn" class="p-2.5 rounded-xl bg-zinc-900 text-emerald-400 border border-emerald-500/40 hover:bg-zinc-800 transition" aria-label="Toggle light/dark theme">
           <i id="theme-icon" class="fa-solid fa-sun text-base"></i>
-        </button>
-        <button onclick="openModal('riskModal')" class="hidden sm:flex px-4 py-2.5 text-xs font-extrabold rounded-xl bg-zinc-900 hover:bg-zinc-800 text-emerald-400 border border-emerald-500/50 transition shadow-md hover:border-emerald-400 items-center">
-          <i class="fa-solid fa-shield-halved text-emerald-400 mr-2 text-sm"></i>Risk Matrix
         </button>
 
         <!-- Mobile Hamburger Button -->
@@ -288,18 +285,14 @@
         <span class="flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles"></i> Portfolio X-Ray (Signature Tool)</span>
         <span class="px-2 py-0.5 text-[9px] uppercase bg-emerald-400 text-black rounded font-black">Core</span>
       </a>
-      <a href="Daily_News.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-bold text-sm text-zinc-200">
-        <span class="flex items-center gap-2"><i class="fa-solid fa-newspaper text-rose-400"></i> Daily News</span>
-        <span class="flex items-center gap-1 px-2 py-0.5 text-[9px] font-black uppercase bg-rose-500/20 border border-rose-500/50 text-rose-400 rounded-full">
-          <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>LIVE
-        </span>
+
+      <div class="pt-1 pb-0.5 px-1 text-[10px] font-black uppercase tracking-wider text-zinc-500">Learning Hub</div>
+      <a href="learning_finmet.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-emerald-400">
+        Finmet Learning Hub
       </a>
       <a href="sector_q2.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-bold text-sm text-zinc-200">
         <span>Q2 Sector Report</span>
         <span class="px-2.5 py-0.5 text-[10px] font-black uppercase bg-emerald-400 text-black rounded-full animate-pulse">NEW</span>
-      </a>
-      <a href="learning_finmet.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-emerald-400">
-        Finmet Learning Hub
       </a>
       <a href="#calculators" onclick="toggleMobileMenu()" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
         Calculators (What, Where & How)
@@ -310,12 +303,28 @@
       <a href="mutual_Fund.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
         Historical MF Cycles
       </a>
+      <button onclick="openModal('riskModal'); toggleMobileMenu();" class="w-full text-left p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200 flex items-center gap-2">
+        <i class="fa-solid fa-shield-halved text-emerald-400"></i> Risk Matrix Benchmark
+      </button>
+
+      <div class="pt-1 pb-0.5 px-1 text-[10px] font-black uppercase tracking-wider text-zinc-500">Daily News</div>
+      <a href="Daily_News.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-bold text-sm text-zinc-200">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-newspaper text-rose-400"></i> Daily News</span>
+        <span class="flex items-center gap-1 px-2 py-0.5 text-[9px] font-black uppercase bg-rose-500/20 border border-rose-500/50 text-rose-400 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>LIVE
+        </span>
+      </a>
+
+      <a href="login.html" id="auth-mobile-signed-out" class="flex items-center justify-center gap-2 p-3.5 rounded-xl bg-emerald-500 text-black text-sm font-black">
+        <i class="fa-solid fa-user"></i> Sign In
+      </a>
+      <a href="profile.html" id="auth-mobile-signed-in" class="hidden items-center justify-center gap-2 p-3.5 rounded-xl bg-zinc-900 border border-emerald-500/40 text-emerald-400 text-sm font-bold">
+        <img id="auth-mobile-avatar" src="" class="w-6 h-6 rounded-full" alt="">
+        <span id="auth-mobile-name"></span>
+      </a>
       <div class="flex items-center gap-2 pt-2">
         <button onclick="toggleTheme()" class="w-14 py-3 text-lg rounded-xl bg-zinc-900 text-emerald-400 border border-emerald-500/40" aria-label="Toggle light/dark theme">
           <i id="theme-icon-mobile" class="fa-solid fa-sun"></i>
-        </button>
-        <button onclick="openModal('riskModal'); toggleMobileMenu();" class="flex-1 py-3 text-xs font-bold rounded-xl bg-emerald-500/15 text-emerald-400 border border-emerald-500/40">
-          Risk Matrix Benchmark
         </button>
       </div>
     </div>
@@ -738,17 +747,27 @@
     firebase.auth().onAuthStateChanged(user => {
       const outBtn = document.getElementById('auth-nav-signed-out');
       const inBtn = document.getElementById('auth-nav-signed-in');
-      if (!outBtn || !inBtn) return;
+      const mobileOutBtn = document.getElementById('auth-mobile-signed-out');
+      const mobileInBtn = document.getElementById('auth-mobile-signed-in');
       if (user) {
-        outBtn.classList.add('hidden');
-        inBtn.classList.remove('hidden');
-        inBtn.classList.add('flex');
-        document.getElementById('auth-nav-avatar').src = user.photoURL || '';
-        document.getElementById('auth-nav-name').textContent = (user.displayName || user.email || 'Account').split(' ')[0];
+        if (outBtn) outBtn.classList.add('hidden');
+        if (inBtn) { inBtn.classList.remove('hidden'); inBtn.classList.add('flex'); }
+        const avatar = document.getElementById('auth-nav-avatar');
+        const name = document.getElementById('auth-nav-name');
+        if (avatar) avatar.src = user.photoURL || '';
+        if (name) name.textContent = (user.displayName || user.email || 'Account').split(' ')[0];
+
+        if (mobileOutBtn) mobileOutBtn.classList.add('hidden');
+        if (mobileInBtn) { mobileInBtn.classList.remove('hidden'); mobileInBtn.classList.add('flex'); }
+        const mAvatar = document.getElementById('auth-mobile-avatar');
+        const mName = document.getElementById('auth-mobile-name');
+        if (mAvatar) mAvatar.src = user.photoURL || '';
+        if (mName) mName.textContent = (user.displayName || user.email || 'Account').split(' ')[0];
       } else {
-        outBtn.classList.remove('hidden');
-        inBtn.classList.add('hidden');
-        inBtn.classList.remove('flex');
+        if (outBtn) outBtn.classList.remove('hidden');
+        if (inBtn) { inBtn.classList.add('hidden'); inBtn.classList.remove('flex'); }
+        if (mobileOutBtn) mobileOutBtn.classList.remove('hidden');
+        if (mobileInBtn) { mobileInBtn.classList.add('hidden'); mobileInBtn.classList.remove('flex'); }
       }
     });
 
