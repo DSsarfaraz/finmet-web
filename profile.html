@@ -308,7 +308,25 @@
     doc.setTextColor(60, 60, 60);
     const summaryLines = doc.splitTextToSize(humanizedSummary(rec.fundA, rec.fundB, rec.overlapPct), 182);
     doc.text(summaryLines, 14, 84);
-    const tableStartY = 84 + summaryLines.length * 5 + 6;
+    let cursorY = 84 + summaryLines.length * 5 + 8;
+    const insightsToShow = rec.insights || [];
+    if (insightsToShow.length > 0) {
+      doc.setFontSize(10.5);
+      doc.setFont(undefined, 'bold');
+      doc.setTextColor(11, 15, 23);
+      doc.text('Key Insights & What To Do', 14, cursorY);
+      cursorY += 6;
+      doc.setFont(undefined, 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(50, 50, 50);
+      insightsToShow.forEach((text, i) => {
+        const lines = doc.splitTextToSize(`${i + 1}. ${text}`, 182);
+        doc.text(lines, 14, cursorY);
+        cursorY += lines.length * 4.6 + 2;
+      });
+      cursorY += 4;
+    }
+    const tableStartY = cursorY;
     doc.autoTable({
       startY: tableStartY,
       head: [['Stock', 'Sector', `${shortenName(rec.fundA)} Wt.`, `${shortenName(rec.fundB)} Wt.`, 'Overlap']],
