@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>My Reports — Finmet</title>
+<link rel="icon" type="image/png" href="finmet_logo.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#000; color:#e4e4e7;
+    font-family:'Plus Jakarta Sans', sans-serif;
+    min-height:100vh;
+  }
+  header.site-nav {
+    background:#000; border-bottom:1px solid rgba(16,185,129,0.35);
+    position:sticky; top:0; z-index:200; padding-top: env(safe-area-inset-top, 0px);
+  }
+  .site-nav-inner{
+    max-width:1100px; margin:0 auto; display:flex; align-items:center;
+    justify-content:space-between; padding:14px 20px; flex-wrap:wrap; gap:12px;
+  }
+  .site-logo{ display:flex; align-items:center; gap:8px; text-decoration:none; color:#fff; font-weight:800; font-size:17px; }
+  .site-logo img{ height:30px; }
+  .back-link{ color:#a7f3d0; text-decoration:none; font-size:13.5px; font-weight:600; }
+  .back-link:hover{ color:#fff; }
+
+  .wrap{ max-width:900px; margin:0 auto; padding:36px 20px 60px; }
+  h1{ font-size:24px; font-weight:800; color:#fff; margin:0 0 6px; }
+  .sub{ color:#a1a1aa; font-size:14px; margin:0 0 30px; }
+
+  .empty-state{
+    text-align:center; padding:60px 20px; color:#71717a;
+    border:1px dashed #27272a; border-radius:16px;
+  }
+  .empty-state i{ font-size:32px; color:#3f3f46; margin-bottom:14px; display:block; }
+  .empty-state a{ color:#34d399; text-decoration:underline; }
+
+  .signin-required{ text-align:center; padding:60px 20px; }
+  .signin-required a{
+    display:inline-flex; align-items:center; gap:8px; margin-top:16px;
+    background:#10b981; color:#000; font-weight:800; padding:12px 24px;
+    border-radius:10px; text-decoration:none; font-size:14px;
+  }
+
+  .report-card{
+    background:#0a0a0a; border:1px solid #27272a; border-radius:14px;
+    padding:20px 22px; margin-bottom:14px;
+    display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+  }
+  .report-info .names{ font-weight:700; color:#fff; font-size:15px; margin-bottom:4px; }
+  .report-info .meta{ font-size:12px; color:#71717a; }
+  .report-score{
+    font-family:'Plus Jakarta Sans', sans-serif; font-weight:800; font-size:22px;
+    padding:6px 16px; border-radius:10px; white-space:nowrap;
+  }
+  .score-high{ background:rgba(244,63,94,0.12); color:#fb7185; }
+  .score-mid{ background:rgba(245,158,11,0.12); color:#fbbf24; }
+  .score-low{ background:rgba(16,185,129,0.12); color:#34d399; }
+  .report-actions{ display:flex; gap:8px; }
+  .icon-btn{
+    background:#18181b; border:1px solid #3f3f46; color:#a1a1aa;
+    width:38px; height:38px; border-radius:9px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; text-decoration:none;
+  }
+  .icon-btn:hover{ border-color:#34d399; color:#34d399; }
+  .icon-btn.danger:hover{ border-color:#fb7185; color:#fb7185; }
+
+  .loading{ text-align:center; padding:60px; color:#52525b; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-logo">
+      <img src="finmet_logo.png" alt="Finmet" onerror="this.style.display='none'">
+      <span>Finmet</span>
+    </a>
+    <a href="overlap.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio X-Ray</a>
+    <a href="profile.html" class="back-link" style="margin-left:16px;"><i class="fa-solid fa-user"></i> My Profile</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>My Reports</h1>
+  <p class="sub">Every Portfolio X-Ray comparison you've saved, in one place.</p>
+
+  <div id="signin-required" class="signin-required" style="display:none;">
+    <i class="fa-solid fa-lock" style="font-size:32px; color:#3f3f46;"></i>
+    <p style="color:#a1a1aa; margin-top:14px;">Sign in to see your saved reports.</p>
+    <a href="login.html"><i class="fa-solid fa-user"></i> Sign In</a>
+  </div>
+
+  <div id="loading" class="loading">Loading your reports…</div>
+
+  <div id="empty-state" class="empty-state" style="display:none;">
+    <i class="fa-solid fa-folder-open"></i>
+    No saved reports yet. Run a comparison on <a href="overlap.html">Portfolio X-Ray</a> and save it here.
+  </div>
+
+  <div id="reports-list"></div>
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<!-- PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyA8Ra9niO6unHnnvuGm9hCxjw2cGTmvFQQ",
+    authDomain: "finmet-336f6.firebaseapp.com",
+    projectId: "finmet-336f6",
+    storageBucket: "finmet-336f6.firebasestorage.app",
+    messagingSenderId: "864658917637",
+    appId: "1:864658917637:web:c36f586cdc193d3d628f6c",
+    measurementId: "G-7HWJGXWLHF"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  function shortenName(name){
+    if (!name) return "Entity";
+    return name.replace(/-(.*)/, '').replace(/Direct Plan|Growth|Fund|Portfolio|\.xlsx|\.csv/gi, '').trim().slice(0, 18);
+  }
+
+  function scoreClass(pct){
+    if (pct > 40) return 'score-high';
+    if (pct > 20) return 'score-mid';
+    return 'score-low';
+  }
+
+  function formatDate(ts){
+    if (!ts) return '';
+    const d = ts.toDate ? ts.toDate() : new Date(ts);
+    return d.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' });
+  }
+
+  function humanizedSummary(fundA, fundB, pct){
+    const a = shortenName(fundA), b = shortenName(fundB);
+    if (pct > 40) {
+      return `${a} and ${b} share a hefty ${pct}% of their portfolios. In plain terms, for every Rs.100 you split between these two funds, roughly Rs.${Math.round(pct/2)} is doing the exact same job twice - buying the same set of companies under two different fund names. If diversification was the goal, this pairing isn't delivering much of it.`;
+    } else if (pct > 20) {
+      return `${a} and ${b} overlap by a moderate ${pct}%. You are getting some genuine diversification here, but a meaningful slice of your money is still riding on the same handful of stocks through both funds - worth keeping an eye on.`;
+    } else {
+      return `${a} and ${b} overlap by only ${pct}%. That is a good sign - these two funds are largely holding different companies, so together they are doing real diversification work rather than quietly duplicating each other.`;
+    }
+  }
+
+  function addFinmetPDFHeader(doc, subtitle){
+    doc.setFillColor(11, 15, 23);
+    doc.rect(0, 0, 210, 34, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(18);
+    doc.setFont(undefined, 'bold');
+    doc.text('Finmet — Portfolio X-Ray Report', 14, 15);
+    doc.setFontSize(10.5);
+    doc.setFont(undefined, 'normal');
+    doc.setTextColor(52, 211, 153);
+    doc.textWithLink('www.finmet.org', 14, 22, { url: 'https://www.finmet.org' });
+    doc.setTextColor(180, 200, 210);
+    doc.text(subtitle, 14, 29);
+  }
+
+  function addFinmetPDFFooter(doc, finalY){
+    const pageHeight = doc.internal.pageSize.getHeight();
+    let y = Math.min(finalY, pageHeight - 38);
+
+    doc.setDrawColor(220, 220, 220);
+    doc.line(14, y, 196, y);
+    y += 8;
+
+    doc.setFontSize(9);
+    doc.setFont(undefined, 'bold');
+    doc.setTextColor(11, 15, 23);
+    doc.text('Keep going with Finmet:', 14, y);
+    y += 6;
+
+    doc.setFont(undefined, 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(37, 99, 235);
+    doc.textWithLink('Join our WhatsApp investor community →', 14, y, { url: 'https://wa.me/917893918311' });
+    y += 6;
+    doc.textWithLink('Explore the Finmet Learning Hub →', 14, y, { url: 'https://www.finmet.org/learning_finmet.html' });
+    y += 9;
+
+    doc.setFontSize(7.5);
+    doc.setTextColor(130, 130, 130);
+    doc.text(
+      'This report is a category/holdings-level estimate for educational purposes only and is not investment advice.\n' +
+      'Generated by Finmet (www.finmet.org) — please verify against your funds\' latest factsheets before making decisions.',
+      14, y
+    );
+  }
+
+  function buildPDFFromRecord(rec){
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    addFinmetPDFHeader(doc, `Saved ${formatDate(rec.createdAt)}`);
+
+    doc.setTextColor(20, 20, 20);
+    doc.setFontSize(12);
+    doc.setFont(undefined, 'bold');
+    doc.text('Comparing:', 14, 46);
+    doc.setFont(undefined, 'normal');
+    doc.text(`${rec.fundA}   vs   ${rec.fundB}`, 14, 53);
+
+    doc.setFontSize(28);
+    doc.setFont(undefined, 'bold');
+    const c = rec.overlapPct > 40 ? [220,38,38] : rec.overlapPct > 20 ? [217,119,6] : [5,150,105];
+    doc.setTextColor(...c);
+    doc.text(`${rec.overlapPct}% Overlap`, 14, 68);
+
+    doc.setFontSize(10);
+    doc.setTextColor(90,90,90);
+    doc.setFont(undefined, 'normal');
+    doc.text(`${(rec.sharedStocks||[]).length} shared holdings · ${rec.totalOverlapWeight}% combined overlap weight`, 14, 75);
+
+    doc.setFontSize(9.5);
+    doc.setTextColor(60, 60, 60);
+    const summaryLines = doc.splitTextToSize(humanizedSummary(rec.fundA, rec.fundB, rec.overlapPct), 182);
+    doc.text(summaryLines, 14, 84);
+
+    const tableStartY = 84 + summaryLines.length * 5 + 6;
+    doc.autoTable({
+      startY: tableStartY,
+      head: [['Stock', 'Sector', `${shortenName(rec.fundA)} Wt.`, `${shortenName(rec.fundB)} Wt.`, 'Overlap']],
+      body: (rec.sharedStocks||[]).map(s => [s.stock, s.sector, `${s.weightA.toFixed(1)}%`, `${s.weightB.toFixed(1)}%`, `${s.overlap.toFixed(1)}%`]),
+      theme: 'striped',
+      headStyles: { fillColor: [11, 15, 23] },
+      styles: { fontSize: 9 },
+    });
+
+    const finalY = doc.lastAutoTable ? doc.lastAutoTable.finalY + 10 : 130;
+    addFinmetPDFFooter(doc, finalY);
+    return doc;
+  }
+
+  function downloadPDF(rec){
+    const doc = buildPDFFromRecord(rec);
+    const filename = `Finmet-Portfolio-XRay-${shortenName(rec.fundA)}-vs-${shortenName(rec.fundB)}.pdf`.replace(/\s+/g,'-');
+    doc.save(filename);
+  }
+
+  function deleteReport(uid, docId, cardEl){
+    if (!confirm('Delete this saved report?')) return;
+    db.collection('signups').doc(uid).collection('comparisons').doc(docId).delete()
+      .then(() => cardEl.remove())
+      .catch(err => alert('Could not delete: ' + err.message));
+  }
+
+  function renderReports(uid, docs){
+    const list = document.getElementById('reports-list');
+    const empty = document.getElementById('empty-state');
+    document.getElementById('loading').style.display = 'none';
+
+    if (docs.empty) { empty.style.display = 'block'; return; }
+
+    list.innerHTML = '';
+    docs.forEach(doc => {
+      const rec = doc.data();
+      const card = document.createElement('div');
+      card.className = 'report-card';
+      card.innerHTML = `
+        <div class="report-info">
+          <div class="names">${rec.fundA} <span style="color:#52525b;">vs</span> ${rec.fundB}</div>
+          <div class="meta">${formatDate(rec.createdAt)} · ${(rec.sharedStocks||[]).length} shared holdings</div>
+        </div>
+        <div class="report-score ${scoreClass(rec.overlapPct)}">${rec.overlapPct}%</div>
+        <div class="report-actions">
+          <button class="icon-btn pdf-btn" title="Download PDF"><i class="fa-solid fa-file-pdf"></i></button>
+          <button class="icon-btn danger" title="Delete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      `;
+      card.querySelector('.pdf-btn').addEventListener('click', () => downloadPDF(rec));
+      card.querySelector('.icon-btn.danger').addEventListener('click', () => deleteReport(uid, doc.id, card));
+      list.appendChild(card);
+    });
+  }
+
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('signin-required').style.display = 'block';
+      return;
+    }
+    db.collection('signups').doc(user.uid).collection('comparisons')
+      .orderBy('createdAt', 'desc')
+      .get()
+      .then(snap => renderReports(user.uid, snap))
+      .catch(err => {
+        document.getElementById('loading').textContent = 'Could not load reports: ' + err.message;
+      });
+  });
+</script>
+</body>
+</html>

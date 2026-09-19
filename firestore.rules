@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Each signed-in user can create/read/update ONLY their own document
+    // (matched by their Firebase Auth UID as the document ID).
+    // Nobody can read another user's data through the client SDK.
+    match /signups/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      // Saved Portfolio X-Ray comparisons — same rule: only the owner
+      // can read/write their own saved reports.
+      match /comparisons/{comparisonId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+  }
+}

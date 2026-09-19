@@ -41,6 +41,13 @@
       border-radius: 4px;
     }
   </style>
+  <!-- Firebase (Sign In state + Firestore save) -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+  <!-- PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body class="min-h-screen flex flex-col justify-between custom-scrollbar">
 
@@ -163,6 +170,27 @@
           <div id="overlap-score" class="text-5xl sm:text-6xl font-black text-rose-500 tracking-tight mb-2">0%</div>
           <div id="overlap-badge" class="inline-flex items-center gap-1.5 text-xs font-bold text-rose-400 uppercase tracking-wider bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
             Select funds to calculate overlap
+          </div>
+
+          <div class="flex items-center justify-center gap-3 mt-5 flex-wrap">
+            <a href="login.html" id="report-signin-cta" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black text-sm font-black transition">
+              <i class="fa-solid fa-lock"></i> Sign in to save &amp; download PDF
+            </a>
+            <div id="report-actions" class="hidden items-center gap-3 flex-wrap">
+              <button onclick="saveComparisonToHistory()" id="save-report-btn" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black text-sm font-black transition">
+                <i class="fa-solid fa-floppy-disk"></i> Save to My History
+              </button>
+              <button onclick="downloadOverlapPDF()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-sm font-black transition">
+                <i class="fa-solid fa-file-pdf"></i> Download PDF Report
+              </button>
+              <a href="history.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-emerald-400 text-sm font-bold transition">
+                <i class="fa-solid fa-clock-rotate-left"></i> My Reports
+              </a>
+              <a href="profile.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-700 hover:border-emerald-500 text-slate-300 hover:text-emerald-400 text-sm font-bold transition">
+                <i class="fa-solid fa-user"></i> My Profile
+              </a>
+            </div>
+            <span id="report-status" class="text-xs text-slate-500"></span>
           </div>
         </div>
 
@@ -781,6 +809,16 @@
 
       // Compute & Render Sector Intelligence
       renderSectorAnalytics(holdingsA, holdingsB, nameEntityA, nameEntityB);
+
+      // Stash the full result so Save-to-History and PDF export can use it
+      window.lastOverlapResult = {
+        fundA: nameEntityA,
+        fundB: nameEntityB,
+        overlapPct,
+        totalOverlapWeight: Number(totalOverlapWeight.toFixed(1)),
+        sharedStocks: sharedStocks.sort((a, b) => b.overlap - a.overlap),
+        computedAt: new Date().toISOString(),
+      };
     }
 
     // SECTOR GRAPH & INTELLIGENCE REPORT RENDERER
@@ -900,6 +938,180 @@
     function shortenName(name) {
       if (!name) return "Entity";
       return name.replace(/-(.*)/, '').replace(/Direct Plan|Growth|Fund|Portfolio|\.xlsx|\.csv/gi, '').trim().slice(0, 18);
+    }
+
+    // ================= Sign In gate + Save/PDF =================
+    const firebaseConfig = {
+      apiKey: "AIzaSyA8Ra9niO6unHnnvuGm9hCxjw2cGTmvFQQ",
+      authDomain: "finmet-336f6.firebaseapp.com",
+      projectId: "finmet-336f6",
+      storageBucket: "finmet-336f6.firebasestorage.app",
+      messagingSenderId: "864658917637",
+      appId: "1:864658917637:web:c36f586cdc193d3d628f6c",
+      measurementId: "G-7HWJGXWLHF"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    let currentUser = null;
+
+    auth.onAuthStateChanged(user => {
+      currentUser = user;
+      const signinCta = document.getElementById('report-signin-cta');
+      const actions = document.getElementById('report-actions');
+      if (!signinCta || !actions) return;
+      if (user) {
+        signinCta.classList.add('hidden');
+        actions.classList.remove('hidden');
+        actions.classList.add('flex');
+      } else {
+        signinCta.classList.remove('hidden');
+        actions.classList.add('hidden');
+        actions.classList.remove('flex');
+      }
+    });
+
+    function setReportStatus(msg, isError){
+      const el = document.getElementById('report-status');
+      if (!el) return;
+      el.textContent = msg;
+      el.style.color = isError ? '#fb7185' : '#64748b';
+    }
+
+    function saveComparisonToHistory(){
+      if (!currentUser) { window.location.href = 'login.html'; return; }
+      const result = window.lastOverlapResult;
+      if (!result) { setReportStatus('Run a comparison first.', true); return; }
+
+      setReportStatus('Saving…');
+      db.collection('signups').doc(currentUser.uid).collection('comparisons').add({
+        fundA: result.fundA,
+        fundB: result.fundB,
+        overlapPct: result.overlapPct,
+        totalOverlapWeight: result.totalOverlapWeight,
+        sharedStocks: result.sharedStocks.slice(0, 25), // cap stored size
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      })
+      .then(() => setReportStatus('✓ Saved to My History'))
+      .catch(err => {
+        console.error(err);
+        setReportStatus('Save failed — try again.', true);
+      });
+    }
+
+    function humanizedSummary(result){
+      const pct = result.overlapPct;
+      const a = shortenName(result.fundA), b = shortenName(result.fundB);
+      if (pct > 40) {
+        return `${a} and ${b} share a hefty ${pct}% of their portfolios. In plain terms, for every Rs.100 you split between these two funds, roughly Rs.${Math.round(pct/2)} is doing the exact same job twice - buying the same set of companies under two different fund names. If diversification was the goal, this pairing isn't delivering much of it.`;
+      } else if (pct > 20) {
+        return `${a} and ${b} overlap by a moderate ${pct}%. You are getting some genuine diversification here, but a meaningful slice of your money is still riding on the same handful of stocks through both funds - worth keeping an eye on.`;
+      } else {
+        return `${a} and ${b} overlap by only ${pct}%. That is a good sign - these two funds are largely holding different companies, so together they are doing real diversification work rather than quietly duplicating each other.`;
+      }
+    }
+
+    function addFinmetPDFHeader(doc, subtitle){
+      doc.setFillColor(11, 15, 23);
+      doc.rect(0, 0, 210, 34, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(18);
+      doc.setFont(undefined, 'bold');
+      doc.text('Finmet — Portfolio X-Ray Report', 14, 15);
+      doc.setFontSize(10.5);
+      doc.setFont(undefined, 'normal');
+      doc.setTextColor(52, 211, 153);
+      doc.textWithLink('www.finmet.org', 14, 22, { url: 'https://www.finmet.org' });
+      doc.setTextColor(180, 200, 210);
+      doc.text(subtitle, 14, 29);
+    }
+
+    function addFinmetPDFFooter(doc, finalY){
+      const pageHeight = doc.internal.pageSize.getHeight();
+      let y = Math.min(finalY, pageHeight - 38);
+
+      doc.setDrawColor(220, 220, 220);
+      doc.line(14, y, 196, y);
+      y += 8;
+
+      doc.setFontSize(9);
+      doc.setFont(undefined, 'bold');
+      doc.setTextColor(11, 15, 23);
+      doc.text('Keep going with Finmet:', 14, y);
+      y += 6;
+
+      doc.setFont(undefined, 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(37, 99, 235);
+      doc.textWithLink('Join our WhatsApp investor community →', 14, y, { url: 'https://wa.me/917893918311' });
+      y += 6;
+      doc.textWithLink('Explore the Finmet Learning Hub →', 14, y, { url: 'https://www.finmet.org/learning_finmet.html' });
+      y += 9;
+
+      doc.setFontSize(7.5);
+      doc.setTextColor(130, 130, 130);
+      doc.text(
+        'This report is a category/holdings-level estimate for educational purposes only and is not investment advice.\n' +
+        'Generated by Finmet (www.finmet.org) — please verify against your funds\' latest factsheets before making decisions.',
+        14, y
+      );
+    }
+
+    function buildOverlapPDF(result){
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      addFinmetPDFHeader(doc, `Generated ${new Date(result.computedAt).toLocaleString('en-IN')}`);
+
+      doc.setTextColor(20, 20, 20);
+      doc.setFontSize(12);
+      doc.setFont(undefined, 'bold');
+      doc.text('Comparing:', 14, 46);
+      doc.setFont(undefined, 'normal');
+      doc.text(`${result.fundA}   vs   ${result.fundB}`, 14, 53);
+
+      doc.setFontSize(28);
+      doc.setFont(undefined, 'bold');
+      const overlapColor = result.overlapPct > 40 ? [220, 38, 38] : result.overlapPct > 20 ? [217, 119, 6] : [5, 150, 105];
+      doc.setTextColor(...overlapColor);
+      doc.text(`${result.overlapPct}% Overlap`, 14, 68);
+
+      doc.setFontSize(10);
+      doc.setTextColor(90, 90, 90);
+      doc.setFont(undefined, 'normal');
+      doc.text(`${result.sharedStocks.length} shared holdings · ${result.totalOverlapWeight}% combined overlap weight`, 14, 75);
+
+      doc.setFontSize(9.5);
+      doc.setTextColor(60, 60, 60);
+      const summaryLines = doc.splitTextToSize(humanizedSummary(result), 182);
+      doc.text(summaryLines, 14, 84);
+
+      const tableStartY = 84 + summaryLines.length * 5 + 6;
+      doc.autoTable({
+        startY: tableStartY,
+        head: [['Stock', 'Sector', `${shortenName(result.fundA)} Wt.`, `${shortenName(result.fundB)} Wt.`, 'Overlap']],
+        body: result.sharedStocks.map(s => [
+          s.stock, s.sector, `${s.weightA.toFixed(1)}%`, `${s.weightB.toFixed(1)}%`, `${s.overlap.toFixed(1)}%`
+        ]),
+        theme: 'striped',
+        headStyles: { fillColor: [11, 15, 23] },
+        styles: { fontSize: 9 },
+      });
+
+      const finalY = doc.lastAutoTable ? doc.lastAutoTable.finalY + 10 : 130;
+      addFinmetPDFFooter(doc, finalY);
+
+      return doc;
+    }
+
+    function downloadOverlapPDF(){
+      if (!currentUser) { window.location.href = 'login.html'; return; }
+      const result = window.lastOverlapResult;
+      if (!result) { setReportStatus('Run a comparison first.', true); return; }
+      const doc = buildOverlapPDF(result);
+      const filename = `Finmet-Portfolio-XRay-${shortenName(result.fundA)}-vs-${shortenName(result.fundB)}.pdf`.replace(/\s+/g, '-');
+      doc.save(filename);
+      setReportStatus('✓ PDF downloaded');
     }
   </script>
 </body>
