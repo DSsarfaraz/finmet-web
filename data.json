@@ -1,72 +1,72 @@
 {
-  "updated_at": "2026-09-18T09:24:50.954Z",
+  "updated_at": "2026-09-19T08:14:57.069Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23383.5,
-      "change_pct": 0.49
+      "value": 23346.4,
+      "change_pct": 0.33
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74670.58,
-      "change_pct": 0.48
+      "value": 74294.96,
+      "change_pct": -0.03
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 95.33,
-      "change_pct": -6.46,
+      "value": 96.08,
+      "change_pct": -5.72,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 136630,
-      "change_pct": 0.79,
+      "value": 136402,
+      "change_pct": 0.57,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4434.6,
-      "change_pct": 0.79,
+      "value": 4424.9,
+      "change_pct": 0.57,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22844.7,
-      "change_pct": 1.22
+      "price": 22901.85,
+      "change_pct": 1.48
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19844.65,
-      "change_pct": 1.58
+      "price": 19875.7,
+      "change_pct": 1.74
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 56483.45,
-      "change_pct": 0.76
+      "price": 56358.7,
+      "change_pct": 0.54
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28726.1,
-      "change_pct": -1.47
+      "price": 28854.55,
+      "change_pct": -1.03
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27303.75,
-      "change_pct": 0.53
+      "price": 27129,
+      "change_pct": -0.11
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45710.85,
-      "change_pct": 0.3
+      "price": 45466.8,
+      "change_pct": -0.23
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 13022.05,
-      "change_pct": 1.27
+      "price": 13052.6,
+      "change_pct": 1.51
     }
   ],
   "news": {
@@ -82,6 +82,12 @@
         "source": "The Wall Street Journal",
         "url": "https://www.wsj.com/finance/investing/u-s-stock-futures-little-changed-as-markets-weigh-warshs-hawkish-remarks-5a036994",
         "published_at": "2026-08-31T11:42:00Z"
+      },
+      {
+        "title": "Why Bitcoin’s Price Is Spiking This Week",
+        "source": "Gizmodo.com",
+        "url": "https://gizmodo.com/why-bitcoins-price-is-spiking-this-week-2000803801",
+        "published_at": "2026-08-27T17:50:23Z"
       }
     ],
     "indian": [
@@ -92,42 +98,48 @@
         "published_at": "2026-08-31T16:06:46Z"
       },
       {
-        "title": "Sugar spike: this isn't the first time weak data and ad hoc policies are showing up in food prices",
+        "title": "The Fed’s rate hike is both good news and bad for us but the latest US tariff threat is harder to defuse",
         "source": "Livemint",
-        "url": "https://www.livemint.com/opinion/online-views/sugar-spike-not-the-first-time-weak-data-and-ad-hoc-policies-in-food-prices-el-nino-11788344598352.html",
-        "published_at": "2026-09-03T07:18:16Z"
+        "url": "https://www.livemint.com/opinion/online-views/fed-rate-hike-plus-us-tariff-threat-double-whammy-for-india-donald-trump-kevin-warsh-rbi-11789651093189.html",
+        "published_at": "2026-09-18T02:30:14Z"
+      },
+      {
+        "title": "Bank of England Governor Warns AI Represents Threat to the Global Economy",
+        "source": "Gizmodo.com",
+        "url": "https://gizmodo.com/bank-of-england-governor-warns-ai-represents-threat-to-the-global-economy-2000804936",
+        "published_at": "2026-08-31T17:40:01Z"
       }
     ],
     "stocks_in_news": [
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Advent to invest ₹3,150 cr in Yatharth Hospitals for a 24.9% stake",
-        "url": "https://www.livemint.com/companies/news/advent-to-invest-in-yatharth-hospitals-private-equity-firm-india-hospitals-11789632631127.html"
+        "title": "Nifty regains 23,300 mark, midcaps, smallcaps gain",
+        "url": "https://www.business-standard.com/markets/capital-market-news/nifty-regains-23-300-mark-midcaps-smallcaps-gain-126091800476_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Sensex, Nifty trade in positive terrain; pharma shares snap 5-day losing streak",
-        "url": "https://www.business-standard.com/markets/capital-market-news/sensex-nifty-trade-in-positive-terrain-pharma-shares-snap-5-day-losing-streak-126091700646_1.html"
-      },
-      {
-        "symbol": "NSE",
-        "cap": "Large/Mid Cap",
-        "title": "NSE IPO impact: IFCI, New India Assurance, GIC RE shares rally up to 9%",
-        "url": "https://www.business-standard.com/markets/news/nse-ipo-impact-ifci-new-india-assurance-gic-re-shares-rally-up-to-9-126091700611_1.html"
+        "title": "Jefferies hikes Navin Fluorine share price target, forecasts 14% upside. 4 reasons why",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-hikes-navin-fluorine-share-price-target-forecasts-14-upside-4-reasons-why/articleshow/134328838.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Kanohar, Glass Wall Systems zoom 18%; up 40% against issue price in 2 days",
-        "url": "https://www.business-standard.com/markets/news/kanohar-glass-wall-systems-zoom-18-up-40-against-issue-price-in-2-days-126091700583_1.html"
+        "title": "iPhone 18 sales open: Electronics Mart, Redington, Eternal rise up to 8%",
+        "url": "https://www.business-standard.com/markets/news/iphone-18-sales-open-electronics-mart-redington-eternal-rise-up-to-8-126091800464_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Peak XV Partners sells 1.46$ stake in Groww for ₹1,756 cr in block deal",
-        "url": "https://www.business-standard.com/companies/news/peak-xv-partners-sells-1-46-stake-in-groww-for-1-756-cr-in-block-deal-126091700562_1.html"
+        "title": "Alkali Metals Ltd leads gainers in 'B' group",
+        "url": "https://www.business-standard.com/markets/capital-market-news/alkali-metals-ltd-leads-gainers-in-b-group-126091800452_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Avalon Technologies Ltd leads gainers in 'A' group",
+        "url": "https://www.business-standard.com/markets/capital-market-news/avalon-technologies-ltd-leads-gainers-in-a-group-126091800451_1.html"
       }
     ]
   }
