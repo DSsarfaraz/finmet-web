@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sign In — Finmet</title>
+<link rel="icon" type="image/png" href="finmet_logo.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#000; color:#e4e4e7;
+    font-family:'Plus Jakarta Sans', sans-serif;
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    padding:20px;
+  }
+  .card{
+    width:100%; max-width:380px;
+    background:#0a0a0a;
+    border:1px solid rgba(16,185,129,0.35);
+    border-radius:20px;
+    padding:36px 30px;
+    text-align:center;
+    box-shadow:0 0 40px rgba(16,185,129,0.08);
+  }
+  .card img{ height:56px; margin-bottom:18px; }
+  .card h1{ font-size:21px; font-weight:800; margin:0 0 8px; color:#fff; }
+  .card p{ color:#a1a1aa; font-size:13.5px; margin:0 0 28px; }
+
+  .g-btn{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; padding:13px;
+    background:#fff; color:#1f2937;
+    border:none; border-radius:10px;
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-size:14.5px; font-weight:700;
+    cursor:pointer;
+  }
+  .g-btn:hover{ background:#f3f4f6; }
+  .g-btn img{ height:19px; width:19px; margin:0; }
+
+  .status{ margin-top:18px; font-size:13px; color:#71717a; min-height:18px; }
+  .status.error{ color:#fb7185; }
+  .status.success{ color:#34d399; }
+
+  .signed-in-box{ display:none; }
+  .avatar{ width:64px; height:64px; border-radius:50%; margin-bottom:14px; border:2px solid rgba(16,185,129,0.5); }
+  .cta{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:20px; padding:11px 22px;
+    background:linear-gradient(90deg,#10b981,#84cc16);
+    color:#000; font-weight:800; font-size:13.5px;
+    border-radius:10px; text-decoration:none;
+  }
+  .signout{
+    display:block; margin-top:14px; font-size:12.5px; color:#71717a;
+    background:none; border:none; cursor:pointer; text-decoration:underline;
+    font-family:'Plus Jakarta Sans', sans-serif;
+  }
+  .back{ display:block; margin-top:22px; font-size:12.5px; color:#52525b; text-decoration:none; }
+  .back:hover{ color:#a1a1aa; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img src="finmet_logo.png" alt="Finmet" onerror="this.style.display='none'">
+
+  <div id="signed-out-box">
+    <h1>Sign in to Finmet</h1>
+    <p>Save your Portfolio X-Ray comparisons and pick up where you left off.</p>
+    <button class="g-btn" onclick="signInWithGoogle()">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="">
+      Continue with Google
+    </button>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div id="signed-in-box" class="signed-in-box">
+    <img id="avatar" class="avatar" src="" alt="">
+    <h1 id="welcome-name">Welcome!</h1>
+    <p id="welcome-email"></p>
+    <a href="overlap.html" class="cta"><i class="fa-solid fa-wand-magic-sparkles"></i> Go to Portfolio X-Ray</a>
+    <button class="signout" onclick="signOutUser()">Sign out</button>
+  </div>
+
+  <a href="index.html" class="back">← Back to Finmet</a>
+</div>
+
+<!-- Firebase SDK (compat, works without a build step) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyA8Ra9niO6unHnnvuGm9hCxjw2cGTmvFQQ",
+    authDomain: "finmet-336f6.firebaseapp.com",
+    projectId: "finmet-336f6",
+    storageBucket: "finmet-336f6.firebasestorage.app",
+    messagingSenderId: "864658917637",
+    appId: "1:864658917637:web:c36f586cdc193d3d628f6c",
+    measurementId: "G-7HWJGXWLHF"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  function setStatus(msg, type){
+    const el = document.getElementById('status');
+    el.textContent = msg;
+    el.className = 'status' + (type ? ' ' + type : '');
+  }
+
+  function signInWithGoogle(){
+    setStatus('Opening Google sign-in…');
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider)
+      .then(result => saveUserToFirestore(result.user))
+      .catch(err => {
+        console.error(err);
+        setStatus(err.message || 'Sign-in failed. Please try again.', 'error');
+      });
+  }
+
+  function saveUserToFirestore(user){
+    const ref = db.collection('signups').doc(user.uid);
+    return ref.set({
+      uid: user.uid,
+      name: user.displayName || '',
+      email: user.email || '',
+      photoURL: user.photoURL || '',
+      lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true })
+    .then(() => setStatus('Signed in!', 'success'))
+    .catch(err => {
+      console.error('Firestore save failed:', err);
+      setStatus('Signed in, but saving your profile failed. Try refreshing.', 'error');
+    });
+  }
+
+  function signOutUser(){
+    auth.signOut();
+  }
+
+  function showSignedIn(user){
+    document.getElementById('signed-out-box').style.display = 'none';
+    document.getElementById('signed-in-box').style.display = 'block';
+    document.getElementById('avatar').src = user.photoURL || '';
+    document.getElementById('welcome-name').textContent = 'Hi, ' + (user.displayName ? user.displayName.split(' ')[0] : 'there') + '!';
+    document.getElementById('welcome-email').textContent = user.email || '';
+  }
+  function showSignedOut(){
+    document.getElementById('signed-out-box').style.display = 'block';
+    document.getElementById('signed-in-box').style.display = 'none';
+  }
+
+  auth.onAuthStateChanged(user => {
+    if (user) showSignedIn(user);
+    else showSignedOut();
+  });
+</script>
+</body>
+</html>

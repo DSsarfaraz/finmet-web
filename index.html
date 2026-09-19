@@ -2,7 +2,7 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Finmet - Simplifying Finance</title>
   
   <!-- Favicon -->
@@ -43,6 +43,7 @@
       background: rgba(5, 5, 5, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
+      padding-top: env(safe-area-inset-top, 0px);
     }
     .glass-card {
       background: rgba(16, 16, 18, 0.9);
@@ -71,6 +72,9 @@
       border-color: transparent transparent rgba(9, 9, 11, 1) transparent;
     }
   </style>
+  <!-- Firebase (for Sign In state) -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
 </head>
 <body class="bg-black text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
 
@@ -165,7 +169,7 @@
         <div class="relative group py-2">
           <a href="overlap.html" class="px-3.5 py-2 rounded-xl bg-emerald-500/15 border border-emerald-500/50 hover:bg-emerald-500/25 text-emerald-400 transition-all flex items-center gap-2 text-sm font-black shadow-lg shadow-emerald-500/10">
             <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i>
-            <span>MF Overlap</span>
+            <span>Portfolio X-Ray</span>
             <span class="px-1.5 py-0.5 text-[9px] uppercase tracking-wider bg-emerald-400 text-black rounded font-black animate-pulse">Signature</span>
           </a>
           
@@ -256,6 +260,13 @@
 
       <!-- Desktop CTA & Mobile Menu Toggle -->
       <div class="flex items-center gap-3">
+        <a href="login.html" id="auth-nav-signed-out" class="px-4 py-2.5 text-xs font-extrabold rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black transition flex items-center gap-2">
+          <i class="fa-solid fa-user"></i> Sign In
+        </a>
+        <a href="login.html" id="auth-nav-signed-in" class="hidden px-3 py-1.5 rounded-xl bg-zinc-900 border border-emerald-500/40 text-xs font-bold text-emerald-400 items-center gap-2">
+          <img id="auth-nav-avatar" src="" class="w-6 h-6 rounded-full" alt="">
+          <span id="auth-nav-name"></span>
+        </a>
         <button onclick="toggleTheme()" id="theme-toggle-btn" class="p-2.5 rounded-xl bg-zinc-900 text-emerald-400 border border-emerald-500/40 hover:bg-zinc-800 transition" aria-label="Toggle light/dark theme">
           <i id="theme-icon" class="fa-solid fa-sun text-base"></i>
         </button>
@@ -274,7 +285,7 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden border-b border-emerald-950/80 bg-zinc-950/95 px-4 pt-4 pb-6 space-y-4">
       <a href="overlap.html" class="flex items-center justify-between p-3.5 rounded-xl bg-emerald-500/20 border border-emerald-500/60 font-black text-emerald-400 text-sm">
-        <span class="flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles"></i> MF Overlap (Signature Tool)</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles"></i> Portfolio X-Ray (Signature Tool)</span>
         <span class="px-2 py-0.5 text-[9px] uppercase bg-emerald-400 text-black rounded font-black">Core</span>
       </a>
       <a href="Daily_News.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-bold text-sm text-zinc-200">
@@ -330,7 +341,7 @@
 
         <div class="flex flex-col sm:flex-row gap-3 pt-2">
           <a href="overlap.html" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-black shadow-xl shadow-emerald-500/30 transition-all hover:scale-105 text-sm sm:text-base flex items-center justify-center gap-2">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> Try Signature MF Overlap
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Try Portfolio X-Ray
           </a>
           <a href="https://wa.me/917893918311" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-emerald-400 font-bold border border-emerald-500/40 transition-all flex items-center justify-center gap-2 text-sm sm:text-base shadow-md">
             <i class="fa-brands fa-whatsapp text-lg"></i> Join 500+ Members Community
@@ -430,7 +441,7 @@
           <div class="w-11 h-11 rounded-xl bg-emerald-500 text-black flex items-center justify-center text-lg mb-3.5 font-bold transition-all shadow-md">
             <i class="fa-solid fa-wand-magic-sparkles"></i>
           </div>
-          <h3 class="text-base sm:text-lg font-black text-white mb-1.5 group-hover:text-emerald-400 transition-colors">Mutual Fund Overlap</h3>
+          <h3 class="text-base sm:text-lg font-black text-white mb-1.5 group-hover:text-emerald-400 transition-colors">Portfolio X-Ray</h3>
           <p class="text-xs sm:text-sm text-zinc-300 font-medium">Identify portfolio duplication across equity funds before investing.</p>
         </a>
 
@@ -677,7 +688,7 @@
         © 2026 Finmet (<a href="https://finmet.org" class="text-emerald-400 hover:underline font-bold">www.finmet.org</a>). Built for retail market research & analytics.
       </div>
       <div class="flex flex-wrap justify-center gap-5 font-bold">
-        <a href="overlap.html" class="text-emerald-400 hover:underline">MF Overlap (Signature)</a>
+        <a href="overlap.html" class="text-emerald-400 hover:underline">Portfolio X-Ray (Signature)</a>
         <a href="Daily_News.html" class="hover:text-emerald-400 transition-colors">Daily News</a>
         <a href="sector_q2.html" class="hover:text-emerald-400 transition-colors">Sector Q2</a>
         <a href="learning_finmet.html" class="hover:text-emerald-400 transition-colors">Learning Hub</a>
@@ -712,6 +723,34 @@
     }
     // Restore saved preference on load (defaults to dark, the original design)
     applyTheme(localStorage.getItem('finmet-theme') === 'light');
+
+    // --- Sign-in state (nav badge) ---
+    const firebaseConfig = {
+      apiKey: "AIzaSyA8Ra9niO6unHnnvuGm9hCxjw2cGTmvFQQ",
+      authDomain: "finmet-336f6.firebaseapp.com",
+      projectId: "finmet-336f6",
+      storageBucket: "finmet-336f6.firebasestorage.app",
+      messagingSenderId: "864658917637",
+      appId: "1:864658917637:web:c36f586cdc193d3d628f6c",
+      measurementId: "G-7HWJGXWLHF"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.auth().onAuthStateChanged(user => {
+      const outBtn = document.getElementById('auth-nav-signed-out');
+      const inBtn = document.getElementById('auth-nav-signed-in');
+      if (!outBtn || !inBtn) return;
+      if (user) {
+        outBtn.classList.add('hidden');
+        inBtn.classList.remove('hidden');
+        inBtn.classList.add('flex');
+        document.getElementById('auth-nav-avatar').src = user.photoURL || '';
+        document.getElementById('auth-nav-name').textContent = (user.displayName || user.email || 'Account').split(' ')[0];
+      } else {
+        outBtn.classList.remove('hidden');
+        inBtn.classList.add('hidden');
+        inBtn.classList.remove('flex');
+      }
+    });
 
     // --- Live Market Ticker (Nifty, Sensex, Crude, Gold, Broad/Sector Indices, BTC, ETH) ---
     const HOME_TICKER_FALLBACK = {"updated_at":"2026-09-15T10:00:00Z","_note":"Last verified close (Tue 15 Sep 2026, IST session). This file is overwritten automatically once the GitHub Action runs with live keys \u2014 see SETUP_GUIDE.md.","indices":{"nifty":{"label":"NIFTY 50","value":23118.6,"change_pct":-1.19},"sensex":{"label":"SENSEX","value":74003.82,"change_pct":-1.04},"crude":{"label":"CRUDE (WTI)","value":103.5,"change_pct":1.3,"unit":"USD/bbl"},"gold_inr":{"label":"GOLD (India, 24K/10g, Delhi)","value":154240,"change_pct":-0.32,"unit":"INR/10g"},"gold_usd":{"label":"GOLD (USD)","value":4284.48,"change_pct":-1.25,"unit":"USD/oz"}},"broad_indices":[{"symbol":"NIFTY MIDCAP 150","price":21845.3,"change_pct":-0.85},{"symbol":"NIFTY SMALLCAP 100","price":19906.3,"change_pct":-1.1}],"sector_indices":[{"symbol":"NIFTY BANK","price":55794.75,"change_pct":-1.43},{"symbol":"NIFTY IT","price":28921.5,"change_pct":0.11},{"symbol":"NIFTY AUTO","price":27304.5,"change_pct":-0.86},{"symbol":"NIFTY FMCG","price":45053.75,"change_pct":-0.29},{"symbol":"NIFTY METAL","price":12999.05,"change_pct":-2.3}],"crypto":[{"symbol":"BITCOIN","price":62150.3,"change_pct":1.25},{"symbol":"ETHEREUM","price":2410.8,"change_pct":0.95}],"news":{"international":[{"title":"Fed rate-hike bets firm up as oil-driven inflation scare grips markets","source":"Reuters","url":"https://www.reuters.com","published_at":"2026-09-15T04:00:00Z"},{"title":"US 10-year Treasury yield tops 5% as investors weigh Fed outlook","source":"Bloomberg","url":"https://www.bloomberg.com","published_at":"2026-09-15T02:00:00Z"},{"title":"Dow Jones swings as White House weighs response to oil price spike","source":"The Wall Street Journal","url":"https://www.wsj.com","published_at":"2026-09-15T07:00:00Z"}],"indian":[{"title":"Sensex, Nifty fall over 1% as oil surge and Fed bets weigh on sentiment","source":"Business Standard","url":"https://www.business-standard.com","published_at":"2026-09-15T10:00:00Z"},{"title":"IT stocks rally even as broader market succumbs to oil-driven selloff","source":"The Economic Times","url":"https://economictimes.indiatimes.com","published_at":"2026-09-15T09:30:00Z"},{"title":"RBI watches rupee closely as crude prices climb past $103","source":"Mint","url":"https://www.livemint.com","published_at":"2026-09-15T08:00:00Z"}],"stocks_in_news":[{"symbol":"HCLTECH","cap":"Large Cap","title":"HCL Technologies leads IT rally, up nearly 4% on strong volumes","url":"https://www.moneycontrol.com"},{"symbol":"BEL","cap":"Mid Cap","title":"Bharat Electronics falls over 5% on profit booking after recent rally","url":"https://www.moneycontrol.com"},{"symbol":"SHRIRAMFIN","cap":"Large Cap","title":"Shriram Finance under pressure amid broader financials selloff","url":"https://www.moneycontrol.com"},{"symbol":"GRASIM","cap":"Large Cap","title":"Grasim Industries slips as cement and chemicals demand outlook softens","url":"https://www.moneycontrol.com"},{"symbol":"INFY","cap":"Large Cap","title":"Infosys gains nearly 4% tracking sector-wide IT strength","url":"https://www.moneycontrol.com"}]}};;

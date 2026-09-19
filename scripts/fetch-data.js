@@ -191,6 +191,10 @@ const SECTOR_INDEX_SYMBOLS = [
   { symbol: '^CNXFMCG',  label: 'NIFTY FMCG' },
   { symbol: '^CNXMETAL', label: 'NIFTY METAL' },
 ];
+const CRYPTO_SYMBOLS = [
+  { symbol: 'BTC-USD', label: 'BITCOIN' },
+  { symbol: 'ETH-USD', label: 'ETHEREUM' },
+];
 
 async function getIndexGroup(symbolList, previous) {
   const results = [];
@@ -277,7 +281,7 @@ function guessSymbolFromTitle(title) {
 async function main() {
   const previous = fs.existsSync(OUT_FILE)
     ? JSON.parse(fs.readFileSync(OUT_FILE, 'utf8'))
-    : { indices: {}, broad_indices: [], sector_indices: [], news: {} };
+    : { indices: {}, broad_indices: [], sector_indices: [], crypto: [], news: {} };
 
   log('Fetching indices (Nifty, Sensex, Crude, Gold)...');
   const indices = await getIndices(previous.indices);
@@ -287,6 +291,9 @@ async function main() {
 
   log('Fetching top sector indices (Bank, IT, Auto, FMCG, Metal)...');
   const sectorIndices = await getIndexGroup(SECTOR_INDEX_SYMBOLS, previous.sector_indices);
+
+  log('Fetching crypto (BTC, ETH)...');
+  const crypto = await getIndexGroup(CRYPTO_SYMBOLS, previous.crypto);
 
   log('Fetching international news...');
   const international = (await getInternationalNews()) || previous.news.international || [];
@@ -302,6 +309,7 @@ async function main() {
     indices,
     broad_indices: broadIndices,
     sector_indices: sectorIndices,
+    crypto,
     news: { international, indian, stocks_in_news: stocksInNews },
   };
 
