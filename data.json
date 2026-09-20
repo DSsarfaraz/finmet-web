@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T08:14:57.069Z",
+  "updated_at": "2026-09-20T08:46:44.627Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
@@ -69,6 +69,18 @@
       "change_pct": 1.51
     }
   ],
+  "crypto": [
+    {
+      "symbol": "BITCOIN",
+      "price": 80227,
+      "change_pct": -1.24
+    },
+    {
+      "symbol": "ETHEREUM",
+      "price": 2572.43,
+      "change_pct": -2.26
+    }
+  ],
   "news": {
     "international": [
       {
@@ -112,34 +124,34 @@
     ],
     "stocks_in_news": [
       {
-        "symbol": "NEWS",
+        "symbol": "SBI",
         "cap": "Large/Mid Cap",
-        "title": "Nifty regains 23,300 mark, midcaps, smallcaps gain",
-        "url": "https://www.business-standard.com/markets/capital-market-news/nifty-regains-23-300-mark-midcaps-smallcaps-gain-126091800476_1.html"
+        "title": "Rossell Techsys to raise Rs 300 crore from SBI Mutual Fund, SBI Optimal Equity Fund",
+        "url": "https://www.business-standard.com/markets/capital-market-news/rossell-techsys-to-raise-rs-300-crore-from-sbi-mutual-fund-sbi-optimal-equity-fund-126091900359_1.html"
+      },
+      {
+        "symbol": "HDFC",
+        "cap": "Large/Mid Cap",
+        "title": "HDFC Mutual Fund buys 3.2% stake in Entero Healthcare Solutions from Prasid Uno Family Trust",
+        "url": "https://www.moneycontrol.com/news/business/markets/hdfc-mutual-fund-buys-3-2-stake-in-entero-healthcare-solutions-from-prasid-uno-family-trust-14033273.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Jefferies hikes Navin Fluorine share price target, forecasts 14% upside. 4 reasons why",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-hikes-navin-fluorine-share-price-target-forecasts-14-upside-4-reasons-why/articleshow/134328838.cms"
+        "title": "bharatstock 0.1.8",
+        "url": "https://pypi.org/project/bharatstock/0.1.8/"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "iPhone 18 sales open: Electronics Mart, Redington, Eternal rise up to 8%",
-        "url": "https://www.business-standard.com/markets/news/iphone-18-sales-open-electronics-mart-redington-eternal-rise-up-to-8-126091800464_1.html"
+        "title": "bhavkit added to PyPI",
+        "url": "https://pypi.org/project/bhavkit/"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Alkali Metals Ltd leads gainers in 'B' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/alkali-metals-ltd-leads-gainers-in-b-group-126091800452_1.html"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Avalon Technologies Ltd leads gainers in 'A' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/avalon-technologies-ltd-leads-gainers-in-a-group-126091800451_1.html"
+        "title": "bharatstock 0.1.7",
+        "url": "https://pypi.org/project/bharatstock/0.1.7/"
       }
     ]
   }
