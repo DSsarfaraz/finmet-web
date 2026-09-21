@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-09-20T08:46:44.627Z",
+  "updated_at": "2026-09-21T09:14:37.894Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23346.4,
-      "change_pct": 0.33
+      "value": 23451.05,
+      "change_pct": 0.45
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74294.96,
-      "change_pct": -0.03
+      "value": 74921.47,
+      "change_pct": 0.84
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 96.08,
-      "change_pct": -5.72,
+      "value": 94.53,
+      "change_pct": -5.75,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 136402,
-      "change_pct": 0.57,
+      "value": 135153,
+      "change_pct": -0.84,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4424.9,
-      "change_pct": 0.57,
+      "value": 4387.7,
+      "change_pct": -0.84,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22901.85,
-      "change_pct": 1.48
+      "price": 22863.15,
+      "change_pct": -0.17
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19875.7,
-      "change_pct": 1.74
+      "price": 19881.05,
+      "change_pct": 0.03
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 56358.7,
-      "change_pct": 0.54
+      "price": 56593.35,
+      "change_pct": 0.42
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28854.55,
-      "change_pct": -1.03
+      "price": 28876.5,
+      "change_pct": 0.08
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27129,
-      "change_pct": -0.11
+      "price": 27218.9,
+      "change_pct": 0.33
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45466.8,
-      "change_pct": -0.23
+      "price": 46028.45,
+      "change_pct": 1.24
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 13052.6,
-      "change_pct": 1.51
+      "price": 12991.65,
+      "change_pct": -0.47
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 80227,
-      "change_pct": -1.24
+      "price": 83942.78,
+      "change_pct": 3.45
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2572.43,
-      "change_pct": -2.26
+      "price": 2696.86,
+      "change_pct": 2.04
     }
   ],
   "news": {
@@ -124,34 +124,34 @@
     ],
     "stocks_in_news": [
       {
-        "symbol": "SBI",
+        "symbol": "SME",
         "cap": "Large/Mid Cap",
-        "title": "Rossell Techsys to raise Rs 300 crore from SBI Mutual Fund, SBI Optimal Equity Fund",
-        "url": "https://www.business-standard.com/markets/capital-market-news/rossell-techsys-to-raise-rs-300-crore-from-sbi-mutual-fund-sbi-optimal-equity-fund-126091900359_1.html"
-      },
-      {
-        "symbol": "HDFC",
-        "cap": "Large/Mid Cap",
-        "title": "HDFC Mutual Fund buys 3.2% stake in Entero Healthcare Solutions from Prasid Uno Family Trust",
-        "url": "https://www.moneycontrol.com/news/business/markets/hdfc-mutual-fund-buys-3-2-stake-in-entero-healthcare-solutions-from-prasid-uno-family-trust-14033273.html"
+        "title": "SME IPO: Liqvd Digital India issue to open on Sep 23; price band fixed at ₹51-54",
+        "url": "https://www.thehindubusinessline.com/markets/sme-ipo-liqvd-digital-india-issue-to-open-on-sep-23-price-band-fixed-at-51-54/article71487439.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "bharatstock 0.1.8",
-        "url": "https://pypi.org/project/bharatstock/0.1.8/"
+        "title": "Crude oil, West Asia situation likely to drive stock market this week",
+        "url": "https://www.business-standard.com/markets/news/crude-oil-west-asia-situation-likely-to-drive-stock-market-this-week-126092000204_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "bhavkit added to PyPI",
-        "url": "https://pypi.org/project/bhavkit/"
+        "title": "6 companies line up IPOs worth ₹3,825 cr amid brisk primary market activity",
+        "url": "https://www.business-standard.com/markets/news/6-companies-line-up-ipos-worth-3-825-cr-amid-brisk-primary-market-activity-126092000194_1.html"
+      },
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "NSE GMP falls to its lowest level since the IPO announcement. Is the listing pop fading?",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/nse-gmp-falls-to-its-lowest-level-since-the-ipo-announcement-is-the-listing-pop-fading/articleshow/134364080.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "bharatstock 0.1.7",
-        "url": "https://pypi.org/project/bharatstock/0.1.7/"
+        "title": "Bandu’s Blockbusters for September 20, 2026",
+        "url": "https://www.thehindubusinessline.com/portfolio/technical-analysis/bandus-blockbusters-for-september-20-2026/article71481052.ece"
       }
     ]
   }
