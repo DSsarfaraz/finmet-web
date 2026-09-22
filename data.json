@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-09-21T09:14:37.894Z",
+  "updated_at": "2026-09-22T08:46:04.978Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23451.05,
-      "change_pct": 0.45
+      "value": 23372.6,
+      "change_pct": -0.18
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74921.47,
-      "change_pct": 0.84
+      "value": 74429.18,
+      "change_pct": -0.57
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 94.53,
-      "change_pct": -5.75,
+      "value": 92.67,
+      "change_pct": -3.25,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 135153,
-      "change_pct": -0.84,
+      "value": 133538,
+      "change_pct": -1.08,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4387.7,
-      "change_pct": -0.84,
+      "value": 4336.5,
+      "change_pct": -1.08,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22863.15,
-      "change_pct": -0.17
+      "price": 22789.75,
+      "change_pct": -0.12
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19881.05,
-      "change_pct": 0.03
+      "price": 19838.85,
+      "change_pct": -0.11
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 56593.35,
-      "change_pct": 0.42
+      "price": 56325.6,
+      "change_pct": -0.26
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28876.5,
-      "change_pct": 0.08
+      "price": 28651.3,
+      "change_pct": -0.62
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27218.9,
-      "change_pct": 0.33
+      "price": 27122.65,
+      "change_pct": -0.1
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 46028.45,
-      "change_pct": 1.24
+      "price": 45730.4,
+      "change_pct": -0.37
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12991.65,
-      "change_pct": -0.47
+      "price": 12986.05,
+      "change_pct": 0.1
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 83942.78,
-      "change_pct": 3.45
+      "price": 86039.63,
+      "change_pct": -0.65
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2696.86,
-      "change_pct": 2.04
+      "price": 2745.42,
+      "change_pct": -1.12
     }
   ],
   "news": {
@@ -124,34 +124,34 @@
     ],
     "stocks_in_news": [
       {
-        "symbol": "SME",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "SME IPO: Liqvd Digital India issue to open on Sep 23; price band fixed at ₹51-54",
-        "url": "https://www.thehindubusinessline.com/markets/sme-ipo-liqvd-digital-india-issue-to-open-on-sep-23-price-band-fixed-at-51-54/article71487439.ece"
+        "title": "Trump’s tariff tantrums return? Gokaldas Exports, other textile stocks drop up to 5% after Trump signs Russia sanctions bill",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/trumps-tariff-tantrums-return-gokaldas-exports-other-textile-stocks-drop-up-to-5-after-trump-signs-russia-sanctions-bill/articleshow/134384836.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Crude oil, West Asia situation likely to drive stock market this week",
-        "url": "https://www.business-standard.com/markets/news/crude-oil-west-asia-situation-likely-to-drive-stock-market-this-week-126092000204_1.html"
+        "title": "Sai Life Sciences Ltd soars 1.03%, up for third straight session",
+        "url": "https://www.business-standard.com/markets/capital-market-news/sai-life-sciences-ltd-soars-1-03-up-for-third-straight-session-126092100507_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "6 companies line up IPOs worth ₹3,825 cr amid brisk primary market activity",
-        "url": "https://www.business-standard.com/markets/news/6-companies-line-up-ipos-worth-3-825-cr-amid-brisk-primary-market-activity-126092000194_1.html"
-      },
-      {
-        "symbol": "NSE",
-        "cap": "Large/Mid Cap",
-        "title": "NSE GMP falls to its lowest level since the IPO announcement. Is the listing pop fading?",
-        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/nse-gmp-falls-to-its-lowest-level-since-the-ipo-announcement-is-the-listing-pop-fading/articleshow/134364080.cms"
+        "title": "Dr Reddys Laboratories Ltd spurts 1.99%, gains for third straight session",
+        "url": "https://www.business-standard.com/markets/capital-market-news/dr-reddys-laboratories-ltd-spurts-1-99-gains-for-third-straight-session-126092100505_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Bandu’s Blockbusters for September 20, 2026",
-        "url": "https://www.thehindubusinessline.com/portfolio/technical-analysis/bandus-blockbusters-for-september-20-2026/article71481052.ece"
+        "title": "Biocon Ltd gains for third consecutive session",
+        "url": "https://www.business-standard.com/markets/capital-market-news/biocon-ltd-gains-for-third-consecutive-session-126092100504_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Piramal Pharma Ltd soars 2.68%",
+        "url": "https://www.business-standard.com/markets/capital-market-news/piramal-pharma-ltd-soars-2-68-126092100503_1.html"
       }
     ]
   }
