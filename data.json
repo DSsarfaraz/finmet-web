@@ -1,93 +1,93 @@
 {
-  "updated_at": "2026-09-22T08:46:04.978Z",
+  "updated_at": "2026-09-23T08:47:25.459Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23372.6,
-      "change_pct": -0.18
+      "value": 23444.85,
+      "change_pct": 0.13
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74429.18,
-      "change_pct": -0.57
+      "value": 74817.01,
+      "change_pct": -0.06
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 92.67,
-      "change_pct": -3.25,
+      "value": 90.44,
+      "change_pct": -4.39,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 133538,
-      "change_pct": -1.08,
+      "value": 134027,
+      "change_pct": -0.49,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4336.5,
-      "change_pct": -1.08,
+      "value": 4355,
+      "change_pct": -0.49,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22789.75,
-      "change_pct": -0.12
+      "price": 22926.35,
+      "change_pct": 0.48
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19838.85,
-      "change_pct": -0.11
+      "price": 19980.05,
+      "change_pct": 0.83
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 56325.6,
-      "change_pct": -0.26
+      "price": 56589.45,
+      "change_pct": 0.21
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28651.3,
-      "change_pct": -0.62
+      "price": 28300.9,
+      "change_pct": -1.84
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27122.65,
-      "change_pct": -0.1
+      "price": 27149.55,
+      "change_pct": 0.23
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45730.4,
-      "change_pct": -0.37
+      "price": 46174.15,
+      "change_pct": 1.13
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12986.05,
-      "change_pct": 0.1
+      "price": 13284.65,
+      "change_pct": 2.27
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 86039.63,
+      "price": 86036.96,
       "change_pct": -0.65
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2745.42,
-      "change_pct": -1.12
+      "price": 2738.82,
+      "change_pct": -1.36
     }
   ],
   "news": {
     "international": [
       {
-        "title": "Bitcoin drops below $80,000 as US jobs data spurs Fed-hike bets",
+        "title": "Bitcoin retreats from eight-month high after dizzying 13% rally",
         "source": "Bloomberg",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-04/bitcoin-drops-below-80-000-as-hot-jobs-data-spurs-fed-hike-bets",
-        "published_at": "2026-09-07T03:29:51Z"
+        "url": "https://www.bloomberg.com/news/articles/2026-09-22/bitcoin-retreats-from-eight-month-high-after-dizzying-13-rally",
+        "published_at": "2026-09-22T03:33:44Z"
       },
       {
         "title": "U.S. Stock Futures Little Changed as Markets Weigh Warsh’s Hawkish Remarks",
@@ -124,34 +124,34 @@
     ],
     "stocks_in_news": [
       {
-        "symbol": "NEWS",
+        "symbol": "CMF",
         "cap": "Large/Mid Cap",
-        "title": "Trump’s tariff tantrums return? Gokaldas Exports, other textile stocks drop up to 5% after Trump signs Russia sanctions bill",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/trumps-tariff-tantrums-return-gokaldas-exports-other-textile-stocks-drop-up-to-5-after-trump-signs-russia-sanctions-bill/articleshow/134384836.cms"
+        "title": "Optiemus Infracom zooms 20% on huge volumes as CMF expands partnership",
+        "url": "https://www.business-standard.com/markets/news/optiemus-infracom-zooms-20-on-huge-volumes-as-cmf-expands-partnership-126092200584_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Sai Life Sciences Ltd soars 1.03%, up for third straight session",
-        "url": "https://www.business-standard.com/markets/capital-market-news/sai-life-sciences-ltd-soars-1-03-up-for-third-straight-session-126092100507_1.html"
+        "title": "Benchmarks hit fresh intraday low; Europe opens in the green",
+        "url": "https://www.business-standard.com/markets/capital-market-news/benchmarks-hit-fresh-intraday-low-europe-opens-in-the-green-126092200587_1.html"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "NSE",
         "cap": "Large/Mid Cap",
-        "title": "Dr Reddys Laboratories Ltd spurts 1.99%, gains for third straight session",
-        "url": "https://www.business-standard.com/markets/capital-market-news/dr-reddys-laboratories-ltd-spurts-1-99-gains-for-third-straight-session-126092100505_1.html"
+        "title": "NSE IPO allotment today: How to check status on BSE and MUFG Intime? GMP hints at 4% listing gains",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/nse-ipo-allotment-today-how-to-check-status-on-bse-and-mufg-intime-gmp-hints-at-4-listing-gains/articleshow/134407016.cms"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "TRAI",
         "cap": "Large/Mid Cap",
-        "title": "Biocon Ltd gains for third consecutive session",
-        "url": "https://www.business-standard.com/markets/capital-market-news/biocon-ltd-gains-for-third-consecutive-session-126092100504_1.html"
+        "title": "TRAI mandates more voice and SMS only recharge options; Vi shares soar",
+        "url": "https://economictimes.indiatimes.com/industry/telecom/telecom-policy/trai-mandates-more-voice-and-sms-only-recharge-options-vi-shares-soar/articleshow/134406808.cms"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "IPO",
         "cap": "Large/Mid Cap",
-        "title": "Piramal Pharma Ltd soars 2.68%",
-        "url": "https://www.business-standard.com/markets/capital-market-news/piramal-pharma-ltd-soars-2-68-126092100503_1.html"
+        "title": "German Green Steel and Power IPO to open on Sep 25; price band fixed at ₹132-139/share",
+        "url": "https://www.thehindubusinessline.com/markets/german-green-steel-and-power-ipo-to-open-on-sep-25-price-band-fixed-at-132-139share/article71494556.ece"
       }
     ]
   }
