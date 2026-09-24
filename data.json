@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-09-24T08:41:57.656Z",
+  "updated_at": "2026-09-24T17:02:14.654Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23070.4,
-      "change_pct": -1.61
+      "value": 23063.1,
+      "change_pct": -1.64
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 73658.21,
-      "change_pct": -1.56
+      "value": 73580.54,
+      "change_pct": -1.67
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 94.18,
-      "change_pct": 2.19,
+      "value": 93.75,
+      "change_pct": 1.73,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 132840,
-      "change_pct": -0.28,
+      "value": 133015,
+      "change_pct": -0.15,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4306.2,
-      "change_pct": -0.28,
+      "value": 4312.1,
+      "change_pct": -0.15,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22490.85,
-      "change_pct": -1.91
+      "price": 22469.9,
+      "change_pct": -2
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19678.4,
-      "change_pct": -1.57
+      "price": 19684.75,
+      "change_pct": -1.53
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 55423.25,
-      "change_pct": -1.99
+      "price": 55438.5,
+      "change_pct": -1.96
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28151.35,
-      "change_pct": -0.64
+      "price": 28208.85,
+      "change_pct": -0.44
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 26800.75,
-      "change_pct": -1.31
+      "price": 26730.1,
+      "change_pct": -1.57
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45745.05,
-      "change_pct": -1.11
+      "price": 45759.35,
+      "change_pct": -1.08
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 13050.85,
-      "change_pct": -1.89
+      "price": 13041.95,
+      "change_pct": -1.96
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 83784.41,
-      "change_pct": -0.71
+      "price": 84381.62,
+      "change_pct": 0
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2670.7,
-      "change_pct": -0.52
+      "price": 2683.91,
+      "change_pct": -0.03
     }
   ],
   "news": {
@@ -126,32 +126,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Fredun Pharmaceuticals Acquires 26% Stake in Rs 300 Crore-Valued Goodman Vetcare Pvt. Ltd., One of India’s Longest-Standing Dedicated Pet Pharmacies",
-        "url": "https://www.newsx.com/business/fredun-pharmaceuticals-acquires-26-stake-in-rs-300-crore-valued-goodman-vetcare-pvt-ltd-one-of-indias-longest-standing-dedicated-pet-pharmacies-274878/"
+        "title": "Alex Trebek’s former LA home was demolished after his death; a new 20,000-square-foot mansion replaced the house his family lived in for nearly 30 years",
+        "url": "https://timesofindia.indiatimes.com/real-estate/news/alex-trebeks-former-la-home-was-demolished-after-his-death-a-new-20000-square-foot-mansion-replaced-the-house-his-family-lived-in-for-nearly-30-years/articleshow/134442661.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "11:11 | Donald Trump says he could annihilate Iran, Apollo Global caps private credit, AI updates and more",
-        "url": "https://www.cnbctv18.com/business/1111-donald-trump-says-he-could-annihilate-iran-apollo-global-caps-private-credit-ai-updates-and-more-19996304.htm"
+        "title": "Ahead of Market: 10 things that will decide stock market action on Thursday",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-thursday/articleshow/134442041.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "From fabrics to fighter jets: Raymond moves into fighter aircraft assembly",
-        "url": "https://economictimes.indiatimes.com/news/defence/from-fabrics-to-fighter-jets-raymond-moves-into-fighter-aircraft-assembly/articleshow/134429302.cms"
+        "title": "Waaree Energies board approves Indosolar merger; public shareholders to get 1 share for every 11",
+        "url": "https://www.thehindubusinessline.com/companies/waaree-energies-board-approves-indosolar-merger-public-shareholders-to-get-1-share-for-every-11/article71500987.ece"
+      },
+      {
+        "symbol": "IPO",
+        "cap": "Large/Mid Cap",
+        "title": "PM Cona Ind files draft IPO papers to raise ₹120 cr via fresh equity",
+        "url": "https://www.business-standard.com/companies/news/pm-cona-ind-files-draft-ipo-papers-to-raise-120-cr-via-fresh-equity-126092301161_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Benchmarks hold firm; Europe opens higher after Saudi Arabia restarts east-west pipeline",
-        "url": "https://www.business-standard.com/markets/capital-market-news/benchmarks-hold-firm-europe-opens-higher-after-saudi-arabia-restarts-east-west-pipeline-126092300575_1.html"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Choice Equity Broking Launches Trader Mode on Choice FinX, Bringing Advanced Execution Tools to Active Traders",
-        "url": "https://www.thehindubusinessline.com/brandhub/pr-release/choice-equity-broking-launches-trader-mode-on-choice-finx-bringing-advanced-execution-tools-to-active-traders/article71498962.ece"
+        "title": "Meesho shares worth ₹900 cr change hands in SoftBank arm's mega block deal",
+        "url": "https://www.business-standard.com/markets/news/meesho-shares-worth-900-cr-change-hands-in-softbank-arm-s-mega-block-deal-126092301183_1.html"
       }
     ]
   }
