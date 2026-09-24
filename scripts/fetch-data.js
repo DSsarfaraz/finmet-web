@@ -28,6 +28,9 @@ const path = require('path');
 
 const ALPHAVANTAGE_KEY = process.env.ALPHAVANTAGE_KEY || '';
 const NEWSAPI_KEY = process.env.NEWSAPI_KEY || '';
+// Prices/indices fetch on every scheduled run; news only fetches once a day
+// (set FETCH_NEWS=true on exactly one of the day's scheduled runs).
+const FETCH_NEWS = (process.env.FETCH_NEWS || 'true').toLowerCase() === 'true';
 
 // Writes next to Daily_News.html by default (one level up from /scripts).
 // Set DATA_OUT_DIR if your site keeps pages in a different folder.
@@ -295,14 +298,22 @@ async function main() {
   log('Fetching crypto (BTC, ETH)...');
   const crypto = await getIndexGroup(CRYPTO_SYMBOLS, previous.crypto);
 
-  log('Fetching international news...');
-  const international = (await getInternationalNews()) || previous.news.international || [];
+  let international, indian, stocksInNews;
+  if (FETCH_NEWS) {
+    log('Fetching international news...');
+    international = (await getInternationalNews()) || previous.news.international || [];
 
-  log('Fetching Indian markets news...');
-  const indian = (await getIndianNews()) || previous.news.indian || [];
+    log('Fetching Indian markets news...');
+    indian = (await getIndianNews()) || previous.news.indian || [];
 
-  log('Fetching stocks-in-news...');
-  const stocksInNews = (await getStocksInNews()) || previous.news.stocks_in_news || [];
+    log('Fetching stocks-in-news...');
+    stocksInNews = (await getStocksInNews()) || previous.news.stocks_in_news || [];
+  } else {
+    log('Skipping news fetch this run (FETCH_NEWS=false) — reusing previous news data.');
+    international = previous.news.international || [];
+    indian = previous.news.indian || [];
+    stocksInNews = previous.news.stocks_in_news || [];
+  }
 
   const output = {
     updated_at: new Date().toISOString(),
