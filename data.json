@@ -1,81 +1,93 @@
 {
-  "updated_at": "2026-09-19T08:14:57.069Z",
+  "updated_at": "2026-09-24T08:41:57.656Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23346.4,
-      "change_pct": 0.33
+      "value": 23070.4,
+      "change_pct": -1.61
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74294.96,
-      "change_pct": -0.03
+      "value": 73658.21,
+      "change_pct": -1.56
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 96.08,
-      "change_pct": -5.72,
+      "value": 94.18,
+      "change_pct": 2.19,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 136402,
-      "change_pct": 0.57,
+      "value": 132840,
+      "change_pct": -0.28,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4424.9,
-      "change_pct": 0.57,
+      "value": 4306.2,
+      "change_pct": -0.28,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22901.85,
-      "change_pct": 1.48
+      "price": 22490.85,
+      "change_pct": -1.91
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19875.7,
-      "change_pct": 1.74
+      "price": 19678.4,
+      "change_pct": -1.57
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 56358.7,
-      "change_pct": 0.54
+      "price": 55423.25,
+      "change_pct": -1.99
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28854.55,
-      "change_pct": -1.03
+      "price": 28151.35,
+      "change_pct": -0.64
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27129,
-      "change_pct": -0.11
+      "price": 26800.75,
+      "change_pct": -1.31
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45466.8,
-      "change_pct": -0.23
+      "price": 45745.05,
+      "change_pct": -1.11
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 13052.6,
-      "change_pct": 1.51
+      "price": 13050.85,
+      "change_pct": -1.89
+    }
+  ],
+  "crypto": [
+    {
+      "symbol": "BITCOIN",
+      "price": 83784.41,
+      "change_pct": -0.71
+    },
+    {
+      "symbol": "ETHEREUM",
+      "price": 2670.7,
+      "change_pct": -0.52
     }
   ],
   "news": {
     "international": [
       {
-        "title": "Bitcoin drops below $80,000 as US jobs data spurs Fed-hike bets",
+        "title": "Bitcoin retreats from eight-month high after dizzying 13% rally",
         "source": "Bloomberg",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-04/bitcoin-drops-below-80-000-as-hot-jobs-data-spurs-fed-hike-bets",
-        "published_at": "2026-09-07T03:29:51Z"
+        "url": "https://www.bloomberg.com/news/articles/2026-09-22/bitcoin-retreats-from-eight-month-high-after-dizzying-13-rally",
+        "published_at": "2026-09-22T03:33:44Z"
       },
       {
         "title": "U.S. Stock Futures Little Changed as Markets Weigh Warsh’s Hawkish Remarks",
@@ -114,32 +126,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Nifty regains 23,300 mark, midcaps, smallcaps gain",
-        "url": "https://www.business-standard.com/markets/capital-market-news/nifty-regains-23-300-mark-midcaps-smallcaps-gain-126091800476_1.html"
+        "title": "Fredun Pharmaceuticals Acquires 26% Stake in Rs 300 Crore-Valued Goodman Vetcare Pvt. Ltd., One of India’s Longest-Standing Dedicated Pet Pharmacies",
+        "url": "https://www.newsx.com/business/fredun-pharmaceuticals-acquires-26-stake-in-rs-300-crore-valued-goodman-vetcare-pvt-ltd-one-of-indias-longest-standing-dedicated-pet-pharmacies-274878/"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Jefferies hikes Navin Fluorine share price target, forecasts 14% upside. 4 reasons why",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/jefferies-hikes-navin-fluorine-share-price-target-forecasts-14-upside-4-reasons-why/articleshow/134328838.cms"
+        "title": "11:11 | Donald Trump says he could annihilate Iran, Apollo Global caps private credit, AI updates and more",
+        "url": "https://www.cnbctv18.com/business/1111-donald-trump-says-he-could-annihilate-iran-apollo-global-caps-private-credit-ai-updates-and-more-19996304.htm"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "iPhone 18 sales open: Electronics Mart, Redington, Eternal rise up to 8%",
-        "url": "https://www.business-standard.com/markets/news/iphone-18-sales-open-electronics-mart-redington-eternal-rise-up-to-8-126091800464_1.html"
+        "title": "From fabrics to fighter jets: Raymond moves into fighter aircraft assembly",
+        "url": "https://economictimes.indiatimes.com/news/defence/from-fabrics-to-fighter-jets-raymond-moves-into-fighter-aircraft-assembly/articleshow/134429302.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Alkali Metals Ltd leads gainers in 'B' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/alkali-metals-ltd-leads-gainers-in-b-group-126091800452_1.html"
+        "title": "Benchmarks hold firm; Europe opens higher after Saudi Arabia restarts east-west pipeline",
+        "url": "https://www.business-standard.com/markets/capital-market-news/benchmarks-hold-firm-europe-opens-higher-after-saudi-arabia-restarts-east-west-pipeline-126092300575_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Avalon Technologies Ltd leads gainers in 'A' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/avalon-technologies-ltd-leads-gainers-in-a-group-126091800451_1.html"
+        "title": "Choice Equity Broking Launches Trader Mode on Choice FinX, Bringing Advanced Execution Tools to Active Traders",
+        "url": "https://www.thehindubusinessline.com/brandhub/pr-release/choice-equity-broking-launches-trader-mode-on-choice-finx-bringing-advanced-execution-tools-to-active-traders/article71498962.ece"
       }
     ]
   }
