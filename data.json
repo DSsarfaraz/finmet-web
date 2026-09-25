@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-09-24T17:02:14.654Z",
+  "updated_at": "2026-09-25T09:12:41.794Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23063.1,
-      "change_pct": -1.64
+      "value": 23126.5,
+      "change_pct": 0.27
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 73580.54,
-      "change_pct": -1.67
+      "value": 73843.05,
+      "change_pct": 0.36
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 93.75,
-      "change_pct": 1.73,
+      "value": 92.19,
+      "change_pct": -2.56,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 133015,
-      "change_pct": -0.15,
+      "value": 133461,
+      "change_pct": 0.8,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4312.1,
-      "change_pct": -0.15,
+      "value": 4332.2,
+      "change_pct": 0.8,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22469.9,
-      "change_pct": -2
+      "price": 22436.3,
+      "change_pct": -0.15
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19684.75,
-      "change_pct": -1.53
+      "price": 19712.2,
+      "change_pct": 0.14
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 55438.5,
-      "change_pct": -1.96
+      "price": 55665.55,
+      "change_pct": 0.41
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28208.85,
-      "change_pct": -0.44
+      "price": 28096.25,
+      "change_pct": -0.4
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 26730.1,
-      "change_pct": -1.57
+      "price": 26977.55,
+      "change_pct": 0.93
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45759.35,
-      "change_pct": -1.08
+      "price": 45863.8,
+      "change_pct": 0.23
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 13041.95,
-      "change_pct": -1.96
+      "price": 13088.55,
+      "change_pct": 0.36
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 84381.62,
-      "change_pct": 0
+      "price": 84610.64,
+      "change_pct": 0.27
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2683.91,
-      "change_pct": -0.03
+      "price": 2694.34,
+      "change_pct": 0.26
     }
   ],
   "news": {
@@ -126,32 +126,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Alex Trebek’s former LA home was demolished after his death; a new 20,000-square-foot mansion replaced the house his family lived in for nearly 30 years",
-        "url": "https://timesofindia.indiatimes.com/real-estate/news/alex-trebeks-former-la-home-was-demolished-after-his-death-a-new-20000-square-foot-mansion-replaced-the-house-his-family-lived-in-for-nearly-30-years/articleshow/134442661.cms"
+        "title": "Buzzing stock: Raymond hits record high in weak market; up 95% in 4 weeks",
+        "url": "https://www.business-standard.com/markets/news/buzzing-stock-raymond-hits-record-high-in-weak-market-up-95-in-4-weeks-126092400638_1.html"
+      },
+      {
+        "symbol": "HDFC",
+        "cap": "Large/Mid Cap",
+        "title": "HDFC Mutual Fund sells 1.45% stake in Escorts Kubota for ₹453 cr",
+        "url": "https://www.thehindubusinessline.com/markets/hdfc-mutual-fund-sells-145-stake-in-escorts-kubota-for-453-cr/article71503418.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Ahead of Market: 10 things that will decide stock market action on Thursday",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-thursday/articleshow/134442041.cms"
+        "title": "Info Edge shares plunge 7% as bloodbath in PB Fintech shares wipes off Rs 1,809 crore from recruiter's stake. What lies ahead?",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/info-edge-shares-plunge-7-as-bloodbath-in-pb-fintech-shares-wipes-off-rs-1809-crore-from-recruiters-stake-what-lies-ahead/articleshow/134456914.cms"
+      },
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "PSUs in NSE IPO: How much did SBI, other government entities make in India’s second largest offer?",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/psus-in-nse-ipo-how-much-did-sbi-other-government-entities-make-in-indias-second-largest-offer/articleshow/134456776.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Waaree Energies board approves Indosolar merger; public shareholders to get 1 share for every 11",
-        "url": "https://www.thehindubusinessline.com/companies/waaree-energies-board-approves-indosolar-merger-public-shareholders-to-get-1-share-for-every-11/article71500987.ece"
-      },
-      {
-        "symbol": "IPO",
-        "cap": "Large/Mid Cap",
-        "title": "PM Cona Ind files draft IPO papers to raise ₹120 cr via fresh equity",
-        "url": "https://www.business-standard.com/companies/news/pm-cona-ind-files-draft-ipo-papers-to-raise-120-cr-via-fresh-equity-126092301161_1.html"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Meesho shares worth ₹900 cr change hands in SoftBank arm's mega block deal",
-        "url": "https://www.business-standard.com/markets/news/meesho-shares-worth-900-cr-change-hands-in-softbank-arm-s-mega-block-deal-126092301183_1.html"
+        "title": "Nazara Technologies Ltd spurts 1.06%, rises for third straight session",
+        "url": "https://www.business-standard.com/markets/capital-market-news/nazara-technologies-ltd-spurts-1-06-rises-for-third-straight-session-126092400617_1.html"
       }
     ]
   }
