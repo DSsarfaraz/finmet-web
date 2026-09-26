@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T15:19:18.664Z",
+  "updated_at": "2026-09-26T21:41:30.609Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
@@ -13,20 +13,20 @@
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 94.09,
-      "change_pct": -0.55,
+      "value": 92.41,
+      "change_pct": -2.33,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 132802,
-      "change_pct": 0.32,
+      "value": 133122,
+      "change_pct": 0.54,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4311.6,
-      "change_pct": 0.32,
+      "value": 4321.2,
+      "change_pct": 0.54,
       "unit": "USD/oz"
     }
   },
@@ -72,86 +72,125 @@
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 83825.28,
-      "change_pct": -0.66
+      "price": 84150,
+      "change_pct": 0.14
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2692.93,
-      "change_pct": 0.21
+      "price": 2686.43,
+      "change_pct": -0.15
     }
   ],
   "news": {
     "international": [
       {
-        "title": "Bitcoin retreats from eight-month high after dizzying 13% rally",
-        "source": "Bloomberg",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-22/bitcoin-retreats-from-eight-month-high-after-dizzying-13-rally",
-        "published_at": "2026-09-22T03:33:44Z"
+        "outlet": "bloomberg.com",
+        "articles": [
+          {
+            "title": "Meta stock jumps 36% in September as Muse AI fuels rally",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-09-24/meta-s-best-month-since-2013-has-it-on-cusp-of-2-trillion-level",
+            "published_at": "2026-09-25T03:24:54Z"
+          },
+          {
+            "title": "Data-centre bet makes ESDS one of India’s best new listings",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-09-23/data-center-bet-makes-esds-one-of-india-s-best-new-listings",
+            "published_at": "2026-09-23T02:47:23Z"
+          }
+        ]
       },
       {
-        "title": "U.S. Stock Futures Little Changed as Markets Weigh Warsh’s Hawkish Remarks",
-        "source": "The Wall Street Journal",
-        "url": "https://www.wsj.com/finance/investing/u-s-stock-futures-little-changed-as-markets-weigh-warshs-hawkish-remarks-5a036994",
-        "published_at": "2026-08-31T11:42:00Z"
+        "outlet": "reuters.com",
+        "articles": []
       },
       {
-        "title": "Why Bitcoin’s Price Is Spiking This Week",
-        "source": "Gizmodo.com",
-        "url": "https://gizmodo.com/why-bitcoins-price-is-spiking-this-week-2000803801",
-        "published_at": "2026-08-27T17:50:23Z"
+        "outlet": "wsj.com",
+        "articles": []
       }
     ],
     "indian": [
       {
-        "title": "Economy stable, El Nino clouds food inflation, farm output outlook: FinMin",
-        "source": "Business Standard",
-        "url": "https://www.business-standard.com/economy/news/economy-stable-el-nino-clouds-food-inflation-farm-output-outlook-finmin-126083101427_1.html",
-        "published_at": "2026-08-31T16:06:46Z"
+        "outlet": "economictimes.indiatimes.com",
+        "articles": []
       },
       {
-        "title": "The Fed’s rate hike is both good news and bad for us but the latest US tariff threat is harder to defuse",
-        "source": "Livemint",
-        "url": "https://www.livemint.com/opinion/online-views/fed-rate-hike-plus-us-tariff-threat-double-whammy-for-india-donald-trump-kevin-warsh-rbi-11789651093189.html",
-        "published_at": "2026-09-18T02:30:14Z"
+        "outlet": "business-standard.com",
+        "articles": [
+          {
+            "title": "Nifty logs longest weekly losing streak since Covid-19 crash in 2020",
+            "source": "Business Standard",
+            "url": "https://www.business-standard.com/markets/news/nifty-logs-longest-weekly-losing-streak-since-covid-19-crash-in-2020-126092501071_1.html",
+            "published_at": "2026-09-25T18:17:52Z"
+          },
+          {
+            "title": "GDP: A different take",
+            "source": "Business Standard",
+            "url": "https://www.business-standard.com/opinion/columns/gdp-a-different-take-126092501104_1.html",
+            "published_at": "2026-09-25T17:44:24Z"
+          },
+          {
+            "title": "Rupee gains on FCNR(B) deposits reverse amid crude price spike: RBI report",
+            "source": "Business Standard",
+            "url": "https://www.business-standard.com/finance/news/rupee-gains-on-fcnr-b-deposits-reverse-amid-crude-price-spike-rbi-report-126092501094_1.html",
+            "published_at": "2026-09-25T17:12:03Z"
+          }
+        ]
       },
       {
-        "title": "Bank of England Governor Warns AI Represents Threat to the Global Economy",
-        "source": "Gizmodo.com",
-        "url": "https://gizmodo.com/bank-of-england-governor-warns-ai-represents-threat-to-the-global-economy-2000804936",
-        "published_at": "2026-08-31T17:40:01Z"
+        "outlet": "livemint.com",
+        "articles": [
+          {
+            "title": "Income Tax Act 2025: What crypto investors should know about VDA provisions, TDS and ITR filing rules",
+            "source": "Livemint",
+            "url": "https://www.livemint.com/money/personal-finance/income-tax-act-2025-what-crypto-investors-should-know-about-vda-provisions-tds-and-itr-filing-rules-11790360376855.html",
+            "published_at": "2026-09-25T19:25:44Z"
+          },
+          {
+            "title": "Listing of NSE on own platform feasible, says chair Injeti",
+            "source": "Livemint",
+            "url": "https://www.livemint.com/companies/news/listing-of-nse-own-platform-chairperson-exchange-bse-11790335593267.html",
+            "published_at": "2026-09-25T16:27:18Z"
+          },
+          {
+            "title": "Active vs passive small-cap mutual funds: How wide is one-year return gap? Don't assume index schemes always lag",
+            "source": "Livemint",
+            "url": "https://www.livemint.com/money/personal-finance/active-vs-passive-small-cap-mutual-funds-how-wide-is-one-year-return-gap-dont-assume-index-schemes-always-lag-11790341075370.html",
+            "published_at": "2026-09-25T14:37:50Z"
+          }
+        ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "NEWS",
+        "symbol": "NSE",
         "cap": "Large/Mid Cap",
-        "title": "Buzzing stock: Raymond hits record high in weak market; up 95% in 4 weeks",
-        "url": "https://www.business-standard.com/markets/news/buzzing-stock-raymond-hits-record-high-in-weak-market-up-95-in-4-weeks-126092400638_1.html"
+        "title": "Self-listing of bourses feasible, says NSE chief",
+        "url": "https://timesofindia.indiatimes.com/business/india-business/self-listing-of-bourses-feasible-says-nse-chief/articleshow/134492279.cms"
       },
       {
-        "symbol": "HDFC",
+        "symbol": "BSE",
         "cap": "Large/Mid Cap",
-        "title": "HDFC Mutual Fund sells 1.45% stake in Escorts Kubota for ₹453 cr",
-        "url": "https://www.thehindubusinessline.com/markets/hdfc-mutual-fund-sells-145-stake-in-escorts-kubota-for-453-cr/article71503418.ece"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Info Edge shares plunge 7% as bloodbath in PB Fintech shares wipes off Rs 1,809 crore from recruiter's stake. What lies ahead?",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/info-edge-shares-plunge-7-as-bloodbath-in-pb-fintech-shares-wipes-off-rs-1809-crore-from-recruiters-stake-what-lies-ahead/articleshow/134456914.cms"
+        "title": "BSE cautions investors as international ETFs trade at steep premiums to NAV",
+        "url": "https://www.thehindubusinessline.com/markets/bse-cautions-investors-as-international-etfs-trade-at-steep-premiums-to-nav/article71510268.ece"
       },
       {
         "symbol": "NSE",
         "cap": "Large/Mid Cap",
-        "title": "PSUs in NSE IPO: How much did SBI, other government entities make in India’s second largest offer?",
-        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/psus-in-nse-ipo-how-much-did-sbi-other-government-entities-make-in-indias-second-largest-offer/articleshow/134456776.cms"
+        "title": "Listing of NSE on own platform feasible, says chair Injeti",
+        "url": "https://www.livemint.com/companies/news/listing-of-nse-own-platform-chairperson-exchange-bse-11790335593267.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Nazara Technologies Ltd spurts 1.06%, rises for third straight session",
-        "url": "https://www.business-standard.com/markets/capital-market-news/nazara-technologies-ltd-spurts-1-06-rises-for-third-straight-session-126092400617_1.html"
+        "title": "Letters to the Editor dated September 25, 2026",
+        "url": "https://www.thehindubusinessline.com/opinion/letters/letters-to-editor/article71509806.ece"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "CleanMax Enviro block deal: Augment India Holdings likely to divest 85 lakh shares worth Rs 1,063 crore",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/cleanmax-enviro-block-deal-augment-india-holdings-likely-to-divest-85-lakh-shares-worth-rs-1063-crore/articleshow/134488759.cms"
       }
     ]
   }
