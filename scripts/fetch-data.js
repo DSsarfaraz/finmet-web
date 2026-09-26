@@ -217,59 +217,59 @@ async function getIndexGroup(symbolList, previous) {
 // ------------------------------------------------------------------
 // 3. News (NewsAPI.org)
 // ------------------------------------------------------------------
-async function newsQuery(q, pageSize = 6, sortBy = 'publishedAt', domain = null) {
+async function newsQuery(q, pageSize = 6, sortBy = 'publishedAt', domain = null, fromDate = null) {
   if (!NEWSAPI_KEY) { log('NEWSAPI_KEY not set — skipping news query:', q); return null; }
   const domainParam = domain ? `&domains=${encodeURIComponent(domain)}` : '';
-  const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(q)}${domainParam}&language=en&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${NEWSAPI_KEY}`;
-  const data = await safeJsonFetch(url, {}, `NewsAPI: ${q} (${domain || 'any'})`);
+  const fromParam = fromDate ? `&from=${fromDate}` : '';
+  const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(q)}${domainParam}${fromParam}&language=en&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${NEWSAPI_KEY}`;
+  const data = await safeJsonFetch(url, {}, `NewsAPI: ${q} (${domain || 'any'}, from ${fromDate || 'any'})`);
   if (!data || data.status !== 'ok') return null;
   return data.articles.map(a => ({ title: a.title, source: a.source?.name, url: a.url, published_at: a.publishedAt }));
 }
 
-// Pull exactly one article from each of 3 named top business/economic outlets,
-// so every day's briefing has one unique perspective per source rather than
-// several headlines that might all come from the same outlet. Falls back to
-// a general (non-domain-restricted) query for any outlet that returns
-// nothing — some premium outlets (Bloomberg, WSJ) have sparse coverage on
-// NewsAPI's free tier, and we'd rather show 3 relevant finance headlines
-// than leave a slot empty.
-async function getOneFromEachOutlet(query, domains) {
-  const picks = [];
-  const usedUrls = new Set();
-
-  for (const domain of domains) {
-    const results = await newsQuery(query, 3, 'relevancy', domain);
-    const hit = (results || []).find(a => !usedUrls.has(a.url));
-    if (hit) { picks.push(hit); usedUrls.add(hit.url); }
-  }
-
-  if (picks.length < domains.length) {
-    log(`Only found ${picks.length}/${domains.length} outlet-specific results for "${query}" — topping up with a general query.`);
-    const needed = domains.length - picks.length;
-    const pool = await newsQuery(query, 10, 'relevancy');
-    for (const a of (pool || [])) {
-      if (picks.length >= domains.length) break;
-      if (!usedUrls.has(a.url)) { picks.push(a); usedUrls.add(a.url); }
-    }
-  }
-
-  return picks.length > 0 ? picks : null;
+function daysAgoISODate(days) {
+  return new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
 }
 
-const INTERNATIONAL_QUERY = '(crypto OR bitcoin OR "Federal Reserve" OR "Dow Jones" OR "US President" OR "crude oil" OR gold) AND (market OR economy OR finance OR price OR Fed)';
+// Pull the top N most recent articles from EACH named outlet, so the
+// briefing shows real, fresh headlines per source rather than one
+// "most relevant" (and possibly weeks-old) match. Always sorted by
+// publishedAt, and date-restricted — widening the window only if an
+// outlet has genuinely posted nothing recently on this topic.
+async function getTopNFromEachOutlet(query, domains, n = 3) {
+  const groups = [];
+  for (const domain of domains) {
+    let articles = await newsQuery(query, n, 'publishedAt', domain, daysAgoISODate(3));
+    if (!articles || articles.length === 0) {
+      log(`No results for ${domain} in the last 3 days — widening to 7 days.`);
+      articles = await newsQuery(query, n, 'publishedAt', domain, daysAgoISODate(7));
+    }
+    if (!articles || articles.length === 0) {
+      log(`Still nothing for ${domain} in 7 days — dropping domain restriction for this outlet.`);
+      const general = await newsQuery(query, n, 'publishedAt', null, daysAgoISODate(3));
+      articles = (general || []).filter(a => (a.source || '').toLowerCase().includes(domain.split('.')[0]));
+    }
+    groups.push({ outlet: domain, articles: (articles || []).slice(0, n) });
+  }
+  return groups;
+}
+
+// Topics: RBI, Fed, stock market, bond market — matches what the
+// briefing is meant to cover, not a generic finance keyword soup.
+const INTERNATIONAL_QUERY = '("Federal Reserve" OR Fed OR "interest rate" OR "bond market" OR "Treasury yield" OR "stock market" OR Nasdaq OR "Dow Jones" OR S&P)';
 const INTERNATIONAL_OUTLETS = ['bloomberg.com', 'reuters.com', 'wsj.com'];
 
-const INDIA_QUERY = '(Sensex OR Nifty OR "Finance Ministry" OR economy OR economic OR RBI) AND (India OR market OR finance OR rupee)';
+const INDIA_QUERY = '(RBI OR "Reserve Bank of India" OR Sensex OR Nifty OR "bond market" OR "G-Sec" OR "stock market" OR rupee)';
 const INDIA_OUTLETS = ['economictimes.indiatimes.com', 'business-standard.com', 'livemint.com'];
 
 async function getInternationalNews() {
-  return getOneFromEachOutlet(INTERNATIONAL_QUERY, INTERNATIONAL_OUTLETS);
+  return getTopNFromEachOutlet(INTERNATIONAL_QUERY, INTERNATIONAL_OUTLETS, 3);
 }
 async function getIndianNews() {
-  return getOneFromEachOutlet(INDIA_QUERY, INDIA_OUTLETS);
+  return getTopNFromEachOutlet(INDIA_QUERY, INDIA_OUTLETS, 3);
 }
 async function getStocksInNews() {
-  const raw = await newsQuery('(NSE OR BSE) (stock OR shares) -"small cap"', 10);
+  const raw = await newsQuery('(NSE OR BSE) (stock OR shares) -"small cap"', 10, 'publishedAt', null, daysAgoISODate(3));
   if (!raw) return null;
   return raw.slice(0, 5).map(a => ({ symbol: guessSymbolFromTitle(a.title), cap: 'Large/Mid Cap', title: a.title, url: a.url }));
 }
