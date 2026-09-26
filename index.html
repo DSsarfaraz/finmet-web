@@ -228,14 +228,6 @@
               <p class="text-xs text-zinc-300 mt-0.5">Old vs New regime — common myths, busted with data.</p>
             </a>
 
-            <a href="employee_care.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
-              <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
-                <span>Employee Care <span class="ml-1 px-1.5 py-0.5 text-[8px] uppercase bg-blue-500 text-white rounded font-black">New</span></span>
-                <i class="fa-solid fa-briefcase text-xs"></i>
-              </div>
-              <p class="text-xs text-zinc-300 mt-0.5">EPFO ceiling hike &amp; ₹7.5L perquisite trap, for ₹15L+ salaries.</p>
-            </a>
-
             <a href="india_growth_story.html" class="block p-3 rounded-xl bg-zinc-900/90 hover:bg-emerald-950/40 border border-zinc-800 hover:border-emerald-500/40 transition">
               <div class="font-extrabold text-emerald-400 text-xs flex items-center justify-between">
                 <span>Growth Story</span>
@@ -263,13 +255,21 @@
           </div>
         </div>
 
-        <!-- 3. Daily News with "LIVE" Tag -->
+        <!-- 3. News & Blog -->
         <a href="News_Blog.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2 group text-sm px-2 py-1">
-          <span>Daily News</span>
-          <span class="flex items-center gap-1 px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider bg-rose-500/20 border border-rose-500/50 text-rose-400 rounded-full group-hover:scale-110 transition-transform">
-            <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>LIVE
-          </span>
+          <span>News &amp; Blog</span>
+          <span class="flex items-center gap-1 px-2.5 py-0.5 text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-400 to-lime-400 text-black rounded-full group-hover:scale-110 transition-transform">New</span>
         </a>
+
+        <!-- 4. Employee Care, with hover tooltip -->
+        <div class="relative group py-2">
+          <a href="employee_care.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2 text-sm px-2 py-1">
+            <span>Employee Care</span>
+          </a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 p-3.5 bg-zinc-950 border border-blue-500/40 rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 backdrop-blur-md tooltip-arrow text-center">
+            <p class="text-xs text-zinc-200 font-semibold">Know what you need about EPFO &amp; Income Tax</p>
+          </div>
+        </div>
 
       </nav>
 
@@ -316,10 +316,6 @@
       <a href="#tax-myths" onclick="toggleMobileMenu()" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
         Tax: Myth vs Truth
       </a>
-      <a href="employee_care.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
-        <span>Employee Care</span>
-        <span class="px-2 py-0.5 text-[9px] uppercase bg-blue-500 text-white rounded-full font-black">New</span>
-      </a>
       <a href="india_growth_story.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
         India Growth Story
       </a>
@@ -330,12 +326,16 @@
         <i class="fa-solid fa-shield-halved text-emerald-400"></i> Risk Matrix Benchmark
       </button>
 
-      <div class="pt-1 pb-0.5 px-1 text-[10px] font-black uppercase tracking-wider text-zinc-500">Daily News</div>
+      <div class="pt-1 pb-0.5 px-1 text-[10px] font-black uppercase tracking-wider text-zinc-500">News &amp; Blog</div>
       <a href="News_Blog.html" class="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-bold text-sm text-zinc-200">
-        <span class="flex items-center gap-2"><i class="fa-solid fa-newspaper text-rose-400"></i> Daily News</span>
-        <span class="flex items-center gap-1 px-2 py-0.5 text-[9px] font-black uppercase bg-rose-500/20 border border-rose-500/50 text-rose-400 rounded-full">
-          <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>LIVE
-        </span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-newspaper text-rose-400"></i> News &amp; Blog</span>
+        <span class="px-2.5 py-0.5 text-[9px] font-black uppercase bg-gradient-to-r from-emerald-400 to-lime-400 text-black rounded-full">New</span>
+      </a>
+
+      <div class="pt-1 pb-0.5 px-1 text-[10px] font-black uppercase tracking-wider text-zinc-500">Employee Care</div>
+      <a href="employee_care.html" class="block p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-sm font-bold text-zinc-200">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-briefcase text-blue-400"></i> Employee Care</span>
+        <p class="text-[11px] font-normal text-zinc-400 mt-1">Know what you need about EPFO &amp; Income Tax</p>
       </a>
 
       <a href="login.html" id="auth-mobile-signed-out" class="flex items-center justify-center gap-2 p-3.5 rounded-xl bg-emerald-500 text-black text-sm font-black">
@@ -808,7 +808,7 @@
       </div>
       <div class="flex flex-wrap justify-center gap-5 font-bold">
         <a href="overlap.html" class="text-emerald-400 hover:underline">Portfolio X-Ray (Signature)</a>
-        <a href="News_Blog.html" class="hover:text-emerald-400 transition-colors">Daily News</a>
+        <a href="News_Blog.html" class="hover:text-emerald-400 transition-colors">News &amp; Blog</a>
         <a href="sector_q2.html" class="hover:text-emerald-400 transition-colors">Sector Q2</a>
         <a href="learning_finmet.html" class="hover:text-emerald-400 transition-colors">Learning Hub</a>
         <a href="#calculators" class="hover:text-emerald-400 transition-colors">Calculators</a>
