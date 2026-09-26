@@ -13,6 +13,21 @@ service cloud.firestore {
       match /comparisons/{comparisonId} {
         allow read, write: if request.auth != null && request.auth.uid == userId;
       }
+
+      // Saved New vs Old tax regime calculations from Employee Care —
+      // same owner-only rule.
+      match /regime_calculations/{calcId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Employee Care query form: anyone (even signed-out) can SUBMIT a
+    // question. Nobody can read, edit, or delete submissions through the
+    // client SDK — the Finmet team reads these only via the Firebase
+    // Console's Firestore Data tab, keeping submitter details private.
+    match /employee_care_queries/{queryId} {
+      allow create: if true;
+      allow read, update, delete: if false;
     }
   }
 }

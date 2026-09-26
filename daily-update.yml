@@ -1,0 +1,62 @@
+name: Daily Finmet Update (Prices 9:30/2:21/3:50 IST, News once at 9:30 IST, Mon-Fri)
+
+on:
+  schedule:
+    # 9:30 AM IST, Mon-Fri = 04:00 UTC  — prices + news (news runs only on this trigger)
+    - cron: '0 4 * * 1-5'
+    # 2:21 PM IST, Mon-Fri = 08:51 UTC  — prices only
+    - cron: '51 8 * * 1-5'
+    # 3:50 PM IST, Mon-Fri = 10:20 UTC  — prices only
+    - cron: '20 10 * * 1-5'
+  workflow_dispatch: {}   # manual trigger from the Actions tab always fetches news too
+
+permissions:
+  contents: write
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Decide whether this run should also fetch news
+        id: newsflag
+        run: |
+          # News fetches once a day, on the 9:30 AM IST run only.
+          # Manual runs (workflow_dispatch) always include news too, for easy testing.
+          if [ "${{ github.event.schedule }}" = "0 4 * * 1-5" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "fetch_news=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "fetch_news=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch latest market data (and news, once a day)
+        env:
+          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+          FETCH_NEWS: ${{ steps.newsflag.outputs.fetch_news }}
+        run: node scripts/fetch-data.js
+
+      - name: Commit updated data.json back to repo
+        # Adjust the path below (e.g. "public/data.json") if your site's
+        # pages don't live at the repo root.
+        run: |
+          git config user.name "finmet-bot"
+          git config user.email "actions@github.com"
+          git add data.json
+          git diff --quiet --cached || git commit -m "Data update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FINMET_336F6 }}
+          channelId: live
+          projectId: finmet-336f6

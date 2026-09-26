@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Employee Care — EPFO FAQs & Tax Regime Calculator | Finmet</title>
+<meta name="description" content="EPFO wage ceiling FAQs with Hindi/English audio, plus a real New vs Old tax regime calculator — sign in to save your result.">
+<link rel="icon" type="image/png" href="finmet_logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { font-family: 'Inter', system-ui, sans-serif; }
+  body { background:#030712; }
+  .site-nav { background:#030712; border-bottom:1px solid #111827; position:sticky; top:0; z-index:200; padding-top: env(safe-area-inset-top, 0px); }
+  .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .faq-item.open .faq-answer { max-height:600px; }
+  .faq-item.open .faq-chevron { transform:rotate(180deg); }
+  .lang-toggle-btn.active { background:#34d399; color:#030712; }
+</style>
+</head>
+<body class="text-gray-100">
+  <!-- Live Market Ticker -->
+  <div class="bg-zinc-950 border-b border-emerald-900/60 overflow-hidden whitespace-nowrap">
+    <div id="home-ticker" class="inline-flex py-2" style="animation: home-ticker-scroll 45s linear infinite;"></div>
+  </div>
+  <style>
+    @keyframes home-ticker-scroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+    #home-ticker:hover { animation-play-state: paused; }
+  </style>
+
+
+<header class="site-nav">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-5 py-3.5">
+    <a href="index.html" class="flex items-center gap-2 text-white font-extrabold text-[17px]">
+      <img src="finmet_logo.png" alt="Finmet" class="h-7 w-auto" onerror="this.style.display='none'">
+      Finmet
+    </a>
+    <nav class="hidden sm:flex items-center gap-6 text-sm font-semibold text-gray-400">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <a href="overlap.html" class="hover:text-white transition-colors">Portfolio X-Ray</a>
+      <a href="News_Blog.html" class="hover:text-white transition-colors">Daily News</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="login.html" id="auth-signed-out" class="text-xs font-bold text-black bg-emerald-400 px-3.5 py-2 rounded-lg">Sign In</a>
+      <a href="profile.html" id="auth-signed-in" class="hidden items-center gap-2 text-xs font-bold text-emerald-400 border border-emerald-500/40 px-3 py-2 rounded-lg">
+        <img id="auth-avatar" src="" class="w-5 h-5 rounded-full" alt="">
+        <span id="auth-name"></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="max-w-4xl mx-auto px-5 pt-14 sm:pt-20 pb-8">
+  <div class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 rounded-full px-3 py-1.5 mb-6">
+    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+    Employee Care
+  </div>
+  <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+    EPFO just changed. Your tax regime choice still needs real numbers, not guesswork.
+  </h1>
+  <p class="text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+    For salaried professionals earning ₹15L–₹50L+: understand what changed on 17 September 2026, hear
+    it explained in Hindi or English, then run your own numbers through the calculator below.
+  </p>
+</section>
+
+<section class="max-w-4xl mx-auto px-5 py-10 border-t border-gray-900">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7">
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">EPFO Update &amp; FAQs</h2>
+    <div class="flex items-center gap-2 bg-gray-900/60 border border-gray-800 rounded-lg p-1">
+      <button onclick="setLang('en')" id="lang-en-btn" class="lang-toggle-btn active text-xs font-bold px-3 py-1.5 rounded-md transition">English</button>
+      <button onclick="setLang('hi')" id="lang-hi-btn" class="lang-toggle-btn text-xs font-bold px-3 py-1.5 rounded-md transition text-gray-400">हिंदी</button>
+    </div>
+  </div>
+
+  <div id="faq-list" class="space-y-3"></div>
+  <p id="tts-support-note" class="text-xs text-gray-600 mt-4"></p>
+</section>
+
+<section class="max-w-4xl mx-auto px-5 py-10 border-t border-gray-900">
+  <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">New vs Old Regime Calculator</h2>
+  <p class="text-gray-400 mb-8 max-w-2xl">
+    Enter your numbers once — this computes your actual tax under both regimes for FY 2026-27, not a
+    generic rule of thumb.
+  </p>
+
+  <div class="bg-gray-900/40 border border-gray-800/60 rounded-2xl p-5 sm:p-7">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+      <div>
+        <label class="text-xs font-semibold text-gray-400 block mb-2">Annual gross salary (CTC before deductions)</label>
+        <div class="relative">
+          <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-sm">₹</span>
+          <input type="number" id="rc-salary" placeholder="e.g. 2200000" class="w-full bg-gray-950 border border-gray-800 rounded-lg pl-7 pr-3 py-2.5 text-white text-sm focus:border-blue-500 focus:outline-none" oninput="calcRegime()">
+        </div>
+      </div>
+      <div>
+        <label class="text-xs font-semibold text-gray-400 block mb-2">Section 80C investments (PPF, ELSS, EPF, etc.)</label>
+        <div class="relative">
+          <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-sm">₹</span>
+          <input type="number" id="rc-80c" placeholder="Max ₹1,50,000" class="w-full bg-gray-950 border border-gray-800 rounded-lg pl-7 pr-3 py-2.5 text-white text-sm focus:border-blue-500 focus:outline-none" oninput="calcRegime()">
+        </div>
+      </div>
+      <div>
+        <label class="text-xs font-semibold text-gray-400 block mb-2">HRA exemption you can claim</label>
+        <div class="relative">
+          <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-sm">₹</span>
+          <input type="number" id="rc-hra" placeholder="0 if not applicable" class="w-full bg-gray-950 border border-gray-800 rounded-lg pl-7 pr-3 py-2.5 text-white text-sm focus:border-blue-500 focus:outline-none" oninput="calcRegime()">
+        </div>
+      </div>
+      <div>
+        <label class="text-xs font-semibold text-gray-400 block mb-2">Home loan interest (self-occupied, max ₹2L)</label>
+        <div class="relative">
+          <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-sm">₹</span>
+          <input type="number" id="rc-homeloan" placeholder="0 if not applicable" class="w-full bg-gray-950 border border-gray-800 rounded-lg pl-7 pr-3 py-2.5 text-white text-sm focus:border-blue-500 focus:outline-none" oninput="calcRegime()">
+        </div>
+      </div>
+    </div>
+
+    <div id="rc-results" class="hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+        <div id="rc-old-card" class="bg-gray-950/60 border border-gray-800 rounded-xl p-5">
+          <div class="text-xs font-semibold text-gray-500 mb-1">Old Regime — tax payable</div>
+          <div id="rc-old-tax" class="text-3xl font-extrabold text-gray-300">₹0</div>
+        </div>
+        <div id="rc-new-card" class="bg-gray-950/60 border border-gray-800 rounded-xl p-5">
+          <div class="text-xs font-semibold text-gray-500 mb-1">New Regime — tax payable</div>
+          <div id="rc-new-tax" class="text-3xl font-extrabold text-gray-300">₹0</div>
+        </div>
+      </div>
+
+      <div id="rc-verdict" class="bg-emerald-500/5 border border-emerald-500/25 rounded-xl p-5 mb-5">
+        <p id="rc-verdict-text" class="text-sm text-emerald-200"></p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div class="bg-gray-950/40 rounded-xl p-4">
+          <div class="text-xs font-bold text-gray-400 mb-2.5">Old Regime — what you keep</div>
+          <ul class="space-y-1.5 text-xs text-gray-400">
+            <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i>80C, HRA, home loan interest deductions</li>
+            <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i>Familiar, if you already claim these</li>
+            <li><i class="fa-solid fa-xmark text-gray-600 mr-1.5"></i>Lower basic exemption (₹2.5L)</li>
+          </ul>
+        </div>
+        <div class="bg-gray-950/40 rounded-xl p-4">
+          <div class="text-xs font-bold text-gray-400 mb-2.5">New Regime — what you keep</div>
+          <ul class="space-y-1.5 text-xs text-gray-400">
+            <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i>Higher basic exemption (₹4L) + ₹75k standard deduction</li>
+            <li><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i>Zero tax up to ₹12.75L gross (salaried)</li>
+            <li><i class="fa-solid fa-xmark text-gray-600 mr-1.5"></i>No 80C, HRA, or home loan interest claims</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="rc-signin-cta">
+        <a href="login.html" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm px-5 py-3 rounded-lg transition">
+          <i class="fa-solid fa-lock"></i> Sign in to save this calculation
+        </a>
+      </div>
+      <div id="rc-save-actions" class="hidden">
+        <button onclick="saveRegimeCalc()" id="rc-save-btn" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm px-5 py-3 rounded-lg transition">
+          <i class="fa-solid fa-floppy-disk"></i> Save this calculation
+        </button>
+        <span id="rc-save-status" class="text-sm ml-3 text-gray-400"></span>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-xs text-gray-500 leading-relaxed mt-4">
+    Assumes standard 4% Health &amp; Education cess, FY 2026-27 slabs, and no special-rate income
+    (e.g. large capital gains). Educational estimate, not a filing-ready computation — please verify
+    with a CA before filing.
+  </p>
+</section>
+
+<footer class="border-t border-gray-900 py-8">
+  <div class="max-w-4xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+    <span>&copy; 2026 Finmet (<a href="https://www.finmet.org" class="text-emerald-400 hover:underline">www.finmet.org</a>)</span>
+    <div class="flex gap-5 font-semibold">
+      <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      <a href="News_Blog.html" class="hover:text-white transition-colors">Daily News</a>
+      <a href="https://wa.me/917893918311" target="_blank" rel="noopener" class="hover:text-white transition-colors">WhatsApp Community</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyA8Ra9niO6unHnnvuGm9hCxjw2cGTmvFQQ",
+    authDomain: "finmet-336f6.firebaseapp.com",
+    projectId: "finmet-336f6",
+    storageBucket: "finmet-336f6.firebasestorage.app",
+    messagingSenderId: "864658917637",
+    appId: "1:864658917637:web:c36f586cdc193d3d628f6c",
+    measurementId: "G-7HWJGXWLHF"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  let currentUser = null;
+
+  auth.onAuthStateChanged(user => {
+    currentUser = user;
+    const outBtn = document.getElementById('auth-signed-out');
+    const inBtn = document.getElementById('auth-signed-in');
+    const signinCta = document.getElementById('rc-signin-cta');
+    const saveActions = document.getElementById('rc-save-actions');
+    if (user) {
+      outBtn.classList.add('hidden');
+      inBtn.classList.remove('hidden'); inBtn.classList.add('flex');
+      document.getElementById('auth-avatar').src = user.photoURL || '';
+      document.getElementById('auth-name').textContent = (user.displayName || user.email || 'Account').split(' ')[0];
+      signinCta.classList.add('hidden');
+      saveActions.classList.remove('hidden');
+    } else {
+      outBtn.classList.remove('hidden');
+      inBtn.classList.add('hidden'); inBtn.classList.remove('flex');
+      signinCta.classList.remove('hidden');
+      saveActions.classList.add('hidden');
+    }
+  });
+
+  const FAQS = [
+    {
+      q_en: "What exactly changed with EPFO, and when?",
+      q_hi: "EPFO में असल में क्या बदला, और कब?",
+      a_en: "The Union Cabinet raised the mandatory EPFO wage ceiling from fifteen thousand rupees to twenty five thousand rupees per month, effective 17th September 2026. This is the first change to this ceiling in 12 years, since 2014.",
+      a_hi: "केंद्रीय मंत्रिमंडल ने EPFO की अनिवार्य वेतन सीमा को पंद्रह हज़ार रुपये से बढ़ाकर पच्चीस हज़ार रुपये प्रति माह कर दिया है, जो 17 सितंबर 2026 से लागू है। बारह साल में, यानी 2014 के बाद, इस सीमा में यह पहला बदलाव है।"
+    },
+    {
+      q_en: "Will this actually reduce my take-home salary?",
+      q_hi: "क्या इससे मेरी टेक-होम सैलरी सच में कम होगी?",
+      a_en: "Only if your basic wage is at or below twenty five thousand rupees a month. Most professionals earning fifteen lakh rupees or more annually already have a basic wage above this ceiling, so their own number typically won't move. It matters most for junior team members whose CTC you approve, or if your company classifies a large part of your pay as basic salary.",
+      a_hi: "सिर्फ तभी, जब आपका बेसिक वेतन पच्चीस हज़ार रुपये प्रति माह या उससे कम हो। पंद्रह लाख रुपये या उससे ज़्यादा सालाना कमाने वाले ज़्यादातर पेशेवरों का बेसिक वेतन पहले से ही इस सीमा से ऊपर होता है, इसलिए उनका आंकड़ा आमतौर पर नहीं बदलेगा। यह उन जूनियर टीम मेंबर्स के लिए ज़्यादा मायने रखता है जिनकी CTC आप अप्रूव करते हैं, या अगर आपकी कंपनी आपकी सैलरी का बड़ा हिस्सा बेसिक सैलरी में गिनती है।"
+    },
+    {
+      q_en: "What is this ₹7.5 lakh perquisite tax trap I keep hearing about?",
+      q_hi: "यह साढ़े सात लाख रुपये वाला perquisite टैक्स ट्रैप क्या है जिसके बारे में मैं सुन रहा हूं?",
+      a_en: "Since the Finance Act 2020, your employer's combined contribution to your Provident Fund, Corporate NPS, and Superannuation Fund is tax-free only up to seven and a half lakh rupees a year. Anything your employer contributes above that amount is added to your taxable salary as a perquisite, and this applies whether you're on the old regime or the new regime.",
+      a_hi: "वित्त अधिनियम 2020 के बाद से, आपके नियोक्ता का Provident Fund, Corporate NPS, और Superannuation Fund में मिलाकर किया गया योगदान साल में साढ़े सात लाख रुपये तक ही टैक्स-फ्री है। इस राशि से ऊपर नियोक्ता जो भी योगदान करता है, वह आपकी टैक्सेबल सैलरी में perquisite के रूप में जुड़ जाता है, और यह नियम चाहे आप पुराने रिजीम में हों या नए रिजीम में, दोनों में लागू होता है।"
+    },
+    {
+      q_en: "Does picking the new tax regime protect me from this ₹7.5 lakh rule?",
+      q_hi: "क्या नया टैक्स रिजीम चुनने से मुझे इस साढ़े सात लाख वाले नियम से सुरक्षा मिलती है?",
+      a_en: "No. This particular rule applies identically under both the old and the new regime — it isn't something the new regime removes. What the new regime does change is your Section 80C, HRA, and home loan interest deductions, which stop applying if you choose it.",
+      a_hi: "नहीं। यह खास नियम पुराने और नए, दोनों रिजीम में एक जैसा लागू होता है — यह ऐसा नहीं है कि नया रिजीम इसे हटा देता है। नया रिजीम चुनने से जो बदलता है वह है आपकी Section 80C, HRA, और होम लोन ब्याज़ की छूट, जो नया रिजीम चुनने पर लागू नहीं होतीं।"
+    },
+    {
+      q_en: "What should I actually ask my HR or payroll team?",
+      q_hi: "मुझे अपनी HR या payroll टीम से असल में क्या पूछना चाहिए?",
+      a_en: "Ask two things directly: first, whether your combined employer contribution to PF, NPS, and Superannuation crosses seven and a half lakh rupees this year. Second, whether your CTC structure has already been updated for the new twenty five thousand rupee EPFO ceiling, so there are no surprises on your next payslip.",
+      a_hi: "सीधे दो सवाल पूछें: पहला, क्या PF, NPS, और Superannuation में आपके नियोक्ता का कुल योगदान इस साल साढ़े सात लाख रुपये से ऊपर जा रहा है। दूसरा, क्या आपकी CTC संरचना नई पच्चीस हज़ार रुपये वाली EPFO सीमा के हिसाब से पहले ही अपडेट हो चुकी है, ताकि आपकी अगली सैलरी स्लिप में कोई हैरानी न हो।"
+    }
+  ];
+
+  let currentLang = 'en';
+  function setLang(lang){
+    currentLang = lang;
+    document.getElementById('lang-en-btn').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-hi-btn').classList.toggle('active', lang === 'hi');
+    document.getElementById('lang-en-btn').classList.toggle('text-gray-400', lang !== 'en');
+    document.getElementById('lang-hi-btn').classList.toggle('text-gray-400', lang !== 'hi');
+    renderFAQs();
+  }
+
+  function renderFAQs(){
+    const list = document.getElementById('faq-list');
+    list.innerHTML = FAQS.map((f, i) => `
+      <div class="faq-item bg-gray-900/40 border border-gray-800/60 rounded-xl overflow-hidden" id="faq-${i}">
+        <button class="w-full flex items-center justify-between gap-3 px-5 py-4 text-left" onclick="toggleFAQ(${i})">
+          <span class="text-sm sm:text-[15px] font-semibold text-white">${currentLang === 'en' ? f.q_en : f.q_hi}</span>
+          <i class="fa-solid fa-chevron-down text-gray-500 text-xs faq-chevron transition-transform shrink-0"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="px-5 pb-5">
+            <p class="text-sm text-gray-400 leading-relaxed mb-3">${currentLang === 'en' ? f.a_en : f.a_hi}</p>
+            <button onclick="speakFAQ(${i}, event)" id="listen-btn-${i}" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 border border-emerald-500/30 rounded-lg px-3 py-2 hover:bg-emerald-500/10 transition">
+              <i class="fa-solid fa-volume-high"></i> Listen in ${currentLang === 'en' ? 'English' : 'Hindi'}
+            </button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function toggleFAQ(i){
+    document.getElementById(`faq-${i}`).classList.toggle('open');
+  }
+
+  const synth = window.speechSynthesis;
+  let voices = [];
+  function loadVoices(){ voices = synth.getVoices(); }
+  synth.onvoiceschanged = loadVoices;
+  loadVoices();
+
+  function pickVoice(lang){
+    if (lang === 'hi') {
+      return voices.find(v => v.lang.toLowerCase().startsWith('hi')) || null;
+    }
+    return voices.find(v => v.lang.toLowerCase() === 'en-in')
+        || voices.find(v => v.lang.toLowerCase().startsWith('en'))
+        || null;
+  }
+
+  function speakFAQ(i, evt){
+    if (!('speechSynthesis' in window)) return;
+    synth.cancel();
+    const f = FAQS[i];
+    const text = currentLang === 'en' ? f.a_en : f.a_hi;
+    const utter = new SpeechSynthesisUtterance(text);
+    const voice = pickVoice(currentLang);
+    if (voice) { utter.voice = voice; utter.lang = voice.lang; }
+    else { utter.lang = currentLang === 'hi' ? 'hi-IN' : 'en-IN'; }
+    utter.rate = 0.98;
+    const btn = document.getElementById(`listen-btn-${i}`);
+    const originalHTML = btn.innerHTML;
+    utter.onstart = () => { btn.innerHTML = '<i class="fa-solid fa-pause"></i> Playing…'; };
+    utter.onend = () => { btn.innerHTML = originalHTML; };
+    utter.onerror = () => { btn.innerHTML = originalHTML; };
+    synth.speak(utter);
+  }
+
+  renderFAQs();
+
+  function computeNewRegimeTax(gross){
+    const taxable = Math.max(0, gross - 75000);
+    if (taxable <= 1200000) return 0;
+    const slabs = [
+      [400000, 0], [400000, 0.05], [400000, 0.10], [400000, 0.15],
+      [400000, 0.20], [400000, 0.25], [Infinity, 0.30]
+    ];
+    let tax = 0, lower = 0;
+    for (const [width, rate] of slabs) {
+      const upper = lower + width;
+      const amountInSlab = Math.min(Math.max(0, taxable - lower), width);
+      tax += amountInSlab * rate;
+      lower = upper;
+      if (taxable <= lower) break;
+    }
+    return Math.round(tax * 1.04);
+  }
+
+  function computeOldRegimeTax(gross, c80, hra, homeLoan){
+    const cappedC80 = Math.min(c80 || 0, 150000);
+    const cappedHomeLoan = Math.min(homeLoan || 0, 200000);
+    const taxable = Math.max(0, gross - 50000 - cappedC80 - (hra || 0) - cappedHomeLoan);
+    let tax = 0;
+    if (taxable > 1000000) tax = (taxable - 1000000) * 0.30 + 750000 * 0.20 + 250000 * 0.05;
+    else if (taxable > 500000) tax = (taxable - 500000) * 0.20 + 250000 * 0.05;
+    else if (taxable > 250000) tax = (taxable - 250000) * 0.05;
+    if (taxable <= 500000) tax = 0;
+    return Math.round(tax * 1.04);
+  }
+
+  let lastRegimeResult = null;
+
+  function calcRegime(){
+    const salary = parseFloat(document.getElementById('rc-salary').value) || 0;
+    const c80 = parseFloat(document.getElementById('rc-80c').value) || 0;
+    const hra = parseFloat(document.getElementById('rc-hra').value) || 0;
+    const homeLoan = parseFloat(document.getElementById('rc-homeloan').value) || 0;
+
+    if (salary <= 0) { document.getElementById('rc-results').classList.add('hidden'); return; }
+
+    const newTax = computeNewRegimeTax(salary);
+    const oldTax = computeOldRegimeTax(salary, c80, hra, homeLoan);
+
+    document.getElementById('rc-results').classList.remove('hidden');
+    document.getElementById('rc-old-tax').textContent = '₹' + oldTax.toLocaleString('en-IN');
+    document.getElementById('rc-new-tax').textContent = '₹' + newTax.toLocaleString('en-IN');
+
+    const oldCard = document.getElementById('rc-old-card');
+    const newCard = document.getElementById('rc-new-card');
+    const verdictText = document.getElementById('rc-verdict-text');
+
+    if (oldTax < newTax) {
+      oldCard.classList.add('border-emerald-500/50'); newCard.classList.remove('border-emerald-500/50');
+      document.getElementById('rc-old-tax').className = 'text-3xl font-extrabold text-emerald-400';
+      document.getElementById('rc-new-tax').className = 'text-3xl font-extrabold text-gray-500';
+      verdictText.innerHTML = `The <b>Old Regime</b> saves you <b class="text-emerald-400">₹${(newTax-oldTax).toLocaleString('en-IN')}</b> this year, based on the deductions you entered.`;
+    } else if (newTax < oldTax) {
+      newCard.classList.add('border-emerald-500/50'); oldCard.classList.remove('border-emerald-500/50');
+      document.getElementById('rc-new-tax').className = 'text-3xl font-extrabold text-emerald-400';
+      document.getElementById('rc-old-tax').className = 'text-3xl font-extrabold text-gray-500';
+      verdictText.innerHTML = `The <b>New Regime</b> saves you <b class="text-emerald-400">₹${(oldTax-newTax).toLocaleString('en-IN')}</b> this year, based on the deductions you entered.`;
+    } else {
+      verdictText.innerHTML = `Both regimes result in the same tax for your numbers — pick whichever is simpler for you to manage.`;
+    }
+
+    lastRegimeResult = { salary, c80, hra, homeLoan, oldTax, newTax, computedAt: new Date().toISOString() };
+  }
+
+  function saveRegimeCalc(){
+    if (!currentUser || !lastRegimeResult) return;
+    const btn = document.getElementById('rc-save-btn');
+    const status = document.getElementById('rc-save-status');
+    btn.disabled = true;
+    status.textContent = 'Saving…';
+    db.collection('signups').doc(currentUser.uid).collection('regime_calculations').add({
+      ...lastRegimeResult,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    }).then(() => {
+      status.innerHTML = '<span class="text-emerald-400">✓ Saved to your profile</span>';
+      btn.disabled = false;
+    }).catch(err => {
+      console.error(err);
+      status.innerHTML = '<span class="text-rose-400">Save failed — try again</span>';
+      btn.disabled = false;
+    });
+  }
+</script>
+<script>
+  // --- Site-wide Live Market Ticker (Nifty, Sensex, Crude, Gold, Broad/Sector Indices, BTC, ETH) ---
+  const HOME_TICKER_FALLBACK = {"updated_at":"2026-09-15T10:00:00Z","indices":{"nifty":{"label":"NIFTY 50","value":23118.6,"change_pct":-1.19},"sensex":{"label":"SENSEX","value":74003.82,"change_pct":-1.04},"crude":{"label":"CRUDE (WTI)","value":103.5,"change_pct":1.3,"unit":"USD/bbl"},"gold_inr":{"label":"GOLD (India, 24K/10g, Delhi)","value":154240,"change_pct":-0.32,"unit":"INR/10g"},"gold_usd":{"label":"GOLD (USD)","value":4284.48,"change_pct":-1.25,"unit":"USD/oz"}},"broad_indices":[{"symbol":"NIFTY MIDCAP 150","price":21845.3,"change_pct":-0.85},{"symbol":"NIFTY SMALLCAP 100","price":19906.3,"change_pct":-1.1}],"sector_indices":[{"symbol":"NIFTY BANK","price":55794.75,"change_pct":-1.43},{"symbol":"NIFTY IT","price":28921.5,"change_pct":0.11},{"symbol":"NIFTY AUTO","price":27304.5,"change_pct":-0.86},{"symbol":"NIFTY FMCG","price":45053.75,"change_pct":-0.29},{"symbol":"NIFTY METAL","price":12999.05,"change_pct":-2.3}],"crypto":[{"symbol":"BITCOIN","price":62150.3,"change_pct":1.25},{"symbol":"ETHEREUM","price":2410.8,"change_pct":0.95}]};
+
+  function tFmtPct(p){ return (p>0?'+':'') + p.toFixed(2) + '%'; }
+  function tChip(label, value, pct, unit){
+    const cls = pct>=0 ? 'text-emerald-400' : 'text-rose-400';
+    const arrow = pct>=0 ? '▲' : '▼';
+    return `<span class="inline-flex items-center gap-2 px-5 border-r border-zinc-800 last:border-r-0 text-xs">
+      <span class="text-zinc-500 font-bold uppercase">${label}</span>
+      <span class="text-white font-black">${Number(value).toLocaleString('en-IN',{maximumFractionDigits:2})}</span>
+      ${unit ? `<span class="text-zinc-600">${unit}</span>` : ''}
+      <span class="${cls} font-black">${arrow} ${tFmtPct(pct)}</span>
+    </span>`;
+  }
+  function renderHomeTicker(data){
+    const items = [];
+    if (data.indices) Object.values(data.indices).forEach(i => items.push(tChip(i.label, i.value, i.change_pct, i.unit)));
+    (data.broad_indices||[]).forEach(i => items.push(tChip(i.symbol, i.price, i.change_pct)));
+    (data.sector_indices||[]).forEach(i => items.push(tChip(i.symbol, i.price, i.change_pct)));
+    (data.crypto||[]).forEach(i => items.push(tChip(i.symbol, i.price, i.change_pct, 'USD')));
+    const html = items.join('');
+    const el = document.getElementById('home-ticker');
+    if (el) el.innerHTML = html + html;
+  }
+  async function loadHomeTicker(){
+    try{
+      const res = await fetch('data.json', {cache:'no-store'});
+      if(!res.ok) throw new Error('no data.json');
+      renderHomeTicker(await res.json());
+    }catch(e){
+      renderHomeTicker(HOME_TICKER_FALLBACK);
+    }
+  }
+  loadHomeTicker();
+  setInterval(loadHomeTicker, 30*60*1000);
+</script>
+
+</body>
+</html>
