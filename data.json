@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-09-28T18:11:23.885Z",
+  "updated_at": "2026-09-29T10:15:09.288Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22780.25,
-      "change_pct": -1.56
+      "value": 22716.2,
+      "change_pct": -0.28
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 72771.72,
-      "change_pct": -1.52
+      "value": 72529.07,
+      "change_pct": -0.33
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 92.89,
-      "change_pct": 0.52,
+      "value": 92.29,
+      "change_pct": -0.33,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 128580,
-      "change_pct": -3.57,
+      "value": 128935,
+      "change_pct": 0.24,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4167.1,
-      "change_pct": -3.57,
+      "value": 4178.3,
+      "change_pct": 0.24,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22071.3,
-      "change_pct": -1.63
+      "price": 21853.3,
+      "change_pct": -0.99
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19351.1,
-      "change_pct": -1.85
+      "price": 19193.55,
+      "change_pct": -0.81
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54471.65,
-      "change_pct": -1.99
+      "price": 54259.95,
+      "change_pct": -0.39
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28086.5,
-      "change_pct": -0.26
+      "price": 27670,
+      "change_pct": -1.48
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 26525.05,
-      "change_pct": -1.64
+      "price": 26173.35,
+      "change_pct": -1.33
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45264.35,
-      "change_pct": -1.47
+      "price": 44790.3,
+      "change_pct": -1.05
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12854.4,
-      "change_pct": -1.78
+      "price": 12954.45,
+      "change_pct": 0.78
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 83907.54,
-      "change_pct": -0.65
+      "price": 84181.96,
+      "change_pct": 0.81
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2694.93,
-      "change_pct": 0.3
+      "price": 2715.45,
+      "change_pct": 1
     }
   ],
   "news": {
@@ -91,12 +91,6 @@
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-09-25/us-30-year-yield-tops-5-5-in-vacuum-after-sentiment-gauge",
             "published_at": "2026-09-26T15:11:00Z"
-          },
-          {
-            "title": "Meta stock jumps 36% in September as Muse AI fuels rally",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-09-24/meta-s-best-month-since-2013-has-it-on-cusp-of-2-trillion-level",
-            "published_at": "2026-09-25T03:24:54Z"
           }
         ]
       },
@@ -106,7 +100,14 @@
       },
       {
         "outlet": "wsj.com",
-        "articles": []
+        "articles": [
+          {
+            "title": "NKorea Testing Swarm Attacks Mixing Drones and Missiles...",
+            "source": "The Wall Street Journal",
+            "url": "https://www.wsj.com/world/north-korea-is-testing-swarm-attacks-mixing-drones-and-missiles-6f8a0a38",
+            "published_at": "2026-09-27T13:00:13Z"
+          }
+        ]
       }
     ],
     "indian": [
@@ -118,22 +119,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Private sector capex projected to rise to ₹3.2 trn in FY27: RBI bulletin",
+            "title": "Mining and construction equipment industry to grow 8-10% in FY27: Icra",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/economy-news-private-capex-seen-rising-to-rs-3-2-trillion-in-fy27-126092700270_1.html",
-            "published_at": "2026-09-27T08:11:12Z"
+            "url": "https://www.business-standard.com/industry/news/mining-construction-equipment-industry-to-grow-8-10-per-cent-in-fy27-icra-126092800685_1.html",
+            "published_at": "2026-09-28T09:56:18Z"
           },
           {
-            "title": "SC to hear plea against MDR on UPI merchant payments above ₹2,000 on Monday",
+            "title": "PVR Inox Ltd slips for fifth straight session",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/news/sc-to-hear-plea-against-mdr-on-upi-merchant-payments-above-2-000-on-monday-126092700219_1.html",
-            "published_at": "2026-09-27T07:27:04Z"
+            "url": "https://www.business-standard.com/markets/capital-market-news/pvr-inox-ltd-slips-for-fifth-straight-session-126092800605_1.html",
+            "published_at": "2026-09-28T09:20:35Z"
           },
           {
-            "title": "Geopolitical developments, crude oil likely to steer stock market this week",
+            "title": "Aegis Logistics Ltd drops for fifth straight session",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/geopolitical-developments-crude-oil-likely-to-steer-stock-market-this-week-126092700221_1.html",
-            "published_at": "2026-09-27T07:21:25Z"
+            "url": "https://www.business-standard.com/markets/capital-market-news/aegis-logistics-ltd-drops-for-fifth-straight-session-126092800604_1.html",
+            "published_at": "2026-09-28T09:20:28Z"
           }
         ]
       },
@@ -141,22 +142,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "UPI MDR row reaches SC: Plea against merchant charges on payments above ₹2,000 to be heard on Monday",
+            "title": "Deciphering Tata Boardroom Battle: 5 imp questions on Veto, listing, Noel, Chandra, Singhvi-Salve entry answered | Excl",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/upi-mdr-row-reaches-sc-plea-against-merchant-charges-on-payments-above-2-000-to-be-heard-on-monday-11790499371135.html",
-            "published_at": "2026-09-27T09:36:58Z"
+            "url": "https://www.livemint.com/companies/deciphering-tata-boardroom-battle-5-imp-questions-on-veto-listing-noel-chandra-singhvi-salve-entry-answered-excl-11790586833310.html",
+            "published_at": "2026-09-28T09:39:48Z"
           },
           {
-            "title": "The Tata Sons' board meeting of 17 September raises a set of questions in need of answers",
+            "title": "UPI MDR row: SC refuses interim stay on the levy; asks Centre, RBI to file counter affidavits within 4 weeks",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/the-tata-sons-board-meeting-17-september-raises-a-set-of-questions-in-need-of-answers-chandrasekaran-11790487890946.html",
-            "published_at": "2026-09-27T09:31:05Z"
+            "url": "https://www.livemint.com/money/upi-mdr-row-sc-refuses-interim-stay-on-the-levy-asks-centre-rbi-to-file-counter-affidavits-in-4-weeks-11790581991588.html",
+            "published_at": "2026-09-28T08:02:15Z"
           },
           {
-            "title": "World Tourism Day 2026 special: 5 common money mistakes Indian tourists should avoid",
+            "title": "Principles of regulation must never be forgotten: Here are five deviations that India must fix right away",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/world-tourism-day-2026-special-5-common-money-mistakes-indian-tourists-should-avoid-11790494641339.html",
-            "published_at": "2026-09-27T08:51:57Z"
+            "url": "https://www.livemint.com/opinion/online-views/principles-of-regulation-must-never-be-forgotten-five-deviations-india-must-fix-right-away-11790576797843.html",
+            "published_at": "2026-09-28T07:13:41Z"
           }
         ]
       }
@@ -165,32 +166,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Australia could run its electricity grid without fossil gas at similar cost; researchers say models underestimate long-duration storage",
-        "url": "https://timesofindia.indiatimes.com/world/rest-of-world/australia-could-run-its-electricity-grid-without-fossil-gas-at-similar-cost-researchers-say-models-underestimate-long-duration-storage/articleshow/134517088.cms"
+        "title": "Morepen files first US drug application, eyes generic diabetes market",
+        "url": "https://www.thehindubusinessline.com/companies/morepen-files-first-us-drug-application-eyes-generic-diabetes-market/article71519098.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Geopolitical developments, crude oil likely to steer stock market this week",
-        "url": "https://www.business-standard.com/markets/news/geopolitical-developments-crude-oil-likely-to-steer-stock-market-this-week-126092700221_1.html"
+        "title": "Paisalo Digital Ltd leads losers in 'A' group",
+        "url": "https://www.business-standard.com/markets/capital-market-news/paisalo-digital-ltd-leads-losers-in-a-group-126092800635_1.html"
+      },
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "NSE shares slip below IPO price after lackluster India debut",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-28/nse-shares-slip-below-ipo-price-after-lackluster-india-debut"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Geopolitical developments, crude oil to steer stock market in holiday-shortened week: Analysts",
-        "url": "https://www.thehindubusinessline.com/markets/commodities/geopolitical-developments-crude-oil-to-steer-stock-market-in-holiday-shortened-week-analysts/article71515479.ece"
+        "title": "Medico Remedies Ltd leads losers in 'B' group",
+        "url": "https://www.business-standard.com/markets/capital-market-news/medico-remedies-ltd-leads-losers-in-b-group-126092800608_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "9 midcap stocks with over 50% YoY sales growth",
-        "url": "https://m.economictimes.com/markets/stocks/news/9-midcap-stocks-with-over-50-yoy-sales-growth/stock-watch/slideshow/134516221.cms"
-      },
-      {
-        "symbol": "IPO",
-        "cap": "Large/Mid Cap",
-        "title": "Stock market news: Liqvd Digital IPO, Axiom Gas debut and NSE’s dabba trading warning",
-        "url": "https://www.thehindubusinessline.com/markets/stock-market-news-liqvd-digital-ipo-axiom-gas-debut-and-nses-dabba-trading-warning/article71515194.ece"
+        "title": "Volumes jump at Tata Teleservices (Maharashtra) Ltd counter",
+        "url": "https://www.business-standard.com/markets/capital-market-news/volumes-jump-at-tata-teleservices-maharashtra-ltd-counter-126092800606_1.html"
       }
     ]
   }
