@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-09-29T16:32:50.365Z",
+  "updated_at": "2026-09-30T10:06:21.008Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22716.2,
-      "change_pct": -0.28
+      "value": 22620.45,
+      "change_pct": -0.42
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 72529.07,
-      "change_pct": -0.33
+      "value": 72496.69,
+      "change_pct": -0.04
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 90.32,
-      "change_pct": -2.46,
+      "value": 90.25,
+      "change_pct": 0.97,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 129067,
-      "change_pct": 0.35,
+      "value": 129972,
+      "change_pct": 0.93,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4183,
-      "change_pct": 0.35,
+      "value": 4218.5,
+      "change_pct": 0.93,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21853.3,
-      "change_pct": -0.99
+      "price": 21867.5,
+      "change_pct": 0.06
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19193.55,
-      "change_pct": -0.81
+      "price": 19245.7,
+      "change_pct": 0.27
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54259.95,
-      "change_pct": -0.39
+      "price": 54633.05,
+      "change_pct": 0.69
     },
     {
       "symbol": "NIFTY IT",
-      "price": 27670,
-      "change_pct": -1.48
+      "price": 27704.8,
+      "change_pct": 0.13
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 26173.35,
-      "change_pct": -1.33
+      "price": 26293.95,
+      "change_pct": 0.46
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 44790.3,
-      "change_pct": -1.05
+      "price": 44508.45,
+      "change_pct": -0.63
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12954.45,
-      "change_pct": 0.78
+      "price": 12760.5,
+      "change_pct": -1.5
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 83178.66,
-      "change_pct": -0.39
+      "price": 83714.09,
+      "change_pct": 0.11
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2679.1,
-      "change_pct": -0.36
+      "price": 2688.9,
+      "change_pct": 0.45
     }
   ],
   "news": {
@@ -91,6 +91,18 @@
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-09-25/us-30-year-yield-tops-5-5-in-vacuum-after-sentiment-gauge",
             "published_at": "2026-09-26T15:11:00Z"
+          },
+          {
+            "title": "Meta stock jumps 36% in September as Muse AI fuels rally",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-09-24/meta-s-best-month-since-2013-has-it-on-cusp-of-2-trillion-level",
+            "published_at": "2026-09-25T03:24:54Z"
+          },
+          {
+            "title": "Data-centre bet makes ESDS one of India’s best new listings",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-09-23/data-center-bet-makes-esds-one-of-india-s-best-new-listings",
+            "published_at": "2026-09-23T02:47:23Z"
           }
         ]
       },
@@ -119,22 +131,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Mining and construction equipment industry to grow 8-10% in FY27: Icra",
+            "title": "Bosch Home Comfort India surges 8%; hits 52-week high in weak market",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/news/mining-construction-equipment-industry-to-grow-8-10-per-cent-in-fy27-icra-126092800685_1.html",
-            "published_at": "2026-09-28T09:56:18Z"
+            "url": "https://www.business-standard.com/markets/news/bosch-home-comfort-india-surges-8-hits-52-week-high-in-weak-market-126092900636_1.html",
+            "published_at": "2026-09-29T09:34:19Z"
           },
           {
-            "title": "PVR Inox Ltd slips for fifth straight session",
+            "title": "TCI shares gain 1.5% as board approves ₹150 crore buyback",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/capital-market-news/pvr-inox-ltd-slips-for-fifth-straight-session-126092800605_1.html",
-            "published_at": "2026-09-28T09:20:35Z"
+            "url": "https://www.business-standard.com/markets/news/tci-shares-gain-1-5-as-board-approves-150-crore-buyback-126092900640_1.html",
+            "published_at": "2026-09-29T09:26:28Z"
           },
           {
-            "title": "Aegis Logistics Ltd drops for fifth straight session",
+            "title": "Indices trade in negative terrain; IT shares plunge for 8th day",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/capital-market-news/aegis-logistics-ltd-drops-for-fifth-straight-session-126092800604_1.html",
-            "published_at": "2026-09-28T09:20:28Z"
+            "url": "https://www.business-standard.com/markets/capital-market-news/indices-trade-in-negative-terrain-it-shares-plunge-for-8th-day-126092900630_1.html",
+            "published_at": "2026-09-29T09:20:16Z"
           }
         ]
       },
@@ -142,22 +154,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Deciphering Tata Boardroom Battle: 5 imp questions on Veto, listing, Noel, Chandra, Singhvi-Salve entry answered | Excl",
+            "title": "Equity vs gold vs silver: Which asset class delivered the most returns in H1 FY27? Here's what data shows",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/deciphering-tata-boardroom-battle-5-imp-questions-on-veto-listing-noel-chandra-singhvi-salve-entry-answered-excl-11790586833310.html",
-            "published_at": "2026-09-28T09:39:48Z"
+            "url": "https://www.livemint.com/money/personal-finance/equity-vs-gold-vs-silver-which-asset-class-delivered-the-most-returns-in-h1-fy27-heres-what-data-shows-11790667687518.html",
+            "published_at": "2026-09-29T07:59:24Z"
           },
           {
-            "title": "UPI MDR row: SC refuses interim stay on the levy; asks Centre, RBI to file counter affidavits within 4 weeks",
+            "title": "RBI’s capital cushion tweak: Tighter norms don’t relieve banks of their need to track market risks",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/upi-mdr-row-sc-refuses-interim-stay-on-the-levy-asks-centre-rbi-to-file-counter-affidavits-in-4-weeks-11790581991588.html",
-            "published_at": "2026-09-28T08:02:15Z"
+            "url": "https://www.livemint.com/opinion/online-views/rbi-capital-cushion-tweak-tighter-norms-don-t-relieve-banks-of-their-need-to-track-market-risks-11790589859360.html",
+            "published_at": "2026-09-29T06:30:20Z"
           },
           {
-            "title": "Principles of regulation must never be forgotten: Here are five deviations that India must fix right away",
+            "title": "Buying property abroad for your NRI child? Know how much parents can transfer and what tax rules apply",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/principles-of-regulation-must-never-be-forgotten-five-deviations-india-must-fix-right-away-11790576797843.html",
-            "published_at": "2026-09-28T07:13:41Z"
+            "url": "https://www.livemint.com/money/personal-finance/buying-property-abroad-for-your-nri-child-know-how-much-parents-can-transfer-and-what-tax-rules-apply-11790656555960.html",
+            "published_at": "2026-09-29T06:05:25Z"
           }
         ]
       }
@@ -166,32 +178,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Morepen files first US drug application, eyes generic diabetes market",
-        "url": "https://www.thehindubusinessline.com/companies/morepen-files-first-us-drug-application-eyes-generic-diabetes-market/article71519098.ece"
+        "title": "Volumes spurt at Honasa Consumer Ltd counter",
+        "url": "https://www.business-standard.com/markets/capital-market-news/volumes-spurt-at-honasa-consumer-ltd-counter-126092900671_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Paisalo Digital Ltd leads losers in 'A' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/paisalo-digital-ltd-leads-losers-in-a-group-126092800635_1.html"
-      },
-      {
-        "symbol": "NSE",
-        "cap": "Large/Mid Cap",
-        "title": "NSE shares slip below IPO price after lackluster India debut",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-28/nse-shares-slip-below-ipo-price-after-lackluster-india-debut"
+        "title": "Bosch Home Comfort India surges 8%; hits 52-week high in weak market",
+        "url": "https://www.business-standard.com/markets/news/bosch-home-comfort-india-surges-8-hits-52-week-high-in-weak-market-126092900636_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Medico Remedies Ltd leads losers in 'B' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/medico-remedies-ltd-leads-losers-in-b-group-126092800608_1.html"
+        "title": "Sansera Engineering Ltd leads losers in 'A' group",
+        "url": "https://www.business-standard.com/markets/capital-market-news/sansera-engineering-ltd-leads-losers-in-a-group-126092900654_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Volumes jump at Tata Teleservices (Maharashtra) Ltd counter",
-        "url": "https://www.business-standard.com/markets/capital-market-news/volumes-jump-at-tata-teleservices-maharashtra-ltd-counter-126092800606_1.html"
+        "title": "Vivid Mercantile Ltd leads losers in 'B' group",
+        "url": "https://www.business-standard.com/markets/capital-market-news/vivid-mercantile-ltd-leads-losers-in-b-group-126092900631_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Indices trade in negative terrain; IT shares plunge for 8th day",
+        "url": "https://www.business-standard.com/markets/capital-market-news/indices-trade-in-negative-terrain-it-shares-plunge-for-8th-day-126092900630_1.html"
       }
     ]
   }
