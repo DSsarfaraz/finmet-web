@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-09-30T16:26:07.154Z",
+  "updated_at": "2026-10-01T10:34:43.055Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22620.45,
-      "change_pct": -0.42
+      "value": 22421.95,
+      "change_pct": -0.88
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 72480.29,
-      "change_pct": -0.07
+      "value": 71909.7,
+      "change_pct": -0.79
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 91.53,
-      "change_pct": 2.41,
+      "value": 91.88,
+      "change_pct": 1.61,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 129124,
-      "change_pct": 0.28,
+      "value": 129899,
+      "change_pct": 0.2,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4191.4,
-      "change_pct": 0.28,
+      "value": 4194.9,
+      "change_pct": 0.2,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21867.5,
-      "change_pct": 0.06
+      "price": 21643.85,
+      "change_pct": -1.02
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19245.7,
-      "change_pct": 0.27
+      "price": 19058.65,
+      "change_pct": -0.97
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54633.05,
-      "change_pct": 0.69
+      "price": 54450.75,
+      "change_pct": -0.33
     },
     {
       "symbol": "NIFTY IT",
-      "price": 27704.8,
-      "change_pct": 0.13
+      "price": 28304.7,
+      "change_pct": 2.17
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 26293.95,
-      "change_pct": 0.46
+      "price": 25384.95,
+      "change_pct": -3.46
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 44508.45,
-      "change_pct": -0.63
+      "price": 43789.85,
+      "change_pct": -1.61
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12760.5,
-      "change_pct": -1.5
+      "price": 12460.7,
+      "change_pct": -2.35
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 84412.53,
-      "change_pct": 0.94
+      "price": 83731.72,
+      "change_pct": 0.21
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2691.13,
-      "change_pct": 0.54
+      "price": 2690.69,
+      "change_pct": 0.26
     }
   ],
   "news": {
@@ -97,12 +97,6 @@
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-09-24/meta-s-best-month-since-2013-has-it-on-cusp-of-2-trillion-level",
             "published_at": "2026-09-25T03:24:54Z"
-          },
-          {
-            "title": "Data-centre bet makes ESDS one of India’s best new listings",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-09-23/data-center-bet-makes-esds-one-of-india-s-best-new-listings",
-            "published_at": "2026-09-23T02:47:23Z"
           }
         ]
       },
@@ -131,22 +125,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Bosch Home Comfort India surges 8%; hits 52-week high in weak market",
+            "title": "India Inc credit quality remains strong despite H2 FY27 headwinds: Icra",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/bosch-home-comfort-india-surges-8-hits-52-week-high-in-weak-market-126092900636_1.html",
-            "published_at": "2026-09-29T09:34:19Z"
+            "url": "https://www.business-standard.com/industry/news/india-inc-credit-quality-remains-strong-despite-h2-fy27-headwinds-icra-126093000768_1.html",
+            "published_at": "2026-09-30T10:10:39Z"
           },
           {
-            "title": "TCI shares gain 1.5% as board approves ₹150 crore buyback",
+            "title": "Azad Engineering zooms 111% in six months; hits new high on heavy volumes",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/tci-shares-gain-1-5-as-board-approves-150-crore-buyback-126092900640_1.html",
-            "published_at": "2026-09-29T09:26:28Z"
+            "url": "https://www.business-standard.com/markets/news/azad-engineering-zooms-111-in-six-months-hits-new-high-on-heavy-volumes-126093000706_1.html",
+            "published_at": "2026-09-30T09:52:47Z"
           },
           {
-            "title": "Indices trade in negative terrain; IT shares plunge for 8th day",
+            "title": "Money changes in Oct: SBI ATM, LPG, FD, NPS and EPF rules to know",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/capital-market-news/indices-trade-in-negative-terrain-it-shares-plunge-for-8th-day-126092900630_1.html",
-            "published_at": "2026-09-29T09:20:16Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/money-changes-in-oct-sbi-atm-lpg-fd-nps-and-epf-rules-to-know-126093000569_1.html",
+            "published_at": "2026-09-30T08:17:16Z"
           }
         ]
       },
@@ -154,22 +148,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Equity vs gold vs silver: Which asset class delivered the most returns in H1 FY27? Here's what data shows",
+            "title": "Rajesh Shukla: Why do Indians travel within the country? Leisure is only a small part of the answer",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/equity-vs-gold-vs-silver-which-asset-class-delivered-the-most-returns-in-h1-fy27-heres-what-data-shows-11790667687518.html",
-            "published_at": "2026-09-29T07:59:24Z"
+            "url": "https://www.livemint.com/opinion/online-views/rajesh-shukla-why-do-indians-travel-within-the-country-leisure-is-only-a-small-part-of-the-answer-tourism-market-11790692807602.html",
+            "published_at": "2026-09-30T10:30:24Z"
           },
           {
-            "title": "RBI’s capital cushion tweak: Tighter norms don’t relieve banks of their need to track market risks",
+            "title": "The vacation-home dream—and the cost of keeping it alive",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/rbi-capital-cushion-tweak-tighter-norms-don-t-relieve-banks-of-their-need-to-track-market-risks-11790589859360.html",
-            "published_at": "2026-09-29T06:30:20Z"
+            "url": "https://www.livemint.com/money/personal-finance/the-vacation-home-dream-and-the-cost-of-keeping-it-alive-11790752315425.html",
+            "published_at": "2026-09-30T09:48:47Z"
           },
           {
-            "title": "Buying property abroad for your NRI child? Know how much parents can transfer and what tax rules apply",
+            "title": "Why the Mistrys want to unlock their family silver from Tata Sons",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/buying-property-abroad-for-your-nri-child-know-how-much-parents-can-transfer-and-what-tax-rules-apply-11790656555960.html",
-            "published_at": "2026-09-29T06:05:25Z"
+            "url": "https://www.livemint.com/companies/news/sp-group-tata-sons-stake-listing-11790742711748.html",
+            "published_at": "2026-09-30T09:30:23Z"
           }
         ]
       }
@@ -178,32 +172,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Volumes spurt at Honasa Consumer Ltd counter",
-        "url": "https://www.business-standard.com/markets/capital-market-news/volumes-spurt-at-honasa-consumer-ltd-counter-126092900671_1.html"
+        "title": "Azad Engineering zooms 111% in six months; hits new high on heavy volumes",
+        "url": "https://www.business-standard.com/markets/news/azad-engineering-zooms-111-in-six-months-hits-new-high-on-heavy-volumes-126093000706_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Bosch Home Comfort India surges 8%; hits 52-week high in weak market",
-        "url": "https://www.business-standard.com/markets/news/bosch-home-comfort-india-surges-8-hits-52-week-high-in-weak-market-126092900636_1.html"
+        "title": "Kotak MF, Abakkus lead ₹830-cr buying in Axiscades stake sale; stock jumps over 7%",
+        "url": "https://www.thehindubusinessline.com/markets/kotak-mf-abakkus-lead-830-cr-buying-in-axiscades-stake-sale-stock-jumps-over-7/article71527344.ece"
+      },
+      {
+        "symbol": "KIMS",
+        "cap": "Large/Mid Cap",
+        "title": "Hospital stocks fall up to 6%: Apollo, Fortis, KIMS tumble as SC questions drug mark-ups",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hospital-stocks-fall-up-to-6-apollo-fortis-kims-tumble-as-sc-questions-drug-mark-ups/articleshow/134589671.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Sansera Engineering Ltd leads losers in 'A' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/sansera-engineering-ltd-leads-losers-in-a-group-126092900654_1.html"
+        "title": "Adroit Industries shares make strong debut, jump 86.5%",
+        "url": "https://www.thehindubusinessline.com/markets/adroit-industries-shares-make-strong-debut-jumps-865/article71527325.ece"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "MRPL",
         "cap": "Large/Mid Cap",
-        "title": "Vivid Mercantile Ltd leads losers in 'B' group",
-        "url": "https://www.business-standard.com/markets/capital-market-news/vivid-mercantile-ltd-leads-losers-in-b-group-126092900631_1.html"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Indices trade in negative terrain; IT shares plunge for 8th day",
-        "url": "https://www.business-standard.com/markets/capital-market-news/indices-trade-in-negative-terrain-it-shares-plunge-for-8th-day-126092900630_1.html"
+        "title": "MRPL shares tumble 5% after explosion at Mangaluru plant, thick smoke seen from refinery unit",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mrpl-shares-tumble-5-after-explosion-at-mangaluru-plant-thick-smoke-seen-from-refinery-unit/articleshow/134589058.cms"
       }
     ]
   }
