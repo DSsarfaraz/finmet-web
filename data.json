@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T17:03:17.721Z",
+  "updated_at": "2026-10-02T10:09:38.451Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
@@ -13,20 +13,20 @@
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 92.16,
-      "change_pct": 1.92,
+      "value": 89.17,
+      "change_pct": -3.98,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 129793,
-      "change_pct": 0.12,
+      "value": 130501,
+      "change_pct": 0.3,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4191.9,
-      "change_pct": 0.12,
+      "value": 4215,
+      "change_pct": 0.3,
       "unit": "USD/oz"
     }
   },
@@ -72,13 +72,13 @@
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 84415.01,
-      "change_pct": 1.03
+      "price": 86402.82,
+      "change_pct": 1.83
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2688.06,
-      "change_pct": 0.16
+      "price": 2747.87,
+      "change_pct": 1.56
     }
   ],
   "news": {
@@ -87,16 +87,22 @@
         "outlet": "bloomberg.com",
         "articles": [
           {
-            "title": "US 30-year yield tops 5.5% in ‘Vacuum’ after sentiment gauge",
+            "title": "India’s $133-billion cash deluge puts RBI on hawkish path",
             "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-09-25/us-30-year-yield-tops-5-5-in-vacuum-after-sentiment-gauge",
-            "published_at": "2026-09-26T15:11:00Z"
+            "url": "https://www.bloomberg.com/news/articles/2026-10-01/rbi-s-success-on-dollar-flows-raises-stakes-in-inflation-fight",
+            "published_at": "2026-10-01T06:41:12Z"
           },
           {
-            "title": "Meta stock jumps 36% in September as Muse AI fuels rally",
+            "title": "IPO valuations dip in India as local funds flex pricing muscle",
             "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-09-24/meta-s-best-month-since-2013-has-it-on-cusp-of-2-trillion-level",
-            "published_at": "2026-09-25T03:24:54Z"
+            "url": "https://www.bloomberg.com/news/articles/2026-10-01/ipo-valuations-dip-in-india-as-local-funds-flex-pricing-muscle",
+            "published_at": "2026-10-01T04:55:07Z"
+          },
+          {
+            "title": "Paramount wraps up $52-billion debt sale to fund Warner buy-out",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-09-30/paramount-cuts-pricing-on-30-billion-high-grade-bond-sale",
+            "published_at": "2026-10-01T03:46:21Z"
           }
         ]
       },
@@ -125,22 +131,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "India Inc credit quality remains strong despite H2 FY27 headwinds: Icra",
+            "title": "Morepen Labs hits new high on huge volume; stock up 191% in 4 months",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/news/india-inc-credit-quality-remains-strong-despite-h2-fy27-headwinds-icra-126093000768_1.html",
-            "published_at": "2026-09-30T10:10:39Z"
+            "url": "https://www.business-standard.com/markets/news/morepen-labs-hits-new-high-on-huge-volume-stock-up-191-in-4-months-126100100727_1.html",
+            "published_at": "2026-10-01T10:07:48Z"
           },
           {
-            "title": "Azad Engineering zooms 111% in six months; hits new high on heavy volumes",
+            "title": "Gandhi Jayanti 2026: Are banks open on October 2? Check holiday status",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/azad-engineering-zooms-111-in-six-months-hits-new-high-on-heavy-volumes-126093000706_1.html",
-            "published_at": "2026-09-30T09:52:47Z"
+            "url": "https://www.business-standard.com/india-news/gandhi-jayanti-2026-are-banks-open-on-october-2-check-status-126100100693_1.html",
+            "published_at": "2026-10-01T09:44:47Z"
           },
           {
-            "title": "Money changes in Oct: SBI ATM, LPG, FD, NPS and EPF rules to know",
+            "title": "At 52-week lows: RIL, ONGC, M&M, Airtel, PB Fintech, 69 other BSE500 stocks",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/money-changes-in-oct-sbi-atm-lpg-fd-nps-and-epf-rules-to-know-126093000569_1.html",
-            "published_at": "2026-09-30T08:17:16Z"
+            "url": "https://www.business-standard.com/markets/news/at-52-week-lows-ril-ongc-m-m-airtel-pb-fintech-69-other-bse500-stocks-on-thursday-126100100567_1.html",
+            "published_at": "2026-10-01T08:40:25Z"
           }
         ]
       },
@@ -148,22 +154,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Rajesh Shukla: Why do Indians travel within the country? Leisure is only a small part of the answer",
+            "title": "Markets, not savings, drove majority of global wealth creation in 2025, says report — Did India benefit from the boom?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/rajesh-shukla-why-do-indians-travel-within-the-country-leisure-is-only-a-small-part-of-the-answer-tourism-market-11790692807602.html",
-            "published_at": "2026-09-30T10:30:24Z"
+            "url": "https://www.livemint.com/money/markets-not-savings-drove-majority-of-global-wealth-creation-in-2025-says-report-did-india-benefit-from-the-boom-11790840166836.html",
+            "published_at": "2026-10-01T08:58:49Z"
           },
           {
-            "title": "The vacation-home dream—and the cost of keeping it alive",
+            "title": "Why the Tata inheritance reminds us of Gandhi’s view of wealth—best held in trust for people at large",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/the-vacation-home-dream-and-the-cost-of-keeping-it-alive-11790752315425.html",
-            "published_at": "2026-09-30T09:48:47Z"
+            "url": "https://www.livemint.com/opinion/online-views/why-the-tata-inheritance-reminds-us-of-gandhi-s-view-of-wealth-best-held-in-trust-for-people-at-large-11790783749515.html",
+            "published_at": "2026-10-01T07:00:23Z"
           },
           {
-            "title": "Why the Mistrys want to unlock their family silver from Tata Sons",
+            "title": "PPF, SCSS, SSY interest rates kept unchanged for Dec quarter: How are small savings rates set, why are they frozen?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/sp-group-tata-sons-stake-listing-11790742711748.html",
-            "published_at": "2026-09-30T09:30:23Z"
+            "url": "https://www.livemint.com/money/ppf-scss-ssy-interest-rates-kept-unchanged-for-dec-quarter-how-are-small-savings-rates-set-why-are-they-frozen-11790833954731.html",
+            "published_at": "2026-10-01T06:55:02Z"
           }
         ]
       }
@@ -172,32 +178,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Azad Engineering zooms 111% in six months; hits new high on heavy volumes",
-        "url": "https://www.business-standard.com/markets/news/azad-engineering-zooms-111-in-six-months-hits-new-high-on-heavy-volumes-126093000706_1.html"
+        "title": "Morepen Labs hits new high on huge volume; stock up 191% in 4 months",
+        "url": "https://www.business-standard.com/markets/news/morepen-labs-hits-new-high-on-huge-volume-stock-up-191-in-4-months-126100100727_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Kotak MF, Abakkus lead ₹830-cr buying in Axiscades stake sale; stock jumps over 7%",
-        "url": "https://www.thehindubusinessline.com/markets/kotak-mf-abakkus-lead-830-cr-buying-in-axiscades-stake-sale-stock-jumps-over-7/article71527344.ece"
-      },
-      {
-        "symbol": "KIMS",
-        "cap": "Large/Mid Cap",
-        "title": "Hospital stocks fall up to 6%: Apollo, Fortis, KIMS tumble as SC questions drug mark-ups",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hospital-stocks-fall-up-to-6-apollo-fortis-kims-tumble-as-sc-questions-drug-mark-ups/articleshow/134589671.cms"
+        "title": "Gandhi Jayanti 2026: Are banks open on October 2? Check holiday status",
+        "url": "https://www.business-standard.com/india-news/gandhi-jayanti-2026-are-banks-open-on-october-2-check-status-126100100693_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Adroit Industries shares make strong debut, jump 86.5%",
-        "url": "https://www.thehindubusinessline.com/markets/adroit-industries-shares-make-strong-debut-jumps-865/article71527325.ece"
+        "title": "Tata Motors PV shares fall over 3% despite 40% Q2 sales growth; Nifty Auto index down over 4%",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tata-motors-pv-shares-fall-over-3-despite-40-q2-sales-growth-nifty-auto-index-down-over-4/articleshow/134613600.cms"
       },
       {
-        "symbol": "MRPL",
+        "symbol": "BSE",
         "cap": "Large/Mid Cap",
-        "title": "MRPL shares tumble 5% after explosion at Mangaluru plant, thick smoke seen from refinery unit",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mrpl-shares-tumble-5-after-explosion-at-mangaluru-plant-thick-smoke-seen-from-refinery-unit/articleshow/134589058.cms"
+        "title": "Stock Market Holiday: Are BSE, NSE open or closed for Gandhi Jayanti tomorrow? Check upcoming market holidays",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stock-market-holiday-are-bse-nse-open-or-closed-for-gandhi-jayanti-tomorrow-check-upcoming-market-holidays/articleshow/134613448.cms"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Tata Motors passenger vehicles sales jump 40% in Q2",
+        "url": "https://economictimes.indiatimes.com/industry/auto/auto-news/tata-motors-passenger-vehicles-sales-jump-40-in-q2/articleshow/134613254.cms"
       }
     ]
   }
