@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-02T16:17:42.546Z",
+  "updated_at": "2026-10-05T10:59:22.327Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22421.95,
-      "change_pct": -0.88
+      "value": 22555.75,
+      "change_pct": 0.6
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 71909.7,
-      "change_pct": -0.79
+      "value": 72382.47,
+      "change_pct": 0.66
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 90.87,
-      "change_pct": -2.15,
+      "value": 90.62,
+      "change_pct": -0.54,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 128885,
-      "change_pct": -0.94,
+      "value": 129615,
+      "change_pct": 0.59,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4162.8,
-      "change_pct": -0.94,
+      "value": 4186.7,
+      "change_pct": 0.59,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21643.85,
-      "change_pct": -1.02
+      "price": 21755.3,
+      "change_pct": 0.51
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19058.65,
-      "change_pct": -0.97
+      "price": 19149.1,
+      "change_pct": 0.47
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54450.75,
-      "change_pct": -0.33
+      "price": 54714.1,
+      "change_pct": 0.48
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28304.7,
-      "change_pct": 2.17
+      "price": 28301.65,
+      "change_pct": -0.01
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25384.95,
-      "change_pct": -3.46
+      "price": 25421.9,
+      "change_pct": 0.15
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 43789.85,
-      "change_pct": -1.61
+      "price": 44579.65,
+      "change_pct": 1.8
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12460.7,
-      "change_pct": -2.35
+      "price": 12498,
+      "change_pct": 0.3
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 85284.71,
-      "change_pct": 0.51
+      "price": 86102.62,
+      "change_pct": -0.44
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2697.8,
-      "change_pct": -0.29
+      "price": 2716.25,
+      "change_pct": -0.38
     }
   ],
   "news": {
@@ -112,14 +112,7 @@
       },
       {
         "outlet": "wsj.com",
-        "articles": [
-          {
-            "title": "NKorea Testing Swarm Attacks Mixing Drones and Missiles...",
-            "source": "The Wall Street Journal",
-            "url": "https://www.wsj.com/world/north-korea-is-testing-swarm-attacks-mixing-drones-and-missiles-6f8a0a38",
-            "published_at": "2026-09-27T13:00:13Z"
-          }
-        ]
+        "articles": []
       }
     ],
     "indian": [
@@ -131,22 +124,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Morepen Labs hits new high on huge volume; stock up 191% in 4 months",
+            "title": "RBI may hike rates by 0.25% in Oct policy amid inflation: Experts poll",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/morepen-labs-hits-new-high-on-huge-volume-stock-up-191-in-4-months-126100100727_1.html",
-            "published_at": "2026-10-01T10:07:48Z"
+            "url": "https://www.business-standard.com/economy/news/rbi-may-hike-rates-by-0-25-in-oct-policy-amid-inflation-experts-poll-126100400302_1.html",
+            "published_at": "2026-10-04T10:09:11Z"
           },
           {
-            "title": "Gandhi Jayanti 2026: Are banks open on October 2? Check holiday status",
+            "title": "Deposit growth gets a leg-up for banks in Q2 due to FCNR(B) mobilisation",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/india-news/gandhi-jayanti-2026-are-banks-open-on-october-2-check-status-126100100693_1.html",
-            "published_at": "2026-10-01T09:44:47Z"
+            "url": "https://www.business-standard.com/industry/banking/deposit-growth-gets-a-leg-up-for-banks-in-q2-due-to-fcnr-b-mobilisation-126100400354_1.html",
+            "published_at": "2026-10-04T10:09:10Z"
           },
           {
-            "title": "At 52-week lows: RIL, ONGC, M&M, Airtel, PB Fintech, 69 other BSE500 stocks",
+            "title": "RBI MPC policy, oil prices, bond yields may drive market this week",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/at-52-week-lows-ril-ongc-m-m-airtel-pb-fintech-69-other-bse500-stocks-on-thursday-126100100567_1.html",
-            "published_at": "2026-10-01T08:40:25Z"
+            "url": "https://www.business-standard.com/markets/news/rbi-mpc-policy-oil-prices-bond-yields-may-drive-market-this-week-126100400285_1.html",
+            "published_at": "2026-10-04T09:41:52Z"
           }
         ]
       },
@@ -154,22 +147,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Markets, not savings, drove majority of global wealth creation in 2025, says report — Did India benefit from the boom?",
+            "title": "India's AI strategy: We should not invest in the whole stack but focus instead on areas of expertise",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/markets-not-savings-drove-majority-of-global-wealth-creation-in-2025-says-report-did-india-benefit-from-the-boom-11790840166836.html",
-            "published_at": "2026-10-01T08:58:49Z"
+            "url": "https://www.livemint.com/opinion/online-views/india-ai-strategy-should-not-invest-in-the-whole-stack-but-focus-instead-on-areas-of-expertise-11791104377806.html",
+            "published_at": "2026-10-04T10:29:41Z"
           },
           {
-            "title": "Why the Tata inheritance reminds us of Gandhi’s view of wealth—best held in trust for people at large",
+            "title": "Manu Joseph: The mystery of who exactly is controlling the Tata boardroom",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/why-the-tata-inheritance-reminds-us-of-gandhi-s-view-of-wealth-best-held-in-trust-for-people-at-large-11790783749515.html",
-            "published_at": "2026-10-01T07:00:23Z"
+            "url": "https://www.livemint.com/opinion/online-views/manu-joseph-tata-boardroom-mystery-of-who-exactly-is-controlling-the-tata-group-chandrasekaran-noel-tata-11790850098202.html",
+            "published_at": "2026-10-04T08:55:14Z"
           },
           {
-            "title": "PPF, SCSS, SSY interest rates kept unchanged for Dec quarter: How are small savings rates set, why are they frozen?",
+            "title": "Nifty 50 correction: why fund managers see more value in large caps now",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/ppf-scss-ssy-interest-rates-kept-unchanged-for-dec-quarter-how-are-small-savings-rates-set-why-are-they-frozen-11790833954731.html",
-            "published_at": "2026-10-01T06:55:02Z"
+            "url": "https://www.livemint.com/money/personal-finance/stock-markets-india-fund-managers-large-caps-mutual-funds-fpi-11791050741233.html",
+            "published_at": "2026-10-04T07:02:21Z"
           }
         ]
       }
@@ -178,32 +171,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Morepen Labs hits new high on huge volume; stock up 191% in 4 months",
-        "url": "https://www.business-standard.com/markets/news/morepen-labs-hits-new-high-on-huge-volume-stock-up-191-in-4-months-126100100727_1.html"
+        "title": "Ahead of Market: 10 things that will decide stock market action on Monday",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-monday/articleshow/134673452.cms"
+      },
+      {
+        "symbol": "RBI",
+        "cap": "Large/Mid Cap",
+        "title": "RBI MPC policy, oil prices, bond yields may drive market this week",
+        "url": "https://www.business-standard.com/markets/news/rbi-mpc-policy-oil-prices-bond-yields-may-drive-market-this-week-126100400285_1.html"
+      },
+      {
+        "symbol": "RBI",
+        "cap": "Large/Mid Cap",
+        "title": "RBI policy, TCS earnings, crude prices to steer markets this week",
+        "url": "https://www.thehindubusinessline.com/markets/rbi-policy-tcs-earnings-crude-prices-to-steer-markets-this-week/article71543313.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Gandhi Jayanti 2026: Are banks open on October 2? Check holiday status",
-        "url": "https://www.business-standard.com/india-news/gandhi-jayanti-2026-are-banks-open-on-october-2-check-status-126100100693_1.html"
+        "title": "Fleur to deploy $1 bn as Lemon Tree splits ownership, management businesses",
+        "url": "https://www.livemint.com/companies/news/fleur-to-deploy-1-bn-as-lemon-tree-splits-ownership-management-businesses-11790835711651.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Tata Motors PV shares fall over 3% despite 40% Q2 sales growth; Nifty Auto index down over 4%",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/tata-motors-pv-shares-fall-over-3-despite-40-q2-sales-growth-nifty-auto-index-down-over-4/articleshow/134613600.cms"
-      },
-      {
-        "symbol": "BSE",
-        "cap": "Large/Mid Cap",
-        "title": "Stock Market Holiday: Are BSE, NSE open or closed for Gandhi Jayanti tomorrow? Check upcoming market holidays",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/stock-market-holiday-are-bse-nse-open-or-closed-for-gandhi-jayanti-tomorrow-check-upcoming-market-holidays/articleshow/134613448.cms"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Tata Motors passenger vehicles sales jump 40% in Q2",
-        "url": "https://economictimes.indiatimes.com/industry/auto/auto-news/tata-motors-passenger-vehicles-sales-jump-40-in-q2/articleshow/134613254.cms"
+        "title": "Bandu’s Blockbusters for October 4, 2026",
+        "url": "https://www.thehindubusinessline.com/portfolio/technical-analysis/bandus-blockbusters-for-october-4-2026/article71540691.ece"
       }
     ]
   }
