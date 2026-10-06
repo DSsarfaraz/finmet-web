@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-05T19:18:57.196Z",
+  "updated_at": "2026-10-06T10:55:08.593Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22555.75,
-      "change_pct": -0.29
+      "value": 22776.1,
+      "change_pct": 0.98
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 72382.47,
-      "change_pct": -0.13
+      "value": 73067.81,
+      "change_pct": 0.95
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 89.08,
-      "change_pct": -2.23,
+      "value": 87.19,
+      "change_pct": -2.5,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 129020,
-      "change_pct": 0.13,
+      "value": 129827,
+      "change_pct": 0.75,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4167.9,
-      "change_pct": 0.13,
+      "value": 4188,
+      "change_pct": 0.75,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21755.3,
-      "change_pct": -0.51
+      "price": 21979.45,
+      "change_pct": 1.03
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19149.1,
-      "change_pct": 0.47
+      "price": 19448.7,
+      "change_pct": 1.56
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54714.1,
-      "change_pct": 0.15
+      "price": 55128.4,
+      "change_pct": 0.76
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28301.65,
-      "change_pct": 2.15
+      "price": 28136.05,
+      "change_pct": -0.59
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25421.9,
-      "change_pct": 0.15
+      "price": 25541.95,
+      "change_pct": 0.47
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 44579.65,
-      "change_pct": 1.8
+      "price": 45205.35,
+      "change_pct": 1.4
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12498,
-      "change_pct": 0.3
+      "price": 12599.75,
+      "change_pct": 0.81
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 85766.34,
-      "change_pct": -0.83
+      "price": 86176.15,
+      "change_pct": 0.45
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2711.55,
-      "change_pct": -0.55
+      "price": 2714.06,
+      "change_pct": 0.11
     }
   ],
   "news": {
@@ -124,22 +124,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "RBI may hike rates by 0.25% in Oct policy amid inflation: Experts poll",
+            "title": "RBI's panel starts monetary policy deliberations, 0.25 bps rate hike likely",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/rbi-may-hike-rates-by-0-25-in-oct-policy-amid-inflation-experts-poll-126100400302_1.html",
-            "published_at": "2026-10-04T10:09:11Z"
+            "url": "https://www.business-standard.com/economy/news/rbi-s-panel-starts-monetary-policy-deliberations-0-25-bps-rate-hike-likely-126100500635_1.html",
+            "published_at": "2026-10-05T10:26:43Z"
           },
           {
-            "title": "Deposit growth gets a leg-up for banks in Q2 due to FCNR(B) mobilisation",
+            "title": "Gross FDI hits 15-year high, net FDI at five-year peak in Q1 FY27",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/banking/deposit-growth-gets-a-leg-up-for-banks-in-q2-due-to-fcnr-b-mobilisation-126100400354_1.html",
-            "published_at": "2026-10-04T10:09:10Z"
+            "url": "https://www.business-standard.com/economy/news/gross-fdi-hits-15-year-high-net-fdi-at-five-year-peak-in-q1-fy27-126100500674_1.html",
+            "published_at": "2026-10-05T10:22:59Z"
           },
           {
-            "title": "RBI MPC policy, oil prices, bond yields may drive market this week",
+            "title": "RBI absorbs ₹2.10 trillion via VRRR auctions amid surplus liquidity",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/rbi-mpc-policy-oil-prices-bond-yields-may-drive-market-this-week-126100400285_1.html",
-            "published_at": "2026-10-04T09:41:52Z"
+            "url": "https://www.business-standard.com/finance/news/rbi-absorbs-2-10-trillion-via-vrrr-auctions-amid-surplus-liquidity-126100500522_1.html",
+            "published_at": "2026-10-05T09:32:19Z"
           }
         ]
       },
@@ -147,56 +147,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "India's AI strategy: We should not invest in the whole stack but focus instead on areas of expertise",
+            "title": "Investors should avoid thinking of debt as a risk-free asset class: Devang Shah of Axis Mutual Fund explains why",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/india-ai-strategy-should-not-invest-in-the-whole-stack-but-focus-instead-on-areas-of-expertise-11791104377806.html",
-            "published_at": "2026-10-04T10:29:41Z"
+            "url": "https://www.livemint.com/money/personal-finance/investors-should-avoid-thinking-of-debt-as-a-risk-free-asset-class-devang-shah-of-axis-mutual-fund-explains-why-11791191610525.html",
+            "published_at": "2026-10-05T10:52:35Z"
           },
           {
-            "title": "Manu Joseph: The mystery of who exactly is controlling the Tata boardroom",
+            "title": "Nifty has fallen for 8 straight weeks: How should SIP investors rethink their strategy? Experts explain",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/manu-joseph-tata-boardroom-mystery-of-who-exactly-is-controlling-the-tata-group-chandrasekaran-noel-tata-11790850098202.html",
-            "published_at": "2026-10-04T08:55:14Z"
+            "url": "https://www.livemint.com/money/personal-finance/nifty-has-fallen-for-8-straight-weeks-how-should-sip-investors-rethink-their-strategy-experts-explain-11791190277309.html",
+            "published_at": "2026-10-05T09:04:00Z"
           },
           {
-            "title": "Nifty 50 correction: why fund managers see more value in large caps now",
+            "title": "Variable Dearness Allowance revised from Oct 1: Check new minimum wages for construction, agriculture and other workers",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/stock-markets-india-fund-managers-large-caps-mutual-funds-fpi-11791050741233.html",
-            "published_at": "2026-10-04T07:02:21Z"
+            "url": "https://www.livemint.com/money/personal-finance/variable-dearness-allowance-revised-from-oct-1-check-new-minimum-wages-for-construction-agriculture-and-other-workers-11791189261164.html",
+            "published_at": "2026-10-05T08:45:58Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "NEWS",
+        "symbol": "DGCA",
         "cap": "Large/Mid Cap",
-        "title": "Ahead of Market: 10 things that will decide stock market action on Monday",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-monday/articleshow/134673452.cms"
+        "title": "DGCA's regulatory monitoring not a fresh finding of safety deficiencies: SpiceJet",
+        "url": "https://economictimes.indiatimes.com/industry/transportation/airlines-/-aviation/dgcas-regulatory-monitoring-not-a-fresh-finding-of-safety-deficiencies-spicejet/articleshow/134699589.cms"
       },
       {
-        "symbol": "RBI",
+        "symbol": "JSCEL",
         "cap": "Large/Mid Cap",
-        "title": "RBI MPC policy, oil prices, bond yields may drive market this week",
-        "url": "https://www.business-standard.com/markets/news/rbi-mpc-policy-oil-prices-bond-yields-may-drive-market-this-week-126100400285_1.html"
+        "title": "Veranda Learning forms JSCEL board ahead of demerger",
+        "url": "https://www.thehindubusinessline.com/markets/veranda-learning-forms-jscel-board-ahead-of-demerger/article71546552.ece"
       },
       {
-        "symbol": "RBI",
+        "symbol": "DGCA",
         "cap": "Large/Mid Cap",
-        "title": "RBI policy, TCS earnings, crude prices to steer markets this week",
-        "url": "https://www.thehindubusinessline.com/markets/rbi-policy-tcs-earnings-crude-prices-to-steer-markets-this-week/article71543313.ece"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Fleur to deploy $1 bn as Lemon Tree splits ownership, management businesses",
-        "url": "https://www.livemint.com/companies/news/fleur-to-deploy-1-bn-as-lemon-tree-splits-ownership-management-businesses-11790835711651.html"
+        "title": "DGCA monitoring not a fresh finding of safety deficiencies: SpiceJet",
+        "url": "https://www.business-standard.com/industry/aviation/dgca-monitoring-not-a-fresh-finding-of-safety-deficiencies-spicejet-126100500633_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Bandu’s Blockbusters for October 4, 2026",
-        "url": "https://www.thehindubusinessline.com/portfolio/technical-analysis/bandus-blockbusters-for-october-4-2026/article71540691.ece"
+        "title": "Veranda Learning Announces Board Of Directors For J.K. Shah Commerce Education Limited",
+        "url": "https://www.freepressjournal.in/business/veranda-learning-announces-board-of-directors-for-jk-shah-commerce-education-limited"
+      },
+      {
+        "symbol": "IPO",
+        "cap": "Large/Mid Cap",
+        "title": "$14 billion worth of IPO shares set for lock-in expiry to hit Dalal Street by December",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/14-billion-worth-of-ipo-shares-set-for-lock-in-expiry-to-hit-dalal-street-by-december/articleshow/134697479.cms"
       }
     ]
   }
