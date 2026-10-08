@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-07T17:27:07.597Z",
+  "updated_at": "2026-10-08T11:02:33.323Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22603.05,
-      "change_pct": -0.76
+      "value": 22231.8,
+      "change_pct": -1.64
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 72638.7,
-      "change_pct": -0.59
+      "value": 71593.24,
+      "change_pct": -1.44
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 88.29,
-      "change_pct": -1.29,
+      "value": 92.79,
+      "change_pct": 5.11,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 128994,
-      "change_pct": -0.97,
+      "value": 129042,
+      "change_pct": 0.16,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4146.3,
-      "change_pct": -0.97,
+      "value": 4147.2,
+      "change_pct": 0.16,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21838,
-      "change_pct": -0.64
+      "price": 21311.5,
+      "change_pct": -2.41
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19506.95,
-      "change_pct": 0.3
+      "price": 19050.1,
+      "change_pct": -2.34
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 55055.55,
-      "change_pct": -0.13
+      "price": 54515.05,
+      "change_pct": -0.98
     },
     {
       "symbol": "NIFTY IT",
-      "price": 27757.8,
-      "change_pct": -1.34
+      "price": 27736.6,
+      "change_pct": -0.08
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25138.9,
-      "change_pct": -1.58
+      "price": 24512.7,
+      "change_pct": -2.49
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 44800.85,
-      "change_pct": -0.89
+      "price": 43898.05,
+      "change_pct": -2.02
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12306.7,
-      "change_pct": -2.33
+      "price": 11870.05,
+      "change_pct": -3.55
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 83209.34,
-      "change_pct": -2.74
+      "price": 82552.98,
+      "change_pct": -0.87
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2559.72,
-      "change_pct": -5.11
+      "price": 2546.27,
+      "change_pct": -1.06
     }
   ],
   "news": {
@@ -124,22 +124,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "From data localisation to AI localisation: Why inference is moving to India",
+            "title": "RBI may hike interest rate further in December policy, say experts",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/technology/artificial-intelligence/data-localisation-sovereign-ai-inference-india-126100600738_1.html",
-            "published_at": "2026-10-06T10:15:32Z"
+            "url": "https://www.business-standard.com/economy/news/rbi-may-hike-interest-rate-further-in-december-policy-say-experts-126100700718_1.html",
+            "published_at": "2026-10-07T10:16:20Z"
           },
           {
-            "title": "Hindustan Aeronautics share price rises 3% on heavy volume; here's why",
+            "title": "PVR Inox rallies 10%; stock hits 22-month high in weak market",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/hindustan-aeronautics-share-price-rises-3-on-heavy-volume-here-s-why-126100600705_1.html",
-            "published_at": "2026-10-06T10:00:35Z"
+            "url": "https://www.business-standard.com/markets/news/pvr-inox-rallies-10-stock-hits-22-month-high-in-weak-market-126100700634_1.html",
+            "published_at": "2026-10-07T09:17:37Z"
           },
           {
-            "title": "Federation of Indian Airlines seeks review of existing ATF pricing formula",
+            "title": "Small fee unlikely to impact UPI transaction volumes: RBI Governor on MDR",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/aviation/federation-of-indian-airlines-seeks-review-of-existing-atf-pricing-formula-126100600635_1.html",
-            "published_at": "2026-10-06T09:53:36Z"
+            "url": "https://www.business-standard.com/finance/news/small-fee-unlikely-to-impact-upi-transaction-volumes-rbi-governor-on-mdr-126100700606_1.html",
+            "published_at": "2026-10-07T08:48:28Z"
           }
         ]
       },
@@ -147,22 +147,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Nouriel Roubini: The world is in turmoil but the global economy has been chugging along—how come?",
+            "title": "India’s IPO boom hasn’t flagged but it has boosted the case for mandatory ratings of public offers",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/nouriel-roubini-world-is-in-turmoil-but-the-global-economy-has-been-chugging-along-how-come-11791196008961.html",
-            "published_at": "2026-10-06T09:00:40Z"
+            "url": "https://www.livemint.com/opinion/online-views/india-ipo-boom-hasn-t-flagged-but-boosted-the-case-for-mandatory-ratings-of-public-offers-11791285939648.html",
+            "published_at": "2026-10-07T10:30:47Z"
           },
           {
-            "title": "Centre revisits ATF price stabilisation fund amid rising costs",
+            "title": "America’s bond market is headed where it should—with yields that can balance investment with saving",
             "source": "Livemint",
-            "url": "https://www.livemint.com/industry/atf-price-stabilisation-fund-airlines-india-11791268222479.html",
-            "published_at": "2026-10-06T08:25:20Z"
+            "url": "https://www.livemint.com/opinion/online-views/america-bond-market-returning-to-normal-with-yields-that-can-balance-investment-with-saving-11791285303631.html",
+            "published_at": "2026-10-07T09:30:26Z"
           },
           {
-            "title": "Dealers flag price hikes as risk to GST-led sales boom",
+            "title": "RBI rate hike: Debt funds, equities, FDs or gold, which asset classes may benefit as the rate cycle turns? Expert view",
             "source": "Livemint",
-            "url": "https://www.livemint.com/industry/dealers-car-price-hikes-gst-cuts-festive-season-11791265195880.html",
-            "published_at": "2026-10-06T07:32:17Z"
+            "url": "https://www.livemint.com/money/personal-finance/rbi-rate-hike-debt-funds-equities-fds-or-gold-which-asset-classes-may-benefit-as-the-rate-cycle-turns-expert-view-11791364017739.html",
+            "published_at": "2026-10-07T09:19:00Z"
           }
         ]
       }
@@ -171,32 +171,32 @@
       {
         "symbol": "IPO",
         "cap": "Large/Mid Cap",
-        "title": "Citi Tops Global IPO Underwriting, Overtakes Goldman Sachs After SpaceX, SK Hynix, NSE Listings",
-        "url": "https://biztoc.com/x/21f31073f13639fe"
+        "title": "India’s IPO boom hasn’t flagged but it has boosted the case for mandatory ratings of public offers",
+        "url": "https://www.livemint.com/opinion/online-views/india-ipo-boom-hasn-t-flagged-but-boosted-the-case-for-mandatory-ratings-of-public-offers-11791285939648.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Hindustan Aeronautics share price rises 3% on heavy volume; here's why",
-        "url": "https://www.business-standard.com/markets/news/hindustan-aeronautics-share-price-rises-3-on-heavy-volume-here-s-why-126100600705_1.html"
+        "title": "Bharti Airtel shares defy weak markets, rise over 2% after launch of new plans",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bharti-airtel-shares-defy-weak-markets-rise-over-2-after-launch-of-new-plans/articleshow/134762997.cms"
+      },
+      {
+        "symbol": "BGR",
+        "cap": "Large/Mid Cap",
+        "title": "BGR Energy signs pact to recast ₹3,736-cr debt",
+        "url": "https://www.thehindubusinessline.com/companies/bgr-energy-signs-pact-to-recast-3736-cr-debt/article71555053.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Supreme Court stay lifts Tata Chemicals off day’s low",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/supreme-court-stay-lifts-tata-chemicals-off-days-low/article71550859.ece"
+        "title": "Newly-listed Arcil hits 10% upper circuit as Q1 profit more than doubles",
+        "url": "https://www.business-standard.com/markets/news/newly-listed-arcil-hits-10-upper-circuit-as-q1-profit-more-than-doubles-126100700671_1.html"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "PVR",
         "cap": "Large/Mid Cap",
-        "title": "One Mobikwik shares hit 20% upper circuit amid multiple block deals",
-        "url": "https://www.business-standard.com/markets/news/one-mobikwik-shares-hit-20-upper-circuit-amid-multiple-block-deals-126100600682_1.html"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Newly-listed Steamhouse India hits 10% upper circuit after Q1 results",
-        "url": "https://www.business-standard.com/markets/news/newly-listed-steamhouse-india-hits-10-upper-circuit-after-q1-results-126100600669_1.html"
+        "title": "PVR Inox rallies 10%; stock hits 22-month high in weak market",
+        "url": "https://www.business-standard.com/markets/news/pvr-inox-rallies-10-stock-hits-22-month-high-in-weak-market-126100700634_1.html"
       }
     ]
   }
