@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-10-12T18:13:51.995Z",
+  "updated_at": "2026-10-12T19:51:05.249Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
       "value": 22363.35,
-      "change_pct": -0.7
+      "change_pct": 0.59
     },
     "sensex": {
       "label": "SENSEX",
       "value": 71924.68,
-      "change_pct": -0.76
+      "change_pct": 0.46
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 93.89,
-      "change_pct": 2.22,
+      "value": 93.47,
+      "change_pct": 1.76,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 129123,
-      "change_pct": -0.53,
+      "value": 129009,
+      "change_pct": -0.62,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4194,
-      "change_pct": -0.53,
+      "value": 4190.3,
+      "change_pct": -0.62,
       "unit": "USD/oz"
     }
   },
@@ -34,7 +34,7 @@
     {
       "symbol": "NIFTY MIDCAP 150",
       "price": 21620.5,
-      "change_pct": 0.08
+      "change_pct": 1.45
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
@@ -46,12 +46,12 @@
     {
       "symbol": "NIFTY BANK",
       "price": 54918,
-      "change_pct": -0.61
+      "change_pct": 0.74
     },
     {
       "symbol": "NIFTY IT",
       "price": 28349.6,
-      "change_pct": -0.79
+      "change_pct": 2.21
     },
     {
       "symbol": "NIFTY AUTO",
@@ -72,13 +72,13 @@
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 82420,
-      "change_pct": -1.51
+      "price": 82699.97,
+      "change_pct": -1.17
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2511.84,
-      "change_pct": -0.9
+      "price": 2516.77,
+      "change_pct": -0.71
     }
   ],
   "news": {
