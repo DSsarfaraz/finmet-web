@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-09T17:01:37.261Z",
+  "updated_at": "2026-10-12T11:28:18.508Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22520.45,
-      "change_pct": 1.3
+      "value": 22363.35,
+      "change_pct": -0.7
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 72472.33,
-      "change_pct": 1.23
+      "value": 71924.68,
+      "change_pct": -0.76
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 91.19,
-      "change_pct": -0.33,
+      "value": 92.97,
+      "change_pct": 1.22,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 131171,
-      "change_pct": 1.43,
+      "value": 129215,
+      "change_pct": -0.46,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4216.5,
-      "change_pct": 1.43,
+      "value": 4197,
+      "change_pct": -0.46,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21603.25,
-      "change_pct": 1.37
+      "price": 21620.5,
+      "change_pct": 0.08
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19153.7,
-      "change_pct": 0.54
+      "price": 19425.8,
+      "change_pct": 1.42
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 55256.65,
-      "change_pct": 1.36
+      "price": 54918,
+      "change_pct": -0.61
     },
     {
       "symbol": "NIFTY IT",
-      "price": 28574.9,
-      "change_pct": 3.02
+      "price": 28349.6,
+      "change_pct": -0.79
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 24859.9,
-      "change_pct": 1.42
+      "price": 25084.4,
+      "change_pct": 0.9
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 44864.25,
-      "change_pct": 2.2
+      "price": 44113.4,
+      "change_pct": -1.67
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12000.75,
-      "change_pct": 1.1
+      "price": 11951.15,
+      "change_pct": -0.41
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 82669.74,
-      "change_pct": 1.22
+      "price": 83305.76,
+      "change_pct": -0.45
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2490.07,
-      "change_pct": 0.73
+      "price": 2545.05,
+      "change_pct": 0.41
     }
   ],
   "news": {
@@ -87,10 +87,10 @@
         "outlet": "bloomberg.com",
         "articles": [
           {
-            "title": "Global stocks drop, Treasuries decline as Brent tops $102",
+            "title": "Wall Street’s rate shock spreads beneath AI-fueled market rally",
             "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-07/stock-market-today-dow-s-p-live-updates",
-            "published_at": "2026-10-08T04:33:54Z"
+            "url": "https://www.bloomberg.com/news/articles/2026-10-09/wall-street-s-rate-shock-spreads-beneath-ai-fueled-market-rally",
+            "published_at": "2026-10-10T14:03:09Z"
           }
         ]
       },
@@ -112,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Is India's inflation problem spreading beyond food and fuel prices?",
+            "title": "HSBC leads international banks in financing India Inc across debt, equity",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/india-retail-cpi-inflation-august-food-fuel-prices-core-rbi-monetary-policy-126100800797_1.html",
-            "published_at": "2026-10-08T10:23:21Z"
+            "url": "https://www.business-standard.com/finance/news/finance-news-hsbc-leads-international-banks-in-financing-india-inc-126101100378_1.html",
+            "published_at": "2026-10-11T10:24:39Z"
           },
           {
-            "title": "Bank deposits join CAS: What you may see, what may still be missing",
+            "title": "Crude oil futures brace for volatility amid geopolitical uncertainties",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/bank-deposits-join-cas-what-you-may-see-what-may-still-be-missing-126100800795_1.html",
-            "published_at": "2026-10-08T10:04:47Z"
+            "url": "https://www.business-standard.com/markets/commodities/crude-oil-futures-brace-for-volatility-amid-geopolitical-uncertainties-126101100308_1.html",
+            "published_at": "2026-10-11T09:48:54Z"
           },
           {
-            "title": "Knowledge Marine rallies 12% in four days, hits new peak in weak market",
+            "title": "Q2 earnings, inflation data, oil prices may drive stock markets this week",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/knowledge-marine-rallies-12-in-four-days-hits-new-peak-in-weak-market-126100800779_1.html",
-            "published_at": "2026-10-08T09:54:24Z"
+            "url": "https://www.business-standard.com/markets/news/q2-earnings-inflation-data-oil-prices-may-drive-stock-markets-this-week-126101100299_1.html",
+            "published_at": "2026-10-11T09:48:39Z"
           }
         ]
       },
@@ -135,22 +135,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Why privacy must survive the age of AI: Not just humans, even the economy needs it",
+            "title": "India’s export imperative: Here’s how we must mitigate trade risks amid global turmoil",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/why-privacy-must-survive-the-age-of-ai-not-just-humans-even-the-economy-needs-it-11791369543597.html",
-            "published_at": "2026-10-08T10:30:58Z"
+            "url": "https://www.livemint.com/opinion/online-views/indias-export-imperative-here-s-how-we-must-mitigate-trade-risks-amid-global-turmoil-11791464952832.html",
+            "published_at": "2026-10-11T10:30:24Z"
           },
           {
-            "title": "RBI rate hike: What lies ahead for the economy",
+            "title": "Should you invest in contra funds?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-repo-rate-hike-economy-home-loan-emi-fd-rates-11791448066506.html",
-            "published_at": "2026-10-08T10:02:25Z"
+            "url": "https://www.livemint.com/money/personal-finance/contra-funds-contrarian-investing-mutual-funds-equity-funds-11791702127100.html",
+            "published_at": "2026-10-11T09:40:26Z"
           },
           {
-            "title": "RBI rate hike: How higher rates will impact your EMIs, FDs and debt funds",
+            "title": "Blocked or replaced your debit card but still have active subscriptions? Here’s how recurring payment mandates work",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-rate-hike-loans-emi-deposits-fd-debt-funds-11791439312691.html",
-            "published_at": "2026-10-08T08:49:59Z"
+            "url": "https://www.livemint.com/money/personal-finance/blocked-or-replaced-your-debit-card-but-still-have-active-subscriptions-here-s-how-recurring-payment-mandates-work-11791703332308.html",
+            "published_at": "2026-10-11T07:59:14Z"
           }
         ]
       }
@@ -159,32 +159,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Birlasoft named select partner in OpenAI partner network",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/birlasoft-named-select-partner-in-openai-partner-network/article71559190.ece"
+        "title": "Ahead of Market: 10 things that will decide stock market action on Monday",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-monday/articleshow/134869422.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Info Edge Q2FY27 billing rises 12.8%; Shiksha drags, stock falls 3%",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/info-edge-posts-128-billing-growth-in-q2fy27-shiksha-drags-stock-slides-3/article71559176.ece"
-      },
-      {
-        "symbol": "SMC",
-        "cap": "Large/Mid Cap",
-        "title": "SMC Global closes NCD issue a week early after strong investor response",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/smc-global-closes-ncd-issue-a-week-early-after-strong-investor-response/article71559149.ece"
+        "title": "Q2 earnings, inflation data, oil prices may drive stock markets this week",
+        "url": "https://www.business-standard.com/markets/news/q2-earnings-inflation-data-oil-prices-may-drive-stock-markets-this-week-126101100299_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Knowledge Marine rallies 12% in four days, hits new peak in weak market",
-        "url": "https://www.business-standard.com/markets/news/knowledge-marine-rallies-12-in-four-days-hits-new-peak-in-weak-market-126100800779_1.html"
+        "title": "Q2 earnings, inflation data, oil prices to guide stock markets this week: Analysts",
+        "url": "https://www.thehindubusinessline.com/markets/q2-earnings-inflation-data-oil-prices-to-guide-stock-markets-this-week-analysts/article71571049.ece"
       },
       {
-        "symbol": "TVS",
+        "symbol": "IPO",
         "cap": "Large/Mid Cap",
-        "title": "TVS Srichakra receives ₹34.44 crore as TASL Automobile cancels its shares",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/tvs-srichakra-receives-3444-crore-as-tasl-automobile-cancels-its-shares/article71559140.ece"
+        "title": "Ashish Kacholia, Mukul Agrawal, others invest Rs 120 crore in IPO-bound Fusion CX",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ashish-kacholia-mukul-agrawal-others-invest-rs-120-crore-in-ipo-bound-fusion-cx/articleshow/134867844.cms"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "9 stocks zoom up to 37% in 3 months; MFs raise stakes in September quarter",
+        "url": "https://m.economictimes.com/markets/stocks/news/9-stocks-zoom-up-to-37-in-3-months-mfs-raise-stakes-in-september-quarter/tracking-smart-money/slideshow/134867235.cms"
       }
     ]
   }
