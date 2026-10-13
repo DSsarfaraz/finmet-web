@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-10-12T19:51:05.249Z",
+  "updated_at": "2026-10-13T11:17:22.147Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22363.35,
-      "change_pct": 0.59
+      "value": 22363.3,
+      "change_pct": -0.7
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 71924.68,
-      "change_pct": 0.46
+      "value": 73033.78,
+      "change_pct": 1.54
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 93.47,
-      "change_pct": 1.76,
+      "value": 91.76,
+      "change_pct": -2.11,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 129009,
-      "change_pct": -0.62,
+      "value": 128889,
+      "change_pct": 0.4,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4190.3,
-      "change_pct": -0.62,
+      "value": 4207.5,
+      "change_pct": 0.4,
       "unit": "USD/oz"
     }
   },
@@ -34,51 +34,51 @@
     {
       "symbol": "NIFTY MIDCAP 150",
       "price": 21620.5,
-      "change_pct": 1.45
+      "change_pct": 0.08
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19425.8,
-      "change_pct": 1.42
+      "price": 19447.4,
+      "change_pct": 0.11
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
       "price": 54918,
-      "change_pct": 0.74
+      "change_pct": -0.61
     },
     {
       "symbol": "NIFTY IT",
       "price": 28349.6,
-      "change_pct": 2.21
+      "change_pct": -0.79
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25084.4,
-      "change_pct": 0.9
+      "price": 25391.85,
+      "change_pct": 1.23
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 44113.4,
-      "change_pct": -1.67
+      "price": 44731.15,
+      "change_pct": 1.4
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11951.15,
-      "change_pct": -0.41
+      "price": 12088.25,
+      "change_pct": 1.15
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 82699.97,
-      "change_pct": -1.17
+      "price": 83105.27,
+      "change_pct": 1.64
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2516.77,
-      "change_pct": -0.71
+      "price": 2486.94,
+      "change_pct": 1.74
     }
   ],
   "news": {
@@ -112,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "HSBC leads international banks in financing India Inc across debt, equity",
+            "title": "PVR Inox, Sky Gold, Neogen, West Coast Paper, PTC Ind, KMEW hit 52-wk highs",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/news/finance-news-hsbc-leads-international-banks-in-financing-india-inc-126101100378_1.html",
-            "published_at": "2026-10-11T10:24:39Z"
+            "url": "https://www.business-standard.com/markets/news/pvr-inox-sky-gold-neogen-west-coast-paper-ptc-ind-kmew-hit-52-wk-highs-126101200546_1.html",
+            "published_at": "2026-10-12T09:54:28Z"
           },
           {
-            "title": "Crude oil futures brace for volatility amid geopolitical uncertainties",
+            "title": "Gold ETF inflows hit 7-month high in Sept despite 5% fall in bullion",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/commodities/crude-oil-futures-brace-for-volatility-amid-geopolitical-uncertainties-126101100308_1.html",
-            "published_at": "2026-10-11T09:48:54Z"
+            "url": "https://www.business-standard.com/markets/news/gold-etf-inflows-hit-7-month-high-in-sept-despite-5-fall-in-bullion-126101200525_1.html",
+            "published_at": "2026-10-12T09:26:59Z"
           },
           {
-            "title": "Q2 earnings, inflation data, oil prices may drive stock markets this week",
+            "title": "Swaraj Engines shares zoom 15% as Q2 net profit rises 22%, revenue up 26%",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/q2-earnings-inflation-data-oil-prices-may-drive-stock-markets-this-week-126101100299_1.html",
-            "published_at": "2026-10-11T09:48:39Z"
+            "url": "https://www.business-standard.com/markets/news/swaraj-engines-shares-zoom-15-as-q2-net-profit-rises-22-revenue-up-26-126101200478_1.html",
+            "published_at": "2026-10-12T09:00:07Z"
           }
         ]
       },
@@ -135,56 +135,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "India’s export imperative: Here’s how we must mitigate trade risks amid global turmoil",
+            "title": "Gold ETF inflows jump 71% to ₹4,451 crore in September despite falling gold prices. What drove the surge?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/indias-export-imperative-here-s-how-we-must-mitigate-trade-risks-amid-global-turmoil-11791464952832.html",
-            "published_at": "2026-10-11T10:30:24Z"
+            "url": "https://www.livemint.com/money/personal-finance/gold-etf-inflows-jump-71-to-4-451-crore-in-september-despite-falling-gold-prices-what-drove-the-surge-11791801182397.html",
+            "published_at": "2026-10-12T10:51:47Z"
           },
           {
-            "title": "Should you invest in contra funds?",
+            "title": "DA news: What are the types of dearness allowance, how is it calculated and revised? Here are top FAQs answered",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/contra-funds-contrarian-investing-mutual-funds-equity-funds-11791702127100.html",
-            "published_at": "2026-10-11T09:40:26Z"
+            "url": "https://www.livemint.com/money/personal-finance/da-news-types-dearness-allowance-industrial-variable-how-formula-calculate-aicpi-data-twice-annual-revised-faqs-answered-11791780141241.html",
+            "published_at": "2026-10-12T05:22:32Z"
           },
           {
-            "title": "Blocked or replaced your debit card but still have active subscriptions? Here’s how recurring payment mandates work",
+            "title": "South Korea’s $1.7 billion ETF wipeout: What Indian investors should know about leverage bets",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/blocked-or-replaced-your-debit-card-but-still-have-active-subscriptions-here-s-how-recurring-payment-mandates-work-11791703332308.html",
-            "published_at": "2026-10-11T07:59:14Z"
+            "url": "https://www.livemint.com/money/personal-finance/south-korea-s-1-7-billion-etf-wipeout-what-indian-investors-should-know-about-leverage-bets-11791601089043.html",
+            "published_at": "2026-10-12T00:38:41Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "NEWS",
+        "symbol": "PVR",
         "cap": "Large/Mid Cap",
-        "title": "Ahead of Market: 10 things that will decide stock market action on Monday",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-monday/articleshow/134869422.cms"
+        "title": "PVR Inox, Sky Gold, Neogen, West Coast Paper, PTC Ind, KMEW hit 52-wk highs",
+        "url": "https://www.business-standard.com/markets/news/pvr-inox-sky-gold-neogen-west-coast-paper-ptc-ind-kmew-hit-52-wk-highs-126101200546_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Q2 earnings, inflation data, oil prices may drive stock markets this week",
-        "url": "https://www.business-standard.com/markets/news/q2-earnings-inflation-data-oil-prices-may-drive-stock-markets-this-week-126101100299_1.html"
+        "title": "Goodluck India shares surge 17% as merger expands, defence arm to join firm along with green energy unit",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/goodluck-india-shares-surge-17-as-merger-expands-defence-arm-to-join-firm-along-with-green-energy-unit/articleshow/134888841.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Q2 earnings, inflation data, oil prices to guide stock markets this week: Analysts",
-        "url": "https://www.thehindubusinessline.com/markets/q2-earnings-inflation-data-oil-prices-to-guide-stock-markets-this-week-analysts/article71571049.ece"
-      },
-      {
-        "symbol": "IPO",
-        "cap": "Large/Mid Cap",
-        "title": "Ashish Kacholia, Mukul Agrawal, others invest Rs 120 crore in IPO-bound Fusion CX",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ashish-kacholia-mukul-agrawal-others-invest-rs-120-crore-in-ipo-bound-fusion-cx/articleshow/134867844.cms"
+        "title": "Dolly Khanna portfolio: Ace investor sells 4 lakh shares of Chennai Petroleum in Q2, stock up 82% in one year",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/dolly-khanna-portfolio-ace-investor-sells-4-lakh-shares-of-chennai-petroleum-in-q2-stock-up-82-in-one-year/articleshow/134888180.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "9 stocks zoom up to 37% in 3 months; MFs raise stakes in September quarter",
-        "url": "https://m.economictimes.com/markets/stocks/news/9-stocks-zoom-up-to-37-in-3-months-mfs-raise-stakes-in-september-quarter/tracking-smart-money/slideshow/134867235.cms"
+        "title": "Financial services deal value jumps 129% to $7.3 bn on IPOs, big-ticket M&A",
+        "url": "https://www.business-standard.com/finance/personal-finance/financial-services-deal-value-jumps-129-to-7-3-bn-on-ipos-big-ticket-m-a-126101200484_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Swaraj Engines shares zoom 15% as Q2 net profit rises 22%, revenue up 26%",
+        "url": "https://www.business-standard.com/markets/news/swaraj-engines-shares-zoom-15-as-q2-net-profit-rises-22-revenue-up-26-126101200478_1.html"
       }
     ]
   }
