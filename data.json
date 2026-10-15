@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-14T15:12:35.794Z",
+  "updated_at": "2026-10-15T08:42:03.321Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22622.7,
-      "change_pct": -0.44
+      "value": 23037.3,
+      "change_pct": 1.83
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 72781.89,
-      "change_pct": -0.34
+      "value": 74274.4,
+      "change_pct": 2.05
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 95.32,
-      "change_pct": 1.25,
+      "value": 94.43,
+      "change_pct": -0.69,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 125806,
-      "change_pct": -1.54,
+      "value": 127629,
+      "change_pct": 1.74,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4112.9,
-      "change_pct": -1.54,
+      "value": 4179.4,
+      "change_pct": 1.74,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21820.4,
-      "change_pct": -0.04
+      "price": 21820.6,
+      "change_pct": 0
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19384.8,
-      "change_pct": -0.32
+      "price": 19188.85,
+      "change_pct": -1.01
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 55316,
-      "change_pct": -0.3
+      "price": 55870.4,
+      "change_pct": 1
     },
     {
       "symbol": "NIFTY IT",
-      "price": 30171,
-      "change_pct": 1.14
+      "price": 30777.6,
+      "change_pct": 2.01
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25156.75,
-      "change_pct": -0.93
+      "price": 25610.25,
+      "change_pct": 1.8
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45271.7,
-      "change_pct": 1.21
+      "price": 45003,
+      "change_pct": -0.59
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12006.75,
-      "change_pct": -0.67
+      "price": 12046.55,
+      "change_pct": 0.33
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 81632.65,
-      "change_pct": -1.76
+      "price": 81135.33,
+      "change_pct": -0.52
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2422.64,
-      "change_pct": -2.96
+      "price": 2370.1,
+      "change_pct": -1.99
     }
   ],
   "news": {
@@ -124,22 +124,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Maruti Suzuki tanks 33% in calendar year 2026; stock hits 18-month low",
+            "title": "Sun Pharma down 2%, stock hits over 5-month low",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/maruti-suzuki-share-price-tanks-33-in-calendar-year-2026-stock-hits-18-month-low-126101300461_1.html",
-            "published_at": "2026-10-13T07:26:24Z"
+            "url": "https://www.business-standard.com/markets/news/sun-pharma-share-price-down-2-stock-hits-over-5-month-low-126101400575_1.html",
+            "published_at": "2026-10-14T08:21:52Z"
           },
           {
-            "title": "SMIDs rally heats up bets in IPO & secondary mkt; raises bar on earnings",
+            "title": "IDBI Bank share price zooms 13% to five-week high on heavy volumes",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/smids-rally-heats-up-bets-in-ipo-secondary-mkt-raises-bar-on-earnings-126101300488_1.html",
-            "published_at": "2026-10-13T07:22:14Z"
+            "url": "https://www.business-standard.com/markets/news/idbi-bank-share-price-zooms-13-to-five-week-high-on-heavy-volumes-126101400576_1.html",
+            "published_at": "2026-10-14T08:21:26Z"
           },
           {
-            "title": "Nifty at 26,500 in 4-5 months: What's behind Monarch Capital's bull call?",
+            "title": "Canara Bank stock jumps 5% post Q2 results",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/nifty-target-at-26-500-in-4-5-months-what-s-behind-monarch-capital-s-bull-call-126101300478_1.html",
-            "published_at": "2026-10-13T07:15:07Z"
+            "url": "https://www.business-standard.com/markets/news/canara-bank-stock-jumps-5-post-q2-results-126101400548_1.html",
+            "published_at": "2026-10-14T07:47:42Z"
           }
         ]
       },
@@ -147,56 +147,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Nageswaran: India has been out of fashion among global investors but that could change",
+            "title": "Planned 10% SIP step-up: Should you proceed if your mutual fund is delivering negative returns? Expert weighs in",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/nageswaran-india-has-been-out-of-fashion-among-global-investors-but-that-could-change-11791797461683.html",
-            "published_at": "2026-10-13T08:30:46Z"
+            "url": "https://www.livemint.com/money/personal-finance/planned-10-sip-step-up-should-you-proceed-if-your-mutual-fund-is-delivering-negative-returns-expert-weighs-in-11791963474248.html",
+            "published_at": "2026-10-14T08:41:11Z"
           },
           {
-            "title": "Promised 30% monthly returns? SBI warns investors against fake investment schemes",
+            "title": "Mutual funds' September 2026 portfolio moves: Top 5 stocks bought and sold across large-, mid- and small-cap segments",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/promised-30-monthly-returns-sbi-warns-investors-against-fake-investment-schemes-11791874690963.html",
-            "published_at": "2026-10-13T07:47:58Z"
+            "url": "https://www.livemint.com/money/personal-finance/mutual-funds-september-2026-portfolio-moves-top-5-stocks-bought-and-sold-across-large-mid-and-small-cap-segments-11791958996059.html",
+            "published_at": "2026-10-14T07:45:52Z"
           },
           {
-            "title": "Mint Explainer | Can the government stop merchants from passing on UPI MDR fee?",
+            "title": "Tanishq sees demand for natural diamonds and 18k gold rise as consumers seek value",
             "source": "Livemint",
-            "url": "https://www.livemint.com/industry/upi-mdr-digital-payments-india-merchants-fee-customer-payments-11791831657458.html",
-            "published_at": "2026-10-13T07:26:15Z"
+            "url": "https://www.livemint.com/industry/tanishq-gold-prices-18k-jewellery-diamond-demand-11791950926289.html",
+            "published_at": "2026-10-14T06:27:58Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "KEI",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Cable & Wire stocks: Polycab, KEI, R R Kabel, Quadrant Future slip up to 5%",
-        "url": "https://www.business-standard.com/markets/news/cable-wire-stocks-polycab-kei-r-r-kabel-quadrant-future-slip-up-to-5-126101300557_1.html"
+        "title": "Sun Pharma down 2%, stock hits over 5-month low",
+        "url": "https://www.business-standard.com/markets/news/sun-pharma-share-price-down-2-stock-hits-over-5-month-low-126101400575_1.html"
       },
       {
-        "symbol": "NPCI",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Paytm, Mobikwik, Pine Labs rebound even as NPCI defers MDR on UPI",
-        "url": "https://www.business-standard.com/markets/news/paytm-mobikwik-pine-labs-rebounded-even-as-npci-defers-mdr-on-upi-126101300567_1.html"
+        "title": "Early gains fade by afternoon; Insurance, Pharma stocks pull indices lower",
+        "url": "https://www.thehindubusinessline.com/markets/early-gains-fade-by-afternoon-insurance-pharma-stocks-pull-indices-lower/article71582765.ece"
       },
       {
-        "symbol": "PNG",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "PNG Gilts stock zooms 12%; pares gains post Q2 results",
-        "url": "https://www.business-standard.com/markets/news/png-gilts-stock-zooms-12-pares-gains-post-q2-results-126101300562_1.html"
+        "title": "Canara Bank stock jumps 5% post Q2 results",
+        "url": "https://www.business-standard.com/markets/news/canara-bank-stock-jumps-5-post-q2-results-126101400548_1.html"
       },
       {
-        "symbol": "PNB",
+        "symbol": "GIFT",
         "cap": "Large/Mid Cap",
-        "title": "PNB Gilts stock zooms 12%; pares gains post Q2 results",
-        "url": "https://www.business-standard.com/markets/news/pnb-gilts-stock-zooms-12-pares-gains-post-q2-results-126101300562_1.html"
+        "title": "How GIFT Nifty can help investors understand market trends before the opening bell",
+        "url": "https://economictimes.indiatimes.com/industry/banking/finance/how-gift-nifty-can-help-investors-understand-market-trends-before-the-opening-bell/articleshow/134935169.cms"
       },
       {
-        "symbol": "BSE",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Triveni Power Transmission lists on BSE, NSE following demerger",
-        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/triveni-power-transmission-lists-on-bse-nse-following-demerger/articleshow/134911995.cms"
+        "title": "Wipro Q2 results preview: Revenue growth likely over 8%, margins in focus",
+        "url": "https://www.business-standard.com/markets/news/wipro-q2-results-preview-revenue-growth-likely-over-8-margins-in-focus-126101400475_1.html"
       }
     ]
   }
