@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-15T15:06:10.771Z",
+  "updated_at": "2026-10-16T08:36:44.215Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22997.35,
-      "change_pct": 1.66
+      "value": 23115.9,
+      "change_pct": 0.52
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74315.61,
-      "change_pct": 2.11
+      "value": 74669.21,
+      "change_pct": 0.48
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 95.33,
-      "change_pct": 0.25,
+      "value": 95.38,
+      "change_pct": -2.64,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 127740,
-      "change_pct": 1.76,
+      "value": 128450,
+      "change_pct": 0.87,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4180.3,
-      "change_pct": 1.76,
+      "value": 4206.3,
+      "change_pct": 0.87,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21756.35,
-      "change_pct": -0.29
+      "price": 21766.4,
+      "change_pct": 0.05
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19131.7,
-      "change_pct": -1.31
+      "price": 19185.25,
+      "change_pct": 0.28
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 55810.5,
-      "change_pct": 0.89
+      "price": 55781.35,
+      "change_pct": -0.05
     },
     {
       "symbol": "NIFTY IT",
-      "price": 30719.8,
-      "change_pct": 1.82
+      "price": 31722.6,
+      "change_pct": 3.26
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25576.4,
-      "change_pct": 1.67
+      "price": 25760.65,
+      "change_pct": 0.72
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 44791.65,
-      "change_pct": -1.06
+      "price": 44516.05,
+      "change_pct": -0.62
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12018.5,
-      "change_pct": 0.1
+      "price": 12164.35,
+      "change_pct": 1.21
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 82029.47,
-      "change_pct": 0.57
+      "price": 82196.28,
+      "change_pct": 0.07
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2418.3,
-      "change_pct": 0
+      "price": 2456.69,
+      "change_pct": 0.66
     }
   ],
   "news": {
@@ -87,22 +87,10 @@
         "outlet": "bloomberg.com",
         "articles": [
           {
-            "title": "Wall Street’s rate shock spreads beneath AI-fueled market rally",
+            "title": "Netflix lays off film and TV executives amid programming woes",
             "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-09/wall-street-s-rate-shock-spreads-beneath-ai-fueled-market-rally",
-            "published_at": "2026-10-10T14:03:09Z"
-          },
-          {
-            "title": "Ex-Flipkart Executives press Walmart to buy out their stock options",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-08/ex-flipkart-execs-press-walmart-to-buy-out-their-stock-options",
-            "published_at": "2026-10-08T11:40:44Z"
-          },
-          {
-            "title": "AI bubble risks worst S&P 500 crash since 2008, strategist says",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-08/ai-bubble-risks-worst-s-p-500-crash-since-2008-strategist-says",
-            "published_at": "2026-10-08T11:34:44Z"
+            "url": "https://www.bloomberg.com/news/articles/2026-10-14/netflix-cuts-of-film-and-tv-executives-hint-at-programming-woes",
+            "published_at": "2026-10-15T06:25:48Z"
           }
         ]
       },
@@ -124,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Sun Pharma down 2%, stock hits over 5-month low",
+            "title": "SMIDs to large-caps shift likely if earnings gap narrows: Bharti Axa CIO",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/sun-pharma-share-price-down-2-stock-hits-over-5-month-low-126101400575_1.html",
-            "published_at": "2026-10-14T08:21:52Z"
+            "url": "https://www.business-standard.com/markets/interviews/smids-to-large-caps-shift-likely-if-earnings-gap-narrows-bharti-axa-cio-126101500500_1.html",
+            "published_at": "2026-10-15T08:03:00Z"
           },
           {
-            "title": "IDBI Bank share price zooms 13% to five-week high on heavy volumes",
+            "title": "Global feeder funds shut? Here's how to go global now",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/idbi-bank-share-price-zooms-13-to-five-week-high-on-heavy-volumes-126101400576_1.html",
-            "published_at": "2026-10-14T08:21:26Z"
+            "url": "https://www.business-standard.com/markets/news/global-feeder-funds-shut-here-s-how-to-go-global-now-126101500543_1.html",
+            "published_at": "2026-10-15T08:01:55Z"
           },
           {
-            "title": "Canara Bank stock jumps 5% post Q2 results",
+            "title": "Why was IDBI Bank sold at ₹81 a share? Understanding the valuation",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/canara-bank-stock-jumps-5-post-q2-results-126101400548_1.html",
-            "published_at": "2026-10-14T07:47:42Z"
+            "url": "https://www.business-standard.com/companies/news/why-was-idbi-bank-sold-at-rs-81-a-share-understanding-the-valuation-126101500541_1.html",
+            "published_at": "2026-10-15T07:56:12Z"
           }
         ]
       },
@@ -147,22 +135,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Planned 10% SIP step-up: Should you proceed if your mutual fund is delivering negative returns? Expert weighs in",
+            "title": "SGB 2019-20 Series V: Investors to pocket 294% gains on premature redemption — key dates and tax rules explained",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/planned-10-sip-step-up-should-you-proceed-if-your-mutual-fund-is-delivering-negative-returns-expert-weighs-in-11791963474248.html",
-            "published_at": "2026-10-14T08:41:11Z"
+            "url": "https://www.livemint.com/money/personal-finance/sgb-2019-20-series-v-investors-to-pocket-294-gains-on-premature-redemption-key-dates-and-tax-rules-explained-11792048191124.html",
+            "published_at": "2026-10-15T08:11:33Z"
           },
           {
-            "title": "Mutual funds' September 2026 portfolio moves: Top 5 stocks bought and sold across large-, mid- and small-cap segments",
+            "title": "Mint Explainer| How chipflation is playing spoilsport for consumers",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/mutual-funds-september-2026-portfolio-moves-top-5-stocks-bought-and-sold-across-large-mid-and-small-cap-segments-11791958996059.html",
-            "published_at": "2026-10-14T07:45:52Z"
+            "url": "https://www.livemint.com/industry/chipflation-memory-chip-price-hike-ai-demand-11792044167959.html",
+            "published_at": "2026-10-15T07:31:05Z"
           },
           {
-            "title": "Tanishq sees demand for natural diamonds and 18k gold rise as consumers seek value",
+            "title": "India's tourism boom: How we may be underpricing one of the biggest risks it faces",
             "source": "Livemint",
-            "url": "https://www.livemint.com/industry/tanishq-gold-prices-18k-jewellery-diamond-demand-11791950926289.html",
-            "published_at": "2026-10-14T06:27:58Z"
+            "url": "https://www.livemint.com/opinion/online-views/indias-tourism-boom-how-we-may-be-underpricing-one-of-the-biggest-risks-it-faces-11791975174874.html",
+            "published_at": "2026-10-15T07:00:20Z"
           }
         ]
       }
@@ -171,32 +159,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Sun Pharma down 2%, stock hits over 5-month low",
-        "url": "https://www.business-standard.com/markets/news/sun-pharma-share-price-down-2-stock-hits-over-5-month-low-126101400575_1.html"
+        "title": "Nestle India Q2 result: Net profit rises 36% to ₹1,026 cr, revenue up 20%",
+        "url": "https://www.business-standard.com/companies/quarterly-results/nestle-india-q2-result-net-profit-rises-36-to-1-026-cr-revenue-up-20-126101500511_1.html"
+      },
+      {
+        "symbol": "IPO",
+        "cap": "Large/Mid Cap",
+        "title": "Zetwerk IPO review: Analysts divided on growth prospects; losses a concern",
+        "url": "https://www.business-standard.com/markets/news/zetwerk-ipo-review-analysts-divided-on-growth-prospects-losses-a-concern-126101500501_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Early gains fade by afternoon; Insurance, Pharma stocks pull indices lower",
-        "url": "https://www.thehindubusinessline.com/markets/early-gains-fade-by-afternoon-insurance-pharma-stocks-pull-indices-lower/article71582765.ece"
+        "title": "Nestle India share price crashes 9% in intraday trade post Q2 results",
+        "url": "https://www.business-standard.com/markets/news/nestle-india-share-price-crashes-9-in-intraday-trade-post-q2-results-126101500502_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Canara Bank stock jumps 5% post Q2 results",
-        "url": "https://www.business-standard.com/markets/news/canara-bank-stock-jumps-5-post-q2-results-126101400548_1.html"
+        "title": "Nestle India Q2 Results: Standalone profit jumps 36% YoY to Rs 1,027 crore, revenue rises 20%",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/earnings/nestle-india-q2-results-standalone-profit-jumps-36-yoy-to-rs-1027-crore-revenue-rises-20/articleshow/134960308.cms"
       },
       {
-        "symbol": "GIFT",
+        "symbol": "HDFC",
         "cap": "Large/Mid Cap",
-        "title": "How GIFT Nifty can help investors understand market trends before the opening bell",
-        "url": "https://economictimes.indiatimes.com/industry/banking/finance/how-gift-nifty-can-help-investors-understand-market-trends-before-the-opening-bell/articleshow/134935169.cms"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Wipro Q2 results preview: Revenue growth likely over 8%, margins in focus",
-        "url": "https://www.business-standard.com/markets/news/wipro-q2-results-preview-revenue-growth-likely-over-8-margins-in-focus-126101400475_1.html"
+        "title": "HDFC Bank shares surge 1.60% to ₹722 as Q2 results weekend nears",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/hdfc-bank-shares-surge-160-to-722-as-q2-results-weekend-nears/article71586967.ece"
       }
     ]
   }
