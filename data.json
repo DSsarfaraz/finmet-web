@@ -1,83 +1,83 @@
 {
-  "updated_at": "2026-10-16T08:36:44.215Z",
+  "updated_at": "2026-10-16T13:33:07.140Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23115.9,
-      "change_pct": 0.52
+      "value": 23146.15,
+      "change_pct": 0.65
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74669.21,
-      "change_pct": 0.48
+      "value": 74729.27,
+      "change_pct": 0.56
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 95.38,
-      "change_pct": -2.64,
+      "value": 95.8,
+      "change_pct": -2.21,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 128450,
-      "change_pct": 0.87,
+      "value": 127492,
+      "change_pct": 0.14,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4206.3,
-      "change_pct": 0.87,
+      "value": 4175.9,
+      "change_pct": 0.14,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21766.4,
-      "change_pct": 0.05
+      "price": 21736.75,
+      "change_pct": -0.09
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19185.25,
-      "change_pct": 0.28
+      "price": 19129.8,
+      "change_pct": -0.01
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 55781.35,
-      "change_pct": -0.05
+      "price": 55844,
+      "change_pct": 0.06
     },
     {
       "symbol": "NIFTY IT",
-      "price": 31722.6,
-      "change_pct": 3.26
+      "price": 31924.1,
+      "change_pct": 3.92
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25760.65,
-      "change_pct": 0.72
+      "price": 25768.5,
+      "change_pct": 0.75
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 44516.05,
-      "change_pct": -0.62
+      "price": 44616.15,
+      "change_pct": -0.39
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12164.35,
-      "change_pct": 1.21
+      "price": 12133.2,
+      "change_pct": 0.95
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 82196.28,
-      "change_pct": 0.07
+      "price": 81763.05,
+      "change_pct": -0.46
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2456.69,
+      "price": 2456.61,
       "change_pct": 0.66
     }
   ],
