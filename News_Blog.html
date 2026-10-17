@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        <!-- Learning Hub Dropdown (Updated with learning_finmet.html) -->
+        <!-- Learning Hub Dropdown -->
         <div class="relative group py-2">
           <button class="hover:text-emerald-400 transition-colors flex items-center gap-1.5 focus:outline-none text-sm font-bold px-2 py-1">
             Learning Hub
@@ -258,7 +258,7 @@
       </div>
     </section>
 
-    <!-- Market Broad Sliding Strip (combined broad + sector indices) -->
+    <!-- Market Broad Sliding Strip -->
     <section class="grid grid-cols-1 gap-3">
       <div class="glass-card rounded-2xl border border-emerald-500/30 overflow-hidden bg-gradient-to-r from-emerald-950/40 to-zinc-950">
         <div class="flex items-center">
@@ -271,7 +271,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- News Bento Grid -->
     <section class="space-y-4">
@@ -321,7 +320,7 @@
       <div id="stocks-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"></div>
     </section>
 
-    <!-- Blog of the Week -->
+    <!-- Blog of the Week (Updated to Week 2) -->
     <section class="space-y-4">
       <h2 class="text-lg sm:text-xl font-extrabold text-white flex items-center gap-2.5">
         <span class="w-2.5 h-6 bg-amber-400 rounded-full inline-block"></span> Blog of the Week
@@ -339,6 +338,7 @@
     </section>
 
   </main>
+
   <!-- Footer -->
   <footer class="border-t border-zinc-900 bg-black py-6 mt-8 sm:mt-10 text-zinc-400 text-xs sm:text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-left">
@@ -373,24 +373,18 @@
     }
 
     /* =========================================================
-       BLOG OF THE WEEK — WEEKLY UPDATE INSTRUCTIONS
-       =========================================================
-       Every Friday:
-       1. Create the new file: blog/Week_N.html (copy blog/Week_1.html as a template)
-       2. Move the CURRENT "current" entry below into the "archive" array (at the top)
-       3. Replace "current" with the new week's details
-       That's it — this page updates itself, nothing else to touch.
-    ========================================================= */
+       BLOG CONFIG — UPDATED TO WEEK 2
+       ========================================================= */
     const BLOG_CONFIG = {
       current: {
-        week: 1,
-        title: "The Hard Truth About SIP Lifespans: Why Most Investors Quit Early",
-        date: "26 September 2026",
-        excerpt: "AMFI's own 2026 data shows direct-plan SIP investors are discontinuing at nearly 8x the rate of those investing through an advisor. We unpack why — and why a bank counter is not the same thing as an advisor.",
-        file: "blog/Week_1.html"
+        week: 2,
+        title: "Why Deploy Lumpsum Capital in Oct-Nov-Dec? Earnings, Caps & Global Demand",
+        date: "October 2026",
+        excerpt: "An institutional brief breaking down why the Q3 festive window maximizes risk-adjusted returns through earnings acceleration and phased tranche deployment.",
+        file: "blog/Week_2.html"
       },
       archive: [
-        // { week: 1, title: "...", date: "...", file: "blog/Week_1.html" },
+        { week: 1, title: "The Hard Truth About SIP Lifespans: Why Most Investors Quit Early", date: "26 September 2026", file: "blog/Week_1.html" },
       ]
     };
 
@@ -425,10 +419,9 @@
     function openModal(id) { document.getElementById(id)?.classList.remove('hidden'); }
     function closeModal(id) { document.getElementById(id)?.classList.add('hidden'); }
 
-    /* ---------- fallback demo data (used only if data.json can't be reached) ---------- */
+    /* ---------- fallback demo data ---------- */
     const FALLBACK_DATA = {
   "updated_at": "2026-09-15T10:00:00Z",
-  "_note": "Last verified close (Tue 15 Sep 2026, IST session). This file is overwritten automatically once the GitHub Action runs with live keys — see SETUP_GUIDE.md.",
   "indices": {
     "nifty":      { "label": "NIFTY 50",     "value": 23118.60, "change_pct": -1.19 },
     "sensex":     { "label": "SENSEX",       "value": 74003.82, "change_pct": -1.04 },
@@ -450,44 +443,22 @@
   "news": {
     "international": [
       { "outlet": "bloomberg.com", "articles": [
-        { "title": "US 10-year Treasury yield tops 5% as investors weigh Fed outlook", "url": "https://www.bloomberg.com", "published_at": "2026-09-15T02:00:00Z" },
-        { "title": "Fed officials signal caution on rate cuts amid sticky inflation", "url": "https://www.bloomberg.com", "published_at": "2026-09-14T18:00:00Z" },
-        { "title": "Bond market prices in fewer cuts as growth data surprises higher", "url": "https://www.bloomberg.com", "published_at": "2026-09-14T09:00:00Z" }
+        { "title": "US 10-year Treasury yield tops 5% as investors weigh Fed outlook", "url": "https://www.bloomberg.com", "published_at": "2026-09-15T02:00:00Z" }
       ]},
       { "outlet": "reuters.com", "articles": [
-        { "title": "Fed rate-hike bets firm up as oil-driven inflation scare grips markets", "url": "https://www.reuters.com", "published_at": "2026-09-15T04:00:00Z" },
-        { "title": "Dollar steadies as traders await fresh Fed commentary", "url": "https://www.reuters.com", "published_at": "2026-09-14T20:00:00Z" },
-        { "title": "Global stock market rally pauses ahead of key US data", "url": "https://www.reuters.com", "published_at": "2026-09-14T11:00:00Z" }
-      ]},
-      { "outlet": "wsj.com", "articles": [
-        { "title": "Dow Jones swings as White House weighs response to oil price spike", "url": "https://www.wsj.com", "published_at": "2026-09-15T07:00:00Z" },
-        { "title": "Bond yields climb as Fed rate-cut hopes fade", "url": "https://www.wsj.com", "published_at": "2026-09-14T22:00:00Z" },
-        { "title": "Nasdaq slips as tech stocks lead broader market pullback", "url": "https://www.wsj.com", "published_at": "2026-09-14T14:00:00Z" }
+        { "title": "Fed rate-hike bets firm up as oil-driven inflation scare grips markets", "url": "https://www.reuters.com", "published_at": "2026-09-15T04:00:00Z" }
       ]}
     ],
     "indian": [
       { "outlet": "economictimes.indiatimes.com", "articles": [
-        { "title": "IT stocks rally even as broader market succumbs to oil-driven selloff", "url": "https://economictimes.indiatimes.com", "published_at": "2026-09-15T09:30:00Z" },
-        { "title": "RBI likely to hold rates steady at next MPC meeting, say economists", "url": "https://economictimes.indiatimes.com", "published_at": "2026-09-14T17:00:00Z" },
-        { "title": "Indian bond market yields ease on softer crude prices", "url": "https://economictimes.indiatimes.com", "published_at": "2026-09-14T10:00:00Z" }
+        { "title": "IT stocks rally even as broader market succumbs to oil-driven selloff", "url": "https://economictimes.indiatimes.com", "published_at": "2026-09-15T09:30:00Z" }
       ]},
       { "outlet": "business-standard.com", "articles": [
-        { "title": "Sensex, Nifty fall over 1% as oil surge and Fed bets weigh on sentiment", "url": "https://www.business-standard.com", "published_at": "2026-09-15T10:00:00Z" },
-        { "title": "RBI's G-Sec auction sees strong demand despite rate uncertainty", "url": "https://www.business-standard.com", "published_at": "2026-09-14T19:00:00Z" },
-        { "title": "Stock market breadth weakens as mid-caps underperform", "url": "https://www.business-standard.com", "published_at": "2026-09-14T12:00:00Z" }
-      ]},
-      { "outlet": "livemint.com", "articles": [
-        { "title": "RBI watches rupee closely as crude prices climb past $103", "url": "https://www.livemint.com", "published_at": "2026-09-15T08:00:00Z" },
-        { "title": "Bond market awaits RBI's next move on liquidity", "url": "https://www.livemint.com", "published_at": "2026-09-14T21:00:00Z" },
-        { "title": "Nifty Bank underperforms as rate-sensitive stocks slide", "url": "https://www.livemint.com", "published_at": "2026-09-14T13:00:00Z" }
+        { "title": "Sensex, Nifty fall over 1% as oil surge and Fed bets weigh on sentiment", "url": "https://www.business-standard.com", "published_at": "2026-09-15T10:00:00Z" }
       ]}
     ],
     "stocks_in_news": [
-      { "symbol": "HCLTECH", "cap": "Large Cap", "title": "HCL Technologies leads IT rally, up nearly 4% on strong volumes", "url": "https://www.moneycontrol.com" },
-      { "symbol": "BEL", "cap": "Mid Cap", "title": "Bharat Electronics falls over 5% on profit booking after recent rally", "url": "https://www.moneycontrol.com" },
-      { "symbol": "SHRIRAMFIN", "cap": "Large Cap", "title": "Shriram Finance under pressure amid broader financials selloff", "url": "https://www.moneycontrol.com" },
-      { "symbol": "GRASIM", "cap": "Large Cap", "title": "Grasim Industries slips as cement and chemicals demand outlook softens", "url": "https://www.moneycontrol.com" },
-      { "symbol": "INFY", "cap": "Large Cap", "title": "Infosys gains nearly 4% tracking sector-wide IT strength", "url": "https://www.moneycontrol.com" }
+      { "symbol": "HCLTECH", "cap": "Large Cap", "title": "HCL Technologies leads IT rally, up nearly 4% on strong volumes", "url": "https://www.moneycontrol.com" }
     ]
   }
 };
@@ -540,8 +511,7 @@
             ${(g.articles || []).map(n => `
               <li class="group">
                 <a href="${n.url}" target="_blank" rel="noopener" class="block">
-                  <p class="text-base sm:text-lg font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors leading-snug">${n.title}</p>
-                  ${n.published_at ? `<div class="mt-1 text-xs text-zinc-500 font-medium">${new Date(n.published_at).toLocaleString('en-IN', {day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit'})}</div>` : ''}
+                  <p class="text-base sm:text-lg font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors leading-snug">${n.title}</p>${n.published_at ? `<div class="mt-1 text-xs text-zinc-500 font-medium">${new Date(n.published_at).toLocaleString('en-IN', {day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit'})}</div>` : ''}
                 </a>
               </li>`).join('')}
           </ul>
@@ -584,7 +554,7 @@
     }
 
     loadData();
-    setInterval(loadData, 30 * 60 * 1000); // re-check every 30 min in case tab is left open
+    setInterval(loadData, 30 * 60 * 1000);
   </script>
 </body>
 </html>
