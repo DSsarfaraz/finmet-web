@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T17:00:06.135Z",
+  "updated_at": "2026-10-20T09:00:26.492Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
@@ -13,20 +13,20 @@
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 98.53,
-      "change_pct": -2.84,
+      "value": 100.3,
+      "change_pct": -3.24,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 126876,
-      "change_pct": -0.56,
+      "value": 126333,
+      "change_pct": -0.49,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4157.7,
-      "change_pct": -0.56,
+      "value": 4139.7,
+      "change_pct": -0.49,
       "unit": "USD/oz"
     }
   },
@@ -72,13 +72,13 @@
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 81891.9,
-      "change_pct": -0.15
+      "price": 81412.49,
+      "change_pct": -0.54
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2399.7,
-      "change_pct": -0.38
+      "price": 2381.53,
+      "change_pct": -0.97
     }
   ],
   "news": {
@@ -86,6 +86,12 @@
       {
         "outlet": "bloomberg.com",
         "articles": [
+          {
+            "title": "Bitcoin rebounds above $82,000 as oil’s retreat lifts risk mood",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-10-19/bitcoin-rebounds-above-82-000-as-oil-s-retreat-lifts-risk-mood",
+            "published_at": "2026-10-19T06:44:58Z"
+          },
           {
             "title": "AI trade reversal pierces Asia’s star picks-and-shovels stocks",
             "source": "Bloomberg",
@@ -118,22 +124,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "FMCGs grapple with cost inflation in Q2, brace for margin pressure in H2",
+            "title": "Eternal Q2 preview: Brokerages expect market share gains, steady margins",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/news/fmcgs-grapple-with-cost-inflation-in-q2-brace-for-margin-pressure-in-h2-126101800266_1.html",
-            "published_at": "2026-10-18T08:31:57Z"
+            "url": "https://www.business-standard.com/markets/news/eternal-q2-preview-brokerages-expect-market-share-gains-steady-margins-126101900471_1.html",
+            "published_at": "2026-10-19T08:28:31Z"
           },
           {
-            "title": "Earnings, crude oil, Jio IPO key monitorables for investors next week",
+            "title": "Union Bank shares jump 5% as Q2 PAT rises 30% YoY, asset quality improves",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/earnings-crude-oil-jio-ipo-key-monitorables-for-investors-next-week-126101800241_1.html",
-            "published_at": "2026-10-18T07:25:37Z"
+            "url": "https://www.business-standard.com/markets/news/union-bank-shares-jump-5-as-q2-pat-rises-30-yoy-asset-quality-improves-126101900455_1.html",
+            "published_at": "2026-10-19T08:14:36Z"
           },
           {
-            "title": "Mcap of nine of top-10 most valued firms surges by ₹3.65 trn, TCS shines",
+            "title": "Kross share price zooms 20%, hits record high on huge volumes; here's why",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/mcap-of-nine-of-top-10-most-valued-firms-surges-by-3-65-trn-tcs-shines-126101800187_1.html",
-            "published_at": "2026-10-18T06:41:19Z"
+            "url": "https://www.business-standard.com/markets/news/kross-share-price-zooms-20-hits-record-high-on-huge-volumes-here-s-why-126101900439_1.html",
+            "published_at": "2026-10-19T08:06:29Z"
           }
         ]
       },
@@ -141,56 +147,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "8th Pay Commission: How salaries change at fitment factors of 4, 3.833 and 3.80; Check complete calculations",
+            "title": "Rangarajan & Bhanumurthy: Can price levels rise without growth in money supply?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/8th-pay-commission-how-salaries-change-at-fitment-factors-of-4-3-833-and-3-80-check-complete-calculations-11792289760431.html",
-            "published_at": "2026-10-18T02:49:11Z"
+            "url": "https://www.livemint.com/opinion/online-views/rangarajan-bhanumurthy-inflation-can-price-levels-rise-without-growth-in-money-supply-11792335610860.html",
+            "published_at": "2026-10-19T08:31:02Z"
           },
           {
-            "title": "Gold on Dhanteras: celebrate the ritual, rethink the investment",
+            "title": "RBI's tightening task: How India’s high interest burden muddles the central bank's job",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/gold-on-dhanteras-celebrate-the-ritual-rethink-the-investment-11792135802308.html",
-            "published_at": "2026-10-18T01:31:06Z"
+            "url": "https://www.livemint.com/opinion/online-views/rbis-tightening-task-how-india-s-high-interest-burden-muddles-the-central-banks-job-11792314976293.html",
+            "published_at": "2026-10-19T07:02:04Z"
           },
           {
-            "title": "India’s Revolut or Nubank will emerge from a bank, not a fintech: Slice CEO Rajan Bajaj",
+            "title": "India must increase investment in research and development to achieve its Viksit Bharat dream",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/indias-revolut-or-nubank-will-emerge-from-a-bank-not-a-fintech-slice-ceo-rajan-bajaj-11792148763171.html",
-            "published_at": "2026-10-18T00:30:45Z"
+            "url": "https://www.livemint.com/opinion/online-views/rd-imperative-india-must-match-innovation-aims-with-bold-public-financing-11792313415115.html",
+            "published_at": "2026-10-19T07:00:40Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "IPO",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Big IPO week ahead: Only 2 IPOs to hit Dalal Street, including much-awaited Jio Platforms",
-        "url": "https://www.moneycontrol.com/news/business/ipo/big-ipo-week-ahead-only-2-ipos-to-hit-dalal-street-including-much-awaited-jio-platforms-14054580.html"
-      },
-      {
-        "symbol": "IPO",
-        "cap": "Large/Mid Cap",
-        "title": "Earnings, crude oil, Jio IPO key monitorables for investors next week",
-        "url": "https://www.business-standard.com/markets/news/earnings-crude-oil-jio-ipo-key-monitorables-for-investors-next-week-126101800241_1.html"
-      },
-      {
-        "symbol": "IPO",
-        "cap": "Large/Mid Cap",
-        "title": "Mega Jio Platforms IPO to lead Rs 31,663 crore offerings this week; 9 listings lined up",
-        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/mega-jio-platforms-ipo-to-lead-rs-31663-crore-offerings-this-week-9-listings-lined-up/articleshow/135024121.cms"
-      },
-      {
-        "symbol": "BSE",
-        "cap": "Large/Mid Cap",
-        "title": "Mutual funds’ portfolio shifts: Aditya Infotech, BSE stand out among top 10 stocks by holding value changes in September",
-        "url": "https://www.livemint.com/money/personal-finance/mutual-funds-portfolio-shifts-aditya-infotech-bse-stand-out-among-top-10-stocks-by-holding-value-changes-in-september-11792289243811.html"
+        "title": "Stock market crash today: Sensex plunges over 900 points, Nifty50 below 22,900 - top reasons for fall",
+        "url": "https://timesofindia.indiatimes.com/business/india-business/stock-market-crash-today-why-bse-sensex-nifty50-have-crashed-on-october-19-2026-oil-price-banking-stocks-profit-booking-fiis-top-reasons-for-fall/articleshow/135044024.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Bandu’s Blockbusters for October 18, 2026",
-        "url": "https://www.thehindubusinessline.com/portfolio/technical-analysis/bandus-blockbusters-for-october-18-2026/article71596591.ece"
+        "title": "Eternal Q2 preview: Brokerages expect market share gains, steady margins",
+        "url": "https://www.business-standard.com/markets/news/eternal-q2-preview-brokerages-expect-market-share-gains-steady-margins-126101900471_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "PhonePe rebrands Share.Market as PhonePe Invest, launches AI portfolio tool",
+        "url": "https://www.thehindubusinessline.com/money-and-banking/phonepe-rebrands-sharemarket-as-phonepe-invest-launches-ai-portfolio-tool/article71602357.ece"
+      },
+      {
+        "symbol": "PAT",
+        "cap": "Large/Mid Cap",
+        "title": "Union Bank shares jump 5% as Q2 PAT rises 30% YoY, asset quality improves",
+        "url": "https://www.business-standard.com/markets/news/union-bank-shares-jump-5-as-q2-pat-rises-30-yoy-asset-quality-improves-126101900455_1.html"
+      },
+      {
+        "symbol": "ABD",
+        "cap": "Large/Mid Cap",
+        "title": "ABD fires up Moradabad bottling plant, deepens UP bet with ₹600 crore outlay",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/abd-fires-up-moradabad-bottling-plant-deepens-up-bet-with-600-crore-outlay/article71602350.ece"
       }
     ]
   }
