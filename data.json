@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-22T15:20:54.634Z",
+  "updated_at": "2026-10-23T08:56:57.904Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22687.65,
-      "change_pct": -0.54
+      "value": 22532.3,
+      "change_pct": -0.68
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 73249.39,
-      "change_pct": -0.62
+      "value": 72989.27,
+      "change_pct": -0.36
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 98.6,
-      "change_pct": 1.49,
+      "value": 100.05,
+      "change_pct": 0.58,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 124145,
-      "change_pct": -1.86,
+      "value": 123195,
+      "change_pct": -0.59,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4072.8,
-      "change_pct": -1.86,
+      "value": 4036.3,
+      "change_pct": -0.59,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21028.65,
-      "change_pct": -0.81
+      "price": 20534.15,
+      "change_pct": -2.35
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 18275.9,
-      "change_pct": -1.14
+      "price": 17775.2,
+      "change_pct": -2.74
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54925.7,
-      "change_pct": -0.09
+      "price": 54176.25,
+      "change_pct": -1.36
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32081.25,
-      "change_pct": -1.05
+      "price": 32046.7,
+      "change_pct": -0.11
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25011.5,
-      "change_pct": -0.73
+      "price": 24700.75,
+      "change_pct": -1.24
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 43105.45,
-      "change_pct": -1.41
+      "price": 42460.45,
+      "change_pct": -1.5
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11798.35,
-      "change_pct": -0.52
+      "price": 11489.75,
+      "change_pct": -2.62
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 81557.16,
-      "change_pct": -2.92
+      "price": 81662.91,
+      "change_pct": 0.43
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2398.92,
-      "change_pct": -2.91
+      "price": 2403.68,
+      "change_pct": 0.73
     }
   ],
   "news": {
@@ -87,16 +87,16 @@
         "outlet": "bloomberg.com",
         "articles": [
           {
+            "title": "RBI turns away all bids at treasury bill sale amid bond selloff",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-10-21/rbi-turns-away-all-bids-at-treasury-bill-sale-amid-bond-selloff",
+            "published_at": "2026-10-22T03:01:26Z"
+          },
+          {
             "title": "Gold holds decline as energy-led inflation weighs on rate path",
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-10-19/gold-holds-decline-as-energy-led-inflation-weighs-on-rate-path",
             "published_at": "2026-10-20T05:33:33Z"
-          },
-          {
-            "title": "Bitcoin rebounds above $82,000 as oil’s retreat lifts risk mood",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-19/bitcoin-rebounds-above-82-000-as-oil-s-retreat-lifts-risk-mood",
-            "published_at": "2026-10-19T06:44:58Z"
           }
         ]
       },
@@ -118,22 +118,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Bajaj Finance, Piramal Finance flag early signs of stress in gold loans",
+            "title": "India Cements surges 22% in two days on heavy volume in weak market",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/news/bajaj-finance-piramal-finance-flag-early-signs-of-stress-in-gold-loans-126102100525_1.html",
-            "published_at": "2026-10-21T08:41:40Z"
+            "url": "https://www.business-standard.com/markets/news/india-cements-share-price-surges-22-in-two-days-on-heavy-volume-in-weak-market-126102200615_1.html",
+            "published_at": "2026-10-22T08:28:47Z"
           },
           {
-            "title": "Nifty India Defence index slips 3%; Unimech, Axiscades, Dynamatic tank 7%",
+            "title": "Q2 results today: Adani Energy, Havells, HPCL, Swiggy, 57 more on Oct 22",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/nifty-india-defence-index-slips-3-unimech-axiscades-dynamatic-tank-7-126102100526_1.html",
-            "published_at": "2026-10-21T08:14:44Z"
+            "url": "https://www.business-standard.com/companies/quarterly-results/q2-results-today-adani-energy-havells-hpcl-swiggy-57-more-on-oct-22-126102200533_1.html",
+            "published_at": "2026-10-22T07:13:25Z"
           },
           {
-            "title": "NDB Maharaja Bonds get TDS exemption: How it affects your interest income",
+            "title": "Balkrishna Industries jumps 4% on inking deal with Italy-based Pirelli",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/ndb-maharaja-bonds-get-tds-exemption-how-it-affects-your-interest-income-126102100522_1.html",
-            "published_at": "2026-10-21T07:57:42Z"
+            "url": "https://www.business-standard.com/markets/news/balkrishna-industries-jumps-4-on-inking-deal-with-italy-based-pirelli-126102200528_1.html",
+            "published_at": "2026-10-22T07:10:32Z"
           }
         ]
       },
@@ -141,22 +141,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "How Bajaj Consumer Care is defying an FMCG slowdown",
+            "title": "Titan Company up 17% vs Kalyan Jewellers 13% — Two biggest jewellery stocks in a year | How do mutual fund bets differ?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/bajaj-consumer-care-share-price-growth-earnings-outlook-fmcg-11792558827613.html",
-            "published_at": "2026-10-21T08:51:39Z"
+            "url": "https://www.livemint.com/money/personal-finance/titan-company-up-17-vs-kalyan-jewellers-13-two-biggest-jewellery-stocks-in-a-year-how-do-mutual-fund-bets-differ-11792653599843.html",
+            "published_at": "2026-10-22T08:26:53Z"
           },
           {
-            "title": "Devina Mehra: Inefficient markets and what they mean for investors",
+            "title": "Small-cap funds see better score on liquidity stress-test. What does it mean?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/devina-mehra-markets-arent-efficient-here-s-what-investors-must-be-wary-of-11792485505318.html",
-            "published_at": "2026-10-21T06:51:50Z"
+            "url": "https://www.livemint.com/money/personal-finance/small-cap-mutual-funds-stress-test-liquidity-risk-11792641267715.html",
+            "published_at": "2026-10-22T06:11:01Z"
           },
           {
-            "title": "Mint Explainer | Why India wants to corporatize its major ports and what it means",
+            "title": "Flipkart-owned fashion e-commerce giant Myntra’s FY26 financials: How falling logistics income dragged revenue down",
             "source": "Livemint",
-            "url": "https://www.livemint.com/industry/infrastructure/india-corporatize-major-ports-financial-autonomy-tariffs-listings-11792557264859.html",
-            "published_at": "2026-10-21T05:38:04Z"
+            "url": "https://www.livemint.com/companies/news/flipkartowned-fashion-e-commerce-giant-myntra-s-fy26-financials-how-falling-logistics-income-dragged-revenue-down-11792639701859.html",
+            "published_at": "2026-10-22T04:36:32Z"
           }
         ]
       }
@@ -165,32 +165,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Varmora Granito H1 profit jumps 498% to Rs 53.7 cr; shares rise nearly 6%",
-        "url": "https://economictimes.indiatimes.com/industry/indl-goods/svs/construction/varmora-granito-h1-profit-jumps-498-to-rs-53-7-cr-shares-rise-nearly-6/articleshow/135086932.cms"
+        "title": "India Cements surges 22% in two days on heavy volume in weak market",
+        "url": "https://www.business-standard.com/markets/news/india-cements-share-price-surges-22-in-two-days-on-heavy-volume-in-weak-market-126102200615_1.html"
       },
       {
-        "symbol": "SSSG",
+        "symbol": "PHP",
         "cap": "Large/Mid Cap",
-        "title": "Vishal Mega Mart falls 6% as festive shift weighs on margins, SSSG in Q2",
-        "url": "https://www.business-standard.com/markets/news/vishal-mega-mart-falls-6-as-festive-shift-weighs-on-margins-sssg-in-q2-126102100565_1.html"
+        "title": "From eMudhra to PHP: Breach spree hits tech infrastructure, AI emerges as threat multiplier",
+        "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/from-emudhra-to-php-breach-spree-hits-tech-infrastructure-ai-emerges-as-threat-multiplier-microsoft-technology-artificial-intelligence-cybersecurity/articleshow/135112380.cms"
+      },
+      {
+        "symbol": "TTML",
+        "cap": "Large/Mid Cap",
+        "title": "TTML narrows Q2 loss to ₹59 crore, revenue up 8%; stock surges 9% on results day",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/ttml-narrows-q2-loss-to-59-crore-revenue-up-8-stock-surges-9-on-results-day/article71610687.ece"
+      },
+      {
+        "symbol": "HDFC",
+        "cap": "Large/Mid Cap",
+        "title": "A turbulent year at HDFC Bank: Controversies that kept India’s biggest private lender in the headlines",
+        "url": "https://economictimes.indiatimes.com/industry/banking/finance/banking/a-turbulent-year-at-hdfc-bank-controversies-that-kept-indias-biggest-private-lender-in-the-headlines/articleshow/135109429.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "HD Fire Protect shares list at 23% premium; expert highlights key factors to watch",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/hd-fire-protect-shares-list-at-23-premium-expert-highlights-key-factors-to-watch/articleshow/135086485.cms"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Nifty India Defence index slips 3%; Unimech, Axiscades, Dynamatic tank 7%",
-        "url": "https://www.business-standard.com/markets/news/nifty-india-defence-index-slips-3-unimech-axiscades-dynamatic-tank-7-126102100526_1.html"
-      },
-      {
-        "symbol": "SFC",
-        "cap": "Large/Mid Cap",
-        "title": "SFC Environmental Technologies IPO to open on October 27; price band set at ₹313–330",
-        "url": "https://www.thehindubusinessline.com/markets/sfc-environmental-technologies-ipo-to-open-on-october-27-price-band-set-at-313330/article71606723.ece"
+        "title": "Sapphire Foods posts best revenue growth in four years, stock slides",
+        "url": "https://www.thehindubusinessline.com/companies/sapphire-foods-posts-best-revenue-growth-in-four-years-stock-slides/article71610662.ece"
       }
     ]
   }
