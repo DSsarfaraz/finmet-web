@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-23T15:09:56.115Z",
+  "updated_at": "2026-10-26T09:30:25.842Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22600,
-      "change_pct": -0.39
+      "value": 22708.4,
+      "change_pct": 0.48
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 73123.83,
-      "change_pct": -0.17
+      "value": 73422.03,
+      "change_pct": 0.41
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 102.35,
-      "change_pct": 2.9,
+      "value": 100.81,
+      "change_pct": -2.38,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 122501,
-      "change_pct": -1.15,
+      "value": 123335,
+      "change_pct": 0.5,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4013.7,
-      "change_pct": -1.15,
+      "value": 4028.1,
+      "change_pct": 0.5,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 20592.75,
-      "change_pct": -2.07
+      "price": 20760.55,
+      "change_pct": 0.81
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 17739.45,
-      "change_pct": -2.94
+      "price": 17976.2,
+      "change_pct": 1.33
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54287.35,
-      "change_pct": -1.16
+      "price": 54326.4,
+      "change_pct": 0.07
     },
     {
       "symbol": "NIFTY IT",
-      "price": 31995.5,
-      "change_pct": -0.27
+      "price": 32155.8,
+      "change_pct": 0.5
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 24862.3,
-      "change_pct": -0.6
+      "price": 24918.8,
+      "change_pct": 0.23
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 42680.7,
-      "change_pct": -0.99
+      "price": 42650.1,
+      "change_pct": -0.07
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11478.2,
-      "change_pct": -2.71
+      "price": 11663.85,
+      "change_pct": 1.62
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 81439.25,
-      "change_pct": 0.16
+      "price": 80390.52,
+      "change_pct": 0.46
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2397.76,
-      "change_pct": 0.48
+      "price": 2330,
+      "change_pct": 0.13
     }
   ],
   "news": {
@@ -97,6 +97,12 @@
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-10-19/gold-holds-decline-as-energy-led-inflation-weighs-on-rate-path",
             "published_at": "2026-10-20T05:33:33Z"
+          },
+          {
+            "title": "Bitcoin rebounds above $82,000 as oil’s retreat lifts risk mood",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-10-19/bitcoin-rebounds-above-82-000-as-oil-s-retreat-lifts-risk-mood",
+            "published_at": "2026-10-19T06:44:58Z"
           }
         ]
       },
@@ -118,22 +124,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "India Cements surges 22% in two days on heavy volume in weak market",
+            "title": "Top 10 firms lose ₹1.55 trillion in mcap as HDFC Bank, Bajaj Finance fall",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/india-cements-share-price-surges-22-in-two-days-on-heavy-volume-in-weak-market-126102200615_1.html",
-            "published_at": "2026-10-22T08:28:47Z"
+            "url": "https://www.business-standard.com/markets/news/top-10-firms-lose-1-55-trillion-in-mcap-as-hdfc-bank-bajaj-finance-fall-126102500268_1.html",
+            "published_at": "2026-10-25T08:54:21Z"
           },
           {
-            "title": "Q2 results today: Adani Energy, Havells, HPCL, Swiggy, 57 more on Oct 22",
+            "title": "Q2 results, US Fed decision, crude oil may drive stock markets this week",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/companies/quarterly-results/q2-results-today-adani-energy-havells-hpcl-swiggy-57-more-on-oct-22-126102200533_1.html",
-            "published_at": "2026-10-22T07:13:25Z"
+            "url": "https://www.business-standard.com/markets/news/q2-results-us-fed-decision-crude-oil-may-drive-stock-markets-this-week-126102500192_1.html",
+            "published_at": "2026-10-25T06:50:40Z"
           },
           {
-            "title": "Balkrishna Industries jumps 4% on inking deal with Italy-based Pirelli",
+            "title": "Sinking profits turn China's $3.5 trillion stock rout into a deeper trap",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/balkrishna-industries-jumps-4-on-inking-deal-with-italy-based-pirelli-126102200528_1.html",
-            "published_at": "2026-10-22T07:10:32Z"
+            "url": "https://www.business-standard.com/world-news/sinking-profits-turn-china-s-3-5-trillion-stock-rout-into-a-deeper-trap-126102500055_1.html",
+            "published_at": "2026-10-25T02:48:06Z"
           }
         ]
       },
@@ -141,56 +147,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Titan Company up 17% vs Kalyan Jewellers 13% — Two biggest jewellery stocks in a year | How do mutual fund bets differ?",
+            "title": "Why fund managers are mixed on gilt funds",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/titan-company-up-17-vs-kalyan-jewellers-13-two-biggest-jewellery-stocks-in-a-year-how-do-mutual-fund-bets-differ-11792653599843.html",
-            "published_at": "2026-10-22T08:26:53Z"
+            "url": "https://www.livemint.com/money/personal-finance/why-fund-managers-are-mixed-on-gilt-funds-11792902637701.html",
+            "published_at": "2026-10-25T09:27:47Z"
           },
           {
-            "title": "Small-cap funds see better score on liquidity stress-test. What does it mean?",
+            "title": "Bank holidays next week: SBI, HDFC, ICICI branches to remain closed on these 3 days from 26-31 Oct? Check RBI calendar",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/small-cap-mutual-funds-stress-test-liquidity-risk-11792641267715.html",
-            "published_at": "2026-10-22T06:11:01Z"
+            "url": "https://www.livemint.com/money/bank-holidays-next-week-sbi-hdfc-icici-pnb-branches-closed-3-days-laxmi-puja-26-october-29-karva-chauth-31-rbi-calendar-11792916048832.html",
+            "published_at": "2026-10-25T09:27:13Z"
           },
           {
-            "title": "Flipkart-owned fashion e-commerce giant Myntra’s FY26 financials: How falling logistics income dragged revenue down",
+            "title": "Tata Sons listing latest news: How RBI Governor Sanjay Malhotra's first public comment dispels doubts on Sept 11 order",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/flipkartowned-fashion-e-commerce-giant-myntra-s-fy26-financials-how-falling-logistics-income-dragged-revenue-down-11792639701859.html",
-            "published_at": "2026-10-22T04:36:32Z"
+            "url": "https://www.livemint.com/companies/news/tata-sons-listing-latest-news-how-rbi-governor-sanjay-malhotras-first-public-comment-dispels-doubts-on-sept-11-order-11792915550831.html",
+            "published_at": "2026-10-25T08:15:55Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "NEWS",
+        "symbol": "HDFC",
         "cap": "Large/Mid Cap",
-        "title": "India Cements surges 22% in two days on heavy volume in weak market",
-        "url": "https://www.business-standard.com/markets/news/india-cements-share-price-surges-22-in-two-days-on-heavy-volume-in-weak-market-126102200615_1.html"
-      },
-      {
-        "symbol": "PHP",
-        "cap": "Large/Mid Cap",
-        "title": "From eMudhra to PHP: Breach spree hits tech infrastructure, AI emerges as threat multiplier",
-        "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/from-emudhra-to-php-breach-spree-hits-tech-infrastructure-ai-emerges-as-threat-multiplier-microsoft-technology-artificial-intelligence-cybersecurity/articleshow/135112380.cms"
-      },
-      {
-        "symbol": "TTML",
-        "cap": "Large/Mid Cap",
-        "title": "TTML narrows Q2 loss to ₹59 crore, revenue up 8%; stock surges 9% on results day",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/ttml-narrows-q2-loss-to-59-crore-revenue-up-8-stock-surges-9-on-results-day/article71610687.ece"
+        "title": "Mcap of eight of the top-10 firms erodes by ₹1.55 lakh cr; HDFC Bank, Bajaj Fin biggest laggards",
+        "url": "https://www.thehindubusinessline.com/markets/mcap-of-eight-of-the-top-10-firms-erodes-by-155-lakh-cr-hdfc-bank-bajaj-fin-biggest-laggards/article71622878.ece"
       },
       {
         "symbol": "HDFC",
         "cap": "Large/Mid Cap",
-        "title": "A turbulent year at HDFC Bank: Controversies that kept India’s biggest private lender in the headlines",
-        "url": "https://economictimes.indiatimes.com/industry/banking/finance/banking/a-turbulent-year-at-hdfc-bank-controversies-that-kept-indias-biggest-private-lender-in-the-headlines/articleshow/135109429.cms"
+        "title": "Top 10 firms lose ₹1.55 trillion in mcap as HDFC Bank, Bajaj Finance fall",
+        "url": "https://www.business-standard.com/markets/news/top-10-firms-lose-1-55-trillion-in-mcap-as-hdfc-bank-bajaj-finance-fall-126102500268_1.html"
+      },
+      {
+        "symbol": "HDFC",
+        "cap": "Large/Mid Cap",
+        "title": "Mcap of 8 of top-10 firms erodes by Rs 1.55 lakh cr; HDFC Bank, Bajaj Fin biggest laggards",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mcap-of-8-of-top-10-firms-erodes-by-rs-1-55-lakh-cr-hdfc-bank-bajaj-fin-biggest-laggards/articleshow/135186713.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Sapphire Foods posts best revenue growth in four years, stock slides",
-        "url": "https://www.thehindubusinessline.com/companies/sapphire-foods-posts-best-revenue-growth-in-four-years-stock-slides/article71610662.ece"
+        "title": "Q2 results, US Fed decision, crude oil may drive stock markets this week",
+        "url": "https://www.business-standard.com/markets/news/q2-results-us-fed-decision-crude-oil-may-drive-stock-markets-this-week-126102500192_1.html"
+      },
+      {
+        "symbol": "IPO",
+        "cap": "Large/Mid Cap",
+        "title": "Jio IPO GMP today: All eyes on telecom major’s mega listing this week. What is grey market premium signalling?",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/jioipogmptoday-alleyes-on-telecom-majors-megalisting-this-week-what-is-greymarketsignalling/articleshow/135183339.cms"
       }
     ]
   }
