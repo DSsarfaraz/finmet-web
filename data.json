@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-26T16:49:10.394Z",
+  "updated_at": "2026-10-27T09:27:24.067Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22753.2,
-      "change_pct": 0.68
+      "value": 22741.5,
+      "change_pct": -0.05
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 73606.75,
-      "change_pct": 0.66
+      "value": 73471.17,
+      "change_pct": -0.18
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 102.9,
-      "change_pct": -0.36,
+      "value": 102.14,
+      "change_pct": 0.37,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 123453,
-      "change_pct": 0.66,
+      "value": 122589,
+      "change_pct": -0.77,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4034.5,
-      "change_pct": 0.66,
+      "value": 4007.3,
+      "change_pct": -0.77,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 20812.25,
-      "change_pct": 1.07
+      "price": 20965.4,
+      "change_pct": 0.74
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 17985,
-      "change_pct": 1.38
+      "price": 18450.1,
+      "change_pct": 2.59
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54366.7,
-      "change_pct": 0.15
+      "price": 54081.9,
+      "change_pct": -0.52
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32273.05,
-      "change_pct": 0.87
+      "price": 32104.7,
+      "change_pct": -0.52
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 24970.75,
-      "change_pct": 0.44
+      "price": 25253.3,
+      "change_pct": 1.13
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 42800.75,
-      "change_pct": 0.28
+      "price": 42786.1,
+      "change_pct": -0.03
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11731.55,
-      "change_pct": 2.21
+      "price": 11770.65,
+      "change_pct": 0.33
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 79781.78,
-      "change_pct": -0.3
+      "price": 79572.09,
+      "change_pct": -0.54
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2309.28,
-      "change_pct": -0.76
+      "price": 2307.12,
+      "change_pct": -0.57
     }
   ],
   "news": {
@@ -87,22 +87,10 @@
         "outlet": "bloomberg.com",
         "articles": [
           {
-            "title": "RBI turns away all bids at treasury bill sale amid bond selloff",
+            "title": "Bitcoin dips below $80,000 as AI-Related market selloff deepens",
             "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-21/rbi-turns-away-all-bids-at-treasury-bill-sale-amid-bond-selloff",
-            "published_at": "2026-10-22T03:01:26Z"
-          },
-          {
-            "title": "Gold holds decline as energy-led inflation weighs on rate path",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-19/gold-holds-decline-as-energy-led-inflation-weighs-on-rate-path",
-            "published_at": "2026-10-20T05:33:33Z"
-          },
-          {
-            "title": "Bitcoin rebounds above $82,000 as oil’s retreat lifts risk mood",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-19/bitcoin-rebounds-above-82-000-as-oil-s-retreat-lifts-risk-mood",
-            "published_at": "2026-10-19T06:44:58Z"
+            "url": "https://www.bloomberg.com/news/articles/2026-10-26/bitcoin-dips-below-80-000-as-ai-related-market-selloff-deepens",
+            "published_at": "2026-10-26T06:31:46Z"
           }
         ]
       },
@@ -124,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Top 10 firms lose ₹1.55 trillion in mcap as HDFC Bank, Bajaj Finance fall",
+            "title": "Steel Strips Wheels zooms 36% in two days; what's driving auto parts stock?",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/top-10-firms-lose-1-55-trillion-in-mcap-as-hdfc-bank-bajaj-finance-fall-126102500268_1.html",
-            "published_at": "2026-10-25T08:54:21Z"
+            "url": "https://www.business-standard.com/markets/news/steel-strips-wheels-zooms-36-in-two-days-what-s-driving-auto-parts-stock-126102600555_1.html",
+            "published_at": "2026-10-26T08:56:28Z"
           },
           {
-            "title": "Q2 results, US Fed decision, crude oil may drive stock markets this week",
+            "title": "Top bank chiefs urge shift from AI pilots to real-world use in banking",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/q2-results-us-fed-decision-crude-oil-may-drive-stock-markets-this-week-126102500192_1.html",
-            "published_at": "2026-10-25T06:50:40Z"
+            "url": "https://www.business-standard.com/specials/bs-events/top-bank-chiefs-urge-shift-from-ai-pilots-to-real-world-use-in-banking-126102600604_1.html",
+            "published_at": "2026-10-26T08:51:04Z"
           },
           {
-            "title": "Sinking profits turn China's $3.5 trillion stock rout into a deeper trap",
+            "title": "Global rate risks, capital outflows to weigh on Indian markets: Experts",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/world-news/sinking-profits-turn-china-s-3-5-trillion-stock-rout-into-a-deeper-trap-126102500055_1.html",
-            "published_at": "2026-10-25T02:48:06Z"
+            "url": "https://www.business-standard.com/specials/bs-events/global-rate-risks-capital-outflows-indian-markets-bfsi-insight-summit-2026-126102600598_1.html",
+            "published_at": "2026-10-26T08:47:23Z"
           }
         ]
       },
@@ -147,56 +135,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Why fund managers are mixed on gilt funds",
+            "title": "Soaring domestic and international airfares make travellers rethink year-end holidays",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/why-fund-managers-are-mixed-on-gilt-funds-11792902637701.html",
-            "published_at": "2026-10-25T09:27:47Z"
+            "url": "https://www.livemint.com/money/personal-finance/india-airfares-surge-december-holidays-travel-costs-11792995743679.html",
+            "published_at": "2026-10-26T08:23:31Z"
           },
           {
-            "title": "Bank holidays next week: SBI, HDFC, ICICI branches to remain closed on these 3 days from 26-31 Oct? Check RBI calendar",
+            "title": "Using a credit card for foreign transactions? 5 key things to know about fees, exchange rates and charges | Full list",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/bank-holidays-next-week-sbi-hdfc-icici-pnb-branches-closed-3-days-laxmi-puja-26-october-29-karva-chauth-31-rbi-calendar-11792916048832.html",
-            "published_at": "2026-10-25T09:27:13Z"
+            "url": "https://www.livemint.com/money/personal-finance/using-a-credit-card-for-foreign-transactions-5-key-things-to-know-about-fees-exchange-rates-and-charges-full-list-11792982285232.html",
+            "published_at": "2026-10-26T03:19:04Z"
           },
           {
-            "title": "Tata Sons listing latest news: How RBI Governor Sanjay Malhotra's first public comment dispels doubts on Sept 11 order",
+            "title": "Bank holiday today Oct 26: Why are branches at some locations closed today despite Monday working day? RBI calendar list",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/tata-sons-listing-latest-news-how-rbi-governor-sanjay-malhotras-first-public-comment-dispels-doubts-on-sept-11-order-11792915550831.html",
-            "published_at": "2026-10-25T08:15:55Z"
+            "url": "https://www.livemint.com/money/bank-holiday-today-oct-26-why-are-branches-at-some-locations-closed-today-despite-monday-working-day-rbi-calendar-list-11792981044371.html",
+            "published_at": "2026-10-26T02:23:34Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "HDFC",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Mcap of eight of the top-10 firms erodes by ₹1.55 lakh cr; HDFC Bank, Bajaj Fin biggest laggards",
-        "url": "https://www.thehindubusinessline.com/markets/mcap-of-eight-of-the-top-10-firms-erodes-by-155-lakh-cr-hdfc-bank-bajaj-fin-biggest-laggards/article71622878.ece"
-      },
-      {
-        "symbol": "HDFC",
-        "cap": "Large/Mid Cap",
-        "title": "Top 10 firms lose ₹1.55 trillion in mcap as HDFC Bank, Bajaj Finance fall",
-        "url": "https://www.business-standard.com/markets/news/top-10-firms-lose-1-55-trillion-in-mcap-as-hdfc-bank-bajaj-finance-fall-126102500268_1.html"
-      },
-      {
-        "symbol": "HDFC",
-        "cap": "Large/Mid Cap",
-        "title": "Mcap of 8 of top-10 firms erodes by Rs 1.55 lakh cr; HDFC Bank, Bajaj Fin biggest laggards",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mcap-of-8-of-top-10-firms-erodes-by-rs-1-55-lakh-cr-hdfc-bank-bajaj-fin-biggest-laggards/articleshow/135186713.cms"
+        "title": "Tamilnad Mercantile Bank Q2 results: Net profit up 42% to ₹451 crore",
+        "url": "https://www.business-standard.com/companies/quarterly-results/tamilnad-mercantile-bank-q2-results-net-profit-up-42-to-451-crore-126102600618_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Q2 results, US Fed decision, crude oil may drive stock markets this week",
-        "url": "https://www.business-standard.com/markets/news/q2-results-us-fed-decision-crude-oil-may-drive-stock-markets-this-week-126102500192_1.html"
+        "title": "IoB Q2 net profit rises 56 pc to Rs 1,912 cr on higher interest income",
+        "url": "https://www.business-standard.com/companies/quarterly-results/iob-q2-net-profit-rises-56-pc-to-rs-1-912-cr-on-higher-interest-income-126102600566_1.html"
       },
       {
-        "symbol": "IPO",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Jio IPO GMP today: All eyes on telecom major’s mega listing this week. What is grey market premium signalling?",
-        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/jioipogmptoday-alleyes-on-telecom-majors-megalisting-this-week-what-is-greymarketsignalling/articleshow/135183339.cms"
+        "title": "Steel Strips Wheels zooms 36% in two days; what's driving auto parts stock?",
+        "url": "https://www.business-standard.com/markets/news/steel-strips-wheels-zooms-36-in-two-days-what-s-driving-auto-parts-stock-126102600555_1.html"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "tradeiq-lab-mcp added to PyPI",
+        "url": "https://pypi.org/project/tradeiq-lab-mcp/"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Tata Communications bets $450 million on India's data centre connectivity boom",
+        "url": "https://www.livemint.com/companies/news/tata-communications-investment-ai-data-centre-connectivity-11792998942621.html"
       }
     ]
   }
