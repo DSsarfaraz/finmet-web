@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-27T15:54:25.158Z",
+  "updated_at": "2026-10-28T10:09:58.469Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22749.75,
-      "change_pct": -0.02
+      "value": 22698.85,
+      "change_pct": -0.22
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 73598.67,
-      "change_pct": -0.01
+      "value": 73272.94,
+      "change_pct": -0.44
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 99.96,
-      "change_pct": -1.77,
+      "value": 101.16,
+      "change_pct": 1.26,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 124607,
-      "change_pct": 0.91,
+      "value": 124565,
+      "change_pct": -0.14,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4075.2,
-      "change_pct": 0.91,
+      "value": 4068.9,
+      "change_pct": -0.14,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21003.15,
-      "change_pct": 0.92
+      "price": 21064.8,
+      "change_pct": 0.29
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 18468.7,
-      "change_pct": 2.69
+      "price": 18634.9,
+      "change_pct": 0.9
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 53974.9,
-      "change_pct": -0.72
+      "price": 54267.4,
+      "change_pct": 0.54
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32189.45,
-      "change_pct": -0.26
+      "price": 31553.4,
+      "change_pct": -1.98
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25340.8,
-      "change_pct": 1.48
+      "price": 25707.35,
+      "change_pct": 1.45
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 43118.2,
-      "change_pct": 0.74
+      "price": 42878.35,
+      "change_pct": -0.56
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11806.7,
-      "change_pct": 0.64
+      "price": 11769.35,
+      "change_pct": -0.32
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 80522.03,
-      "change_pct": 0.64
+      "price": 81361.21,
+      "change_pct": 0.69
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2346.8,
-      "change_pct": 1.14
+      "price": 2366.2,
+      "change_pct": 0.79
     }
   ],
   "news": {
@@ -86,6 +86,12 @@
       {
         "outlet": "bloomberg.com",
         "articles": [
+          {
+            "title": "The grease hunters of Bengaluru want leftover fryer oil to fuel India’s jets",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-10-27/india-s-biofuel-mandate-spurs-rush-for-waste-cooking-oil-to-fuel-trucks-to-jets",
+            "published_at": "2026-10-27T03:56:25Z"
+          },
           {
             "title": "Bitcoin dips below $80,000 as AI-Related market selloff deepens",
             "source": "Bloomberg",
@@ -112,22 +118,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Steel Strips Wheels zooms 36% in two days; what's driving auto parts stock?",
+            "title": "Laurus Labs rallies 4% for 2nd straight day; stock hits new high",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/steel-strips-wheels-zooms-36-in-two-days-what-s-driving-auto-parts-stock-126102600555_1.html",
-            "published_at": "2026-10-26T08:56:28Z"
+            "url": "https://www.business-standard.com/markets/news/laurus-labs-rallies-4-for-2nd-straight-day-stock-hits-new-high-126102700817_1.html",
+            "published_at": "2026-10-27T09:38:11Z"
           },
           {
-            "title": "Top bank chiefs urge shift from AI pilots to real-world use in banking",
+            "title": "Acutaas Chemicals rallies 13%; hits record high on strong Q2 results",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/specials/bs-events/top-bank-chiefs-urge-shift-from-ai-pilots-to-real-world-use-in-banking-126102600604_1.html",
-            "published_at": "2026-10-26T08:51:04Z"
+            "url": "https://www.business-standard.com/markets/news/acutaas-chemicals-rallies-13-hits-record-high-on-strong-q2-results-126102700730_1.html",
+            "published_at": "2026-10-27T08:39:57Z"
           },
           {
-            "title": "Global rate risks, capital outflows to weigh on Indian markets: Experts",
+            "title": "Money best way to buy your freedom; gain choices in life: Ankur Warikoo",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/specials/bs-events/global-rate-risks-capital-outflows-indian-markets-bfsi-insight-summit-2026-126102600598_1.html",
-            "published_at": "2026-10-26T08:47:23Z"
+            "url": "https://www.business-standard.com/markets/interviews/money-best-way-to-buy-your-freedom-gain-choices-in-life-ankur-warikoo-126102700683_1.html",
+            "published_at": "2026-10-27T08:09:05Z"
           }
         ]
       },
@@ -135,22 +141,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Soaring domestic and international airfares make travellers rethink year-end holidays",
+            "title": "RBI EDF form: Is export declaration mandatory for all service exporters, freelancers, YouTubers? Expert explains",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/india-airfares-surge-december-holidays-travel-costs-11792995743679.html",
-            "published_at": "2026-10-26T08:23:31Z"
+            "url": "https://www.livemint.com/money/personal-finance/rbi-edf-form-is-export-declaration-mandatory-for-all-service-exporters-freelancers-youtubers-expert-explains-11793091904098.html",
+            "published_at": "2026-10-27T09:31:57Z"
           },
           {
-            "title": "Using a credit card for foreign transactions? 5 key things to know about fees, exchange rates and charges | Full list",
+            "title": "Banks raise home loan rates after RBI repo rate hike: Want to move back to lower-interest loan? Know this hidden cost",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/using-a-credit-card-for-foreign-transactions-5-key-things-to-know-about-fees-exchange-rates-and-charges-full-list-11792982285232.html",
-            "published_at": "2026-10-26T03:19:04Z"
+            "url": "https://www.livemint.com/money/personal-finance/banks-raise-home-loan-rates-after-rbi-repo-rate-hike-want-to-move-back-to-lower-interest-loan-know-this-hidden-cost-11793088265692.html",
+            "published_at": "2026-10-27T09:02:00Z"
           },
           {
-            "title": "Bank holiday today Oct 26: Why are branches at some locations closed today despite Monday working day? RBI calendar list",
+            "title": "Tata Consumer’s distribution overhaul powers growth in more businesses, says CEO",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/bank-holiday-today-oct-26-why-are-branches-at-some-locations-closed-today-despite-monday-working-day-rbi-calendar-list-11792981044371.html",
-            "published_at": "2026-10-26T02:23:34Z"
+            "url": "https://www.livemint.com/companies/news/tata-consumer-growth-businesses-tata-sampann-revenue-growth-sunil-dsouza-11793083887431.html",
+            "published_at": "2026-10-27T08:41:02Z"
           }
         ]
       }
@@ -159,32 +165,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Tamilnad Mercantile Bank Q2 results: Net profit up 42% to ₹451 crore",
-        "url": "https://www.business-standard.com/companies/quarterly-results/tamilnad-mercantile-bank-q2-results-net-profit-up-42-to-451-crore-126102600618_1.html"
+        "title": "Radico Khaitan posts record Q2 as profit surges 66%, stock climbs 1.5%",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/radico-khaitan-posts-record-q2-as-profit-surges-66-stock-climbs-15/article71630715.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "IoB Q2 net profit rises 56 pc to Rs 1,912 cr on higher interest income",
-        "url": "https://www.business-standard.com/companies/quarterly-results/iob-q2-net-profit-rises-56-pc-to-rs-1-912-cr-on-higher-interest-income-126102600566_1.html"
+        "title": "KFin Technologies surges 6% after Q2 results",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/kfin-technologies-surges-6-after-q2-results/article71630675.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Steel Strips Wheels zooms 36% in two days; what's driving auto parts stock?",
-        "url": "https://www.business-standard.com/markets/news/steel-strips-wheels-zooms-36-in-two-days-what-s-driving-auto-parts-stock-126102600555_1.html"
+        "title": "Laurus Labs rallies 4% for 2nd straight day; stock hits new high",
+        "url": "https://www.business-standard.com/markets/news/laurus-labs-rallies-4-for-2nd-straight-day-stock-hits-new-high-126102700817_1.html"
+      },
+      {
+        "symbol": "NFO",
+        "cap": "Large/Mid Cap",
+        "title": "New NFO alert! ICICI Prudential BSE Power ETF closes this week — Deadline, minimum amount, allocation, expected returns",
+        "url": "https://www.livemint.com/money/new-nfo-alert-icici-prudential-bse-power-etf-closes-this-week-30-oct-deadline-minimum-amount-allocation-expected-returns-11793087546759.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "tradeiq-lab-mcp added to PyPI",
-        "url": "https://pypi.org/project/tradeiq-lab-mcp/"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Tata Communications bets $450 million on India's data centre connectivity boom",
-        "url": "https://www.livemint.com/companies/news/tata-communications-investment-ai-data-centre-connectivity-11792998942621.html"
+        "title": "Acutaas Chemicals rallies 13%; hits record high on strong Q2 results",
+        "url": "https://www.business-standard.com/markets/news/acutaas-chemicals-rallies-13-hits-record-high-on-strong-q2-results-126102700730_1.html"
       }
     ]
   }
