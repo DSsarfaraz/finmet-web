@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-28T16:41:54.845Z",
+  "updated_at": "2026-10-29T10:34:55.151Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 22698.85,
-      "change_pct": -0.22
+      "value": 22936.75,
+      "change_pct": 1.05
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 73246.03,
-      "change_pct": -0.48
+      "value": 74151.04,
+      "change_pct": 1.24
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 103.5,
-      "change_pct": 3.6,
+      "value": 101.41,
+      "change_pct": -1.33,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 124054,
-      "change_pct": -0.55,
+      "value": 123765,
+      "change_pct": -0.25,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4052.2,
-      "change_pct": -0.55,
+      "value": 4041.5,
+      "change_pct": -0.25,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21064.8,
-      "change_pct": 0.29
+      "price": 21245.3,
+      "change_pct": 0.86
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 18634.9,
-      "change_pct": 0.9
+      "price": 18811.35,
+      "change_pct": 0.95
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54267.4,
-      "change_pct": 0.54
+      "price": 54909.65,
+      "change_pct": 1.18
     },
     {
       "symbol": "NIFTY IT",
-      "price": 31553.4,
-      "change_pct": -1.98
+      "price": 31866.4,
+      "change_pct": 0.99
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25707.35,
-      "change_pct": 1.45
+      "price": 25645.6,
+      "change_pct": -0.24
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 42878.35,
-      "change_pct": -0.56
+      "price": 43882.95,
+      "change_pct": 2.34
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11769.35,
-      "change_pct": -0.32
+      "price": 11848.45,
+      "change_pct": 0.67
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 80343.66,
-      "change_pct": -0.57
+      "price": 80167.71,
+      "change_pct": -1.35
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2327.64,
-      "change_pct": -0.86
+      "price": 2322,
+      "change_pct": -1.51
     }
   ],
   "news": {
@@ -86,6 +86,12 @@
       {
         "outlet": "bloomberg.com",
         "articles": [
+          {
+            "title": "Jio’s IPO surge ends Tata’s reign as most valuable India group",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-10-28/jio-s-ipo-surge-ends-tata-s-reign-as-most-valuable-india-group",
+            "published_at": "2026-10-28T08:16:35Z"
+          },
           {
             "title": "The grease hunters of Bengaluru want leftover fryer oil to fuel India’s jets",
             "source": "Bloomberg",
@@ -118,22 +124,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Laurus Labs rallies 4% for 2nd straight day; stock hits new high",
+            "title": "Sona Comstar zooms 101% from January low; hits new high in weak market",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/laurus-labs-rallies-4-for-2nd-straight-day-stock-hits-new-high-126102700817_1.html",
-            "published_at": "2026-10-27T09:38:11Z"
+            "url": "https://www.business-standard.com/markets/news/sona-comstar-zooms-101-from-january-low-hits-new-high-in-weak-market-126102800917_1.html",
+            "published_at": "2026-10-28T09:29:04Z"
           },
           {
-            "title": "Acutaas Chemicals rallies 13%; hits record high on strong Q2 results",
+            "title": "AI is not a bubble yet, but volatility lies ahead, says Shankar Sharma",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/acutaas-chemicals-rallies-13-hits-record-high-on-strong-q2-results-126102700730_1.html",
-            "published_at": "2026-10-27T08:39:57Z"
+            "url": "https://www.business-standard.com/specials/bs-events/artificial-intelligence-ai-bubble-tech-companies-data-centre-shankar-sharma-126102800828_1.html",
+            "published_at": "2026-10-28T09:09:08Z"
           },
           {
-            "title": "Money best way to buy your freedom; gain choices in life: Ankur Warikoo",
+            "title": "Roll out red carpet for dollar, make capital gains tax zero: Shankar Sharma",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/interviews/money-best-way-to-buy-your-freedom-gain-choices-in-life-ankur-warikoo-126102700683_1.html",
-            "published_at": "2026-10-27T08:09:05Z"
+            "url": "https://www.business-standard.com/markets/news/roll-out-red-carpet-for-dollar-make-capital-gains-tax-zero-shankar-sharma-126102800797_1.html",
+            "published_at": "2026-10-28T08:40:48Z"
           }
         ]
       },
@@ -141,22 +147,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "RBI EDF form: Is export declaration mandatory for all service exporters, freelancers, YouTubers? Expert explains",
+            "title": "Attractive interest rates, fee waivers: What to watch for in festive loan offers",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-edf-form-is-export-declaration-mandatory-for-all-service-exporters-freelancers-youtubers-expert-explains-11793091904098.html",
-            "published_at": "2026-10-27T09:31:57Z"
+            "url": "https://www.livemint.com/money/personal-finance/festive-loan-offers-home-loan-car-loan-interest-rates-11793173523456.html",
+            "published_at": "2026-10-28T09:42:24Z"
           },
           {
-            "title": "Banks raise home loan rates after RBI repo rate hike: Want to move back to lower-interest loan? Know this hidden cost",
+            "title": "RBI proposes ₹50 lakh LRS sub-limit explained: What does remittance scheme mean for your overseas investments, travel",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/banks-raise-home-loan-rates-after-rbi-repo-rate-hike-want-to-move-back-to-lower-interest-loan-know-this-hidden-cost-11793088265692.html",
-            "published_at": "2026-10-27T09:02:00Z"
+            "url": "https://www.livemint.com/money/personal-finance/rbi-proposes-50-lakh-lrs-sub-limit-explained-what-does-remittance-scheme-mean-for-your-overseas-investments-travel-11793174934652.html",
+            "published_at": "2026-10-28T09:32:34Z"
           },
           {
-            "title": "Tata Consumer’s distribution overhaul powers growth in more businesses, says CEO",
+            "title": "From AI to cloud and connectivity from space: Akash Ambani announces Jio's plans to expand beyond affordable data",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/tata-consumer-growth-businesses-tata-sampann-revenue-growth-sunil-dsouza-11793083887431.html",
-            "published_at": "2026-10-27T08:41:02Z"
+            "url": "https://www.livemint.com/companies/news/from-ai-to-cloud-and-connectivity-from-space-akash-ambani-announces-jios-plans-to-expand-beyond-affordable-data-11793179524098.html",
+            "published_at": "2026-10-28T09:31:36Z"
           }
         ]
       }
@@ -165,32 +171,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Radico Khaitan posts record Q2 as profit surges 66%, stock climbs 1.5%",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/radico-khaitan-posts-record-q2-as-profit-surges-66-stock-climbs-15/article71630715.ece"
+        "title": "Jio Platforms jumps over 21% in market debut",
+        "url": "https://biztoc.com/x/ec2f1db0d4c08fa7"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "KFin Technologies surges 6% after Q2 results",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/kfin-technologies-surges-6-after-q2-results/article71630675.ece"
+        "title": "City Union Bank Q2 net rises 26% to ₹416 crore",
+        "url": "https://www.thehindubusinessline.com/money-and-banking/city-union-bank-q2-net-rises-26-to-416-crore/article71635208.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Laurus Labs rallies 4% for 2nd straight day; stock hits new high",
-        "url": "https://www.business-standard.com/markets/news/laurus-labs-rallies-4-for-2nd-straight-day-stock-hits-new-high-126102700817_1.html"
-      },
-      {
-        "symbol": "NFO",
-        "cap": "Large/Mid Cap",
-        "title": "New NFO alert! ICICI Prudential BSE Power ETF closes this week — Deadline, minimum amount, allocation, expected returns",
-        "url": "https://www.livemint.com/money/new-nfo-alert-icici-prudential-bse-power-etf-closes-this-week-30-oct-deadline-minimum-amount-allocation-expected-returns-11793087546759.html"
+        "title": "City Union Bank Q2 FY27 results: Net profit rises 26% to ₹416 crore",
+        "url": "https://www.business-standard.com/companies/quarterly-results/city-union-bank-q2-fy27-results-net-profit-rises-26-to-416-crore-126102801017_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Acutaas Chemicals rallies 13%; hits record high on strong Q2 results",
-        "url": "https://www.business-standard.com/markets/news/acutaas-chemicals-rallies-13-hits-record-high-on-strong-q2-results-126102700730_1.html"
+        "title": "Diwali 2026: Sensex plunged 10,000 points, Nifty dropped 12% since last Diwali. Will Samvat 2083 bring some relief?",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/diwali-2026-sensex-plunged-10000-points-nifty-dropped-12-since-last-diwali-will-samvat-2083-bring-some-relief/articleshow/135259845.cms"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Sona Comstar zooms 101% from January low; hits new high in weak market",
+        "url": "https://www.business-standard.com/markets/news/sona-comstar-zooms-101-from-january-low-hits-new-high-in-weak-market-126102800917_1.html"
       }
     ]
   }
