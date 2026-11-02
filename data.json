@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-02T11:51:13.103Z",
+  "updated_at": "2026-11-02T18:51:08.850Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
       "value": 23440.8,
-      "change_pct": 1.68
+      "change_pct": 2.2
     },
     "sensex": {
       "label": "SENSEX",
       "value": 75692.78,
-      "change_pct": 1.66
+      "change_pct": 2.08
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 99.26,
-      "change_pct": -4.67,
+      "value": 96.23,
+      "change_pct": -7.58,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 119402,
-      "change_pct": 0.37,
+      "value": 120970,
+      "change_pct": 1.7,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3913.4,
-      "change_pct": 0.37,
+      "value": 3965.2,
+      "change_pct": 1.7,
       "unit": "USD/oz"
     }
   },
@@ -34,7 +34,7 @@
     {
       "symbol": "NIFTY MIDCAP 150",
       "price": 21310.75,
-      "change_pct": 1.25
+      "change_pct": 0.31
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
@@ -46,39 +46,39 @@
     {
       "symbol": "NIFTY BANK",
       "price": 55002.2,
-      "change_pct": 0.58
+      "change_pct": 0.17
     },
     {
       "symbol": "NIFTY IT",
       "price": 32442.5,
-      "change_pct": -0.5
+      "change_pct": 1.81
     },
     {
       "symbol": "NIFTY AUTO",
       "price": 25761,
-      "change_pct": 1.33
+      "change_pct": 0.45
     },
     {
       "symbol": "NIFTY FMCG",
       "price": 43974.65,
-      "change_pct": 0.84
+      "change_pct": 0.21
     },
     {
       "symbol": "NIFTY METAL",
       "price": 12162.7,
-      "change_pct": 3.21
+      "change_pct": 2.65
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 77713.72,
-      "change_pct": -0.68
+      "price": 76893.34,
+      "change_pct": -1.73
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2281.9,
-      "change_pct": 0.39
+      "price": 2250.69,
+      "change_pct": -0.98
     }
   ],
   "news": {
