@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-10-30T16:43:17.059Z",
+  "updated_at": "2026-11-02T11:51:13.103Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23053.1,
-      "change_pct": 0.51
+      "value": 23440.8,
+      "change_pct": 1.68
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 74459.53,
-      "change_pct": 0.42
+      "value": 75692.78,
+      "change_pct": 1.66
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 104.18,
-      "change_pct": 2.14,
+      "value": 99.26,
+      "change_pct": -4.67,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 119297,
-      "change_pct": -3.05,
+      "value": 119402,
+      "change_pct": 0.37,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3908.3,
-      "change_pct": -3.05,
+      "value": 3913.4,
+      "change_pct": 0.37,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21047.5,
-      "change_pct": -0.93
+      "price": 21310.75,
+      "change_pct": 1.25
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 18463.6,
-      "change_pct": -1.85
+      "price": 18595.3,
+      "change_pct": 0.71
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 54686.95,
-      "change_pct": -0.41
+      "price": 55002.2,
+      "change_pct": 0.58
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32606.9,
-      "change_pct": 2.32
+      "price": 32442.5,
+      "change_pct": -0.5
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 25422.7,
-      "change_pct": -0.87
+      "price": 25761,
+      "change_pct": 1.33
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 43609.2,
-      "change_pct": -0.62
+      "price": 43974.65,
+      "change_pct": 0.84
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11784.9,
-      "change_pct": -0.54
+      "price": 12162.7,
+      "change_pct": 3.21
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 77316.46,
-      "change_pct": -0.59
+      "price": 77713.72,
+      "change_pct": -0.68
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2232.24,
-      "change_pct": -0.77
+      "price": 2281.9,
+      "change_pct": 0.39
     }
   ],
   "news": {
@@ -97,6 +97,12 @@
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-10-27/india-s-biofuel-mandate-spurs-rush-for-waste-cooking-oil-to-fuel-trucks-to-jets",
             "published_at": "2026-10-27T03:56:25Z"
+          },
+          {
+            "title": "Bitcoin dips below $80,000 as AI-Related market selloff deepens",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-10-26/bitcoin-dips-below-80-000-as-ai-related-market-selloff-deepens",
+            "published_at": "2026-10-26T06:31:46Z"
           }
         ]
       },
@@ -118,22 +124,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "India's GDP growth seen at 7.35% in Q2 FY27 amid risks: Finance ministry",
+            "title": "Geopolitical risks, crude oil and earnings to steer markets this week",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/india-s-gdp-growth-seen-at-7-35-in-q2-fy27-amid-risks-finance-ministry-126102900958_1.html",
-            "published_at": "2026-10-29T10:16:13Z"
+            "url": "https://www.business-standard.com/markets/news/geopolitical-risks-crude-oil-and-earnings-to-steer-markets-this-week-126110100474_1.html",
+            "published_at": "2026-11-01T11:26:15Z"
           },
           {
-            "title": "RIL Q2 preview: Double-digit Ebitda growth seen; fundraising update eyed",
+            "title": "Index vs actively managed funds: What's better for new investors?",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/ril-q2-results-preview-2026-double-digit-ebitda-growth-seen-fundraising-update-eyed-126102900822_1.html",
-            "published_at": "2026-10-29T09:36:23Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/index-vs-actively-managed-funds-what-s-better-for-new-investors-126102901248_1.html",
+            "published_at": "2026-11-01T06:15:17Z"
           },
           {
-            "title": "Choosing the right credit card? Start with your spending habits & lifestyle",
+            "title": "FPIs pull out ₹34,843 cr from equities in Oct, turn net buyers last week",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/choosing-the-right-credit-card-start-with-your-spending-habits-and-lifestyle-126102900740_1.html",
-            "published_at": "2026-10-29T09:11:34Z"
+            "url": "https://www.business-standard.com/finance/news/fpis-pull-out-34-843-cr-from-equities-in-oct-turn-net-buyers-last-week-126110100182_1.html",
+            "published_at": "2026-11-01T06:04:58Z"
           }
         ]
       },
@@ -141,22 +147,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "India's strong GDP numbers: What use are they if people don’t benefit?",
+            "title": "Jio says tariff hikes can wait, eyes 10-15 partners for overseas play",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/indias-strong-gdp-numbers-what-use-are-they-if-people-don-t-benefit-11793189427427.html",
-            "published_at": "2026-10-29T10:30:23Z"
+            "url": "https://www.livemint.com/companies/news/reliance-jio-tariff-hikes-overseas-arpu-operations-11793516641378.html",
+            "published_at": "2026-11-01T11:13:04Z"
           },
           {
-            "title": "US Fed decides no interest rate hike: Outcome impact on gold prices in India and your investments; experts weigh in",
+            "title": "Festive-season clean-up: how to declutter your mutual fund and stock portfolio",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/us-fed-decides-no-interest-rate-hike-outcome-impact-on-gold-prices-in-india-and-your-investments-experts-weigh-in-11793263488280.html",
-            "published_at": "2026-10-29T09:31:51Z"
+            "url": "https://www.livemint.com/money/personal-finance/festiveseason-clean-up-how-to-declutter-your-mutual-fund-and-stock-portfolio-11793364330719.html",
+            "published_at": "2026-11-01T09:37:04Z"
           },
           {
-            "title": "Explained: Why Anthropic could owe Amazon $110 b even if it doesn't use all the cloud capacity it has committed to buy",
+            "title": "Loan Default vs Wilful Default: 5 important differences and how they can affect a borrower's future credit prospects",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/explained-why-anthropic-could-owe-amazon-110-b-even-if-it-doesnt-use-all-the-cloud-capacity-it-has-committed-to-buy-11793254224225.html",
-            "published_at": "2026-10-29T07:22:42Z"
+            "url": "https://www.livemint.com/money/personal-finance/loan-default-vs-wilful-default-5-important-differences-and-how-they-can-affect-a-borrowers-future-credit-prospects-11793522038093.html",
+            "published_at": "2026-11-01T09:18:24Z"
           }
         ]
       }
@@ -165,32 +171,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Adani group stocks rally led by Adani Enterprises, Adani Ports post Q2 show",
-        "url": "https://www.business-standard.com/markets/news/adani-group-stocks-rally-led-by-adani-enterprises-adani-ports-post-q2-show-126102900780_1.html"
-      },
-      {
-        "symbol": "FMCG",
-        "cap": "Large/Mid Cap",
-        "title": "Nifty Rises Above 22,800 as FMCG Stocks and Adani Ports Rally After Fed Holds Rates, Rupee Slips Toward 95.4",
-        "url": "https://www.ibtimes.com.au/indian-shares-rise-fed-rate-pause-adani-ports-1877570"
+        "title": "Ahead of Market: 10 things that will decide stock market action on Monday",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-monday/articleshow/135426334.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Pine Labs shares jump 7% as Q2 net profit soars 543% YoY to Rs 39 crore",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/pine-labs-shares-jump-7-as-q2-net-profit-soars-543-yoy-to-rs-39-crore/articleshow/135298034.cms"
+        "title": "Stock Market Forecast: Geopolitics, Oil Prices, Q2 Earnings, US Midterms",
+        "url": "https://www.rediff.com/business/report/stock-market-forecast-geopolitics-oil-prices-q2-earnings-us-midterms/20261101.htm"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "OnEMI Technology rises 5% after Q2FY27 profit doubles to ₹125 crore",
-        "url": "https://www.business-standard.com/markets/news/onemi-technology-share-price-rises-5-after-q2fy27-profit-doubles-to-125-crore-126102900692_1.html"
+        "title": "Uttar Pradesh to launch state Quantum Mission, steps up push for AI and robotics",
+        "url": "https://economictimes.indiatimes.com/news/india/uttar-pradesh-to-launch-state-quantum-mission-steps-up-push-for-ai-and-robotics/articleshow/135421408.cms"
       },
       {
-        "symbol": "ACME",
+        "symbol": "IPO",
         "cap": "Large/Mid Cap",
-        "title": "ACME Solar shares rally 5% after Q2 profit jumps over 100%, signs 400MV agreement with NTPC",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/acme-solar-shares-rally-5-after-q2-profit-jumps-over-100-signs-400mv-agreement-with-ntpc/articleshow/135297383.cms"
+        "title": "IPO Calendar: Primary market cools after Jio frenzy, but 13 listings lined up",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/ipo-calendar-primary-market-cools-after-jio-frenzy-but-13-listings-lined-up/articleshow/135419009.cms"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Bandu’s Blockbusters for November 1, 2026",
+        "url": "https://www.thehindubusinessline.com/portfolio/technical-analysis/bandus-blockbusters-for-november-1-2026/article71646047.ece"
       }
     ]
   }
