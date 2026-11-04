@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-03T17:53:33.478Z",
+  "updated_at": "2026-11-04T11:45:13.004Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 23810.85,
-      "change_pct": 1.58
+      "value": 23960.6,
+      "change_pct": 0.63
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 76917.85,
-      "change_pct": 1.62
+      "value": 77301.4,
+      "change_pct": 0.5
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 95.83,
-      "change_pct": -0.65,
+      "value": 95.4,
+      "change_pct": -0.72,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 119937,
-      "change_pct": -0.8,
+      "value": 123280,
+      "change_pct": 2.82,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3938,
-      "change_pct": -0.8,
+      "value": 4051.6,
+      "change_pct": 2.82,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 21523.35,
-      "change_pct": 1
+      "price": 21867.3,
+      "change_pct": 1.6
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 18652.85,
-      "change_pct": 0.31
+      "price": 19026.4,
+      "change_pct": 2
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 55540.05,
-      "change_pct": 0.98
+      "price": 55913.6,
+      "change_pct": 0.67
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32551.6,
-      "change_pct": 0.34
+      "price": 32061.9,
+      "change_pct": -1.5
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 26201.95,
-      "change_pct": 1.71
+      "price": 26504.8,
+      "change_pct": 1.16
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 45580,
-      "change_pct": 3.65
+      "price": 46264.05,
+      "change_pct": 1.5
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12146.15,
-      "change_pct": -0.14
+      "price": 12485.9,
+      "change_pct": 2.8
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 77607.62,
-      "change_pct": 1.21
+      "price": 78556.58,
+      "change_pct": 1.57
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2295.52,
-      "change_pct": 2.07
+      "price": 2332.59,
+      "change_pct": 2.63
     }
   ],
   "news": {
@@ -112,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "37% of under-25 investors lose money, but India's Gen Z keeps on trading",
+            "title": "Nifty Private Bank index gains 2%; HDFC Bank, ICICI Bank, Axis Bank shine",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/37-of-under-25-investors-lose-money-but-india-s-gen-z-keeps-on-trading-126110200728_1.html",
-            "published_at": "2026-11-02T09:30:15Z"
+            "url": "https://www.business-standard.com/markets/news/nifty-private-bank-index-gains-2-hdfc-bank-icici-bank-axis-bank-shine-126110300965_1.html",
+            "published_at": "2026-11-03T09:34:36Z"
           },
           {
-            "title": "Ratnaveer Precision surges 8% on healthy Q2; zooms 200% from March low",
+            "title": "Fusion Finance share price zooms nearly 16% on Q2 turnaround",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/ratnaveer-precision-surges-8-on-healthy-q2-zooms-200-from-march-low-126110200724_1.html",
-            "published_at": "2026-11-02T09:28:11Z"
+            "url": "https://www.business-standard.com/markets/news/fusion-finance-share-price-zooms-nearly-16-on-q2-turnaround-126110300948_1.html",
+            "published_at": "2026-11-03T09:15:06Z"
           },
           {
-            "title": "Crude, not rupee, holds key to FII flows; JM Fin flags $105 threshold",
+            "title": "RBI raises Floating Rate Bond rate to 7.26%: How much more will you earn",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/crude-not-rupee-holds-key-to-fii-flows-jm-fin-flags-105-threshold-126110200671_1.html",
-            "published_at": "2026-11-02T09:02:33Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/rbi-raises-floating-rate-bond-rate-to-7-26-how-much-more-will-you-earn-126110300818_1.html",
+            "published_at": "2026-11-03T08:24:57Z"
           }
         ]
       },
@@ -135,56 +135,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Got a Diwali gift from your employer? Check the tax rules",
+            "title": "India’s consumers and its stock market are telling very different stories—here's why",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/diwali-gift-tax-exemption-limit-rs-15000-employer-gifts-income-tax-11793597292822.html",
-            "published_at": "2026-11-02T07:44:55Z"
+            "url": "https://www.livemint.com/opinion/online-views/indias-consumers-and-its-stock-market-are-telling-very-different-stories-heres-why-11793634131019.html",
+            "published_at": "2026-11-03T09:30:58Z"
           },
           {
-            "title": "MCX Gold vs MCX Silver rates today, 2 Nov: Check how precious metals are performing on Monday amid Sensex, Nifty surge",
+            "title": "SBI posts quarterly profit rise on loan growth, stake sale",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/mcx-gold-vs-mcx-silver-rates-today-2-nov-check-how-precious-metals-are-performing-on-monday-amid-sensex-nifty-surge-11793601809697.html",
-            "published_at": "2026-11-02T07:36:14Z"
+            "url": "https://www.livemint.com/companies/sbi-posts-quarterly-profit-rise-on-loan-growth-stake-sale-11793695654257.html",
+            "published_at": "2026-11-03T08:50:55Z"
           },
           {
-            "title": "Ajit Ranade: Why India shouldn't abandon capital gains tax for the sake of the rupee",
+            "title": "Nouriel Roubini: Public debt is rising the world over—can bond vigilantes save the day?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/ajit-ranade-why-india-shouldnt-abandon-capital-gains-tax-for-the-sake-of-the-rupee-11793535295403.html",
-            "published_at": "2026-11-02T07:01:00Z"
+            "url": "https://www.livemint.com/opinion/online-views/nouriel-roubini-public-debt-is-rising-can-bond-vigilantes-save-the-day-11793634019222.html",
+            "published_at": "2026-11-03T08:30:37Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "SBI",
+        "symbol": "MTF",
         "cap": "Large/Mid Cap",
-        "title": "SBI Q2 Results Preview: PATmay rise up to 25% YoY; NII, margins, deposit growth in focus",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/earnings/sbi-q2-results-preview-patmay-rise-up-to-25-yoy-nii-margins-deposit-growth-in-focus/articleshow/135458856.cms"
+        "title": "MTF declines for first time in six months as leveraged positions ease",
+        "url": "https://www.business-standard.com/markets/news/mtf-declines-for-first-time-in-six-months-as-leveraged-positions-ease-126110301314_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Ashish Kacholia-owned Knowledge Marine shares jump 4% on Rs 303 crore order win; stock up 67% in 2026",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/ashish-kacholia-owned-knowledge-marine-shares-jump-4-on-rs-303-crore-order-win-stock-up-67-in-2026/articleshow/135456344.cms"
+        "title": "Nifty crosses 23,800 for first time since August on falling crude prices, earnings boost",
+        "url": "https://www.thehindubusinessline.com/markets/nifty-crosses-23800-for-first-time-since-august-on-falling-crude-prices-earnings-boost/article71660642.ece"
+      },
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "R&D-focused stocks deliver over 23% annualised returns in five years, outperform NSE 500: Monarch AIF",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/rd-focused-stocks-deliver-over-23-annualised-returns-in-five-years-outperform-nse-500-monarch-aif/articleshow/135494023.cms"
+      },
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "R&D-focused companies deliver 23.5% returns, outperform NSE 500: Monarch AIF",
+        "url": "https://www.thehindubusinessline.com/markets/rd-focused-companies-deliver-235-returns-outperform-nse-500-monarch-aif/article71659791.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Eureka Forbes Q2 profit rises 17.8% to ₹74 cr, revenue up 11.5% to ₹888 cr",
-        "url": "https://www.business-standard.com/companies/quarterly-results/eureka-forbes-q2-profit-rises-17-8-to-74-cr-revenue-up-11-5-to-888-cr-126110200923_1.html"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Aurionpro Solutions posts 16% revenue growth in Q2, but profits slide",
-        "url": "https://www.thehindubusinessline.com/companies/aurionpro-solutions-posts-16-revenue-growth-in-q2-but-profits-slide/article71656306.ece"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Mold-TekPackagingsharessurge17% as Q2FY27profitjumps35% YoY to Rs21crore",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/mold-tekpackagingsharessurge17-as-q2fy27profitjumps35-yoy-to-rs21crore/articleshow/135454971.cms"
+        "title": "Emcure Pharma shares jump 7% after Q2 profit rises 29% YoY to Rs 325 crore",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/emcure-pharma-shares-jump-7-after-q2-profit-rises-29-yoy-to-rs-325-crore/articleshow/135492800.cms"
       }
     ]
   }
