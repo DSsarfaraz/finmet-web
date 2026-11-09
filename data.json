@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T19:12:01.468Z",
+  "updated_at": "2026-11-09T20:48:47.969Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
@@ -13,20 +13,20 @@
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 87.56,
-      "change_pct": -3.6,
+      "value": 86.84,
+      "change_pct": -4.39,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 124181,
-      "change_pct": 0.93,
+      "value": 125392,
+      "change_pct": 1.91,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4112.6,
-      "change_pct": 0.93,
+      "value": 4152.6,
+      "change_pct": 1.91,
       "unit": "USD/oz"
     }
   },
@@ -72,13 +72,13 @@
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 74551.14,
-      "change_pct": -0.04
+      "price": 74741.2,
+      "change_pct": 0.21
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2120.43,
-      "change_pct": -0.03
+      "price": 2127.92,
+      "change_pct": 0.33
     }
   ],
   "news": {
