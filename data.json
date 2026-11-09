@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-06T17:32:01.254Z",
+  "updated_at": "2026-11-09T12:20:50.188Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25030.35,
-      "change_pct": 2.01
+      "value": 25044.65,
+      "change_pct": 0.06
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 81028.02,
-      "change_pct": 2.17
+      "value": 81106.65,
+      "change_pct": 0.1
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 90.32,
-      "change_pct": -0.22,
+      "value": 88.4,
+      "change_pct": -2.68,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 122777,
-      "change_pct": -1.13,
+      "value": 124357,
+      "change_pct": 1.06,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4067.1,
-      "change_pct": -1.13,
+      "value": 4118,
+      "change_pct": 1.06,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22271.15,
-      "change_pct": -0.09
+      "price": 22408.55,
+      "change_pct": 0.62
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 18975.05,
-      "change_pct": -0.82
+      "price": 19185.05,
+      "change_pct": 0.1
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 59086,
-      "change_pct": 2.27
+      "price": 59741.25,
+      "change_pct": 1.11
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32977.9,
-      "change_pct": 0.43
+      "price": 32468.9,
+      "change_pct": -1.54
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27811.8,
-      "change_pct": 0.76
+      "price": 27925.9,
+      "change_pct": 0.41
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 46785.6,
-      "change_pct": 0.67
+      "price": 46660.65,
+      "change_pct": -0.27
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12678.15,
-      "change_pct": 0.66
+      "price": 12664.65,
+      "change_pct": -0.11
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 75734.88,
-      "change_pct": -0.27
+      "price": 74573.66,
+      "change_pct": -0.01
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2227.04,
-      "change_pct": -0.33
+      "price": 2120.09,
+      "change_pct": -0.04
     }
   ],
   "news": {
@@ -112,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Ten years after note ban, how India's cash habit survived the UPI boom",
+            "title": "Rupee, bond outlook in Samvat 2083 hinges on West Asia, inflation, flows",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/ten-years-note-ban-india-cash-digital-payments-upi-growth-demonetisation-126110501369_1.html",
-            "published_at": "2026-11-05T11:40:46Z"
+            "url": "https://www.business-standard.com/economy/news/rupee-bond-outlook-in-samvat-2083-hinges-on-west-asia-inflation-flows-126110800392_1.html",
+            "published_at": "2026-11-08T10:53:23Z"
           },
           {
-            "title": "Coal India's IPO-bound arms see sharp decline in coal e-auction premiums",
+            "title": "Tata Steel spurts 3% in Muhurat trading session post steady Q2 earnings",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/companies/news/coal-india-s-ipo-bound-arms-see-sharp-decline-in-coal-e-auction-premiums-126110501343_1.html",
-            "published_at": "2026-11-05T11:31:08Z"
+            "url": "https://www.business-standard.com/markets/news/tata-steel-spurts-3-in-muhurat-trading-session-post-steady-q2-earnings-126110800313_1.html",
+            "published_at": "2026-11-08T09:17:44Z"
           },
           {
-            "title": "Multibagger Kissht spurts 8% as AUM tops ₹10K cr, doubles from IPO price",
+            "title": "Global developments to keep commodity prices volatile in Samvat 2083",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/multibagger-kissht-spurts-8-as-aum-tops-10k-cr-doubles-from-ipo-price-126110501079_1.html",
-            "published_at": "2026-11-05T09:39:38Z"
+            "url": "https://www.business-standard.com/markets/news/markets-commodities-samvat-2083-commodity-outlook-crude-oil-gold-silver-global-risks-126110800289_1.html",
+            "published_at": "2026-11-08T08:36:30Z"
           }
         ]
       },
@@ -135,22 +135,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Airtel's premiumization strategy drives strong Q2 revenue and Ebitda growth",
+            "title": "Gold prices crash 24% globally but fall only 20% in India: Why domestic buyers aren't seeing the full price correction",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/company-results/airtels-premiumization-strategy-drives-strong-q2-revenue-and-ebitda-growth-11793861191107.html",
-            "published_at": "2026-11-05T11:23:15Z"
+            "url": "https://www.livemint.com/money/personal-finance/gold-prices-crash-24-globally-but-fall-only-20-in-india-why-domestic-buyers-arent-seeing-the-full-price-correction-11794125564701.html",
+            "published_at": "2026-11-08T09:44:11Z"
           },
           {
-            "title": "US midterms impact on gold, silver ETFs: Why bullion is rallying after Trump's setback",
+            "title": "Diwali 2026: Beware of instant loan offers on WhatsApp and social media; 5 ways to avoid loan app scams today",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/us-midterm-elections-impact-on-gold-silver-etfs-why-trumps-loss-is-lifting-bullion-prices-boosting-investor-dema-11793872984943.html",
-            "published_at": "2026-11-05T11:05:51Z"
+            "url": "https://www.livemint.com/money/personal-finance/diwali-2026-beware-of-instant-loan-offers-on-whatsapp-and-social-media-5-ways-to-avoid-loan-app-scams-today-11794108856970.html",
+            "published_at": "2026-11-08T04:03:09Z"
           },
           {
-            "title": "IDBI Bank stake sale: Why employees are protesting against Fairfax deal and demanding privatisation rollback",
+            "title": "How SBI is steadily catching up with HDFC Bank in the margin race",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/idbi-bank-stake-sale-why-employees-are-protesting-against-fairfax-deal-and-demanding-privatisation-rollback-11793874927748.html",
-            "published_at": "2026-11-05T11:00:24Z"
+            "url": "https://www.livemint.com/companies/news/how-sbi-is-steadily-catching-up-with-hdfc-bank-in-the-margin-race-11793966592420.html",
+            "published_at": "2026-11-08T03:30:34Z"
           }
         ]
       }
@@ -159,32 +159,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Bikaji Foods shares rally 4% as Q2 revenue hits ₹938.5 crore, but margins squeeze on rising costs",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/bikaji-foods-shares-rally-4-as-q2-revenue-hits-9385-crore-but-margins-squeeze-on-rising-costs/article71669630.ece"
+        "title": "Nifty slips below 25,000 in Muhurat as Samvat 2083 opens on a mixed note",
+        "url": "https://www.thehindubusinessline.com/markets/nifty-slips-below-25000-in-muhurat-as-samvat-2083-opens-on-a-mixed-note/article71680906.ece"
+      },
+      {
+        "symbol": "BSE",
+        "cap": "Large/Mid Cap",
+        "title": "Bright Outdoor Media moves to BSE, NSE main boards, eyes expansion in digital advertising",
+        "url": "https://www.thehindubusinessline.com/markets/bright-outdoor-media-moves-to-bse-nse-main-boards-eyes-expansion-in-digital-advertising/article71680870.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Emami Q2 results: Profit rises nearly 2% at ₹145 cr, revenue up 36%",
-        "url": "https://www.business-standard.com/companies/quarterly-results/emami-q2-results-profit-rises-nearly-2-at-145-cr-revenue-up-36-126110501128_1.html"
+        "title": "Stock markets end marginally lower in special Muhurat trading, snapping 7-day rally",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets-end-marginally-lower-in-special-muhurat-trading-snapping-7-day-rally/article71680873.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "PhysicsWallah shares zoom as Q2 profit doubles, Motilal sees 57% upside potential",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/physicswallah-shares-zoom-as-q2-profit-doubles-motilal-sees-57-upside-potential/article71669361.ece"
+        "title": "Stock markets begin Samvat 2083 on a firm note in special Muhurat trading",
+        "url": "https://www.dtnext.in/news/business/stock-markets-begin-samvat-2083-on-a-firm-note-in-special-muhurat-trading"
       },
       {
-        "symbol": "AUM",
+        "symbol": "ICICI",
         "cap": "Large/Mid Cap",
-        "title": "Multibagger Kissht spurts 8% as AUM tops ₹10K cr, doubles from IPO price",
-        "url": "https://www.business-standard.com/markets/news/multibagger-kissht-spurts-8-as-aum-tops-10k-cr-doubles-from-ipo-price-126110501079_1.html"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Dhanteras, Diwali 2026 shopping guide: How do the costs of investing in gold ETFs differ from buying gold jewellery?",
-        "url": "https://www.livemint.com/money/personal-finance/dhanteras-diwali-2026-shopping-guide-how-do-the-costs-of-investing-in-gold-etfs-differ-from-buying-gold-jewellery-11793868557274.html"
+        "title": "ICICI Bank, Divi's among 14 NSE 500 stocks hit new highs in Muhurat session",
+        "url": "https://www.business-standard.com/markets/news/icici-bank-divi-s-among-14-nse-500-stocks-hit-new-highs-in-muhurat-session-126110800329_1.html"
       }
     ]
   }
