@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-09T20:48:47.969Z",
+  "updated_at": "2026-11-10T11:56:58.153Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
       "value": 25044.65,
-      "change_pct": 2.07
+      "change_pct": 0.06
     },
     "sensex": {
       "label": "SENSEX",
       "value": 81106.65,
-      "change_pct": 2.27
+      "change_pct": 0.1
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 86.84,
-      "change_pct": -4.39,
+      "value": 85.58,
+      "change_pct": -1.46,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 125392,
-      "change_pct": 1.91,
+      "value": 123218,
+      "change_pct": -0.82,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4152.6,
-      "change_pct": 1.91,
+      "value": 4080.7,
+      "change_pct": -0.82,
       "unit": "USD/oz"
     }
   },
@@ -34,7 +34,7 @@
     {
       "symbol": "NIFTY MIDCAP 150",
       "price": 22408.55,
-      "change_pct": 0.53
+      "change_pct": 0.62
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
@@ -46,53 +46,46 @@
     {
       "symbol": "NIFTY BANK",
       "price": 59741.25,
-      "change_pct": 3.41
+      "change_pct": 1.11
     },
     {
       "symbol": "NIFTY IT",
       "price": 32468.9,
-      "change_pct": -1.12
+      "change_pct": -1.54
     },
     {
       "symbol": "NIFTY AUTO",
       "price": 27925.9,
-      "change_pct": 1.17
+      "change_pct": 0.41
     },
     {
       "symbol": "NIFTY FMCG",
       "price": 46660.65,
-      "change_pct": 0.41
+      "change_pct": -0.27
     },
     {
       "symbol": "NIFTY METAL",
       "price": 12664.65,
-      "change_pct": 0.55
+      "change_pct": -0.11
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 74741.2,
-      "change_pct": 0.21
+      "price": 74305.48,
+      "change_pct": -1.22
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2127.92,
-      "change_pct": 0.33
+      "price": 2091.36,
+      "change_pct": -1.88
     }
   ],
   "news": {
     "international": [
       {
         "outlet": "bloomberg.com",
-        "articles": [
-          {
-            "title": "Wall Street braces for more wild days in stocks after tech rout",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-11-01/wall-street-braces-for-more-wild-days-in-stocks-after-tech-rout",
-            "published_at": "2026-11-02T00:59:40Z"
-          }
-        ]
+        "articles": []
       },
       {
         "outlet": "reuters.com",
@@ -106,28 +99,35 @@
     "indian": [
       {
         "outlet": "economictimes.indiatimes.com",
-        "articles": []
+        "articles": [
+          {
+            "title": "Uno Minda among 7 stocks hitting 52-week highs; rally up to 26% in a month",
+            "source": "Economictimes.com",
+            "url": "https://m.economictimes.com/markets/stocks/news/uno-minda-among-7-stocks-hitting-52-week-highs-rally-up-to-26-in-a-month/fresh-peaks/slideshow/135681703.cms",
+            "published_at": "2026-11-09T11:49:40Z"
+          }
+        ]
       },
       {
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Rupee, bond outlook in Samvat 2083 hinges on West Asia, inflation, flows",
+            "title": "Festive EMIs and credit card bills: How to prioritise repayments, cut costs",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/rupee-bond-outlook-in-samvat-2083-hinges-on-west-asia-inflation-flows-126110800392_1.html",
-            "published_at": "2026-11-08T10:53:23Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/festive-emis-and-credit-card-bills-how-to-prioritise-repayments-cut-costs-126110900795_1.html",
+            "published_at": "2026-11-09T11:49:13Z"
           },
           {
-            "title": "Tata Steel spurts 3% in Muhurat trading session post steady Q2 earnings",
+            "title": "FPI inflows into FAR G-Secs rise nearly ₹8K cr as rupee gains, yields ease",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/tata-steel-spurts-3-in-muhurat-trading-session-post-steady-q2-earnings-126110800313_1.html",
-            "published_at": "2026-11-08T09:17:44Z"
+            "url": "https://www.business-standard.com/economy/news/fpi-inflows-into-far-g-secs-rise-nearly-8k-cr-as-rupee-gains-yields-ease-126110900736_1.html",
+            "published_at": "2026-11-09T11:26:18Z"
           },
           {
-            "title": "Global developments to keep commodity prices volatile in Samvat 2083",
+            "title": "Got your first Diwali bonus? 5 smart ways to save, invest and spend",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/markets-commodities-samvat-2083-commodity-outlook-crude-oil-gold-silver-global-risks-126110800289_1.html",
-            "published_at": "2026-11-08T08:36:30Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/got-your-first-diwali-bonus-5-smart-ways-to-save-invest-and-spend-126110900735_1.html",
+            "published_at": "2026-11-09T11:11:18Z"
           }
         ]
       },
@@ -135,22 +135,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Gold prices crash 24% globally but fall only 20% in India: Why domestic buyers aren't seeing the full price correction",
+            "title": "Nifty 50 ETFs or index funds? Compare returns, expense ratios and tracking errors before choosing where to invest",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/gold-prices-crash-24-globally-but-fall-only-20-in-india-why-domestic-buyers-arent-seeing-the-full-price-correction-11794125564701.html",
-            "published_at": "2026-11-08T09:44:11Z"
+            "url": "https://www.livemint.com/money/personal-finance/nifty-50-etfs-or-index-funds-compare-returns-expense-ratios-and-tracking-errors-before-choosing-where-to-invest-11794214691739.html",
+            "published_at": "2026-11-09T10:36:33Z"
           },
           {
-            "title": "Diwali 2026: Beware of instant loan offers on WhatsApp and social media; 5 ways to avoid loan app scams today",
+            "title": "Will old your cheque book become invalid after December 31, 2026? Big development from RBI",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/diwali-2026-beware-of-instant-loan-offers-on-whatsapp-and-social-media-5-ways-to-avoid-loan-app-scams-today-11794108856970.html",
-            "published_at": "2026-11-08T04:03:09Z"
+            "url": "https://www.livemint.com/money/will-old-your-cheque-book-become-invalid-after-december-31-2026-big-development-from-rbi-11794210127344.html",
+            "published_at": "2026-11-09T09:14:18Z"
           },
           {
-            "title": "How SBI is steadily catching up with HDFC Bank in the margin race",
+            "title": "Sasmit Patra: How India can lower UPI risks for the next decade",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/how-sbi-is-steadily-catching-up-with-hdfc-bank-in-the-margin-race-11793966592420.html",
-            "published_at": "2026-11-08T03:30:34Z"
+            "url": "https://www.livemint.com/opinion/online-views/sasmit-patra-how-india-can-lower-upi-risks-for-the-next-decade-11794209776111.html",
+            "published_at": "2026-11-09T08:30:54Z"
           }
         ]
       }
@@ -159,32 +159,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Nifty slips below 25,000 in Muhurat as Samvat 2083 opens on a mixed note",
-        "url": "https://www.thehindubusinessline.com/markets/nifty-slips-below-25000-in-muhurat-as-samvat-2083-opens-on-a-mixed-note/article71680906.ece"
-      },
-      {
-        "symbol": "BSE",
-        "cap": "Large/Mid Cap",
-        "title": "Bright Outdoor Media moves to BSE, NSE main boards, eyes expansion in digital advertising",
-        "url": "https://www.thehindubusinessline.com/markets/bright-outdoor-media-moves-to-bse-nse-main-boards-eyes-expansion-in-digital-advertising/article71680870.ece"
+        "title": "Uno Minda among 7 stocks hitting 52-week highs; rally up to 26% in a month",
+        "url": "https://m.economictimes.com/markets/stocks/news/uno-minda-among-7-stocks-hitting-52-week-highs-rally-up-to-26-in-a-month/fresh-peaks/slideshow/135681703.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Stock markets end marginally lower in special Muhurat trading, snapping 7-day rally",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets-end-marginally-lower-in-special-muhurat-trading-snapping-7-day-rally/article71680873.ece"
+        "title": "FIIs cut stake in 10 smallcap stocks for 3 consecutive quarters; shares fall up to 70% in CY26",
+        "url": "https://m.economictimes.com/markets/stocks/news/fiis-cut-stake-in-10-smallcap-stocks-for-3-consecutive-quarters-shares-fall-up-to-70-in-cy26/bearish-signals/slideshow/135680171.cms"
+      },
+      {
+        "symbol": "BET",
+        "cap": "Large/Mid Cap",
+        "title": "Usher’s New Look nonprofit has supported more than 50,000 young people, and its 2026 partnership with BET is helping new talent gain experience in the entertainment industry",
+        "url": "https://timesofindia.indiatimes.com/world/rest-of-world/ushers-new-look-nonprofit-has-supported-more-than-50000-young-people-and-its-2026-partnership-with-bet-is-helping-new-talent-gain-experience-in-the-entertainment-industry/articleshow/135679137.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Stock markets begin Samvat 2083 on a firm note in special Muhurat trading",
-        "url": "https://www.dtnext.in/news/business/stock-markets-begin-samvat-2083-on-a-firm-note-in-special-muhurat-trading"
+        "title": "Pharmacy retail stock Entero Healthcare zooms 33% in 1 week; hits new high",
+        "url": "https://www.business-standard.com/markets/news/pharmacy-retail-stock-entero-healthcare-zooms-33-in-1-week-hits-new-high-126110900567_1.html"
       },
       {
-        "symbol": "ICICI",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "ICICI Bank, Divi's among 14 NSE 500 stocks hit new highs in Muhurat session",
-        "url": "https://www.business-standard.com/markets/news/icici-bank-divi-s-among-14-nse-500-stocks-hit-new-highs-in-muhurat-session-126110800329_1.html"
+        "title": "Data Patterns shares zoom 9% post Q2 show, nearly double from Jan lows",
+        "url": "https://www.business-standard.com/markets/news/data-patterns-shares-zoom-9-post-q2-show-nearly-double-from-jan-lows-126110900563_1.html"
       }
     ]
   }
