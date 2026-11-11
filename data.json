@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-10T17:55:13.663Z",
+  "updated_at": "2026-11-11T11:35:27.143Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25044.65,
-      "change_pct": 0.06
+      "value": 25255.05,
+      "change_pct": 0.84
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 81106.65,
-      "change_pct": 0.1
+      "value": 81879.4,
+      "change_pct": 0.95
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 86.3,
-      "change_pct": -0.63,
+      "value": 86.64,
+      "change_pct": 0.7,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 121639,
-      "change_pct": -2.09,
+      "value": 122376,
+      "change_pct": 0.82,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4028.4,
-      "change_pct": -2.09,
+      "value": 4063.1,
+      "change_pct": 0.82,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22408.55,
-      "change_pct": 0.62
+      "price": 22597.95,
+      "change_pct": 0.85
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19185.05,
-      "change_pct": 0.1
+      "price": 19489.35,
+      "change_pct": 1.59
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 59741.25,
-      "change_pct": 1.11
+      "price": 60792.4,
+      "change_pct": 1.76
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32468.9,
-      "change_pct": -1.54
+      "price": 32295.6,
+      "change_pct": -0.53
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27925.9,
-      "change_pct": 0.41
+      "price": 28523.3,
+      "change_pct": 2.14
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 46660.65,
-      "change_pct": -0.27
+      "price": 47188.55,
+      "change_pct": 1.13
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12664.65,
-      "change_pct": -0.11
+      "price": 12786.15,
+      "change_pct": 0.96
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 73107.07,
-      "change_pct": -2.81
+      "price": 73942.94,
+      "change_pct": 0.3
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2026.88,
-      "change_pct": -4.91
+      "price": 2054.74,
+      "change_pct": 0.22
     }
   ],
   "news": {
@@ -99,35 +99,28 @@
     "indian": [
       {
         "outlet": "economictimes.indiatimes.com",
-        "articles": [
-          {
-            "title": "Uno Minda among 7 stocks hitting 52-week highs; rally up to 26% in a month",
-            "source": "Economictimes.com",
-            "url": "https://m.economictimes.com/markets/stocks/news/uno-minda-among-7-stocks-hitting-52-week-highs-rally-up-to-26-in-a-month/fresh-peaks/slideshow/135681703.cms",
-            "published_at": "2026-11-09T11:49:40Z"
-          }
-        ]
+        "articles": []
       },
       {
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Festive EMIs and credit card bills: How to prioritise repayments, cut costs",
+            "title": "Bullish signals! GIFT Nifty jumps 1% as crude oil prices test $90/bbl",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/festive-emis-and-credit-card-bills-how-to-prioritise-repayments-cut-costs-126110900795_1.html",
-            "published_at": "2026-11-09T11:49:13Z"
+            "url": "https://www.business-standard.com/markets/news/bullish-signals-gift-nifty-jumps-1-as-crude-oil-prices-test-90-bbl-126111000417_1.html",
+            "published_at": "2026-11-10T09:43:58Z"
           },
           {
-            "title": "FPI inflows into FAR G-Secs rise nearly ₹8K cr as rupee gains, yields ease",
+            "title": "Stock market holiday: NSE, BSE to remain closed for Diwali-Balipratipada",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/fpi-inflows-into-far-g-secs-rise-nearly-8k-cr-as-rupee-gains-yields-ease-126110900736_1.html",
-            "published_at": "2026-11-09T11:26:18Z"
+            "url": "https://www.business-standard.com/markets/news/stock-market-holiday-today-nse-bse-to-remain-closed-for-diwali-balipratipada-126111000071_1.html",
+            "published_at": "2026-11-10T02:17:22Z"
           },
           {
-            "title": "Got your first Diwali bonus? 5 smart ways to save, invest and spend",
+            "title": "Debt drives overseas fundraising by Indian companies to 7-year high",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/got-your-first-diwali-bonus-5-smart-ways-to-save-invest-and-spend-126110900735_1.html",
-            "published_at": "2026-11-09T11:11:18Z"
+            "url": "https://www.business-standard.com/markets/news/debt-drives-overseas-fundraising-by-indian-companies-to-7-year-high-126110901601_1.html",
+            "published_at": "2026-11-09T18:09:47Z"
           }
         ]
       },
@@ -135,22 +128,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Nifty 50 ETFs or index funds? Compare returns, expense ratios and tracking errors before choosing where to invest",
+            "title": "How travellers are working around pricey flights for winter holidays",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/nifty-50-etfs-or-index-funds-compare-returns-expense-ratios-and-tracking-errors-before-choosing-where-to-invest-11794214691739.html",
-            "published_at": "2026-11-09T10:36:33Z"
+            "url": "https://www.livemint.com/money/personal-finance/flight-ticket-price-indian-travellers-road-trips-holiday-destinations-11794291682085.html",
+            "published_at": "2026-11-10T09:39:26Z"
           },
           {
-            "title": "Will old your cheque book become invalid after December 31, 2026? Big development from RBI",
+            "title": "Bhai Dooj 2026 financial gift: Gold ETFs for your sibling? How it differs from mutual funds? Process, rules explained",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/will-old-your-cheque-book-become-invalid-after-december-31-2026-big-development-from-rbi-11794210127344.html",
-            "published_at": "2026-11-09T09:14:18Z"
+            "url": "https://www.livemint.com/money/personal-finance/bhai-dooj-2026-financial-gift-gold-etfs-for-your-sibling-how-it-differs-from-mutual-funds-process-rules-explained-11794295936814.html",
+            "published_at": "2026-11-10T08:40:20Z"
           },
           {
-            "title": "Sasmit Patra: How India can lower UPI risks for the next decade",
+            "title": "Why Union Budget 2027-28 should focus on resilience and reform",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/sasmit-patra-how-india-can-lower-upi-risks-for-the-next-decade-11794209776111.html",
-            "published_at": "2026-11-09T08:30:54Z"
+            "url": "https://www.livemint.com/opinion/online-views/why-union-budget-2027-28-should-focus-on-resilience-and-reform-11794289531132.html",
+            "published_at": "2026-11-10T08:31:03Z"
           }
         ]
       }
@@ -159,32 +152,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Uno Minda among 7 stocks hitting 52-week highs; rally up to 26% in a month",
-        "url": "https://m.economictimes.com/markets/stocks/news/uno-minda-among-7-stocks-hitting-52-week-highs-rally-up-to-26-in-a-month/fresh-peaks/slideshow/135681703.cms"
+        "title": "Promoter shareholding in listed companies hits three-year high at 41.93% in September quarter",
+        "url": "https://www.thehindubusinessline.com/markets/promoter-shareholding-in-listed-companies-hits-three-year-high-at-4193-in-september-quarter/article71685657.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "FIIs cut stake in 10 smallcap stocks for 3 consecutive quarters; shares fall up to 70% in CY26",
-        "url": "https://m.economictimes.com/markets/stocks/news/fiis-cut-stake-in-10-smallcap-stocks-for-3-consecutive-quarters-shares-fall-up-to-70-in-cy26/bearish-signals/slideshow/135680171.cms"
+        "title": "Mutual funds' Nifty 50 allocation falls to 21-year low",
+        "url": "https://www.thehindubusinessline.com/markets/mutual-funds-nifty-50-allocation-falls-to-21-year-low/article71685515.ece"
       },
       {
-        "symbol": "BET",
+        "symbol": "CEO",
         "cap": "Large/Mid Cap",
-        "title": "Usher’s New Look nonprofit has supported more than 50,000 young people, and its 2026 partnership with BET is helping new talent gain experience in the entertainment industry",
-        "url": "https://timesofindia.indiatimes.com/world/rest-of-world/ushers-new-look-nonprofit-has-supported-more-than-50000-young-people-and-its-2026-partnership-with-bet-is-helping-new-talent-gain-experience-in-the-entertainment-industry/articleshow/135679137.cms"
-      },
-      {
-        "symbol": "NEWS",
-        "cap": "Large/Mid Cap",
-        "title": "Pharmacy retail stock Entero Healthcare zooms 33% in 1 week; hits new high",
-        "url": "https://www.business-standard.com/markets/news/pharmacy-retail-stock-entero-healthcare-zooms-33-in-1-week-hits-new-high-126110900567_1.html"
+        "title": "Tata Projects subsidiary CEO Shashank Shekhar Jha tenders resignation",
+        "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/tata-projects-subsidiary-ceo-shashank-shekhar-jha-tenders-resignation/articleshow/135704685.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Data Patterns shares zoom 9% post Q2 show, nearly double from Jan lows",
-        "url": "https://www.business-standard.com/markets/news/data-patterns-shares-zoom-9-post-q2-show-nearly-double-from-jan-lows-126110900563_1.html"
+        "title": "AI slump sends investors scouring emerging markets for bargains",
+        "url": "https://www.thehindubusinessline.com/markets/ai-slump-sends-investors-scouring-emerging-markets-for-bargains/article71685261.ece"
+      },
+      {
+        "symbol": "AMFI",
+        "cap": "Large/Mid Cap",
+        "title": "AMFI Reshuffle: Five midcap stocks that may get upgraded to largecap",
+        "url": "https://m.economictimes.com/mf/analysis/amfi-reshuffle-lenskart-solutions-zydus-lifesciences-among-5-midcap-stocks-that-may-get-upgraded-to-largecap/stock-re-categorisation/slideshow/135700451.cms"
       }
     ]
   }
