@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-11T17:55:36.503Z",
+  "updated_at": "2026-11-12T11:59:12.134Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25255.05,
-      "change_pct": 0.84
+      "value": 25299.35,
+      "change_pct": 0.18
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 81879.4,
-      "change_pct": 0.95
+      "value": 81911.01,
+      "change_pct": 0.04
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 86.67,
-      "change_pct": 0.73,
+      "value": 85.94,
+      "change_pct": -0.68,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 120710,
-      "change_pct": -0.56,
+      "value": 119541,
+      "change_pct": -1.17,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 4007.8,
-      "change_pct": -0.56,
+      "value": 3953.8,
+      "change_pct": -1.17,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22597.95,
-      "change_pct": 0.85
+      "price": 22760.75,
+      "change_pct": 0.72
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19489.35,
-      "change_pct": 1.59
+      "price": 19706.75,
+      "change_pct": 1.12
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 60792.4,
-      "change_pct": 1.76
+      "price": 61518.5,
+      "change_pct": 1.19
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32295.6,
-      "change_pct": -0.53
+      "price": 32163.55,
+      "change_pct": -0.41
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 28523.3,
-      "change_pct": 2.14
+      "price": 28231,
+      "change_pct": -1.02
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 47188.55,
-      "change_pct": 1.13
+      "price": 46838.5,
+      "change_pct": -0.74
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12786.15,
-      "change_pct": 0.96
+      "price": 12772.6,
+      "change_pct": -0.11
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 74468.04,
-      "change_pct": 1.01
+      "price": 72839.39,
+      "change_pct": -1.52
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2091.47,
-      "change_pct": 2.01
+      "price": 2019.72,
+      "change_pct": -1.76
     }
   ],
   "news": {
@@ -105,22 +105,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Bullish signals! GIFT Nifty jumps 1% as crude oil prices test $90/bbl",
+            "title": "Credit card safety: 7 settings you should review to reduce fraud risk",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/bullish-signals-gift-nifty-jumps-1-as-crude-oil-prices-test-90-bbl-126111000417_1.html",
-            "published_at": "2026-11-10T09:43:58Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/credit-card-safety-7-settings-you-should-review-to-reduce-fraud-risk-126111100797_1.html",
+            "published_at": "2026-11-11T09:55:37Z"
           },
           {
-            "title": "Stock market holiday: NSE, BSE to remain closed for Diwali-Balipratipada",
+            "title": "BHEL shares up 3.5% on Power Grid order for Gujarat synchronous condensers",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/stock-market-holiday-today-nse-bse-to-remain-closed-for-diwali-balipratipada-126111000071_1.html",
-            "published_at": "2026-11-10T02:17:22Z"
+            "url": "https://www.business-standard.com/markets/news/bhel-shares-up-3-5-on-power-grid-order-for-gujarat-synchronous-condensers-126111100646_1.html",
+            "published_at": "2026-11-11T08:22:03Z"
           },
           {
-            "title": "Debt drives overseas fundraising by Indian companies to 7-year high",
+            "title": "Punjab National Bank share price soars 11% in two days; hits 52-week high",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/debt-drives-overseas-fundraising-by-indian-companies-to-7-year-high-126110901601_1.html",
-            "published_at": "2026-11-09T18:09:47Z"
+            "url": "https://www.business-standard.com/markets/news/punjab-national-bank-share-price-soars-11-in-two-days-hits-52-week-high-126111100580_1.html",
+            "published_at": "2026-11-11T07:51:43Z"
           }
         ]
       },
@@ -128,22 +128,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "How travellers are working around pricey flights for winter holidays",
+            "title": "‘Burnt’ lot of money this Diwali but regretting it now? 5 smart money moves for 2027 to rebuild savings and fix finances",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/flight-ticket-price-indian-travellers-road-trips-holiday-destinations-11794291682085.html",
-            "published_at": "2026-11-10T09:39:26Z"
+            "url": "https://www.livemint.com/money/personal-finance/burnt-lot-of-money-this-diwali-but-regretting-it-now-5-smart-money-moves-for-2027-to-rebuild-savings-and-fix-finances-11794387227582.html",
+            "published_at": "2026-11-11T09:33:21Z"
           },
           {
-            "title": "Bhai Dooj 2026 financial gift: Gold ETFs for your sibling? How it differs from mutual funds? Process, rules explained",
+            "title": "Amex makes U-turn on reward points deductions after complaints from cardholders",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/bhai-dooj-2026-financial-gift-gold-etfs-for-your-sibling-how-it-differs-from-mutual-funds-process-rules-explained-11794295936814.html",
-            "published_at": "2026-11-10T08:40:20Z"
+            "url": "https://www.livemint.com/money/personal-finance/amex-credit-card-reward-points-deducted-restored-november-2026-11794376350635.html",
+            "published_at": "2026-11-11T07:42:51Z"
           },
           {
-            "title": "Why Union Budget 2027-28 should focus on resilience and reform",
+            "title": "HDFC Defence Fund October 2026 portfolio: Active mutual fund adds 3 stocks; raises stake in BEL, Tata Motors and others",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/why-union-budget-2027-28-should-focus-on-resilience-and-reform-11794289531132.html",
-            "published_at": "2026-11-10T08:31:03Z"
+            "url": "https://www.livemint.com/money/personal-finance/hdfc-defence-fund-october-2026-portfolio-active-mutual-fund-adds-3-stocks-raises-stake-in-bel-tata-motors-and-others-11794378555412.html",
+            "published_at": "2026-11-11T07:42:50Z"
           }
         ]
       }
@@ -152,32 +152,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Promoter shareholding in listed companies hits three-year high at 41.93% in September quarter",
-        "url": "https://www.thehindubusinessline.com/markets/promoter-shareholding-in-listed-companies-hits-three-year-high-at-4193-in-september-quarter/article71685657.ece"
+        "title": "Protean eGov shares surge 7.4% as Yubi partnership boosts sentiment",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/protean-egov-shares-surge-74-as-yubi-partnership-boosts-sentiment/article71689525.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Mutual funds' Nifty 50 allocation falls to 21-year low",
-        "url": "https://www.thehindubusinessline.com/markets/mutual-funds-nifty-50-allocation-falls-to-21-year-low/article71685515.ece"
+        "title": "NseKit 0.0.49",
+        "url": "https://pypi.org/project/nsekit/0.0.49/"
       },
       {
-        "symbol": "CEO",
+        "symbol": "PAT",
         "cap": "Large/Mid Cap",
-        "title": "Tata Projects subsidiary CEO Shashank Shekhar Jha tenders resignation",
-        "url": "https://economictimes.indiatimes.com/news/company/corporate-trends/tata-projects-subsidiary-ceo-shashank-shekhar-jha-tenders-resignation/articleshow/135704685.cms"
+        "title": "Rentomojo climbs 10% to 52-wk high; what's behind gains as Q2 PAT dips 63%?",
+        "url": "https://www.business-standard.com/markets/news/rentomojo-climbs-10-to-52-wk-high-what-s-behind-gains-as-q2-pat-dips-63-126111100703_1.html"
+      },
+      {
+        "symbol": "BHEL",
+        "cap": "Large/Mid Cap",
+        "title": "BHEL shares up 3.5% on Power Grid order for Gujarat synchronous condensers",
+        "url": "https://www.business-standard.com/markets/news/bhel-shares-up-3-5-on-power-grid-order-for-gujarat-synchronous-condensers-126111100646_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "AI slump sends investors scouring emerging markets for bargains",
-        "url": "https://www.thehindubusinessline.com/markets/ai-slump-sends-investors-scouring-emerging-markets-for-bargains/article71685261.ece"
-      },
-      {
-        "symbol": "AMFI",
-        "cap": "Large/Mid Cap",
-        "title": "AMFI Reshuffle: Five midcap stocks that may get upgraded to largecap",
-        "url": "https://m.economictimes.com/mf/analysis/amfi-reshuffle-lenskart-solutions-zydus-lifesciences-among-5-midcap-stocks-that-may-get-upgraded-to-largecap/stock-re-categorisation/slideshow/135700451.cms"
+        "title": "Indices hold gains at noon; M&M, IndiGo top Nifty charts as IT stocks drag",
+        "url": "https://www.thehindubusinessline.com/markets/indices-hold-gains-at-noon-mm-indigo-top-nifty-charts-as-it-stocks-drag/article71688800.ece"
       }
     ]
   }
