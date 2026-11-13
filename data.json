@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-12T18:22:56.552Z",
+  "updated_at": "2026-11-13T11:43:54.216Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25299.35,
-      "change_pct": 0.18
+      "value": 25144.3,
+      "change_pct": -0.61
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 81911.01,
-      "change_pct": 0.04
+      "value": 81592.45,
+      "change_pct": -0.39
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 88.25,
-      "change_pct": 1.99,
+      "value": 88.49,
+      "change_pct": -0.28,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 117525,
-      "change_pct": -2.83,
+      "value": 117883,
+      "change_pct": 0.15,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3887.4,
-      "change_pct": -2.83,
+      "value": 3891.1,
+      "change_pct": 0.15,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22760.75,
-      "change_pct": 0.72
+      "price": 22681.25,
+      "change_pct": -0.35
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19706.75,
-      "change_pct": 1.12
+      "price": 19656.45,
+      "change_pct": -0.26
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 61518.5,
-      "change_pct": 1.19
+      "price": 61034.1,
+      "change_pct": -0.79
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32163.55,
-      "change_pct": -0.41
+      "price": 31931.15,
+      "change_pct": -0.72
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 28231,
-      "change_pct": -1.02
+      "price": 27929.85,
+      "change_pct": -1.07
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 46838.5,
-      "change_pct": -0.74
+      "price": 46833.55,
+      "change_pct": -0.01
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12772.6,
-      "change_pct": -0.11
+      "price": 12647.9,
+      "change_pct": -0.98
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 71772.4,
-      "change_pct": -2.96
+      "price": 69248.92,
+      "change_pct": -2.94
     },
     {
       "symbol": "ETHEREUM",
-      "price": 2014.61,
-      "change_pct": -2.01
+      "price": 1958.34,
+      "change_pct": -2.9
     }
   ],
   "news": {
@@ -105,22 +105,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Credit card safety: 7 settings you should review to reduce fraud risk",
+            "title": "Retail inflation breaches RBI's 6% upper limit at 2-yr high of 6.09% in Oct",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/credit-card-safety-7-settings-you-should-review-to-reduce-fraud-risk-126111100797_1.html",
-            "published_at": "2026-11-11T09:55:37Z"
+            "url": "https://www.business-standard.com/economy/news/retail-inflation-breaches-rbi-s-6-upper-limit-at-2-yr-high-of-6-09-in-oct-126111201211_1.html",
+            "published_at": "2026-11-12T11:37:40Z"
           },
           {
-            "title": "BHEL shares up 3.5% on Power Grid order for Gujarat synchronous condensers",
+            "title": "India's festive online sales rise 17%, but shoppers spend less per order",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/bhel-shares-up-3-5-on-power-grid-order-for-gujarat-synchronous-condensers-126111100646_1.html",
-            "published_at": "2026-11-11T08:22:03Z"
+            "url": "https://www.business-standard.com/economy/news/india-s-festive-online-sales-rise-17-but-shoppers-spend-less-per-order-126111200967_1.html",
+            "published_at": "2026-11-12T10:17:09Z"
           },
           {
-            "title": "Punjab National Bank share price soars 11% in two days; hits 52-week high",
+            "title": "Gabriel India hits 20% upper circuit on huge volume; up 112% from March low",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/punjab-national-bank-share-price-soars-11-in-two-days-hits-52-week-high-126111100580_1.html",
-            "published_at": "2026-11-11T07:51:43Z"
+            "url": "https://www.business-standard.com/markets/news/gabriel-india-hits-20-upper-circuit-on-huge-volume-up-112-from-march-low-126111200893_1.html",
+            "published_at": "2026-11-12T10:10:09Z"
           }
         ]
       },
@@ -128,56 +128,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "‘Burnt’ lot of money this Diwali but regretting it now? 5 smart money moves for 2027 to rebuild savings and fix finances",
+            "title": "Bank holiday tomorrow: Branches closed in this state on Friday, Nov 13 —know reason and other details",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/burnt-lot-of-money-this-diwali-but-regretting-it-now-5-smart-money-moves-for-2027-to-rebuild-savings-and-fix-finances-11794387227582.html",
-            "published_at": "2026-11-11T09:33:21Z"
+            "url": "https://www.livemint.com/money/bank-holiday-tomorrow-branches-closed-in-this-state-on-friday-nov-13-know-reason-and-other-details-11794477542658.html",
+            "published_at": "2026-11-12T10:36:18Z"
           },
           {
-            "title": "Amex makes U-turn on reward points deductions after complaints from cardholders",
+            "title": "AMFI Oct 2026 data: Where is investor money flowing in equity mutual funds? Inflow trends and expert SIP picks for 2027",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/amex-credit-card-reward-points-deducted-restored-november-2026-11794376350635.html",
-            "published_at": "2026-11-11T07:42:51Z"
+            "url": "https://www.livemint.com/money/personal-finance/amfi-oct-2026-data-where-is-investor-money-flowing-in-equity-mutual-funds-inflow-trends-and-expert-sip-picks-for-2027-11794476278054.html",
+            "published_at": "2026-11-12T10:23:25Z"
           },
           {
-            "title": "HDFC Defence Fund October 2026 portfolio: Active mutual fund adds 3 stocks; raises stake in BEL, Tata Motors and others",
+            "title": "Twist in Nvidia CEO’s affair: Jensen Huang’s liaison involves an unlikely third person, Alice’s husband; who’s Kang Wei?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/hdfc-defence-fund-october-2026-portfolio-active-mutual-fund-adds-3-stocks-raises-stake-in-bel-tata-motors-and-others-11794378555412.html",
-            "published_at": "2026-11-11T07:42:50Z"
+            "url": "https://www.livemint.com/companies/people/twist-in-nvidia-ceo-s-affair-jensen-huang-s-liaison-involves-an-unlikely-third-person-alice-s-husband-who-s-kang-wei-11794475150653.html",
+            "published_at": "2026-11-12T09:35:01Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "NEWS",
+        "symbol": "FII",
         "cap": "Large/Mid Cap",
-        "title": "Protean eGov shares surge 7.4% as Yubi partnership boosts sentiment",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/protean-egov-shares-surge-74-as-yubi-partnership-boosts-sentiment/article71689525.ece"
+        "title": "Sensex today | Stock Market Highlights: Markets extend gains for 3rd day; Sensex ends above 81,900 on FII inflows, lower crude oil",
+        "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-highlights-12-november-2026/article71689385.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "NseKit 0.0.49",
-        "url": "https://pypi.org/project/nsekit/0.0.49/"
-      },
-      {
-        "symbol": "PAT",
-        "cap": "Large/Mid Cap",
-        "title": "Rentomojo climbs 10% to 52-wk high; what's behind gains as Q2 PAT dips 63%?",
-        "url": "https://www.business-standard.com/markets/news/rentomojo-climbs-10-to-52-wk-high-what-s-behind-gains-as-q2-pat-dips-63-126111100703_1.html"
-      },
-      {
-        "symbol": "BHEL",
-        "cap": "Large/Mid Cap",
-        "title": "BHEL shares up 3.5% on Power Grid order for Gujarat synchronous condensers",
-        "url": "https://www.business-standard.com/markets/news/bhel-shares-up-3-5-on-power-grid-order-for-gujarat-synchronous-condensers-126111100646_1.html"
+        "title": "Gabriel India hits 20% upper circuit on huge volume; up 112% from March low",
+        "url": "https://www.business-standard.com/markets/news/gabriel-india-hits-20-upper-circuit-on-huge-volume-up-112-from-march-low-126111200893_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Indices hold gains at noon; M&M, IndiGo top Nifty charts as IT stocks drag",
-        "url": "https://www.thehindubusinessline.com/markets/indices-hold-gains-at-noon-mm-indigo-top-nifty-charts-as-it-stocks-drag/article71688800.ece"
+        "title": "Paytm zooms 7%, reclaims ₹1,900 for 1st time since listing day in Nov 2021",
+        "url": "https://www.business-standard.com/markets/news/paytm-zooms-7-reclaims-1-900-for-1st-time-since-listing-day-in-nov-2021-126111200790_1.html"
+      },
+      {
+        "symbol": "NSE",
+        "cap": "Large/Mid Cap",
+        "title": "Bihar first municipal bond available on NSE online: Now you can invest in Patna Municipal Corporation bonds — here's how",
+        "url": "https://www.livemint.com/money/personal-finance/bihar-first-municipal-bond-available-on-nse-online-now-you-can-invest-in-patna-municipal-corporation-bonds-heres-how-11794470352557.html"
+      },
+      {
+        "symbol": "CDSL",
+        "cap": "Large/Mid Cap",
+        "title": "Breakout stock: CDSL gains 4%, up 30% from 52-week low; more upside ahead?",
+        "url": "https://www.business-standard.com/markets/news/breakout-stock-cdsl-gains-4-up-30-from-52-week-low-more-upside-ahead-126111200681_1.html"
       }
     ]
   }
