@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-13T17:49:57.795Z",
+  "updated_at": "2026-11-16T12:17:07.616Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25144.3,
-      "change_pct": -0.61
+      "value": 25291.1,
+      "change_pct": 0.58
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 81592.45,
-      "change_pct": -0.39
+      "value": 82104.79,
+      "change_pct": 0.63
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 88.66,
-      "change_pct": -0.09,
+      "value": 87.84,
+      "change_pct": -0.81,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 117838,
-      "change_pct": 0.11,
+      "value": 117006,
+      "change_pct": -0.3,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3889.6,
-      "change_pct": 0.11,
+      "value": 3874.8,
+      "change_pct": -0.3,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22681.25,
-      "change_pct": -0.35
+      "price": 22588.35,
+      "change_pct": -0.41
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19656.45,
-      "change_pct": -0.26
+      "price": 19441.1,
+      "change_pct": -1.1
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 61034.1,
-      "change_pct": -0.79
+      "price": 61575.9,
+      "change_pct": 0.89
     },
     {
       "symbol": "NIFTY IT",
-      "price": 31931.15,
-      "change_pct": -0.72
+      "price": 31941.05,
+      "change_pct": 0.03
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27929.85,
-      "change_pct": -1.07
+      "price": 27570.25,
+      "change_pct": -1.29
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 46833.55,
-      "change_pct": -0.01
+      "price": 47708.1,
+      "change_pct": 1.87
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12647.9,
-      "change_pct": -0.98
+      "price": 12458.35,
+      "change_pct": -1.5
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 68929.14,
-      "change_pct": -3.38
+      "price": 63975.02,
+      "change_pct": -2.04
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1941.41,
-      "change_pct": -3.74
+      "price": 1792.64,
+      "change_pct": -2.33
     }
   ],
   "news": {
@@ -105,22 +105,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Retail inflation breaches RBI's 6% upper limit at 2-yr high of 6.09% in Oct",
+            "title": "RBI's 6-hour reporting rule could help curb cyber threats, frauds",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/retail-inflation-breaches-rbi-s-6-upper-limit-at-2-yr-high-of-6-09-in-oct-126111201211_1.html",
-            "published_at": "2026-11-12T11:37:40Z"
+            "url": "https://www.business-standard.com/finance/news/rbi-s-6-hour-reporting-rule-could-help-curb-cyber-threats-frauds-126111500316_1.html",
+            "published_at": "2026-11-15T09:54:33Z"
           },
           {
-            "title": "India's festive online sales rise 17%, but shoppers spend less per order",
+            "title": "Noel Tata questions big investments as $185 billion group feud deepens",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/economy/news/india-s-festive-online-sales-rise-17-but-shoppers-spend-less-per-order-126111200967_1.html",
-            "published_at": "2026-11-12T10:17:09Z"
+            "url": "https://www.business-standard.com/companies/news/noel-tata-questions-big-investments-as-185-billion-group-feud-deepens-126111500313_1.html",
+            "published_at": "2026-11-15T08:58:27Z"
           },
           {
-            "title": "Gabriel India hits 20% upper circuit on huge volume; up 112% from March low",
+            "title": "WPI inflation, oil, FII trading activity may guide stock markets this week",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/gabriel-india-hits-20-upper-circuit-on-huge-volume-up-112-from-march-low-126111200893_1.html",
-            "published_at": "2026-11-12T10:10:09Z"
+            "url": "https://www.business-standard.com/markets/news/wpi-inflation-oil-fii-trading-activity-may-guide-stock-markets-this-week-126111500300_1.html",
+            "published_at": "2026-11-15T08:52:49Z"
           }
         ]
       },
@@ -128,56 +128,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Bank holiday tomorrow: Branches closed in this state on Friday, Nov 13 —know reason and other details",
+            "title": "Standard Chartered taps GIFT City to help wealthy Indians diversify overseas",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/bank-holiday-tomorrow-branches-closed-in-this-state-on-friday-nov-13-know-reason-and-other-details-11794477542658.html",
-            "published_at": "2026-11-12T10:36:18Z"
+            "url": "https://www.livemint.com/companies/standard-chartered-taps-gift-city-to-help-wealthy-indians-diversify-overseas-11794726225669.html",
+            "published_at": "2026-11-15T10:46:30Z"
           },
           {
-            "title": "AMFI Oct 2026 data: Where is investor money flowing in equity mutual funds? Inflow trends and expert SIP picks for 2027",
+            "title": "Woman loses ₹70,084 in online fraud, bank ordered to refund money and pay compensation: What happened, how to be safe",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/amfi-oct-2026-data-where-is-investor-money-flowing-in-equity-mutual-funds-inflow-trends-and-expert-sip-picks-for-2027-11794476278054.html",
-            "published_at": "2026-11-12T10:23:25Z"
+            "url": "https://www.livemint.com/money/woman-loses-70-084-in-online-fraud-bank-ordered-to-refund-money-and-pay-compensation-what-happened-how-to-be-safe-11794734498752.html",
+            "published_at": "2026-11-15T09:28:44Z"
           },
           {
-            "title": "Twist in Nvidia CEO’s affair: Jensen Huang’s liaison involves an unlikely third person, Alice’s husband; who’s Kang Wei?",
+            "title": "Market rally: What’s fuelling gains and what are the risks?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/people/twist-in-nvidia-ceo-s-affair-jensen-huang-s-liaison-involves-an-unlikely-third-person-alice-s-husband-who-s-kang-wei-11794475150653.html",
-            "published_at": "2026-11-12T09:35:01Z"
+            "url": "https://www.livemint.com/money/personal-finance/market-rally-nifty-sensex-november-2026-investment-strategy-11794568248242.html",
+            "published_at": "2026-11-15T04:06:22Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "FII",
+        "symbol": "WPI",
         "cap": "Large/Mid Cap",
-        "title": "Sensex today | Stock Market Highlights: Markets extend gains for 3rd day; Sensex ends above 81,900 on FII inflows, lower crude oil",
-        "url": "https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-highlights-12-november-2026/article71689385.ece"
+        "title": "WPI inflation, crude oil prices and FII activity to steer stock markets this week",
+        "url": "https://www.thehindubusinessline.com/markets/wpi-inflation-crude-oil-prices-and-fii-activity-to-steer-stock-markets-this-week/article71704397.ece"
+      },
+      {
+        "symbol": "WPI",
+        "cap": "Large/Mid Cap",
+        "title": "WPI inflation, oil, FII trading activity may guide stock markets this week",
+        "url": "https://www.business-standard.com/markets/news/wpi-inflation-oil-fii-trading-activity-may-guide-stock-markets-this-week-126111500300_1.html"
+      },
+      {
+        "symbol": "IPO",
+        "cap": "Large/Mid Cap",
+        "title": "IPO Calendar: 3 issues to raise over Rs 10,000 crore",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/ipo-calendar-mahanadi-coalfields-among-3-companies-to-raise-over-rs-10000-cr-in-busy-week-for-primary-market/articleshow/135848817.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Gabriel India hits 20% upper circuit on huge volume; up 112% from March low",
-        "url": "https://www.business-standard.com/markets/news/gabriel-india-hits-20-upper-circuit-on-huge-volume-up-112-from-march-low-126111200893_1.html"
+        "title": "Market rally: What’s fuelling gains and what are the risks?",
+        "url": "https://www.livemint.com/money/personal-finance/market-rally-nifty-sensex-november-2026-investment-strategy-11794568248242.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Paytm zooms 7%, reclaims ₹1,900 for 1st time since listing day in Nov 2021",
-        "url": "https://www.business-standard.com/markets/news/paytm-zooms-7-reclaims-1-900-for-1st-time-since-listing-day-in-nov-2021-126111200790_1.html"
-      },
-      {
-        "symbol": "NSE",
-        "cap": "Large/Mid Cap",
-        "title": "Bihar first municipal bond available on NSE online: Now you can invest in Patna Municipal Corporation bonds — here's how",
-        "url": "https://www.livemint.com/money/personal-finance/bihar-first-municipal-bond-available-on-nse-online-now-you-can-invest-in-patna-municipal-corporation-bonds-heres-how-11794470352557.html"
-      },
-      {
-        "symbol": "CDSL",
-        "cap": "Large/Mid Cap",
-        "title": "Breakout stock: CDSL gains 4%, up 30% from 52-week low; more upside ahead?",
-        "url": "https://www.business-standard.com/markets/news/breakout-stock-cdsl-gains-4-up-30-from-52-week-low-more-upside-ahead-126111200681_1.html"
+        "title": "Worried about mutual fund losses? Expert shares 5 ways to reduce portfolio risk and navigate equity market volatility",
+        "url": "https://www.livemint.com/money/personal-finance/worried-about-mutual-fund-losses-expert-shares-5-ways-to-reduce-portfolio-risk-and-navigate-equity-market-volatility-11794706231329.html"
       }
     ]
   }
