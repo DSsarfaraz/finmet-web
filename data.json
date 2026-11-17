@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-16T20:32:16.437Z",
+  "updated_at": "2026-11-17T12:38:39.599Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25291.1,
-      "change_pct": -0.03
+      "value": 25387.4,
+      "change_pct": 0.38
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 82104.79,
-      "change_pct": 0.24
+      "value": 82532.19,
+      "change_pct": 0.52
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 85.48,
-      "change_pct": -3.48,
+      "value": 86.13,
+      "change_pct": 0.48,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 116625,
-      "change_pct": -0.61,
+      "value": 116112,
+      "change_pct": 0.29,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3862.6,
-      "change_pct": -0.61,
+      "value": 3864.2,
+      "change_pct": 0.29,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22588.35,
-      "change_pct": -0.76
+      "price": 22648.7,
+      "change_pct": 0.27
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19441.1,
-      "change_pct": -1.1
+      "price": 19398.7,
+      "change_pct": -0.22
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 61575.9,
-      "change_pct": 0.09
+      "price": 62273.25,
+      "change_pct": 1.13
     },
     {
       "symbol": "NIFTY IT",
-      "price": 31941.05,
-      "change_pct": -0.69
+      "price": 31654.1,
+      "change_pct": -0.9
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27570.25,
-      "change_pct": -2.34
+      "price": 27769.15,
+      "change_pct": 0.72
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 47708.1,
-      "change_pct": 1.86
+      "price": 47611.6,
+      "change_pct": -0.2
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12458.35,
-      "change_pct": -2.46
+      "price": 12530.3,
+      "change_pct": 0.58
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 65051.82,
-      "change_pct": -0.39
+      "price": 64866.05,
+      "change_pct": 0.02
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1818.56,
-      "change_pct": -0.92
+      "price": 1816.63,
+      "change_pct": -0.15
     }
   ],
   "news": {
@@ -105,22 +105,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "RBI's 6-hour reporting rule could help curb cyber threats, frauds",
+            "title": "RBI files review petition in SC over YES Bank's ₹8,415 cr AT-1 bond case",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/news/rbi-s-6-hour-reporting-rule-could-help-curb-cyber-threats-frauds-126111500316_1.html",
-            "published_at": "2026-11-15T09:54:33Z"
+            "url": "https://www.business-standard.com/industry/banking/rbi-files-review-petition-in-sc-over-yes-bank-s-8-415-cr-at-1-bond-case-126111601511_1.html",
+            "published_at": "2026-11-16T12:23:31Z"
           },
           {
-            "title": "Noel Tata questions big investments as $185 billion group feud deepens",
+            "title": "Sensex may rise 16% by December 2027 on earnings recovery: Morgan Stanley",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/companies/news/noel-tata-questions-big-investments-as-185-billion-group-feud-deepens-126111500313_1.html",
-            "published_at": "2026-11-15T08:58:27Z"
+            "url": "https://www.business-standard.com/markets/news/morgan-stanley-sensex-target-95000-december-2027-indian-equities-126111601258_1.html",
+            "published_at": "2026-11-16T10:13:21Z"
           },
           {
-            "title": "WPI inflation, oil, FII trading activity may guide stock markets this week",
+            "title": "Pharma stocks under pressure; Laurus, Sai Life, Divi's slide up to 10%",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/wpi-inflation-oil-fii-trading-activity-may-guide-stock-markets-this-week-126111500300_1.html",
-            "published_at": "2026-11-15T08:52:49Z"
+            "url": "https://www.business-standard.com/markets/news/pharma-stocks-under-pressure-laurus-sai-life-divi-s-slide-up-to-10-126111601200_1.html",
+            "published_at": "2026-11-16T09:44:04Z"
           }
         ]
       },
@@ -128,56 +128,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Standard Chartered taps GIFT City to help wealthy Indians diversify overseas",
+            "title": "Mint Explainer | Why the RBI's record $239 billion forward book could keep the rupee under pressure",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/standard-chartered-taps-gift-city-to-help-wealthy-indians-diversify-overseas-11794726225669.html",
-            "published_at": "2026-11-15T10:46:30Z"
+            "url": "https://www.livemint.com/industry/banking/rbi-record-239-bn-forward-book-rupee-under-pressure-11794821022241.html",
+            "published_at": "2026-11-16T12:26:58Z"
           },
           {
-            "title": "Woman loses ₹70,084 in online fraud, bank ordered to refund money and pay compensation: What happened, how to be safe",
+            "title": "SPARSH pensioners: How NRIs and defence family pensioners can submit life certificates without visiting India",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/woman-loses-70-084-in-online-fraud-bank-ordered-to-refund-money-and-pay-compensation-what-happened-how-to-be-safe-11794734498752.html",
-            "published_at": "2026-11-15T09:28:44Z"
+            "url": "https://www.livemint.com/money/personal-finance/sparsh-pensioners-how-nris-and-defence-family-pensioners-can-submit-life-certificates-without-visiting-india-11794823967079.html",
+            "published_at": "2026-11-16T10:45:23Z"
           },
           {
-            "title": "Market rally: What’s fuelling gains and what are the risks?",
+            "title": "The government must prepare to deal with the fallout of a weakened West Asia",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/market-rally-nifty-sensex-november-2026-investment-strategy-11794568248242.html",
-            "published_at": "2026-11-15T04:06:22Z"
+            "url": "https://www.livemint.com/opinion/online-views/the-government-must-prepare-to-deal-with-the-fallout-of-a-weakened-west-asia-11794734588132.html",
+            "published_at": "2026-11-16T10:30:04Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "WPI",
+        "symbol": "PNB",
         "cap": "Large/Mid Cap",
-        "title": "WPI inflation, crude oil prices and FII activity to steer stock markets this week",
-        "url": "https://www.thehindubusinessline.com/markets/wpi-inflation-crude-oil-prices-and-fii-activity-to-steer-stock-markets-this-week/article71704397.ece"
-      },
-      {
-        "symbol": "WPI",
-        "cap": "Large/Mid Cap",
-        "title": "WPI inflation, oil, FII trading activity may guide stock markets this week",
-        "url": "https://www.business-standard.com/markets/news/wpi-inflation-oil-fii-trading-activity-may-guide-stock-markets-this-week-126111500300_1.html"
+        "title": "PNB among 4 stocks hitting 52-week highs; stock rallies up to 24% in a month",
+        "url": "https://m.economictimes.com/markets/stocks/news/pnb-among-4-stocks-hitting-52-week-highs-stock-rallies-up-to-24-in-a-month/fresh-peaks/slideshow/135888569.cms"
       },
       {
         "symbol": "IPO",
         "cap": "Large/Mid Cap",
-        "title": "IPO Calendar: 3 issues to raise over Rs 10,000 crore",
-        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/ipo-calendar-mahanadi-coalfields-among-3-companies-to-raise-over-rs-10000-cr-in-busy-week-for-primary-market/articleshow/135848817.cms"
+        "title": "Coal India's 3rd big windfall in a year? How Mahanadi Coalfields IPO could unlock Rs 8,964 crore",
+        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/coal-indias-3rd-big-windfall-in-a-year-how-mahanadi-coalfields-ipo-could-unlock-rs-8964-crore/articleshow/135887433.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Market rally: What’s fuelling gains and what are the risks?",
-        "url": "https://www.livemint.com/money/personal-finance/market-rally-nifty-sensex-november-2026-investment-strategy-11794568248242.html"
+        "title": "Associated Alcohols enters Tequila segment, shares hit 52-week low as Q2 profits slide 43%",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/associated-alcohols-enters-tequila-segment-shares-hit-52-week-low-as-q2-profits-slide-43/article71707604.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Worried about mutual fund losses? Expert shares 5 ways to reduce portfolio risk and navigate equity market volatility",
-        "url": "https://www.livemint.com/money/personal-finance/worried-about-mutual-fund-losses-expert-shares-5-ways-to-reduce-portfolio-risk-and-navigate-equity-market-volatility-11794706231329.html"
+        "title": "Street gives thumbs down to Pricol promoter stake sale plans, stock plunges 18%",
+        "url": "https://www.thehindubusinessline.com/markets/street-gives-thumbs-down-to-pricol-promoter-stake-sale-plans-stock-plunges-18/article71707723.ece"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Pharma stocks under pressure; Laurus, Sai Life, Divi's slide up to 10%",
+        "url": "https://www.business-standard.com/markets/news/pharma-stocks-under-pressure-laurus-sai-life-divi-s-slide-up-to-10-126111601200_1.html"
       }
     ]
   }
