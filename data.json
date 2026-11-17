@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-17T17:54:17.007Z",
+  "updated_at": "2026-11-17T19:13:03.285Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
       "value": 25387.4,
-      "change_pct": 0.38
+      "change_pct": 0.97
     },
     "sensex": {
       "label": "SENSEX",
       "value": 82532.19,
-      "change_pct": 0.52
+      "change_pct": 1.15
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 86.5,
-      "change_pct": 0.91,
+      "value": 86.48,
+      "change_pct": 0.89,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 116220,
-      "change_pct": 0.38,
+      "value": 115880,
+      "change_pct": 0.09,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3867.8,
-      "change_pct": 0.38,
+      "value": 3856.5,
+      "change_pct": 0.09,
       "unit": "USD/oz"
     }
   },
@@ -34,7 +34,7 @@
     {
       "symbol": "NIFTY MIDCAP 150",
       "price": 22648.7,
-      "change_pct": 0.27
+      "change_pct": -0.14
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
@@ -46,39 +46,39 @@
     {
       "symbol": "NIFTY BANK",
       "price": 62273.25,
-      "change_pct": 1.13
+      "change_pct": 2.03
     },
     {
       "symbol": "NIFTY IT",
       "price": 31654.1,
-      "change_pct": -0.9
+      "change_pct": -0.87
     },
     {
       "symbol": "NIFTY AUTO",
       "price": 27769.15,
-      "change_pct": 0.72
+      "change_pct": -0.58
     },
     {
       "symbol": "NIFTY FMCG",
       "price": 47611.6,
-      "change_pct": -0.2
+      "change_pct": 1.66
     },
     {
       "symbol": "NIFTY METAL",
       "price": 12530.3,
-      "change_pct": 0.58
+      "change_pct": -0.93
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 63844.03,
-      "change_pct": -1.56
+      "price": 63766.63,
+      "change_pct": -1.68
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1786.68,
-      "change_pct": -1.79
+      "price": 1791.22,
+      "change_pct": -1.54
     }
   ],
   "news": {
