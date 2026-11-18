@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-17T19:13:03.285Z",
+  "updated_at": "2026-11-18T12:29:07.952Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25387.4,
-      "change_pct": 0.97
+      "value": 25227.95,
+      "change_pct": -0.63
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 82532.19,
-      "change_pct": 1.15
+      "value": 82031.81,
+      "change_pct": -0.61
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 86.48,
-      "change_pct": 0.89,
+      "value": 84.02,
+      "change_pct": -2.31,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 115880,
-      "change_pct": 0.09,
+      "value": 113383,
+      "change_pct": -2.33,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3856.5,
-      "change_pct": 0.09,
+      "value": 3774.2,
+      "change_pct": -2.33,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22648.7,
-      "change_pct": -0.14
+      "price": 22389.9,
+      "change_pct": -1.14
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19398.7,
-      "change_pct": -0.22
+      "price": 19331.6,
+      "change_pct": -0.35
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 62273.25,
-      "change_pct": 2.03
+      "price": 62038.65,
+      "change_pct": -0.38
     },
     {
       "symbol": "NIFTY IT",
-      "price": 31654.1,
-      "change_pct": -0.87
+      "price": 31262.3,
+      "change_pct": -1.24
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27769.15,
-      "change_pct": -0.58
+      "price": 27394.95,
+      "change_pct": -1.35
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 47611.6,
-      "change_pct": 1.66
+      "price": 47569.1,
+      "change_pct": -0.09
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12530.3,
-      "change_pct": -0.93
+      "price": 12222.3,
+      "change_pct": -2.46
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 63766.63,
-      "change_pct": -1.68
+      "price": 64219.49,
+      "change_pct": -1.04
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1791.22,
-      "change_pct": -1.54
+      "price": 1799.82,
+      "change_pct": -1.27
     }
   ],
   "news": {
@@ -105,22 +105,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "RBI files review petition in SC over YES Bank's ₹8,415 cr AT-1 bond case",
+            "title": "Tata Chemicals shares rally 11% in 3 days; why is Tata Group stock rising?",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/banking/rbi-files-review-petition-in-sc-over-yes-bank-s-8-415-cr-at-1-bond-case-126111601511_1.html",
-            "published_at": "2026-11-16T12:23:31Z"
+            "url": "https://www.business-standard.com/markets/news/tata-chemicals-shares-rally-11-in-3-days-why-is-tata-group-stock-rising-126111700701_1.html",
+            "published_at": "2026-11-17T09:53:31Z"
           },
           {
-            "title": "Sensex may rise 16% by December 2027 on earnings recovery: Morgan Stanley",
+            "title": "No Will, no nominee? How heirs can claim shares, mutual funds and FDs",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/morgan-stanley-sensex-target-95000-december-2027-indian-equities-126111601258_1.html",
-            "published_at": "2026-11-16T10:13:21Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/no-will-no-nominee-how-heirs-can-claim-shares-mutual-funds-and-fds-126111700666_1.html",
+            "published_at": "2026-11-17T09:35:26Z"
           },
           {
-            "title": "Pharma stocks under pressure; Laurus, Sai Life, Divi's slide up to 10%",
+            "title": "Eicher Motors jumps 3%, stock top gainer in Nifty Auto; brokerages upbeat",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/pharma-stocks-under-pressure-laurus-sai-life-divi-s-slide-up-to-10-126111601200_1.html",
-            "published_at": "2026-11-16T09:44:04Z"
+            "url": "https://www.business-standard.com/markets/news/eicher-motors-jumps-3-stock-top-gainer-in-nifty-auto-brokerages-upbeat-126111700622_1.html",
+            "published_at": "2026-11-17T09:33:58Z"
           }
         ]
       },
@@ -128,56 +128,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Mint Explainer | Why the RBI's record $239 billion forward book could keep the rupee under pressure",
+            "title": "Yes Bank yet to get default notice over missed AT-1 bond payout",
             "source": "Livemint",
-            "url": "https://www.livemint.com/industry/banking/rbi-record-239-bn-forward-book-rupee-under-pressure-11794821022241.html",
-            "published_at": "2026-11-16T12:26:58Z"
+            "url": "https://www.livemint.com/industry/banking/yes-bank-default-at1-bond-axis-trustee-rbi-supreme-court-11794889607402.html",
+            "published_at": "2026-11-17T09:53:41Z"
           },
           {
-            "title": "SPARSH pensioners: How NRIs and defence family pensioners can submit life certificates without visiting India",
+            "title": "Why cash flow matters as much as asset allocation",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/sparsh-pensioners-how-nris-and-defence-family-pensioners-can-submit-life-certificates-without-visiting-india-11794823967079.html",
-            "published_at": "2026-11-16T10:45:23Z"
+            "url": "https://www.livemint.com/money/personal-finance/cash-flow-management-asset-allocation-long-term-wealth-11794895335174.html",
+            "published_at": "2026-11-17T08:20:05Z"
           },
           {
-            "title": "The government must prepare to deal with the fallout of a weakened West Asia",
+            "title": "Why India's rupee defence needs a rethink",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/the-government-must-prepare-to-deal-with-the-fallout-of-a-weakened-west-asia-11794734588132.html",
-            "published_at": "2026-11-16T10:30:04Z"
+            "url": "https://www.livemint.com/opinion/online-views/indian-rupee-fall-forex-reserves-rbi-intervention-strategy-11794810375119.html",
+            "published_at": "2026-11-17T07:00:52Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "PNB",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "PNB among 4 stocks hitting 52-week highs; stock rallies up to 24% in a month",
-        "url": "https://m.economictimes.com/markets/stocks/news/pnb-among-4-stocks-hitting-52-week-highs-stock-rallies-up-to-24-in-a-month/fresh-peaks/slideshow/135888569.cms"
-      },
-      {
-        "symbol": "IPO",
-        "cap": "Large/Mid Cap",
-        "title": "Coal India's 3rd big windfall in a year? How Mahanadi Coalfields IPO could unlock Rs 8,964 crore",
-        "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/coal-indias-3rd-big-windfall-in-a-year-how-mahanadi-coalfields-ipo-could-unlock-rs-8964-crore/articleshow/135887433.cms"
+        "title": "Eternal among 5 stocks hitting 52-week highs; stock rallies up to 15% in a month",
+        "url": "https://m.economictimes.com/markets/stocks/news/eternal-among-5-stocks-hitting-52-week-highs-stock-rallies-up-to-15-in-a-month/new-high-ground/slideshow/135924700.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Associated Alcohols enters Tequila segment, shares hit 52-week low as Q2 profits slide 43%",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/associated-alcohols-enters-tequila-segment-shares-hit-52-week-low-as-q2-profits-slide-43/article71707604.ece"
+        "title": "Tata Chemicals shares rally 11% in 3 days; why is Tata Group stock rising?",
+        "url": "https://www.business-standard.com/markets/news/tata-chemicals-shares-rally-11-in-3-days-why-is-tata-group-stock-rising-126111700701_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Street gives thumbs down to Pricol promoter stake sale plans, stock plunges 18%",
-        "url": "https://www.thehindubusinessline.com/markets/street-gives-thumbs-down-to-pricol-promoter-stake-sale-plans-stock-plunges-18/article71707723.ece"
+        "title": "Eicher Motors jumps 3%, stock top gainer in Nifty Auto; brokerages upbeat",
+        "url": "https://www.business-standard.com/markets/news/eicher-motors-jumps-3-stock-top-gainer-in-nifty-auto-brokerages-upbeat-126111700622_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Pharma stocks under pressure; Laurus, Sai Life, Divi's slide up to 10%",
-        "url": "https://www.business-standard.com/markets/news/pharma-stocks-under-pressure-laurus-sai-life-divi-s-slide-up-to-10-126111601200_1.html"
+        "title": "IndusInd Bank, Mastercard join hands for cross-border payments; stock rises 1.2%",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/indusind-bank-mastercard-join-hands-for-cross-border-payments-stock-rises-12/article71710963.ece"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Embassy Developments launches 59 ultra-luxury homes in Bengaluru",
+        "url": "https://www.thehindubusinessline.com/news/real-estate/embassy-developments-launches-59-ultra-luxury-homes-in-bengaluru/article71710943.ece"
       }
     ]
   }
