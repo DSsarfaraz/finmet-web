@@ -1,91 +1,98 @@
 {
-  "updated_at": "2026-11-18T18:53:20.852Z",
+  "updated_at": "2026-11-19T12:20:03.289Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25227.95,
-      "change_pct": -0.25
+      "value": 25514.3,
+      "change_pct": 1.14
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 82031.81,
-      "change_pct": -0.09
+      "value": 83021.75,
+      "change_pct": 1.21
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 81.8,
-      "change_pct": -4.89,
+      "value": 82.56,
+      "change_pct": -0.84,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 112443,
-      "change_pct": -3.15,
+      "value": 111611,
+      "change_pct": -0.55,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3742.5,
-      "change_pct": -3.15,
+      "value": 3721.2,
+      "change_pct": -0.55,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22389.9,
-      "change_pct": -0.88
+      "price": 22613.85,
+      "change_pct": 1
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19331.6,
-      "change_pct": -0.35
+      "price": 19468.4,
+      "change_pct": 0.71
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 62038.65,
-      "change_pct": 0.75
+      "price": 63063,
+      "change_pct": 1.65
     },
     {
       "symbol": "NIFTY IT",
-      "price": 31262.3,
-      "change_pct": -2.13
+      "price": 30919.45,
+      "change_pct": -1.1
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 27394.95,
-      "change_pct": -0.64
+      "price": 28601.3,
+      "change_pct": 4.4
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 47569.1,
-      "change_pct": -0.29
+      "price": 48564.25,
+      "change_pct": 2.09
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12222.3,
-      "change_pct": -1.89
+      "price": 12299.75,
+      "change_pct": 0.63
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 63108.11,
-      "change_pct": -2.75
+      "price": 63716.8,
+      "change_pct": 1.16
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1768.98,
-      "change_pct": -2.96
+      "price": 1802.68,
+      "change_pct": 1.57
     }
   ],
   "news": {
     "international": [
       {
         "outlet": "bloomberg.com",
-        "articles": []
+        "articles": [
+          {
+            "title": "India considers 50% cut in STT on stocks, higher tax on derivatives",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-11-18/india-weighs-tax-tweaks-to-boost-stock-trading-curb-derivatives",
+            "published_at": "2026-11-18T07:48:06Z"
+          }
+        ]
       },
       {
         "outlet": "reuters.com",
@@ -105,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Tata Chemicals shares rally 11% in 3 days; why is Tata Group stock rising?",
+            "title": "Shifting trends: Largecap funds returned 9.8% in Oct, smallcaps just 0.7%",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/tata-chemicals-shares-rally-11-in-3-days-why-is-tata-group-stock-rising-126111700701_1.html",
-            "published_at": "2026-11-17T09:53:31Z"
+            "url": "https://www.business-standard.com/markets/mutual-fund/shifting-trends-largecap-funds-returned-9-8-in-oct-smallcaps-just-0-7-126111800879_1.html",
+            "published_at": "2026-11-18T11:17:47Z"
           },
           {
-            "title": "No Will, no nominee? How heirs can claim shares, mutual funds and FDs",
+            "title": "Lock in now or wait for higher rates? Here's how to plan your FD strategy",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/no-will-no-nominee-how-heirs-can-claim-shares-mutual-funds-and-fds-126111700666_1.html",
-            "published_at": "2026-11-17T09:35:26Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/lock-in-now-or-wait-for-higher-rates-here-s-how-to-plan-your-fd-strategy-126111800783_1.html",
+            "published_at": "2026-11-18T10:29:13Z"
           },
           {
-            "title": "Eicher Motors jumps 3%, stock top gainer in Nifty Auto; brokerages upbeat",
+            "title": "Wall Street prepares for Anthropic IPO frenzy, despite AI stock slump",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/eicher-motors-jumps-3-stock-top-gainer-in-nifty-auto-brokerages-upbeat-126111700622_1.html",
-            "published_at": "2026-11-17T09:33:58Z"
+            "url": "https://www.business-standard.com/world-news/wall-street-126111800766_1.html",
+            "published_at": "2026-11-18T10:25:40Z"
           }
         ]
       },
@@ -128,22 +135,22 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "Yes Bank yet to get default notice over missed AT-1 bond payout",
+            "title": "Nvidia hires Heidrick & Struggles as it intensifies search for next CEO | All you need to know about the firm",
             "source": "Livemint",
-            "url": "https://www.livemint.com/industry/banking/yes-bank-default-at1-bond-axis-trustee-rbi-supreme-court-11794889607402.html",
-            "published_at": "2026-11-17T09:53:41Z"
+            "url": "https://www.livemint.com/companies/news/nvidia-hires-heidrick-struggles-as-it-intensifies-search-for-next-ceo-after-jensen-huang-stepped-down-all-you-ne-11794990457747.html",
+            "published_at": "2026-11-18T08:35:10Z"
           },
           {
-            "title": "Why cash flow matters as much as asset allocation",
+            "title": "Failed ATM, UPI or cheque transaction? Know when banks can charge you and how to seek redressal under RBI rules",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/cash-flow-management-asset-allocation-long-term-wealth-11794895335174.html",
-            "published_at": "2026-11-17T08:20:05Z"
+            "url": "https://www.livemint.com/money/personal-finance/failed-atm-upi-or-cheque-transaction-know-when-banks-can-charge-you-and-how-to-seek-redressal-under-rbi-rules-11794985583074.html",
+            "published_at": "2026-11-18T08:27:12Z"
           },
           {
-            "title": "Why India's rupee defence needs a rethink",
+            "title": "India’s earnings recovery could put large-caps back in favour",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/indian-rupee-fall-forex-reserves-rbi-intervention-strategy-11794810375119.html",
-            "published_at": "2026-11-17T07:00:52Z"
+            "url": "https://www.livemint.com/money/personal-finance/india-stock-market-outlook-earnings-growth-largecap-vs-midcap-11794975842223.html",
+            "published_at": "2026-11-18T07:43:31Z"
           }
         ]
       }
@@ -152,32 +159,32 @@
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Eternal among 5 stocks hitting 52-week highs; stock rallies up to 15% in a month",
-        "url": "https://m.economictimes.com/markets/stocks/news/eternal-among-5-stocks-hitting-52-week-highs-stock-rallies-up-to-15-in-a-month/new-high-ground/slideshow/135924700.cms"
+        "title": "PI Industries among 5 stocks hitting 52-week low; slipped up to 26% in a month",
+        "url": "https://m.economictimes.com/markets/stocks/news/pi-industries-among-5-stocks-hitting-52-week-low-slipped-up-to-26-in-a-month/new-highs/slideshow/135961979.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Tata Chemicals shares rally 11% in 3 days; why is Tata Group stock rising?",
-        "url": "https://www.business-standard.com/markets/news/tata-chemicals-shares-rally-11-in-3-days-why-is-tata-group-stock-rising-126111700701_1.html"
+        "title": "Bajaj Finserv bets $4 million on Indian AI startup Soket AI",
+        "url": "https://www.thehindubusinessline.com/companies/bajaj-finserv-bets-4-million-on-indian-ai-startup-soket-ai/article71715248.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Eicher Motors jumps 3%, stock top gainer in Nifty Auto; brokerages upbeat",
-        "url": "https://www.business-standard.com/markets/news/eicher-motors-jumps-3-stock-top-gainer-in-nifty-auto-brokerages-upbeat-126111700622_1.html"
+        "title": "SpiceJet board approves ₹5,500 crore fund raising proposal for revival",
+        "url": "https://www.business-standard.com/industry/aviation/spicejet-board-approves-5-500-crore-fund-raising-proposal-for-revival-126111800678_1.html"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "NTPC",
         "cap": "Large/Mid Cap",
-        "title": "IndusInd Bank, Mastercard join hands for cross-border payments; stock rises 1.2%",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/indusind-bank-mastercard-join-hands-for-cross-border-payments-stock-rises-12/article71710963.ece"
+        "title": "Acme Solar inks 150 MW hybrid power deal with NTPC at ₹3.21/Unit",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/acme-solar-inks-150-mw-hybrid-power-deal-with-ntpc-at-321unit/article71715263.ece"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "IPO",
         "cap": "Large/Mid Cap",
-        "title": "Embassy Developments launches 59 ultra-luxury homes in Bengaluru",
-        "url": "https://www.thehindubusinessline.com/news/real-estate/embassy-developments-launches-59-ultra-luxury-homes-in-bengaluru/article71710943.ece"
+        "title": "Glass Wall Systems shares jump 4% on new order win, up 55% from IPO price",
+        "url": "https://www.business-standard.com/markets/news/glass-wall-systems-shares-jump-4-on-new-order-win-up-55-from-ipo-price-126111800697_1.html"
       }
     ]
   }
