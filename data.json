@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T12:20:24.534Z",
+  "updated_at": "2026-11-20T17:19:35.704Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
@@ -13,28 +13,28 @@
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 82.31,
-      "change_pct": -1.08,
+      "value": 82.54,
+      "change_pct": -0.81,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 106492,
-      "change_pct": -3.04,
+      "value": 105498,
+      "change_pct": -3.91,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3573.5,
-      "change_pct": -3.04,
+      "value": 3541.3,
+      "change_pct": -3.91,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22613.8,
-      "change_pct": 1
+      "price": 22750.8,
+      "change_pct": 0.61
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
@@ -55,30 +55,30 @@
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 28601.3,
-      "change_pct": 4.4
+      "price": 28787.65,
+      "change_pct": 0.65
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 48564.2,
-      "change_pct": 2.09
+      "price": 48535.7,
+      "change_pct": -0.06
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 12299.8,
-      "change_pct": 0.63
+      "price": 12271.1,
+      "change_pct": -0.23
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 61506.49,
-      "change_pct": -0.64
+      "price": 59308.03,
+      "change_pct": -4.19
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1737.43,
-      "change_pct": -1.01
+      "price": 1631.56,
+      "change_pct": -7.04
     }
   ],
   "news": {
