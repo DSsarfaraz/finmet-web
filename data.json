@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-23T22:04:51.955Z",
+  "updated_at": "2026-11-24T14:25:35.348Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
       "value": 25349.65,
-      "change_pct": -0.65
+      "change_pct": -1.75
     },
     "sensex": {
       "label": "SENSEX",
       "value": 82435.99,
-      "change_pct": -0.71
+      "change_pct": -1.77
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 80.42,
-      "change_pct": -4.24,
+      "value": 81.21,
+      "change_pct": 1.3,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 108514,
-      "change_pct": 3.35,
+      "value": 108042,
+      "change_pct": -0.93,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3633.1,
-      "change_pct": 3.35,
+      "value": 3617.3,
+      "change_pct": -0.93,
       "unit": "USD/oz"
     }
   },
@@ -34,7 +34,7 @@
     {
       "symbol": "NIFTY MIDCAP 150",
       "price": 22542.45,
-      "change_pct": -0.32
+      "change_pct": -0.92
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
@@ -46,39 +46,39 @@
     {
       "symbol": "NIFTY BANK",
       "price": 62585.35,
-      "change_pct": -0.76
+      "change_pct": -3.17
     },
     {
       "symbol": "NIFTY IT",
       "price": 31850.8,
-      "change_pct": 3.01
+      "change_pct": 1.69
     },
     {
       "symbol": "NIFTY AUTO",
       "price": 28490.7,
-      "change_pct": -0.39
+      "change_pct": -1.03
     },
     {
       "symbol": "NIFTY FMCG",
       "price": 48312.55,
-      "change_pct": -0.52
+      "change_pct": -0.46
     },
     {
       "symbol": "NIFTY METAL",
       "price": 11819.25,
-      "change_pct": -3.91
+      "change_pct": -3.68
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 61210.76,
-      "change_pct": 0.08
+      "price": 60330.39,
+      "change_pct": -1.44
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1719.82,
-      "change_pct": -0.07
+      "price": 1696.82,
+      "change_pct": -0.7
     }
   ],
   "news": {
@@ -91,18 +91,6 @@
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-11-20/ai-selloff-boosts-haven-demand-for-yen-franc-as-dollar-slips",
             "published_at": "2026-11-21T14:37:37Z"
-          },
-          {
-            "title": "Anthropic shares fall 5% in after-hours after record $107.3 billion IPO",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-11-20/anthropic-shares-drop-post-market-on-apple-s-ai-agent-plans",
-            "published_at": "2026-11-20T05:14:24Z"
-          },
-          {
-            "title": "Bonds vs equities: India’s stock market rally faces valuation test",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-11-20/india-s-stock-rally-faces-valuation-test-as-bond-allure-grows",
-            "published_at": "2026-11-20T03:30:45Z"
           }
         ]
       },
@@ -124,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Battery procurement key to project viability amid grid congestion: ICRA",
+            "title": "Rupee snaps five-day winning streak amid strong corporate dollar demand",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/news/battery-procurement-key-to-project-viability-amid-grid-congestion-icra-126112200519_1.html",
-            "published_at": "2026-11-22T12:30:02Z"
+            "url": "https://www.business-standard.com/finance/news/rupee-snaps-five-day-winning-streak-amid-strong-corporate-dollar-demand-126112301109_1.html",
+            "published_at": "2026-11-23T13:50:32Z"
           },
           {
-            "title": "FPI, crude oil, global trends to to steer markets in holiday-shortened week",
+            "title": "RBI proposes greater customer control over digital payments to curb fraud",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/fpi-crude-oil-global-trends-to-to-steer-markets-in-holiday-shortened-week-126112200353_1.html",
-            "published_at": "2026-11-22T09:47:11Z"
+            "url": "https://www.business-standard.com/finance/news/rbi-proposes-greater-customer-control-over-digital-payments-to-curb-fraud-126112301054_1.html",
+            "published_at": "2026-11-23T13:21:25Z"
           },
           {
-            "title": "ECL provision requirement around ₹5k cr, no impact on profitability: PNB MD",
+            "title": "No SMS alerts, Rs 77,114 lost: Woman wins consumer case against bank",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/banking/ecl-provision-requirement-around-5k-cr-no-impact-on-profitability-pnb-md-126112200261_1.html",
-            "published_at": "2026-11-22T07:30:53Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/no-sms-alerts-rs-77-114-lost-woman-wins-consumer-case-against-bank-126112300960_1.html",
+            "published_at": "2026-11-23T12:26:37Z"
           }
         ]
       },
@@ -147,56 +135,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "The expected credit loss framework is a necessary evolution—but is the banking system ready for it?",
+            "title": "RBI proposes greater customer control for fraud prevention, moots ‘Stop Switch’ to disable transactions",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/the-expected-credit-loss-framework-is-a-necessary-evolution-but-is-the-banking-system-ready-11795082481014.html",
-            "published_at": "2026-11-22T13:30:47Z"
+            "url": "https://www.livemint.com/industry/banking/rbi-proposes-greater-customer-control-for-fraud-prevention-moots-stop-switch-to-disable-transactions-11795437474120.html",
+            "published_at": "2026-11-23T14:17:55Z"
           },
           {
-            "title": "M1xchange in talks with banks in Russia, Brazil for overseas expansion of India’s TReDS model",
+            "title": "RBI proposes new rules to protect bank accounts from fraud; here's how Stop Switch and trusted person approval work",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/m1xchange-in-talks-with-banks-in-russia-brazil-for-overseas-expansion-of-india-s-treds-model-11795325157574.html",
-            "published_at": "2026-11-22T13:13:37Z"
+            "url": "https://www.livemint.com/money/personal-finance/rbi-proposes-new-rules-to-protect-bank-accounts-from-fraud-heres-how-stop-switch-and-trusted-person-approval-work-11795441662320.html",
+            "published_at": "2026-11-23T13:58:27Z"
           },
           {
-            "title": "Can markets ever be as free as economics textbooks say they should be?",
+            "title": "CRIF High Mark is now CRIF Credit Information Services: What borrowers should know",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/can-markets-ever-be-as-free-as-economics-textbooks-say-they-should-be-11795080821863.html",
-            "published_at": "2026-11-22T12:30:06Z"
+            "url": "https://www.livemint.com/money/personal-finance/crif-high-mark-is-now-crif-credit-information-services-what-borrowers-should-know-11795440659739.html",
+            "published_at": "2026-11-23T13:40:50Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "DGCA",
+        "symbol": "JSW",
         "cap": "Large/Mid Cap",
-        "title": "SpiceJet's troubles deepen: DGCA issues show cause notice over grounded planes, flight disruptions and unpaid penalties",
-        "url": "https://www.livemint.com/companies/news/spicejets-troubles-deepen-dgca-issues-show-cause-notice-over-grounded-planes-flight-disruptions-and-unpaid-penalties-11795351173888.html"
-      },
-      {
-        "symbol": "FPI",
-        "cap": "Large/Mid Cap",
-        "title": "FPI, crude oil, global trends to to steer markets in holiday-shortened week",
-        "url": "https://www.business-standard.com/markets/news/fpi-crude-oil-global-trends-to-to-steer-markets-in-holiday-shortened-week-126112200353_1.html"
-      },
-      {
-        "symbol": "IPO",
-        "cap": "Large/Mid Cap",
-        "title": "IPO Calendar: Issues worth Rs 3,300 crore lined up this week; Mahanadi Coalfields set for listing",
-        "url": "https://m.economictimes.com/markets/ipos/fpos/ipo-calendar-issues-worth-rs-3300-crore-lined-up-this-week-mahanadi-coalfields-set-for-listing/articleshow/136070713.cms"
+        "title": "Titagarh Rail Systems wins JSW wagon order, delivers naval vessel, gets auto carrier clearance",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/titagarh-rail-systems-wins-jsw-wagon-order-delivers-naval-vessel-gets-auto-carrier-clearance/article71734415.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "5 penny stocks plunge up to 68% in six months. Do you own any?",
-        "url": "https://m.economictimes.com/markets/stocks/news/5-penny-stocks-plunge-up-to-68-in-six-months-do-you-own-any/deep-corrections/slideshow/136069072.cms"
+        "title": "Intellect Design Arena wins Gartner recognition, stock jumps 6.4%",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/intellect-design-arena-wins-gartner-recognition-stock-jumps-64/article71734305.ece"
+      },
+      {
+        "symbol": "PTC",
+        "cap": "Large/Mid Cap",
+        "title": "PTC Industries bags 400-tonne titanium defence contract; stock rises 1.4%",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/ptc-industries-bags-400-tonne-titanium-defence-contract-stock-rises-14/article71734264.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Bandu’s Blockbusters for November 22, 2026",
-        "url": "https://www.thehindubusinessline.com/portfolio/technical-analysis/bandus-blockbusters-for-november-22-2026/article71728241.ece"
+        "title": "Arkade Developers lands ₹1,500 crore Tardeo redevelopment project, eyes ₹2,800 crore Q4 launches",
+        "url": "https://www.thehindubusinessline.com/companies/arkade-developers-lands-1500-crore-tardeo-redevelopment-project-eyes-2800-crore-q4-launches/article71734256.ece"
+      },
+      {
+        "symbol": "NEWS",
+        "cap": "Large/Mid Cap",
+        "title": "Ratnaveer Precision surges 10% on huge volume; zooms 215% thus far in FY27",
+        "url": "https://www.business-standard.com/markets/news/ratnaveer-precision-surges-10-on-huge-volume-zooms-215-thus-far-in-fy27-126112300644_1.html"
       }
     ]
   }
