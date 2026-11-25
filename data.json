@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-24T20:41:33.308Z",
+  "updated_at": "2026-11-25T13:44:12.513Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25349.65,
-      "change_pct": -1.75
+      "value": 25819.25,
+      "change_pct": 1.85
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 82435.99,
-      "change_pct": -1.77
+      "value": 83938.28,
+      "change_pct": 1.82
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 81.52,
-      "change_pct": 1.68,
+      "value": 82.47,
+      "change_pct": 0.51,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 106130,
-      "change_pct": -2.7,
+      "value": 104425,
+      "change_pct": -1.12,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3552.9,
-      "change_pct": -2.7,
+      "value": 3522,
+      "change_pct": -1.12,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22542.45,
-      "change_pct": -0.92
+      "price": 22591.4,
+      "change_pct": 0.22
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19314.4,
-      "change_pct": -0.66
+      "price": 19229.35,
+      "change_pct": -0.44
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 62585.35,
-      "change_pct": -3.17
+      "price": 63703.25,
+      "change_pct": 1.79
     },
     {
       "symbol": "NIFTY IT",
-      "price": 31850.8,
-      "change_pct": 1.69
+      "price": 32207.55,
+      "change_pct": 1.12
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 28490.7,
-      "change_pct": -1.03
+      "price": 28821.5,
+      "change_pct": 1.16
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 48312.55,
-      "change_pct": -0.46
+      "price": 50143.5,
+      "change_pct": 3.79
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11819.25,
-      "change_pct": -3.68
+      "price": 11578.5,
+      "change_pct": -2.04
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 59531.13,
-      "change_pct": -2.74
+      "price": 58263.04,
+      "change_pct": -2.48
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1669.95,
-      "change_pct": -2.28
+      "price": 1632.59,
+      "change_pct": -2.69
     }
   ],
   "news": {
@@ -87,10 +87,10 @@
         "outlet": "bloomberg.com",
         "articles": [
           {
-            "title": "AI selloff spurs haven demand for Yen, Franc as Dollar slips",
+            "title": "Gold holds gain after Nvidia’s rehiring of Huang sparks rally",
             "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-11-20/ai-selloff-boosts-haven-demand-for-yen-franc-as-dollar-slips",
-            "published_at": "2026-11-21T14:37:37Z"
+            "url": "https://www.bloomberg.com/news/articles/2026-11-24/gold-holds-gain-after-nvidia-s-rehiring-of-huang-sparks-rally",
+            "published_at": "2026-11-24T06:32:38Z"
           }
         ]
       },
@@ -112,22 +112,22 @@
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Rupee snaps five-day winning streak amid strong corporate dollar demand",
+            "title": "Ex-RBI chief Raghuram Rajan sees Nvidia governance risk in Huang's return",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/news/rupee-snaps-five-day-winning-streak-amid-strong-corporate-dollar-demand-126112301109_1.html",
-            "published_at": "2026-11-23T13:50:32Z"
+            "url": "https://www.business-standard.com/world-news/ex-rbi-chief-raghuram-rajan-sees-nvidia-governance-risk-in-huang-s-return-126112400550_1.html",
+            "published_at": "2026-11-24T09:46:58Z"
           },
           {
-            "title": "RBI proposes greater customer control over digital payments to curb fraud",
+            "title": "'Stop switch', payment limits: RBI lists new safeguards against bank fraud",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/news/rbi-proposes-greater-customer-control-over-digital-payments-to-curb-fraud-126112301054_1.html",
-            "published_at": "2026-11-23T13:21:25Z"
+            "url": "https://www.business-standard.com/finance/personal-finance/stop-switch-payment-limits-rbi-lists-new-safeguards-against-bank-fraud-126112400518_1.html",
+            "published_at": "2026-11-24T09:27:57Z"
           },
           {
-            "title": "No SMS alerts, Rs 77,114 lost: Woman wins consumer case against bank",
+            "title": "Vedanta seeks premium over imported LNG prices for Rajasthan gas sale",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/no-sms-alerts-rs-77-114-lost-woman-wins-consumer-case-against-bank-126112300960_1.html",
-            "published_at": "2026-11-23T12:26:37Z"
+            "url": "https://www.business-standard.com/companies/news/vedanta-seeks-premium-over-imported-lng-prices-for-rajasthan-gas-sale-126112400426_1.html",
+            "published_at": "2026-11-24T09:14:38Z"
           }
         ]
       },
@@ -135,56 +135,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "RBI proposes greater customer control for fraud prevention, moots ‘Stop Switch’ to disable transactions",
+            "title": "IDBI Bank stake sale: Bank employees threaten strike on December 3 against Fairfax deal; Here’s what they demand",
             "source": "Livemint",
-            "url": "https://www.livemint.com/industry/banking/rbi-proposes-greater-customer-control-for-fraud-prevention-moots-stop-switch-to-disable-transactions-11795437474120.html",
-            "published_at": "2026-11-23T14:17:55Z"
+            "url": "https://www.livemint.com/companies/news/idbi-bank-stake-sale-bank-employees-threaten-strike-on-december-3-against-fairfax-deal-here-s-what-they-demand-11795521966050.html",
+            "published_at": "2026-11-24T12:36:33Z"
           },
           {
-            "title": "RBI proposes new rules to protect bank accounts from fraud; here's how Stop Switch and trusted person approval work",
+            "title": "Uday Kotak on Jensen Huang coming back as NVIDIA CEO: ‘When elephants dance, everyone moves to give space!’ - Full text",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/rbi-proposes-new-rules-to-protect-bank-accounts-from-fraud-heres-how-stop-switch-and-trusted-person-approval-work-11795441662320.html",
-            "published_at": "2026-11-23T13:58:27Z"
+            "url": "https://www.livemint.com/companies/people/uday-kotak-on-jensen-huang-coming-back-as-nvidia-ceo-when-elephants-dance-everyone-moves-to-give-space-full-text-11795515952949.html",
+            "published_at": "2026-11-24T11:09:20Z"
           },
           {
-            "title": "CRIF High Mark is now CRIF Credit Information Services: What borrowers should know",
+            "title": "TSMC stock jumps 10%, adds $158 billion in market value as Nvidia's Jensen Huang returns as CEO",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/crif-high-mark-is-now-crif-credit-information-services-what-borrowers-should-know-11795440659739.html",
-            "published_at": "2026-11-23T13:40:50Z"
+            "url": "https://www.livemint.com/companies/news/tsmc-stock-jumps-10-adds-158-billion-in-market-value-as-nvidias-jensen-huang-returns-as-ceo-11795515269169.html",
+            "published_at": "2026-11-24T10:48:41Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "JSW",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Titagarh Rail Systems wins JSW wagon order, delivers naval vessel, gets auto carrier clearance",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/titagarh-rail-systems-wins-jsw-wagon-order-delivers-naval-vessel-gets-auto-carrier-clearance/article71734415.ece"
+        "title": "Ventive plans ₹1,350 crore hotel expansion without fresh equity",
+        "url": "https://www.livemint.com/companies/news/ventive-plans-1-350-crore-hotel-expansion-without-fresh-equity-11795512185406.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Intellect Design Arena wins Gartner recognition, stock jumps 6.4%",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/intellect-design-arena-wins-gartner-recognition-stock-jumps-64/article71734305.ece"
-      },
-      {
-        "symbol": "PTC",
-        "cap": "Large/Mid Cap",
-        "title": "PTC Industries bags 400-tonne titanium defence contract; stock rises 1.4%",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/ptc-industries-bags-400-tonne-titanium-defence-contract-stock-rises-14/article71734264.ece"
+        "title": "Shalimar Paints to merge with promoter Infra.Market in Rs 19,839-cr deal; Tiger Global, Accel, Nexus among investors",
+        "url": "https://m.economictimes.com/news/company/corporate-trends/shalimar-paints-to-merge-with-promoter-infra-market-in-rs-19839-cr-deal-tiger-global-accel-nexus-among-investors/articleshow/136127923.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Arkade Developers lands ₹1,500 crore Tardeo redevelopment project, eyes ₹2,800 crore Q4 launches",
-        "url": "https://www.thehindubusinessline.com/companies/arkade-developers-lands-1500-crore-tardeo-redevelopment-project-eyes-2800-crore-q4-launches/article71734256.ece"
+        "title": "Investors get richer by ₹34.61 lakh crore this month as Sensex posts 11% rally",
+        "url": "https://www.thehindubusinessline.com/markets/investors-get-richer-by-3461-lakh-crore-this-month-as-sensex-posts-11-rally/article71737692.ece"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "BSE",
         "cap": "Large/Mid Cap",
-        "title": "Ratnaveer Precision surges 10% on huge volume; zooms 215% thus far in FY27",
-        "url": "https://www.business-standard.com/markets/news/ratnaveer-precision-surges-10-on-huge-volume-zooms-215-thus-far-in-fy27-126112300644_1.html"
+        "title": "Stock market holiday today: Are BSE, NSE closed on November 24? What to expect when markets reopen?",
+        "url": "https://www.thehindubusinessline.com/markets/stock-market-holiday-today-are-bse-nse-closed-on-november-24-what-to-expect-when-markets-reopen/article71737549.ece"
+      },
+      {
+        "symbol": "MBA",
+        "cap": "Large/Mid Cap",
+        "title": "Allcargo School of Logistics to be established in Pune; 100 students to receive fully funded MBA scholarships",
+        "url": "https://timesofindia.indiatimes.com/education/news/allcargo-school-of-logistics-to-be-established-in-pune-100-students-to-receive-fully-funded-mba-scholarships/articleshow/136121004.cms"
       }
     ]
   }
