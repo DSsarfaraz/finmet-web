@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-25T19:58:18.465Z",
+  "updated_at": "2026-11-26T13:22:01.012Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25819.25,
-      "change_pct": 0.07
+      "value": 25884.5,
+      "change_pct": 0.25
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 83938.28,
-      "change_pct": 0.02
+      "value": 84328.59,
+      "change_pct": 0.46
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 83.51,
-      "change_pct": 1.78,
+      "value": 84.63,
+      "change_pct": 1.14,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 105650,
-      "change_pct": 0.04,
+      "value": 106849,
+      "change_pct": 1.57,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3563.3,
-      "change_pct": 0.04,
+      "value": 3591.3,
+      "change_pct": 1.57,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22591.4,
-      "change_pct": -0.7
+      "price": 22650,
+      "change_pct": 0.26
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19229.35,
-      "change_pct": -0.44
+      "price": 19372.15,
+      "change_pct": 0.74
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 63703.25,
-      "change_pct": -1.44
+      "price": 63535.3,
+      "change_pct": -0.26
     },
     {
       "symbol": "NIFTY IT",
-      "price": 32207.55,
-      "change_pct": 2.83
+      "price": 33386.95,
+      "change_pct": 3.66
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 28821.5,
-      "change_pct": 0.12
+      "price": 28623.45,
+      "change_pct": -0.69
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 50143.5,
-      "change_pct": 3.31
+      "price": 49673.55,
+      "change_pct": -0.94
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11578.5,
-      "change_pct": -5.64
+      "price": 11713.5,
+      "change_pct": 1.17
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 59896.88,
-      "change_pct": 0.25
+      "price": 60798.96,
+      "change_pct": 0.7
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1683.71,
-      "change_pct": 0.36
+      "price": 1705.25,
+      "change_pct": 0.86
     }
   ],
   "news": {
@@ -86,6 +86,12 @@
       {
         "outlet": "bloomberg.com",
         "articles": [
+          {
+            "title": "Huang boost fades quickly as AI fears sink TSMC, SK Hynix shares",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-11-25/jensen-huang-boost-fades-fast-as-taiwan-stocks-tumble-8",
+            "published_at": "2026-11-25T05:47:04Z"
+          },
           {
             "title": "Gold holds gain after Nvidia’s rehiring of Huang sparks rally",
             "source": "Bloomberg",
@@ -100,34 +106,54 @@
       },
       {
         "outlet": "wsj.com",
-        "articles": []
+        "articles": [
+          {
+            "title": "I Told You to Bet the Over",
+            "source": "The Wall Street Journal",
+            "url": "https://www.wsj.com/business/nvidia-jensen-huang-white-house-9ad03961?st=HzeUyV",
+            "published_at": "2026-11-24T19:12:09Z"
+          }
+        ]
       }
     ],
     "indian": [
       {
         "outlet": "economictimes.indiatimes.com",
-        "articles": []
+        "articles": [
+          {
+            "title": "RBI net buyer of dollars for fourth straight month in September, data shows",
+            "source": "Economictimes.com",
+            "url": "https://m.economictimes.com/markets/forex/forex-news/rbi-net-buyer-of-dollars-for-fourth-straight-month-in-september-data-shows/articleshow/136163192.cms",
+            "published_at": "2026-11-25T13:19:28Z"
+          },
+          {
+            "title": "US Stock Market Live Updates: Nasdaq futures fall over 2% as AI selloff deepens; inflation data looms",
+            "source": "Economictimes.com",
+            "url": "https://m.economictimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-nvidia-alphabet-amazon-anthropic-dell-inflation-fed-rate-hike-gold-treasury-yield-news-25th-november-2026/liveblog/136163404.cms",
+            "published_at": "2026-11-25T13:12:55Z"
+          }
+        ]
       },
       {
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Ex-RBI chief Raghuram Rajan sees Nvidia governance risk in Huang's return",
+            "title": "Post mixed Q2 performance, cautious optimism for consumer durables makers",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/world-news/ex-rbi-chief-raghuram-rajan-sees-nvidia-governance-risk-in-huang-s-return-126112400550_1.html",
-            "published_at": "2026-11-24T09:46:58Z"
+            "url": "https://www.business-standard.com/markets/news/post-mixed-q2-performance-cautious-optimism-for-consumer-durables-makers-126112500986_1.html",
+            "published_at": "2026-11-25T12:33:42Z"
           },
           {
-            "title": "'Stop switch', payment limits: RBI lists new safeguards against bank fraud",
+            "title": "PNB partners with Deutsche Bank to explore acquisition financing in India",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/personal-finance/stop-switch-payment-limits-rbi-lists-new-safeguards-against-bank-fraud-126112400518_1.html",
-            "published_at": "2026-11-24T09:27:57Z"
+            "url": "https://www.business-standard.com/industry/banking/pnb-partners-with-deutsche-bank-to-explore-acquisition-financing-in-india-126112500965_1.html",
+            "published_at": "2026-11-25T12:24:23Z"
           },
           {
-            "title": "Vedanta seeks premium over imported LNG prices for Rajasthan gas sale",
+            "title": "RBI steps up checks on importer trades amid surge in smaller deals",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/companies/news/vedanta-seeks-premium-over-imported-lng-prices-for-rajasthan-gas-sale-126112400426_1.html",
-            "published_at": "2026-11-24T09:14:38Z"
+            "url": "https://www.business-standard.com/finance/news/rbi-steps-up-checks-on-importer-trades-amid-surge-in-smaller-deals-126112500616_1.html",
+            "published_at": "2026-11-25T10:13:02Z"
           }
         ]
       },
@@ -135,56 +161,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "IDBI Bank stake sale: Bank employees threaten strike on December 3 against Fairfax deal; Here’s what they demand",
+            "title": "ICICI Life Insurance unveils guaranteed indexed pension plan with inflation protection: Key features explained",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/idbi-bank-stake-sale-bank-employees-threaten-strike-on-december-3-against-fairfax-deal-here-s-what-they-demand-11795521966050.html",
-            "published_at": "2026-11-24T12:36:33Z"
+            "url": "https://www.livemint.com/money/personal-finance/icici-life-insurance-unveils-guaranteed-indexed-pension-plan-with-inflation-protection-key-features-explained-11795605531641.html",
+            "published_at": "2026-11-25T12:54:20Z"
           },
           {
-            "title": "Uday Kotak on Jensen Huang coming back as NVIDIA CEO: ‘When elephants dance, everyone moves to give space!’ - Full text",
+            "title": "The Indian rupee's carry-trade stardom isn't permanent—how long it holds out depends on RBI",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/people/uday-kotak-on-jensen-huang-coming-back-as-nvidia-ceo-when-elephants-dance-everyone-moves-to-give-space-full-text-11795515952949.html",
-            "published_at": "2026-11-24T11:09:20Z"
+            "url": "https://www.livemint.com/opinion/online-views/the-indian-rupees-carry-trade-stardom-isnt-permanent-how-long-it-holds-out-depends-on-rbi-11795509696677.html",
+            "published_at": "2026-11-25T09:31:01Z"
           },
           {
-            "title": "TSMC stock jumps 10%, adds $158 billion in market value as Nvidia's Jensen Huang returns as CEO",
+            "title": "Who is Kalyan Krishnamurthy? Meet Flipkart CEO stepping down after nearly a decade at the helm; what’s next for him?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/news/tsmc-stock-jumps-10-adds-158-billion-in-market-value-as-nvidias-jensen-huang-returns-as-ceo-11795515269169.html",
-            "published_at": "2026-11-24T10:48:41Z"
+            "url": "https://www.livemint.com/companies/people/who-is-kalyan-krishnamurthy-meet-flipkart-ceo-stepping-down-after-nearly-a-decade-at-the-helm-what-s-next-for-him-11795596463140.html",
+            "published_at": "2026-11-25T09:10:35Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "NEWS",
+        "symbol": "SEBI",
         "cap": "Large/Mid Cap",
-        "title": "Ventive plans ₹1,350 crore hotel expansion without fresh equity",
-        "url": "https://www.livemint.com/companies/news/ventive-plans-1-350-crore-hotel-expansion-without-fresh-equity-11795512185406.html"
+        "title": "SEBI retains BSE 200, Nifty CPSE in significant indices list despite missing AUM threshold",
+        "url": "https://www.thehindubusinessline.com/markets/sebi-retains-bse-200-nifty-cpse-in-significant-indices-list-despite-missing-aum-threshold/article71742303.ece"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Shalimar Paints to merge with promoter Infra.Market in Rs 19,839-cr deal; Tiger Global, Accel, Nexus among investors",
-        "url": "https://m.economictimes.com/news/company/corporate-trends/shalimar-paints-to-merge-with-promoter-infra-market-in-rs-19839-cr-deal-tiger-global-accel-nexus-among-investors/articleshow/136127923.cms"
+        "title": "LG Electronics India promoter to sell up to 2% stake, plans to offload 13.57 million shares by Dec 31",
+        "url": "https://m.economictimes.com/markets/ipos/fpos/lg-electronics-india-promoter-to-sell-up-to-2-stake-plans-to-offload-13-57-million-shares-by-dec-31/articleshow/136160873.cms"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Investors get richer by ₹34.61 lakh crore this month as Sensex posts 11% rally",
-        "url": "https://www.thehindubusinessline.com/markets/investors-get-richer-by-3461-lakh-crore-this-month-as-sensex-posts-11-rally/article71737692.ece"
+        "title": "NseKit 0.0.51",
+        "url": "https://pypi.org/project/nsekit/0.0.51/"
       },
       {
-        "symbol": "BSE",
+        "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "Stock market holiday today: Are BSE, NSE closed on November 24? What to expect when markets reopen?",
-        "url": "https://www.thehindubusinessline.com/markets/stock-market-holiday-today-are-bse-nse-closed-on-november-24-what-to-expect-when-markets-reopen/article71737549.ece"
+        "title": "Individual investor count hits two-year high, but trading share declines",
+        "url": "https://www.business-standard.com/markets/news/individual-investor-count-hits-two-year-high-but-trading-share-declines-126112500745_1.html"
       },
       {
-        "symbol": "MBA",
+        "symbol": "PNGS",
         "cap": "Large/Mid Cap",
-        "title": "Allcargo School of Logistics to be established in Pune; 100 students to receive fully funded MBA scholarships",
-        "url": "https://timesofindia.indiatimes.com/education/news/allcargo-school-of-logistics-to-be-established-in-pune-100-students-to-receive-fully-funded-mba-scholarships/articleshow/136121004.cms"
+        "title": "PNGS Reva Diamond’s festive sales jump 54% to ₹142 crore",
+        "url": "https://www.thehindubusinessline.com/markets/stock-markets/pngs-reva-diamonds-festive-sales-jump-54-to-142-crore/article71741884.ece"
       }
     ]
   }
