@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-26T13:22:01.012Z",
+  "updated_at": "2026-11-26T18:39:26.049Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
       "value": 25884.5,
-      "change_pct": 0.25
+      "change_pct": 2.11
     },
     "sensex": {
       "label": "SENSEX",
       "value": 84328.59,
-      "change_pct": 0.46
+      "change_pct": 2.3
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 84.63,
-      "change_pct": 1.14,
+      "value": 84.84,
+      "change_pct": 1.39,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 106849,
-      "change_pct": 1.57,
+      "value": 106853,
+      "change_pct": 1.69,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3591.3,
-      "change_pct": 1.57,
+      "value": 3595.5,
+      "change_pct": 1.69,
       "unit": "USD/oz"
     }
   },
@@ -34,7 +34,7 @@
     {
       "symbol": "NIFTY MIDCAP 150",
       "price": 22650,
-      "change_pct": 0.26
+      "change_pct": 0.48
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
@@ -46,39 +46,39 @@
     {
       "symbol": "NIFTY BANK",
       "price": 63535.3,
-      "change_pct": -0.26
+      "change_pct": 1.52
     },
     {
       "symbol": "NIFTY IT",
       "price": 33386.95,
-      "change_pct": 3.66
+      "change_pct": 4.82
     },
     {
       "symbol": "NIFTY AUTO",
       "price": 28623.45,
-      "change_pct": -0.69
+      "change_pct": 0.47
     },
     {
       "symbol": "NIFTY FMCG",
       "price": 49673.55,
-      "change_pct": -0.94
+      "change_pct": 2.82
     },
     {
       "symbol": "NIFTY METAL",
       "price": 11713.5,
-      "change_pct": 1.17
+      "change_pct": -0.89
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 60798.96,
-      "change_pct": 0.7
+      "price": 60522.58,
+      "change_pct": 0.24
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1705.25,
-      "change_pct": 0.86
+      "price": 1696.88,
+      "change_pct": 0.36
     }
   ],
   "news": {
