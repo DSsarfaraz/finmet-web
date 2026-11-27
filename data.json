@@ -1,84 +1,84 @@
 {
-  "updated_at": "2026-11-26T19:41:51.663Z",
+  "updated_at": "2026-11-27T13:19:35.012Z",
   "indices": {
     "nifty": {
       "label": "NIFTY 50",
-      "value": 25884.5,
-      "change_pct": 2.11
+      "value": 25607.2,
+      "change_pct": -1.07
     },
     "sensex": {
       "label": "SENSEX",
-      "value": 84328.59,
-      "change_pct": 2.3
+      "value": 83339.26,
+      "change_pct": -1.17
     },
     "crude": {
       "label": "CRUDE (WTI)",
-      "value": 84.91,
-      "change_pct": 1.47,
+      "value": 85.07,
+      "change_pct": 1.66,
       "unit": "USD/bbl"
     },
     "gold_inr": {
       "label": "GOLD (India, spot equiv.)",
-      "value": 106791,
-      "change_pct": 1.63,
+      "value": 110327,
+      "change_pct": 4.5,
       "unit": "INR/10g*"
     },
     "gold_usd": {
       "label": "GOLD (USD)",
-      "value": 3593.4,
-      "change_pct": 1.63,
+      "value": 3695,
+      "change_pct": 4.5,
       "unit": "USD/oz"
     }
   },
   "broad_indices": [
     {
       "symbol": "NIFTY MIDCAP 150",
-      "price": 22650,
-      "change_pct": 0.48
+      "price": 22652.7,
+      "change_pct": 0.01
     },
     {
       "symbol": "NIFTY SMALLCAP 100",
-      "price": 19372.15,
-      "change_pct": 0.74
+      "price": 19481.3,
+      "change_pct": 0.56
     }
   ],
   "sector_indices": [
     {
       "symbol": "NIFTY BANK",
-      "price": 63535.3,
-      "change_pct": 1.52
+      "price": 63040.9,
+      "change_pct": -0.78
     },
     {
       "symbol": "NIFTY IT",
-      "price": 33386.95,
-      "change_pct": 4.82
+      "price": 32758.1,
+      "change_pct": -1.88
     },
     {
       "symbol": "NIFTY AUTO",
-      "price": 28623.45,
-      "change_pct": 0.47
+      "price": 28199.9,
+      "change_pct": -1.48
     },
     {
       "symbol": "NIFTY FMCG",
-      "price": 49673.55,
-      "change_pct": 2.82
+      "price": 49212.45,
+      "change_pct": -0.93
     },
     {
       "symbol": "NIFTY METAL",
-      "price": 11713.5,
-      "change_pct": -0.89
+      "price": 11878,
+      "change_pct": 1.4
     }
   ],
   "crypto": [
     {
       "symbol": "BITCOIN",
-      "price": 60605.07,
-      "change_pct": 0.38
+      "price": 61346.57,
+      "change_pct": 1.41
     },
     {
       "symbol": "ETHEREUM",
-      "price": 1703.98,
-      "change_pct": 0.78
+      "price": 1717.89,
+      "change_pct": 1.79
     }
   ],
   "news": {
@@ -87,16 +87,22 @@
         "outlet": "bloomberg.com",
         "articles": [
           {
+            "title": "Cracks in AI stocks weaken Wall Street’s once-reliable carry trade",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-11-25/stocks-meltdown-spills-into-unlikely-market-sinking-carry-trade",
+            "published_at": "2026-11-26T09:46:34Z"
+          },
+          {
+            "title": "Adani Enterprises and Adani Power plan public bond sale to raise at least $220 million",
+            "source": "Bloomberg",
+            "url": "https://www.bloomberg.com/news/articles/2026-11-26/adani-firms-plan-public-bond-sale-to-raise-at-least-220-million",
+            "published_at": "2026-11-26T05:15:35Z"
+          },
+          {
             "title": "Huang boost fades quickly as AI fears sink TSMC, SK Hynix shares",
             "source": "Bloomberg",
             "url": "https://www.bloomberg.com/news/articles/2026-11-25/jensen-huang-boost-fades-fast-as-taiwan-stocks-tumble-8",
             "published_at": "2026-11-25T05:47:04Z"
-          },
-          {
-            "title": "Gold holds gain after Nvidia’s rehiring of Huang sparks rally",
-            "source": "Bloomberg",
-            "url": "https://www.bloomberg.com/news/articles/2026-11-24/gold-holds-gain-after-nvidia-s-rehiring-of-huang-sparks-rally",
-            "published_at": "2026-11-24T06:32:38Z"
           }
         ]
       },
@@ -119,41 +125,28 @@
     "indian": [
       {
         "outlet": "economictimes.indiatimes.com",
-        "articles": [
-          {
-            "title": "RBI net buyer of dollars for fourth straight month in September, data shows",
-            "source": "Economictimes.com",
-            "url": "https://m.economictimes.com/markets/forex/forex-news/rbi-net-buyer-of-dollars-for-fourth-straight-month-in-september-data-shows/articleshow/136163192.cms",
-            "published_at": "2026-11-25T13:19:28Z"
-          },
-          {
-            "title": "US Stock Market Live Updates: Nasdaq futures fall over 2% as AI selloff deepens; inflation data looms",
-            "source": "Economictimes.com",
-            "url": "https://m.economictimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-nvidia-alphabet-amazon-anthropic-dell-inflation-fed-rate-hike-gold-treasury-yield-news-25th-november-2026/liveblog/136163404.cms",
-            "published_at": "2026-11-25T13:12:55Z"
-          }
-        ]
+        "articles": []
       },
       {
         "outlet": "business-standard.com",
         "articles": [
           {
-            "title": "Post mixed Q2 performance, cautious optimism for consumer durables makers",
+            "title": "NSE receives RBI's approval to launch corporate bond index futures",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/markets/news/post-mixed-q2-performance-cautious-optimism-for-consumer-durables-makers-126112500986_1.html",
-            "published_at": "2026-11-25T12:33:42Z"
+            "url": "https://www.business-standard.com/markets/news/nse-receives-rbi-s-approval-to-launch-corporate-bond-index-futures-126112601165_1.html",
+            "published_at": "2026-11-26T13:19:09Z"
           },
           {
-            "title": "PNB partners with Deutsche Bank to explore acquisition financing in India",
+            "title": "Govt meets 44% of FY27 Budget estimate for CPSE dividend collections",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/industry/banking/pnb-partners-with-deutsche-bank-to-explore-acquisition-financing-in-india-126112500965_1.html",
-            "published_at": "2026-11-25T12:24:23Z"
+            "url": "https://www.business-standard.com/finance/news/govt-meets-44-of-fy27-budget-estimate-for-cpse-dividend-collections-126112601115_1.html",
+            "published_at": "2026-11-26T12:53:36Z"
           },
           {
-            "title": "RBI steps up checks on importer trades amid surge in smaller deals",
+            "title": "IndiGo up 22% in a month; Anand Rathi sees macro tailwinds aiding recovery",
             "source": "Business Standard",
-            "url": "https://www.business-standard.com/finance/news/rbi-steps-up-checks-on-importer-trades-amid-surge-in-smaller-deals-126112500616_1.html",
-            "published_at": "2026-11-25T10:13:02Z"
+            "url": "https://www.business-standard.com/markets/news/indigo-up-22-in-a-month-anand-rathi-sees-macro-tailwinds-aiding-recovery-126112600733_1.html",
+            "published_at": "2026-11-26T09:44:58Z"
           }
         ]
       },
@@ -161,56 +154,56 @@
         "outlet": "livemint.com",
         "articles": [
           {
-            "title": "ICICI Life Insurance unveils guaranteed indexed pension plan with inflation protection: Key features explained",
+            "title": "The Reserve Bank of India has luck on its side—here's why",
             "source": "Livemint",
-            "url": "https://www.livemint.com/money/personal-finance/icici-life-insurance-unveils-guaranteed-indexed-pension-plan-with-inflation-protection-key-features-explained-11795605531641.html",
-            "published_at": "2026-11-25T12:54:20Z"
+            "url": "https://www.livemint.com/opinion/online-views/the-reserve-bank-of-india-has-luck-on-its-side-heres-why-11795600426201.html",
+            "published_at": "2026-11-26T10:30:59Z"
           },
           {
-            "title": "The Indian rupee's carry-trade stardom isn't permanent—how long it holds out depends on RBI",
+            "title": "Four credit bureaus, four different scores: Why?",
             "source": "Livemint",
-            "url": "https://www.livemint.com/opinion/online-views/the-indian-rupees-carry-trade-stardom-isnt-permanent-how-long-it-holds-out-depends-on-rbi-11795509696677.html",
-            "published_at": "2026-11-25T09:31:01Z"
+            "url": "https://www.livemint.com/money/personal-finance/credit-score-different-across-cibil-experian-equifax-crif-11795671734516.html",
+            "published_at": "2026-11-26T09:01:22Z"
           },
           {
-            "title": "Who is Kalyan Krishnamurthy? Meet Flipkart CEO stepping down after nearly a decade at the helm; what’s next for him?",
+            "title": "The owner who was told to wait",
             "source": "Livemint",
-            "url": "https://www.livemint.com/companies/people/who-is-kalyan-krishnamurthy-meet-flipkart-ceo-stepping-down-after-nearly-a-decade-at-the-helm-what-s-next-for-him-11795596463140.html",
-            "published_at": "2026-11-25T09:10:35Z"
+            "url": "https://www.livemint.com/opinion/online-views/tata-sons-tata-trusts-ownership-control-chandrasekaran-reappointment-11795670693778.html",
+            "published_at": "2026-11-26T08:04:11Z"
           }
         ]
       }
     ],
     "stocks_in_news": [
       {
-        "symbol": "SEBI",
+        "symbol": "NSE",
         "cap": "Large/Mid Cap",
-        "title": "SEBI retains BSE 200, Nifty CPSE in significant indices list despite missing AUM threshold",
-        "url": "https://www.thehindubusinessline.com/markets/sebi-retains-bse-200-nifty-cpse-in-significant-indices-list-despite-missing-aum-threshold/article71742303.ece"
+        "title": "NSE receives RBI's approval to launch corporate bond index futures",
+        "url": "https://www.business-standard.com/markets/news/nse-receives-rbi-s-approval-to-launch-corporate-bond-index-futures-126112601165_1.html"
       },
       {
         "symbol": "NEWS",
         "cap": "Large/Mid Cap",
-        "title": "LG Electronics India promoter to sell up to 2% stake, plans to offload 13.57 million shares by Dec 31",
-        "url": "https://m.economictimes.com/markets/ipos/fpos/lg-electronics-india-promoter-to-sell-up-to-2-stake-plans-to-offload-13-57-million-shares-by-dec-31/articleshow/136160873.cms"
+        "title": "IT stocks surge 3.6% as Nifty edges up; rupee slips to 92.44",
+        "url": "https://www.thehindubusinessline.com/markets/it-stocks-surge-36-as-nifty-edges-up-rupee-slips-to-9244/article71746454.ece"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "NSE",
         "cap": "Large/Mid Cap",
-        "title": "NseKit 0.0.51",
-        "url": "https://pypi.org/project/nsekit/0.0.51/"
+        "title": "NSE among 6 stocks hitting 52-week highs; stock rallies up to 35% in a month",
+        "url": "https://m.economictimes.com/markets/stocks/news/nse-among-6-stocks-hitting-52-week-highs-stock-rallies-up-to-35-in-a-month/new-highs/slideshow/136192775.cms"
       },
       {
-        "symbol": "NEWS",
+        "symbol": "NSE",
         "cap": "Large/Mid Cap",
-        "title": "Individual investor count hits two-year high, but trading share declines",
-        "url": "https://www.business-standard.com/markets/news/individual-investor-count-hits-two-year-high-but-trading-share-declines-126112500745_1.html"
+        "title": "NSE overtakes Deutsche Boerse, LSE to become world’s third-largest listed exchange at $64.1 billion",
+        "url": "https://www.thehindubusinessline.com/markets/nse-overtakes-deutsche-boerse-lse-to-become-worlds-third-largest-listed-exchange-at-641-billion/article71746352.ece"
       },
       {
-        "symbol": "PNGS",
+        "symbol": "FDA",
         "cap": "Large/Mid Cap",
-        "title": "PNGS Reva Diamond’s festive sales jump 54% to ₹142 crore",
-        "url": "https://www.thehindubusinessline.com/markets/stock-markets/pngs-reva-diamonds-festive-sales-jump-54-to-142-crore/article71741884.ece"
+        "title": "Zydus faces fresh US FDA hurdle for saroglitazar; two plants receive inspection reports - CNBC TV18",
+        "url": "https://www.cnbctv18.com/business/companies/zydus-faces-fresh-us-fda-hurdle-for-saroglitazar-two-plants-receive-inspection-reports-20042170.htm"
       }
     ]
   }
